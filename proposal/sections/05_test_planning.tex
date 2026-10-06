@@ -1,0 +1,31 @@
+% =====================================================================
+%  5.0 TEST PLANNING  (10 pts)                budget: ~0.5 page, ~100 words
+%  Rubric (5.1.4):  [ ] Component and ground test plan
+%                   [ ] Flight test plan
+%  Judges 2026 praised checklists: mention them.
+%  Layout: column-width table (see note in 04 on last-page floats).
+% =====================================================================
+\section{Test Planning}
+\dbfnote{About 100 words. How the tests retire the riskiest assumptions first (sensor stability, reel recovery, drop survival); how data feed back into the design; pre-flight and mission checklists. Refer to Table~\ref{tab:tests}.}
+\dbffill{100}
+
+\begin{table}[h]
+\caption{Component, ground and flight test plan.}\label{tab:tests}
+\begin{dbftable}{colspec={Q[l] X[1.45,l] X[1,l] Q[l]}, cell{2}{1}={r=9}{l}, cell{11}{1}={r=5}{l}, hline{11}={0.4pt,dbfGraphite}}
+Phase & Test and objective & Pass criterion & Date \\
+Ground & Thrust stand: \dbftbd{objective} & \dbftbd{criterion} & \dbftbd{date} \\
+ & Wing-tip load at MGTOW & \dbftbd{criterion} & \dbftbd{date} \\
+ & Light visibility in sun & \dbftbd{criterion} & \dbftbd{date} \\
+ & Tow-line signal & \dbftbd{criterion} & \dbftbd{date} \\
+ & D\&R cycle timing & \dbftbd{criterion} & \dbftbd{date} \\
+ & Drop series to 60 in & \dbftbd{criterion} & \dbftbd{date} \\
+ & GM rehearsal, 5 min & \dbftbd{criterion} & \dbftbd{date} \\
+ & Staging rehearsal, 5 min & \dbftbd{criterion} & \dbftbd{date} \\
+ & Range, fail-safe, CG & \dbftbd{criterion} & \dbftbd{date} \\
+Flight & Handling and trim & \dbftbd{criterion} & \dbftbd{date} \\
+ & Sensor tow stability & \dbftbd{criterion} & \dbftbd{date} \\
+ & Stepped M2 payload & \dbftbd{criterion} & \dbftbd{date} \\
+ & Full M3 sequence & \dbftbd{criterion} & \dbftbd{date} \\
+ & Energy per mission & \dbftbd{criterion} & \dbftbd{date} \\
+\end{dbftable}
+\end{table}

@@ -16,9 +16,14 @@ The full rules are in [`rules/`](rules/).
 
 ## Repository layout
 ```
+proposal/                   2026-27 proposal (LaTeX). Run ./build.sh. See proposal/README.md
+design-system/              House style for ALL team documents (class, fonts, plot style, tools)
 rules/                      Official 2026-27 rules (draft) + proposal scoring rubric screenshot
 reference/                  Context from past years
   past_proposals/           Top-3 scoring proposals from 2025-26 (RMIT, UC San Diego, Arkansas)
 assets/branding/            Logos for reports/drawings
 TODO.md                     Team task list
 ```
+
+## Documents
+Every written document uses the design system in [`design-system/`](design-system/), so each new document starts from `dbfdoc.cls`. Toolchain: MiKTeX (XeLaTeX), Python 3 with matplotlib, and Git Bash.
