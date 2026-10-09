@@ -72,6 +72,7 @@ There is no signal color. Emphasis comes from weight, ink fills and the Bone tin
 | `frontmatter` environment | Full-width page-1 block under the dark masthead |
 | `dbfpanel` environment and `\dbfreadout{label}{value}{unit}` | "Design at a Glance" instrument panel |
 | `dbftable` | House table (tabularray syntax) |
+| `dbflongtable` | Same look, breaks across pages and repeats its header row. One-column pages only; put `\captionof{table}{...}\nopagebreak` above it |
 | `\dbfplaceholder{w}{h}{label}` | Placeholder box at an exact grid size |
 | `\dbfnote{...}` | Writer guidance. Removed by the `final` class option |
 | `\dbftbd{label}` | A value not yet computed. Visible, and counted by the build |

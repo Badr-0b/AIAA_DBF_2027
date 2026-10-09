@@ -1,0 +1,93 @@
+% PR-01 Initial purchase request: test supplies and long-lead hardware.
+% Build: ./build.sh  (regenerates the tables and the .xlsx from pr01_items.csv)
+\def\dbfroot{../design-system}
+\documentclass[final]{dbfdoc}
+\usepackage{xurl}
+\usepackage{needspace}   % keeps each table caption with its first rows
+\dbfsetdoc{Initial Purchase Request}{Procurement PR-01}{AUM-DBF-27-PR-001}{A}
+\dbfsetdate{09 Oct 2026}
+\input{build/pr01_totals.tex}
+\raggedbottom
+
+\begin{document}
+
+\begin{frontmatter}
+\section{Purpose}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\setlength\parindent{1.15em}\noindent
+This is the team's first consolidated purchase request. Procurement lead time is the main schedule risk this season, so everything the next two months need is requested now, in two tiers.
+\textbf{Tier A} (\prLinesA{} lines) is test supplies for test cards TC-01 to TC-04. Buy them locally this week: the TC-01 and TC-02 results feed the 13~Oct design decisions.
+\textbf{Tier B} (\prLinesB{} lines) goes to the university's formal process.
+
+\noindent\textbf{Budget holds.} \prLinesHold{} Tier B lines depend on the aircraft sizing due at the 13~Oct decision gate (motors, ESCs, propellers, packs, servos, tubes, reel actuators). For these, the category, quantity and a reference price are known now, so the budget can be reserved today. Part numbers follow on 14~Oct.
+
+\noindent\textbf{Prices.} \prListedLines{} lines carry a vendor's listed price, checked on 9~Oct~2026 and listed in Section~7.0. Together they cover \prListedShare\,\% of the value. Every other price is a planning estimate and needs a quote.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\vspace{-11pt}
+\begin{dbfpanel}[Request at a Glance]
+\dbfreadout{Tier A, local}{\prTotalA}{USD}\hfill\dbfreadout{Tier B, buy now}{\prTotalBbuy}{USD}\dbfreadoutgap
+\dbfreadout{Budget holds}{\prTotalBhold}{USD}\hfill\dbfreadout{Total}{\prTotal}{USD}\dbfreadoutgap
+\dbfreadout{Total}{\prTotalKWD}{KWD}\hfill\dbfreadout{Lines}{\prLines}{}
+\end{dbfpanel}
+\end{minipage}
+\end{frontmatter}
+
+\section{How to Read This Request}
+Each table covers one category. Every line gives the quantity, unit price and extended price in US dollars, plus two status words:
+\begin{itemize}
+\item \textbf{BUY}: the specification is fixed; order now.
+\item \textbf{HOLD}: reserve the budget now; the exact part follows the sizing gate.
+\item \textbf{listing}: the vendor's listed price on 9~Oct~2026. It is a reference, not a quote.
+\item \textbf{estimate}: a planning figure that has not been verified.
+\end{itemize}
+Prices exclude shipping, duties and VAT. Dinar figures use \prRateKWD{}~KWD per US dollar, and the one sterling listing uses \prRateGBP{}~USD per pound (market rates, 8~Oct~2026). The spreadsheet \texttt{PR-01\_initial\_request.xlsx} holds the same lines with vendor links, need-by dates and KWD columns.
+
+The need-by dates are proposals:
+\begin{itemize}
+\item TC-01 and TC-02 supplies: 11~Oct.
+\item Other Tier A lines: 14~Oct.
+\item Tier B buy-now lines: 1~Nov.
+\item Budget holds: ordered 14~Oct, needed by 30~Nov.
+\item Travel crate: 1~Mar~2027.
+\end{itemize}
+
+\section{Not in This Request}
+These costs belong in the proposal budget but are paid outside this request:
+\begin{itemize}
+\item Fly-off registration fee: US\$\prFee{} per team (§2.6).
+\item AIAA student membership: US\$\prAIAA{} per member per year (aiaa.org, checked 9~Oct). Every team member needs one (§1.1, §2.1).
+\item AMA membership for the pilot (§1.2): price to confirm with the AMA.
+\item Travel to Tucson and aircraft freight: a separate travel request.
+\item Contingency: set by the team lead.
+\end{itemize}
+
+\onecolumn
+\section{Purchasing Constraints From the Rules}
+These come from the 2026--27 contest rules (September 2026 draft). A substitution that breaks one of them can fail tech inspection, so please check with the team before swapping a part on these lines.
+\begin{itemize}
+\item \textbf{Radio.} Use ExpressLRS 2.4\,GHz receivers with PWM outputs (team decision, 8~Oct~2026). CRSF-only receivers need a flight controller, and flight controllers are banned (§3.2.1, §4.2.1). Buy FCC versions: the radio must use a legal US frequency (§3.2.1).
+\item \textbf{Batteries.} Every pack (propulsion, receiver and sensor) must be unaltered, commercial off-the-shelf, and carry the manufacturer's label stating chemistry, capacity, voltage and C-rating (§3.2.3, §3.1.1).
+\item \textbf{Propulsion packs.} No pack may exceed 100\,Wh, and neither may the total on the airplane (§3.2.3.2). Keep the original packaging: tech inspection checks it (§4.2.3). Lithium packs ship as dangerous goods, so buy them locally if possible.
+\item \textbf{Charging sacks.} Commercial, unaltered and manufacturer-labelled. Every battery is stored and charged in one (§3.2.3).
+\item \textbf{Fuses.} Blade fuses in a separate harness. The rating may not exceed the pack's maximum continuous current or 100\,A (§3.2.3.1, §3.2.3.2).
+\item \textbf{Arming plug.} Its wire must match the pack leads' gauge or be heavier (§3.2.2). The reference pack has 10\,AWG leads.
+\item \textbf{ESCs.} The BEC must be disabled, and a separate receiver battery is mandatory (§3.2.3, FAQ A.3).
+\item \textbf{Motors, propellers, electronics.} Use unmodified commercial motors and commercial propellers. The airplane may carry no camera, GPS, autopilot or flight controller (§3.2.1).
+\item \textbf{Latches.} Positive mechanical latches only; magnets are not acceptable (§4.2.1).
+\end{itemize}
+
+\section{Tier A: Local Purchase This Week}
+These lines support test cards TC-01 to TC-04 and the electronics bench. Where a petty-cash or reimbursed local purchase is allowed, it beats the formal process for these lines. Tier A total: US\$\prTotalA.
+\input{build/pr01_tierA.tex}
+
+\clearpage
+\section{Tier B: Formal University Request}
+Tier B buy-now lines total US\$\prTotalBbuy, and budget holds total US\$\prTotalBhold.
+\input{build/pr01_tierB.tex}
+
+\section{Sources}
+These are the reference listings behind every line marked \emph{listing}, checked on 9~Oct~2026. \prListedPage{} were read on the vendor page itself. \prListedSearch{} come from search results for that page, which can lag the live price. Prices and stock change, so get a quote before ordering.
+\input{build/pr01_sources.tex}
+
+\end{document}

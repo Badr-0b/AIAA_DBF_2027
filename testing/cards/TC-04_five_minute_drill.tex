@@ -1,0 +1,106 @@
+% TC-04 Five-minute drill: staging and Ground Mission timing on a mock-up.
+% Build: ../build.sh
+\def\dbfroot{../../design-system}
+\documentclass[final]{dbfdoc}
+\dbfsetdoc{Five-Minute Drill}{Test Card TC-04}{AUM-DBF-27-TC-004}{A}
+\dbfsetdate{09 Oct 2026}
+\raggedbottom
+
+\begin{document}
+
+\begin{frontmatter}
+\section{Objective}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\setlength\parindent{1.15em}\noindent
+Time the three five-minute tasks end to end on a mock-up: Mission~2 staging, Mission~3 staging (including unpacking the sensor), and the Ground Mission rigging. Find the slowest steps while the design can still change.
+
+\noindent\textbf{Method.} The crew member who will do each job runs it five times against a stopwatch, with a split at every step.
+
+\noindent\textbf{Limitation.} A mock-up tests the procedure and the layout, not the hardware. Contest stress and wind add time, hence the one-minute reserve in the pass criterion.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\vspace{-11pt}
+\begin{dbfpanel}[Test at a Glance]
+\dbfreadout{Crew}{1}{+ timer}\hfill\dbfreadout{Duration}{2--3}{h}\dbfreadoutgap
+\dbfreadout{Scenarios}{3}{}\hfill\dbfreadout{Runs}{5}{each}\dbfreadoutgap
+\dbfreadout{Limit}{5:00}{min}\hfill\dbfreadout{Target}{4:00}{min}
+\end{dbfpanel}
+\end{minipage}
+\end{frontmatter}
+
+\section{Rules That Apply}
+\begin{itemize}
+\item \textbf{Staging} (§3.3.2): five minutes from the Staging Judge's start, with no work before it. Only the ground crew member touches the airplane; the observer or pilot may help only with the wing-tip balance check. Payload restraints and any ballast are installed before entering. Propulsion batteries arrive in a charging sack with the fuse harness attached. Batteries, payloads, control checks and flight preparation all happen inside the five minutes. The arming plug goes in at the flight line. Bring every tool and consumable.
+\item \textbf{Mission 2} (§3.1.3, §3.3.2): the maximum-weight sensor in its container plus the simulators, installed and secured TOP up.
+\item \textbf{Mission 3} (§3.3.2): the sensor arrives packed in its container and is unpacked, attached and secured to the deployment and recovery device inside the five minutes.
+\item \textbf{Ground Mission} (§3.3.4): one assembly crew member. Weighing, the light check with the test box, and packing the sensor are untimed. The clock runs only while the crew member:
+\begin{enumerate}
+\item rigs the first face, until the ring is in the quick release and the judge closes it;
+\item removes the rigging and rigs the second face;
+\item does the same for the third face;
+\item removes the rigging, opens the container and takes out the sensor.
+\end{enumerate}
+The drops, and the re-hang between the two drops on one face, are untimed. The quick release starts about 4~ft above the floor.
+\end{itemize}
+
+\section{Test Articles and Equipment}
+\begin{itemize}
+\item \textbf{Fuselage mock-up} at full scale in cardboard or foam (PR-01 A33): payload bay, battery bay, deployment and recovery attachment, and a hatch fitted with the candidate latches (A32). Mount it on a stand.
+\item \textbf{Payload mock-ups:} container and simulators at the right size and close to the right weight, marked TOP, O and E. A mock sensor with its tow-line connector.
+\item A mock battery in a charging sack with a fuse harness attached; the arming plug; the transmitter for the control check.
+\item For the Ground Mission: the TC-02 fixture with the pin at about 4~ft, rigging for each face, and a die.
+\item Exactly the tools and consumables the team would bring, in their box. Floor tape marking a staging box. A stopwatch and a phone filming each run.
+\end{itemize}
+
+\section{Safety}
+\begin{itemize}
+\item Nothing live: no propulsion battery and no propeller are fitted during the drill.
+\item Take care with knives and hot glue while building the mock-up.
+\end{itemize}
+
+\section{Procedure}
+\begin{enumerate}
+\item Lay out the airplane, payloads, battery sack and tools in the taped box. Layout is allowed before the clock starts.
+\item The timer calls ``go''. The ground crew member works alone; a helper joins only the wing-tip balance check. The timer records a split at each step and stops the clock when the airplane is ready to fly, less the arming plug.
+\item \textbf{M2 steps:} open the hatch; fit and connect the battery; load the container and simulators TOP up and restrain them; close and latch the hatch; receiver on and control check; wing-tip balance check.
+\item \textbf{M3 steps:} open the container; take out the sensor; connect the tow line (mechanical and electrical); stow and restrain the sensor in the deployment and recovery device; fit and connect the battery; close and latch the hatch; receiver on, control check and light-mode check.
+\item \textbf{Ground Mission:} the four timed segments in §2.0. Replace each drop with an untimed 10~s pause.
+\item Run each scenario five times, resetting between runs. The crew member who will do the job at the contest runs it.
+\item After each scenario, note dropped parts, tool searches and repeated steps.
+\end{enumerate}
+
+\section{Data Reduction}
+For each scenario, record the median and slowest totals and the median split for each step. The step with the largest median split is the bottleneck.
+
+\section{Pass Criteria and Use of Results}
+\textbf{Pass:} the slowest of five runs is at most 4:00 in every scenario, leaving one minute of the 5:00 limit in reserve.
+
+\textbf{Use:} each bottleneck becomes a design requirement, such as tool-less latches, keyed connectors or captive rigging. The median times become the workflow targets in proposal Section~3.5 and \mbox{SR-02} and \mbox{SR-10} (draft Table~04). File the sheet as \texttt{testing/data/TC-04\_<date>.csv} and the video in \texttt{testing/media/TC-04/}.
+
+\twocolumn[{%
+\section{Data Sheet}
+\noindent{\small Date \rule{1.2in}{0.4pt}\hfill Crew member \rule{2.0in}{0.4pt}\hfill Timer \rule{2.0in}{0.4pt}}\par\vspace{7pt}
+\noindent{\small Latch and rigging concepts tested \rule{4.6in}{0.4pt}}\par\vspace{10pt}
+\captionof{table}{Mission 2 staging. Splits in min:s.}
+\begin{dbftable}{colspec={X[l] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.7in]}, row{2-Z}={ht=0.21in, valign=m}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
+Step & Run 1 & Run 2 & Run 3 & Run 4 & Run 5 & Median \\
+Open hatch &&&&&& \\ Battery in and connected &&&&&& \\ Container and simulators in, TOP up, restrained &&&&&& \\ Hatch closed and latched &&&&&& \\ Receiver on, control check &&&&&& \\ Wing-tip balance check &&&&&& \\ Total &&&&&& \\
+\end{dbftable}
+\par\vspace{9pt}
+\captionof{table}{Mission 3 staging. Splits in min:s.}
+\begin{dbftable}{colspec={X[l] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.7in]}, row{2-Z}={ht=0.21in, valign=m}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
+Step & Run 1 & Run 2 & Run 3 & Run 4 & Run 5 & Median \\
+Open container, sensor out &&&&&& \\ Tow line connected &&&&&& \\ Sensor stowed and restrained &&&&&& \\ Battery in and connected &&&&&& \\ Hatch closed and latched &&&&&& \\ Receiver on, control and light checks &&&&&& \\ Total &&&&&& \\
+\end{dbftable}
+\par\vspace{9pt}
+\captionof{table}{Ground Mission. Timed segments only, in min:s.}
+\begin{dbftable}{colspec={X[l] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.62in] Q[c,wd=0.7in]}, row{2-Z}={ht=0.21in, valign=m}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
+Segment & Run 1 & Run 2 & Run 3 & Run 4 & Run 5 & Median \\
+1. Rig face 1, ring in release &&&&&& \\ 2. Re-rig to face 2 &&&&&& \\ 3. Re-rig to face 3 &&&&&& \\ 4. Rigging off, open, sensor out &&&&&& \\ Total &&&&&& \\
+\end{dbftable}
+\par\vspace{9pt}
+\noindent{\small Fumbles, tool searches and repeated steps \rule{4.3in}{0.4pt}}\par\vspace{9pt}
+\noindent\rule{\textwidth}{0.4pt}
+}]
+
+\end{document}

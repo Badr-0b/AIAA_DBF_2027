@@ -1,0 +1,117 @@
+% TC-01 Sensor tow stability, blower rig. Rev B replaces the rev A car tow.
+% Build: ../build.sh
+\def\dbfroot{../../design-system}
+\documentclass[final]{dbfdoc}
+\dbfsetdoc{Sensor Tow Stability}{Test Card TC-01}{AUM-DBF-27-TC-001}{B}
+\dbfsetdate{09 Oct 2026}
+\raggedbottom
+
+\begin{document}
+
+\begin{frontmatter}
+\section{Objective}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\setlength\parindent{1.15em}\noindent
+Screen 2--3 candidate sensor bodies, each at three ballast states, for aerodynamic stability on a tow line: no spinning, rotation or sustained oscillation. Measure the line angle to estimate sensor drag for the tow model (Script~5). Film every run for the proposal.
+
+\noindent\textbf{Rig.} The university has no wind tunnel, and the rev~A car tow is withdrawn for safety. This revision uses a leaf blower's jet, straightened in a short duct. Speed is read with an anemometer, so the same card works in a makeshift tunnel.
+
+\noindent\textbf{Limitation.} The jet is slower and smaller than flight conditions, and a short line is not the in-flight pendulum. Stability is a screen and drag is semi-quantitative; the towed-flight test qualifies the sensor. A fin misalignment makes the body roll at a steady rate that rises in proportion to airspeed, so any rotation here would be faster in flight.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\vspace{-11pt}
+\begin{dbfpanel}[Test at a Glance]
+\dbfreadout{Crew}{3}{people}\hfill\dbfreadout{Duration}{3--4}{h}\dbfreadoutgap
+\dbfreadout{Bodies}{2--3}{}\hfill\dbfreadout{Ballast states}{3}{each}\dbfreadoutgap
+\dbfreadout{Duct}{100--150}{mm}\hfill\dbfreadout{Site}{Indoor}{}
+\end{dbfpanel}
+\end{minipage}
+\end{frontmatter}
+
+\section{Rules That Apply}
+\begin{itemize}
+\item §3.1.1: the sensor must be ``aerodynamically stable during deployment, operation and recovery'', which the rules define as ``remaining in a fixed orientation in the horizontal plane (not spinning or rotating) with no effect on the stability of the aircraft, at the discretion of the Flight Director.''
+\item §3.1.1: minimum length 6~in. Fins stay fixed (not removed for packing, not deployed), the external shape is the same for all missions, and ballast is internal.
+\end{itemize}
+
+\section{Test Articles and Equipment}
+\begin{itemize}
+\item \textbf{Sensor bodies:} 2--3 shapes from Sensor Systems, at least 6~in long, with fixed fins and an internal ballast bay. Paint a \textbf{contrasting longitudinal stripe} on each so any roll shows on video. Mark the tow point and CG.
+\item \textbf{Ballast:} light, mid and heavy internal states spanning the analysis range, weighed to 0.1~g (0.01~oz is 0.28~g) on the bench scale (A01).
+\item \textbf{Blower} (PR-01 A07), clamped down, feeding a rigid 100 or 150~mm duct, 0.6--1.0~m long (A08). Drinking straws (A09) packed tight across the duct near its exit form the straightener.
+\item \textbf{Mount and line:} a rigid boom above the jet with an adjustable tie-off. Braided PE line (A11), 0.3--0.6~m long, runs to a ball-bearing swivel (A10) at the tow point, plus a secondary tether. The swivel lets a roll tendency show as rotation instead of being hidden by line twist.
+\item \textbf{Measurement:} vane anemometer (A03); a printed 10~mm grid behind the line, square to the side camera; two phones at 60~fps, side-on (line angle, pitch) and from above (roll stripe, yaw); air temperature and pressure (a phone app is enough); optionally the hanging scale (A02) at the tie-off for tension.
+\end{itemize}
+
+\begin{table}[h]
+\caption{Expected mean exit speed $V = Q/A$ (m/s\,/\,ft/s) before straightener and duct losses. A smaller duct is faster but its uniform core is narrower; the jet survey gives the real values.}\label{tab:jet}
+\begin{dbftable}{colspec={X[l] Q[r] Q[r] Q[r]}}
+Air volume $Q$ & Ø100 mm & Ø125 mm & Ø150 mm \\
+10 m³/min (353 cfm) & 21.2 / 70 & 13.6 / 45 & 9.4 / 31 \\
+15 m³/min (530 cfm) & 31.8 / 104 & 20.4 / 67 & 14.1 / 46 \\
+20 m³/min (706 cfm) & 42.4 / 139 & 27.2 / 89 & 18.9 / 62 \\
+\end{dbftable}
+\end{table}
+
+\section{Safety}
+\begin{itemize}
+\item Eye protection within 3~m of the jet; hearing protection beside the blower (A05, A06).
+\item Nobody stands downstream. Keep 5~m behind the body clear: a body that breaks free leaves at jet speed.
+\item Check the tether, knots, swivel and tie-off before each run. Stop the blower before touching anything in the jet.
+\item Route the cord away from the jet. Run indoors or sheltered, because outdoor wind disturbs the jet.
+\end{itemize}
+
+\section{Procedure}
+\begin{enumerate}
+\item Photograph, weigh and measure each body and ballast state (length, diameter, fin span, mass, tow point, CG) and log them.
+\item \textbf{Jet survey}, no body fitted. At the body station, about one duct diameter past the exit, traverse the anemometer across the jet horizontally and vertically in 15--20~mm steps. The \textbf{core} is where the speed is within 5\,\% of the centre value. The vane averages over its own diameter, so the core edge is approximate. Use Table~\ref{tab:jet} to pick the duct, and repeat for each blower setting.
+\item Hang the body and adjust the tie-off until the whole body, fins included, sits inside the core at speed.
+\item For each body, ballast state and setting, hold 30~s steady with both cameras running. Classify the run: \textbf{S} stable, \textbf{O} oscillating (amplitude, period), \textbf{C} coning, \textbf{R} rotating (fail). Log roll as none, intermittent or continuous.
+\item At the top setting, flick the line once above the jet with a stick, hands outside the jet. Time the decay from the video.
+\item Read the line angle $\theta$ from horizontal in three or more side-camera frames, plus the tension $T$ if fitted. Log air temperature and pressure.
+\item Repeat one run of the best body with the fixed attachment planned for flight in place of the swivel.
+\end{enumerate}
+
+\section{Data Reduction}
+With the line $\theta$ above horizontal, tension $T$, weight $W$ and lift $L$:
+\begin{equation}
+D = T\cos\theta, \qquad W - L = T\sin\theta, \qquad C_D A = \frac{2D}{\rho V^2} .
+\end{equation}
+Without a tension reading, take $L \approx 0$, so $D \approx W\cot\theta$. Air density is $\rho = p/(R\,T_\mathrm{air})$ with $R = 287.05$~J/(kg\,K). In US units, $\rho$ in slug/ft³ is $p$ in lb/ft² over $1716.5\,T_\mathrm{air}$ in °R, and 1~hPa is 2.0885~lb/ft². A near-vertical line amplifies angle errors, since $\Delta D/D = \Delta\theta/(\sin\theta\cos\theta)$: a 1° misreading moves $D$ about 10\,\% at 80° and 20\,\% at 85°. Average the frames.
+
+\section{Pass Criteria and Use of Results}
+\textbf{Pass:} no rotation (R) at any setting or ballast state, and oscillation after the flick dies out within about 2~s. Passing bodies go to the towed-flight test.
+
+\textbf{Use:} the shape, tow point and ballast range define SR-08 (draft Table~04). The measured $C_D A$ replaces the assumed sensor drag in Script~5, and the best run is the proposal photo. File the sheet as \texttt{testing/data/TC-01\_<date>.csv} and the media in \texttt{testing/media/TC-01/}.
+
+\twocolumn[{%
+\section{Data Sheet}
+\noindent{\small Date \rule{1.2in}{0.4pt}\hfill Site \rule{2.4in}{0.4pt}\hfill Crew \rule{2.3in}{0.4pt}}\par\vspace{7pt}
+\noindent{\small Blower and setting \rule{1.9in}{0.4pt}\hfill Duct Ø (mm) \rule{0.7in}{0.4pt}\hfill Straightener length (mm) \rule{0.8in}{0.4pt}}\par\vspace{7pt}
+\noindent{\small Air temperature \rule{0.8in}{0.4pt}\hfill Pressure (hPa) \rule{0.8in}{0.4pt}\hfill Video file IDs \rule{2.7in}{0.4pt}}\par\vspace{10pt}
+\noindent\begin{minipage}[t]{0.40\textwidth}
+\captionof{table}{Jet survey at the body station. Core: within 5\,\% of the centre speed.}
+\begin{dbftable}{colspec={Q[c,wd=0.8in] X[c] X[c]}, row{2-Z}={ht=0.16in, valign=m}}
+Offset, mm & Horiz., m/s & Vert., m/s \\
+$-$60 && \\ $-$45 && \\ $-$30 && \\ $-$15 && \\ 0 && \\ +15 && \\ +30 && \\ +45 && \\ +60 && \\
+\end{dbftable}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.56\textwidth}
+\captionof{table}{Test articles. Masses to 0.1~g.}
+\begin{dbftable}{colspec={Q[c,wd=0.4in] X[l] Q[c,wd=0.55in] Q[c,wd=0.55in] Q[c,wd=0.55in]}, row{2-Z}={ht=0.28in, valign=m}}
+Body & Shape, length, Ø, fin span & Light, g & Mid, g & Heavy, g \\
+A &&&& \\ B &&&& \\ C &&&& \\
+\end{dbftable}
+\end{minipage}
+\par\vspace{10pt}
+\captionof{table}{Run log. Behaviour: S stable, O oscillating, C coning, R rotating (fail). Roll: none, intermittent, continuous.}
+\begin{dbftable}{colspec={Q[c,wd=0.32in] Q[c,wd=0.4in] Q[c,wd=0.6in] Q[c,wd=0.55in] Q[c,wd=0.55in] Q[c,wd=0.5in] Q[c,wd=0.45in] Q[c,wd=0.7in] Q[c,wd=0.55in] Q[c,wd=0.5in] X[l]}, row{2-Z}={ht=0.19in, valign=m}}
+Run & Body & Ballast, g & Setting & V, m/s & $\theta$, deg & T, g & Behaviour & Roll & Decay, s & Notes \\
+1 &&&&&&&&&& \\ 2 &&&&&&&&&& \\ 3 &&&&&&&&&& \\ 4 &&&&&&&&&& \\ 5 &&&&&&&&&& \\
+6 &&&&&&&&&& \\ 7 &&&&&&&&&& \\ 8 &&&&&&&&&& \\ 9 &&&&&&&&&& \\ 10 &&&&&&&&&& \\
+11 &&&&&&&&&& \\ 12 &&&&&&&&&& \\ 13 &&&&&&&&&& \\ 14 &&&&&&&&&& \\ 15 &&&&&&&&&& \\
+16 &&&&&&&&&& \\
+\end{dbftable}
+}]
+
+\end{document}

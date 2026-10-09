@@ -11,21 +11,24 @@
 
 \begin{table}[h]
 \caption{Component, ground and flight test plan.}\label{tab:tests}
-\begin{dbftable}{colspec={Q[l] X[1.45,l] X[1,l] Q[l]}, cell{2}{1}={r=9}{l}, cell{11}{1}={r=5}{l}, hline{11}={0.4pt,dbfGraphite}}
-Phase & Test and objective & Pass criterion & Date \\
-Ground & Thrust stand: \dbftbd{objective} & \dbftbd{criterion} & \dbftbd{date} \\
- & Wing-tip load at MGTOW & \dbftbd{criterion} & \dbftbd{date} \\
- & Light visibility in sun & \dbftbd{criterion} & \dbftbd{date} \\
- & Tow-line signal & \dbftbd{criterion} & \dbftbd{date} \\
- & D\&R cycle timing & \dbftbd{criterion} & \dbftbd{date} \\
- & Drop series to 60 in & \dbftbd{criterion} & \dbftbd{date} \\
- & GM rehearsal, 5 min & \dbftbd{criterion} & \dbftbd{date} \\
- & Staging rehearsal, 5 min & \dbftbd{criterion} & \dbftbd{date} \\
- & Range, fail-safe, CG & \dbftbd{criterion} & \dbftbd{date} \\
-Flight & Handling and trim & \dbftbd{criterion} & \dbftbd{date} \\
- & Sensor tow stability & \dbftbd{criterion} & \dbftbd{date} \\
- & Stepped M2 payload & \dbftbd{criterion} & \dbftbd{date} \\
- & Full M3 sequence & \dbftbd{criterion} & \dbftbd{date} \\
- & Energy per mission & \dbftbd{criterion} & \dbftbd{date} \\
+% Criteria trace to test cards TC-01..04 (testing/cards/) and rules sections.
+\begin{dbftable}{colspec={X[1.15,l] X[1,l] Q[l]}, row{2,12}={font=\dbflabelfont\fontsize{6.4}{8}\selectfont, fg=dbfSteel}, hline{12}={0.4pt,dbfGraphite}}
+Test & Pass criterion & Date \\
+\SetCell[c=3]{l} Ground and component & & \\
+Thrust stand & Amps $<$ fuse rating & \dbftbd{date} \\
+Wing-tip lift at MGTOW & No damage (§4.2.4) & \dbftbd{date} \\
+Light visibility in sun & $\geq$\,90\,\% at 600 ft & \dbftbd{date} \\
+Tow-line signal & 3 of 3 modes & \dbftbd{date} \\
+D\&R cycle & $\geq$\,1.5$b$ out, stows & \dbftbd{date} \\
+Drop series to 60 in & No damage, 3/3 lit & \dbftbd{date} \\
+GM drill, 5 min & Worst run $\leq$\,4:00 & \dbftbd{date} \\
+Staging drill, 5 min & Worst run $\leq$\,4:00 & \dbftbd{date} \\
+Range, fail-safe, CG & §4.2.5 checks pass & \dbftbd{date} \\
+\SetCell[c=3]{l} Flight & & \\
+Handling and trim & Level-flight video & \dbftbd{date} \\
+Sensor tow stability & No rotation & \dbftbd{date} \\
+Stepped M2 payload & 5 laps $<$ 5 min & \dbftbd{date} \\
+Full M3 sequence & §3.3.3.3 sequence & \dbftbd{date} \\
+Energy per mission & $\geq$\,20\,\% reserve & \dbftbd{date} \\
 \end{dbftable}
 \end{table}

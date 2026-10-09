@@ -13,6 +13,9 @@ cd "$(dirname "$0")"
 DS=../design-system
 OUT="2027DBF_American_University_of_the_Middle_East_PROPOSAL.pdf"
 
+echo "---- charts ----"
+python make_charts.py || exit 1        # Gantt + org chart from data/*.toml
+
 echo "---- build ----"
 $DS/tools/build.sh main.tex || exit 1
 $DS/tools/build.sh final.tex "$OUT" || exit 1

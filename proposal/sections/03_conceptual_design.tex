@@ -140,7 +140,39 @@ Total mission score & & \sTotal \\
 The aircraft is flown pilot-in-the-loop at all times: no autopilot or flight controller is carried, and stabilization is limited to optional rate gyros.
 
 \begin{figure}[t]
-\dbfplaceholder{\columnwidth}{1.3in}{Signal block diagram: Rx to reel to sensor}
+% Command path (rules 3.1.1): receiver in the airplane, mode signal over the tow
+% line, light control and battery inside the sensor; the test box drives the
+% same connector on the ground. ELRS PWM receiver: team decision, 8 Oct 2026.
+\begin{tikzpicture}[x=1in, y=1in,
+  box/.style={draw=dbfGraphite, line width=0.4pt, fill=white, inner sep=0pt,
+    minimum height=0.30in, align=center, text=dbfInk,
+    font=\dbflabelfont\fontsize{5.6}{6.8}\selectfont},
+  lab/.style={inner sep=1pt, align=center, text=dbfSteel,
+    font=\dbflabelfont\fontsize{5.0}{6.0}\selectfont},
+  sig/.style={-stealth, line width=0.5pt, draw=dbfInk}]
+\useasboundingbox (0,0) rectangle (3.35,1.30);
+\fill[dbfBone] (0.86,0.38) rectangle (2.49,1.24);
+\draw[dbfFog, line width=0.4pt] (2.70,0.02) rectangle (3.35,1.24);
+\node[lab, anchor=north west] at (0.88,1.22) {AIRPLANE};
+\node[lab, anchor=north west] at (2.72,1.22) {SENSOR};
+\node[box, minimum width=0.56in] (tx)   at (0.28,0.83) {PILOT TX\\ELRS 2.4G};
+\node[box, minimum width=0.56in] (rx)   at (1.21,0.83) {RECEIVER\\ER8, PWM};
+\node[box, minimum width=0.56in] (reel) at (2.14,0.83) {REEL\\SLIP RING};
+\node[box, minimum width=0.56in] (mcu)  at (3.025,0.83) {LIGHT\\CONTROL};
+\node[box, minimum width=0.56in, minimum height=0.17in] (rxb) at (1.21,0.53) {RX BATTERY};
+\node[box, minimum width=0.56in, minimum height=0.16in] (sb)  at (3.025,0.27) {1S BATTERY};
+\node[box, minimum width=0.56in] (tb)   at (2.14,0.19) {TEST BOX\\3-POS PWM};
+\draw[sig, dashed] (tx.east) -- node[lab, above] {RF} (rx.west);
+\draw[sig] (rx.east) -- node[lab, above] {PWM} (reel.west);
+\draw[sig, line width=0.9pt] (reel.east) -- node[lab, above] {TOW\\LINE} (mcu.west);
+\draw[dbfGraphite, line width=0.4pt] (rxb.north) -- (rx.south);
+\draw[sig, dashed] (tb.east) -- node[lab, above] {BENCH} (2.70,0.19);
+\foreach \x/\t in {2.85/FWD, 3.025/CTR, 3.20/AFT} {
+  \draw[dbfGraphite, line width=0.4pt] (\x,0.68) -- (\x,0.60);
+  \fill[dbfInk] (\x-0.04,0.52) rectangle (\x+0.04,0.60);
+  \node[lab, anchor=north] at (\x,0.51) {\t};
+}
+\end{tikzpicture}
 \caption{\dbftbd{takeaway}: the command path to the sensor lights.}\label{fig:block}
 \end{figure}
 

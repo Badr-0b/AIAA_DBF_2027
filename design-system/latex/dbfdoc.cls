@@ -207,6 +207,22 @@
   hline{1}={0.8pt,dbfInk}, hline{2}={0.4pt,dbfGraphite}, hline{Z}={0.8pt,dbfInk},
   hline{3-Y}={0.3pt,dbfMist},
 }
+% Long variant for one-column pages: same look, breaks across pages and
+% repeats the header row. It prints no caption of its own: put
+% \captionof{table}{...}\nopagebreak directly above it.
+\NewTblrTheme{dbflong}{%
+  \DefTblrTemplate{firsthead,middlehead,lasthead}{default}{}%
+  \DefTblrTemplate{firstfoot,middlefoot,lastfoot}{default}{}}
+\NewTblrEnviron{dbflongtable}
+\SetTblrOuter[dbflongtable]{long, theme=dbflong, label=none, entry=none,
+  presep=0pt, postsep=6pt}
+\SetTblrInner[dbflongtable]{
+  rowsep=2.3pt, colsep=4pt, stretch=0, rowhead=1,
+  cells={font=\dbf@tablefont\small},
+  row{1}={bg=dbfMist, fg=dbfGraphite, font=\dbf@thead, cmd=\MakeUppercase, abovesep=3.2pt, belowsep=2.8pt},
+  hline{1}={0.8pt,dbfInk}, hline{2}={0.4pt,dbfGraphite}, hline{Z}={0.8pt,dbfInk},
+  hline{3-Y}={0.3pt,dbfMist},
+}
 % Row style for totals, used in colspecs:  row{Z}={font=\dbftotalrow}
 \newcommand\dbftotalrow{\dbf@tablefont\small\bfseries}
 % Selected option in a trade table (monochrome system): a Bone-tinted

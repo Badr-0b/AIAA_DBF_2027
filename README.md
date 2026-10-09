@@ -17,6 +17,8 @@ The full rules are in [`rules/`](rules/).
 ## Repository layout
 ```
 proposal/                   2026-27 proposal (LaTeX). Run ./build.sh. See proposal/README.md
+testing/                    Test cards TC-01 to TC-04 (printable PDFs). Run ./build.sh
+procurement/                Purchase requests: CSV source, PDF and .xlsx. Run ./build.sh
 design-system/              House style for ALL team documents (class, fonts, plot style, tools)
 rules/                      Official 2026-27 rules (draft) + proposal scoring rubric screenshot
 reference/                  Context from past years

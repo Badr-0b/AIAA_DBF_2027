@@ -31,6 +31,8 @@
 | `sections/04_manufacturing_plan.tex` | 4.0 Manufacturing Plan, 10 pts | about 0.5 page, ~150 words |
 | `sections/05_test_planning.tex` | 5.0 Test Planning, 10 pts | about 0.5 page, ~100 words |
 | `data/numbers.tex` | **Every number** quoted anywhere in the proposal | |
+| `data/budget.tex` | Table 02 costs. **Generated** from `procurement/pr01_items.csv` by `procurement/build.sh`; do not edit | |
+| `data/schedule.toml`, `data/team.toml` | Data for Fig. 01 (Gantt) and Fig. 02 (org chart). `build.sh` redraws both with `make_charts.py` | |
 
 Each section file opens with its rubric checklist. Inside it you'll find:
 - `\dbfnote{}`: what each paragraph must say;

@@ -1,0 +1,111 @@
+% TC-03 Sensor light visibility in sun. Build: ../build.sh
+\def\dbfroot{../../design-system}
+\documentclass[final]{dbfdoc}
+\dbfsetdoc{Sensor Light Visibility}{Test Card TC-03}{AUM-DBF-27-TC-003}{A}
+\dbfsetdate{09 Oct 2026}
+\raggedbottom
+
+\begin{document}
+
+\begin{frontmatter}
+\section{Objective}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\setlength\parindent{1.15em}\noindent
+Choose the sensor light type, colour, optic, drive current and flash pattern that ground observers read correctly (OFF, SOLID ON or FLASHING ON) in bright sun at course distances. Measure each candidate's current to size the sensor battery.
+
+\noindent\textbf{Method.} A light rig shows randomized modes to observers at 300, 450 and 600~ft, who score what they see without conferring. The turn markers are 500~ft either side of the start line (§3.3.1), and 600~ft allows for lateral offset and altitude.
+
+\noindent\textbf{Limitation.} A fixed rig watched by observers who know where to look is easier than a moving sensor. Treat the pass threshold as a minimum.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\vspace{-11pt}
+\begin{dbfpanel}[Test at a Glance]
+\dbfreadout{Observers}{$\geq$\,3}{people}\hfill\dbfreadout{Duration}{2--3}{h}\dbfreadoutgap
+\dbfreadout{Distances}{300--600}{ft}\hfill\dbfreadout{Candidates}{4--6}{}\dbfreadoutgap
+\dbfreadout{Trials}{10}{per stop}\hfill\dbfreadout{Window}{11--14}{h local}
+\end{dbfpanel}
+\end{minipage}
+\end{frontmatter}
+
+\section{Rules That Apply}
+\begin{itemize}
+\item \textbf{Lights} (§3.1.1): three separate lights (forward, centre, aft) along the sensor's long axis. Each may be a single light or an array. They must be visible in flight to the Flight Director in bright Arizona sun; type and colour are the team's choice.
+\item \textbf{Modes} (§3.1.1): OFF; SOLID ON (all lights on); FLASHING ON (all lights on and off together). The team chooses the on and off durations, but the Flight Director must be able to tell the mode from the ground.
+\item \textbf{Command and power} (§3.1.1): commanded from the flight or payload transmitter, with the receiver in the airplane. The control electronics and a battery meeting §3.2.3 are inside the sensor.
+\item \textbf{Mission 3} (§3.3.3.3): lights OFF when deployed, SOLID after lap 1, FLASHING after lap 2, OFF after the final lap.
+\end{itemize}
+
+\section{Test Articles and Equipment}
+\begin{itemize}
+\item \textbf{Light rig:} a bar about the sensor's length with forward, centre and aft positions, carrying one candidate at a time. Candidates come from PR-01 A19--A23: high-power stars bare and with 15° and 30° optics, 5~mm arrays, and SMD strip, in white, red and amber.
+\item \textbf{Driver:} a Pico (A24) with constant-current drivers (A22) or MOSFETs. Its presets are OFF, SOLID, and FLASH at 40, 60 and 120 cycles per minute (50\,\% duty), plus a strobe (0.1~s on, once per second). The operator selects modes with a switch the observers cannot see.
+\item \textbf{Power:} one labelled 1S LiPo per candidate (A25) and the inline current meter (A27).
+\item \textbf{Mount:} a mast, rooftop or balcony edge, so observers see the rig against open sky with the lights facing them, as they will see the sensor from below.
+\item \textbf{Stations:} cones at 300, 450 and 600~ft, placed with a tape or measuring wheel. Phone GPS (about $\pm$15~ft) is acceptable.
+\item A die for the operator, the trial grid (page~4) for the operator and each observer at each distance, and phones for calls and photos.
+\end{itemize}
+
+\section{Safety}
+\begin{itemize}
+\item High-power LEDs dazzle at close range: never look into them on the bench. Heat-sink the stars.
+\item Charge and store every LiPo in a charging sack.
+\item Work on roofs and masts in pairs, away from unguarded edges. Keep observers off roads on long sight lines.
+\end{itemize}
+
+\section{Procedure}
+\begin{enumerate}
+\item \textbf{Bench.} For each candidate, measure the current in SOLID and the average current in each FLASH preset at the chosen drive, and log the battery voltage.
+\item Mount the rig with the observers at 300~ft, the sun behind them if possible. Log the time, sky condition and sun position.
+\item For each candidate run 10 trials with FLASH at 60 cycles per minute. Before each trial the operator rolls the die: 1--2 OFF, 3--4 SOLID, 5--6 FLASH. The mode is held for 10~s, then the operator calls ``next''. Observers write O, S or F independently, without talking, and the operator logs the true mode.
+\item Repeat at 450 and 600~ft. If time allows, repeat at 600~ft with the sun behind the rig, the worst case.
+\item At 600~ft, with the best candidate, show the four flash presets in random order. Each observer ranks them by how clearly they read as flashing.
+\item Photograph and film the rig from each distance for the proposal.
+\end{enumerate}
+
+\section{Data Reduction}
+For each candidate and distance, pool all observers' calls. Record the percentage correct and the confusions (S read as F, F as S, O as S). The reference rate comes from aviation: anti-collision lights flash 40--100 cycles per minute (14~CFR~25.1401(c)), and the presets bracket that range. The sensor battery capacity must satisfy
+\begin{equation}
+C \geq \frac{I\,t}{\eta} ,
+\end{equation}
+where $I$ is the chosen light's mean current, $t$ the longest lights-on time per flight plus a reserve, and $\eta$ the usable fraction of the rated capacity.
+
+\section{Pass Criteria and Use of Results}
+\textbf{Pass:} at 600~ft, at least 90\,\% correct calls with all observers pooled, and no SOLID read as FLASHING or the reverse.
+
+\textbf{Use:} the winning type, colour, optic and drive current define the sensor lights. The draft Table~04 has no light-visibility requirement yet, so propose one at the Requirements Review. The chosen flash preset goes into the payload light-control firmware, and the measured current sizes the sensor battery (§3.2.3). File the sheet as \texttt{testing/data/TC-03\_<date>.csv} and the media in \texttt{testing/media/TC-03/}.
+
+\twocolumn[{%
+\section{Data Sheet}
+\noindent{\small Date \rule{1.2in}{0.4pt}\hfill Site \rule{2.4in}{0.4pt}\hfill Operator \rule{2.0in}{0.4pt}}\par\vspace{7pt}
+\noindent{\small Observers \rule{2.6in}{0.4pt}\hfill Sky and sun position \rule{1.9in}{0.4pt}}\par\vspace{10pt}
+\captionof{table}{Bench currents at the chosen drive. FLASH: average current at 60 cycles per minute.}
+\begin{dbftable}{colspec={Q[c,wd=0.45in] Q[l,wd=1.3in] Q[c,wd=0.7in] Q[c,wd=0.7in] Q[c,wd=0.8in] Q[c,wd=0.85in] Q[c,wd=0.85in] X[c]}, row{2-Z}={ht=0.2in, valign=m}}
+Cand. & LED type & Colour & Optic & Drive, mA & SOLID, mA & FLASH, mA & Pack, V \\
+A &&&&&&& \\ B &&&&&&& \\ C &&&&&&& \\ D &&&&&&& \\ E &&&&&&& \\ F &&&&&&& \\
+\end{dbftable}
+\par\vspace{10pt}
+\captionof{table}{Results: percentage of correct calls, all observers pooled, and the confusions seen.}
+\begin{dbftable}{colspec={Q[c,wd=0.45in] Q[c,wd=0.9in] Q[c,wd=0.9in] Q[c,wd=0.9in] Q[c,wd=1.3in] X[l]}, row{2-Z}={ht=0.2in, valign=m}}
+Cand. & 300 ft, \% & 450 ft, \% & 600 ft, \% & 600 ft, sun behind & Confusions and notes \\
+A &&&&& \\ B &&&&& \\ C &&&&& \\ D &&&&& \\ E &&&&& \\ F &&&&& \\
+\end{dbftable}
+\par\vspace{10pt}
+\captionof{table}{Flash preset ranking at 600~ft (1 = clearest).}
+\begin{dbftable}{colspec={Q[l,wd=1.9in] Q[c,wd=0.75in] Q[c,wd=0.75in] Q[c,wd=0.75in] Q[c,wd=0.75in] X[c]}, row{2-Z}={ht=0.2in, valign=m}}
+Preset & Obs. 1 & Obs. 2 & Obs. 3 & Obs. 4 & Mean rank \\
+40 cycles/min, 50\,\% duty &&&&& \\ 60 cycles/min, 50\,\% duty &&&&& \\ 120 cycles/min, 50\,\% duty &&&&& \\ Strobe, 0.1~s once per second &&&&& \\
+\end{dbftable}
+}]
+
+\twocolumn[{%
+\section{Trial Grid}
+\noindent{\small One sheet per person per distance. The operator writes the true mode; observers write what they see: O, S or F.}\par\vspace{9pt}
+\noindent{\small Name \rule{1.9in}{0.4pt}\hfill Role: operator / observer\hfill Distance (ft) \rule{0.8in}{0.4pt}\hfill Time \rule{0.8in}{0.4pt}}\par\vspace{12pt}
+\captionof{table}{Calls by candidate and trial.}
+\begin{dbftable}{colspec={Q[c,wd=0.7in] X[c] X[c] X[c] X[c] X[c] X[c] X[c] X[c] X[c] X[c]}, row{2-Z}={ht=0.42in, valign=m}, vlines={0.3pt,dbfMist}}
+Cand. & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+A &&&&&&&&&& \\ B &&&&&&&&&& \\ C &&&&&&&&&& \\ D &&&&&&&&&& \\ E &&&&&&&&&& \\ F &&&&&&&&&& \\
+\end{dbftable}
+}]
+
+\end{document}

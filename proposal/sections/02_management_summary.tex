@@ -25,7 +25,7 @@ Business \& Logistics & Budget, sponsorship, travel, documentation & \dbftbd{ski
 \end{table*}
 
 \begin{figure*}[t]
-\dbfplaceholder{\textwidth}{1.5in}{Gantt / full width / lanes: design, manufacturing, test, reports, competition}
+\includegraphics{figures/gantt.pdf}% 7.00 x 1.50 in, from data/schedule.toml (make_charts.py)
 \caption{\dbftbd{takeaway}. Milestones: proposal 31 Oct; Q\&A rounds from 1 Nov; PDR; CDR; prototype first flight; sensor bench test; design report 19 Feb; competition aircraft first flight; Pre-Tech/First-Flight certification; fly-off 15--18 Apr.}\label{fig:gantt}
 \end{figure*}
 
@@ -34,7 +34,7 @@ Business \& Logistics & Budget, sponsorship, travel, documentation & \dbftbd{ski
 \dbffill{110}
 
 \begin{figure}[t]
-\dbfplaceholder{\columnwidth}{1.35in}{Org chart / by function / no names}
+\includegraphics{figures/orgchart.pdf}% 3.35 x 1.35 in, from data/team.toml (make_charts.py)
 \caption{\dbftbd{takeaway}: one owner for every scored subsystem.}\label{fig:org}
 \end{figure}
 
@@ -44,14 +44,14 @@ Business \& Logistics & Budget, sponsorship, travel, documentation & \dbftbd{ski
 \caption{Program budget, all costs including travel (USD).}\label{tab:budget}
 \begin{dbftable}{colspec={X[l] Q[r] Q[r]}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
 Category & Cost & Share \\
-Airframe materials and prototypes & \dbftbd{\$} & \dbftbd{\%} \\
-Propulsion, avionics, radio & \dbftbd{\$} & \dbftbd{\%} \\
-Batteries, charging sacks, fuses & \dbftbd{\$} & \dbftbd{\%} \\
-Sensor electronics and lights & \dbftbd{\$} & \dbftbd{\%} \\
-Containers, simulators, drop rig & \dbftbd{\$} & \dbftbd{\%} \\
-Spares, props, adhesives, consumables & \dbftbd{\$} & \dbftbd{\%} \\
-Crating and shipping & \dbftbd{\$} & \dbftbd{\%} \\
-Travel: flights, lodging, transport & \dbftbd{\$} & \dbftbd{\%} \\
+Airframe, prototypes, test rigs & \$\bAirframe & \dbftbd{\%} \\
+Propulsion, avionics, radio & \$\bPropulsion & \dbftbd{\%} \\
+Batteries, charging sacks, fuses & \$\bBatteries & \dbftbd{\%} \\
+Sensor electronics and lights & \$\bSensor & \dbftbd{\%} \\
+Containers, simulators, drop rig & \$\bContainers & \dbftbd{\%} \\
+Spares, props, adhesives, consumables & \$\bConsumables & \dbftbd{\%} \\
+Crating materials & \$\bCrating & \dbftbd{\%} \\
+Travel and aircraft freight & \dbftbd{\$} & \dbftbd{\%} \\
 Fly-off fee, AIAA/AMA memberships & \dbftbd{\$} & \dbftbd{\%} \\
 Contingency (\dbftbd{\%}) & \dbftbd{\$} & \dbftbd{\%} \\
 Total & \dbftbd{\$} & 100\% \\

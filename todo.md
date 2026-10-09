@@ -1,9 +1,14 @@
 # TO DO list
 - [x] Make a proposal template (`proposal/`, built on `design-system/`)
+- [x] Write test cards TC-01 (blower rig) to TC-04 (`testing/cards/`)
+- [x] Draft purchase request PR-01 (`procurement/`)
+- [ ] File PR-01 with university procurement; buy the Tier A test supplies locally this week
+- [ ] Requirements Review: confirm the SR list and design-variable ranges (Oct 9–10)
+- [ ] Run TC-01 and TC-02 before the Oct 13 decision day; TC-03 and TC-04 by Oct 18
 - [ ] Decide team name and logo, then update `design-system/latex/dbf-identity.tex`
 - [ ] Collect every member's AIAA student membership number (required for the entry roster)
 - [ ] Build the scoring model and sensitivity study (feeds Section 3.2)
 - [ ] Draft up potential aircraft design ideas
-- [ ] CFD analysis on aerofoil designs
 - [ ] R&D
 - [ ] Find citation sources for studies
+- [ ] After Oct 31: CFD analysis on aerofoil designs (design report; a quick XFLR5 polar comparison covers the proposal's airfoil choice)
