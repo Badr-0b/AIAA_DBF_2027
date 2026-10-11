@@ -1,8 +1,8 @@
 % TC-02 Container drop survival (Ground Mission rehearsal). Build: ../build.sh
 \def\dbfroot{../../design-system}
 \documentclass[final]{dbfdoc}
-\dbfsetdoc{Container Drop Survival}{Test Card TC-02}{AUM-DBF-27-TC-002}{A}
-\dbfsetdate{09 Oct 2026}
+\dbfsetdoc{Container Drop Survival}{Test Card TC-02}{AUM-DBF-27-TC-002}{B}
+\dbfsetdate{11 Oct 2026}
 \raggedbottom
 
 \begin{document}
@@ -13,7 +13,7 @@
 \setlength\parindent{1.15em}\noindent
 Find the foam liner (type and thickness) and the container size that let the sensor survive the Ground Mission sequence: six drops onto concrete, two on each of three faces, then a light check. The results set the declared drop height, the container size (and so the simulators and the fuselage bay), and check the foam model in Script~5.
 
-\noindent\textbf{Method.} A replica of the contest quick release drops a dummy sensor in candidate containers, stepping up in height until a liner fails or 60~in is reached.
+\noindent\textbf{Method.} A replica of the contest quick release drops a dummy sensor in candidate containers, stepping up in height until a liner fails or 1.524~m (the 60~in rule maximum) is reached.
 
 \noindent\textbf{Limitation.} The dummy's internals are stand-ins. Repeat the passing configuration with the real sensor and light board before the design report.
 \end{minipage}\hfill
@@ -21,7 +21,7 @@ Find the foam liner (type and thickness) and the container size that let the sen
 \vspace{-11pt}
 \begin{dbfpanel}[Test at a Glance]
 \dbfreadout{Crew}{3}{people}\hfill\dbfreadout{Duration}{3--4}{h}\dbfreadoutgap
-\dbfreadout{Drops per sequence}{6}{}\hfill\dbfreadout{Heights}{24--60}{in}\dbfreadoutgap
+\dbfreadout{Drops per sequence}{6}{}\hfill\dbfreadout{Heights}{0.61--1.52}{m}\dbfreadoutgap
 \dbfreadout{Liners}{3--4}{}\hfill\dbfreadout{Floor}{Concrete}{}
 \end{dbfpanel}
 \end{minipage}
@@ -30,8 +30,8 @@ Find the foam liner (type and thickness) and the container size that let the sen
 \section{Rules That Apply}
 \begin{itemize}
 \item \textbf{Container} (§3.1.3): a rectangular prism marked TOP, with each pair of opposite faces marked O and E. The attachment features must be flush or below the surface when the rigging is off.
-\item \textbf{Rigging} (§3.1.3): it ends in one metal ring, inside diameter at least 1/2~in, cross-section at most 1/8~in, hung on a 1/4~in brass pin in a quick release. It must hold the container parallel to the ground. Keep ring-to-bottom under 15~in, or 60~in drops are not guaranteed.
-\item \textbf{Mission} (§3.3.4): a die picks the faces (even E, odd O). Each of the three faces is dropped twice in succession onto concrete, from one declared height in whole inches up to 60~in, measured from the ground to the impacting face.
+\item \textbf{Rigging} (§3.1.3): it ends in one metal ring, inside diameter at least 12.7~mm (1/2~in), cross-section at most 3.2~mm (1/8~in), hung on a 6.35~mm (1/4~in) brass pin in a quick release. It must hold the container parallel to the ground. Keep ring-to-bottom under 381~mm (15~in), or 1.524~m drops are not guaranteed.
+\item \textbf{Mission} (§3.3.4): a die picks the faces (even E, odd O). Each of the three faces is dropped twice in succession onto concrete, from one declared height up to 1.524~m (60~in), measured from the ground to the impacting face. The height is declared in whole inches, so use 25.4~mm steps.
 \item \textbf{Failure} (§3.3.4): any physical damage to the sensor, such as broken pieces, a buckled or dented body, damaged fins, or a damaged tow-line attachment or electrical interface. Altered or missing light function also fails, as does rigging or container damage that stops the rigging coming off or going on the next face.
 \item \textbf{Score} (§3.3.4): $GM = 0.5 + (W h)/(W h)_\mathrm{max}$, with the sensor at its maximum declared weight.
 \end{itemize}
@@ -41,7 +41,7 @@ Find the foam liner (type and thickness) and the container size that let the sen
 \item \textbf{Containers:} rectangular boxes laser-cut from 3~mm plywood (PR-01 A14) or printed, sized around the dummy plus the liner. Each has flush or recessed rigging points and a positive latch, and is marked TOP, O and E.
 \item \textbf{Liners:} 3--4 foam candidates (A13). Log type, density and thickness; use a fresh liner set for each sequence; keep the supplier's compressive data.
 \item \textbf{Dummy sensor:} the outer shape and maximum mass of the heaviest TC-01 candidate, with fins and a mock tow-line attachment and connector. Fit an \textbf{LED canary}: three LEDs, a small battery and a switch, mounted the way the real light board will be.
-\item \textbf{Drop fixture:} a rigid frame or wall bracket, height adjustable to 60~in plus rigging. Replicate the quick release with a 1/4~in brass pin (A15) through two eyes, pulled sideways by a lanyard from at least 1~m away.
+\item \textbf{Drop fixture:} a rigid frame or wall bracket, height adjustable to 1.524~m plus rigging. Replicate the quick release with a 6.35~mm brass pin (A15) through two eyes, pulled sideways by a lanyard from at least 1~m away.
 \item \textbf{Rigging:} one sling per face, each ending in a welded ring (A16).
 \item Tape measure, phone level, caliper (A04), bench scale (A01), a phone filming side-on in slow motion, a die, and optionally the accelerometer logger (A18 with A24).
 \end{itemize}
@@ -55,23 +55,23 @@ Find the foam liner (type and thickness) and the container size that let the sen
 
 \section{Procedure}
 \begin{enumerate}
-\item Weigh the dummy, liner and container (g and oz). Mark five points on each liner face, measure the foam thickness there with the caliper, and photograph everything.
+\item Weigh the dummy, liner and container (g). Mark five points on each liner face, measure the foam thickness there with the caliper, and photograph everything.
 \item Pack the dummy, close the latch, and log which faces are O and which are E.
 \item Roll the die: even selects the E faces, odd the O faces. Across sequences, cover both sets.
 \item Rig the first face and hang the ring on the pin. Set $h$ from the floor to the impact face, measured at both ends, with the face level. Pull the pin, filming side-on.
 \item Re-hang and drop the same face again. Then re-rig for the second face (two drops) and the third (two drops).
 \item After six drops, remove the rigging, open the container and inspect the dummy against the §3.3.4 damage list. Switch on the canary: all three LEDs must light. Re-measure the foam at the marked points.
-\item Start each new liner type at 24~in. After a clean sequence, step up 12~in with a fresh liner (24, 36, 48, 60~in). After a failure, change the liner or step down.
+\item Start each new liner type at 0.610~m. After a clean sequence, step up 0.305~m with a fresh liner: 0.610, 0.914, 1.219 and 1.524~m. These are whole-inch heights (24, 36, 48 and 60~in), as the GM declaration requires. After a failure, change the liner or step down.
 \item Optional: log peak acceleration per drop with the logger inside the dummy.
 \end{enumerate}
 
 \section{Data Reduction}
-Impact speed is $v = \sqrt{2gh}$: 11.3, 13.9, 16.0 and 17.9~ft/s at 24, 36, 48 and 60~in. If the liner stops the dummy over a stroke $s$, the energy balance gives an average deceleration of about $(h/s)\,g$, ignoring rebound. A 1~in stroke from 60~in averages about 60~g, and the peak is higher. The permanent set (thickness before minus after, mean of the five points) shows how close the liner came to densifying. Both checks feed the foam model in Script~5.
+Impact speed is $v = \sqrt{2gh}$: 3.46, 4.24, 4.89 and 5.47~m/s at 0.610, 0.914, 1.219 and 1.524~m. If the liner stops the dummy over a stroke $s$, the energy balance gives an average deceleration of about $(h/s)\,g$, ignoring rebound. A 25~mm stroke from 1.524~m averages about 61~g, and the peak is higher. The permanent set (thickness before minus after, mean of the five points) shows how close the liner came to densifying. Both checks feed the foam model in Script~5.
 
 \section{Pass Criteria and Use of Results}
 \textbf{Pass at height $h$:} after six drops, the dummy shows none of the §3.3.4 damage, all three canary LEDs light, the rigging came off and went on every face, and the container stayed closed.
 
-\textbf{Use:} the lightest liner that passes at the target height sets the container's inner clearance and outer size. That fixes the simulators (within 1/8~in, §3.1.3) and the fuselage bay (SR-03, SR-09, draft Table~04). The highest clean height informs the GM declaration at the 13~Oct gate, and peak g and permanent set calibrate Script~5. File the sheet as \texttt{testing/data/TC-02\_<date>.csv} and the media in \texttt{testing/media/TC-02/}.
+\textbf{Use:} the lightest liner that passes at the target height sets the container's inner clearance and outer size. That fixes the simulators (within $\pm$3.2~mm, §3.1.3) and the fuselage bay (SR-03, SR-09, draft Table~04). The highest clean height informs the GM declaration at the 13~Oct gate, and peak g and permanent set calibrate Script~5. File the sheet as \texttt{testing/data/TC-02\_<date>.csv} and the media in \texttt{testing/media/TC-02/}.
 
 \twocolumn[{%
 \section{Data Sheet}
@@ -80,7 +80,7 @@ Impact speed is $v = \sqrt{2gh}$: 11.3, 13.9, 16.0 and 17.9~ft/s at 24, 36, 48 a
 \noindent{\small Liner type and density \rule{1.7in}{0.4pt}\hfill Thickness (mm) \rule{0.6in}{0.4pt}\hfill Video file IDs \rule{1.2in}{0.4pt}}\par\vspace{10pt}
 \captionof{table}{Drop log. Height $h$ from the floor to the impact face.}
 \begin{dbftable}{colspec={Q[c,wd=0.4in] Q[c,wd=0.5in] Q[c,wd=0.85in] Q[c,wd=0.45in] Q[c,wd=0.7in] Q[c,wd=0.7in] Q[l,wd=1.4in] Q[c,wd=0.6in] X[l]}, row{2-Z}={ht=0.19in, valign=m}}
-Seq. & $h$, in & Face & Drop & Landed flat & Rebound & Visible damage & Peak g & Notes \\
+Seq. & $h$, m & Face & Drop & Landed flat & Rebound & Visible damage & Peak g & Notes \\
 &&& 1 &&&&& \\ &&& 2 &&&&& \\ &&& 3 &&&&& \\ &&& 4 &&&&& \\ &&& 5 &&&&& \\ &&& 6 &&&&& \\
 &&& 1 &&&&& \\ &&& 2 &&&&& \\ &&& 3 &&&&& \\ &&& 4 &&&&& \\ &&& 5 &&&&& \\ &&& 6 &&&&& \\
 &&& 1 &&&&& \\ &&& 2 &&&&& \\ &&& 3 &&&&& \\ &&& 4 &&&&& \\ &&& 5 &&&&& \\ &&& 6 &&&&& \\
@@ -88,7 +88,7 @@ Seq. & $h$, in & Face & Drop & Landed flat & Rebound & Visible damage & Peak g &
 \par\vspace{10pt}
 \captionof{table}{Inspection after each sequence. Foam set: mean of the five marked points, before minus after.}
 \begin{dbftable}{colspec={Q[c,wd=0.5in] Q[c,wd=0.6in] Q[c,wd=1.1in] Q[c,wd=0.9in] Q[c,wd=0.9in] Q[c,wd=0.9in] Q[c,wd=0.8in] X[l]}, row{2-Z}={ht=0.22in, valign=m}}
-Seq. & $h$, in & Sensor damage & Canary 3/3 & Rigging OK & Foam set, mm & Result & Notes \\
+Seq. & $h$, m & Sensor damage & Canary 3/3 & Rigging OK & Foam set, mm & Result & Notes \\
 &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\
 \end{dbftable}
 }]

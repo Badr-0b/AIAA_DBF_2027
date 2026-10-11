@@ -2,13 +2,23 @@
 - [x] Make a proposal template (`proposal/`, built on `design-system/`)
 - [x] Write test cards TC-01 (blower rig) to TC-04 (`testing/cards/`)
 - [x] Draft purchase request PR-01 (`procurement/`)
+- [ ] **CAD/CFD work package WP-01 by Mon Oct 12**: Aircraft 01 model, sensor candidates S1–S3, container, packaging, mass and CG, page-1 render, 3-view, NACA 0012 validation, sensor CFD (P2: delta 02, fuselage drag gear up/down)
+- [ ] Redesign the sensor as a fixed-geometry dart (ring tail / fixed fins / drag cone), ≥ 170 mm long: pop-out wings are banned (§3.1.1, see `brainstorm.md`)
+- [ ] Propulsion trade: dorsal prop nacelle vs dorsal commercial EDF (eCalc propCalc/fanCalc); no home-built turbine or printed fan (§3.2.1)
 - [ ] File PR-01 with university procurement; buy the Tier A test supplies locally this week
 - [ ] Requirements Review: confirm the SR list and design-variable ranges (Oct 9–10)
 - [ ] Run TC-01 and TC-02 before the Oct 13 decision day; TC-03 and TC-04 by Oct 18
 - [ ] Decide team name and logo, then update `design-system/latex/dbf-identity.tex`
+- [ ] Pick the two aircraft designations (YMQ-*aa*A / YMQ-*bb*A) and popular names
+- [ ] Ownership: every member commits under a personal account and keeps a full offline copy; CAD saved off campus profiles; short internal team agreement; copyright line on CAD and code
+- [ ] Reference-aircraft ratio study: tail volumes, fineness ratio, wing position, AR from cited 3-views of MQ-9, MQ-4C, RQ-4, MQ-1 (one evening, before Oct 13)
+- [ ] Airfoil shortlist and XFLR5 polars, with E387 validated first (one evening, after Scripts 1–3)
+- [ ] Fixed vs retractable gear trade: gear ΔCD0 in Script 3; set the gear-down fail-safe in the receiver WebUI
+- [ ] Run Scripts 3–4 for both aircraft: 01 high-AR, 02 delta
 - [ ] Collect every member's AIAA student membership number (required for the entry roster)
 - [ ] Build the scoring model and sensitivity study (feeds Section 3.2)
 - [ ] Draft up potential aircraft design ideas
 - [ ] R&D
 - [ ] Find citation sources for studies
 - [ ] After Oct 31: CFD analysis on aerofoil designs (design report; a quick XFLR5 polar comparison covers the proposal's airfoil choice)
+- [ ] After Oct 31: ground camera tracking rig as flight-test instrumentation (lap time, turn radius, speed), feeding the design report's Performance Results. See `brainstorm.md`

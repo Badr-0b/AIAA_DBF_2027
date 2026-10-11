@@ -2,8 +2,8 @@
 % Build: ../build.sh
 \def\dbfroot{../../design-system}
 \documentclass[final]{dbfdoc}
-\dbfsetdoc{Sensor Tow Stability}{Test Card TC-01}{AUM-DBF-27-TC-001}{B}
-\dbfsetdate{09 Oct 2026}
+\dbfsetdoc{Sensor Tow Stability}{Test Card TC-01}{AUM-DBF-27-TC-001}{C}
+\dbfsetdate{11 Oct 2026}
 \raggedbottom
 
 \begin{document}
@@ -31,25 +31,25 @@ Screen 2--3 candidate sensor bodies, each at three ballast states, for aerodynam
 \section{Rules That Apply}
 \begin{itemize}
 \item §3.1.1: the sensor must be ``aerodynamically stable during deployment, operation and recovery'', which the rules define as ``remaining in a fixed orientation in the horizontal plane (not spinning or rotating) with no effect on the stability of the aircraft, at the discretion of the Flight Director.''
-\item §3.1.1: minimum length 6~in. Fins stay fixed (not removed for packing, not deployed), the external shape is the same for all missions, and ballast is internal.
+\item §3.1.1: minimum length 152.4~mm (6~in). Fins stay fixed (not removed for packing, not deployed), the external shape is the same for all missions, and ballast is internal.
 \end{itemize}
 
 \section{Test Articles and Equipment}
 \begin{itemize}
-\item \textbf{Sensor bodies:} 2--3 shapes from Sensor Systems, at least 6~in long, with fixed fins and an internal ballast bay. Paint a \textbf{contrasting longitudinal stripe} on each so any roll shows on video. Mark the tow point and CG.
-\item \textbf{Ballast:} light, mid and heavy internal states spanning the analysis range, weighed to 0.1~g (0.01~oz is 0.28~g) on the bench scale (A01).
+\item \textbf{Sensor bodies:} 2--3 fixed-geometry shapes from Sensor Systems (for example a ring tail, four fixed fins, or a fixed drag cone), at least 170~mm long for margin over the 152.4~mm minimum, each with an internal ballast bay. Paint a \textbf{contrasting longitudinal stripe} on each so any roll shows on video. Mark the tow point and CG.
+\item \textbf{Ballast:} light, mid and heavy internal states spanning the analysis range, weighed to 0.1~g on the bench scale (A01).
 \item \textbf{Blower} (PR-01 A07), clamped down, feeding a rigid 100 or 150~mm duct, 0.6--1.0~m long (A08). Drinking straws (A09) packed tight across the duct near its exit form the straightener.
 \item \textbf{Mount and line:} a rigid boom above the jet with an adjustable tie-off. Braided PE line (A11), 0.3--0.6~m long, runs to a ball-bearing swivel (A10) at the tow point, plus a secondary tether. The swivel lets a roll tendency show as rotation instead of being hidden by line twist.
 \item \textbf{Measurement:} vane anemometer (A03); a printed 10~mm grid behind the line, square to the side camera; two phones at 60~fps, side-on (line angle, pitch) and from above (roll stripe, yaw); air temperature and pressure (a phone app is enough); optionally the hanging scale (A02) at the tie-off for tension.
 \end{itemize}
 
 \begin{table}[h]
-\caption{Expected mean exit speed $V = Q/A$ (m/s\,/\,ft/s) before straightener and duct losses. A smaller duct is faster but its uniform core is narrower; the jet survey gives the real values.}\label{tab:jet}
+\caption{Expected mean exit speed $V = Q/A$ (m/s) before straightener and duct losses. A smaller duct is faster but its uniform core is narrower; the jet survey gives the real values.}\label{tab:jet}
 \begin{dbftable}{colspec={X[l] Q[r] Q[r] Q[r]}}
 Air volume $Q$ & Ø100 mm & Ø125 mm & Ø150 mm \\
-10 m³/min (353 cfm) & 21.2 / 70 & 13.6 / 45 & 9.4 / 31 \\
-15 m³/min (530 cfm) & 31.8 / 104 & 20.4 / 67 & 14.1 / 46 \\
-20 m³/min (706 cfm) & 42.4 / 139 & 27.2 / 89 & 18.9 / 62 \\
+10 m³/min & 21.2 & 13.6 & 9.4 \\
+15 m³/min & 31.8 & 20.4 & 14.1 \\
+20 m³/min & 42.4 & 27.2 & 18.9 \\
 \end{dbftable}
 \end{table}
 
@@ -77,7 +77,7 @@ With the line $\theta$ above horizontal, tension $T$, weight $W$ and lift $L$:
 \begin{equation}
 D = T\cos\theta, \qquad W - L = T\sin\theta, \qquad C_D A = \frac{2D}{\rho V^2} .
 \end{equation}
-Without a tension reading, take $L \approx 0$, so $D \approx W\cot\theta$. Air density is $\rho = p/(R\,T_\mathrm{air})$ with $R = 287.05$~J/(kg\,K). In US units, $\rho$ in slug/ft³ is $p$ in lb/ft² over $1716.5\,T_\mathrm{air}$ in °R, and 1~hPa is 2.0885~lb/ft². A near-vertical line amplifies angle errors, since $\Delta D/D = \Delta\theta/(\sin\theta\cos\theta)$: a 1° misreading moves $D$ about 10\,\% at 80° and 20\,\% at 85°. Average the frames.
+Without a tension reading, take $L \approx 0$, so $D \approx W\cot\theta$. Air density is $\rho = p/(R\,T_\mathrm{air})$ with $R = 287.05$~J/(kg\,K), $p$ in Pa (1~hPa = 100~Pa) and $T_\mathrm{air}$ in K. A near-vertical line amplifies angle errors, since $\Delta D/D = \Delta\theta/(\sin\theta\cos\theta)$: a 1° misreading moves $D$ about 10\,\% at 80° and 20\,\% at 85°. Average the frames.
 
 \section{Pass Criteria and Use of Results}
 \textbf{Pass:} no rotation (R) at any setting or ballast state, and oscillation after the flick dies out within about 2~s. Passing bodies go to the towed-flight test.

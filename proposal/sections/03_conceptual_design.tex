@@ -26,14 +26,14 @@ Mission & Score & Key constraints & Derived subsystem requirements \\
 M1 Staging & $M_1 = 1.0$ & 3 laps in 5 min; no payload; may be waived and credited by a successful M2 & SR-01 stable and controllable empty; SR-02 full assembly and checks in the 5-min staging box \\
 M2 Delivery & $M_2 = 1 + \frac{W/t}{(W/t)_{\max}}$ & Sensor in container plus simulators; 5 laps timed; TOP face up; no friction-only retention & SR-03 bay sized for N units; SR-04 positive mechanical restraint; SR-05 CG in limits for every load case \\
 M3 Sensor & $M_3 = 2 + \frac{N W_s}{(N W_s)_{\max}}$ & Deploy before first downwind turn; lights OFF, SOLID, FLASHING, OFF; stow before landing & SR-06 internal powered reel, tow $\geq$ 1.5$b$; SR-07 light command over the tow line; SR-08 sensor aerodynamically stable \\
-Ground & $GM = 0.5 + \frac{W_s h}{(W_s h)_{\max}}$ & 6 drops onto concrete, $h \leq$ 60 in; rigging changes within 5 min; zero sensor damage & SR-09 container absorbs $W_s h$; SR-10 quick-swap O/E rigging, flush attachment \\
-System & -- & Span $\leq$ 6 ft; TOGW $<$ 55 lb; $\leq$ 100 Wh; no autopilot, GPS or camera; positive hatch latches & SR-11 pilot-in-the-loop only; SR-12 latches without magnets; SR-13 energy for M2 at full payload \\
+Ground & $GM = 0.5 + \frac{W_s h}{(W_s h)_{\max}}$ & 6 drops onto concrete, $h \leq$ 1.524~m (60~in); rigging changes within 5 min; zero sensor damage & SR-09 container absorbs $W_s h$; SR-10 quick-swap O/E rigging, flush attachment \\
+System & -- & Span $\leq$ 1.829~m (6~ft); TOGW~$<$~24.95~kg (55~lb); $\leq$ 100 Wh; no autopilot, GPS or camera; positive hatch latches & SR-11 pilot-in-the-loop only; SR-12 latches without magnets; SR-13 energy for M2 at full payload \\
 \end{dbftable}
 \end{table*}
 
 % ---------------------------------------------------------------------
 \subsection{Scoring Model and Sensitivity Study}
-\dbfnote{About 220 words across this subsection. (1) The scoring model below. (2) How the competitor maxima are estimated, and a check that the conclusions survive if they change. (3) The findings: completion is worth 4.5 of 7.5; sensor weight appears in M2, M3 and GM; GM is drop energy with height capped at 60 in; container size sets simulator size and so fuselage volume. (4) Refer to Fig.~\ref{fig:sens} and Fig.~\ref{fig:carpet}.}
+\dbfnote{About 220 words across this subsection. (1) The scoring model below. (2) How the competitor maxima are estimated, and a check that the conclusions survive if they change. (3) The findings: completion is worth 4.5 of 7.5; sensor weight appears in M2, M3 and GM; GM is drop energy with height capped at 1.524 m (60 in); container size sets simulator size and so fuselage volume. (4) Refer to Fig.~\ref{fig:sens} and Fig.~\ref{fig:carpet}.}
 The total mission score is the sum of four mission scores, each a fixed completion credit plus a term normalized by the best team in the field:\footnote{AIAA, \emph{2026--27 Design, Build, Fly Rules}, Draft, Sep.~2026, Sec.~3.3.}
 \begin{equation}
 \begin{aligned}
@@ -63,9 +63,11 @@ S_\mathrm{M} &= M_1 + \Bigl[1 + \tfrac{(W/t)}{(W/t)_\mathrm{max}}\Bigr]
 \caption{Configuration decisions and the requirement that drove each.}\label{tab:config}
 \begin{dbftable}{colspec={Q[l] X[l] Q[l] Q[l]}}
 Decision & Options considered & Selected & Driver \\
+Wing planform & High-AR, delta & \dbftbd{sel.} & \dbftbd{SR} \\
 Wing position & Low, mid, high & \dbftbd{sel.} & \dbftbd{SR} \\
-Tail & Conventional, T, V & \dbftbd{sel.} & \dbftbd{SR} \\
+Tail & Conventional, V, H & \dbftbd{sel.} & \dbftbd{SR} \\
 Landing gear & Tricycle, taildragger & \dbftbd{sel.} & \dbftbd{SR} \\
+Retraction & Fixed, retractable & \dbftbd{sel.} & \dbftbd{SR} \\
 Propulsion & Tractor, pusher, twin & \dbftbd{sel.} & \dbftbd{SR} \\
 Sensor bay & Door, open slot & \dbftbd{sel.} & SR-06 \\
 \end{dbftable}
@@ -87,7 +89,7 @@ Weighted total & 1.00 & -- & \dbfselected{--} & -- \\
 % ---------------------------------------------------------------------
 \subsection{Preliminary Design and Sizing}
 \subsubsection{Sizing method}
-\dbfnote{About 110 words. Constraint diagram (turn, climb, cruise, stall at Tucson density altitude); weight build-up; lap-time and energy model of the 500-ft course with the 360-deg turn. Footnote-cite any method source.}
+\dbfnote{About 110 words. Constraint diagram (turn, climb, cruise, stall at Tucson density altitude); weight build-up; lap-time and energy model of the 152.4-m (500-ft) course with the 360-deg turn. Footnote-cite any method source.}
 \dbffill{110}
 
 \begin{figure}[t]
@@ -108,15 +110,15 @@ Weighted total & 1.00 & -- & \dbfselected{--} & -- \\
 \caption{Preliminary design parameters.}\label{tab:params}
 \begin{dbftable}{colspec={X[l] Q[r] Q[l]}}
 Parameter & Value & Unit \\
-Wingspan & \nSpan & ft \\
-Wing area & \nWingArea & ft² \\
+Wingspan & \nSpan & m \\
+Wing area & \nWingArea & m² \\
 Aspect ratio & \nAR & -- \\
-Empty weight & \nEmptyWeight & lb \\
-Gross weight, M2 / M3 & \nGrossMtwo{} / \nGrossMthree & lb \\
+Empty mass & \nEmptyWeight & kg \\
+Gross mass, M2 / M3 & \nGrossMtwo{} / \nGrossMthree & kg \\
 Battery energy & \nBatteryWh & Wh \\
-Cruise speed & \nCruise & ft/s \\
-Sensor weight (max) & \nSensorWeight & lb \\
-Tow-line length & \nTowLength & ft \\
+Cruise speed & \nCruise & m/s \\
+Sensor mass (max) & \nSensorWeight & kg \\
+Tow-line length & \nTowLength & m \\
 \end{dbftable}
 \end{table}
 
@@ -127,9 +129,9 @@ Tow-line length & \nTowLength & ft \\
 \begin{dbftable}{colspec={Q[l] X[l] Q[r]}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
 Mission & Target & Score \\
 M1 Staging & \dbftbd{waive or fly} & \sMone \\
-M2 Delivery & \nMtwoUnits{} units, \nMtwoPayload{} lb, \nMtwoTime{} s & \sMtwo \\
-M3 Sensor & \nMthreeLaps{} laps at \nSensorWeight{} lb & \sMthree \\
-GM Ground & \nDropHeight{} in at \nSensorWeight{} lb & \sGM \\
+M2 Delivery & \nMtwoUnits{} units, \nMtwoPayload{} kg, \nMtwoTime{} s & \sMtwo \\
+M3 Sensor & \nMthreeLaps{} laps at \nSensorWeight{} kg & \sMthree \\
+GM Ground & \nDropHeight{} m at \nSensorWeight{} kg & \sGM \\
 Total mission score & & \sTotal \\
 \end{dbftable}
 \end{table}
