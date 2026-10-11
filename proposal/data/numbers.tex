@@ -22,6 +22,31 @@
 \newcommand\nCruise{\dbftbd{V cruise}}           % m/s
 \newcommand\nLapTime{\dbftbd{lap time}}          % s
 
+% --- Fly-off site air (verified 11 Oct 2026) ----------------------------
+% Site: TIMPA, 3250 N Reservation Rd, Marana AZ, 32.26474 N 111.27386 W
+%   (timpa.org/location); ground elevation 667 m (2,189 ft), USGS 3DEP 1-m
+%   DEM via the Elevation Point Query Service. Dates and hours: 15-18 Apr
+%   2027, 07:00-18:00 local (rules Sec. 2.4, 2.5).
+% Data: hourly ASOS at Tucson Intl (KTUS), 15-18 Apr 1996-2025, 2,878 obs
+%   (Iowa Environmental Mesonet). Station pressure at the TIMPA elevation
+%   from the altimeter setting, P = A((288 - 0.0065 h)/288)^5.2561 (NWS);
+%   moist-air density from T, dew point and P.
+%   At the daily high: mean 1.081, 10th percentile 1.064 kg/m^3.
+%   Flying hours (07-18): mean 1.095 kg/m^3.
+%   Cross-checks: Ryan Airfield (KRYN, 2008-2025) within 0.2 %; mean daily
+%   high 28.0 C (82.5 F) against the NWS Tucson April normal high of
+%   82.9 F (1991-2020).
+% Design value = 10th percentile at the daily high: the air is thinner on
+%   only 1 contest afternoon in 10. Density altitude 1,444 m (ISA).
+% Supersedes Script 3's 1.051 and the airfoil study's 1.0634 (which used
+%   the KTUS field elevation, 806 m, instead of TIMPA's 667 m).
+\newcommand\nRho{1.064}            % kg/m^3, hot-day design density (make_charts.py reads it)
+\newcommand\nRhoTypical{1.081}     % kg/m^3, mean at the daily high
+\newcommand\nSiteElev{667}         % m, TIMPA ground
+\newcommand\nDensityAlt{1{,}444}   % m, ISA density altitude at \nRho
+% AIAA-format source footnote: put \fnRho right after the first use of \nRho in the text.
+\newcommand\fnRho{\footnote{10th percentile at the daily high of 2{,}878 hourly KTUS observations, 15--18~April 1996--2025, reduced to TIMPA's 667~m (USGS 3DEP). Iowa Environmental Mesonet, ``ASOS Data Download,'' Iowa State Univ., \url{https://mesonet.agron.iastate.edu} [retrieved 11 Oct.~2026].}}
+
 % --- Sensor / container -------------------------------------------------
 \newcommand\nSensorWeight{\dbftbd{m sensor}}     % kg (max declared)
 \newcommand\nSensorLength{\dbftbd{L sensor}}     % mm (rule: >= 152.4 = 6 in)

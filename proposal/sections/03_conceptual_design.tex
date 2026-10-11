@@ -62,7 +62,7 @@ S_\mathrm{M} &= M_1 + \Bigl[1 + \tfrac{(W/t)}{(W/t)_\mathrm{max}}\Bigr]
 
 \begin{figure}[t]
 \includegraphics{figures/airfoil.pdf}% 3.35 x 2.00 in, from data/airfoil.toml (make_charts.py)
-\caption{\dbftbd{takeaway}. Section $c_l/c_d$ at $Re = 5.0\times10^{5}$ (XFoil 6.99, 240 panels, $N_\mathrm{crit} = 9$; optimistic by 9--22\,\% against tunnel data); each curve ends at $c_{l,\max}$. Shaded: race envelope, $c_l = 2n(W/S)/(\rho V^2)$ from cruise ($n = 1$) to the sustained turn.}\label{fig:airfoil}
+\caption{\nAfCheck Selected for the race envelope, not peak efficiency: in the turn, \nAfSel{} gives \nAfRatio$\times$ the $c_l/c_d$ of \nAfCmp{} (\nAfLDsel{} against \nAfLDcmp), the highest-peak section of the 13 tested. XFoil 6.99, $Re = \nAfRe$, $N_\mathrm{crit} = 9$; it over-predicts $(L/D)_{\max}$ by 9--22\,\% against UIUC tunnel data. Curves end at $c_{l,\max}$. Shaded: $c_l = 2n(W/S)/(\rho V^2)$ from cruise to the $n = \nAfNturn$ turn at $\rho = \nRho$~kg/m³, the 1-in-10 hot afternoon at TIMPA.}\label{fig:airfoil}
 \end{figure}
 
 \begin{table}[t]
@@ -96,8 +96,8 @@ Weighted total & 1.00 & -- & \dbfselected{--} & -- \\
 % ---------------------------------------------------------------------
 \subsection{Preliminary Design and Sizing}
 \subsubsection{Sizing method}
-\dbfnote{About 110 words. Constraint diagram (turn, climb, cruise, stall at Tucson density altitude); weight build-up; lap-time and energy model of the 152.4-m (500-ft) course with the 360-deg turn. Footnote-cite any method source.}
-\dbffill{110}
+\dbfnote{About 65 words (the air-density footnote, the density row of Table~\ref{tab:params} and the longer Fig.~\ref{fig:airfoil} caption took the rest of 110; 75 overflows to 7 pages). Constraint diagram (turn, climb, cruise, stall at the TIMPA hot-day density, $\rho = $ \textbackslash nRho = \nRho~kg/m³, density altitude \textbackslash nDensityAlt = \nDensityAlt~m; keep \textbackslash fnRho right after its first use, it is the AIAA source footnote); weight build-up; lap-time and energy model of the 152.4-m (500-ft) course with the 360-deg turn. Footnote-cite any method source.}
+\dbffill{65}\fnRho
 
 \begin{figure}[t]
 \dbfplaceholder{\columnwidth}{2.0in}{Constraint diagram / design point}
@@ -124,6 +124,7 @@ Empty mass & \nEmptyWeight & kg \\
 Gross mass, M2 / M3 & \nGrossMtwo{} / \nGrossMthree & kg \\
 Battery energy & \nBatteryWh & Wh \\
 Cruise speed & \nCruise & m/s \\
+Air density, hot day & \nRho & kg/m³ \\
 Sensor mass (max) & \nSensorWeight & kg \\
 Tow-line length & \nTowLength & m \\
 \end{dbftable}
