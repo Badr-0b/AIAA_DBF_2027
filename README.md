@@ -29,3 +29,17 @@ TODO.md                     Team task list
 
 ## Documents
 Every written document uses the design system in [`design-system/`](design-system/), so each new document starts from `dbfdoc.cls`. Toolchain: MiKTeX (XeLaTeX), Python 3 with matplotlib, and Git Bash.
+
+## Intellectual Property
+Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+
+All original work in this repository, including designs, CAD, drawings, analysis, code, test data and documents, was created by the team members, who retain complete ownership of it. The American University of the Middle East (AUM) holds no ownership, license or other rights in this work unless the team grants them in writing. The university's name appears only to identify the team's academic affiliation, as the competition rules require, and does not transfer any rights.
+
+No part of this repository may be copied, distributed, reproduced or used to create derivative works without written permission from the team.
+
+**Exceptions.** Third-party material keeps its original owner and license:
+- `rules/` and `assets/branding/AIAA_Logo_White.png`: AIAA
+- `reference/past_proposals/`: the respective universities
+- `design-system/fonts/`: SIL Open Font License (see each `OFL.txt`)
+
+Under Section 6.1 of the 2026-27 rules, reports submitted to the competition become the property of AIAA, Textron Aviation and Raytheon. This notice does not override that rule.
