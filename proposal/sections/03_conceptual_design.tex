@@ -56,14 +56,21 @@ S_\mathrm{M} &= M_1 + \Bigl[1 + \tfrac{(W/t)}{(W/t)_\mathrm{max}}\Bigr]
 
 % ---------------------------------------------------------------------
 \subsection{Configuration Trade Studies}
-\dbfnote{About 150 words. Weights come from the sensitivity study, and say so. Keep generic choices short (Table~\ref{tab:config}); spend the words on this year's unique trade, the D\&R architecture (Table~\ref{tab:dr}). Cite SR IDs.}
-\dbffill{150}
+\dbfnote{About 40 words (Fig.~\ref{fig:airfoil} took the other 110 of this subsection's 150; 55 already overflows to 7 pages, so move words here from another subsection if needed). Weights come from the sensitivity study, and say so. Keep generic choices short (Table~\ref{tab:config}); spend the words on this year's unique trade, the D\&R architecture (Table~\ref{tab:dr}). Cite SR IDs.}
+\dbfnote{Airfoil, about 20 of those words; the caption carries the method (Fig.~\ref{fig:airfoil}). 13 low-Re sections, Re $0.8$--$8\times10^{5}$, XFoil. The section is picked by $c_l/c_d$ inside the race envelope, not by peak $c_l/c_d$: the weighted-score winner (MH~114, first in 11 of 15 weightings) gives about half the $c_l/c_d$ of the pick in the turn. UIUC wind-tunnel check (E387, FX~63-137): XFoil over-predicts $(L/D)_{\max}$ by 9--22\,\%, so state the $L/D$ margin carried into performance. AIAA footnotes: Drela 1989 (XFOIL); Selig and McGranahan, NREL/SR-500-34515, 2004.}
+\dbffill{40}
+
+\begin{figure}[t]
+\includegraphics{figures/airfoil.pdf}% 3.35 x 2.00 in, from data/airfoil.toml (make_charts.py)
+\caption{\dbftbd{takeaway}. Section $c_l/c_d$ at $Re = 5.0\times10^{5}$ (XFoil 6.99, 240 panels, $N_\mathrm{crit} = 9$; optimistic by 9--22\,\% against tunnel data); each curve ends at $c_{l,\max}$. Shaded: race envelope, $c_l = 2n(W/S)/(\rho V^2)$ from cruise ($n = 1$) to the sustained turn.}\label{fig:airfoil}
+\end{figure}
 
 \begin{table}[t]
 \caption{Configuration decisions and the requirement that drove each.}\label{tab:config}
 \begin{dbftable}{colspec={Q[l] X[l] Q[l] Q[l]}}
 Decision & Options considered & Selected & Driver \\
 Wing planform & High-AR, delta & \dbftbd{sel.} & \dbftbd{SR} \\
+Airfoil & 13 sections & \dbftbd{sel.} & \dbftbd{SR} \\
 Wing position & Low, mid, high & \dbftbd{sel.} & \dbftbd{SR} \\
 Tail & Conventional, V, H & \dbftbd{sel.} & \dbftbd{SR} \\
 Landing gear & Tricycle, taildragger & \dbftbd{sel.} & \dbftbd{SR} \\
