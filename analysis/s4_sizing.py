@@ -9,7 +9,10 @@ or marked ESTIMATE), data/dbf_airframes.csv (verified AIAA report data),
 proposal/data/numbers.tex (rho).
 
 Mass build-up: airframe(S) from the fit to 14 top-3 aircraft (no battery, no
-payload) + battery (100 Wh at the median same-pack specific energy) + payload.
+payload) + the D&R mechanism (sizing.toml [dr], flown in every mission, rules
+Sec. 3.1.2) + battery (100 Wh at the median same-pack specific energy) + payload.
+M3 stow time comes from the reel drive's speed-torque line at the sensor's 1 g tow
+tension (stow_time; Table 06 option A), so heavier sensors stow slower.
 Drag: CD0 = wing profile drag per area + non-wing drag area / S.
 For each wing area and wing family the script searches payload x speed x bank
 for the fastest feasible five-lap M2 and keeps the payload that maximises the
@@ -89,10 +92,15 @@ class Params:
         self.e_factor = 1.0
         self.time_cal = TIME_CAL
         self.clmax_factor = {}
+        self.m_dr = SZ["dr"]["mass_kg"]
         self.__dict__.update(over)
 
     def airframe(self, s):
         return self.af_factor * self.k_af * s ** self.p_af
+
+    def empty(self, s):
+        """Airframe plus the D&R mechanism, which flies in every mission (Sec. 3.1.2)."""
+        return self.airframe(s) + self.m_dr
 
     def battery(self):
         return SZ["battery"]["energy_wh"] / self.wh_per_kg
@@ -122,7 +130,7 @@ def m2_search(name, s, P, fine=True):
     ar, e, clf, clc = family(name, s, P)
     k = s3.induced_factor(ar, e * P.e_factor)
     cd0 = P.cd_w + P.f_body / s
-    m = (P.airframe(s) + P.battery() + pay)[:, None, None]
+    m = (P.empty(s) + P.battery() + pay)[:, None, None]
     V, B = v[None, :, None], bank[None, None, :]
     res = s3.mission(P.rho, V, B, s, cd0, k, m, RULES["missions"]["m2_laps"], P.eta, P.t_to, G0)
     t_cal, e_cal = res["t"] * P.time_cal, res["e_wh"] * P.time_cal      # flown time base
@@ -158,20 +166,43 @@ def binding(b, P, clc):
     return out or ["none (interior optimum)"]
 
 
-def m3_search(name, s, m_sensor, P, stow_s=3.0, fine=True):
+def stow_time(m_sensor, P):
+    """Stow time (s) for each sensor mass: the Table 06 option-A reel (sizing.toml [dr],
+    drive and drum geometry from dr_trade.toml) reeling in against the 1 g tow tension,
+    with the trade's docking slow-down, latch and door times. inf if the drive stalls."""
+    import s5_tow as s5
+    dr, D = SZ["dr"], common.load("dr_trade")
+    drive = next(d for d in D["drive"] if d["id"] == dr["drive"])
+    g, ln, fl = D["geometry"], D["line"], D["flight"]
+    deploy = s5.deploy_length(RULES["aircraft"]["span_max_m"], RULES["sensor"]["tow_factor"]) + g["deploy_margin_m"]
+    wound = deploy + g["stowed_offset_m"]
+    q = 0.5 * P.rho * dr["v_ref_mps"] ** 2
+    r_eff = dr["r_core_m"] + ln["d_m"] / 2.0
+    ws = drive["rpm_free"] * 2.0 * math.pi / 60.0
+    ms = np.atleast_1d(np.asarray(m_sensor, dtype=float))
+    out = np.array([s5.stow_time(wound, s5.tow_tension(m, 1.0, q, fl["sensor_cda_m2"][1], ln["d_m"], ln["cd"],
+                                                       deploy, G0),
+                                 r_eff, drive["tau_stall_nm"], ws, fl["dock_zone_m"], fl["dock_speed_mps"],
+                                 fl["t_door_s"] + fl["t_latch_s"]) for m in ms])
+    return float(out[0]) if np.ndim(m_sensor) == 0 else out
+
+
+def m3_search(name, s, m_sensor, P, stow_s=None, fine=True):
     """Most whole laps in the M3 window towing m_sensor (energy for the whole window).
-    m_sensor may be an array: one lap count per mass."""
+    m_sensor may be an array: one lap count per mass. stow_s: seconds to stow after the
+    last lap (scalar or one per mass); None uses the reel model (stow_time)."""
     _, v, bank = grids(fine)
     ar, e, clf, clc = family(name, s, P)
     k = s3.induced_factor(ar, e * P.e_factor)
     cd0 = P.cd_w + (P.f_body + P.f_tow) / s
     ms = np.atleast_1d(np.asarray(m_sensor, dtype=float))
-    m = (P.airframe(s) + P.battery() + ms)[:, None, None]   # the line carries the sensor's weight
+    m = (P.empty(s) + P.battery() + ms)[:, None, None]   # the line carries the sensor's weight
     V, B = v[None, :, None], bank[None, None, :]
     t_lap, p_mean, n, cl = s3.lap(P.rho, V, B, s, cd0, k, m, G0)
     t_lap = t_lap * P.time_cal                           # flown time base
     window = RULES["missions"]["window_s"]
-    limit = window - stow_s
+    stow = stow_time(ms, P) if stow_s is None else np.broadcast_to(np.asarray(stow_s, dtype=float), ms.shape)
+    limit = (window - stow)[:, None, None]
     t_first = P.t_to + t_lap
     laps = np.where(t_first > limit + EPS, 0, 1 + np.floor((limit - t_first) / t_lap + EPS))
     e_wh = p_mean / P.eta * window / 3600.0
@@ -190,7 +221,7 @@ def m2_fixed(name, s, payload, P, fine=True):
     k = s3.induced_factor(ar, e * P.e_factor)
     cd0 = P.cd_w + P.f_body / s
     pay = np.atleast_1d(np.asarray(payload, dtype=float))
-    m = (P.airframe(s) + P.battery() + pay)[:, None, None]
+    m = (P.empty(s) + P.battery() + pay)[:, None, None]
     V, B = v[None, :, None], bank[None, None, :]
     res = s3.mission(P.rho, V, B, s, cd0, k, m, RULES["missions"]["m2_laps"], P.eta, P.t_to, G0)
     ok = ((m < AIR["togw_max_kg"]) & (s3.stall_speed(P.rho, s, m, clf, G0) <= P.vs_max)

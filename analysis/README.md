@@ -16,6 +16,7 @@ From the repo root (Git Bash or any shell):
 | `python analysis/s6_studies.py` | Script 6 (PROVISIONAL): robust design map, carpet, tornado, global sensitivity, candidate Monte Carlo, trade weights (about 30 s) |
 | `python analysis/config_trades.py` | Mass-for-drag exchange rate at the robust reference, retractable-gear break-even, body-option test chart (after Script 6) |
 | `python analysis/trades.py` | Audit of the team's trade matrices (arithmetic, evidence, sensitivity-derived weights, robustness); inputs in `inputs/trades.toml` |
+| `python analysis/db01_data.py` | Numbers for decision brief DB-01 that no other report prints: stall-bound sweep, payload-unit table, M1 waiver (after Script 6); `decisions/build.sh` then builds the brief |
 | `python analysis/dr_trade.py` | Deploy-and-recover architecture trade, proposal Table 06: rules and physics screening, drive sizing, points at stake, pairwise comparison of every option, four decision lenses, Monte Carlo (after Script 6). Physics in `s5_tow.py` |
 | `python analysis/s7_export.py` | Writes `proposal/data/analysis.tex`; `proposal/build.sh` runs it |
 

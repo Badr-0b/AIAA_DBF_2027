@@ -55,6 +55,16 @@ class Tow(Case):
     def test_line_energy_capacity(self):
         self.assertClose(self.call(s5.line_energy_capacity, 356.0, 0.035, 2.94), 18.316200000000002)
 
+    def test_stow_time(self):
+        """Pololu 37D 70:1 (2.648 N m, 150 rpm) on r_eff 28.75 mm against 33.5 N:
+        tau 0.963125 N m, v = 15.70796 (1 - 0.963125/2.648) 0.02875 = 0.2873475 m/s;
+        2.84 m at v + 0.10 m at 0.10 m/s + 1.0 s = 11.8835 s."""
+        t = self.call(s5.stow_time, 2.94, 33.5, 0.02875, 2.648, 150 * 2 * math.pi / 60, 0.1, 0.1, 1.0)
+        self.assertClose(t, 11.883503227823235)
+        t = self.call(s5.stow_time, 2.94, 33.5, 0.02875, 2.648, 150 * 2 * math.pi / 60)
+        self.assertClose(t, 10.231513904859266)
+        self.assertEqual(self.call(s5.stow_time, 2.94, 100.0, 0.02875, 2.648, 15.7), math.inf)
+
     def test_run_time(self):
         self.assertClose(self.call(s5.run_time, 2.94, 0.3, 1.0), 10.8)
         self.assertEqual(self.call(s5.run_time, 1.0, 0.0), math.inf)

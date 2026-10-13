@@ -31,6 +31,8 @@ m_sensor_m3_kg = nan       # flown in M3, <= declared max (Sec. 3.1.1)
 h_drop_m = nan             # GM drop-height target; declared in whole inches, <= 1.524
 t_stow_s = 3.0             # ESTIMATE: ERAU 2021 measured 3 s sensor retraction (2020-21 winning
                            # reports, ERAU Table 8-1). Our D&R cycle test (Table 10) replaces it.
+                           # NOTE 14 Oct: ERAU's sensor was 0.40 kg. Scripts 4/6 now use the reel
+                           # model (s4.stow_time, Table 06 option A): ~12 s at 3.4 kg.
 
 [a02]
 name = "Aircraft 02, delta variant"

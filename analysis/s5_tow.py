@@ -79,6 +79,17 @@ def line_energy_capacity(f_break, strain_break, length):
     return 0.5 * f_break * strain_break * length
 
 
+def stow_time(length, tension, r_eff, tau_stall, w_free, dock_zone=0.0, dock_speed=math.inf, extra=0.0):
+    """Time to reel in `length` against `tension` with a DC drive on a drum of radius
+    r_eff (drive_speed), slowing to dock_speed for the last dock_zone metres, plus a
+    fixed `extra` (door, latch), s. inf if the drive stalls."""
+    v = drive_speed(tension * r_eff, tau_stall, w_free) * r_eff
+    if v <= 0.0:
+        return math.inf
+    zone = min(dock_zone, length)
+    return (length - zone) / v + zone / min(dock_speed, v) + extra
+
+
 def run_time(length, speed, extra=0.0):
     """Time to pay out or reel in `length` at constant `speed`, plus fixed `extra` s."""
     return math.inf if speed <= 0.0 else length / speed + extra

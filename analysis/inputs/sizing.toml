@@ -48,6 +48,19 @@ n_struct = 4.0                 # design limit load factor (ESTIMATE; USC 2026 de
 v_stall_max = 14.0             # ESTIMATE anchored on the field: top-3 design stall speeds at max weight
                                # 9.4-14.4 m/s (Joanneum 22 31 ft/s ... VT 23 47.2 ft/s, dbf_aircraft).
 
+[dr]
+# The deployment-and-recovery mechanism is "permanently installed in the Mission 3 location
+# for all missions" (rules Sec. 3.1.2), so its mass flies in M1, M2 and M3. Values from the
+# Table 06 trade (dr_trade.py, 14 Oct): option A, closed-loop drum, with the VERIFIED Pololu
+# 37D 70:1 gearmotor (encoder built in; torque margin at n = 2: 0.73 of stall) on a 28 mm drum.
+# The trade's lightest drive (Savox brushless servo, RESELLER data) would save ~0.12 kg.
+mass_kg = 0.32                # 37D 0.19-0.21 kg (VERIFIED datasheet) + drum, slip ring, latch,
+                              # fairlead, wiring, MCU, driver (ESTIMATE ranges in dr_trade.toml)
+drive = "37d_70"              # dr_trade.toml [[drive]] id: speed-torque line for the stow time
+r_core_m = 0.028
+v_ref_mps = 26.5              # airspeed for sensor and line drag while stowing (M3 race speed at
+                              # the Script 6 reference, dr_trade report); drag is <10 % of tension
+
 [config.straight]              # Aircraft 01 family: straight tapered wing, flaps
 name = "Straight wing (01 family)"
 oswald = "raymer_straight"     # e = 1.78 (1 - 0.045 AR^0.68) - 0.64 (Raymer, Aircraft Design, ch. 12);

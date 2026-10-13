@@ -8,7 +8,9 @@ family = "straight"           # wing family for the map; the delta is compared s
 v_stall_max = 14.0            # accepted 1 g stall at M2 weight (Script 4 decision table: UCLA 2025 level)
 drop_height_m = 1.524         # rule maximum (Sec. 3.3.4); the GM score rises with it
 n_sim_max = 3                 # simulators searched per evaluation (0..3)
-t_stow_s = 3.0                # ESTIMATE, as aircraft.toml (ERAU 2021 measured retraction)
+t_stow_extra_s = 0.0          # seconds added to the reel model's stow time (s4.stow_time, Table 06
+                              # option A: about 12 s at 3.4 kg). Was a flat 3 s from ERAU 2021's
+                              # 0.40 kg sensor until 14 Oct. dr_trade.py varies it for the value of time.
 sensor_min_kg = 0.2           # a sensor needs some mass for its battery, lights and structure (ESTIMATE)
 container_kg = 0.6            # ESTIMATE until Script 5 / TC-02 size the foam; drawn 0.4-1.0 in the Monte Carlo
 

@@ -82,7 +82,8 @@ def evaluate(fam, s, unit, P, field=None, n_sim=None, fine=False):
     nsims = np.arange(0, d["n_sim_max"] + 1) if n_sim is None else np.array([n_sim])
     t2 = np.atleast_1d(s4.m2_fixed(fam, s, (1 + nsims) * unit, P, fine=fine))
     ms = np.unique(np.append(np.arange(0.5, sensor_max + EPS, 0.5), sensor_max))
-    laps = np.atleast_1d(s4.m3_search(fam, s, ms, P, stow_s=d["t_stow_s"], fine=fine))
+    stow = s4.stow_time(ms, P) + d["t_stow_extra_s"]           # reel model + any added seconds
+    laps = np.atleast_1d(s4.m3_search(fam, s, ms, P, stow_s=stow, fine=fine))
     prod = np.where(laps >= RULES["missions"]["m3_min_laps"], laps * ms, 0.0)
     j = int(np.argmax(prod))
     h = s2.declared_drop_height(d["drop_height_m"])

@@ -1,0 +1,298 @@
+% DB-01 Sizing and configuration decision brief. Build: ./build.sh
+% Every number traces to a report in analysis/out/ (named in each table or figure).
+% Re-run order: s4_sizing.py, s6_studies.py, config_trades.py, trades.py, dr_trade.py,
+% db01_data.py (all in analysis/), then decisions/build.sh.
+% Prepared by Claude at the team lead's request (14 Oct 2026). PROVISIONAL until the
+% team signs the decision record (Table 01, Section 8).
+\def\dbfroot{../design-system}
+\documentclass[final]{dbfdoc}
+\dbfsetdoc{Sizing and Configuration Decisions}{Decision Brief DB-01}{AUM-DBF-27-DB-001}{A}
+\dbfsetdate{14 Oct 2026}
+\raggedbottom
+\newcommand\fig[1]{../analysis/out/#1}
+
+\begin{document}
+
+\begin{frontmatter}
+\section{Purpose}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\setlength\parindent{1.15em}\noindent
+The configuration locks on 17 Oct and the numbers freeze on 20 Oct. This brief puts the evidence for every open sizing and configuration decision in one place. For each decision it gives the options, the numbers and the risks, a recommendation, and what would change it.
+
+\noindent\textbf{Status.} Nothing here is decided. Each recommendation is the analysis's, written by Claude; the team decides in Section~\ref{sec:decide}.
+
+\noindent\textbf{Basis.} Scripts 1--6 and the Table~06 trade. The model includes the deployment-and-recovery (D\&R) mechanism (§3.1.2: installed for all missions). It is calibrated on 452 values verified against the 2021--26 top-3 AIAA reports and 513 fly-off results rows.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\vspace{-11pt}
+\begin{dbfpanel}[Brief at a Glance]
+\dbfreadout{Decisions}{12}{open}\hfill\dbfreadout{Due}{17 Oct}{}\dbfreadoutgap
+\dbfreadout{Wing}{0.9}{m²}\hfill\dbfreadout{Payload unit}{4}{kg}\dbfreadoutgap
+\dbfreadout{Mean total}{6.33}{of 7.5}\hfill\dbfreadout{P(M2 feasible)}{98}{\%}
+\end{dbfpanel}
+\end{minipage}
+\end{frontmatter}
+
+\section{How to Read This Brief}
+\textbf{Score.} The figure of merit is the total mission score $M_1 + M_2 + M_3 + GM$ (at most 7.5), against the \emph{expected} field. That field is 75\,\% of per-mission specialist maxima anchored on the 2021--26 AIAA reports.
+
+\textbf{Uncertainty.} Every design is scored over the same 120 random draws of the uncertain inputs (common random numbers):
+\begin{itemize}
+\item resampled from measured data: lap-time realism (24 flight pairs, median $\times$1.15), pack specific energy (9 packs) and airframe mass (fit scatter, $\pm$31\,\% at 1\,sd);
+\item over estimate ranges: drag, efficiency, CLmax, air density and container mass.
+\end{itemize}
+``Mean'' is the average over the draws. P10 and P90 bound the worst and best tenth.
+
+\textbf{Evidence grades.}
+\begin{itemize}
+\item \emph{Verified}: quoted from a primary source and machine-checked.
+\item \emph{Reseller}: a retail listing only.
+\item \emph{Estimate}: a reasoned range, sampled in the Monte Carlo.
+\end{itemize}
+
+\textbf{What the model does not price:} take-off and landing risk, structural failure, build schedule and pilot skill. These enter through the risk register (Section~\ref{sec:risk}) and the team's judgment.
+
+\section{Decision Summary}
+Table~\ref{tab:summary} lists every decision with the recommended option, the confidence in it, and what would change it.
+
+\begin{table*}[t]
+\caption{Open decisions and the decision record. ``Rec.'' is the analysis's recommendation, not a decision; confidence reflects the evidence, not the importance. The team fills the last column (Section~\ref{sec:decide}).}\label{tab:summary}
+\begin{dbftable}{colspec={Q[l,wd=0.3in] X[1.0,l] X[1.45,l] Q[l,wd=0.74in] X[1.3,l] X[1.0,l]}}
+ID & Decision & Rec. & Confidence & Changes if & Team decision \\
+D1 & Wing area, planform & Straight, flapped, 0.9~m² (0.9--1.0) & High & Stall below 13~m/s (then 1.0--1.3~m²) & \\
+D2 & Accepted 1\,g stall at M2 weight & 14~m/s (167~N/m²) & Pilot's call & Pilot's number; +0.13--0.15 per m/s above 14 & \\
+D3 & Payload unit and sensor & 4~kg unit (3.4~kg sensor), simulators as mass allows; sensor declared at tech & High & First weigh-in far below the fit & \\
+D4 & Mission 1 & Waive (credited by M2) & High & A Q\&A ruling on the credit & \\
+D5 & Drop height & Design 1.524~m; declare after TC-02 & Medium & TC-02 fails at 1.524~m & \\
+D6 & Wing position & High wing & Medium & CAD favours a low-wing exit or loading path & \\
+D7 & Tail & Conventional & Medium & CAD clearance check fails & \\
+D8 & Landing gear & Tricycle, fixed, faired & Medium & Pilot prefers a taildragger & \\
+D9 & Propulsion layout & Single tractor & Low (pre-study) & The propulsion study (next) & \\
+D10 & Sensor-bay closure & Door, unless an open slot costs under 2--4~cm² & Low & WP-01 CFD on the slot & \\
+D11 & Body shape & From packaging: two units, reel, sensor bay & Deferred & TC-02 sets the container & \\
+D12 & D\&R architecture & A, closed-loop drum & Medium-high & TC-05 bench counts & \\
+\end{dbftable}
+\end{table*}
+
+The airfoil is not reopened here: the proposal's Fig.~05 XFoil study over 13 sections picks the SD7037 for the race envelope, and the team's airfoil matrix is dropped (its arithmetic flips its own winner).
+
+\section{Sizing (D1--D5)}
+\subsection{Wing Area and Planform (D1)}
+The robust map (Fig.~\ref{fig:map}) scores every wing area against every payload unit over the 120 draws.
+
+\textbf{Best point: 0.9~m² with a 4~kg unit.} Mean 6.33; P(M2 feasible) 98\,\%. The plateau spans 0.8--1.0~m², and the candidates rank as follows (same draws, each at its best unit):
+\begin{itemize}
+\item 1.0~m²: 6.29;
+\item 0.8~m²: 6.23 (1.0~m² is better in 65\,\% of draws);
+\item 0.6~m²: 5.78;
+\item the 0.414~m² placeholder: 5.09;
+\item the delta: 4.60.
+\end{itemize}
+The straight wing beats both the placeholder and the delta in 99\,\% of draws.
+
+\textbf{Why not 0.8~m².} With the reel's 0.32~kg on board, a 10\,\% smaller wing loses the payload step (tornado: $-$0.24). Pick 0.9~m² or slightly above, not the bottom of the plateau.
+
+\textbf{Planform.} Straight and flapped; the delta is only a foil. The taper ratio comes from XFLR5 (span efficiency, stall progression) and manufacturing; the team's planform matrix is dropped because four of its five criteria were copied from the wing-position matrix.
+
+\begin{figure}[t]
+\includegraphics{\fig{s6_robust_map.pdf}}
+\caption{Robust design map: mean total score over 120 draws, straight wing, 14~m/s stall, reel included. Solid and dashed lines: P(M2 feasible) of 90\,\% and 50\,\%. Source: \texttt{s6\_report.txt}.}\label{fig:map}
+\end{figure}
+
+\subsection{Accepted Stall Speed (D2)}
+The stall bound fixes the M2 wing loading, $W/S = \rho V_s^2 C_{L,\max}/2$: 167~N/m² at 14~m/s ($\rho$ 1.064, $C_{L,\max}$ 1.6). It is the model's biggest single lever (Fig.~\ref{fig:stall}, Table~\ref{tab:stall}): every 1~m/s above 14 adds 0.13--0.15 to the mean, and 11~m/s costs 1.4.
+
+\textbf{The gain is not free.} The model has no take-off distance limit and does not price landing risk.
+\begin{itemize}
+\item In 2025 the two heavy top-3 designs (UNSW, ERAU) both scored zero in M2 at the fly-off, at 248--257~N/m² (about 17~m/s).
+\item UCLA 2025 completed every mission near 167~N/m².
+\end{itemize}
+\textbf{Rec.:} 14~m/s, unless the pilot signs off on 15~m/s (+0.13) after seeing the landing speed.
+
+\begin{figure}[t]
+\includegraphics{\fig{db01_stall.pdf}}
+\caption{Robust best design for each accepted stall speed. Wing area grid 0.6--1.4~m², units 2--9~kg. Band: P10--P90 over the 120 draws. Source: \texttt{db01\_report.txt}.}\label{fig:stall}
+\end{figure}
+
+\begin{table}[t]
+\caption{Stall-bound sweep (\texttt{db01\_report.txt}). $W/S$ at $C_{L,\max}$ 1.6, $\rho$ 1.064.}\label{tab:stall}
+\begin{dbftable}{colspec={Q[c] Q[c] Q[c] Q[c] Q[c] Q[c]}}
+Stall m/s & $W/S$ N/m² & Wing m² & Unit kg & Mean & P(M2) \\
+11 & 103 & 1.3 & 2 & 4.93 & 86\,\% \\
+12 & 123 & 1.1 & 3 & 5.60 & 91\,\% \\
+13 & 144 & 1.0 & 4 & 6.10 & 93\,\% \\
+14 & 167 & 0.9 & 4 & 6.33 & 98\,\% \\
+15 & 192 & 0.8 & 5 & 6.46 & 95\,\% \\
+16 & 218 & 0.7 & 5 & 6.61 & 98\,\% \\
+\end{dbftable}
+\end{table}
+
+\subsection{Payload Unit and Sensor Mass (D3)}
+Simulators must match the container plus the declared sensor within $\pm$28.35~g (§3.1.3), so M2 payload comes in whole units. The declared sensor also sets GM. Table~\ref{tab:unit} shows the trade at 0.9~m².
+
+\textbf{The 4~kg unit has the best mean and the best P10.}
+\begin{itemize}
+\item Heavier units raise the median and GM: 8~kg reaches the GM ceiling of 1.50.
+\item But M2 becomes infeasible whenever the airframe comes in heavy: P(M2) falls from 98\,\% to 52\,\% at 8~kg, and P10 collapses to the M1-plus-GM floor. An M2 failure also blocks M3.
+\end{itemize}
+
+\textbf{Keep the option open.} The declared sensor mass is fixed only at tech in April (§4.1). Size the bay for two container-sized units now, and choose the sensor mass after the first weigh-in and flight tests.
+
+\begin{table}[t]
+\caption{Payload unit at 0.9~m², 14~m/s (\texttt{db01\_report.txt}). Sensor = unit $-$ 0.6~kg container. Mission parts are means.}\label{tab:unit}
+\begin{dbftable}{colspec={Q[c] Q[c] Q[c] Q[c] Q[c] Q[c] Q[c]}}
+Unit kg & Mean & P10 & P(M2) & M2 & M3 & GM \\
+2 & 5.62 & 5.25 & 99\,\% & 1.48 & 2.43 & 0.72 \\
+3 & 6.07 & 5.61 & 99\,\% & 1.47 & 2.72 & 0.88 \\
+\SetCell{font=\dbftotalrow}4 & \SetCell{font=\dbftotalrow}6.33 & \SetCell{font=\dbftotalrow}6.00 & \SetCell{font=\dbftotalrow}98\,\% & \SetCell{font=\dbftotalrow}1.43 & \SetCell{font=\dbftotalrow}2.85 & \SetCell{font=\dbftotalrow}1.05 \\
+5 & 6.15 & 2.25 & 88\,\% & 1.29 & 2.64 & 1.22 \\
+6 & 5.96 & 2.37 & 80\,\% & 1.18 & 2.40 & 1.38 \\
+8 & 4.89 & 2.50 & 52\,\% & 0.84 & 1.55 & 1.50 \\
+\end{dbftable}
+\end{table}
+
+\subsection{Mission 1 Waiver (D4)}
+A successful M2 also credits M1, and attempts are scarce (2.4--2.9 official attempts per team that passed tech, 2022--26). At the field's 65\,\% success per attempt with three attempts, P(M3 completed) rises from 40\,\% flying M1 to 72\,\% waiving it (with four attempts: 70\,\% to 87\,\%). Every Script~6 number above assumes the waiver.
+
+\textbf{The cost:} a failed M2 can no longer fall back on M1.
+
+\subsection{Drop Height (D5)}
+The GM score rises linearly with the declared height up to 1.524~m (60~in). Design the container for 1.524~m. Declare the largest height TC-02 passes cleanly, with the real sensor, before the design report.
+
+\section{Configuration (D6--D11)}
+\textbf{Field practice does not pick a configuration.} Of the 19 verified top-3 aircraft since 2021:
+\begin{itemize}
+\item 13 flew a high wing, 13 a tricycle gear, 16 a conventional tail and 12 a single motor (Fig.~\ref{fig:practice});
+\item no feature predicts fly-off success. Low wings completed M3 5 of 6 times against 4 of 9 for high wings ($p = 0.29$). Single motors completed 7 of 10 against 1 of 4 for twins ($p = 0.24$). Gear type: $p = 1.00$ (Fisher exact).
+\end{itemize}
+So each row below is decided by physics, packaging and risk. The teammates' matrices were audited (arithmetic, evidence) and re-weighted with the Script~6 sensitivities. Table~\ref{tab:audit} gives each option's P(first) over 5,000 perturbations.
+
+\begin{figure}[t]
+\includegraphics{\fig{config_practice.pdf}}
+\caption{Configurations of the 19 verified top-3 aircraft, 2021--26, with fly-off outcomes. Source: \texttt{data/dbf\_config.csv}.}\label{fig:practice}
+\end{figure}
+
+\begin{table}[t]
+\caption{Team matrices after the audit and Script~6 weights: P(option ranks first) under weight and score perturbation (\texttt{trades\_report.txt}).}\label{tab:audit}
+\begin{dbftable}{colspec={X[l] X[1.4,l]}}
+Matrix & Result \\
+Wing position & High 95\,\%, low 5\,\%, mid 0\,\% \\
+Tail & Conventional 78\,\%, T-tail 14\,\%, twin-boom 8\,\% \\
+Landing gear & Tricycle 76\,\%, taildragger 24\,\% \\
+Fuselage structure & Box-beam 100\,\% (manufacturing plan) \\
+Airfoil, planform & Dropped (errors, copied criteria) \\
+\end{dbftable}
+\end{table}
+
+\textbf{D6 Wing position: high wing (medium).} It wins 95\,\% of the audited trade. That trade had to correct the teammates' low-wing payload score: four low-wing top-3 designs (WashU 2022, UW 2023, ERAU 2023 and 2025) chose low wing \emph{for} payload access. Decide finally on three things: the sensor exit path, the staging access through a top or bottom hatch (Q\&A pending on §3.3.2 hatches), and the pilot.
+
+\textbf{D7 Tail: conventional (medium).}
+\begin{itemize}
+\item The as-made matrix chose a T-tail on ``line clearance''. But the tow line hangs 31--86° below horizontal (0.5--5~kg sensor), so clearance is set by the exit location, not the tail type.
+\item A T-tail's fin carries the stabiliser loads, which makes it heavier and more flutter-prone.
+\item Check the clearance in CAD once the exit is placed.
+\end{itemize}
+
+\textbf{D8 Gear: tricycle, fixed and faired (medium).}
+\begin{itemize}
+\item A retract system must weigh under 120--240~g to pay for itself. That threshold is the fixed gear's drag area (9.9~cm² measured on GT 2026, 19.4~cm² predicted for Joanneum 2022) $\times$ 12.3~g per cm².
+\item It would save at most 2.6--5.1~s of M2 (about 0.01 points), against the risk of a gear-up landing.
+\item Fairings cut gear drag (UCLA 2025: 7\,\%).
+\end{itemize}
+
+\textbf{D9 Propulsion layout: single tractor (low, provisional).}
+\begin{itemize}
+\item A nose tractor keeps the propeller disc away from the tow line, whose slack moments (deploy, stow) are the SR-10 risk.
+\item The field favours single motors (12 of 19), and twins completed M3 only 1 of 4 times.
+\item The propulsion study (next: APC and UIUC data, motor model, 12S against 8S) confirms or overturns this.
+\end{itemize}
+
+\textbf{D10 Sensor-bay closure (low).} §3.1.1: an opening left uncovered in M3 must stay uncovered in M1 and M2.
+\begin{itemize}
+\item At the exchange rate of 10~cm² of drag area per 123~g, a door mechanism of 30--50~g (estimate) pays for itself if the open slot's drag area exceeds 2.4--4.1~cm².
+\item A slot sized for a can-sized dart with fins likely exceeds that, but no verified cavity-drag figure exists. WP-01 CFD should compute it.
+\item A door adds one failure mode (it fails to open, so no deploy), which the latch test covers.
+\end{itemize}
+
+\textbf{D11 Body shape (deferred).} Through drag, the body moves the score only by hundredths (10~cm² of drag area = 123~g). Its mass and its payload bay decide it: two container-sized units, the reel at the M3 location and the sensor bay. TC-02 fixes the container size. A CAD packaging study then gives the smallest body, and any outer form (whale-like, MQ-4C-like, tube) is scored on the same drag-and-mass scale (\texttt{config\_exchange.pdf}).
+
+\section{D\&R Architecture (D12)}
+Eight concepts were screened out against the rules or physics:
+\begin{itemize}
+\item a receiver on the drum (§3.2.1 external switch);
+\item a pulley block (77--153~s to deploy against a 20~s window);
+\item a boom, a wireless link and a two-line bridle (§3.1.1);
+\item a spring reel;
+\item a clock-spring lead (23 turns);
+\item a sail-winch servo (2.3$\times$ its torque).
+\end{itemize}
+
+Four candidates were sized with datasheet drives and compared pairwise on five criteria. Weights are the expected points each criterion can swing:
+\begin{itemize}
+\item 100~g of mechanism costs 0.046 points;
+\item 1~s of stow costs 0.002;
+\item 1\,\% more chance of losing the sensor costs 0.028.
+\end{itemize}
+So reliability decides it.
+
+\textbf{Rec.: A, closed-loop drum.} Encoder, stop bead at the fairlead (sets the 2.74~m deploy length and carries lap loads into the airframe), slip ring and docking latch. It is the Condorcet winner and wins 95--98\,\% of the draws (Fig.~\ref{fig:dr}). The open-loop drum (B) is the runner-up: it is easier to build and wins 29\,\% on the weighted table, but it ties A only if its own failure rates are below 46\,\% of the estimate.
+
+\textbf{Weak spot.} The failure rates are engineering estimates. TC-05, a tow, reel and slip-ring bench card, must replace them with counted cycles.
+
+\textbf{Drive.} The model carries the verified Pololu 37D 70:1 (0.32~kg mechanism, 12~s stow at 3.4~kg). A brushless servo (reseller data) would save about 0.12~kg.
+
+\begin{figure*}[t]
+\includegraphics{\fig{dr_trade.pdf}}
+\caption{D\&R trade. Left: expected total-mission points lost by criterion, base case. Right: P(option wins) over 5,000 draws with each option's failure rates drawn independently, under four decision rules. A: closed-loop drum; B: open-loop drum; C: governed free-spool; E: capstan and bin. Source: \texttt{dr\_trade\_report.txt}.}\label{fig:dr}
+\end{figure*}
+
+\section{Risk Register}\label{sec:risk}
+Table~\ref{tab:risk} lists the risks that can cost a mission, each with the test or analysis that retires it. Likelihood and consequence: L (low), M (medium), H (high).
+
+\begin{table*}[t]
+\caption{Risk register. The Spearman values are each input's correlation with the total score over the draws (\texttt{s6\_report.txt}).}\label{tab:risk}
+\begin{dbftable}{colspec={Q[l,wd=0.3in] X[1.5,l] Q[c,wd=0.28in] Q[c,wd=0.28in] X[1.7,l] X[1.1,l]}}
+\# & Risk & L & C & Mitigation & Retired by \\
+R1 & Airframe heavier than the fit ($\pm$31\,\% at 1\,sd; Spearman $-$0.64) makes M2 infeasible & M & H & 4~kg unit with optional simulators; weigh every part & CAD mass properties (WP-01 K5); first weigh-in \\
+R2 & Laps slower than modelled (median $\times$1.15, up to $\times$1.48; Spearman $-$0.68) & H & M & Calibrated model; margin on the M2 clock & GPS laps in flight test \\
+R3 & Stall too fast for reliable landings at full payload & M & H & 14~m/s bound, flaps & Pilot sign-off; heavy-landing flight test \\
+R4 & Sensor or container fails the six GM drops (only one sensor) & M & H & Container for 1.524~m; GM after M3 (Q\&A) & TC-02 with the real sensor \\
+R5 & Sensor not stowed for landing (jam, stall) & L--M & H & Closed-loop drum, stop bead, stall detection & TC-05 cycles at 3.4~kg \\
+R6 & Sensor unstable in tow (spins: M3 fails) & M & H & Fixed-geometry dart & TC-01 blower rig; CFD \\
+R7 & Lights not distinguishable in sun & M & H & Bright arrays, slow flash & TC-03 \\
+R8 & Five-minute staging overrun (M3 sensor attach, M2 loading) & M & M & Tool-less attach, drilled crew & TC-04 \\
+R9 & Tow line reaches the propeller or structure (SR-10) & L & H & Tractor layout; exit placed for clearance & CAD check; flight test \\
+R10 & Propulsion short of power or overheating at 100~A & M & H & Propulsion study with measured data & Thrust stand \\
+R11 & Rules read differently (GM timing, stow in window, hatches) & M & M & Conservative assumptions & Q\&A round 1 (1 Nov) \\
+R12 & Parts late (PR-01 motor and prop numbers were due 14 Oct) & H & M & Order right after the propulsion study & PR-01 filed \\
+\end{dbftable}
+\end{table*}
+
+\section{Decisions Requested}\label{sec:decide}
+Table~\ref{tab:summary} is also the decision record: the team writes its choice in its last column.
+\begin{itemize}
+\item \textbf{By 17 Oct:} D1--D4, D6--D8 and D12. D1 waits on D2, so start with the pilot.
+\item \textbf{By 20 Oct:} D5, D9, D10 and D11. They wait on TC-02, the propulsion study and WP-01 CFD.
+\end{itemize}
+Only after sign-off do the targets enter \texttt{analysis/inputs/aircraft.toml} and the proposal; Table~06 of the proposal is wired after D12.
+
+\section{Sources}
+\textbf{Analysis reports} in \texttt{analysis/out/}:
+\begin{itemize}
+\item \texttt{s4\_report.txt}: sizing;
+\item \texttt{s6\_report.txt}: Monte Carlo, robust map, tornado;
+\item \texttt{db01\_report.txt}: stall sweep, unit table, waiver;
+\item \texttt{config\_trades\_report.txt}: exchange rate, retract break-even;
+\item \texttt{trades\_report.txt}: matrix audit;
+\item \texttt{dr\_trade\_report.txt}: Table~06.
+\end{itemize}
+Field and configuration data: \texttt{analysis/data/}, each value with its verbatim quote and page (\texttt{verify.py}: 0 failed).
+
+\textbf{Primary documents:}
+\begin{itemize}
+\item AIAA DBF 2026--27 rules, draft of 2 Sep 2026 (latest official);
+\item AIAA competition summaries and top-3 design reports, 2021--26;
+\item manufacturer data for the D\&R drives (Pololu, goBILDA, REV), read 13--14 Oct 2026.
+\end{itemize}
+
+\end{document}

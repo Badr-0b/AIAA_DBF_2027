@@ -149,7 +149,7 @@ def m3_point(s, m_sensor, P):
     ar, e, clf, clc = s4.family("straight", s, P)
     k = s3.induced_factor(ar, e * P.e_factor)
     cd0 = P.cd_w + (P.f_body + P.f_tow) / s
-    m = P.airframe(s) + P.battery() + m_sensor
+    m = P.empty(s) + P.battery() + m_sensor
     V, B = np.meshgrid(v, bank, indexing="ij")
     t_lap, p_mean, n, cl = s3.lap(P.rho, V, B, s, cd0, k, m, G0)
     e_wh = p_mean / P.eta * RULES["missions"]["window_s"] / 3600.0
@@ -199,9 +199,9 @@ def score_value(ref):
     s, unit = ref["s"], ref["unit"]
 
     def mean_totals(dm=0.0, t_stow=None):
-        saved = s6.ST["design"]["t_stow_s"]
+        saved = s6.ST["design"]["t_stow_extra_s"]
         if t_stow is not None:
-            s6.ST["design"]["t_stow_s"] = t_stow
+            s6.ST["design"]["t_stow_extra_s"] = t_stow
         out = {"expected": [], "aggressive": []}
         try:
             for P in Ps:
@@ -211,7 +211,7 @@ def score_value(ref):
                 for sc in out:
                     out[sc].append(r[sc]["total"])
         finally:
-            s6.ST["design"]["t_stow_s"] = saved
+            s6.ST["design"]["t_stow_extra_s"] = saved
         return {sc: float(np.mean(v)) for sc, v in out.items()}
 
     dms, tss = T["value"]["dm_grid_kg"], T["value"]["stow_grid_s"]
@@ -251,12 +251,9 @@ def size(cid, did, ref, cda):
         v_in = s5.drive_speed(tau1, ts, wf) * r_eff
         v_out = fl["v_governor_mps"] if c["control"] == "free" else wf * r_eff   # free speed, conservative
         t_dep = s5.run_time(ref["wound"], v_out, fl["t_door_s"] + fl["t_latch_s"])
-        if c["control"] == "closed":
-            zone = min(fl["dock_zone_m"], ref["wound"])
-            t_stow = s5.run_time(ref["wound"] - zone, v_in) + zone / min(fl["dock_speed_mps"], v_in)
-        else:
-            t_stow = s5.run_time(ref["wound"], v_in)
-        t_stow += fl["t_door_s"] + fl["t_latch_s"]
+        closed = c["control"] == "closed"
+        t_stow = s5.stow_time(ref["wound"], t1, r_eff, ts, wf, fl["dock_zone_m"] if closed else 0.0,
+                              fl["dock_speed_mps"] if closed else math.inf, fl["t_door_s"] + fl["t_latch_s"])
         if t_dep > ref["window"]:
             why = f"deploy {t_dep:.0f} s exceeds the {ref['window']:.0f} s window"
             continue
