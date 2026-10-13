@@ -1,0 +1,93 @@
+# The field maximum in each mission score: the "Max ... of all teams", ours
+# included (rules Sec. 3.3.3.2, 3.3.3.3, 3.3.4).
+#
+# Model (team calls):
+#   - per-mission specialists (12 Oct 2026): each maximum may come from a different team;
+#   - aggressive anchors (11 Oct);
+#   - expected and conservative = 75 % and 50 % of aggressive, per mission.
+# common.py computes the maxima from these anchors; nothing here is a result.
+#
+# basis "verified" = read in the cited primary source on the date given.
+# basis "estimate" = a judgement, reasoning in `note`.
+#
+# Sources (all read 2026-10-12):
+#   [P26] reference/past_proposals/2026_Top3_Proposals_RMIT_UCSD_Arkansas.pdf
+#   [R21] AIAA, 2020-21 DBF winning reports (Michigan, Dayananda Sagar, UCF, ERAU)
+#         https://aiaa.org/wp-content/uploads/2024/12/winning-reports_2021c9f4fe09132c40a3921826a571f08608.pdf
+#   [P21] AIAA, 2020-21 DBF top proposals (Rutgers, GIK, UAB)
+#         https://aiaa.org/wp-content/uploads/2024/12/2021-dbf-top-proposals.pdf
+#   [R25] AIAA, 2025 DBF top-3 design reports (UNSW, UCLA, ERAU Daytona Beach)
+#         https://aiaa.org/wp-content/uploads/2025/05/Top-3-Design-Reports.pdf
+#   [Ru25] AIAA, 2024-25 DBF rules, https://aiaa.org/wp-content/uploads/2025/05/Rules_2025.pdf
+#
+# 2020-21 had the same theme ("UAV with Sensor Suite"), the same course ("a 180 turn
+# ... at either end of a 1000 ft straightaway, as well as a 360 turn", UCF [R21]
+# Sec. 3.1) and a 5 ft span. Its scoring differed: M2 counted containers per time,
+# M3 used laps x sensor length x sensor weight in 10 min, and GM was timed with a
+# 10 in drop. Its sensors were therefore light (0.26-0.64 kg).
+
+[scaling]
+span_scale = 1.44     # (6 ft / 5 ft)^2 for 5 ft-span anchors (2020-21, 2025-26). Payload at
+                      # constant wing loading scales with wing area (team call, 12 Oct).
+                      # Not needed for M2 since its anchor (2025) already had a 6 ft span.
+expected = 0.75
+conservative = 0.50
+
+[m2]   # field max of W/t, kg/s: payload mass over the five-lap time
+# Anchor revised 12 Oct 2026 (evening): 2025 is the weight/time analog. 2025 rules,
+# Mission 2: "M2 = 1 + [N_(fuel weight / time) / Max_(fuel weight / time)]" over 3 laps,
+# with a 6 ft span, 100 Wh and the same course at TIMPA [Ru25]. All values in
+# analysis/data/dbf_aircraft.toml, verified against the AIAA 2025 reports [R25].
+field_max_3lap_lb_per_min = 18.0   # [R25] ERAU Table 8-4 "Est. Fly-Off Maximum 18 lb/min"
+lap_s = 32.0                       # [R25] ERAU Table 8-3 actual M2 lap time (38.74 lb gross)
+three_lap_s = 124.0                # [R25] ERAU Table 8-3 actual M2 mission time, 3 laps
+# 5-lap time = three_lap_s + 2 lap_s = 188 s, so W/t over 5 laps = (3-lap rate) x 124/188.
+# aggressive = 18 lb/min (0.1361 kg/s) x 0.660 = 0.0898 kg/s
+basis = "estimate"
+note = """The aggressive field max is a top team's own estimate of the 2025 fly-off
+maximum (ERAU), converted from 3 to 5 laps with ERAU's measured lap structure.
+2025 payloads were external bottles of steel shot; 2026-27 payload is internal
+containers + simulators, which the heavy-declared-sensor strategy makes just as dense.
+Superseded anchor (kept for the record): RMIT 2026 6.2 kg x 1.44 over 166.7 s =
+0.0536 kg/s. Wrong analog: 2026 M2 counted ducks and pucks over laps in 5 min."""
+check = """Two independent 2025 numbers land at 67-68 % of aggressive (between our
+expected and conservative scenarios):
+- ERAU measured (flight test): 25 lb in 124 s = 12.10 lb/min; 11.34 kg / 188 s = 0.0603 kg/s.
+- UCLA, flight-test-informed Table 1: 9.26 lb in 110 s; its fly-off M2 score was 1.42
+  (dbf_results.csv), so the 2025 max was about (4.20/110)/0.42 = 0.0909 kg/s over
+  3 laps, 0.0600 kg/s over 5 laps (if UCLA flew its table).
+Completion risk: both heavy designs in the 2025 top-3 reports scored M2 = 0.00 at the
+fly-off (UNSW, 48.5 lb design; ERAU, 38.74 lb flown in testing)."""
+
+[m3]   # field max of laps x sensor mass, kg*laps
+laps = 9          # estimate
+sensor_kg = 3.0   # estimate; the least documented value in this file
+basis = "estimate"
+note = """Laps: 9 in 300 s needs about 32 s towed laps.
+Towed paces in 2021 [R21]: UCF about 34 s (revised estimate), ERAU 40 s (planned
+15 laps in 10 min), Dayananda Sagar 54 s (9 laps in 8 min 10 s). So 9 is aggressive.
+Sensor: 2021 scoring drove light sensors (Michigan and UCF 0.64 kg, ERAU 0.26-0.40 kg).
+UCF's M3-only optimum was 2.84 lb (1.29 kg) at 5 ft, 1200 W, 10 min [R21].
+2026-27 drops the length term and halves the window, giving up to twice the power
+per second: 1.29 x 1.44 x (1.4 to 2) = 2.6-3.7 kg."""
+
+[gm]   # field max of sensor mass x drop height, kg*m
+sensor_kg = 8.0     # estimate
+height_m = 1.524    # verified: rule maximum, 60 in (Sec. 3.3.4)
+basis = "estimate"
+note = """A rational heavy-declared-sensor specialist. The declared maximum sensor
+weight is used in M2 (every unit = container + max sensor; Sec. 3.1.3, 3.3.2) and
+in GM (Sec. 3.3.4, 4.1), while M3 may fly less ballast (Sec. 3.1.1).
+So one dense unit maximises M2 and GM together: the whole M2 payload (8.928 kg)
+minus a container of about 0.9 kg (estimate: 300 x 180 x 180 mm, 3 mm ply shell,
+EPP 45 g/L fill) is about 8.0 kg.
+The 381 mm ring-to-bottom envelope does not cap the mass. A constant-force crush
+decelerates at h/stroke g whatever the mass (about 56 g at a 27 mm stroke), so
+mass only sets the foam stress: about 0.2 MPa for 8 kg on a 150 x 150 mm face."""
+
+[stress]
+# Not scenarios: one-at-a-time cases for the Script 6 sensitivity study.
+gm_togw_sensor_kg = 17.0      # GM-only team bounded by TOGW < 24.95 kg (about 6 kg airframe and
+                              # battery, 1 kg container); about 25.9 kg*m. Sacrifices M2 and M3.
+m3_heavy_tow_laps = 7         # towing the full 8 kg declared sensor; likely fails "no effect on
+m3_heavy_tow_sensor_kg = 8.0  # the stability of the aircraft" (Sec. 3.1.1); about 56 kg*laps

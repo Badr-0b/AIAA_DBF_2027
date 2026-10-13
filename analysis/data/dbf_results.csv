@@ -1,0 +1,514 @@
+year,rank,team,p,gm,m1,m2,m3,total,proposal,design,report,score,check,source_id,quote
+2026,1,University of Ljubljana,3,0.72,1.00,1.01,2.88,5.61,77,90.92,88.77,501.26,ok,aiaa-dbf-2026-results,1 University of Ljubljana 3 0.72 1.00 1.01 2.88 5.61 77 90.92 88.77 501.26
+2026,2,University of Washington-Seattle,3,0.52,1.00,1.01,3.00,5.54,82,87.33,86.47,481.62,ok,aiaa-dbf-2026-results,2 University of Washington-Seattle 3 0.52 1.00 1.01 3.00 5.54 82 87.33 86.47 481.62
+2026,3,"University of California, Los Angeles",3,0.42,1.00,1.01,2.69,5.12,72,87.70,85.35,440.24,ok,aiaa-dbf-2026-results,"3 University of California, Los Angeles 3 0.42 1.00 1.01 2.69 5.12 72 87.70 85.35 440.24"
+2026,4,University of Notre Dame,3,0.02,1.00,1.31,2.61,4.94,84,88.67,87.97,437.56,ok,aiaa-dbf-2026-results,4 University of Notre Dame 3 0.02 1.00 1.31 2.61 4.94 84 88.67 87.97 437.56
+2026,5,The University of Akron,3,0.67,1.00,1.03,2.65,5.35,82,81.08,81.18,437.36,ok,aiaa-dbf-2026-results,5 The University of Akron 3 0.67 1.00 1.03 2.65 5.35 82 81.08 81.18 437.36
+2026,6,Rensselaer Polytechnic Institute,3,0.19,1.00,1.01,2.78,4.99,78,88.00,86.46,434.05,ok,aiaa-dbf-2026-results,6 Rensselaer Polytechnic Institute 3 0.19 1.00 1.01 2.78 4.99 78 88.00 86.46 434.05
+2026,7,Georgia Institute of Technology,3,0.16,1.00,1.02,2.57,4.76,75,90.00,87.68,420.13,ok,aiaa-dbf-2026-results,7 Georgia Institute of Technology 3 0.16 1.00 1.02 2.57 4.76 75 90.00 87.68 420.13
+2026,8,Virginia Polytechnic Institute and State University,3,0.05,1.00,1.42,2.32,4.78,79,87.30,86.07,414.65,ok,aiaa-dbf-2026-results,8 Virginia Polytechnic Institute and State University 3 0.05 1.00 1.42 2.32 4.78 79 87.30 86.07 414.65
+2026,9,Auburn University at Auburn,3,0.07,1.00,1.15,2.58,4.80,78,86.50,85.24,411.83,ok,aiaa-dbf-2026-results,9 Auburn University at Auburn 3 0.07 1.00 1.15 2.58 4.80 78 86.50 85.24 411.83
+2026,10,Instituto Tecnológico de Buenos Aires,3,0.01,1.00,1.71,2.33,5.04,66,82.20,79.78,405.33,ok,aiaa-dbf-2026-results,10 Instituto Tecnológico de Buenos Aires 3 0.01 1.00 1.71 2.33 5.04 66 82.20 79.78 405.33
+2026,11,Purdue University (Main Campus),3,0.02,1.00,1.34,2.12,4.48,79,85.33,84.39,381.16,ok,aiaa-dbf-2026-results,11 Purdue University (Main Campus) 3 0.02 1.00 1.34 2.12 4.48 79 85.33 84.39 381.16
+2026,12,University of Maryland College Park,3,0.18,1.00,1.01,2.35,4.55,69,81.83,79.93,366.35,ok,aiaa-dbf-2026-results,12 University of Maryland College Park 3 0.18 1.00 1.01 2.35 4.55 69 81.83 79.93 366.35
+2026,13,Santa Clara University,3,0.08,1.00,1.01,2.16,4.26,83,82.67,82.77,355.44,ok,aiaa-dbf-2026-results,13 Santa Clara University 3 0.08 1.00 1.01 2.16 4.26 83 82.67 82.77 355.44
+2026,14,The University of Sydney,3,0.01,1.00,1.54,2.52,5.08,70,66.75,67.30,344.67,ok,aiaa-dbf-2026-results,14 The University of Sydney 3 0.01 1.00 1.54 2.52 5.08 70 66.75 67.30 344.67
+2026,15,The Hong Kong Polytechnic University,3,0.00,1.00,1.01,2.67,4.68,68,72.88,72.21,340.97,ok,aiaa-dbf-2026-results,15 The Hong Kong Polytechnic University 3 0.00 1.00 1.01 2.67 4.68 68 72.88 72.21 340.97
+2026,16,Embry-Riddle Aeronautical University - Prescott,3,0.22,1.00,1.01,2.20,4.43,77,75.50,75.77,338.89,ok,aiaa-dbf-2026-results,16 Embry-Riddle Aeronautical University - Prescott 3 0.22 1.00 1.01 2.20 4.43 77 75.50 75.77 338.89
+2026,17,Johns Hopkins University,3,0.01,1.00,1.12,2.11,4.24,76,76.47,76.45,326.84,ok,aiaa-dbf-2026-results,17 Johns Hopkins University 3 0.01 1.00 1.12 2.11 4.24 76 76.47 76.45 326.84
+2026,18,West Virginia University,3,0.01,1.00,1.21,2.08,4.30,65,73.20,72.02,312.48,ok,aiaa-dbf-2026-results,18 West Virginia University 3 0.01 1.00 1.21 2.08 4.30 65 73.20 72.02 312.48
+2026,19,Embry Riddle Aeronautical University - Daytona Beach,3,0.01,1.00,1.93,0.00,2.94,71,88.07,85.56,254.30,ok,aiaa-dbf-2026-results,19 Embry Riddle Aeronautical University - Daytona Beach 3 0.01 1.00 1.93 0.00 2.94 71 88.07 85.56 254.30
+2026,20,University of Michigan - Ann Arbor,3,0.01,1.00,2.00,0.00,3.01,83,83.47,83.39,253.66,ok,aiaa-dbf-2026-results,20 University of Michigan - Ann Arbor 3 0.01 1.00 2.00 0.00 3.01 83 83.47 83.39 253.66
+2026,21,University of Southern California,3,0.00,1.00,1.74,0.00,2.74,83,91.98,90.60,251.53,ok,aiaa-dbf-2026-results,21 University of Southern California 3 0.00 1.00 1.74 0.00 2.74 83 91.98 90.60 251.53
+2026,22,Royal Melbourne Institute of Technology,3,0.02,1.00,1.60,0.00,2.62,86,88.57,88.22,233.76,ok,aiaa-dbf-2026-results,22 Royal Melbourne Institute of Technology 3 0.02 1.00 1.60 0.00 2.62 86 88.57 88.22 233.76
+2026,23,The University of Texas at Dallas,3,0.00,1.00,1.52,0.00,2.52,78,88.83,87.26,222.76,ok,aiaa-dbf-2026-results,23 The University of Texas at Dallas 3 0.00 1.00 1.52 0.00 2.52 78 88.83 87.26 222.76
+2026,24,San Jose State University,3,0.44,1.00,1.01,0.00,2.46,83,82.70,82.82,206.33,ok,aiaa-dbf-2026-results,24 San Jose State University 3 0.44 1.00 1.01 0.00 2.46 83 82.70 82.82 206.33
+2026,25,The University of Kansas,3,0.04,1.00,1.23,0.00,2.27,80,88.58,87.32,201.05,ok,aiaa-dbf-2026-results,25 The University of Kansas 3 0.04 1.00 1.23 0.00 2.27 80 88.58 87.32 201.05
+2026,26,Universidad de Antioquia,3,0.04,1.00,1.18,0.00,2.23,84,85.50,85.29,192.83,ok,aiaa-dbf-2026-results,26 Universidad de Antioquia 3 0.04 1.00 1.18 0.00 2.23 84 85.50 85.29 192.83
+2026,27,University of Illinois Urbana Champaign,3,0.30,1.00,1.01,0.00,2.32,70,80.83,79.13,186.43,ok,aiaa-dbf-2026-results,27 University of Illinois Urbana Champaign 3 0.30 1.00 1.01 0.00 2.32 70 80.83 79.13 186.43
+2026,28,Universidad Pontificia Bolivariana,3,0.32,1.00,1.01,0.00,2.33,72,78.22,77.35,183.14,ok,aiaa-dbf-2026-results,28 Universidad Pontificia Bolivariana 3 0.32 1.00 1.01 0.00 2.33 72 78.22 77.35 183.14
+2026,29,National Cheng Kung University,3,0.00,1.00,1.38,0.00,2.38,66,77.12,75.48,182.83,ok,aiaa-dbf-2026-results,29 National Cheng Kung University 3 0.00 1.00 1.38 0.00 2.38 66 77.12 75.48 182.83
+2026,30,University of Kentucky - Paducah,3,0.12,1.00,1.04,0.00,2.16,85,82.35,82.73,182.10,ok,aiaa-dbf-2026-results,30 University of Kentucky - Paducah 3 0.12 1.00 1.04 0.00 2.16 85 82.35 82.73 182.10
+2026,31,Texas A&M University - College Station,3,0.02,1.00,1.28,0.00,2.31,73,76.87,76.24,178.78,ok,aiaa-dbf-2026-results,31 Texas A&M University - College Station 3 0.02 1.00 1.28 0.00 2.31 73 76.87 76.24 178.78
+2026,32,The University of Hong Kong,3,0.13,1.00,1.02,0.00,2.15,74,83.33,81.92,178.77,ok,aiaa-dbf-2026-results,32 The University of Hong Kong 3 0.13 1.00 1.02 0.00 2.15 74 83.33 81.92 178.77
+2026,33,Cornell University,3,0.14,1.00,1.02,0.00,2.15,66,84.00,81.36,178.28,ok,aiaa-dbf-2026-results,33 Cornell University 3 0.14 1.00 1.02 0.00 2.15 66 84.00 81.36 178.28
+2026,34,"Aviation and Aerospace University, Bangladesh",3,0.10,1.00,1.02,0.00,2.12,82,81.58,81.66,175.87,ok,aiaa-dbf-2026-results,"34 Aviation and Aerospace University, Bangladesh 3 0.10 1.00 1.02 0.00 2.12 82 81.58 81.66 175.87"
+2026,35,Massachusetts Institute of Technology,3,0.14,1.00,1.01,0.00,2.15,72,80.95,79.63,174.34,ok,aiaa-dbf-2026-results,35 Massachusetts Institute of Technology 3 0.14 1.00 1.01 0.00 2.15 72 80.95 79.63 174.34
+2026,36,The University of Texas at Austin,3,0.23,1.00,1.01,0.00,2.24,75,76.55,76.30,173.78,ok,aiaa-dbf-2026-results,36 The University of Texas at Austin 3 0.23 1.00 1.01 0.00 2.24 75 76.55 76.30 173.78
+2026,37,University of Colorado Colorado Springs,3,0.01,1.00,1.15,0.00,2.17,69,79.27,77.70,171.23,ok,aiaa-dbf-2026-results,37 University of Colorado Colorado Springs 3 0.01 1.00 1.15 0.00 2.17 69 79.27 77.70 171.23
+2026,38,University of Oklahoma,3,0.01,1.00,1.11,0.00,2.13,64,81.07,78.51,170.02,ok,aiaa-dbf-2026-results,38 University of Oklahoma 3 0.01 1.00 1.11 0.00 2.13 64 81.07 78.51 170.02
+2026,39,Indian Institute of Technology Kharagpur,3,0.02,1.00,1.15,0.00,2.16,72,77.67,76.78,169.22,ok,aiaa-dbf-2026-results,39 Indian Institute of Technology Kharagpur 3 0.02 1.00 1.15 0.00 2.16 72 77.67 76.78 169.22
+2026,40,University of Arkansas,3,1.00,1.00,0.00,0.00,2.00,85,82.10,82.53,168.06,ok,aiaa-dbf-2026-results,40 University of Arkansas 3 1.00 1.00 0.00 0.00 2.00 85 82.10 82.53 168.06
+2026,41,Case Western Reserve University,3,0.01,1.00,1.09,0.00,2.10,73,77.65,76.93,164.29,ok,aiaa-dbf-2026-results,41 Case Western Reserve University 3 0.01 1.00 1.09 0.00 2.10 73 77.65 76.93 164.29
+2026,42,The Ohio State University,3,0.00,1.00,1.01,0.00,2.01,70,80.53,78.90,161.70,ok,aiaa-dbf-2026-results,42 The Ohio State University 3 0.00 1.00 1.01 0.00 2.01 70 80.53 78.90 161.70
+2026,43,Missouri University of Science and Technology,3,0.01,1.00,1.25,0.00,2.26,75,68.33,69.39,159.59,ok,aiaa-dbf-2026-results,43 Missouri University of Science and Technology 3 0.01 1.00 1.25 0.00 2.26 75 68.33 69.39 159.59
+2026,44,Old Dominion University,3,0.00,1.00,1.10,0.00,2.10,65,76.08,74.36,159.26,ok,aiaa-dbf-2026-results,44 Old Dominion University 3 0.00 1.00 1.10 0.00 2.10 65 76.08 74.36 159.26
+2026,45,University of South Alabama,3,0.01,1.00,1.12,0.00,2.12,73,72.42,72.49,157.02,ok,aiaa-dbf-2026-results,45 University of South Alabama 3 0.01 1.00 1.12 0.00 2.12 73 72.42 72.49 157.02
+2026,46,San Diego State University,3,0.05,1.00,1.02,0.00,2.07,71,72.20,72.07,152.15,ok,aiaa-dbf-2026-results,46 San Diego State University 3 0.05 1.00 1.02 0.00 2.07 71 72.20 72.07 152.15
+2026,47,"Rutgers, The State University of New Jersey - New Brunswick",3,0.00,1.00,1.06,0.00,2.06,74,63.33,64.87,136.89,ok,aiaa-dbf-2026-results,"47 Rutgers, The State University of New Jersey - New Brunswick 3 0.00 1.00 1.06 0.00 2.06 74 63.33 64.87 136.89"
+2026,48,The University of Texas at El Paso,3,0.12,1.00,1.01,0.00,2.14,77,58.78,61.49,134.30,ok,aiaa-dbf-2026-results,48 The University of Texas at El Paso 3 0.12 1.00 1.01 0.00 2.14 77 58.78 61.49 134.30
+2026,49,University of Tennessee Knoxville,3,0.02,1.00,1.17,0.00,2.19,72,56.42,58.77,131.72,ok,aiaa-dbf-2026-results,49 University of Tennessee Knoxville 3 0.02 1.00 1.17 0.00 2.19 72 56.42 58.77 131.72
+2026,50,University of North Carolina at Charlotte,3,0.00,1.00,1.08,0.00,2.08,74,58.73,60.95,129.52,ok,aiaa-dbf-2026-results,50 University of North Carolina at Charlotte 3 0.00 1.00 1.08 0.00 2.08 74 58.73 60.95 129.52
+2026,51,University of Alabama at Birmingham,3,0.01,1.00,1.07,0.00,2.07,67,57.00,58.45,124.18,ok,aiaa-dbf-2026-results,51 University of Alabama at Birmingham 3 0.01 1.00 1.07 0.00 2.07 67 57.00 58.45 124.18
+2026,52,University of Georgia,3,0.00,1.00,1.25,0.00,2.26,64,50.85,52.86,122.26,ok,aiaa-dbf-2026-results,52 University of Georgia 3 0.00 1.00 1.25 0.00 2.26 64 50.85 52.86 122.26
+2026,53,Saint Louis University,3,0.03,1.00,1.06,0.00,2.08,71,49.88,53.00,113.45,ok,aiaa-dbf-2026-results,53 Saint Louis University 3 0.03 1.00 1.06 0.00 2.08 71 49.88 53.00 113.45
+2026,54,Vellore Institute of Technology- Vellore,3,0.11,1.00,0.00,0.00,1.11,83,84.25,84.02,95.99,ok,aiaa-dbf-2026-results,54 Vellore Institute of Technology- Vellore 3 0.11 1.00 0.00 0.00 1.11 83 84.25 84.02 95.99
+2026,55,"California State University, Long Beach",3,0.14,1.00,0.00,0.00,1.14,81,74.80,75.77,89.66,ok,aiaa-dbf-2026-results,"55 California State University, Long Beach 3 0.14 1.00 0.00 0.00 1.14 81 74.80 75.77 89.66"
+2026,56,Worcester Polytechnic Institute,3,0.17,1.00,0.00,0.00,1.17,74,74.00,73.95,89.52,ok,aiaa-dbf-2026-results,56 Worcester Polytechnic Institute 3 0.17 1.00 0.00 0.00 1.17 74 74.00 73.95 89.52
+2026,57,University of Missouri - Columbia,3,0.03,1.00,0.00,0.00,1.03,70,86.17,83.79,89.17,ok,aiaa-dbf-2026-results,57 University of Missouri - Columbia 3 0.03 1.00 0.00 0.00 1.03 70 86.17 83.79 89.17
+2026,58,Military Institute of Science and Technology,3,0.01,1.00,0.00,0.00,1.01,80,85.12,84.39,88.41,ok,aiaa-dbf-2026-results,58 Military Institute of Science and Technology 3 0.01 1.00 0.00 0.00 1.01 80 85.12 84.39 88.41
+2026,59,University at Buffalo,3,0.02,1.00,0.00,0.00,1.02,64,86.45,83.12,87.60,ok,aiaa-dbf-2026-results,59 University at Buffalo 3 0.02 1.00 0.00 0.00 1.02 64 86.45 83.12 87.60
+2026,60,Washington University in St. Louis,3,0.03,1.00,0.00,0.00,1.03,68,84.10,81.69,86.94,ok,aiaa-dbf-2026-results,60 Washington University in St. Louis 3 0.03 1.00 0.00 0.00 1.03 68 84.10 81.69 86.94
+2026,61,University of Massachusetts Amherst,3,0.12,1.00,0.00,0.00,1.12,73,74.90,74.64,86.65,ok,aiaa-dbf-2026-results,61 University of Massachusetts Amherst 3 0.12 1.00 0.00 0.00 1.12 73 74.90 74.64 86.65
+2026,62,"University of California, Irvine",3,0.00,1.00,0.00,0.00,1.00,76,84.42,83.15,86.15,ok,aiaa-dbf-2026-results,"62 University of California, Irvine 3 0.00 1.00 0.00 0.00 1.00 76 84.42 83.15 86.15"
+2026,63,"University of California, San Diego",3,0.02,1.00,0.00,0.00,1.02,86,80.72,81.50,85.80,ok,aiaa-dbf-2026-results,"63 University of California, San Diego 3 0.02 1.00 0.00 0.00 1.02 86 80.72 81.50 85.80"
+2026,64,University of Central Florida,3,0.01,1.00,0.00,0.00,1.01,81,75.25,76.09,79.89,ok,aiaa-dbf-2026-results,64 University of Central Florida 3 0.01 1.00 0.00 0.00 1.01 81 75.25 76.09 79.89
+2026,65,James Madison University,3,0.02,1.00,0.00,0.00,1.02,73,68.25,68.96,73.14,ok,aiaa-dbf-2026-results,65 James Madison University 3 0.02 1.00 0.00 0.00 1.02 73 68.25 68.96 73.14
+2026,66,University of Nebraska - Lincoln,3,0.02,1.00,0.00,0.00,1.02,77,60.33,62.79,67.08,ok,aiaa-dbf-2026-results,66 University of Nebraska - Lincoln 3 0.02 1.00 0.00 0.00 1.02 77 60.33 62.79 67.08
+2026,67,The University of Alabama in Huntsville,3,0.00,1.00,0.00,0.00,1.00,67,62.55,63.14,66.14,ok,aiaa-dbf-2026-results,67 The University of Alabama in Huntsville 3 0.00 1.00 0.00 0.00 1.00 67 62.55 63.14 66.14
+2026,68,"California State Polytechnic University, Pomona",3,0.03,1.00,0.00,0.00,1.03,74,57.92,60.34,65.39,ok,aiaa-dbf-2026-results,"68 California State Polytechnic University, Pomona 3 0.03 1.00 0.00 0.00 1.03 74 57.92 60.34 65.39"
+2026,69,The Pennsylvania State University,3,0.01,1.00,0.00,0.00,1.01,70,56.00,58.05,61.89,ok,aiaa-dbf-2026-results,69 The Pennsylvania State University 3 0.01 1.00 0.00 0.00 1.01 70 56.00 58.05 61.89
+2026,70,University of Houston,3,0.01,1.00,0.00,0.00,1.01,80,52.77,56.91,60.22,ok,aiaa-dbf-2026-results,70 University of Houston 3 0.01 1.00 0.00 0.00 1.01 80 52.77 56.91 60.22
+2026,71,University of Missouri - Kansas City,3,0.00,1.00,0.00,0.00,1.00,75,52.53,55.96,58.96,ok,aiaa-dbf-2026-results,71 University of Missouri - Kansas City 3 0.00 1.00 0.00 0.00 1.00 75 52.53 55.96 58.96
+2026,72,University of Maine,3,0.02,1.00,0.00,0.00,1.02,70,51.58,54.40,58.60,ok,aiaa-dbf-2026-results,72 University of Maine 3 0.02 1.00 0.00 0.00 1.02 70 51.58 54.40 58.60
+2026,73,Arizona State University,3,0.01,1.00,0.00,0.00,1.01,74,45.56,49.86,53.15,ok,aiaa-dbf-2026-results,73 Arizona State University 3 0.01 1.00 0.00 0.00 1.01 74 45.56 49.86 53.15
+2026,74,Columbia University,2,0.10,0.00,0.00,0.00,0.10,64,74.40,72.90,9.01,ok,aiaa-dbf-2026-results,74 Columbia University 2 0.10 0.00 0.00 0.00 0.10 64 74.40 72.90 9.01
+2026,75,The Hong Kong University of Science and Technology,2,0.03,0.00,0.00,0.00,0.03,67,84.08,81.49,4.65,ok,aiaa-dbf-2026-results,75 The Hong Kong University of Science and Technology 2 0.03 0.00 0.00 0.00 0.03 67 84.08 81.49 4.65
+2026,76,Western Michigan University,3,0.02,0.00,0.00,0.00,0.02,70,46.30,49.78,4.13,ok,aiaa-dbf-2026-results,76 Western Michigan University 3 0.02 0.00 0.00 0.00 0.02 70 46.30 49.78 4.13
+2026,77,University of New South Wales,2,0.01,0.00,0.00,0.00,0.01,69,82.50,80.54,3.19,ok,aiaa-dbf-2026-results,77 University of New South Wales 2 0.01 0.00 0.00 0.00 0.01 69 82.50 80.54 3.19
+2026,78,University of Arizona,2,0.03,0.00,0.00,0.00,0.03,72,35.83,41.31,3.13,ok,aiaa-dbf-2026-results,78 University of Arizona 2 0.03 0.00 0.00 0.00 0.03 72 35.83 41.31 3.13
+2026,79,Rochester Institute of Technology,2,0.01,0.00,0.00,0.00,0.01,74,80.15,79.21,2.68,ok,aiaa-dbf-2026-results,79 Rochester Institute of Technology 2 0.01 0.00 0.00 0.00 0.01 74 80.15 79.21 2.68
+2026,80,Alexandria University,2,0.01,0.00,0.00,0.00,0.01,72,57.40,59.61,2.59,ok,aiaa-dbf-2026-results,80 Alexandria University 2 0.01 0.00 0.00 0.00 0.01 72 57.40 59.61 2.59
+2026,81,The George Washington University,2,0.00,0.00,0.00,0.00,0.00,65,69.90,69.15,2.00,ok,aiaa-dbf-2026-results,81 The George Washington University 2 0.00 0.00 0.00 0.00 0.00 65 69.90 69.15 2.00
+2026,82,University of Vermont,2,0.00,0.00,0.00,0.00,0.00,78,35.68,41.99,2.00,ok,aiaa-dbf-2026-results,82 University of Vermont 2 0.00 0.00 0.00 0.00 0.00 78 35.68 41.99 2.00
+2026,83,"University Of Maryland, Baltimore County",2,0.00,0.00,0.00,0.00,0.00,70,34.33,39.67,2.00,ok,aiaa-dbf-2026-results,"83 University Of Maryland, Baltimore County 2 0.00 0.00 0.00 0.00 0.00 70 34.33 39.67 2.00"
+2026,84,North Carolina State University,0,0.00,0.00,0.00,0.00,0.00,77,88.52,86.75,0.00,ok,aiaa-dbf-2026-results,84 North Carolina State University 0 0.00 0.00 0.00 0.00 0.00 77 88.52 86.75 0.00
+2026,85,Khalifa University,0,0.00,0.00,0.00,0.00,0.00,77,84.93,83.81,0.00,ok,aiaa-dbf-2026-results,85 Khalifa University 0 0.00 0.00 0.00 0.00 0.00 77 84.93 83.81 0.00
+2026,86,HM Hochschule München University of Applied Sciences,0,0.00,0.00,0.00,0.00,0.00,65,75.43,73.89,0.00,ok,aiaa-dbf-2026-results,86 HM Hochschule München University of Applied Sciences 0 0.00 0.00 0.00 0.00 0.00 65 75.43 73.89 0.00
+2026,87,Queen's University,0,0.00,0.00,0.00,0.00,0.00,69,66.83,67.11,0.00,ok,aiaa-dbf-2026-results,87 Queen's University 0 0.00 0.00 0.00 0.00 0.00 69 66.83 67.11 0.00
+2026,88,"Mukesh Patel School of Technology Management & Engineering, Mumbai",0,0.00,0.00,0.00,0.00,0.00,79,60.52,63.35,0.00,ok,aiaa-dbf-2026-results,"88 Mukesh Patel School of Technology Management & Engineering, Mumbai 0 0.00 0.00 0.00 0.00 0.00 79 60.52 63.35 0.00"
+2026,89,Tribhuvan University,0,0.00,0.00,0.00,0.00,0.00,75,56.07,58.86,0.00,ok,aiaa-dbf-2026-results,89 Tribhuvan University 0 0.00 0.00 0.00 0.00 0.00 75 56.07 58.86 0.00
+2026,90,Wentworth Institute of Technology,0,0.00,0.00,0.00,0.00,0.00,74,55.33,58.17,0.00,ok,aiaa-dbf-2026-results,90 Wentworth Institute of Technology 0 0.00 0.00 0.00 0.00 0.00 74 55.33 58.17 0.00
+2026,91,Middle East Technical University,0,0.00,0.00,0.00,0.00,0.00,64,55.30,56.61,0.00,ok,aiaa-dbf-2026-results,91 Middle East Technical University 0 0.00 0.00 0.00 0.00 0.00 64 55.30 56.61 0.00
+2026,92,University of Alaska Fairbanks,0,0.00,0.00,0.00,0.00,0.00,65,54.28,55.93,0.00,ok,aiaa-dbf-2026-results,92 University of Alaska Fairbanks 0 0.00 0.00 0.00 0.00 0.00 65 54.28 55.93 0.00
+2026,93,King Abdulaziz University,0,0.00,0.00,0.00,0.00,0.00,64,53.58,55.18,0.00,ok,aiaa-dbf-2026-results,93 King Abdulaziz University 0 0.00 0.00 0.00 0.00 0.00 64 53.58 55.18 0.00
+2026,94,University of Idaho,0,0.00,0.00,0.00,0.00,0.00,65,45.75,48.65,0.00,ok,aiaa-dbf-2026-results,94 University of Idaho 0 0.00 0.00 0.00 0.00 0.00 65 45.75 48.65 0.00
+2026,95,Wichita State University,0,0.00,0.00,0.00,0.00,0.00,70,34.17,39.61,0.00,ok,aiaa-dbf-2026-results,95 Wichita State University 0 0.00 0.00 0.00 0.00 0.00 70 34.17 39.61 0.00
+2026,96,Washington and Lee University,0,0.00,0.00,0.00,0.00,0.00,72,30.95,37.09,0.00,ok,aiaa-dbf-2026-results,96 Washington and Lee University 0 0.00 0.00 0.00 0.00 0.00 72 30.95 37.09 0.00
+2026,97,Michigan Technological University,0,0.00,0.00,0.00,0.00,0.00,68,28.67,34.60,0.00,ok,aiaa-dbf-2026-results,97 Michigan Technological University 0 0.00 0.00 0.00 0.00 0.00 68 28.67 34.60 0.00
+2026,98,Kent State University,0,0.00,0.00,0.00,0.00,0.00,64,0.00,9.67,0.00,ok,aiaa-dbf-2026-results,98 Kent State University 0 0.00 0.00 0.00 0.00 0.00 64 0.00 9.67 0.00
+2025,1,FH JOANNEUM,3,0.92,1.00,1.69,2.73,6.34,81,81.28,81.29,518.23,ok,aiaa-dbf-2025-results,1 FH JOANNEUM 3 0.92 1.00 1.69 2.73 6.34 81 81.28 81.29 518.23
+2025,2,Royal Melbourne Institute of Technology,3,1.00,1.00,1.60,2.36,5.96,89,79.83,81.16,486.36,ok,aiaa-dbf-2025-results,2 Royal Melbourne Institute of Technology 3 1.00 1.00 1.60 2.36 5.96 89 79.83 81.16 486.36
+2025,3,Santa Clara University,3,0.85,1.00,1.36,2.26,5.47,74,89.57,87.20,479.90,ok,aiaa-dbf-2025-results,3 Santa Clara University 3 0.85 1.00 1.36 2.26 5.47 74 89.57 87.20 479.90
+2025,4,The University of Akron,3,0.42,1.00,1.97,2.51,5.89,64,83.50,80.55,477.78,ok,aiaa-dbf-2025-results,4 The University of Akron 3 0.42 1.00 1.97 2.51 5.89 64 83.50 80.55 477.78
+2025,5,Rensselaer Polytechnic Institute,3,0.08,1.00,1.93,3.00,6.01,87,75.07,76.80,464.60,ok,aiaa-dbf-2025-results,5 Rensselaer Polytechnic Institute 3 0.08 1.00 1.93 3.00 6.01 87 75.07 76.80 464.60
+2025,6,The University of Texas at Austin,3,0.65,1.00,1.88,2.11,5.64,76,82.65,81.58,463.44,ok,aiaa-dbf-2025-results,6 The University of Texas at Austin 3 0.65 1.00 1.88 2.11 5.64 76 82.65 81.58 463.44
+2025,7,Virginia Polytechnic Institute and State University,3,0.63,1.00,1.42,2.35,5.40,70,87.80,85.19,463.16,ok,aiaa-dbf-2025-results,7 Virginia Polytechnic Institute and State University 3 0.63 1.00 1.42 2.35 5.40 70 87.80 85.19 463.16
+2025,8,University of Ljubljana,3,0.59,1.00,1.69,2.04,5.32,76,88.17,86.35,461.96,ok,aiaa-dbf-2025-results,8 University of Ljubljana 3 0.59 1.00 1.69 2.04 5.32 76 88.17 86.35 461.96
+2025,9,The University of Sydney,3,0.46,1.00,1.58,2.28,5.32,88,86.00,86.32,461.94,ok,aiaa-dbf-2025-results,9 The University of Sydney 3 0.46 1.00 1.58 2.28 5.32 88 86.00 86.32 461.94
+2025,10,"University of California, Los Angeles",3,0.17,1.00,1.42,2.22,4.82,84,92.43,91.13,441.97,ok,aiaa-dbf-2025-results,"10 University of California, Los Angeles 3 0.17 1.00 1.42 2.22 4.82 84 92.43 91.13 441.97"
+2025,11,University of Southern California,3,0.35,1.00,1.28,2.11,4.75,84,89.36,88.50,423.14,ok,aiaa-dbf-2025-results,11 University of Southern California 3 0.35 1.00 1.28 2.11 4.75 84 89.36 88.50 423.14
+2025,12,University at Buffalo,3,0.28,1.00,2.00,2.26,5.54,79,74.05,74.73,416.95,ok,aiaa-dbf-2025-results,12 University at Buffalo 3 0.28 1.00 2.00 2.26 5.54 79 74.05 74.73 416.95
+2025,13,The University of Kansas,3,0.21,1.00,1.55,2.22,4.99,70,85.07,82.76,416.03,ok,aiaa-dbf-2025-results,13 The University of Kansas 3 0.21 1.00 1.55 2.22 4.99 70 85.07 82.76 416.03
+2025,14,The Pennsylvania State University,3,0.08,1.00,1.55,2.15,4.78,79,85.07,84.16,405.19,ok,aiaa-dbf-2025-results,14 The Pennsylvania State University 3 0.08 1.00 1.55 2.15 4.78 79 85.07 84.16 405.19
+2025,15,Embry-Riddle Aeronautical University - Prescott,3,0.06,1.00,1.66,2.22,4.95,73,82.52,81.04,403.99,ok,aiaa-dbf-2025-results,15 Embry-Riddle Aeronautical University - Prescott 3 0.06 1.00 1.66 2.22 4.95 73 82.52 81.04 403.99
+2025,16,Columbia University,3,0.96,1.00,1.15,2.04,5.15,82,77.02,77.76,403.78,ok,aiaa-dbf-2025-results,16 Columbia University 3 0.96 1.00 1.15 2.04 5.15 82 77.02 77.76 403.78
+2025,17,University of Illinois Urbana-Champaign,3,0.21,1.00,1.32,2.61,5.14,82,76.67,77.50,401.20,ok,aiaa-dbf-2025-results,17 University of Illinois Urbana-Champaign 3 0.21 1.00 1.32 2.61 5.14 82 76.67 77.50 401.20
+2025,18,University of Maribor,3,0.22,1.00,1.48,2.57,5.27,68,75.87,74.65,396.62,ok,aiaa-dbf-2025-results,18 University of Maribor 3 0.22 1.00 1.48 2.57 5.27 68 75.87 74.65 396.62
+2025,19,The Hong Kong Polytechnic University,3,0.44,1.00,1.29,2.11,4.83,79,80.70,80.38,391.58,ok,aiaa-dbf-2025-results,19 The Hong Kong Polytechnic University 3 0.44 1.00 1.29 2.11 4.83 79 80.70 80.38 391.58
+2025,20,Universidad Pontificia Bolivariana,3,0.51,1.00,1.20,2.07,4.79,83,80.25,80.66,389.11,ok,aiaa-dbf-2025-results,20 Universidad Pontificia Bolivariana 3 0.51 1.00 1.20 2.07 4.79 83 80.25 80.66 389.11
+2025,21,The University of Texas at Dallas,3,0.09,1.00,1.37,2.04,4.49,77,85.67,84.34,382.10,ok,aiaa-dbf-2025-results,21 The University of Texas at Dallas 3 0.09 1.00 1.37 2.04 4.49 77 85.67 84.34 382.10
+2025,22,University of Oklahoma,3,0.20,1.00,1.34,2.22,4.76,74,80.47,79.49,381.73,ok,aiaa-dbf-2025-results,22 University of Oklahoma 3 0.20 1.00 1.34 2.22 4.76 74 80.47 79.49 381.73
+2025,23,Texas A&M University,3,0.24,1.00,1.21,2.11,4.56,66,71.30,70.50,324.53,ok,aiaa-dbf-2025-results,23 Texas A&M University 3 0.24 1.00 1.21 2.11 4.56 66 71.30 70.50 324.53
+2025,24,University of Kentucky - Paducah,3,0.11,1.00,1.18,2.11,4.40,68,65.57,66.00,293.16,ok,aiaa-dbf-2025-results,24 University of Kentucky - Paducah 3 0.11 1.00 1.18 2.11 4.40 68 65.57 66.00 293.16
+2025,25,University of Michigan - Ann Arbor,3,0.88,1.00,1.23,0.00,3.11,77,90.42,88.44,278.48,ok,aiaa-dbf-2025-results,25 University of Michigan - Ann Arbor 3 0.88 1.00 1.23 0.00 3.11 77 90.42 88.44 278.48
+2025,26,University of Massachusetts Amherst,3,0.75,1.00,1.37,0.00,3.12,75,84.67,83.26,262.73,ok,aiaa-dbf-2025-results,26 University of Massachusetts Amherst 3 0.75 1.00 1.37 0.00 3.12 75 84.67 83.26 262.73
+2025,27,Georgia Institute of Technology,3,0.00,1.00,1.74,0.00,2.74,77,86.62,85.17,236.26,ok,aiaa-dbf-2025-results,27 Georgia Institute of Technology 3 0.00 1.00 1.74 0.00 2.74 77 86.62 85.17 236.26
+2025,28,Universidade da Beira Interior Faculdade de Engenharia,3,0.22,1.00,1.36,0.00,2.58,66,86.02,82.98,217.18,ok,aiaa-dbf-2025-results,28 Universidade da Beira Interior Faculdade de Engenharia 3 0.22 1.00 1.36 0.00 2.58 66 86.02 82.98 217.18
+2025,29,Colorado State University,3,0.05,1.00,1.44,0.00,2.49,76,87.50,85.83,216.72,ok,aiaa-dbf-2025-results,29 Colorado State University 3 0.05 1.00 1.44 0.00 2.49 76 87.50 85.83 216.72
+2025,30,North Carolina State University,3,0.12,1.00,1.38,0.00,2.51,89,82.53,83.49,212.48,ok,aiaa-dbf-2025-results,30 North Carolina State University 3 0.12 1.00 1.38 0.00 2.51 89 82.53 83.49 212.48
+2025,31,The Hong Kong University of Science and Technology,3,0.21,1.00,1.42,0.00,2.63,81,76.60,77.20,205.71,ok,aiaa-dbf-2025-results,31 The Hong Kong University of Science and Technology 3 0.21 1.00 1.42 0.00 2.63 81 76.60 77.20 205.71
+2025,32,San Diego State University,3,0.22,1.00,1.71,0.00,2.93,71,67.98,68.49,203.73,ok,aiaa-dbf-2025-results,32 San Diego State University 3 0.22 1.00 1.71 0.00 2.93 71 67.98 68.49 203.73
+2025,33,University of Florida,3,0.16,1.00,1.22,0.00,2.38,84,81.72,82.08,198.59,ok,aiaa-dbf-2025-results,33 University of Florida 3 0.16 1.00 1.22 0.00 2.38 84 81.72 82.08 198.59
+2025,34,San Jose State University,3,0.10,1.00,1.37,0.00,2.48,80,78.50,78.78,198.04,ok,aiaa-dbf-2025-results,34 San Jose State University 3 0.10 1.00 1.37 0.00 2.48 80 78.50 78.78 198.04
+2025,35,Washington University in St. Louis,3,0.13,1.00,1.11,0.00,2.24,83,83.17,83.09,188.75,ok,aiaa-dbf-2025-results,35 Washington University in St. Louis 3 0.13 1.00 1.11 0.00 2.24 83 83.17 83.09 188.75
+2025,36,"Aviation and Aerospace University, Bangladesh",3,0.12,1.00,1.06,0.00,2.18,70,86.57,84.10,186.45,ok,aiaa-dbf-2025-results,"36 Aviation and Aerospace University, Bangladesh 3 0.12 1.00 1.06 0.00 2.18 70 86.57 84.10 186.45"
+2025,37,Khalifa University of Science and Technology,3,0.25,1.00,1.13,0.00,2.38,75,72.70,73.09,177.32,ok,aiaa-dbf-2025-results,37 Khalifa University of Science and Technology 3 0.25 1.00 1.13 0.00 2.38 75 72.70 73.09 177.32
+2025,38,University of Notre Dame,3,0.17,1.00,1.09,0.00,2.27,78,74.50,74.98,172.88,ok,aiaa-dbf-2025-results,38 University of Notre Dame 3 0.17 1.00 1.09 0.00 2.27 78 74.50 74.98 172.88
+2025,39,Military Institute of Science and Technology,3,0.22,1.00,1.07,0.00,2.29,65,75.50,73.96,172.20,ok,aiaa-dbf-2025-results,39 Military Institute of Science and Technology 3 0.22 1.00 1.07 0.00 2.29 65 75.50 73.96 172.20
+2025,40,The University of Hong Kong,3,0.11,1.00,1.22,0.00,2.33,72,70.92,71.03,168.31,ok,aiaa-dbf-2025-results,40 The University of Hong Kong 3 0.11 1.00 1.22 0.00 2.33 72 70.92 71.03 168.31
+2025,41,The Ohio State University,3,0.06,1.00,1.30,0.00,2.35,72,69.77,70.06,167.84,ok,aiaa-dbf-2025-results,41 The Ohio State University 3 0.06 1.00 1.30 0.00 2.35 72 69.77 70.06 167.84
+2025,42,Utah State University,3,0.15,1.00,1.08,0.00,2.23,68,74.10,73.16,166.31,ok,aiaa-dbf-2025-results,42 Utah State University 3 0.15 1.00 1.08 0.00 2.23 68 74.10 73.16 166.31
+2025,43,Trine University,3,0.06,1.00,1.16,0.00,2.23,63,75.05,73.25,166.24,ok,aiaa-dbf-2025-results,43 Trine University 3 0.06 1.00 1.16 0.00 2.23 63 75.05 73.25 166.24
+2025,44,Purdue University (Main Campus),3,0.05,1.00,1.04,0.00,2.08,78,73.00,73.77,156.71,ok,aiaa-dbf-2025-results,44 Purdue University (Main Campus) 3 0.05 1.00 1.04 0.00 2.08 78 73.00 73.77 156.71
+2025,45,Missouri University of Science and Technology,3,0.00,1.00,1.30,0.00,2.30,73,65.17,66.29,155.32,ok,aiaa-dbf-2025-results,45 Missouri University of Science and Technology 3 0.00 1.00 1.30 0.00 2.30 73 65.17 66.29 155.32
+2025,46,Rowan University,3,0.12,1.00,1.12,0.00,2.24,72,66.33,67.21,153.25,ok,aiaa-dbf-2025-results,46 Rowan University 3 0.12 1.00 1.12 0.00 2.24 72 66.33 67.21 153.25
+2025,47,University of Colorado Boulder,3,0.13,1.00,1.14,0.00,2.27,77,63.58,65.53,151.44,ok,aiaa-dbf-2025-results,47 University of Colorado Boulder 3 0.13 1.00 1.14 0.00 2.27 77 63.58 65.53 151.44
+2025,48,Clarkson University,3,0.77,1.00,0.00,0.00,1.77,77,79.13,78.87,142.50,ok,aiaa-dbf-2025-results,48 Clarkson University 3 0.77 1.00 0.00 0.00 1.77 77 79.13 78.87 142.50
+2025,49,Johns Hopkins University,3,0.07,1.00,1.01,0.00,2.08,78,58.03,60.98,129.83,ok,aiaa-dbf-2025-results,49 Johns Hopkins University 3 0.07 1.00 1.01 0.00 2.08 78 58.03 60.98 129.83
+2025,50,"California State University, Long Beach",3,0.04,1.00,1.00,0.00,2.05,68,60.03,61.27,128.47,ok,aiaa-dbf-2025-results,"50 California State University, Long Beach 3 0.04 1.00 1.00 0.00 2.05 68 60.03 61.27 128.47"
+2025,51,University of Washington-Seattle,3,0.34,1.00,0.00,0.00,1.34,85,89.50,88.83,122.25,ok,aiaa-dbf-2025-results,51 University of Washington-Seattle 3 0.34 1.00 0.00 0.00 1.34 85 89.50 88.83 122.25
+2025,52,University of New South Wales,3,0.13,1.00,0.00,0.00,1.13,86,97.58,95.83,110.95,ok,aiaa-dbf-2025-results,52 University of New South Wales 3 0.13 1.00 0.00 0.00 1.13 86 97.58 95.83 110.95
+2025,53,The University of Alabama,3,0.28,1.00,0.00,0.00,1.28,74,85.30,83.67,110.01,ok,aiaa-dbf-2025-results,53 The University of Alabama 3 0.28 1.00 0.00 0.00 1.28 74 85.30 83.67 110.01
+2025,54,"University of Maryland, College Park (UMCP)",3,0.38,1.00,0.00,0.00,1.38,88,73.92,76.09,107.65,ok,aiaa-dbf-2025-results,"54 University of Maryland, College Park (UMCP) 3 0.38 1.00 0.00 0.00 1.38 88 73.92 76.09 107.65"
+2025,55,Rutgers University - New Brunswick,3,0.24,1.00,0.00,0.00,1.24,76,85.87,84.34,107.61,ok,aiaa-dbf-2025-results,55 Rutgers University - New Brunswick 3 0.24 1.00 0.00 0.00 1.24 76 85.87 84.34 107.61
+2025,56,Alexandria University,3,0.27,1.00,0.00,0.00,1.27,73,81.75,80.45,105.01,ok,aiaa-dbf-2025-results,56 Alexandria University 3 0.27 1.00 0.00 0.00 1.27 73 81.75 80.45 105.01
+2025,57,"Embry-Riddle Aeronautical University, Daytona Beach",3,0.14,1.00,0.00,0.00,1.14,74,90.70,88.22,103.42,ok,aiaa-dbf-2025-results,"57 Embry-Riddle Aeronautical University, Daytona Beach 3 0.14 1.00 0.00 0.00 1.14 74 90.70 88.22 103.42"
+2025,58,Universidad de Antioquia,3,0.13,1.00,0.00,0.00,1.13,73,88.73,86.31,100.15,ok,aiaa-dbf-2025-results,58 Universidad de Antioquia 3 0.13 1.00 0.00 0.00 1.13 73 88.73 86.31 100.15
+2025,59,"University of California, Irvine",3,0.22,1.00,0.00,0.00,1.22,62,82.10,79.10,99.46,ok,aiaa-dbf-2025-results,"59 University of California, Irvine 3 0.22 1.00 0.00 0.00 1.22 62 82.10 79.10 99.46"
+2025,60,Auburn University at Auburn,3,0.10,1.00,0.00,0.00,1.10,81,83.90,83.50,94.91,ok,aiaa-dbf-2025-results,60 Auburn University at Auburn 3 0.10 1.00 0.00 0.00 1.10 81 83.90 83.50 94.91
+2025,61,University of Maine,3,0.21,1.00,0.00,0.00,1.21,64,74.37,72.80,90.82,ok,aiaa-dbf-2025-results,61 University of Maine 3 0.21 1.00 0.00 0.00 1.21 64 74.37 72.80 90.82
+2025,62,National University of Science and Technology POLITEHNICA Bucharest,3,0.06,1.00,0.00,0.00,1.06,67,81.60,79.37,86.90,ok,aiaa-dbf-2025-results,62 National University of Science and Technology POLITEHNICA Bucharest 3 0.06 1.00 0.00 0.00 1.06 67 81.60 79.37 86.90
+2025,63,DAYANANDA SAGAR COLLEGE OF ENGINEERING,3,0.00,1.00,0.00,0.00,1.00,78,84.50,83.53,86.53,ok,aiaa-dbf-2025-results,63 DAYANANDA SAGAR COLLEGE OF ENGINEERING 3 0.00 1.00 0.00 0.00 1.00 78 84.50 83.53 86.53
+2025,64,George Washington University,3,0.07,1.00,0.00,0.00,1.07,63,77.92,75.61,84.10,ok,aiaa-dbf-2025-results,64 George Washington University 3 0.07 1.00 0.00 0.00 1.07 63 77.92 75.61 84.10
+2025,65,VEERMATA JIJABAI TECHNOLOGICAL INSTITUTE,3,0.10,1.00,0.00,0.00,1.10,73,73.12,73.05,83.61,ok,aiaa-dbf-2025-results,65 VEERMATA JIJABAI TECHNOLOGICAL INSTITUTE 3 0.10 1.00 0.00 0.00 1.10 73 73.12 73.05 83.61
+2025,66,West Virginia University,3,0.03,1.00,0.00,0.00,1.03,71,78.75,77.66,83.11,ok,aiaa-dbf-2025-results,66 West Virginia University 3 0.03 1.00 0.00 0.00 1.03 71 78.75 77.66 83.11
+2025,67,Stanford University,3,0.00,1.00,0.00,0.00,1.00,66,81.73,79.32,82.32,ok,aiaa-dbf-2025-results,67 Stanford University 3 0.00 1.00 0.00 0.00 1.00 66 81.73 79.32 82.32
+2025,68,Case Western Reserve University,3,0.09,1.00,0.00,0.00,1.09,64,68.17,67.50,76.85,ok,aiaa-dbf-2025-results,68 Case Western Reserve University 3 0.09 1.00 0.00 0.00 1.09 64 68.17 67.50 76.85
+2025,69,John Brown University,3,0.04,1.00,0.00,0.00,1.04,66,70.37,69.64,75.35,ok,aiaa-dbf-2025-results,69 John Brown University 3 0.04 1.00 0.00 0.00 1.04 66 70.37 69.64 75.35
+2025,70,North Dakota State University,3,0.00,1.00,0.00,0.00,1.00,72,67.30,68.01,71.01,ok,aiaa-dbf-2025-results,70 North Dakota State University 3 0.00 1.00 0.00 0.00 1.00 72 67.30 68.01 71.01
+2025,71,The City College of New York,3,0.23,1.00,0.00,0.00,1.23,65,50.92,53.07,68.27,ok,aiaa-dbf-2025-results,71 The City College of New York 3 0.23 1.00 0.00 0.00 1.23 65 50.92 53.07 68.27
+2025,72,Saint Louis University,3,0.08,1.00,0.00,0.00,1.08,66,59.57,60.50,68.05,ok,aiaa-dbf-2025-results,72 Saint Louis University 3 0.08 1.00 0.00 0.00 1.08 66 59.57 60.50 68.05
+2025,73,University of Arkansas,2,0.76,0.00,0.00,0.00,0.76,84,84.03,84.06,66.28,ok,aiaa-dbf-2025-results,73 University of Arkansas 2 0.76 0.00 0.00 0.00 0.76 84 84.03 84.06 66.28
+2025,74,Massachusetts Institute of Technology,3,0.16,1.00,0.00,0.00,1.16,76,43.67,48.52,59.32,ok,aiaa-dbf-2025-results,74 Massachusetts Institute of Technology 3 0.16 1.00 0.00 0.00 1.16 76 43.67 48.52 59.32
+2025,75,"University of California, San Diego",3,0.06,1.00,0.00,0.00,1.06,61,47.23,49.29,55.16,ok,aiaa-dbf-2025-results,"75 University of California, San Diego 3 0.06 1.00 0.00 0.00 1.06 61 47.23 49.29 55.16"
+2025,76,University of Nebraska Lincoln,3,0.05,1.00,0.00,0.00,1.05,61,45.08,47.41,52.84,ok,aiaa-dbf-2025-results,76 University of Nebraska Lincoln 3 0.05 1.00 0.00 0.00 1.05 61 45.08 47.41 52.84
+2025,77,University of Georgia,3,0.00,1.00,0.00,0.00,1.00,62,47.47,49.64,52.64,ok,aiaa-dbf-2025-results,77 University of Georgia 3 0.00 1.00 0.00 0.00 1.00 62 47.47 49.64 52.64
+2025,78,Texas Tech University,3,0.00,1.00,0.00,0.00,1.00,64,44.68,47.56,50.56,ok,aiaa-dbf-2025-results,78 Texas Tech University 3 0.00 1.00 0.00 0.00 1.00 64 44.68 47.56 50.56
+2025,79,University of Tennessee Knoxville,3,0.13,1.00,0.00,0.00,1.13,65,28.33,33.84,41.13,ok,aiaa-dbf-2025-results,79 University of Tennessee Knoxville 3 0.13 1.00 0.00 0.00 1.13 65 28.33 33.84 41.13
+2025,80,National University of Singapore,3,0.44,0.00,0.00,0.00,0.44,72,87.90,85.58,40.58,ok,aiaa-dbf-2025-results,80 National University of Singapore 3 0.44 0.00 0.00 0.00 0.44 72 87.90 85.58 40.58
+2025,81,Seoul National University,3,0.17,0.00,0.00,0.00,0.17,75,84.95,83.46,17.47,ok,aiaa-dbf-2025-results,81 Seoul National University 3 0.17 0.00 0.00 0.00 0.17 75 84.95 83.46 17.47
+2025,82,Cornell University,3,0.16,0.00,0.00,0.00,0.16,84,77.58,78.47,15.20,ok,aiaa-dbf-2025-results,82 Cornell University 3 0.16 0.00 0.00 0.00 0.16 84 77.58 78.47 15.20
+2025,83,Rochester Institute of Technology,3,0.08,0.00,0.00,0.00,0.08,81,75.83,76.62,9.09,ok,aiaa-dbf-2025-results,83 Rochester Institute of Technology 3 0.08 0.00 0.00 0.00 0.08 81 75.83 76.62 9.09
+2025,84,University of North Carolina at Charlotte,3,0.06,0.00,0.00,0.00,0.06,74,79.63,78.79,7.66,ok,aiaa-dbf-2025-results,84 University of North Carolina at Charlotte 3 0.06 0.00 0.00 0.00 0.06 74 79.63 78.79 7.66
+2025,85,University of Missouri - Columbia,2,0.06,0.00,0.00,0.00,0.06,72,69.92,70.28,5.91,ok,aiaa-dbf-2025-results,85 University of Missouri - Columbia 2 0.06 0.00 0.00 0.00 0.06 72 69.92 70.28 5.91
+2025,86,University of California Merced,2,0.05,0.00,0.00,0.00,0.05,68,36.90,41.52,3.98,ok,aiaa-dbf-2025-results,86 University of California Merced 2 0.05 0.00 0.00 0.00 0.05 68 36.90 41.52 3.98
+2025,87,"Birla Institute of Technology and Science , Pilani, KK Birla Goa Campus",3,0.00,0.00,0.00,0.00,0.00,77,75.57,75.78,3.00,ok,aiaa-dbf-2025-results,"87 Birla Institute of Technology and Science , Pilani, KK Birla Goa Campus 3 0.00 0.00 0.00 0.00 0.00 77 75.57 75.78 3.00"
+2025,88,University of South Alabama,3,0.00,0.00,0.00,0.00,0.00,68,55.15,57.00,3.00,ok,aiaa-dbf-2025-results,88 University of South Alabama 3 0.00 0.00 0.00 0.00 0.00 68 55.15 57.00 3.00
+2025,89,University of Hartford,3,0.00,0.00,0.00,0.00,0.00,69,51.45,54.04,3.00,ok,aiaa-dbf-2025-results,89 University of Hartford 3 0.00 0.00 0.00 0.00 0.00 69 51.45 54.04 3.00
+2025,90,California State Polytechnic University Pomona,2,0.00,0.00,0.00,0.00,0.00,67,63.33,63.85,2.00,ok,aiaa-dbf-2025-results,90 California State Polytechnic University Pomona 2 0.00 0.00 0.00 0.00 0.00 67 63.33 63.85 2.00
+2025,91,University of Vermont,2,0.00,0.00,0.00,0.00,0.00,70,25.18,31.89,2.00,ok,aiaa-dbf-2025-results,91 University of Vermont 2 0.00 0.00 0.00 0.00 0.00 70 25.18 31.89 2.00
+2025,92,Vaughn College of Aeronautics and Technology,2,0.00,0.00,0.00,0.00,0.00,62,22.73,28.62,2.00,ok,aiaa-dbf-2025-results,92 Vaughn College of Aeronautics and Technology 2 0.00 0.00 0.00 0.00 0.00 62 22.73 28.62 2.00
+2025,93,Boston University,1,0.00,0.00,0.00,0.00,0.00,79,59.00,62.06,1.00,ok,aiaa-dbf-2025-results,93 Boston University 1 0.00 0.00 0.00 0.00 0.00 79 59.00 62.06 1.00
+2025,94,University of South Carolina,1,0.00,0.00,0.00,0.00,0.00,70,59.37,60.95,1.00,ok,aiaa-dbf-2025-results,94 University of South Carolina 1 0.00 0.00 0.00 0.00 0.00 70 59.37 60.95 1.00
+2025,95,University of Missouri - Kansas City,1,0.00,0.00,0.00,0.00,0.00,67,53.07,55.10,1.00,ok,aiaa-dbf-2025-results,95 University of Missouri - Kansas City 1 0.00 0.00 0.00 0.00 0.00 67 53.07 55.10 1.00
+2025,96,University of Idaho,1,0.00,0.00,0.00,0.00,0.00,62,45.00,47.55,1.00,ok,aiaa-dbf-2025-results,96 University of Idaho 1 0.00 0.00 0.00 0.00 0.00 62 45.00 47.55 1.00
+2025,97,University of Arizona,0,0.00,0.00,0.00,0.00,0.00,67,32.03,37.30,0.00,ok,aiaa-dbf-2025-results,97 University of Arizona 0 0.00 0.00 0.00 0.00 0.00 67 32.03 37.30 0.00
+2025,98,Yıldız Teknik Üniversitesi,0,0.00,0.00,0.00,0.00,0.00,66,78.33,76.49,0.00,ok,aiaa-dbf-2025-results,98 Yıldız Teknik Üniversitesi 0 0.00 0.00 0.00 0.00 0.00 66 78.33 76.49 0.00
+2025,99,Iowa State University,0,0.00,0.00,0.00,0.00,0.00,69,74.33,73.52,0.00,ok,aiaa-dbf-2025-results,99 Iowa State University 0 0.00 0.00 0.00 0.00 0.00 69 74.33 73.52 0.00
+2025,100,Mukesh Patel School Of Technology Management and Engineering (Mumbai),0,0.00,0.00,0.00,0.00,0.00,78,67.10,68.80,0.00,ok,aiaa-dbf-2025-results,100 Mukesh Patel School Of Technology Management and Engineering (Mumbai) 0 0.00 0.00 0.00 0.00 0.00 78 67.10 68.80 0.00
+2025,101,Ghulam Ishaq Khan Institute of Engineering Sciences and Technology,0,0.00,0.00,0.00,0.00,0.00,64,68.83,68.12,0.00,ok,aiaa-dbf-2025-results,101 Ghulam Ishaq Khan Institute of Engineering Sciences and Technology 0 0.00 0.00 0.00 0.00 0.00 64 68.83 68.12 0.00
+2025,102,Cairo University,0,0.00,0.00,0.00,0.00,0.00,82,60.87,63.99,0.00,ok,aiaa-dbf-2025-results,102 Cairo University 0 0.00 0.00 0.00 0.00 0.00 82 60.87 63.99 0.00
+2025,103,"University of California, Davis",0,0.00,0.00,0.00,0.00,0.00,74,59.58,61.68,0.00,ok,aiaa-dbf-2025-results,"103 University of California, Davis 0 0.00 0.00 0.00 0.00 0.00 74 59.58 61.68 0.00"
+2025,104,Gonzaga University,0,0.00,0.00,0.00,0.00,0.00,67,60.22,61.25,0.00,ok,aiaa-dbf-2025-results,104 Gonzaga University 0 0.00 0.00 0.00 0.00 0.00 67 60.22 61.25 0.00
+2025,105,Colorado School of Mines,0,0.00,0.00,0.00,0.00,0.00,68,56.58,58.29,0.00,ok,aiaa-dbf-2025-results,105 Colorado School of Mines 0 0.00 0.00 0.00 0.00 0.00 68 56.58 58.29 0.00
+2025,106,The University of Tennessee Chattanooga,0,0.00,0.00,0.00,0.00,0.00,68,53.97,56.12,0.00,ok,aiaa-dbf-2025-results,106 The University of Tennessee Chattanooga 0 0.00 0.00 0.00 0.00 0.00 68 53.97 56.12 0.00
+2025,107,Western Michigan University,0,0.00,0.00,0.00,0.00,0.00,61,46.33,48.53,0.00,ok,aiaa-dbf-2025-results,107 Western Michigan University 0 0.00 0.00 0.00 0.00 0.00 61 46.33 48.53 0.00
+2025,108,Tribhuvan University,0,0.00,0.00,0.00,0.00,0.00,75,43.83,48.44,0.00,ok,aiaa-dbf-2025-results,108 Tribhuvan University 0 0.00 0.00 0.00 0.00 0.00 75 43.83 48.44 0.00
+2025,109,Clemson University,0,0.00,0.00,0.00,0.00,0.00,75,39.25,44.62,0.00,ok,aiaa-dbf-2025-results,109 Clemson University 0 0.00 0.00 0.00 0.00 0.00 75 39.25 44.62 0.00
+2025,110,National Autonomous University of Mexico,0,0.00,0.00,0.00,0.00,0.00,61,34.13,38.11,0.00,ok,aiaa-dbf-2025-results,110 National Autonomous University of Mexico 0 0.00 0.00 0.00 0.00 0.00 61 34.13 38.11 0.00
+2025,111,University of Pennsylvania,0,0.00,0.00,0.00,0.00,0.00,65,22.33,28.74,0.00,ok,aiaa-dbf-2025-results,111 University of Pennsylvania 0 0.00 0.00 0.00 0.00 0.00 65 22.33 28.74 0.00
+2025,112,James Madison University,0,0.00,0.00,0.00,0.00,0.00,61,0.00,9.17,0.00,ok,aiaa-dbf-2025-results,112 James Madison University 0 0.00 0.00 0.00 0.00 0.00 61 0.00 9.17 0.00
+2024,1,Embry-Riddle Aeronautical University Daytona Beach,3,0.11,1.00,1.90,3.00,6.01,,,90.62,547.96,ok,aiaa-dbf-2024-results,1 5 Embry-Riddle Aeronautical University Daytona Beach 3 0.11 1.00 1.90 3.00 6.01 90.62 547.96
+2024,2,Georgia Institute of Technology,3,1.00,1.00,1.71,2.07,5.78,,,90.67,527.34,ok,aiaa-dbf-2024-results,2 4 Georgia Institute of Technology 3 1.00 1.00 1.71 2.07 5.78 90.67 527.34
+2024,3,University of Washington Seattle,3,0.21,1.00,2.00,2.59,5.79,,,89.40,521.02,ok,aiaa-dbf-2024-results,3 8 University of Washington Seattle 3 0.21 1.00 2.00 2.59 5.79 89.40 521.02
+2024,4,Virginia Polytechnic Institute and State University,3,0.13,1.00,1.69,2.36,5.18,,,91.20,475.46,ok,aiaa-dbf-2024-results,4 3 Virginia Polytechnic Institute and State University 3 0.13 1.00 1.69 2.36 5.18 91.20 475.46
+2024,5,FH Joanneum,3,0.14,1.00,1.45,2.55,5.14,,,87.37,452.07,ok,aiaa-dbf-2024-results,5 13 FH Joanneum 3 0.14 1.00 1.45 2.55 5.14 87.37 452.07
+2024,6,The University of Akron,3,0.14,1.00,1.46,2.71,5.31,,,83.33,445.54,ok,aiaa-dbf-2024-results,6 33 The University of Akron 3 0.14 1.00 1.46 2.71 5.31 83.33 445.54
+2024,7,University of Notre Dame,3,0.31,1.00,1.18,2.41,4.90,,,89.70,442.67,ok,aiaa-dbf-2024-results,7 6 University of Notre Dame 3 0.31 1.00 1.18 2.41 4.90 89.70 442.67
+2024,8,Embry-Riddle Aeronautical University - Prescott,3,0.19,1.00,1.52,2.33,5.04,,,86.28,437.93,ok,aiaa-dbf-2024-results,8 18 Embry-Riddle Aeronautical University - Prescott 3 0.19 1.00 1.52 2.33 5.04 86.28 437.93
+2024,9,University of Michigan,3,0.22,1.00,1.58,2.32,5.12,,,84.42,435.63,ok,aiaa-dbf-2024-results,9 26 University of Michigan 3 0.22 1.00 1.58 2.32 5.12 84.42 435.63
+2024,10,The University of Sydney,3,0.15,1.00,1.40,2.38,4.93,,,86.97,431.40,ok,aiaa-dbf-2024-results,10 16 The University of Sydney 3 0.15 1.00 1.40 2.38 4.93 86.97 431.40
+2024,11,Rensselaer Polytechnic Institute,3,0.16,1.00,1.22,2.83,5.21,,,79.57,417.22,ok,aiaa-dbf-2024-results,11 52 Rensselaer Polytechnic Institute 3 0.16 1.00 1.22 2.83 5.21 79.57 417.22
+2024,12,"Rutgers, The State University of New Jersey - New Brunswick",3,0.45,1.00,1.08,2.16,4.70,,,86.83,410.72,ok,aiaa-dbf-2024-results,"12 17 Rutgers, The State University of New Jersey - New Brunswick 3 0.45 1.00 1.08 2.16 4.70 86.83 410.72"
+2024,13,The Pennsylvania State University,3,0.08,1.00,1.56,2.29,4.93,,,81.58,405.44,ok,aiaa-dbf-2024-results,13 41 The Pennsylvania State University 3 0.08 1.00 1.56 2.29 4.93 81.58 405.44
+2024,14,"University of California, Los Angeles",3,0.13,1.00,1.21,2.25,4.60,,,84.67,392.34,ok,aiaa-dbf-2024-results,"14 24 University of California, Los Angeles 3 0.13 1.00 1.21 2.25 4.60 84.67 392.34"
+2024,15,"University of Massachusetts, Amherst",3,0.19,1.00,1.13,2.30,4.62,,,83.28,387.67,ok,aiaa-dbf-2024-results,"15 35 University of Massachusetts, Amherst 3 0.19 1.00 1.13 2.30 4.62 83.28 387.67"
+2024,16,The Hong Kong University of Science and Technology,3,0.22,1.00,1.16,2.30,4.67,,,81.55,383.99,ok,aiaa-dbf-2024-results,16 42 The Hong Kong University of Science and Technology 3 0.22 1.00 1.16 2.30 4.67 81.55 383.99
+2024,17,The University of Oklahoma,3,0.22,1.00,1.07,2.19,4.48,,,84.87,383.26,ok,aiaa-dbf-2024-results,17 22 The University of Oklahoma 3 0.22 1.00 1.07 2.19 4.48 84.87 383.26
+2024,18,The Hong Kong Polytechnic University,3,0.16,1.00,1.17,2.25,4.58,,,82.77,382.27,ok,aiaa-dbf-2024-results,18 37 The Hong Kong Polytechnic University 3 0.16 1.00 1.17 2.25 4.58 82.77 382.27
+2024,19,Washington University in St. Louis,3,0.12,1.00,1.12,2.21,4.45,,,84.20,377.36,ok,aiaa-dbf-2024-results,19 27 Washington University in St. Louis 3 0.12 1.00 1.12 2.21 4.45 84.20 377.36
+2024,20,Auburn University at Auburn,3,0.34,1.00,1.11,2.21,4.66,,,80.23,376.95,ok,aiaa-dbf-2024-results,20 48 Auburn University at Auburn 3 0.34 1.00 1.11 2.21 4.66 80.23 376.95
+2024,21,Universidad de Antioquia,3,0.20,1.00,1.23,2.24,4.67,,,80.05,376.67,ok,aiaa-dbf-2024-results,21 49 Universidad de Antioquia 3 0.20 1.00 1.23 2.24 4.67 80.05 376.67
+2024,22,Utah State University,3,0.10,1.00,1.18,2.10,4.39,,,84.50,373.81,ok,aiaa-dbf-2024-results,22 25 Utah State University 3 0.10 1.00 1.18 2.10 4.39 84.50 373.81
+2024,23,"The University of California, Irvine",3,0.54,1.00,1.06,2.41,5.01,,,70.17,354.47,ok,aiaa-dbf-2024-results,"23 77 The University of California, Irvine 3 0.54 1.00 1.06 2.41 5.01 70.17 354.47"
+2024,24,University of New South Wales,3,0.18,1.00,1.01,2.09,4.28,,,82.13,354.40,ok,aiaa-dbf-2024-results,24 39 University of New South Wales 3 0.18 1.00 1.01 2.09 4.28 82.13 354.40
+2024,25,University of Illinois Urbana-Champaign,3,0.26,1.00,1.11,2.20,4.58,,,75.38,347.89,ok,aiaa-dbf-2024-results,25 66 University of Illinois Urbana-Champaign 3 0.26 1.00 1.11 2.20 4.58 75.38 347.89
+2024,26,"Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",3,0.15,1.00,1.04,2.01,4.21,,,80.67,342.30,ok,aiaa-dbf-2024-results,"26 45 Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus 3 0.15 1.00 1.04 2.01 4.21 80.67 342.30"
+2024,27,RWTH-Aachen,3,0.13,1.00,1.08,2.17,4.38,,,72.70,321.65,ok,aiaa-dbf-2024-results,27 70 RWTH-Aachen 3 0.13 1.00 1.08 2.17 4.38 72.70 321.65
+2024,28,"California State Polytechnic University, Pomona",3,0.14,1.00,1.07,2.08,4.29,,,73.38,317.83,ok,aiaa-dbf-2024-results,"28 68 California State Polytechnic University, Pomona 3 0.14 1.00 1.07 2.08 4.29 73.38 317.83"
+2024,29,North Dakota State University,3,0.22,1.00,1.06,2.14,4.42,,,67.37,300.45,ok,aiaa-dbf-2024-results,29 78 North Dakota State University 3 0.22 1.00 1.06 2.14 4.42 67.37 300.45
+2024,30,University of Massachusetts Lowell,3,0.83,1.00,1.01,0.00,2.84,,,83.97,241.18,ok,aiaa-dbf-2024-results,30 28 University of Massachusetts Lowell 3 0.83 1.00 1.01 0.00 2.84 83.97 241.18
+2024,31,Royal Melbourne Institute of Technology University,3,0.41,1.00,1.14,2.26,4.80,,,48.78,237.31,ok,aiaa-dbf-2024-results,31 96 Royal Melbourne Institute of Technology University 3 0.41 1.00 1.14 2.26 4.80 48.78 237.31
+2024,32,University of Southern California,3,0.33,1.00,1.08,0.00,2.41,,,93.60,228.83,ok,aiaa-dbf-2024-results,32 1 University of Southern California 3 0.33 1.00 1.08 0.00 2.41 93.60 228.83
+2024,33,Stanford University,3,0.22,1.00,1.38,0.00,2.60,,,84.67,222.77,ok,aiaa-dbf-2024-results,33 23 Stanford University 3 0.22 1.00 1.38 0.00 2.60 84.67 222.77
+2024,34,Massachusetts Institute of Technology,3,0.17,1.00,1.25,0.00,2.42,,,88.90,218.04,ok,aiaa-dbf-2024-results,34 9 Massachusetts Institute of Technology 3 0.17 1.00 1.25 0.00 2.42 88.90 218.04
+2024,35,The University of Memphis,3,0.07,1.00,1.00,2.06,4.13,,,50.70,212.51,ok,aiaa-dbf-2024-results,35 94 The University of Memphis 3 0.07 1.00 1.00 2.06 4.13 50.70 212.51
+2024,36,University at Buffalo,3,0.04,1.00,1.45,0.00,2.49,,,83.92,211.58,ok,aiaa-dbf-2024-results,36 29 University at Buffalo 3 0.04 1.00 1.45 0.00 2.49 83.92 211.58
+2024,37,University of Texas at Austin,3,0.39,1.00,1.21,0.00,2.61,,,77.13,204.07,ok,aiaa-dbf-2024-results,37 60 University of Texas at Austin 3 0.39 1.00 1.21 0.00 2.61 77.13 204.07
+2024,38,Colorado State University,3,0.10,1.00,1.31,0.00,2.41,,,83.30,203.80,ok,aiaa-dbf-2024-results,38 34 Colorado State University 3 0.10 1.00 1.31 0.00 2.41 83.30 203.80
+2024,39,Universidad Pontificia Bolivariana,3,0.19,1.00,1.09,0.00,2.28,,,87.00,201.35,ok,aiaa-dbf-2024-results,39 15 Universidad Pontificia Bolivariana 3 0.19 1.00 1.09 0.00 2.28 87.00 201.35
+2024,40,The University of Hong Kong,3,0.11,1.00,1.18,0.00,2.29,,,83.73,195.12,ok,aiaa-dbf-2024-results,40 32 The University of Hong Kong 3 0.11 1.00 1.18 0.00 2.29 83.73 195.12
+2024,41,University of Kansas,3,0.14,1.00,1.15,0.00,2.29,,,83.87,194.95,ok,aiaa-dbf-2024-results,41 31 University of Kansas 3 0.14 1.00 1.15 0.00 2.29 83.87 194.95
+2024,42,University of Texas at Dallas,3,0.16,1.00,1.24,0.00,2.40,,,78.67,191.85,ok,aiaa-dbf-2024-results,42 55 University of Texas at Dallas 3 0.16 1.00 1.24 0.00 2.40 78.67 191.85
+2024,43,Case Western Reserve University,3,0.41,1.00,1.03,0.00,2.43,,,77.17,190.76,ok,aiaa-dbf-2024-results,43 59 Case Western Reserve University 3 0.41 1.00 1.03 0.00 2.43 77.17 190.76
+2024,44,Missouri University of Science and Technology,3,0.14,1.00,1.09,0.00,2.23,,,83.23,188.69,ok,aiaa-dbf-2024-results,44 36 Missouri University of Science and Technology 3 0.14 1.00 1.09 0.00 2.23 83.23 188.69
+2024,45,Columbia University,3,0.23,1.00,1.03,0.00,2.26,,,79.28,181.83,ok,aiaa-dbf-2024-results,45 53 Columbia University 3 0.23 1.00 1.03 0.00 2.26 79.28 181.83
+2024,46,Iowa State University,3,0.16,1.00,1.02,0.00,2.17,,,80.92,178.95,ok,aiaa-dbf-2024-results,46 44 Iowa State University 3 0.16 1.00 1.02 0.00 2.17 80.92 178.95
+2024,47,San Diego State University,3,0.15,1.00,1.26,0.00,2.40,,,65.10,159.36,ok,aiaa-dbf-2024-results,47 80 San Diego State University 3 0.15 1.00 1.26 0.00 2.40 65.10 159.36
+2024,48,New Mexico State University - Main Campus,3,0.31,1.00,1.00,0.00,2.31,,,51.08,121.10,ok,aiaa-dbf-2024-results,48 93 New Mexico State University - Main Campus 3 0.31 1.00 1.00 0.00 2.31 51.08 121.10
+2024,49,"Khalifa University of Science, Technology and Research",3,0.31,1.00,0.00,0.00,1.31,,,78.67,106.12,ok,aiaa-dbf-2024-results,"49 56 Khalifa University of Science, Technology and Research 3 0.31 1.00 0.00 0.00 1.31 78.67 106.12"
+2024,50,West Virginia University,3,0.16,1.00,0.00,0.00,1.16,,,85.93,102.71,ok,aiaa-dbf-2024-results,50 19 West Virginia University 3 0.16 1.00 0.00 0.00 1.16 85.93 102.71
+2024,51,"University Of Maryland, College Park",3,0.14,1.00,0.00,0.00,1.14,,,87.70,102.68,ok,aiaa-dbf-2024-results,"51 12 University Of Maryland, College Park 3 0.14 1.00 0.00 0.00 1.14 87.70 102.68"
+2024,52,Clarkson University,3,0.21,1.00,0.00,0.00,1.21,,,80.50,100.51,ok,aiaa-dbf-2024-results,52 46 Clarkson University 3 0.21 1.00 0.00 0.00 1.21 80.50 100.51
+2024,53,"Purdue University, Main Campus",3,0.10,1.00,0.00,0.00,1.10,,,85.77,97.51,ok,aiaa-dbf-2024-results,"53 20 Purdue University, Main Campus 3 0.10 1.00 0.00 0.00 1.10 85.77 97.51"
+2024,54,Western Michigan University,3,0.17,1.00,0.00,0.00,1.17,,,79.82,96.70,ok,aiaa-dbf-2024-results,54 50 Western Michigan University 3 0.17 1.00 0.00 0.00 1.17 79.82 96.70
+2024,55,Trine University,3,0.25,1.00,0.00,0.00,1.25,,,74.93,96.70,ok,aiaa-dbf-2024-results,55 67 Trine University 3 0.25 1.00 0.00 0.00 1.25 74.93 96.70
+2024,56,University of Ljubljana,3,0.00,1.00,0.00,0.00,1.00,,,91.33,94.33,ok,aiaa-dbf-2024-results,56 2 University of Ljubljana 3 0.00 1.00 0.00 0.00 1.00 91.33 94.33
+2024,57,University of Florida,3,0.13,1.00,0.00,0.00,1.13,,,80.25,93.99,ok,aiaa-dbf-2024-results,57 47 University of Florida 3 0.13 1.00 0.00 0.00 1.13 80.25 93.99
+2024,58,University of Missouri - Kansas City,3,0.25,1.00,1.00,0.00,2.26,,,33.67,79.01,ok,aiaa-dbf-2024-results,58 101 University of Missouri - Kansas City 3 0.25 1.00 1.00 0.00 2.26 33.67 79.01
+2024,59,"California State University, Long Beach",3,0.29,1.00,0.00,0.00,1.29,,,56.75,76.28,ok,aiaa-dbf-2024-results,"59 90 California State University, Long Beach 3 0.29 1.00 0.00 0.00 1.29 56.75 76.28"
+2024,60,University of Kentucky-Paducah,3,0.18,1.00,0.00,0.00,1.18,,,55.78,68.91,ok,aiaa-dbf-2024-results,60 92 University of Kentucky-Paducah 3 0.18 1.00 0.00 0.00 1.18 55.78 68.91
+2024,61,Worcester Polytechnic Institute,3,0.06,1.00,0.00,0.00,1.06,,,59.47,66.27,ok,aiaa-dbf-2024-results,61 86 Worcester Polytechnic Institute 3 0.06 1.00 0.00 0.00 1.06 59.47 66.27
+2024,62,University of Central Florida,3,0.21,1.00,0.00,0.00,1.21,,,48.83,61.95,ok,aiaa-dbf-2024-results,62 95 University of Central Florida 3 0.21 1.00 0.00 0.00 1.21 48.83 61.95
+2024,63,Lehigh University,3,0.24,1.00,0.00,0.00,1.24,,,35.67,47.38,ok,aiaa-dbf-2024-results,63 99 Lehigh University 3 0.24 1.00 0.00 0.00 1.24 35.67 47.38
+2024,64,Wentworth Institute of Technology,3,0.44,0.00,0.00,0.00,0.44,,,88.18,42.02,ok,aiaa-dbf-2024-results,64 11 Wentworth Institute of Technology 3 0.44 0.00 0.00 0.00 0.44 88.18 42.02
+2024,65,University of Missouri - Columbia,3,0.35,0.00,0.00,0.00,0.35,,,88.52,34.02,ok,aiaa-dbf-2024-results,65 10 University of Missouri - Columbia 3 0.35 0.00 0.00 0.00 0.35 88.52 34.02
+2024,66,"University of Maryland, Baltimore County",3,0.09,1.00,0.00,0.00,1.09,,,25.72,30.99,ok,aiaa-dbf-2024-results,"66 105 University of Maryland, Baltimore County 3 0.09 1.00 0.00 0.00 1.09 25.72 30.99"
+2024,67,Johns Hopkins University,3,0.09,1.00,0.00,0.00,1.09,,,24.80,30.12,ok,aiaa-dbf-2024-results,67 106 Johns Hopkins University 3 0.09 1.00 0.00 0.00 1.09 24.80 30.12
+2024,68,Alfred University,3,0.44,0.00,0.00,0.00,0.44,,,57.17,28.38,ok,aiaa-dbf-2024-results,68 89 Alfred University 3 0.44 0.00 0.00 0.00 0.44 57.17 28.38
+2024,69,National University of Singapore,3,0.25,0.00,0.00,0.00,0.25,,,83.90,23.93,ok,aiaa-dbf-2024-results,69 30 National University of Singapore 3 0.25 0.00 0.00 0.00 0.25 83.90 23.93
+2024,70,The University of Adelaide,3,0.27,0.00,0.00,0.00,0.27,,,76.50,23.50,ok,aiaa-dbf-2024-results,70 62 The University of Adelaide 3 0.27 0.00 0.00 0.00 0.27 76.50 23.50
+2024,71,Military Institute of Science and Technology,2,0.23,0.00,0.00,0.00,0.23,,,76.93,19.37,ok,aiaa-dbf-2024-results,71 61 Military Institute of Science and Technology 2 0.23 0.00 0.00 0.00 0.23 76.93 19.37
+2024,72,"VEERMATA JIJABAI TECHNOLOGICAL INSTITUTE, MUMBAI",2,0.19,0.00,0.00,0.00,0.19,,,89.43,18.66,ok,aiaa-dbf-2024-results,"72 7 VEERMATA JIJABAI TECHNOLOGICAL INSTITUTE, MUMBAI 2 0.19 0.00 0.00 0.00 0.19 89.43 18.66"
+2024,73,Cornell University,3,0.16,0.00,0.00,0.00,0.16,,,85.72,16.53,ok,aiaa-dbf-2024-results,73 21 Cornell University 3 0.16 0.00 0.00 0.00 0.16 85.72 16.53
+2024,74,UC San Diego,3,0.13,0.00,0.00,0.00,0.13,,,75.72,12.53,ok,aiaa-dbf-2024-results,74 65 UC San Diego 3 0.13 0.00 0.00 0.00 0.13 75.72 12.53
+2024,75,Dayananda Sagar College of Engineering,3,0.11,0.00,0.00,0.00,0.11,,,87.10,12.16,ok,aiaa-dbf-2024-results,75 14 Dayananda Sagar College of Engineering 3 0.11 0.00 0.00 0.00 0.11 87.10 12.16
+2024,76,Institut supérieur de l'aéronautique et de l'espace,3,0.12,0.00,0.00,0.00,0.12,,,71.00,11.58,ok,aiaa-dbf-2024-results,76 75 Institut supérieur de l'aéronautique et de l'espace 3 0.12 0.00 0.00 0.00 0.12 71.00 11.58
+2024,77,University of Alabama at Birmingham,3,0.09,0.00,0.00,0.00,0.09,,,79.73,10.42,ok,aiaa-dbf-2024-results,77 51 University of Alabama at Birmingham 3 0.09 0.00 0.00 0.00 0.09 79.73 10.42
+2024,78,Illinois Institute of Technology,2,0.12,0.00,0.00,0.00,0.12,,,47.87,7.93,ok,aiaa-dbf-2024-results,78 97 Illinois Institute of Technology 2 0.12 0.00 0.00 0.00 0.12 47.87 7.93
+2024,79,University of Nebraska-Lincoln,3,0.13,0.00,0.00,0.00,0.13,,,27.47,6.62,ok,aiaa-dbf-2024-results,79 104 University of Nebraska-Lincoln 3 0.13 0.00 0.00 0.00 0.13 27.47 6.62
+2024,80,CUNY City College of New York,3,0.04,0.00,0.00,0.00,0.04,,,78.85,6.10,ok,aiaa-dbf-2024-results,80 54 CUNY City College of New York 3 0.04 0.00 0.00 0.00 0.04 78.85 6.10
+2024,81,The Ohio State University,3,0.00,0.00,0.00,0.00,0.00,,,81.03,3.00,ok,aiaa-dbf-2024-results,81 43 The Ohio State University 3 0.00 0.00 0.00 0.00 0.00 81.03 3.00
+2024,82,Texas A&M University,3,0.00,0.00,0.00,0.00,0.00,,,78.45,3.00,ok,aiaa-dbf-2024-results,82 57 Texas A&M University 3 0.00 0.00 0.00 0.00 0.00 78.45 3.00
+2024,83,University of West Florida Pensacola Campus,3,0.00,0.00,0.00,0.00,0.00,,,75.97,3.00,ok,aiaa-dbf-2024-results,83 64 University of West Florida Pensacola Campus 3 0.00 0.00 0.00 0.00 0.00 75.97 3.00
+2024,84,Arizona State University Tempe,3,0.00,0.00,0.00,0.00,0.00,,,57.40,3.00,ok,aiaa-dbf-2024-results,84 87 Arizona State University Tempe 3 0.00 0.00 0.00 0.00 0.00 57.40 3.00
+2024,85,University of Houston,3,0.00,0.00,0.00,0.00,0.00,,,57.20,3.00,ok,aiaa-dbf-2024-results,85 88 University of Houston 3 0.00 0.00 0.00 0.00 0.00 57.20 3.00
+2024,86,Clemson University,2,0.00,0.00,0.00,0.00,0.00,,,77.57,2.00,ok,aiaa-dbf-2024-results,86 58 Clemson University 2 0.00 0.00 0.00 0.00 0.00 77.57 2.00
+2024,87,University of Arkansas,1,0.00,0.00,0.00,0.00,0.00,,,73.25,1.00,ok,aiaa-dbf-2024-results,87 69 University of Arkansas 1 0.00 0.00 0.00 0.00 0.00 73.25 1.00
+2024,88,The Cooper Union for the Advancement for Science and Art,1,0.00,0.00,0.00,0.00,0.00,,,72.33,1.00,ok,aiaa-dbf-2024-results,88 71 The Cooper Union for the Advancement for Science and Art 1 0.00 0.00 0.00 0.00 0.00 72.33 1.00
+2024,89,Kent State University,1,0.00,0.00,0.00,0.00,0.00,,,72.12,1.00,ok,aiaa-dbf-2024-results,89 72 Kent State University 1 0.00 0.00 0.00 0.00 0.00 72.12 1.00
+2024,90,Atilim University,1,0.00,0.00,0.00,0.00,0.00,,,70.33,1.00,ok,aiaa-dbf-2024-results,90 76 Atilim University 1 0.00 0.00 0.00 0.00 0.00 70.33 1.00
+2024,91,University of Connecticut Storrs,1,0.00,0.00,0.00,0.00,0.00,,,61.92,1.00,ok,aiaa-dbf-2024-results,91 83 University of Connecticut Storrs 1 0.00 0.00 0.00 0.00 0.00 61.92 1.00
+2024,92,Texas Tech University,1,0.00,0.00,0.00,0.00,0.00,,,61.10,1.00,ok,aiaa-dbf-2024-results,92 84 Texas Tech University 1 0.00 0.00 0.00 0.00 0.00 61.10 1.00
+2024,93,Colorado School of Mines,1,0.00,0.00,0.00,0.00,0.00,,,59.82,1.00,ok,aiaa-dbf-2024-results,93 85 Colorado School of Mines 1 0.00 0.00 0.00 0.00 0.00 59.82 1.00
+2024,94,Tribhuvan University,0,0.00,0.00,0.00,0.00,0.00,,,82.70,0.00,ok,aiaa-dbf-2024-results,94 38 Tribhuvan University 0 0.00 0.00 0.00 0.00 0.00 82.70 0.00
+2024,95,The University of Alabama Tuscaloosa,0,0.00,0.00,0.00,0.00,0.00,,,81.98,0.00,ok,aiaa-dbf-2024-results,95 40 The University of Alabama Tuscaloosa 0 0.00 0.00 0.00 0.00 0.00 81.98 0.00
+2024,96,Yıldız Teknik Üniversitesi,0,0.00,0.00,0.00,0.00,0.00,,,76.17,0.00,ok,aiaa-dbf-2024-results,96 63 Yıldız Teknik Üniversitesi 0 0.00 0.00 0.00 0.00 0.00 76.17 0.00
+2024,97,Ain Shams University,0,0.00,0.00,0.00,0.00,0.00,,,71.70,0.00,ok,aiaa-dbf-2024-results,97 73 Ain Shams University 0 0.00 0.00 0.00 0.00 0.00 71.70 0.00
+2024,98,Cairo University,0,0.00,0.00,0.00,0.00,0.00,,,71.68,0.00,ok,aiaa-dbf-2024-results,98 74 Cairo University 0 0.00 0.00 0.00 0.00 0.00 71.68 0.00
+2024,99,University of Texas at El Paso,0,0.00,0.00,0.00,0.00,0.00,,,67.00,0.00,ok,aiaa-dbf-2024-results,99 79 University of Texas at El Paso 0 0.00 0.00 0.00 0.00 0.00 67.00 0.00
+2024,100,University of Colorado Boulder,0,0.00,0.00,0.00,0.00,0.00,,,64.77,0.00,ok,aiaa-dbf-2024-results,100 81 University of Colorado Boulder 0 0.00 0.00 0.00 0.00 0.00 64.77 0.00
+2024,101,Rochester Institute of Technology,0,0.00,0.00,0.00,0.00,0.00,,,62.78,0.00,ok,aiaa-dbf-2024-results,101 82 Rochester Institute of Technology 0 0.00 0.00 0.00 0.00 0.00 62.78 0.00
+2024,102,University of Georgia,0,0.00,0.00,0.00,0.00,0.00,,,56.67,0.00,ok,aiaa-dbf-2024-results,102 91 University of Georgia 0 0.00 0.00 0.00 0.00 0.00 56.67 0.00
+2024,103,"University of California, Merced",0,0.00,0.00,0.00,0.00,0.00,,,43.13,0.00,ok,aiaa-dbf-2024-results,"103 98 University of California, Merced 0 0.00 0.00 0.00 0.00 0.00 43.13 0.00"
+2024,104,Vellore Institute of Technology - Vellore,0,0.00,0.00,0.00,0.00,0.00,,,34.42,0.00,ok,aiaa-dbf-2024-results,104 100 Vellore Institute of Technology - Vellore 0 0.00 0.00 0.00 0.00 0.00 34.42 0.00
+2024,105,University of Minnesota - Twin Cities,0,0.00,0.00,0.00,0.00,0.00,,,32.93,0.00,ok,aiaa-dbf-2024-results,105 102 University of Minnesota - Twin Cities 0 0.00 0.00 0.00 0.00 0.00 32.93 0.00
+2024,106,"University of Nevada, Las Vegas",0,0.00,0.00,0.00,0.00,0.00,,,29.05,0.00,ok,aiaa-dbf-2024-results,"106 103 University of Nevada, Las Vegas 0 0.00 0.00 0.00 0.00 0.00 29.05 0.00"
+2024,107,University of Pennsylvania,0,0.00,0.00,0.00,0.00,0.00,,,0.00,0.00,ok,aiaa-dbf-2024-results,107 107 University of Pennsylvania 0 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+2023,1,RWTH Aachen University,3,0.80,1.00,2.00,3.00,6.80,,,83.03,567.51,ok,aiaa-dbf-2023-results,1 21 RWTH Aachen University 3 0.80 1.00 2.00 3.00 6.80 83.03 567.51
+2023,2,University of Ljubljana,3,0.85,1.00,1.21,3.00,6.06,,,87.93,535.66,ok,aiaa-dbf-2023-results,2 7 University of Ljubljana 3 0.85 1.00 1.21 3.00 6.06 87.93 535.66
+2023,3,"Embry-Riddle Aeronautical University, Daytona Beach",3,0.17,1.00,1.67,2.99,5.82,,,90.83,532.02,ok,aiaa-dbf-2023-results,"3 2 Embry-Riddle Aeronautical University, Daytona Beach 3 0.17 1.00 1.67 2.99 5.82 90.83 532.02"
+2023,4,Virginia Polytechnic Institute and State University,3,0.50,1.00,1.23,2.70,5.42,,,90.67,494.79,ok,aiaa-dbf-2023-results,4 3 Virginia Polytechnic Institute and State University 3 0.50 1.00 1.23 2.70 5.42 90.67 494.79
+2023,5,University of Washington Seattle,3,0.12,1.00,1.48,2.77,5.38,,,91.42,494.55,ok,aiaa-dbf-2023-results,5 1 University of Washington Seattle 3 0.12 1.00 1.48 2.77 5.38 91.42 494.55
+2023,6,The Ohio State University,3,0.31,1.00,1.33,2.74,5.38,,,83.47,451.90,ok,aiaa-dbf-2023-results,6 19 The Ohio State University 3 0.31 1.00 1.33 2.74 5.38 83.47 451.90
+2023,7,Embry–Riddle Aeronautical University: Prescott,3,0.06,1.00,1.43,2.87,5.35,,,83.00,447.39,ok,aiaa-dbf-2023-results,7 22 Embry–Riddle Aeronautical University: Prescott 3 0.06 1.00 1.43 2.87 5.35 83.00 447.39
+2023,8,University of Florida,3,0.00,1.00,1.34,2.48,4.81,,,87.73,425.20,ok,aiaa-dbf-2023-results,8 9 University of Florida 3 0.00 1.00 1.34 2.48 4.81 87.73 425.20
+2023,9,"The University of California, Irvine",3,0.10,1.00,1.21,2.48,4.80,,,86.27,416.73,ok,aiaa-dbf-2023-results,"9 14 The University of California, Irvine 3 0.10 1.00 1.21 2.48 4.80 86.27 416.73"
+2023,10,University of Michigan,3,0.15,1.00,1.22,2.51,4.89,,,84.53,416.37,ok,aiaa-dbf-2023-results,10 18 University of Michigan 3 0.15 1.00 1.22 2.51 4.89 84.53 416.37
+2023,11,San Diego State University,3,0.47,1.00,1.23,2.40,5.10,,,80.75,415.13,ok,aiaa-dbf-2023-results,11 29 San Diego State University 3 0.47 1.00 1.23 2.40 5.10 80.75 415.13
+2023,12,University of Maryland College Park,3,0.13,1.00,1.05,2.34,4.53,,,90.62,413.22,ok,aiaa-dbf-2023-results,12 4 University of Maryland College Park 3 0.13 1.00 1.05 2.34 4.53 90.62 413.22
+2023,13,University of Kansas,3,0.07,1.00,1.21,2.34,4.62,,,86.88,404.09,ok,aiaa-dbf-2023-results,13 11 University of Kansas 3 0.07 1.00 1.21 2.34 4.62 86.88 404.09
+2023,14,Universidad Pontificia Bolivariana,3,0.06,1.00,1.44,2.39,4.89,,,81.57,401.48,ok,aiaa-dbf-2023-results,14 25 Universidad Pontificia Bolivariana 3 0.06 1.00 1.44 2.39 4.89 81.57 401.48
+2023,15,"University of California, Los Angeles",3,0.20,1.00,1.14,2.44,4.78,,,82.42,397.20,ok,aiaa-dbf-2023-results,"15 24 University of California, Los Angeles 3 0.20 1.00 1.14 2.44 4.78 82.42 397.20"
+2023,16,Missouri University of Science and Technology,3,0.19,1.00,1.06,2.14,4.40,,,88.50,392.05,ok,aiaa-dbf-2023-results,16 6 Missouri University of Science and Technology 3 0.19 1.00 1.06 2.14 4.40 88.50 392.05
+2023,17,The University of Texas at Austin,3,0.18,1.00,1.36,2.54,5.08,,,76.63,391.96,ok,aiaa-dbf-2023-results,17 43 The University of Texas at Austin 3 0.18 1.00 1.36 2.54 5.08 76.63 391.96
+2023,18,The University of Sydney,3,0.14,1.00,1.17,2.46,4.77,,,80.53,386.92,ok,aiaa-dbf-2023-results,18 31 The University of Sydney 3 0.14 1.00 1.17 2.46 4.77 80.53 386.92
+2023,19,Massachusetts Institute of Technology,3,0.06,1.00,1.13,2.19,4.38,,,86.97,383.58,ok,aiaa-dbf-2023-results,19 10 Massachusetts Institute of Technology 3 0.06 1.00 1.13 2.19 4.38 86.97 383.58
+2023,20,"University of Tennessee, Knoxville",3,0.09,1.00,1.29,2.47,4.85,,,75.40,368.36,ok,aiaa-dbf-2023-results,"20 47 University of Tennessee, Knoxville 3 0.09 1.00 1.29 2.47 4.85 75.40 368.36"
+2023,21,Stanford University,3,0.08,1.00,1.17,2.31,4.56,,,78.00,358.76,ok,aiaa-dbf-2023-results,21 40 Stanford University 3 0.08 1.00 1.17 2.31 4.56 78.00 358.76
+2023,22,West Virginia University,3,0.07,1.00,1.16,2.44,4.67,,,71.53,337.31,ok,aiaa-dbf-2023-results,22 54 West Virginia University 3 0.07 1.00 1.16 2.44 4.67 71.53 337.31
+2023,23,Georgia Institute of Technology,3,1.00,1.00,1.48,0.00,3.48,,,87.83,308.82,ok,aiaa-dbf-2023-results,23 8 Georgia Institute of Technology 3 1.00 1.00 1.48 0.00 3.48 87.83 308.82
+2023,24,University of Massachusetts Amherst,3,0.04,1.00,1.04,2.07,4.15,,,64.35,269.80,ok,aiaa-dbf-2023-results,24 70 University of Massachusetts Amherst 3 0.04 1.00 1.04 2.07 4.15 64.35 269.80
+2023,25,The University of Akron,3,0.00,1.00,1.54,0.00,2.54,,,86.33,222.62,ok,aiaa-dbf-2023-results,25 13 The University of Akron 3 0.00 1.00 1.54 0.00 2.54 86.33 222.62
+2023,26,San Jose State University,3,0.56,1.00,1.29,0.00,2.85,,,66.58,192.54,ok,aiaa-dbf-2023-results,26 65 San Jose State University 3 0.56 1.00 1.29 0.00 2.85 66.58 192.54
+2023,27,The Hong Kong University of Science and Technology,3,0.10,1.00,1.13,0.00,2.23,,,80.60,182.42,ok,aiaa-dbf-2023-results,27 30 The Hong Kong University of Science and Technology 3 0.10 1.00 1.13 0.00 2.23 80.60 182.42
+2023,28,The Pennsylvania State University,3,0.13,1.00,1.51,0.00,2.64,,,67.23,180.60,ok,aiaa-dbf-2023-results,28 60 The Pennsylvania State University 3 0.13 1.00 1.51 0.00 2.64 67.23 180.60
+2023,29,Washington University in St. Louis,3,0.00,1.00,1.07,0.00,2.07,,,85.58,180.48,ok,aiaa-dbf-2023-results,29 16 Washington University in St. Louis 3 0.00 1.00 1.07 0.00 2.07 85.58 180.48
+2023,30,Florida Institute of Technology,3,0.47,1.00,1.12,0.00,2.59,,,64.00,168.50,ok,aiaa-dbf-2023-results,30 72 Florida Institute of Technology 3 0.47 1.00 1.12 0.00 2.59 64.00 168.50
+2023,31,"California State Polytechnic University, Pomona",3,0.00,1.00,1.17,0.00,2.17,,,73.25,162.15,ok,aiaa-dbf-2023-results,"31 52 California State Polytechnic University, Pomona 3 0.00 1.00 1.17 0.00 2.17 73.25 162.15"
+2023,32,The University of Adelaide,3,0.05,1.00,1.21,0.00,2.26,,,66.63,153.51,ok,aiaa-dbf-2023-results,32 64 The University of Adelaide 3 0.05 1.00 1.21 0.00 2.26 66.63 153.51
+2023,33,California Polytechnic State University San Luis Obispo,3,0.03,1.00,1.16,0.00,2.19,,,52.17,117.18,ok,aiaa-dbf-2023-results,33 81 California Polytechnic State University San Luis Obispo 3 0.03 1.00 1.16 0.00 2.19 52.17 117.18
+2023,34,The University of Memphis,3,0.12,1.00,1.12,0.00,2.23,,,44.75,102.95,ok,aiaa-dbf-2023-results,34 90 The University of Memphis 3 0.12 1.00 1.12 0.00 2.23 44.75 102.95
+2023,35,"University of California, Merced",3,0.00,1.00,1.02,0.00,2.02,,,46.83,97.81,ok,aiaa-dbf-2023-results,"35 87 University of California, Merced 3 0.00 1.00 1.02 0.00 2.02 46.83 97.81"
+2023,36,University of Notre Dame,3,0.20,1.00,0.00,0.00,1.20,,,77.00,95.64,ok,aiaa-dbf-2023-results,36 42 University of Notre Dame 3 0.20 1.00 0.00 0.00 1.20 77.00 95.64
+2023,37,ISAE-SUPAERO - Institut supérieur de l’aéronautique et de l’espace,3,0.16,1.00,0.00,0.00,1.16,,,78.55,94.47,ok,aiaa-dbf-2023-results,37 37 ISAE-SUPAERO - Institut supérieur de l’aéronautique et de l’espace 3 0.16 1.00 0.00 0.00 1.16 78.55 94.47
+2023,38,National University of Singapore,3,0.05,1.00,0.00,0.00,1.05,,,86.05,93.60,ok,aiaa-dbf-2023-results,38 15 National University of Singapore 3 0.05 1.00 0.00 0.00 1.05 86.05 93.60
+2023,39,Rutgers University - New Brunswick,3,0.04,1.00,0.00,0.00,1.04,,,86.67,93.56,ok,aiaa-dbf-2023-results,39 12 Rutgers University - New Brunswick 3 0.04 1.00 0.00 0.00 1.04 86.67 93.56
+2023,40,FH JOANNEUM University of Applied Sciences,3,0.00,1.00,0.00,0.00,1.00,,,90.03,93.03,ok,aiaa-dbf-2023-results,40 5 FH JOANNEUM University of Applied Sciences 3 0.00 1.00 0.00 0.00 1.00 90.03 93.03
+2023,41,Texas A&M University,3,0.11,1.00,0.00,0.00,1.11,,,81.03,92.56,ok,aiaa-dbf-2023-results,41 27 Texas A&M University 3 0.11 1.00 0.00 0.00 1.11 81.03 92.56
+2023,42,University of Central Florida,3,0.10,1.00,0.00,0.00,1.10,,,78.77,89.72,ok,aiaa-dbf-2023-results,42 36 University of Central Florida 3 0.10 1.00 0.00 0.00 1.10 78.77 89.72
+2023,43,University of Southern California,3,0.00,1.00,0.00,0.00,1.00,,,83.40,86.40,ok,aiaa-dbf-2023-results,43 20 University of Southern California 3 0.00 1.00 0.00 0.00 1.00 83.40 86.40
+2023,44,Worcester Polytechnic Institute,3,0.05,1.00,0.00,0.00,1.05,,,76.28,83.39,ok,aiaa-dbf-2023-results,44 46 Worcester Polytechnic Institute 3 0.05 1.00 0.00 0.00 1.05 76.28 83.39
+2023,45,The George Washington University,3,0.07,1.00,0.00,0.00,1.07,,,75.08,83.31,ok,aiaa-dbf-2023-results,45 48 The George Washington University 3 0.07 1.00 0.00 0.00 1.07 75.08 83.31
+2023,46,Purdue University - Main Campus,3,0.07,1.00,0.00,0.00,1.07,,,74.75,82.71,ok,aiaa-dbf-2023-results,46 49 Purdue University - Main Campus 3 0.07 1.00 0.00 0.00 1.07 74.75 82.71
+2023,47,Illinois Institute of Technology,3,0.10,1.00,0.00,0.00,1.10,,,71.67,82.04,ok,aiaa-dbf-2023-results,47 53 Illinois Institute of Technology 3 0.10 1.00 0.00 0.00 1.10 71.67 82.04
+2023,48,The University of Oklahoma,3,0.00,1.00,0.00,0.00,1.00,,,78.53,81.53,ok,aiaa-dbf-2023-results,48 38 The University of Oklahoma 3 0.00 1.00 0.00 0.00 1.00 78.53 81.53
+2023,49,University of Maribor,3,0.00,1.00,0.00,0.00,1.00,,,76.57,79.57,ok,aiaa-dbf-2023-results,49 44 University of Maribor 3 0.00 1.00 0.00 0.00 1.00 76.57 79.57
+2023,50,Texas Tech University,3,0.00,1.00,0.00,0.00,1.00,,,76.50,79.50,ok,aiaa-dbf-2023-results,50 45 Texas Tech University 3 0.00 1.00 0.00 0.00 1.00 76.50 79.50
+2023,51,North Carolina State University,3,0.07,1.00,0.00,0.00,1.07,,,67.07,74.46,ok,aiaa-dbf-2023-results,51 62 North Carolina State University 3 0.07 1.00 0.00 0.00 1.07 67.07 74.46
+2023,52,Trine University,3,0.03,1.00,0.00,0.00,1.03,,,68.72,74.00,ok,aiaa-dbf-2023-results,52 57 Trine University 3 0.03 1.00 0.00 0.00 1.03 68.72 74.00
+2023,53,"University at Buffalo, State University of New York",3,0.15,1.00,0.00,0.00,1.15,,,58.58,70.46,ok,aiaa-dbf-2023-results,"53 79 University at Buffalo, State University of New York 3 0.15 1.00 0.00 0.00 1.15 58.58 70.46"
+2023,54,University of Illinois Urbana-Champaign,3,0.00,1.00,0.00,0.00,1.00,,,64.13,67.13,ok,aiaa-dbf-2023-results,54 71 University of Illinois Urbana-Champaign 3 0.00 1.00 0.00 0.00 1.00 64.13 67.13
+2023,55,Franklin W. Olin College of Engineering,3,0.21,0.00,0.00,0.00,0.21,,,57.30,15.17,ok,aiaa-dbf-2023-results,55 80 Franklin W. Olin College of Engineering 3 0.21 0.00 0.00 0.00 0.21 57.30 15.17
+2023,56,Case Western Reserve University,3,0.08,0.00,0.00,0.00,0.08,,,73.92,9.05,ok,aiaa-dbf-2023-results,56 51 Case Western Reserve University 3 0.08 0.00 0.00 0.00 0.08 73.92 9.05
+2023,57,Chulalongkorn University,3,0.06,0.00,0.00,0.00,0.06,,,79.07,7.45,ok,aiaa-dbf-2023-results,57 33 Chulalongkorn University 3 0.06 0.00 0.00 0.00 0.06 79.07 7.45
+2023,58,Cairo University,3,0.06,0.00,0.00,0.00,0.06,,,79.17,7.44,ok,aiaa-dbf-2023-results,58 32 Cairo University 3 0.06 0.00 0.00 0.00 0.06 79.17 7.44
+2023,59,Clarkson University,3,0.05,0.00,0.00,0.00,0.05,,,77.60,6.70,ok,aiaa-dbf-2023-results,59 41 Clarkson University 3 0.05 0.00 0.00 0.00 0.05 77.60 6.70
+2023,60,Cornell University,3,0.04,0.00,0.00,0.00,0.04,,,74.72,6.30,ok,aiaa-dbf-2023-results,60 50 Cornell University 3 0.04 0.00 0.00 0.00 0.04 74.72 6.30
+2023,61,The Hong Kong Polytechnic University,3,0.05,0.00,0.00,0.00,0.05,,,66.23,6.30,ok,aiaa-dbf-2023-results,61 66 The Hong Kong Polytechnic University 3 0.05 0.00 0.00 0.00 0.05 66.23 6.30
+2023,62,New Mexico State University,3,0.04,0.00,0.00,0.00,0.04,,,61.57,5.65,ok,aiaa-dbf-2023-results,62 75 New Mexico State University 3 0.04 0.00 0.00 0.00 0.04 61.57 5.65
+2023,63,University of Missouri - Columbia,3,0.05,0.00,0.00,0.00,0.05,,,46.45,5.20,ok,aiaa-dbf-2023-results,63 88 University of Missouri - Columbia 3 0.05 0.00 0.00 0.00 0.05 46.45 5.20
+2023,64,University of Arizona,3,0.03,0.00,0.00,0.00,0.03,,,60.53,5.10,ok,aiaa-dbf-2023-results,64 77 University of Arizona 3 0.03 0.00 0.00 0.00 0.03 60.53 5.10
+2023,65,Columbia University,2,0.04,0.00,0.00,0.00,0.04,,,66.65,4.95,ok,aiaa-dbf-2023-results,65 63 Columbia University 2 0.04 0.00 0.00 0.00 0.04 66.65 4.95
+2023,66,University of Massachusetts Lowell,3,0.04,0.00,0.00,0.00,0.04,,,45.33,4.89,ok,aiaa-dbf-2023-results,66 89 University of Massachusetts Lowell 3 0.04 0.00 0.00 0.00 0.04 45.33 4.89
+2023,67,University of Petroleum and Energy Studies,3,0.00,0.00,0.00,0.00,0.00,,,82.50,3.00,ok,aiaa-dbf-2023-results,67 23 University of Petroleum and Energy Studies 3 0.00 0.00 0.00 0.00 0.00 82.50 3.00
+2023,68,University of Glasgow,3,0.00,0.00,0.00,0.00,0.00,,,80.78,3.00,ok,aiaa-dbf-2023-results,68 28 University of Glasgow 3 0.00 0.00 0.00 0.00 0.00 80.78 3.00
+2023,69,Rensselaer Polytechnic Institute,3,0.00,0.00,0.00,0.00,0.00,,,79.00,3.00,ok,aiaa-dbf-2023-results,69 34 Rensselaer Polytechnic Institute 3 0.00 0.00 0.00 0.00 0.00 79.00 3.00
+2023,70,Ghulam Ishaq Khan Institute of Engineering Sciences and Technology,3,0.00,0.00,0.00,0.00,0.00,,,78.10,3.00,ok,aiaa-dbf-2023-results,70 39 Ghulam Ishaq Khan Institute of Engineering Sciences and Technology 3 0.00 0.00 0.00 0.00 0.00 78.10 3.00
+2023,71,University of Alaska Fairbanks,3,0.00,0.00,0.00,0.00,0.00,,,67.13,3.00,ok,aiaa-dbf-2023-results,71 61 University of Alaska Fairbanks 3 0.00 0.00 0.00 0.00 0.00 67.13 3.00
+2023,72,Western Michigan University,3,0.00,0.00,0.00,0.00,0.00,,,48.23,3.00,ok,aiaa-dbf-2023-results,72 86 Western Michigan University 3 0.00 0.00 0.00 0.00 0.00 48.23 3.00
+2023,73,"The University of Alabama, Tuscaloosa",2,0.00,0.00,0.00,0.00,0.00,,,78.87,2.00,ok,aiaa-dbf-2023-results,"73 35 The University of Alabama, Tuscaloosa 2 0.00 0.00 0.00 0.00 0.00 78.87 2.00"
+2023,74,Colorado State University,2,0.00,0.00,0.00,0.00,0.00,,,39.93,2.00,ok,aiaa-dbf-2023-results,74 91 Colorado State University 2 0.00 0.00 0.00 0.00 0.00 39.93 2.00
+2023,75,Wentworth Institute of Technology,1,0.00,0.00,0.00,0.00,0.00,,,81.55,1.00,ok,aiaa-dbf-2023-results,75 26 Wentworth Institute of Technology 1 0.00 0.00 0.00 0.00 0.00 81.55 1.00
+2023,76,University of Texas at Dallas,1,0.00,0.00,0.00,0.00,0.00,,,68.43,1.00,ok,aiaa-dbf-2023-results,76 58 University of Texas at Dallas 1 0.00 0.00 0.00 0.00 0.00 68.43 1.00
+2023,77,University of Connecticut Storrs,1,0.00,0.00,0.00,0.00,0.00,,,64.50,1.00,ok,aiaa-dbf-2023-results,77 69 University of Connecticut Storrs 1 0.00 0.00 0.00 0.00 0.00 64.50 1.00
+2023,78,University of Colorado Boulder,1,0.00,0.00,0.00,0.00,0.00,,,51.95,1.00,ok,aiaa-dbf-2023-results,78 82 University of Colorado Boulder 1 0.00 0.00 0.00 0.00 0.00 51.95 1.00
+2023,79,Rice University,1,0.00,0.00,0.00,0.00,0.00,,,51.92,1.00,ok,aiaa-dbf-2023-results,79 83 Rice University 1 0.00 0.00 0.00 0.00 0.00 51.92 1.00
+2023,80,University of Missouri - Kansas City,1,0.00,0.00,0.00,0.00,0.00,,,35.77,1.00,ok,aiaa-dbf-2023-results,80 93 University of Missouri - Kansas City 1 0.00 0.00 0.00 0.00 0.00 35.77 1.00
+2023,81,University of California Davis,1,0.00,0.00,0.00,0.00,0.00,,,32.40,1.00,ok,aiaa-dbf-2023-results,81 94 University of California Davis 1 0.00 0.00 0.00 0.00 0.00 32.40 1.00
+2023,82,Dayananda Sagar College of Engineering,0,0.00,0.00,0.00,0.00,0.00,,,84.67,0.00,ok,aiaa-dbf-2023-results,82 17 Dayananda Sagar College of Engineering 0 0.00 0.00 0.00 0.00 0.00 84.67 0.00
+2023,83,University of New South Wales,0,0.00,0.00,0.00,0.00,0.00,,,70.78,0.00,ok,aiaa-dbf-2023-results,83 55 University of New South Wales 0 0.00 0.00 0.00 0.00 0.00 70.78 0.00
+2023,84,Clemson University,0,0.00,0.00,0.00,0.00,0.00,,,70.57,0.00,ok,aiaa-dbf-2023-results,84 56 Clemson University 0 0.00 0.00 0.00 0.00 0.00 70.57 0.00
+2023,85,University of Alabama at Birmingham,0,0.00,0.00,0.00,0.00,0.00,,,67.98,0.00,ok,aiaa-dbf-2023-results,85 59 University of Alabama at Birmingham 0 0.00 0.00 0.00 0.00 0.00 67.98 0.00
+2023,86,"Birla Institute Of Science And Technology, Pilani K K Birla Goa Campus",0,0.00,0.00,0.00,0.00,0.00,,,65.67,0.00,ok,aiaa-dbf-2023-results,"86 67 Birla Institute Of Science And Technology, Pilani K K Birla Goa Campus 0 0.00 0.00 0.00 0.00 0.00 65.67 0.00"
+2023,87,"Tribhuvan University, Institute of Engineering, Pulchowk Campus",0,0.00,0.00,0.00,0.00,0.00,,,64.67,0.00,ok,aiaa-dbf-2023-results,"87 68 Tribhuvan University, Institute of Engineering, Pulchowk Campus 0 0.00 0.00 0.00 0.00 0.00 64.67 0.00"
+2023,88,University of Colorado Colorado Springs,0,0.00,0.00,0.00,0.00,0.00,,,62.67,0.00,ok,aiaa-dbf-2023-results,88 73 University of Colorado Colorado Springs 0 0.00 0.00 0.00 0.00 0.00 62.67 0.00
+2023,89,University of Tennessee Chattanooga,0,0.00,0.00,0.00,0.00,0.00,,,62.42,0.00,ok,aiaa-dbf-2023-results,89 74 University of Tennessee Chattanooga 0 0.00 0.00 0.00 0.00 0.00 62.42 0.00
+2023,90,University of California San Diego,0,0.00,0.00,0.00,0.00,0.00,,,60.58,0.00,ok,aiaa-dbf-2023-results,90 76 University of California San Diego 0 0.00 0.00 0.00 0.00 0.00 60.58 0.00
+2023,91,Lehigh University,0,0.00,0.00,0.00,0.00,0.00,,,59.68,0.00,ok,aiaa-dbf-2023-results,91 78 Lehigh University 0 0.00 0.00 0.00 0.00 0.00 59.68 0.00
+2023,92,University of Houston,0,0.00,0.00,0.00,0.00,0.00,,,51.82,0.00,ok,aiaa-dbf-2023-results,92 84 University of Houston 0 0.00 0.00 0.00 0.00 0.00 51.82 0.00
+2023,93,University of Georgia,0,0.00,0.00,0.00,0.00,0.00,,,49.15,0.00,ok,aiaa-dbf-2023-results,93 85 University of Georgia 0 0.00 0.00 0.00 0.00 0.00 49.15 0.00
+2023,94,University of Minnesota - Twin Cities,0,0.00,0.00,0.00,0.00,0.00,,,38.83,0.00,ok,aiaa-dbf-2023-results,94 92 University of Minnesota - Twin Cities 0 0.00 0.00 0.00 0.00 0.00 38.83 0.00
+2023,95,Alfred University,0,0.00,0.00,0.00,0.00,0.00,,,27.90,0.00,ok,aiaa-dbf-2023-results,95 95 Alfred University 0 0.00 0.00 0.00 0.00 0.00 27.90 0.00
+2023,96,Rowan University,0,0.00,0.00,0.00,0.00,0.00,,,27.50,0.00,ok,aiaa-dbf-2023-results,96 96 Rowan University 0 0.00 0.00 0.00 0.00 0.00 27.50 0.00
+2023,97,Kent State University,0,0.00,0.00,0.00,0.00,0.00,,,20.25,0.00,ok,aiaa-dbf-2023-results,97 97 Kent State University 0 0.00 0.00 0.00 0.00 0.00 20.25 0.00
+2023,98,FAMU-FSU College of Engineering,0,0.00,0.00,0.00,0.00,0.00,,,6.60,0.00,ok,aiaa-dbf-2023-results,98 98 FAMU-FSU College of Engineering 0 0.00 0.00 0.00 0.00 0.00 6.60 0.00
+2023,99,Ain Shams University,0,0.00,0.00,0.00,0.00,0.00,,,0.00,0.00,ok,aiaa-dbf-2023-results,99 99 Ain Shams University 0 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+2022,1,Georgia Institute of Technology,,0.52,1.00,1.54,2.89,5.95,,,88.48,526.59,ok,aiaa-dbf-2022-results,1 9 Georgia Institute of Technology 0.52 1.00 1.54 2.89 5.95 88.48 526.59
+2022,2,"Embry-Riddle Aeronautical University - Daytona Beach, FL",,0.12,1.00,1.93,3.00,6.05,,,86.77,525.19,ok,aiaa-dbf-2022-results,"2 17 Embry-Riddle Aeronautical University - Daytona Beach, FL 0.12 1.00 1.93 3.00 6.05 86.77 525.19"
+2022,3,FH JOANNEUM University of Applied Sciences,,0.32,1.00,1.55,2.56,5.43,,,93.33,506.32,ok,aiaa-dbf-2022-results,3 1 FH JOANNEUM University of Applied Sciences 0.32 1.00 1.55 2.56 5.43 93.33 506.32
+2022,4,University of Southern California,,0.35,1.00,2.00,2.33,5.69,,,84.75,481.82,ok,aiaa-dbf-2022-results,4 21 University of Southern California 0.35 1.00 2.00 2.33 5.69 84.75 481.82
+2022,5,Virginia Tech,,0.46,1.00,1.25,2.44,5.15,,,89.77,462.40,ok,aiaa-dbf-2022-results,5 5 Virginia Tech 0.46 1.00 1.25 2.44 5.15 89.77 462.40
+2022,6,University of Kansas,,0.47,1.00,1.22,2.56,5.25,,,81.97,430.01,ok,aiaa-dbf-2022-results,6 29 University of Kansas 0.47 1.00 1.22 2.56 5.25 81.97 430.01
+2022,7,Arizona State University,,0.11,1.00,1.36,2.22,4.69,,,89.15,417.94,ok,aiaa-dbf-2022-results,7 7 Arizona State University 0.11 1.00 1.36 2.22 4.69 89.15 417.94
+2022,8,Embry-Riddle Aeronautical University: Prescott Campus,,0.13,1.00,1.22,2.33,4.68,,,86.77,406.06,ok,aiaa-dbf-2022-results,8 16 Embry-Riddle Aeronautical University: Prescott Campus 0.13 1.00 1.22 2.33 4.68 86.77 406.06
+2022,9,"University of Washington, Seattle",,0.12,1.00,1.29,2.67,5.07,,,79.70,404.14,ok,aiaa-dbf-2022-results,"9 35 University of Washington, Seattle 0.12 1.00 1.29 2.67 5.07 79.70 404.14"
+2022,10,The University of Akron,,0.16,1.00,1.33,2.33,4.82,,,82.60,398.18,ok,aiaa-dbf-2022-results,10 27 The University of Akron 0.16 1.00 1.33 2.33 4.82 82.60 398.18
+2022,11,Washington University in St. Louis,,0.11,1.00,1.09,2.22,4.42,,,90.00,398.12,ok,aiaa-dbf-2022-results,11 3 Washington University in St. Louis 0.11 1.00 1.09 2.22 4.42 90.00 398.12
+2022,12,"University of California, Irvine",,0.15,1.00,1.50,2.22,4.87,,,81.52,396.89,ok,aiaa-dbf-2022-results,"12 31 University of California, Irvine 0.15 1.00 1.50 2.22 4.87 81.52 396.89"
+2022,13,University of Texas at Austin,,0.10,1.00,1.36,2.56,5.01,,,78.67,394.29,ok,aiaa-dbf-2022-results,13 38 University of Texas at Austin 0.10 1.00 1.36 2.56 5.01 78.67 394.29
+2022,14,University of Oklahoma,,0.37,1.00,1.42,2.33,5.12,,,72.23,369.94,ok,aiaa-dbf-2022-results,14 56 University of Oklahoma 0.37 1.00 1.42 2.33 5.12 72.23 369.94
+2022,15,Franklin W. Olin College of Engineering,,0.08,1.00,1.18,2.11,4.38,,,78.17,342.11,ok,aiaa-dbf-2022-results,15 41 Franklin W. Olin College of Engineering 0.08 1.00 1.18 2.11 4.38 78.17 342.11
+2022,16,"University of California, Los Angeles",,0.18,1.00,1.33,0.00,2.51,,,89.55,225.12,ok,aiaa-dbf-2022-results,"16 6 University of California, Los Angeles 0.18 1.00 1.33 0.00 2.51 89.55 225.12"
+2022,17,Universidad Pontificia Bolivariana,,0.00,1.00,1.55,0.00,2.55,,,83.90,214.17,ok,aiaa-dbf-2022-results,17 24 Universidad Pontificia Bolivariana 0.00 1.00 1.55 0.00 2.55 83.90 214.17
+2022,18,Western Michigan University,,0.00,1.00,1.49,0.00,2.49,,,84.90,211.01,ok,aiaa-dbf-2022-results,18 20 Western Michigan University 0.00 1.00 1.49 0.00 2.49 84.90 211.01
+2022,19,VEERMATA JIJABAI TECHNOLOGICAL INSTITUTE,,0.00,1.00,1.33,0.00,2.33,,,86.95,202.74,ok,aiaa-dbf-2022-results,19 15 VEERMATA JIJABAI TECHNOLOGICAL INSTITUTE 0.00 1.00 1.33 0.00 2.33 86.95 202.74
+2022,20,San Jose State University,,0.07,1.00,1.19,0.00,2.26,,,76.27,172.63,ok,aiaa-dbf-2022-results,20 48 San Jose State University 0.07 1.00 1.19 0.00 2.26 76.27 172.63
+2022,21,University of Central Florida,,0.00,1.00,1.19,0.00,2.19,,,78.83,172.39,ok,aiaa-dbf-2022-results,21 36 University of Central Florida 0.00 1.00 1.19 0.00 2.19 78.83 172.39
+2022,22,The Pennsylvania State University,,0.09,1.00,1.10,0.00,2.19,,,77.95,170.83,ok,aiaa-dbf-2022-results,22 42 The Pennsylvania State University 0.09 1.00 1.10 0.00 2.19 77.95 170.83
+2022,23,The University of South Alabama,,0.00,1.00,1.49,0.00,2.49,,,63.33,157.73,ok,aiaa-dbf-2022-results,23 70 The University of South Alabama 0.00 1.00 1.49 0.00 2.49 63.33 157.73
+2022,24,New Mexico State University,,0.17,1.00,1.07,0.00,2.24,,,63.53,142.49,ok,aiaa-dbf-2022-results,24 68 New Mexico State University 0.17 1.00 1.07 0.00 2.24 63.53 142.49
+2022,25,Purdue University,,1.00,1.00,0.00,0.00,2.00,,,64.67,129.34,ok,aiaa-dbf-2022-results,25 66 Purdue University 1.00 1.00 0.00 0.00 2.00 64.67 129.34
+2022,26,The University of Tennessee - Knoxville,,0.34,1.00,0.00,0.00,1.34,,,80.37,107.98,ok,aiaa-dbf-2022-results,26 34 The University of Tennessee - Knoxville 0.34 1.00 0.00 0.00 1.34 80.37 107.98
+2022,27,University of Florida,,0.26,1.00,0.00,0.00,1.26,,,83.75,105.35,ok,aiaa-dbf-2022-results,27 25 University of Florida 0.26 1.00 0.00 0.00 1.26 83.75 105.35
+2022,28,"California Polytechnic State University, San Luis Obispo",,0.13,1.00,0.00,0.00,1.13,,,89.97,101.45,ok,aiaa-dbf-2022-results,"28 4 California Polytechnic State University, San Luis Obispo 0.13 1.00 0.00 0.00 1.13 89.97 101.45"
+2022,29,"Rutgers, The State University of New Jersey – New Brunswick",,0.36,1.00,0.00,0.00,1.36,,,73.88,100.66,ok,aiaa-dbf-2022-results,"29 53 Rutgers, The State University of New Jersey – New Brunswick 0.36 1.00 0.00 0.00 1.36 73.88 100.66"
+2022,30,University of Alaska Fairbanks,,0.19,1.00,0.00,0.00,1.19,,,76.93,91.73,ok,aiaa-dbf-2022-results,30 46 University of Alaska Fairbanks 0.19 1.00 0.00 0.00 1.19 76.93 91.73
+2022,31,Ghulam Ishaq Khan Institute of Engineering Sciences and Technology,,0.17,1.00,0.00,0.00,1.17,,,78.57,91.57,ok,aiaa-dbf-2022-results,31 39 Ghulam Ishaq Khan Institute of Engineering Sciences and Technology 0.17 1.00 0.00 0.00 1.17 78.57 91.57
+2022,32,Massachusetts Institute of Technology,,0.00,1.00,0.00,0.00,1.00,,,91.33,91.33,ok,aiaa-dbf-2022-results,32 2 Massachusetts Institute of Technology 0.00 1.00 0.00 0.00 1.00 91.33 91.33
+2022,33,Missouri University of Science and Technology,,0.05,1.00,0.00,0.00,1.05,,,83.58,88.12,ok,aiaa-dbf-2022-results,33 26 Missouri University of Science and Technology 0.05 1.00 0.00 0.00 1.05 83.58 88.12
+2022,34,Cornell University,,0.00,1.00,0.00,0.00,1.00,,,77.80,77.80,ok,aiaa-dbf-2022-results,34 43 Cornell University 0.00 1.00 0.00 0.00 1.00 77.80 77.80
+2022,35,San Diego State University,,0.00,1.00,0.00,0.00,1.00,,,76.35,76.35,ok,aiaa-dbf-2022-results,35 47 San Diego State University 0.00 1.00 0.00 0.00 1.00 76.35 76.35
+2022,36,Utah State University,,0.30,1.00,0.00,0.00,1.30,,,54.37,70.70,ok,aiaa-dbf-2022-results,36 83 Utah State University 0.30 1.00 0.00 0.00 1.30 54.37 70.70
+2022,37,Gebze Technical University,,0.00,1.00,0.00,0.00,1.00,,,66.77,66.77,ok,aiaa-dbf-2022-results,37 63 Gebze Technical University 0.00 1.00 0.00 0.00 1.00 66.77 66.77
+2022,38,Trine University,,0.00,1.00,0.00,0.00,1.00,,,63.37,63.37,ok,aiaa-dbf-2022-results,38 69 Trine University 0.00 1.00 0.00 0.00 1.00 63.37 63.37
+2022,39,University of Ljubljana,,0.00,1.00,0.00,0.00,1.00,,,58.53,58.53,ok,aiaa-dbf-2022-results,39 77 University of Ljubljana 0.00 1.00 0.00 0.00 1.00 58.53 58.53
+2022,40,University of Notre Dame,,0.53,0.00,0.00,0.00,0.53,,,87.93,46.50,ok,aiaa-dbf-2022-results,40 11 University of Notre Dame 0.53 0.00 0.00 0.00 0.53 87.93 46.50
+2022,41,Rensselaer Polytechnic Institute,,0.46,0.00,0.00,0.00,0.46,,,87.53,40.35,ok,aiaa-dbf-2022-results,41 12 Rensselaer Polytechnic Institute 0.46 0.00 0.00 0.00 0.46 87.53 40.35
+2022,42,John Brown University,,0.00,1.00,0.00,0.00,1.00,,,40.33,40.33,ok,aiaa-dbf-2022-results,42 92 John Brown University 0.00 1.00 0.00 0.00 1.00 40.33 40.33
+2022,43,University of Petroleum and Energy Studies,,0.45,0.00,0.00,0.00,0.45,,,88.47,40.21,ok,aiaa-dbf-2022-results,43 10 University of Petroleum and Energy Studies 0.45 0.00 0.00 0.00 0.45 88.47 40.21
+2022,44,The Ohio State University,,0.37,0.00,0.00,0.00,0.37,,,89.08,32.54,ok,aiaa-dbf-2022-results,44 8 The Ohio State University 0.37 0.00 0.00 0.00 0.37 89.08 32.54
+2022,45,"University of Maryland, College Park",,0.40,0.00,0.00,0.00,0.40,,,78.75,31.70,ok,aiaa-dbf-2022-results,"45 37 University of Maryland, College Park 0.40 0.00 0.00 0.00 0.40 78.75 31.70"
+2022,46,North Dakota State University,,0.41,0.00,0.00,0.00,0.41,,,74.00,30.38,ok,aiaa-dbf-2022-results,46 51 North Dakota State University 0.41 0.00 0.00 0.00 0.41 74.00 30.38
+2022,47,Worcester Polytechnic Institute,,0.15,0.00,0.00,0.00,0.15,,,75.77,11.02,ok,aiaa-dbf-2022-results,47 49 Worcester Polytechnic Institute 0.15 0.00 0.00 0.00 0.15 75.77 11.02
+2022,48,Lehigh University,,0.13,0.00,0.00,0.00,0.13,,,65.95,8.38,ok,aiaa-dbf-2022-results,48 64 Lehigh University 0.13 0.00 0.00 0.00 0.13 65.95 8.38
+2022,49,Rose-Hulman Institute of Technology,,0.11,0.00,0.00,0.00,0.11,,,68.57,7.62,ok,aiaa-dbf-2022-results,49 61 Rose-Hulman Institute of Technology 0.11 0.00 0.00 0.00 0.11 68.57 7.62
+2022,50,West Virginia University,,0.08,0.00,0.00,0.00,0.08,,,86.42,7.13,ok,aiaa-dbf-2022-results,50 18 West Virginia University 0.08 0.00 0.00 0.00 0.08 86.42 7.13
+2022,51,University at Buffalo,,0.07,0.00,0.00,0.00,0.07,,,0.00,0.00,ok,aiaa-dbf-2022-results,51 97 University at Buffalo 0.07 0.00 0.00 0.00 0.07 0.00 0.00
+2022,52,North Carolina State University,,0.00,0.00,0.00,0.00,0.00,,,87.33,0.00,ok,aiaa-dbf-2022-results,52 13 North Carolina State University 0.00 0.00 0.00 0.00 0.00 87.33 0.00
+2022,53,National University of Singapore,,0.00,0.00,0.00,0.00,0.00,,,87.23,0.00,ok,aiaa-dbf-2022-results,53 14 National University of Singapore 0.00 0.00 0.00 0.00 0.00 87.23 0.00
+2022,54,Dayananda Sagar College of Engineering,,0.00,0.00,0.00,0.00,0.00,,,86.25,0.00,ok,aiaa-dbf-2022-results,54 19 Dayananda Sagar College of Engineering 0.00 0.00 0.00 0.00 0.00 86.25 0.00
+2022,55,University of Michigan -- Ann Arbor,,0.00,0.00,0.00,0.00,0.00,,,84.50,0.00,ok,aiaa-dbf-2022-results,55 22 University of Michigan -- Ann Arbor 0.00 0.00 0.00 0.00 0.00 84.50 0.00
+2022,56,Cairo University,,0.00,0.00,0.00,0.00,0.00,,,84.22,0.00,ok,aiaa-dbf-2022-results,56 23 Cairo University 0.00 0.00 0.00 0.00 0.00 84.22 0.00
+2022,57,George Washington University,,0.00,0.00,0.00,0.00,0.00,,,82.15,0.00,ok,aiaa-dbf-2022-results,57 28 George Washington University 0.00 0.00 0.00 0.00 0.00 82.15 0.00
+2022,58,The University of Hong Kong,,0.00,0.00,0.00,0.00,0.00,,,81.83,0.00,ok,aiaa-dbf-2022-results,58 30 The University of Hong Kong 0.00 0.00 0.00 0.00 0.00 81.83 0.00
+2022,59,YILDIZ TECHNICAL UNIVERSITY,,0.00,0.00,0.00,0.00,0.00,,,81.22,0.00,ok,aiaa-dbf-2022-results,59 32 YILDIZ TECHNICAL UNIVERSITY 0.00 0.00 0.00 0.00 0.00 81.22 0.00
+2022,60,"University of California, San Diego",,0.00,0.00,0.00,0.00,0.00,,,80.77,0.00,ok,aiaa-dbf-2022-results,"60 33 University of California, San Diego 0.00 0.00 0.00 0.00 0.00 80.77 0.00"
+2022,61,Case Western Reserve University,,0.00,0.00,0.00,0.00,0.00,,,78.37,0.00,ok,aiaa-dbf-2022-results,61 40 Case Western Reserve University 0.00 0.00 0.00 0.00 0.00 78.37 0.00
+2022,62,Military Technical College,,0.00,0.00,0.00,0.00,0.00,,,77.50,0.00,ok,aiaa-dbf-2022-results,62 44 Military Technical College 0.00 0.00 0.00 0.00 0.00 77.50 0.00
+2022,63,Wentworth Institute of Technology,,0.00,0.00,0.00,0.00,0.00,,,77.42,0.00,ok,aiaa-dbf-2022-results,63 45 Wentworth Institute of Technology 0.00 0.00 0.00 0.00 0.00 77.42 0.00
+2022,64,State University of New York at Binghamton,,0.00,0.00,0.00,0.00,0.00,,,75.17,0.00,ok,aiaa-dbf-2022-results,64 50 State University of New York at Binghamton 0.00 0.00 0.00 0.00 0.00 75.17 0.00
+2022,65,Military Institute of Science and Technology,,0.00,0.00,0.00,0.00,0.00,,,73.92,0.00,ok,aiaa-dbf-2022-results,65 52 Military Institute of Science and Technology 0.00 0.00 0.00 0.00 0.00 73.92 0.00
+2022,66,Clarkson University,,0.00,0.00,0.00,0.00,0.00,,,72.87,0.00,ok,aiaa-dbf-2022-results,66 54 Clarkson University 0.00 0.00 0.00 0.00 0.00 72.87 0.00
+2022,67,"University of California, Merced",,0.00,0.00,0.00,0.00,0.00,,,72.35,0.00,ok,aiaa-dbf-2022-results,"67 55 University of California, Merced 0.00 0.00 0.00 0.00 0.00 72.35 0.00"
+2022,68,Brigham Young University Provo,,0.00,0.00,0.00,0.00,0.00,,,72.03,0.00,ok,aiaa-dbf-2022-results,68 57 Brigham Young University Provo 0.00 0.00 0.00 0.00 0.00 72.03 0.00
+2022,69,University of Colorado Boulder,,0.00,0.00,0.00,0.00,0.00,,,71.43,0.00,ok,aiaa-dbf-2022-results,69 58 University of Colorado Boulder 0.00 0.00 0.00 0.00 0.00 71.43 0.00
+2022,70,The Hong Kong University of Science and Technology,,0.00,0.00,0.00,0.00,0.00,,,70.90,0.00,ok,aiaa-dbf-2022-results,70 59 The Hong Kong University of Science and Technology 0.00 0.00 0.00 0.00 0.00 70.90 0.00
+2022,71,"Tribhuvan University, Institute of Engineering, Pulchowk Campus",,0.00,0.00,0.00,0.00,0.00,,,69.92,0.00,ok,aiaa-dbf-2022-results,"71 60 Tribhuvan University, Institute of Engineering, Pulchowk Campus 0.00 0.00 0.00 0.00 0.00 69.92 0.00"
+2022,72,University of Illinois Urbana-Champaign,,0.00,0.00,0.00,0.00,0.00,,,68.53,0.00,ok,aiaa-dbf-2022-results,72 62 University of Illinois Urbana-Champaign 0.00 0.00 0.00 0.00 0.00 68.53 0.00
+2022,73,The University of Alabama,,0.00,0.00,0.00,0.00,0.00,,,65.40,0.00,ok,aiaa-dbf-2022-results,73 65 The University of Alabama 0.00 0.00 0.00 0.00 0.00 65.40 0.00
+2022,74,University of New South Wales,,0.00,0.00,0.00,0.00,0.00,,,64.25,0.00,ok,aiaa-dbf-2022-results,74 67 University of New South Wales 0.00 0.00 0.00 0.00 0.00 64.25 0.00
+2022,75,Columbia University in the City of New York,,0.00,0.00,0.00,0.00,0.00,,,61.47,0.00,ok,aiaa-dbf-2022-results,75 71 Columbia University in the City of New York 0.00 0.00 0.00 0.00 0.00 61.47 0.00
+2022,76,"University of Maryland, Baltimore County",,0.00,0.00,0.00,0.00,0.00,,,61.07,0.00,ok,aiaa-dbf-2022-results,"76 72 University of Maryland, Baltimore County 0.00 0.00 0.00 0.00 0.00 61.07 0.00"
+2022,77,Florida Institute of Technology,,0.00,0.00,0.00,0.00,0.00,,,61.00,0.00,ok,aiaa-dbf-2022-results,77 73 Florida Institute of Technology 0.00 0.00 0.00 0.00 0.00 61.00 0.00
+2022,78,University of Massachusetts Amherst,,0.00,0.00,0.00,0.00,0.00,,,58.83,0.00,ok,aiaa-dbf-2022-results,78 74 University of Massachusetts Amherst 0.00 0.00 0.00 0.00 0.00 58.83 0.00
+2022,79,Texas Tech University,,0.00,0.00,0.00,0.00,0.00,,,58.83,0.00,ok,aiaa-dbf-2022-results,79 75 Texas Tech University 0.00 0.00 0.00 0.00 0.00 58.83 0.00
+2022,80,University of Massachusetts Lowell,,0.00,0.00,0.00,0.00,0.00,,,58.60,0.00,ok,aiaa-dbf-2022-results,80 76 University of Massachusetts Lowell 0.00 0.00 0.00 0.00 0.00 58.60 0.00
+2022,81,Oregon State University,,0.00,0.00,0.00,0.00,0.00,,,56.10,0.00,ok,aiaa-dbf-2022-results,81 78 Oregon State University 0.00 0.00 0.00 0.00 0.00 56.10 0.00
+2022,82,Syracuse University,,0.00,0.00,0.00,0.00,0.00,,,55.83,0.00,ok,aiaa-dbf-2022-results,82 79 Syracuse University 0.00 0.00 0.00 0.00 0.00 55.83 0.00
+2022,83,Johns Hopkins University,,0.00,0.00,0.00,0.00,0.00,,,55.48,0.00,ok,aiaa-dbf-2022-results,83 80 Johns Hopkins University 0.00 0.00 0.00 0.00 0.00 55.48 0.00
+2022,84,Manhattan College,,0.00,0.00,0.00,0.00,0.00,,,55.15,0.00,ok,aiaa-dbf-2022-results,84 81 Manhattan College 0.00 0.00 0.00 0.00 0.00 55.15 0.00
+2022,85,Kent State University,,0.00,0.00,0.00,0.00,0.00,,,54.67,0.00,ok,aiaa-dbf-2022-results,85 82 Kent State University 0.00 0.00 0.00 0.00 0.00 54.67 0.00
+2022,86,Rowan University,,0.00,0.00,0.00,0.00,0.00,,,51.48,0.00,ok,aiaa-dbf-2022-results,86 84 Rowan University 0.00 0.00 0.00 0.00 0.00 51.48 0.00
+2022,87,Youngstown State University,,0.00,0.00,0.00,0.00,0.00,,,50.13,0.00,ok,aiaa-dbf-2022-results,87 85 Youngstown State University 0.00 0.00 0.00 0.00 0.00 50.13 0.00
+2022,88,Ankara Yıldırım Beyazıt University,,0.00,0.00,0.00,0.00,0.00,,,49.37,0.00,ok,aiaa-dbf-2022-results,88 86 Ankara Yıldırım Beyazıt University 0.00 0.00 0.00 0.00 0.00 49.37 0.00
+2022,89,"Birla Institute of Technology and Science, Pilani K.K. Birla Goa Campus",,0.00,0.00,0.00,0.00,0.00,,,48.85,0.00,ok,aiaa-dbf-2022-results,"89 87 Birla Institute of Technology and Science, Pilani K.K. Birla Goa Campus 0.00 0.00 0.00 0.00 0.00 48.85 0.00"
+2022,90,University of Tennessee at Chattanooga,,0.00,0.00,0.00,0.00,0.00,,,47.75,0.00,ok,aiaa-dbf-2022-results,90 88 University of Tennessee at Chattanooga 0.00 0.00 0.00 0.00 0.00 47.75 0.00
+2022,91,Texas A&M University,,0.00,0.00,0.00,0.00,0.00,,,44.07,0.00,ok,aiaa-dbf-2022-results,91 89 Texas A&M University 0.00 0.00 0.00 0.00 0.00 44.07 0.00
+2022,92,University of Missouri-Columbia,,0.00,0.00,0.00,0.00,0.00,,,42.00,0.00,ok,aiaa-dbf-2022-results,92 90 University of Missouri-Columbia 0.00 0.00 0.00 0.00 0.00 42.00 0.00
+2022,93,Alfred University,,0.00,0.00,0.00,0.00,0.00,,,41.33,0.00,ok,aiaa-dbf-2022-results,93 91 Alfred University 0.00 0.00 0.00 0.00 0.00 41.33 0.00
+2022,94,University of Arkansas - Fayetteville,,0.00,0.00,0.00,0.00,0.00,,,38.45,0.00,ok,aiaa-dbf-2022-results,94 93 University of Arkansas - Fayetteville 0.00 0.00 0.00 0.00 0.00 38.45 0.00
+2022,95,The City College of New York (CCNY) of the City University of New York,,0.00,0.00,0.00,0.00,0.00,,,35.77,0.00,ok,aiaa-dbf-2022-results,95 94 The City College of New York (CCNY) of the City University of New York 0.00 0.00 0.00 0.00 0.00 35.77 0.00
+2022,96,Villanova University,,0.00,0.00,0.00,0.00,0.00,,,27.97,0.00,ok,aiaa-dbf-2022-results,96 95 Villanova University 0.00 0.00 0.00 0.00 0.00 27.97 0.00
+2022,97,New York University Tandon School of Engineering,,0.00,0.00,0.00,0.00,0.00,,,25.67,0.00,ok,aiaa-dbf-2022-results,97 96 New York University Tandon School of Engineering 0.00 0.00 0.00 0.00 0.00 25.67 0.00

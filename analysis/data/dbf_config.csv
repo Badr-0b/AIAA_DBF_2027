@@ -1,0 +1,20 @@
+year,team,wing_position,gear,tail,propulsion,fuselage,wing_position_cat,gear_cat,tail_cat,propulsion_cat,rank,score,completed_m2,completed_m3
+2021,Dayananda Sagar College of Engineering,high wing,tricycle,conventional tail,Tractor,,high,tricycle,conventional,single motor,,,,
+2021,"Embry-Riddle Aeronautical University, Daytona Beach",high-wing,tricycle,inverted V-tail,twin-engine,twin-boom,high,tricycle,inverted V,twin motors,,,,
+2021,University of Central Florida,high wing,taildragger,conventional empennage,single motor,boom-based rear fuselage,high,taildragger,conventional,single motor,,,,
+2021,University of Michigan,high-wing,Nose Gear,traditional tail,twin engine,guppy,high,tricycle,conventional,twin motors,,,,
+2022,FH JOANNEUM University of Applied Sciences,high-wing,tricycle,conventional empennage,tractor,,high,tricycle,conventional,single motor,3,506.32,True,True
+2022,Massachusetts Institute of Technology,High Wing,Quadricycle,Twin-Boom T-Tail,Twin Tractor,Pod + Twin-Boom,high,quadricycle,T-tail,twin motors,32,91.33,False,False
+2022,Washington University in St. Louis,low-wing,tail-dragger,conventional tail,tractor,,low,taildragger,conventional,single motor,11,398.12,True,True
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",low-wing,tricycle,conventional tail,single-engine tractor,tail boom,low,tricycle,conventional,single motor,3,532.02,True,True
+2023,University of Washington,low-wing,taildragger,conventional tail,single-engine,,low,taildragger,conventional,single motor,5,494.55,True,True
+2023,Virginia Polytechnic Institute and State University,high-wing,tricycle,conventional tail,single tractor motor,,high,tricycle,conventional,single motor,4,494.79,True,True
+2024,University of Ljubljana,high-wing,tricycle,T-tail,single electric motor,,high,tricycle,T-tail,single motor,56,94.33,False,False
+2024,University of Southern California,high-wing,tricycle,conventional tail,dual tractor motors,,high,tricycle,conventional,twin motors,32,228.83,True,False
+2024,Virginia Polytechnic Institute and State University,high wing,tricycle,conventional tail,twin motors,,high,tricycle,conventional,twin motors,4,475.46,True,True
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",low-wing,tricycle,conventional empennage,single-tractor engine,tail boom,low,tricycle,conventional,single motor,57,103.42,False,False
+2025,"University of California, Los Angeles",high-wing,taildragger,conventional tail,single-tractor,,high,taildragger,conventional,single motor,10,441.97,True,True
+2025,University of New South Wales,high rectangular wing,tricycle,conventional tail,dual motor tractor,boom,high,tricycle,conventional,twin motors,52,110.95,False,False
+2026,Georgia Institute of Technology,low-wing,tricycle,conventional tail,,conventional fuselage,low,tricycle,conventional,not stated,7,420.13,True,True
+2026,University of Ljubljana,low-wing,tricycle,conventional tail,tractor,,low,tricycle,conventional,single motor,1,501.26,True,True
+2026,University of Southern California,high-wing,taildragger,conventional tail,single-tractor,,high,taildragger,conventional,single motor,21,251.53,True,False

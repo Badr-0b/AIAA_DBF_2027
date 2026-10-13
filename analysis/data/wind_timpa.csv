@@ -1,0 +1,4 @@
+station,name,n,years,mean,median,p75,p90,p95,max,share_calm,share_gt_7_5,gust_reports,gust_p90
+RYN,Ryan Airfield,528,18,4.365,4.116,6.173,8.231,9.26,12.861,0.133,0.152,209,13.89
+AVQ,Marana Regional,527,11,3.757,3.601,5.144,7.202,8.54,11.318,0.139,0.082,166,12.861
+TUS,Tucson International,1413,30,4.088,3.601,5.659,7.717,8.746,11.832,0.083,0.105,427,13.89

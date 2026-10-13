@@ -1,0 +1,55 @@
+year,team,short,param,mission,category,predicted,measured,ratio
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,cd0,,drag,0.0575,0.0583,1.01391
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,oswald_e,,drag,0.725,0.842,1.16138
+2023,University of Washington,UW,gross_mass,M1,mass,4.81262,4.19573,0.871819
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,empty_mass,,mass,6.80389,6.15978,0.905333
+2024,Virginia Polytechnic Institute and State University,VT,gross_mass,M1,mass,5.1283,5.0612,0.986916
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,empty_mass_nobatt,,mass,4.88519,4.82622,0.987929
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,gross_mass,M2,mass,17.6901,17.5722,0.993333
+2023,Virginia Polytechnic Institute and State University,VT,gross_mass,M1,mass,2.29489,2.30505,1.00443
+2025,University of New South Wales,UNSW,gross_mass,M2,mass,21.9992,22.1761,1.00804
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,gross_mass,M3,mass,6.14164,6.30493,1.02659
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,gross_mass,M2,mass,12.7822,13.263,1.03762
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,gross_mass,M1,mass,5.52475,5.76516,1.04351
+2024,University of Southern California,USC,empty_mass,,mass,6.35029,6.98532,1.1
+2024,Virginia Polytechnic Institute and State University,VT,gross_mass,M2,mass,7.3341,8.8546,1.20732
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,energy_used,M2,power,76.6,86,1.12272
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,power_avg,M2,power,500,1243,2.486
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,static_thrust,M2,thrust,125.44,126.774,1.01064
+2024,Virginia Polytechnic Institute and State University,VT,static_thrust,M2,thrust,96.0816,102.754,1.06944
+2023,Virginia Polytechnic Institute and State University,VT,static_thrust,M3,thrust,29.2693,37.7654,1.29027
+2023,Virginia Polytechnic Institute and State University,VT,static_thrust,M2,thrust,32.2496,44.927,1.3931
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,lap_time,M1,time,30,24,0.8
+2022,FH JOANNEUM University of Applied Sciences,JOANNEUM,lap_time,M1,time,30,24.27,0.809
+2023,Virginia Polytechnic Institute and State University,VT,max_speed,M2,time,29.9314,36.3626,0.823135
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,mission_time,M1,time,100,85,0.85
+2021,University of Central Florida,UCF,mission_time,M2,time,110,94,0.854545
+2024,Virginia Polytechnic Institute and State University,VT,max_speed,M3,time,27.7063,32.1869,0.860795
+2023,Virginia Polytechnic Institute and State University,VT,max_speed,M3,time,42.0319,46.0248,0.913245
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,cruise_speed,M2,time,25.2984,27.1272,0.932584
+2022,FH JOANNEUM University of Applied Sciences,JOANNEUM,lap_time,M2,time,27,26.19,0.97
+2022,FH JOANNEUM University of Applied Sciences,JOANNEUM,mission_time,M2,time,80,77.63,0.970375
+2023,University of Washington,UW,max_speed,M3,time,39.9288,40.2946,0.990923
+2024,Virginia Polytechnic Institute and State University,VT,max_speed,M2,time,36.6674,36.637,1.00083
+2022,FH JOANNEUM University of Applied Sciences,JOANNEUM,mission_time,M3,time,500,504.03,1.00806
+2022,Washington University in St. Louis,WASHU,mission_time,M2,time,131.52,138,1.04927
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,lap_time,M3,time,30,32,1.06667
+2022,Washington University in St. Louis,WASHU,mission_time,M1,time,142.26,156,1.09658
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,mission_time,M1,time,60,68,1.13333
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,lap_time,M1,time,20,22.7,1.135
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,cruise_speed,M1,time,45.72,40.2336,1.13636
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,cruise_speed,M3,time,45.72,39.9898,1.14329
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,lap_time,M2,time,36.2,42,1.16022
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,lap_time,M2,time,27,32,1.18519
+2026,Georgia Institute of Technology,GT,first_lap_time,M3,time,30.43,36.25,1.19126
+2023,University of Washington,UW,cruise_speed,M1,time,24.9936,20.8178,1.20059
+2024,University of Southern California,USC,cruise_speed,,time,33.528,27.7165,1.20968
+2024,Virginia Polytechnic Institute and State University,VT,lap_time,M3,time,33,40,1.21212
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,lap_time,M3,time,20,25,1.25
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,mission_time,M3,time,60,75,1.25
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,mission_time,M2,time,99,124,1.25253
+2026,Georgia Institute of Technology,GT,first_lap_time,M1,time,25.56,33.46,1.30908
+2024,Virginia Polytechnic Institute and State University,VT,lap_time,M1,time,33,44.8,1.35758
+2026,Georgia Institute of Technology,GT,first_lap_time,M2,time,20.3,28.25,1.39163
+2026,Georgia Institute of Technology,GT,lap_time,M2,time,20.3,28.8,1.41872
+2026,Georgia Institute of Technology,GT,turn360_time,M2,time,2.7,4,1.48148

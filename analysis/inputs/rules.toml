@@ -1,0 +1,65 @@
+# 2026-27 DBF rules as numbers: rules/2027_DBF_Rules_Draft.pdf (DRAFT, 2 Sep
+# 2026), read verbatim on 12 Oct 2026. SI values are exact conversions of the
+# rule's own US value (constants.toml [units]); the rule text is in each comment.
+# Re-check against the final rules and every Q&A release.
+
+[aircraft]
+span_max_m = 1.8288          # "Maximum allowable wingspan is 6 feet." (Sec. 3.1)
+togw_max_kg = 24.94758035    # TOGW "must be less than 55-lb" (Sec. 3.2.1); strict
+energy_max_wh = 100.0        # propulsion energy "shall not exceed 100 Watt-hours" (Sec. 3.2.3.2)
+fuse_max_a = 100.0           # fuse <= battery max continuous current "up to 100 amps" (Sec. 3.2.3.2)
+arming_plug_min_m = 0.1524   # no part "closer than 6 inches from the plane of any propeller" (Sec. 3.2.2)
+tip_test_n = 2.5             # wing-tip lift at MGTOW, '"roughly" equivalent to a 2.5g load case' (Sec. 4.2.4)
+
+[course]
+# Sec. 3.3.3: "Upwind and downwind markers will be 500 ft from the starting line."
+# Sec. 3.3.1 figure: a 180-deg turn beyond each marker and one 360-deg turn on the
+# far (downwind) leg. Take-off and the near leg are upwind.
+marker_offset_m = 152.4      # 500 ft
+straights_per_lap_m = 609.6  # two legs of 304.8 m (1,000 ft) between the marker lines
+turns_180_per_lap = 2
+turns_360_per_lap = 1
+# Sec. 3.3.3: the airplane must be "straight and level" passing each marker
+# before initiating a turn (modelled as aircraft.toml marker_overshoot_m).
+
+[missions]
+window_s = 300.0   # 5-minute window, M1/M2/M3; time starts when "the airplane throttle is advanced
+                   # for the first take-off"; landing is not part of the window (Sec. 3.3.3.1-3)
+m1_laps = 3        # "Teams must complete 3 laps within the flight window" (Sec. 3.3.3.1)
+m2_laps = 5        # "Teams must complete 5 laps within the flight window" (Sec. 3.3.3.2)
+# M3: laps counted inside the window; deploy before the first downwind 180-deg turn;
+# lights OFF/SOLID/FLASHING/OFF; stow "prior to landing" (Sec. 3.3.3.3).
+m3_min_laps = 3    # derived, not stated: FLASHING is commanded after lap 2 "prior to the next
+                   # upwind turn", which is flown on lap 3 (Sec. 3.3.3.3)
+
+[sensor]
+length_min_m = 0.1524   # "minimum overall length of six inches" (Sec. 3.1.1)
+tow_factor = 1.5        # deploy ">= 1.5 times the airplane wingspan", exit to sensor tip (Sec. 3.1.2)
+
+[ground]
+drop_height_max_m = 1.524      # "declare the drop height in whole inches up to a maximum of 60 inches" (Sec. 3.3.4)
+drop_step_m = 0.0254           # whole inches
+drops = 6                      # "a total of six drops", two per side (Sec. 3.3.4)
+ring_to_bottom_max_m = 0.381   # "should be less than 15 inches" (Sec. 3.1.3)
+ring_id_min_m = 0.0127         # lifting ring "minimum inside diameter of 1/2 inch" (Sec. 3.1.3)
+ring_section_max_m = 0.003175  # "maximum cross-section of 1/8 inch diameter" (Sec. 3.1.3)
+pin_diameter_m = 0.00635       # "1/4 inch diameter brass pin" (Sec. 3.1.3)
+
+[simulators]
+size_tol_m = 0.003175          # same shape and size "within +/- 1/8 inch" (Sec. 3.1.3)
+mass_tol_kg = 0.028349523125   # container + max sensor weight "within +/- 1 ounce" (Sec. 3.1.3)
+
+[scoring]
+# Sec. 3.3.3.1-3.3.4: each "Max" is the highest value "of all teams" (ours included).
+m1 = 1.0          # "M1 = 1.0 for successful mission"
+m2_base = 1.0     # M2 = 1 + [N_(weight/time) / Max_(weight/time)]
+m3_base = 2.0     # M3 = 2 + [N_(#laps X sensor weight) / Max_(#laps X sensor weight)]
+gm_base = 0.5     # GM = 0.5 + [N_(weight X height) / Max_(weight X height)]
+mission_max = 7.5
+# Sec. 6.3: Competition = Total Report x Total Mission + Participation
+proposal_weight = 0.15        # Total Report = 0.15 Proposal + 0.85 Design Report
+design_report_weight = 0.85
+participation = { attend = 1, tech = 2, flight = 3 }
+# Sec. 6.2: times in s, lengths in in, weights in oz and lb, each rounded to
+# 2 decimals, conventional rounding (">= 0.5 --> round up").
+round_places = 2

@@ -1,0 +1,638 @@
+# Design parameters and measured performance of the AIAA DBF top-3 design
+# reports (the three highest report scores each year), as published by AIAA.
+#
+# One [[team]] per report. rows = [param, mission, value, unit, kind, page, quote, where]
+#   value  exactly as printed (units converted to SI by verify.py, never here)
+#   kind   design | predicted | measured (flight or ground test by the team)
+#   page   PDF page of the AIAA compilation (sources.toml id in `source`)
+#   quote  verbatim text that verify.py must find in the cached source text
+#          (whitespace-normalised). For table cells whose label and value are
+#          separated in the text layer, the quote is the run of numbers holding
+#          the value and `where` names the row, confirmed on the rendered page.
+#   where  table or section, and "(read on page image)" when that was needed
+# The reports disagree with themselves in places (several tables per value);
+# the weight-and-balance table (weighed components) is preferred for mass, and
+# the predicted-vs-measured table for performance. Extracted 12 Oct 2026.
+#
+# param vocabulary: span, wing_area, aspect_ratio, empty_mass, gross_mass,
+#   battery (cells + mAh, Wh derived at 3.7 V/cell), battery_wh, cruise_speed,
+#   max_speed, lap_time, first_lap_time, turn360_time, laps, mission_time,
+#   load_factor, bank
+
+[[team]]
+year = 2026
+team = "University of Southern California"
+aircraft = "Trojan HorSCe"
+source = "aiaa-dbf-2026-reports"
+rows = [
+  ["span", "", "5", "ft", "design", 33, "Span (b) 5 ft (1.52 m)", "Table 23"],
+  ["wing_area", "", "10.4", "ft2", "design", 33, "Planform Area (S) 10.4 ft2 (0.96 m2)", "Table 23"],
+  ["aspect_ratio", "", "2.40", "-", "design", 33, "Aspect Ratio (AR) 2.40", "Table 23"],
+  ["empty_mass", "", "11.8", "lb", "design", 41, "Wempty for Trojan HorSCe is 11.8 lbm (5.33 kg)", "Sec. 5.4 (team's definition)"],
+  ["gross_mass", "M2", "21.5", "lb", "design", 42, "Total 21.5 9740", "Table 26, M2 block total"],
+  ["battery", "M2", "8S 3300 mAh", "cells mAh", "design", 30, "Thunder Power RC Rampage Series 8S 3300 mAh battery was selected for M2", "Sec. 4.5.1"],
+  ["cruise_speed", "M2", "65.6", "ft/s", "predicted", 42, "Vcruise 76.1 ft/s (23.2 m/s) 65.6 ft/s (20.0 m/s)", "Table 28, M2 column (6.5 m/s wind)"],
+  ["laps", "M2", "5", "-", "predicted", 42, "5 in 290 s", "Table 28 (2026 M2 = laps in 5 min)"],
+  ["mission_time", "M2", "290", "s", "predicted", 42, "5 in 290 s", "Table 28"],
+  ["load_factor", "", "3.4", "-", "design", 33, "A limit load factor of 3.4, derived from a coordinated 73° banked turn", "Sec. 5.2"],
+  ["bank", "", "73", "deg", "design", 33, "A limit load factor of 3.4, derived from a coordinated 73° banked turn", "Sec. 5.2"],
+  ["battery_mass", "M2", "731", "g", "measured", 42, "Battery 1.61 731 -13.6", "Table 26 (weighed), M2 pack 8S 3300 mAh"],
+  ["battery_mass", "M3", "1.39", "lb", "measured", 42, "Battery 1.39", "Table 26 (weighed), M3 pack 13S 2000 mAh"],
+  ["battery", "M3", "13S 2000 mAh", "cells mAh", "design", 30, "the MaxAmps 13S 2000mAh battery was selected for M3", "Sec. 4.5.1"],
+["gross_mass", "M1", "6500", "g", "design", 42, "Total 14.3 6500 4.68", "Table 26 mass breakdown, M1 total"],
+  ["gross_mass", "M3", "6660", "g", "design", 42, "Total *14.7 *6660", "Table 26, M3 total before banner release"],
+["stall_speed", "M2", "37.6", "ft/s", "predicted", 42, "Vstall 31.0 ft/s (9.45 m/s) 37.6 ft/s (11.5 m/s)", "Table 28, M2 (heaviest)"],
+["wing_position", "", "high-wing", "text", "design", 16, "high-wing monoplane with a conventional tail", "Sec. 3 final configuration"],
+  ["tail", "", "conventional tail", "text", "design", 16, "high-wing monoplane with a conventional tail", "Sec. 3"],
+  ["gear", "", "taildragger", "text", "design", 16, "taildragger landing gear", "Sec. 3"],
+  ["propulsion", "", "single-tractor", "text", "design", 4, "It features a conventional tail, single-tractor propulsion system", "Executive summary"],
+]
+
+[[team]]
+year = 2026
+team = "University of Ljubljana"
+aircraft = ""
+source = "aiaa-dbf-2026-reports"
+rows = [
+  ["span", "", "59.06", "in", "design", 92, "Span [in] 59.06", "Table 19"],
+  ["wing_area", "", "3.94", "ft2", "design", 92, "Wing Area [ft2] 3.94", "Table 19"],
+  ["aspect_ratio", "", "6.14", "-", "design", 92, "Aspect Ratio 6.14", "Table 19"],
+  ["gross_mass", "M2", "7.40", "lb", "design", 100, "0.24 7.40 8.05 6.66", "Table 20 Weight & Balance, row Total M2 (read on page image)"],
+  ["gross_mass", "M3", "8.05", "lb", "design", 100, "0.24 7.40 8.05 6.66", "Table 20, row Total M3 towing phase (read on page image)"],
+  ["battery", "M3", "6S 4500 mAh", "cells mAh", "design", 97, "One 4500 mAh 6S 22.2 V lithium-polymer (LiPo) battery", "Sec. 5.2"],
+  ["battery_mass", "M3", "1.52", "lb", "measured", 100, "Propulsion battery 1.52 8.48", "Table 20 Weight & Balance (weighed), 6S 4500 mAh"],
+  ["battery_wh", "M2", "50", "Wh", "design", 84, "50 Wh, establishing this as the M2 battery optimum", "Sec. 4.3.4"],
+  ["cruise_speed", "M2", "125.7", "ft/s", "predicted", 91, "Vcruise [ft/s] 125.9 125.7 58.2", "Table 18, M2 column"],
+  ["laps", "M2", "13", "-", "predicted", 91, "Number of Laps 3 13 5–6", "Table 18 (2026 M2 = laps in 5 min)"],
+  ["mission_time", "M2", "288", "s", "predicted", 91, "Mission Time [s] 67 288 295 28", "Table 18"],
+["gross_mass", "M1", "6.83", "lb", "measured", 100, "Total M1 6.83 18.90", "Table 20 Weight & Balance (every part weighed after manufacture, Sec. 5.2.11)"],
+  ["ballast_mass", "M1", "0.17", "lb", "measured", 100, "1.23 1.87 0.29 0.15 0.17 6.83", "Table 20, M1 ballast weight cell (run of the right-hand weight column; row confirmed on the rendered page)"],
+["wing_position", "", "low-wing", "text", "design", 65, "low-wing configuration, conventional tail design and tricycle landing gear", "Executive summary (final; the conceptual section mentions a taildragger)"],
+  ["tail", "", "conventional tail", "text", "design", 65, "low-wing configuration, conventional tail design and tricycle landing gear", "Executive summary"],
+  ["gear", "", "tricycle", "text", "design", 65, "low-wing configuration, conventional tail design and tricycle landing gear", "Executive summary"],
+  ["propulsion", "", "tractor", "text", "design", 72, "the tractor configuration was chosen as the most favorable", "Sec. 3 (single engine)"],
+]
+
+[[team]]
+year = 2026
+team = "Georgia Institute of Technology"
+aircraft = "Buzzerang"
+source = "aiaa-dbf-2026-reports"
+rows = [
+  ["span", "", "59.90", "in", "design", 153, "Span 59.90 in", "Table 5-1"],
+  ["wing_area", "", "640.00", "in2", "design", 153, "Area 640.00 in²", "Table 5-1"],
+  ["aspect_ratio", "", "5.60", "-", "design", 153, "Aspect Ratio 5.60", "Table 5-1"],
+  ["gross_mass", "", "4.32", "lb", "design", 179, "Buzzerang is a 4.32 lb aircraft", "Sec. 9 (conclusion; empty vs loaded not stated)"],
+  ["battery", "M2", "6S 3300 mAh", "cells mAh", "design", 153, "Battery Cells 6S 6S Battery Capacity 3300 mAh 4500 mAh", "Table 4-6, M2 column"],
+  ["battery", "M3", "6S 4500 mAh", "cells mAh", "design", 153, "Battery Cells 6S 6S Battery Capacity 3300 mAh 4500 mAh", "Table 4-6, M3 column"],
+  ["first_lap_time", "M1", "25.56", "s", "predicted", 178, "M1 25.56 33.46 3.1 4.2 3 3 85.2 75", "Table 8-1"],
+  ["first_lap_time", "M1", "33.46", "s", "measured", 178, "M1 25.56 33.46 3.1 4.2 3 3 85.2 75", "Table 8-1 (GPS)"],
+  ["turn360_time", "M1", "4.2", "s", "measured", 178, "M1 25.56 33.46 3.1 4.2 3 3 85.2 75", "Table 8-1 (GPS)"],
+  ["max_speed", "M1", "75", "ft/s", "measured", 178, "M1 25.56 33.46 3.1 4.2 3 3 85.2 75", "Table 8-1 (GPS)"],
+  ["first_lap_time", "M2", "20.30", "s", "predicted", 178, "M2 20.30 28.25 2.7 4.0 10 9 85.1 89.0", "Table 8-1"],
+  ["first_lap_time", "M2", "28.25", "s", "measured", 178, "M2 20.30 28.25 2.7 4.0 10 9 85.1 89.0", "Table 8-1 (GPS)"],
+  ["turn360_time", "M2", "2.7", "s", "predicted", 178, "M2 20.30 28.25 2.7 4.0 10 9 85.1 89.0", "Table 8-1"],
+  ["turn360_time", "M2", "4.0", "s", "measured", 178, "M2 20.30 28.25 2.7 4.0 10 9 85.1 89.0", "Table 8-1 (GPS)"],
+  ["laps", "M2", "9", "-", "measured", 178, "M2 20.30 28.25 2.7 4.0 10 9 85.1 89.0", "Table 8-1 (GPS)"],
+  ["max_speed", "M2", "89.0", "ft/s", "measured", 178, "M2 20.30 28.25 2.7 4.0 10 9 85.1 89.0", "Table 8-1 (GPS)"],
+  ["first_lap_time", "M3", "30.43", "s", "predicted", 178, "M3 30.43 36.25 3.8 4.6 7 6 48.3 58.1", "Table 8-1"],
+  ["first_lap_time", "M3", "36.25", "s", "measured", 178, "M3 30.43 36.25 3.8 4.6 7 6 48.3 58.1", "Table 8-1 (GPS, towing a banner)"],
+  ["turn360_time", "M3", "4.6", "s", "measured", 178, "M3 30.43 36.25 3.8 4.6 7 6 48.3 58.1", "Table 8-1 (GPS, towing a banner)"],
+  ["lap_time", "M2", "20.3", "s", "predicted", 179, "M2 lap time of 20.3 seconds, while experimental data had a lap time of 28.8 seconds", "Sec. 8.2.2"],
+  ["lap_time", "M2", "28.8", "s", "measured", 179, "M2 lap time of 20.3 seconds, while experimental data had a lap time of 28.8 seconds", "Sec. 8.2.2 (GPS)"],
+["gross_mass", "M1", "4.48", "lb", "design", 160, "Main Battery 0.89 -2.675 -2.38075 M1 - 4.48", "Table 5-5 (SolidWorks with material densities), incl. main and receiver batteries"],
+  ["battery_mass", "M1", "0.89", "lb", "design", 160, "Main Battery 0.89 -2.675", "Table 5-5"],
+  ["empty_mass_nobatt", "", "3.43", "lb", "design", 160, "Weight (lb) 0.1125 0.375 1.04 3.43 4.958", "Table 5-6 'Empty Aircraft' (Table 5-5 components less both batteries give 3.54 lb)"],
+  ["gross_mass", "M2", "4.958", "lb", "design", 160, "Weight (lb) 0.1125 0.375 1.04 3.43 4.958", "Table 5-6, M2 configuration"],
+  ["battery_mass", "M2", "1.04", "lb", "design", 160, "Weight (lb) 0.1125 0.375 1.04 3.43 4.958", "Table 5-6, 6S 3300 mAh"],
+  ["cd0_wing", "", "0.0086", "-", "predicted", 148, "Wing OpenVSP Parasite Drag (DATCOM) 0.0086 56.25", "Table 4-2; the wing is 56.25 % of the build-up, so total CD0 = 0.0086/0.5625 = 0.0153 (derived in code)"],
+  ["cd0_wing_share", "", "56.25", "-", "predicted", 148, "Wing OpenVSP Parasite Drag (DATCOM) 0.0086 56.25", "Table 4-2, percent of total CD0"],
+["wing_position", "", "low-wing", "text", "design", 129, "low-wing aircraft with tricycle landing gear", "Executive summary"],
+  ["gear", "", "tricycle", "text", "design", 129, "low-wing aircraft with tricycle landing gear", "Executive summary"],
+  ["tail", "", "conventional tail", "text", "design", 129, "conventional fuselage, low wing, and conventional tail", "Executive summary"],
+  ["fuselage", "", "conventional fuselage", "text", "design", 129, "conventional fuselage, low wing, and conventional tail", "Executive summary (propulsion layout not stated in text)"],
+["cd_fuselage", "", "0.00157", "-", "predicted", 148, "Fuselage OpenVSP Parasite Drag (DATCOM) 0.00157", "Table 4-2, on wing area 640 in2"],
+  ["cd_gear", "", "0.0024", "-", "measured", 148, "Landing Gear Wind Tunnel Experiment 0.0024", "Table 4-2: gear drag MEASURED in a wind tunnel, on wing area 640 in2 (fixed tricycle)"],
+  ["fuselage_length", "", "39", "in", "design", 153, "Fuselage Length Width Battery Cells 6S 6S 39 in 4 in", "Table 4-6 preliminary (overall length 44.20 in, Table 5-1)"],
+  ["fuselage_width", "", "4", "in", "design", 153, "Fuselage Length Width Battery Cells 6S 6S 39 in 4 in", "Table 4-6"],
+]
+
+# ---- 2025 (X-1 program): 6 ft span, 100 Wh, TIMPA. M2 scored fuel weight / 3-lap time,
+# the same weight/time structure as 2026-27 M2 (2025 rules, Mission 2). ----
+
+[[team]]
+year = 2025
+team = "University of New South Wales"
+aircraft = "BRICK"
+source = "aiaa-dbf-2025-reports"
+rows = [
+  ["span", "", "6", "ft", "design", 24, "Span 6 ft", "Table 4.4"],
+  ["wing_area", "", "9.43", "ft2", "design", 24, "Wing Area 9.43 ft2", "Table 4.4"],
+  ["aspect_ratio", "", "3.82", "-", "design", 24, "Aspect Ratio 3.82", "Table 4.4"],
+  ["gross_mass", "M2", "48.5", "lb", "predicted", 7, "constructed for an MTOW of 48.5lbs", "Sec. 1"],
+  ["payload_mass", "M2", "35.3", "lb", "predicted", 7, "M2 M3 GM 35.3 2.2 N/A", "Table 1.1, row Payload (lbs), M2 (read on page image)"],
+  ["cruise_speed", "M2", "118.1", "ft/s", "predicted", 7, "N/A 118.1 85.0 N/A", "Table 1.1, row Cruise Speed, M2 (read on page image)"],
+  ["mission_time", "M2", "126", "s", "predicted", 7, "126 300 35", "Table 1.1, row Mission Time (3 laps), M2 (read on page image)"],
+["empty_mass_nobatt", "", "10.47", "lb", "measured", 47, "Empty (CG) 10.47", "Table 5.6 Weight and Balance, components measured with scales (Sec. 5.5)"],
+  ["battery_mass", "M1", "2.11", "lb", "measured", 47, "Propulsion Batteries 2.11 -8.07", "Table 5.6 (two packs, twin motors)"],
+  ["gross_mass", "M1", "12.58", "lb", "measured", 47, "Mission 1 (CG) 12.58", "Table 5.6"],
+  ["gross_mass", "M2", "48.89", "lb", "measured", 47, "Mission 2 (CG) 48.89", "Table 5.6 (22.96 lb internal + 2 x 6.61 lb external tanks)"],
+  ["gross_mass", "M3", "12.81", "lb", "measured", 47, "Mission 3 (CG) 12.81", "Table 5.6"],
+  ["cruise_speed", "M2", "101.0", "ft/s", "predicted", 47, "Cruise Speed (ft/s) 90.0 101.0", "Table 5.7 final flight performance"],
+  ["speed_straight", "M2", "119", "ft/s", "measured", 61, "91/112/91 98/119/98 90/92/90 90/100/90 88/92/89 88/101/89", "Table 8.1 airspeed M1/M2/M3, BRICK V2, straight cruise, M2 entry (accelerometer flights)"],
+  ["speed_turn180", "M2", "100", "ft/s", "measured", 61, "91/112/91 98/119/98 90/92/90 90/100/90 88/92/89 88/101/89", "Table 8.1, BRICK V2, 180-degree turn, M2 entry"],
+  ["speed_turn360", "M2", "101", "ft/s", "measured", 61, "91/112/91 98/119/98 90/92/90 90/100/90 88/92/89 88/101/89", "Table 8.1, BRICK V2, 360-degree turn, M2 entry"],
+["wing_position", "", "high rectangular wing", "text", "design", 7, "dual motor tractor with a tricycle landing gear formation, with a high rectangular wing and conventional tail connected via a boom", "Executive summary"],
+  ["propulsion", "", "dual motor tractor", "text", "design", 7, "dual motor tractor with a tricycle landing gear formation, with a high rectangular wing and conventional tail connected via a boom", "Executive summary"],
+  ["gear", "", "tricycle", "text", "design", 7, "dual motor tractor with a tricycle landing gear formation, with a high rectangular wing and conventional tail connected via a boom", "Executive summary"],
+  ["tail", "", "conventional tail", "text", "design", 7, "dual motor tractor with a tricycle landing gear formation, with a high rectangular wing and conventional tail connected via a boom", "Executive summary"],
+  ["fuselage", "", "boom", "text", "design", 7, "dual motor tractor with a tricycle landing gear formation, with a high rectangular wing and conventional tail connected via a boom", "Executive summary (tail boom)"],
+]
+
+[[team]]
+year = 2025
+team = "University of California, Los Angeles"
+aircraft = "Bell-Air"
+source = "aiaa-dbf-2025-reports"
+rows = [
+  ["span", "", "6", "ft", "design", 67, "the 6-foot wingspan aircraft", "Sec. 1"],
+  ["gross_mass", "M2", "18.73", "lb", "predicted", 67, "IMAGE: Table 1 Mission Performance, Gross Weight [lbs], M2", "Table 1 is an embedded image (no text layer); 'determined through flight testing'"],
+  ["payload_mass", "M2", "9.26", "lb", "predicted", 67, "IMAGE: Table 1 Mission Performance, Payload Weight [lbs], M2 (fuel tanks)", "Table 1 (image)"],
+  ["mission_time", "M2", "110", "s", "predicted", 67, "IMAGE: Table 1 Mission Performance, Mission Time [s], M2 (3 laps)", "Table 1 (image)"],
+  ["cruise_speed", "M2", "127", "ft/s", "predicted", 67, "IMAGE: Table 1 Mission Performance, Cruise Airspeed [ft/s], M2", "Table 1 (image)"],
+  ["mission_time", "M1", "95", "s", "predicted", 67, "IMAGE: Table 1 Mission Performance, Mission Time [s], M1 (3 laps)", "Table 1 (image)"],
+  ["gross_mass", "M1", "9.21", "lb", "predicted", 67, "IMAGE: Table 1 Mission Performance, Gross Weight [lbs], M1", "Table 1 (image)"],
+["mean_chord", "", "10.59", "in", "design", 78, "a wingspan of 6 feet (ft) and a mean chord of 10.59 inches", "Sec. 4.2.1 final configuration; area = span x mean chord, derived in code (762 in2)"],
+  ["cruise_speed", "M2", "131", "ft/s", "predicted", 78, "determined to be 131 ft/s and 106 ft/s respectively", "Sec. 4.2.1 target cruise, M2 (M3: 106)"],
+  ["speed_turn", "M2", "106", "ft/s", "predicted", 78, "106 ft/s over a 128.4 ft turn radius", "Sec. 4.2.1 optimised turn, M2"],
+  ["battery", "M2", "8s 3300 mAh", "cells mAh", "design", 119, "the Gaoneng 8s 3300 mAh propulsion battery", "Sec. 8.1.3"],
+  ["motor", "", "Scorpion A-5025 310 Kv", "text", "design", 119, "the Scorpion A-5025 310 Kv motor", "Sec. 8.1.3"],
+["usable_energy_fraction", "", "80", "-", "design", 78, "The usable battery capacity was set as 80% of 100 Watt-hours", "Sec. 4.2.2 design practice (percent)"],
+["wing_position", "", "high-wing", "text", "design", 69, "high-wing, monoplane, taildragger with a conventional tail and single-tractor propulsion system", "Sec. 3 selected configuration"],
+  ["gear", "", "taildragger", "text", "design", 69, "high-wing, monoplane, taildragger with a conventional tail and single-tractor propulsion system", "Sec. 3"],
+  ["tail", "", "conventional tail", "text", "design", 69, "high-wing, monoplane, taildragger with a conventional tail and single-tractor propulsion system", "Sec. 3"],
+  ["propulsion", "", "single-tractor", "text", "design", 69, "high-wing, monoplane, taildragger with a conventional tail and single-tractor propulsion system", "Sec. 3"],
+]
+
+[[team]]
+year = 2025
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+aircraft = "VIPER"
+source = "aiaa-dbf-2025-reports"
+rows = [
+  ["wing_area", "", "7.22", "ft2", "design", 142, "selection of the smaller, 7.22 ft2 wing at Point 2", "Sec. 4.3"],
+  ["battery_wh", "M2", "97.7", "Wh", "design", 149, "actual values of 97.7 Wh and 99.9 Wh", "Sec. 4.5 (8S 3300 mAh for M2)"],
+  ["battery_wh", "M3", "99.9", "Wh", "design", 149, "actual values of 97.7 Wh and 99.9 Wh", "Sec. 4.5 (6S 4500 mAh for M3)"],
+  ["empty_mass", "", "15", "lb", "design", 182, "Empty Weight (lb) 15 13.58", "Table 8-3 design"],
+  ["empty_mass", "", "13.58", "lb", "measured", 182, "Empty Weight (lb) 15 13.58", "Table 8-3 actual"],
+  ["load_factor", "", "10", "-", "measured", 182, "Load Factor (g) 6 10", "Table 8-3 actual (structural test)"],
+  ["gross_mass", "M2", "38.74", "lb", "measured", 182, "39 38.74 - 1% Cruise Airspeed (ft/s) 125 115", "Table 8-3 actual, M2"],
+  ["cruise_speed", "M2", "115", "ft/s", "measured", 182, "39 38.74 - 1% Cruise Airspeed (ft/s) 125 115", "Table 8-3 actual, M2"],
+  ["lap_time", "M2", "27", "s", "predicted", 182, "Lap Time (s) 27 32", "Table 8-3 design, M2"],
+  ["lap_time", "M2", "32", "s", "measured", 182, "Lap Time (s) 27 32", "Table 8-3 actual, M2"],
+  ["mission_time", "M2", "99", "s", "predicted", 182, "Mission Time (s) 99 124", "Table 8-3 design, M2 (3 laps)"],
+  ["mission_time", "M2", "124", "s", "measured", 182, "Mission Time (s) 99 124", "Table 8-3 actual, M2 (3 laps)"],
+  ["payload_rate", "M2", "12.10", "lb/min", "measured", 182, "Actual Pass 12.10 lb/min", "Table 8-4 actual M2 fuel weight / time"],
+  ["payload_rate_field_max", "M2", "18", "lb/min", "predicted", 182, "Est. Fly-Off Maximum 18 lb/min", "Table 8-4: ERAU's estimate of the 2025 field max"],
+  ["gross_mass", "M2", "39", "lb", "predicted", 126, "Gross Weight (lb) 15 39 17", "Table 1-1 predicted, M2"],
+  ["payload_mass", "M2", "25", "lb", "predicted", 126, "Fuel Tank Weight (lb) - 25 0 0", "Table 1-1 predicted, M2"],
+  ["payload_mass", "M2", "25", "lb", "measured", 182, "Payload Weight (lb) 25 25", "Table 8-3 actual, M2"],
+  ["lap_time", "M1", "30", "s", "predicted", 182, "Lap Time (s) 30 24", "Table 8-3 design, M1"],
+  ["lap_time", "M1", "24", "s", "measured", 182, "Lap Time (s) 30 24", "Table 8-3 actual, M1 (13.58 lb)"],
+  ["mission_time", "M1", "100", "s", "predicted", 182, "Mission Time (s) 100 85", "Table 8-3 design, M1 (3 laps)"],
+  ["mission_time", "M1", "85", "s", "measured", 182, "Mission Time (s) 100 85", "Table 8-3 actual, M1 (3 laps)"],
+  ["lap_time", "M3", "30", "s", "predicted", 182, "Lap Time (s) 30 32", "Table 8-3 design, M3"],
+  ["lap_time", "M3", "32", "s", "measured", 182, "Lap Time (s) 30 32", "Table 8-3 actual, M3 (14.42 lb)"],
+  ["laps", "M3", "10", "-", "predicted", 182, "Laps Completed 10 6", "Table 8-3 design, M3"],
+  ["laps", "M3", "6", "-", "measured", 182, "Laps Completed 10 6", "Table 8-3 actual, M3"],
+["span", "", "72.00", "in", "design", 156, "Wing SG 6042 72.00 14.59 2.04 1039.9 4.98", "Table 5-1 Final aircraft parameters (span, MAC, sweep, area, AR)"],
+  ["wing_area_check", "", "1039.9", "in2", "design", 156, "Wing SG 6042 72.00 14.59 2.04 1039.9 4.98", "Table 5-1 (7.22 ft2, matches the p142 row)"],
+  ["aspect_ratio", "", "4.98", "-", "design", 156, "Wing SG 6042 72.00 14.59 2.04 1039.9 4.98", "Table 5-1"],
+  ["battery_mass", "M1", "1.56", "lb", "measured", 163, "Battery 1.56 12.97", "Table 5-4 (recorded weights; 'Empty' 13.58 lb includes this battery)"],
+  ["gross_mass", "M1", "13.58", "lb", "measured", 163, "0.14 1.86 0.44 1.92 1.56 13.58 Mission 1 13.58", "Table 5-4, Mission 1 Overall"],
+  ["gross_mass", "M3", "14.42", "lb", "measured", 163, "Overall 14.42 20.69", "Table 5-4, Mission 3 Overall"],
+["wing_position", "", "low-wing", "text", "design", 126, "low-wing, single-tractor engine, tail boom with a conventional empennage, and tricycle landing gear", "Selected design summary"],
+  ["propulsion", "", "single-tractor engine", "text", "design", 126, "low-wing, single-tractor engine, tail boom with a conventional empennage, and tricycle landing gear", "Selected design summary"],
+  ["fuselage", "", "tail boom", "text", "design", 126, "low-wing, single-tractor engine, tail boom with a conventional empennage, and tricycle landing gear", "Selected design summary"],
+  ["tail", "", "conventional empennage", "text", "design", 126, "low-wing, single-tractor engine, tail boom with a conventional empennage, and tricycle landing gear", "Selected design summary"],
+  ["gear", "", "tricycle", "text", "design", 126, "low-wing, single-tractor engine, tail boom with a conventional empennage, and tricycle landing gear", "Selected design summary"],
+]
+
+# ---- 2021 ("UAV with Sensor Suite", same theme and course): 5 ft span. M2 scored
+# containers / 3-lap time; M3 laps x sensor length x weight in 10 min. ----
+
+[[team]]
+year = 2021
+team = "University of Michigan"
+aircraft = "MACH 5"
+source = "aiaa-dbf-2021-reports"
+rows = [
+  ["span", "", "60", "in", "design", 20, "a total span of 60 inches", "Sec. 3 sizing"],
+  ["gross_mass", "", "18", "lb", "design", 20, "MTOW of 18 lbs", "Sec. 3 sizing"],
+  ["cruise_speed", "", "64", "mph", "predicted", 20, "The estimated cruise velocity is 64 mph", "Sec. 3 sizing"],
+  ["sensor_mass", "M3", "1.41", "lb", "design", 38, "final sensor weight of 1.41 lbs", "Sec. 5.3.7"],
+  ["sensor_length", "M3", "18", "in", "design", 38, "sensor is 18 inches long", "Sec. 5.3.7"],
+["wing_position", "", "high-wing", "text", "design", 16, 'became a conventional high-wing monoplane with a traditional tail sporting a "guppy" style', "Sec. 3.6 final conceptual configuration"],
+  ["tail", "", "traditional tail", "text", "design", 16, 'became a conventional high-wing monoplane with a traditional tail sporting a "guppy" style', "Sec. 3.6"],
+  ["fuselage", "", "guppy", "text", "design", 16, 'became a conventional high-wing monoplane with a traditional tail sporting a "guppy" style', "Sec. 3.6 (guppy-style fuselage)"],
+  ["gear", "", "Nose Gear", "text", "design", 40, "Sensor Claw Nose Gear Main Gear Arduino 2x Motors 2x Propellers", "Weight table: nose + main gear, i.e. tricycle"],
+  ["propulsion", "", "twin engine", "text", "design", 15, "the team opted for a counter-rotating twin engine design", "Sec. 3.5.1"],
+]
+
+[[team]]
+year = 2021
+team = "Dayananda Sagar College of Engineering"
+aircraft = "Team Arcis"
+source = "aiaa-dbf-2021-reports"
+rows = [
+  ["payload_units", "M2", "12", "-", "design", 65, "Our aircraft can lift 12 containers for M2", "Sec. 1"],
+  ["laps", "M3", "9", "-", "predicted", 65, "aims to complete 9 laps within time interval of 8 min 10 sec", "Sec. 1 (towing the sensor)"],
+["wing_position", "", "high wing", "text", "design", 65, "a high wing monoplane of rectangular planform with a conventional tail and a tricycle landing gear", "Executive summary"],
+  ["tail", "", "conventional tail", "text", "design", 65, "a high wing monoplane of rectangular planform with a conventional tail and a tricycle landing gear", "Executive summary"],
+  ["gear", "", "tricycle", "text", "design", 65, "a high wing monoplane of rectangular planform with a conventional tail and a tricycle landing gear", "Executive summary"],
+  ["propulsion", "", "Tractor", "text", "design", 75, "Total Tractor 3 4 4 4 15", "Table 3.8 motor-configuration FoM: tractor scores highest (15); the final layout is not restated in text"],
+]
+
+[[team]]
+year = 2021
+team = "University of Central Florida"
+aircraft = "Knightmobile Mk.3"
+source = "aiaa-dbf-2021-reports"
+rows = [
+  ["power_max", "", "1200", "W", "design", 145, "The maximum power draw of the motor is 1200 W", "Sec. 4 boundary conditions"],
+  ["sensor_mass", "M3", "2.84", "lb", "predicted", 146, "2.84 pounds with 5650 mAh of battery energy", "Sec. 4: M3-only optimum sensor weight"],
+  ["sensor_mass", "M3", "1.4", "lb", "design", 146, "the goal sensor weight was finalized at 1.4 pounds", "Sec. 4: chosen for M2 + M3"],
+  ["mission_time", "M2", "110", "s", "predicted", 146, "flying all three laps in 110 seconds", "Sec. 4 (3 containers)"],
+  ["mission_time", "M1", "85", "s", "measured", 179, "completed the course in 85 seconds with an average lap time of 28.33 seconds", "Sec. 8.2 (GPS, 3 laps)"],
+  ["lap_time", "M1", "28.33", "s", "measured", 179, "completed the course in 85 seconds with an average lap time of 28.33 seconds", "Sec. 8.2 (GPS, take-off excluded)"],
+  ["mission_time", "M2", "94", "s", "measured", 180, "completing the course in 94 seconds with an average lap time of 31.33 seconds", "Sec. 8.2 (GPS, 3 laps)"],
+  ["lap_time", "M2", "31.33", "s", "measured", 180, "completing the course in 94 seconds with an average lap time of 31.33 seconds", "Sec. 8.2 (GPS, take-off excluded)"],
+  ["gross_mass", "M2", "12.64", "lb", "measured", 180, "a gross aircraft weight of 12.64 pounds was flown", "Sec. 8.2 (3 containers)"],
+["wing_position", "", "high wing", "text", "design", 128, "high wing, taildragger aircraft with a single motor", "Executive summary"],
+  ["gear", "", "taildragger", "text", "design", 128, "high wing, taildragger aircraft with a single motor", "Executive summary"],
+  ["propulsion", "", "single motor", "text", "design", 128, "high wing, taildragger aircraft with a single motor", "Executive summary"],
+  ["tail", "", "conventional empennage", "text", "design", 142, "boom-based rear fuselage, conventional empennage, and taildragger landing gear was chosen for the final design", "Sec. 3 final design"],
+  ["fuselage", "", "boom-based rear fuselage", "text", "design", 142, "boom-based rear fuselage, conventional empennage, and taildragger landing gear was chosen for the final design", "Sec. 3 (bulkhead-based forward fuselage)"],
+]
+
+[[team]]
+year = 2021
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+aircraft = "STAT"
+source = "aiaa-dbf-2021-reports"
+rows = [
+  ["laps", "M3", "17", "-", "measured", 234, "a 17-lap, 10-minute flight was completed", "Sec. 8 endurance flight, sensor not deployed"],
+  ["payload_units", "M2", "18", "-", "design", 235, "the current configuration is 18 sensors, weighing 9 oz each", "Sec. 8.1.4"],
+  ["sensor_mass", "M2", "9", "oz", "design", 235, "the current configuration is 18 sensors, weighing 9 oz each", "Sec. 8.1.4"],
+  ["container_mass", "M2", "2", "oz", "design", 235, "containers to weigh 2 oz", "Sec. 8.1.4"],
+  ["gross_mass", "M2", "28", "lb", "measured", 235, "the aircraft was flown at a gross weight of 28 lb", "Sec. 8.1.4"],
+  ["lap_time", "M2", "45", "s", "measured", 235, "a 29% increase in lap time (to 45 seconds)", "Sec. 8.1.4, at the 28 lb gross weight"],
+["wing_position", "", "high-wing", "text", "design", 186, "high-wing airplane with tricycle landing gear", "Executive summary"],
+  ["gear", "", "tricycle", "text", "design", 186, "high-wing airplane with tricycle landing gear", "Executive summary"],
+  ["propulsion", "", "twin-engine", "text", "design", 195, "high wing, twin-engine, twin-boom, and inverted V-tail planform", "Sec. 3 final configuration"],
+  ["fuselage", "", "twin-boom", "text", "design", 195, "high wing, twin-engine, twin-boom, and inverted V-tail planform", "Sec. 3"],
+  ["tail", "", "inverted V-tail", "text", "design", 195, "high wing, twin-engine, twin-boom, and inverted V-tail planform", "Sec. 3"],
+]
+
+# ---- 2022-2024 top-3 reports (added 13 Oct 2026). Rules differed by year:
+# 2022 vaccine delivery (25 ft takeoff, 8 ft box, 3-lap M2 course without the
+# 360 deg turn, 2,4xx ft per lap by the teams' GPS); 2023 electronic warfare
+# (60 ft takeoff, airline shipping box); 2024 urban air mobility (20 ft
+# takeoff, 2.5 ft parking width, so folding wings). Masses and drag are
+# comparable physics; lap times are comparable only within a team.
+# empty_mass_nobatt = airframe + propulsion + avionics, no batteries, no payload.
+
+[[team]]
+year = 2022
+team = "FH JOANNEUM University of Applied Sciences"
+aircraft = "Hornet"
+source = "aiaa-dbf-2022-reports"
+rows = [
+  ["span", "", "7.38", "ft", "design", 38, "Wing SD7062 7.38 ft 10.63 in 6.53 ft2 8.34", "Table 31 Final aircraft parameters"],
+  ["wing_area", "", "6.53", "ft2", "design", 38, "Wing SD7062 7.38 ft 10.63 in 6.53 ft2 8.34", "Table 31"],
+  ["aspect_ratio", "", "8.34", "-", "design", 38, "Wing SD7062 7.38 ft 10.63 in 6.53 ft2 8.34", "Table 31"],
+  ["empty_mass_nobatt", "", "10.12", "lb", "design", 44, "Empty weight excl. batteries 10.12", "Table 33 Weight and balance (CAD volumes x densities plus weighed parts)"],
+  ["battery_mass", "M2", "1.39", "lb", "design", 44, "Propulsion battery 1.39 8.66", "Table 33, M2 block (6S 4,500 mAh)"],
+  ["gross_mass", "M1", "11.88", "lb", "design", 45, "Takeoff gross weight 11.88 lb (190 oz) 15.17 lb (243 oz) 14.89 lb (238 oz)", "Table 34"],
+  ["gross_mass", "M2", "15.17", "lb", "design", 45, "Takeoff gross weight 11.88 lb (190 oz) 15.17 lb (243 oz) 14.89 lb (238 oz)", "Table 34"],
+  ["gross_mass", "M3", "14.89", "lb", "design", 45, "Takeoff gross weight 11.88 lb (190 oz) 15.17 lb (243 oz) 14.89 lb (238 oz)", "Table 34"],
+  ["battery", "M2", "6S 4500 mAh", "cells mAh", "design", 28, "As 6S LiPo batteries with 4500 mAh (99.90 Wh) are rather common", "Sec. 4.2.4 (final: Table 31, 6S LiPo 4,500 mAh)"],
+  ["cd_total", "M2", "0.0327", "-", "predicted", 33, "Total estimate 0.0324 7.6295 100 0.0327 9.5030 100", "Table 28 build-up at M2 cruise 91 ft/s, incl. induced and 8 % margin"],
+  ["cd_induced", "M2", "0.0024", "-", "predicted", 33, "Induced drag Wing 0.0020 0.4656 6.10 0.0024 0.7014", "Table 28, M2 column"],
+  ["cruise_speed", "M2", "113", "ft/s", "predicted", 45, "Average cruise speed 99 ft/s (67.5 mph) 113 ft/s (77 mph)", "Table 34 final"],
+  ["lap_time", "M1", "30", "s", "predicted", 45, "Lap time 30 s 27 s 100 s", "Table 34"],
+  ["lap_time", "M2", "27", "s", "predicted", 45, "Lap time 30 s 27 s 100 s", "Table 34"],
+  ["mission_time", "M2", "80", "s", "predicted", 45, "Mission duration 35 s 80 s 500 s", "Table 34 (3 laps)"],
+  ["mission_time", "M3", "500", "s", "predicted", 45, "Mission duration 35 s 80 s 500 s", "Table 34 (5 deliveries)"],
+  ["lap_time", "M1", "24.27", "s", "measured", 61, "2 99.56 2,416 24.27", "Table 43 flight test, lap 2 of 3"],
+  ["lap_time", "M2", "26.19", "s", "measured", 62, "2 92.61 2,425 26.19", "Table 44 flight test, lap 2 of 3"],
+  ["mission_time", "M2", "77.63", "s", "measured", 62, "Total: 7,334 77.63", "Table 44 flight test, 3 laps"],
+  ["mission_time", "M3", "504.03", "s", "measured", 62, "Total: 12,167 504.03", "Table 45 flight test, 5 laps with landings"],
+  ["motor", "", "Scorpion SII-4025-520", "text", "design", 38, "Scorpion SII-4025-520 RCE-BL100A ESC 10A BEC 17x10", "Table 31 Propulsion"],
+  ["propeller", "", "17x10", "text", "design", 38, "Scorpion SII-4025-520 RCE-BL100A ESC 10A BEC 17x10", "Table 31 (17 in diameter x 10 in pitch)"],
+  ["static_thrust", "", "55", "N", "measured", 60, "the 17x8 propeller has the highest thrust force with a maximum of 55N", "Sec. 8.1.1 static test, 17x8 prop, current limited to 80 A"],
+["stall_speed", "M2", "31", "ft/s", "predicted", 45, "18.8 ft 31 ft/s (21 mph) 113 ft/s", "Table 34, stall speed with flaps deployed, M2 (heaviest)"],
+["wing_position", "", "high-wing", "text", "design", 7, "high-wing configuration and conventional empennage", "Executive summary"],
+  ["tail", "", "conventional empennage", "text", "design", 7, "high-wing configuration and conventional empennage", "Executive summary"],
+  ["gear", "", "tricycle", "text", "design", 19, "The aircraft has a tricycle landing gear and a tractor propulsion system", "Sec. 3.6 final conceptual configuration"],
+  ["propulsion", "", "tractor", "text", "design", 19, "The aircraft has a tricycle landing gear and a tractor propulsion system", "Sec. 3.6 (single engine, p10)"],
+["cd_fuselage", "M2", "0.0052", "-", "predicted", 33, "Pressure drag Fuselage 0.0053 1.2533 16.43 0.0052", "Table 28 build-up on wing area 6.53 ft2, M2 column (M1 0.0053)"],
+  ["cd_gear", "M2", "0.0032", "-", "predicted", 33, "Gear 0.0032 0.7614 9.98 0.0032", "Table 28 miscellaneous drag, on wing area, M2 column (fixed tricycle)"],
+  ["fuselage_length", "", "5.57", "ft", "design", 38, "5.57 ft 8.98 in 6.30 in 18.50 in 22.44 in 5.91 in 5.51 in", "Table 31 fuselage: total length, nose, avionics, payload, tail, max height, max width"],
+  ["fuselage_height", "", "5.91", "in", "design", 38, "5.57 ft 8.98 in 6.30 in 18.50 in 22.44 in 5.91 in 5.51 in", "Table 31 max height"],
+  ["fuselage_width", "", "5.51", "in", "design", 38, "5.57 ft 8.98 in 6.30 in 18.50 in 22.44 in 5.91 in 5.51 in", "Table 31 max width"],
+]
+
+[[team]]
+year = 2022
+team = "Massachusetts Institute of Technology"
+aircraft = "Spitzfire"
+source = "aiaa-dbf-2022-reports"
+rows = [
+  ["span", "", "2.44", "m", "design", 91, "Span 2.44 m Aspect Ratio 1.5 Planform Area 0.810 m^2", "Table 5.1 (wing span; the 1.5 is the tail's AR)"],
+  ["wing_area", "", "0.810", "m2", "design", 91, "Span 2.44 m Aspect Ratio 1.5 Planform Area 0.810 m^2", "Table 5.1"],
+  ["aspect_ratio", "", "7.29", "-", "design", 91, "Aspect Ratio 7.29", "Table 5.1"],
+  ["gross_mass", "M1", "5.49", "kg", "design", 97, "lbs kg M1 12.13 5.49", "Table 5.2 component masses (Table 5.3 says 5.41)"],
+  ["battery_mass", "M1", "0.72", "kg", "design", 98, "Battery 1.59 0.72", "Table 5.2 (same pack all missions)"],
+  ["gross_mass", "M2", "9.29", "kg", "design", 98, "M2 20.51 9.29 Payload 8.38 3.80", "Table 5.2 (Table 5.3 says 9.21)"],
+  ["payload_mass", "M2", "3.80", "kg", "design", 98, "M2 20.51 9.29 Payload 8.38 3.80", "Table 5.2, 200 syringes"],
+  ["battery", "M1", "6-cell 4500 mAh", "cells mAh", "design", 95, "powered by one 6-cell 4500 mAh lithium-polymer battery pack", "Sec. 5.3"],
+  ["cruise_speed", "M2", "25", "m/s", "predicted", 98, "curves to be 25 m/s", "Sec. 5.5, thrust = drag"],
+  ["ld_max", "M2", "11.7", "-", "predicted", 99, "a maximum L/D of 11.7 was calculated at the cruise speed of 2", "Sec. 5.5 (XFLR5 + OpenVSP CD0)"],
+  ["mission_time", "M2", "141", "s", "predicted", 99, "Flight Mission 2 3 200 Syringes 141s", "Table 5.3 (3 laps)"],
+  ["lap_time", "M1", "45", "s", "measured", 116, "an average lap time of 45 seconds was measured for Mission 1", "Sec. 8 flight test"],
+  ["motor", "", "Cobra C-4130-20 300kv", "text", "design", 95, "two counter-rotating APC 15x10E and two Cobra C-4130-20 300kv motors", "Sec. 5.3 (twin tractor)"],
+  ["propeller", "", "15x10E", "text", "design", 95, "two counter-rotating APC 15x10E and two Cobra C-4130-20 300kv motors", "Sec. 5.3 (APC, two props)"],
+  ["static_thrust", "", "24.7", "N", "measured", 114, "Motor 1 Static 2.52 24.7 446", "Table 8.1, one of two motors, 15x10, RCbenchmark 1580 stand"],
+  ["static_power", "", "446", "W", "measured", 114, "Motor 1 Static 2.52 24.7 446", "Table 8.1, electrical power at that thrust"],
+["wing_position", "", "High Wing", "text", "design", 79, "High Wing Pod + Twin-Boom Twin-Boom T-Tail Package Deployment Mechanism Belt and Rail System Propulsion Twin Tractor Landing Gear Quadricycle", "Selected-configuration table, Sec. 3"],
+  ["fuselage", "", "Pod + Twin-Boom", "text", "design", 79, "High Wing Pod + Twin-Boom Twin-Boom T-Tail Package Deployment Mechanism Belt and Rail System Propulsion Twin Tractor Landing Gear Quadricycle", "Selected-configuration table"],
+  ["tail", "", "Twin-Boom T-Tail", "text", "design", 79, "High Wing Pod + Twin-Boom Twin-Boom T-Tail Package Deployment Mechanism Belt and Rail System Propulsion Twin Tractor Landing Gear Quadricycle", "Selected-configuration table"],
+  ["propulsion", "", "Twin Tractor", "text", "design", 79, "High Wing Pod + Twin-Boom Twin-Boom T-Tail Package Deployment Mechanism Belt and Rail System Propulsion Twin Tractor Landing Gear Quadricycle", "Selected-configuration table"],
+  ["gear", "", "Quadricycle", "text", "design", 79, "High Wing Pod + Twin-Boom Twin-Boom T-Tail Package Deployment Mechanism Belt and Rail System Propulsion Twin Tractor Landing Gear Quadricycle", "Selected-configuration table"],
+]
+
+[[team]]
+year = 2022
+team = "Washington University in St. Louis"
+aircraft = "Pflyzer"
+source = "aiaa-dbf-2022-reports"
+rows = [
+  ["span", "", "2402.5", "mm", "design", 155, "Wing Span [mm] 2402.5 Mean Chord [mm] 414.0 Area [m2] 0.996 AR 5.78", "Table 5.1"],
+  ["wing_area", "", "0.996", "m2", "design", 155, "Wing Span [mm] 2402.5 Mean Chord [mm] 414.0 Area [m2] 0.996 AR 5.78", "Table 5.1"],
+  ["aspect_ratio", "", "5.78", "-", "design", 155, "Wing Span [mm] 2402.5 Mean Chord [mm] 414.0 Area [m2] 0.996 AR 5.78", "Table 5.1"],
+  ["gross_mass", "M1", "5.68", "kg", "design", 160, "0.75 0.61 5.68 0.76 6.44", "Table 5.3 Overall M1, printed in kgf (= kg mass); Table 5.1 calls it Empty Weight"],
+  ["battery_mass", "M1", "0.75", "kg", "design", 160, "Propulsion Battery 0.75 125.0", "Table 5.3 (kgf), one value for all missions"],
+  ["gross_mass", "M2", "6.44", "kg", "design", 160, "Syringes 0.76 -197.1 0.00 -59.94 Overall 6.44", "Table 5.3 (kgf)"],
+  ["gross_mass", "M3", "6.59", "kg", "design", 160, "Overall (4 Packages) 6.59", "Table 5.3 (kgf)"],
+  ["battery", "M3", "6s 4500 mAh", "cells mAh", "design", 148, "The Turnigy Nano-Tech 4500 mAh 6s LiPo", "Sec. 4.5.1 (M1/M2 fly a 6S 3000 mAh pack, Table 5.2)"],
+  ["cd0", "", "0.1553", "-", "predicted", 147, "CDmin w/o CRUD 0.12410 CDmin w/ CRUD 0.1553", "Table 4.5 component build-up (Gudmundsson); consistent with the measured full-throttle cruise below"],
+  ["clmax", "", "1.44", "-", "design", 163, "CL,max 1.44 1.44 1.44", "Table 5.4"],
+  ["cruise_speed", "M2", "21.89", "m/s", "predicted", 163, "Cruise Velocity [m/s] 21.83 21.89", "Table 5.4 (full throttle)"],
+  ["lap_time", "M2", "43.84", "s", "predicted", 163, "Lap Time [s] 47.41 43.84", "Table 5.4"],
+  ["mission_time", "M1", "2.371", "min", "predicted", 177, "M1 Time [min] 2.371 2.6", "Table 8.3 predicted vs actual"],
+  ["mission_time", "M1", "2.6", "min", "measured", 177, "M1 Time [min] 2.371 2.6", "Table 8.3 actual (flight test, to 0.1 min)"],
+  ["mission_time", "M2", "2.192", "min", "predicted", 177, "M2 Time [min] 2.192 2.3", "Table 8.3 predicted"],
+  ["mission_time", "M2", "2.3", "min", "measured", 177, "M2 Time [min] 2.192 2.3", "Table 8.3 actual (flight test, to 0.1 min)"],
+  ["motor", "", "SunnySky X7025-30cc-270", "text", "design", 159, "consists of a SunnySky X7025-30cc-270 motor spinning an APC 24x12 prop", "Sec. 5.3.7"],
+  ["propeller", "", "APC 24x12", "text", "design", 159, "consists of a SunnySky X7025-30cc-270 motor spinning an APC 24x12 prop", "Sec. 5.3.7"],
+  ["static_thrust", "", "10.05", "kgf", "measured", 175, "Thrust [Kgf] 10.821 10.05", "Table 8.1 test result (RCbenchmark 1585), eCalc predicted 10.821"],
+  ["static_power", "", "2658.48", "W", "measured", 175, "Electrical Power [W] 2258.5 2658.48", "Table 8.1 test result, eCalc predicted 2258.5"],
+["wing_position", "", "low-wing", "text", "design", 137, "low-wing, monoplane, tail-dragger aircraft with a conventional tail and a propulsion system in the tractor configuration", "Sec. 3.5 final conceptual design"],
+  ["gear", "", "tail-dragger", "text", "design", 137, "low-wing, monoplane, tail-dragger aircraft with a conventional tail and a propulsion system in the tractor configuration", "Sec. 3.5"],
+  ["tail", "", "conventional tail", "text", "design", 137, "low-wing, monoplane, tail-dragger aircraft with a conventional tail and a propulsion system in the tractor configuration", "Sec. 3.5"],
+  ["propulsion", "", "tractor", "text", "design", 137, "low-wing, monoplane, tail-dragger aircraft with a conventional tail and a propulsion system in the tractor configuration", "Sec. 3.5 (single motor)"],
+["cd_fuselage", "", "0.02536", "-", "predicted", 147, "Fuselage 0.02536 Landing Gear 0.01240", "Table 4.5 component build-up on wing area 0.996 m2 (wooden box fuselage)"],
+  ["cd_gear", "", "0.01240", "-", "predicted", 147, "Fuselage 0.02536 Landing Gear 0.01240", "Table 4.5 (fixed taildragger)"],
+]
+
+[[team]]
+year = 2023
+team = "University of Washington"
+aircraft = "UW-23 Sailfin"
+source = "aiaa-dbf-2023-reports"
+rows = [
+  ["span", "", "77.5", "in", "design", 21, "wing reference area (968.75 in2), wingspan (77.5 in)", "Sec. 4.2.3 (Table 17 agrees)"],
+  ["wing_area", "", "968.75", "in2", "design", 21, "wing reference area (968.75 in2), wingspan (77.5 in)", "Sec. 4.2.3"],
+  ["aspect_ratio", "", "6.2", "-", "design", 20, "maximizing the as- pect ratio to 6.2", "Sec. 4.2.2"],
+  ["battery", "M2", "8S 3200 mAh", "cells mAh", "design", 58, "T-Motor AT4140 410KV motor and the SMC 8S 3200 mAh 75C battery", "Sec. 8.1.1 (SMC HCL-HVP, a high-voltage pack: 3.8 V/cell nominal, so 97 Wh, not the 94.7 Wh at 3.7 V)"],
+  ["battery_mass", "M2", "1.61", "lb", "design", 41, "IMAGE: Table 20 Weight and Balance, Propulsion Battery, Weight (lb)", "Table 20 is an image; measured COTS weights"],
+  ["gross_mass", "M1", "10.61", "lb", "design", 41, "IMAGE: Table 20, row M1, Weight (lb)", "Table 20 (image), measured COTS + measured composite areal weights"],
+  ["gross_mass", "M2", "19.94", "lb", "design", 41, "IMAGE: Table 20, row M2, Weight (lb)", "Table 20 (image); payload 9.33 lb electronics package"],
+  ["gross_mass", "M3", "11.85", "lb", "design", 41, "IMAGE: Table 20, row M3, Weight (lb)", "Table 20 (image)"],
+  ["gross_mass", "M1", "9.25", "lb", "measured", 61, "IMAGE: Table 29 Demonstrated Flight Performance, Empty Weight (lb), Flight Test", "Table 29 (image); its analytical 10.61 equals Table 20's M1 total incl. batteries"],
+  ["payload_mass", "M2", "9.33", "lb", "design", 30, "aircraft will carry 9.33 lb of payload, travel at 92 ft/s", "Sec. 4.6"],
+  ["cd_total", "M2", "0.028", "-", "predicted", 30, "IMAGE: Table 16 Predicted Mission Performance, Cruise Drag Coefficient, Mission 2", "Table 16 (image), OpenVSP, at cruise CL 0.318"],
+  ["cl_cruise", "M2", "0.318", "-", "predicted", 30, "IMAGE: Table 16, Cruise Lift Coefficient, Mission 2", "Table 16 (image)"],
+  ["ld_cruise", "M2", "11.4", "-", "predicted", 30, "IMAGE: Table 16, Cruise Lift-to-Drag Ratio, Mission 2", "Table 16 (image)"],
+  ["cruise_speed", "M2", "92", "ft/s", "predicted", 30, "aircraft will carry 9.33 lb of payload, travel at 92 ft/s", "Sec. 4.6"],
+  ["cruise_speed", "M1", "82.0", "ft/s", "predicted", 61, "IMAGE: Table 29, Cruise Airspeed (ft/s), Analytical Prediction", "Table 29 (image)"],
+  ["cruise_speed", "M1", "68.3", "ft/s", "measured", 61, "IMAGE: Table 29, Cruise Airspeed (ft/s), Flight Test", "Table 29 (image), at the 9.25 lb flight-test weight"],
+  ["max_speed", "M3", "131.0", "ft/s", "predicted", 61, "IMAGE: Table 29, Max Demonstrated Speed (ft/s), Analytical Prediction", "Table 29 (image)"],
+  ["max_speed", "M3", "132.2", "ft/s", "measured", 61, "IMAGE: Table 29, Max Demonstrated Speed (ft/s), Flight Test", "Table 29 (image)"],
+  ["load_factor", "", "4.2", "-", "measured", 61, "IMAGE: Table 29, Maximum Observed Load Factor, Flight Test", "Table 29 (image)"],
+  ["lap_time", "M2", "43", "s", "predicted", 30, "IMAGE: Table 16, Lap Time (s), Mission 2", "Table 16 (image); 2023 M2 = laps in 10 min"],
+  ["motor", "", "T-Motor AT4140 410KV", "text", "design", 58, "T-Motor AT4140 410KV motor and the SMC 8S 3200 mAh 75C battery", "Sec. 8.1.1"],
+  ["propeller", "", "16X12E", "text", "design", 58, "the 16X12E propeller was selected as the primary propeller", "Sec. 8.1.1 (APC)"],
+  ["static_thrust", "", "15.2", "lbf", "measured", 58, "IMAGE: Table 26 Static Propulsion Test Results, APC 16X12E, Max Static Thrust (lb)", "Table 26 (image), 8S 3200 mAh, T-Motor AT4140 410KV"],
+["stall_speed", "M2", "37", "ft/s", "predicted", 30, "IMAGE: Table 16 Predicted Mission Performance, Stall Airspeed (ft/s), Mission 2", "Table 16 (image)"],
+["wing_position", "", "low-wing", "text", "design", 7, "low-wing taildragger with a conventional tail", "Executive summary"],
+  ["gear", "", "taildragger", "text", "design", 7, "low-wing taildragger with a conventional tail", "Executive summary"],
+  ["tail", "", "conventional tail", "text", "design", 7, "low-wing taildragger with a conventional tail", "Executive summary"],
+  ["propulsion", "", "single-engine", "text", "design", 17, "low-wing, single-engine, taildragger aircraft", "Sec. 3.5 final configuration"],
+]
+
+[[team]]
+year = 2023
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+aircraft = "ROOSTER"
+source = "aiaa-dbf-2023-reports"
+rows = [
+  ["span", "", "5.58", "ft", "design", 94, "Wing SD 7062 5.58 6.05 1.08 0.0 1.0 5.2", "Table 5-1 Final aircraft parameters (wing column)"],
+  ["wing_area", "", "6.05", "ft2", "design", 94, "Wing SD 7062 5.58 6.05 1.08 0.0 1.0 5.2", "Table 5-1"],
+  ["aspect_ratio", "", "5.2", "-", "design", 94, "Wing SD 7062 5.58 6.05 1.08 0.0 1.0 5.2", "Table 5-1"],
+  ["battery_mass", "M2", "1.41", "lb", "design", 103, "IMAGE: Table 5-4 Weight and balance, Mission 2, Battery, Weight [lb]", "Table 5-4 (image); same pack in all missions"],
+  ["battery_wh", "M2", "99.9", "Wh", "design", 88, "This provided a total of 99.9 Wh and 44.4V", "Sec. 4.4.2.2 (12 cells x 3.7 V)"],
+  ["empty_mass_nobatt", "", "10.77", "lb", "design", 122, "Empty Weight [lb] 10.77 10.64", "Table 8-3 design (no battery, no payload; Table 5-4)"],
+  ["empty_mass_nobatt", "", "10.64", "lb", "measured", 122, "Empty Weight [lb] 10.77 10.64", "Table 8-3 actual"],
+  ["cd0", "", "0.0575", "-", "predicted", 122, "CDmin 0.0575 0.0583", "Table 8-3 design (Gudmundsson drag synthesis, Sec. 4.3)"],
+  ["cd0", "", "0.0583", "-", "measured", 122, "CDmin 0.0575 0.0583", "Table 8-3 actual (flight test)"],
+  ["oswald_e", "", "0.725", "-", "predicted", 122, "Oswald Efficiency 0.725 0.842", "Table 8-3 design (Douglas method)"],
+  ["oswald_e", "", "0.842", "-", "measured", 122, "Oswald Efficiency 0.725 0.842", "Table 8-3 actual (flight test)"],
+  ["gross_mass", "M1", "12.18", "lb", "design", 122, "M1 Gross Takeoff Weight [lb] 12.18 12.71", "Table 8-3"],
+  ["gross_mass", "M1", "12.71", "lb", "measured", 122, "M1 Gross Takeoff Weight [lb] 12.18 12.71", "Table 8-3 actual"],
+  ["gross_mass", "M2", "28.18", "lb", "design", 122, "M2 Gross Takeoff Weight [lb] 28.18 29.24", "Table 8-3"],
+  ["gross_mass", "M2", "29.24", "lb", "measured", 122, "M2 Gross Takeoff Weight [lb] 28.18 29.24", "Table 8-3 actual"],
+  ["gross_mass", "M3", "13.54", "lb", "design", 122, "M3 Gross Takeoff Weight [lb] 13.54 13.90", "Table 8-3"],
+  ["gross_mass", "M3", "13.90", "lb", "measured", 122, "M3 Gross Takeoff Weight [lb] 13.54 13.90", "Table 8-3 actual"],
+  ["payload_mass", "M2", "16.53", "lb", "measured", 122, "Maximum Payload carried [lbs] 16 16.53", "Table 8-3 actual (brass electronics package)"],
+  ["cruise_speed", "M1", "150", "ft/s", "predicted", 122, "Cruise Airspeed [ft/s] 150 132", "Table 8-3"],
+  ["cruise_speed", "M1", "132", "ft/s", "measured", 122, "Cruise Airspeed [ft/s] 150 132", "Table 8-3 actual"],
+  ["cruise_speed", "M2", "83", "ft/s", "predicted", 122, "Cruise Airspeed [ft/s] 83 89", "Table 8-3"],
+  ["cruise_speed", "M2", "89", "ft/s", "measured", 122, "Cruise Airspeed [ft/s] 83 89", "Table 8-3 actual"],
+  ["cruise_speed", "M3", "150", "ft/s", "predicted", 122, "Cruise Airspeed [ft/s] 150 131.2", "Table 8-3"],
+  ["cruise_speed", "M3", "131.2", "ft/s", "measured", 122, "Cruise Airspeed [ft/s] 150 131.2", "Table 8-3 actual"],
+  ["lap_time", "M1", "20", "s", "predicted", 122, "Air Lap Time [s] 20 22.7", "Table 8-3 (air lap)"],
+  ["lap_time", "M1", "22.7", "s", "measured", 122, "Air Lap Time [s] 20 22.7", "Table 8-3 actual"],
+  ["lap_time", "M2", "36.2", "s", "predicted", 122, "Air Lap Time [s] 36.2 42", "Table 8-3 (air lap)"],
+  ["lap_time", "M2", "42", "s", "measured", 122, "Air Lap Time [s] 36.2 42", "Table 8-3 actual"],
+  ["lap_time", "M3", "20", "s", "predicted", 122, "Air Lap Time [s] 20 25", "Table 8-3 (air lap, 36 in antenna on a wingtip)"],
+  ["lap_time", "M3", "25", "s", "measured", 122, "Air Lap Time [s] 20 25", "Table 8-3 actual"],
+  ["mission_time", "M1", "60", "s", "predicted", 122, "Mission Time [s] 60 68", "Table 8-3"],
+  ["mission_time", "M1", "68", "s", "measured", 122, "Mission Time [s] 60 68", "Table 8-3 actual"],
+  ["mission_time", "M3", "60", "s", "predicted", 122, "Mission Time [s] 60 75", "Table 8-3"],
+  ["mission_time", "M3", "75", "s", "measured", 122, "Mission Time [s] 60 75", "Table 8-3 actual"],
+  ["static_thrust", "M2", "28.2", "lbf", "predicted", 122, "Static Thrust [lb] 28.2 28.5", "Table 8-3 design"],
+  ["static_thrust", "M2", "28.5", "lbf", "measured", 122, "Static Thrust [lb] 28.2 28.5", "Table 8-3 actual (20x10E, 12S)"],
+  ["energy_used", "M2", "76.6", "Wh", "predicted", 122, "Energy Consumption [Wh] 76.6 86", "Table 8-3 design (16 laps planned)"],
+  ["energy_used", "M2", "86", "Wh", "measured", 122, "Energy Consumption [Wh] 76.6 86", "Table 8-3 actual, only 5 laps flown at max payload in 249 s"],
+  ["power_avg", "M2", "500", "W", "predicted", 122, "Average In-Air Power [W] 500 1243", "Table 8-3 design"],
+  ["power_avg", "M2", "1243", "W", "measured", 122, "Average In-Air Power [W] 500 1243", "Table 8-3 actual (+148.6 %)"],
+  ["propeller", "M2", "20x10E", "text", "design", 87, "the 20x10E was determined to be the best option for M2", "Sec. 4.4.2.1 (APC)"],
+["wing_position", "", "low-wing", "text", "design", 78, "low-wing tail boom with a conventional tail, tricycle gear", "Sec. 3.5 Selected Configuration"],
+  ["fuselage", "", "tail boom", "text", "design", 78, "low-wing tail boom with a conventional tail, tricycle gear", "Sec. 3.5"],
+  ["tail", "", "conventional tail", "text", "design", 78, "low-wing tail boom with a conventional tail, tricycle gear", "Sec. 3.5"],
+  ["gear", "", "tricycle", "text", "design", 78, "low-wing tail boom with a conventional tail, tricycle gear", "Sec. 3.5"],
+  ["propulsion", "", "single-engine tractor", "text", "design", 66, "low wing, single-engine tractor configuration, and a tail boom", "Executive summary"],
+]
+
+[[team]]
+year = 2023
+team = "Virginia Polytechnic Institute and State University"
+aircraft = "Spirit of Blacksburg"
+source = "aiaa-dbf-2023-reports"
+rows = [
+  ["span", "", "52.0", "in", "design", 127, "The SOB's wing has a span of 52.0 in (132.1 cm) and a root chord of 9.0 in", "Executive summary (final; Table 25 lists the preliminary 48 in wing)"],
+  ["root_chord", "", "9.0", "in", "design", 127, "a root chord of 9.0 in (22.9 cm) with a taper ratio of 0.78", "Executive summary"],
+  ["taper_ratio", "", "0.78", "-", "design", 127, "a root chord of 9.0 in (22.9 cm) with a taper ratio of 0.78", "Executive summary: 8.0 in centre section at root chord + two 22.0 in tapered panels; area derived in code (424 in2)"],
+  ["gross_mass", "M1", "2294.89", "g", "design", 160, "IMAGE: Table 26 Weight Breakdown by Mission, Mission 1 Total Mass, Mass (CAD) g", "Table 26 (image)"],
+  ["gross_mass", "M1", "2305.05", "g", "measured", 160, "IMAGE: Table 26, Mission 1 Total Mass, Mass (Actual) g", "Table 26 (image), weighed"],
+  ["battery_mass", "M1", "536.09", "g", "measured", 160, "IMAGE: Table 26, M1 Batteries, Mass (Actual) g", "Table 26 (image); ThunderPower 6S 4000 mAh (M1 and M2)"],
+  ["gross_mass", "M2", "4210.14", "g", "measured", 160, "IMAGE: Table 26, Mission 2 Total Mass, Mass (Actual) g", "Table 26 (image), incl. 1905.09 g electronics package"],
+  ["payload_mass", "M2", "1905.09", "g", "measured", 160, "IMAGE: Table 26, Electronics Package, Mass (Actual) g", "Table 26 (image)"],
+  ["gross_mass", "M3", "2426.95", "g", "measured", 160, "IMAGE: Table 26, Mission 3 Total Mass, Mass (Actual) g", "Table 26 (image)"],
+  ["battery", "M2", "6S 4000 mAh", "cells mAh", "design", 168, "6S 4000 mAh LiPo Battery", "Drawing package (M3 flies a 6S 3400 mAh pack)"],
+  ["motor", "", "Scorpion SII-4020-420", "text", "design", 153, "the Scorpion SII-4020-420 in Configuration 1", "Sec. 4.4.2 (Table 25 prints SII-4020-440kV)"],
+  ["max_speed", "M2", "98.2", "ft/s", "predicted", 179, "IMAGE: Table 31 Predicted vs. Actual M1 & M2 Performance, Flight Speed ft/s, Predicted", "Table 31 (image), MotoCalc"],
+  ["max_speed", "M2", "119.3", "ft/s", "measured", 179, "IMAGE: Table 31, Flight Speed ft/s, Actual", "Table 31 (image), onboard Pixhawk"],
+  ["static_thrust", "M2", "7.25", "lbf", "predicted", 179, "IMAGE: Table 31, Thrust lbf, Predicted", "Table 31 (image), MotoCalc, 14x9 prop"],
+  ["static_thrust", "M2", "10.1", "lbf", "measured", 179, "IMAGE: Table 31, Thrust lbf, Actual", "Table 31 (image)"],
+  ["max_speed", "M3", "137.9", "ft/s", "predicted", 180, "IMAGE: Table 32 Predicted vs. Actual M3 Performance, Flight Speed ft/s, Predicted", "Table 32 (image), MotoCalc"],
+  ["max_speed", "M3", "151", "ft/s", "measured", 180, "IMAGE: Table 32, Flight Speed ft/s, Actual", "Table 32 (image)"],
+  ["static_thrust", "M3", "6.58", "lbf", "predicted", 180, "IMAGE: Table 32, Thrust lbf, Predicted", "Table 32 (image), 14x13 prop"],
+  ["static_thrust", "M3", "8.49", "lbf", "measured", 180, "IMAGE: Table 32, Thrust lbf, Actual", "Table 32 (image)"],
+["stall_speed", "M3", "47.2", "ft/s", "predicted", 156, "IMAGE: Table 24 Mission Performance Predictions, Stall Speed, Mission 3, 47.2 ft/s (14.4 m/s)", "Table 24 (image); M2 45.1 ft/s"],
+  ["course", "", "two 1000.0 ft (304.0 m) straightaways, two 180° turns, and one 360° turn", "text", "design", 130, "two 1000.0 ft (304.0 m) straightaways, two 180° turns, and one 360° turn during the downwind leg", "Sec. 3.1: the 2022-23 lap is the 2026-27 lap, so 2023 lap data are directly comparable"],
+["wing_position", "", "high-wing", "text", "design", 127, "high-wing monoplane with a telescoping conventional tail and tricycle landing gear powered by a single tractor motor", "Executive summary"],
+  ["tail", "", "conventional tail", "text", "design", 127, "high-wing monoplane with a telescoping conventional tail and tricycle landing gear powered by a single tractor motor", "Executive summary (telescoping boom)"],
+  ["gear", "", "tricycle", "text", "design", 127, "high-wing monoplane with a telescoping conventional tail and tricycle landing gear powered by a single tractor motor", "Executive summary"],
+  ["propulsion", "", "single tractor motor", "text", "design", 127, "high-wing monoplane with a telescoping conventional tail and tricycle landing gear powered by a single tractor motor", "Executive summary"],
+]
+
+[[team]]
+year = 2024
+team = "University of Southern California"
+aircraft = "EmergenSC"
+source = "aiaa-dbf-2024-reports"
+rows = [
+  ["span", "", "5", "ft", "design", 28, "Airfoil NACA 0014 Span, b 5 ft (1.52 m)", "Table 24 (2024 rule: span <= 5 ft)"],
+  ["wing_area", "", "6.58", "ft2", "design", 28, "Planform Area, S 6.58 ft2 (0.611 m2)", "Table 24"],
+  ["aspect_ratio", "", "3.8", "-", "design", 28, "Aspect Ratio, AR 3.8", "Table 24"],
+  ["gross_mass", "M1", "5210", "g", "design", 38, "Battery 1.49 720 -9.45 -24.0 8.11 20.6 Total 11.5 5210", "Table 27 mass balance (measured component weights + empirical material data)"],
+  ["battery_mass", "M1", "720", "g", "design", 38, "Battery 1.49 720 -9.45 -24.0 8.11 20.6 Total 11.5 5210", "Table 27 (8S 3300 mAh, all missions)"],
+  ["gross_mass", "M2", "7720", "g", "design", 38, "Total 17.02 7720", "Table 27"],
+  ["payload_mass", "M2", "2200", "g", "design", 38, "Medical Supply Cabinet 4.85 2200", "Table 27 (plus 286 g EMT, gurney, patient, insert)"],
+  ["gross_mass", "M3", "6028", "g", "design", 38, "Total 13.3 6028", "Table 27 (18 passengers)"],
+  ["battery", "M2", "8S 3300 mAh", "cells mAh", "design", 27, "Thunder Power RC 8S 3300 mAh", "Table 22 Propulsion packages"],
+  ["motor", "", "Scorpion A-4220", "text", "design", 28, "Model Scorpion A-4220", "Table 24 (two motors, 540 kV, 2553 W rating each)"],
+  ["propeller", "M2", "11x7", "text", "design", 27, "an 11x7 in clockwise pusher propeller", "Sec. 4.5.4 (APC 11x7 pusher + 11x7 sport, counter-rotating)"],
+  ["cruise_speed", "M2", "163", "ft/s", "predicted", 27, "Cruise Speed 119 ft/s (36.2 m/s) 163 ft/s (49.6 m/s) 110 ft/s (33.5 m/s)", "Table 23 PlaneTools simulation, 100 % throttle"],
+  ["mission_time", "M2", "75.9", "s", "predicted", 27, "Mission Time 92.9 s 75.9 s 269.1 s", "Table 23 (3 laps)"],
+  ["empty_mass", "", "14.0", "lbm", "predicted", 59, "Empty Weight 14.0 lbm (6.4 kg) 15.4 lbm (7.0 kg)", "Table 40, V2 prototype, team's definition"],
+  ["empty_mass", "", "15.4", "lbm", "measured", 59, "Empty Weight 14.0 lbm (6.4 kg) 15.4 lbm (7.0 kg)", "Table 40, V2 prototype, weighed (+9.1 %)"],
+  ["cruise_speed", "", "75", "mph", "predicted", 59, "Cruise Airspeed 75 mph 62 mph", "Table 40, V2"],
+  ["cruise_speed", "", "62", "mph", "measured", 59, "Cruise Airspeed 75 mph 62 mph", "Table 40, V2 flight test (-17 %)"],
+  ["load_factor", "", "5.2", "-", "measured", 59, "Max Load Factor - 5.2", "Table 40, V2 flight test"],
+  ["speed_straight", "", "67", "mph", "measured", 56, "Straightaway 77 mph (34 m/s) 72 mph (32 m/s) 67 mph (30 m/s)", "Table 34, V2 column (V0 77, V1 72 mph)"],
+  ["speed_turn180", "", "46", "mph", "measured", 56, "180° turn 55 mph (25 m/s) 51 mph (28 m/s) 46 mph", "Table 34, V2 column (V0 55, V1 51 mph)"],
+  ["speed_turn360", "", "44", "mph", "measured", 56, "48 mph (21 m/s) 44 mph (20 m/s)", "Table 34 row 360 deg turn, V2 column (V0 36, V1 48 mph); row confirmed on the rendered page"],
+  ["thrust_meas_over_model", "", "20", "-", "measured", 56, "show the measured thrust was 20% higher than theo", "Sec. 8.1.2: static thrust vs QPROP and eCalc, percent"],
+  ["ecalc_power_factor", "", "1.15", "-", "measured", 27, "A factor of 1.15 was applied to predicted electrical power from eCalc to correct the model to ma", "Sec. 4.5.4: measured electrical power / eCalc"],
+["battery_mass", "M2", "720", "g", "design", 38, "Battery 1.49 720 -8.66 -22.0", "Table 27, M2 block (8S 3300 mAh)"],
+["wing_position", "", "high-wing", "text", "design", 14, "high-wing, dual tractor motors, conventional tail, and tricycle landing gear", "Sec. 3 final configuration (pivoting wing)"],
+  ["propulsion", "", "dual tractor motors", "text", "design", 14, "high-wing, dual tractor motors, conventional tail, and tricycle landing gear", "Sec. 3"],
+  ["tail", "", "conventional tail", "text", "design", 14, "high-wing, dual tractor motors, conventional tail, and tricycle landing gear", "Sec. 3"],
+  ["gear", "", "tricycle", "text", "design", 14, "high-wing, dual tractor motors, conventional tail, and tricycle landing gear", "Sec. 3"],
+]
+
+[[team]]
+year = 2024
+team = "University of Ljubljana"
+aircraft = "Adria"
+source = "aiaa-dbf-2024-reports"
+rows = [
+  ["span", "", "59.11", "in", "design", 93, "MH70 59.11 15.82 11.86 6.56 3.81", "Table 8 Aircraft dimensions, wing (span, root, tip chord, area, AR)"],
+  ["wing_area", "", "6.56", "ft2", "design", 93, "MH70 59.11 15.82 11.86 6.56 3.81", "Table 8"],
+  ["aspect_ratio", "", "3.81", "-", "design", 93, "MH70 59.11 15.82 11.86 6.56 3.81", "Table 8"],
+  ["gross_mass", "M1", "8.09", "lb", "design", 100, "Total M1 8.09", "Table 9 Weight & Balance (CAD + weighed parts); includes a 1.10 lb M1 ballast"],
+  ["ballast_mass", "M1", "1.10", "lb", "design", 100, "M1 balast weight 1.10", "Table 9"],
+  ["battery_mass", "M1", "1.43", "lb", "design", 100, "Propulsion battery 1.43", "Table 9 (12S 2000 mAh)"],
+  ["gross_mass", "M2", "14.15", "lb", "design", 100, "Total M2 14.15", "Table 9 (cabinet 6.61 lb + EMT and patient 0.55 lb)"],
+  ["gross_mass", "M3", "11.84", "lb", "design", 100, "Total M3 11.84", "Table 9 (48 passengers with inserts 4.85 lb)"],
+  ["battery", "M2", "12S 2000 mAh", "cells mAh", "design", 85, "SII-4035-330KV, APC 15x6E, LiPo 2000mAh 12S 44.4v", "Table 3"],
+  ["motor", "", "SII-4035-330KV", "text", "design", 85, "SII-4035-330KV, APC 15x6E, LiPo 2000mAh 12S 44.4v", "Table 3 (Scorpion, Sec. 7.2)"],
+  ["propeller", "M2", "APC 15x6E", "text", "design", 85, "SII-4035-330KV, APC 15x6E, LiPo 2000mAh 12S 44.4v", "Table 3 (M3: APC 14x6E)"],
+  ["cd_total", "M2", "0.02", "-", "predicted", 101, "Cdcruise 0.02 0.02 0.03", "Table 10 at cruise CL 0.33"],
+  ["cl_cruise", "M2", "0.33", "-", "predicted", 101, "M2 1.6 0.33 0.02 16.5 2.13 140.4", "Table 10"],
+  ["ld_cruise", "M2", "16.5", "-", "predicted", 101, "L/Dcruise 16.5 16.5 10.33", "Table 10"],
+  ["clmax", "", "1.6", "-", "design", 101, "M2 1.6 0.33 0.02 16.5 2.13 140.4", "Table 10"],
+  ["cruise_speed", "M2", "140.4", "ft/s", "predicted", 101, "vcruise [ft/s] 140.4 140.4 134.1", "Table 10"],
+  ["mission_time", "M2", "75.1", "s", "predicted", 101, "Mission Time [s] 72.5 75.1 297 86", "Table 10 (3 laps)"],
+  ["lap_time", "M2", "24", "s", "measured", 117, "The second mission lap times averaged 24 seconds", "Sec. 8.5 flight test (FrSky telemetry)"],
+  ["max_speed", "M1", "160", "ft/s", "measured", 117, "It exceeded speeds of 160 ft/s in M1", "Sec. 8.5"],
+["stall_speed", "M2", "35.5", "ft/s", "predicted", 101, "vstall [ft/s] 27 35.5 33.3", "Table 10, M2 (heaviest)"],
+["wing_position", "", "high-wing", "text", "design", 67, "high-wing configuration and T-tail", "Executive summary"],
+  ["tail", "", "T-tail", "text", "design", 67, "high-wing configuration and T-tail", "Executive summary"],
+  ["propulsion", "", "single electric motor", "text", "design", 67, "The aircraft is powered by a single electric motor", "Executive summary (tractor or pusher not stated)"],
+  ["gear", "", "tricycle", "text", "design", 78, "front tricycle undercarriage configuration", "Sec. 3.4.3"],
+["cd_fuselage", "", "0.00369", "-", "predicted", 89, "Torenbeek [Eq. 29] CD = 0.00369", "Table 5, Torenbeek form factor (Raymer 0.0040, improved form factor 0.0043), on wing area 6.56 ft2"],
+  ["fuselage_length", "", "60.91", "in", "design", 93, "Total length [in] 60.91", "Table 8"],
+  ["fuselage_width", "", "5.35", "in", "design", 93, "Width [in] 5.35", "Table 8"],
+  ["fuselage_height", "", "4.22", "in", "design", 93, "Height [in] 4.22", "Table 8"],
+  ["fuselage_drag_wide", "", "3.71", "lbf", "predicted", 89, "a wider fuselage produces 3.71 lbf of air drag force and a narrower fuselage produces 1.87 lbf", "Sec. 4.5.4 fuselage-width comparison (same flight condition)"],
+  ["fuselage_drag_narrow", "", "1.87", "lbf", "predicted", 89, "a wider fuselage produces 3.71 lbf of air drag force and a narrower fuselage produces 1.87 lbf", "Sec. 4.5.4"],
+]
+
+[[team]]
+year = 2024
+team = "Virginia Polytechnic Institute and State University"
+aircraft = "The Hokie Express"
+source = "aiaa-dbf-2024-reports"
+rows = [
+  ["span", "", "60.0", "in", "design", 123, "rectangular wing has a span of 60.0 in (152 cm) and chord of 13.0 in", "Executive summary"],
+  ["root_chord", "", "13.0", "in", "design", 123, "rectangular wing has a span of 60.0 in (152 cm) and chord of 13.0 in", "Executive summary; rectangular, so area = 60.0 x 13.0 in (derived in code)"],
+  ["gross_mass", "M1", "5128.3", "g", "design", 155, "IMAGE: Table 26 Weight Breakdown by Mission, Mission 1 Total Mass, Mass (CAD) g", "Table 26 (image)"],
+  ["gross_mass", "M1", "5061.2", "g", "measured", 155, "IMAGE: Table 26, Mission 1 Total Mass, Mass (Actual) g", "Table 26 (image), weighed"],
+  ["battery_mass", "M1", "702.2", "g", "measured", 155, "IMAGE: Table 26, M1 Batteries, Mass (Actual) g", "Table 26 (image); same in all missions"],
+  ["gross_mass", "M2", "7334.1", "g", "design", 155, "IMAGE: Table 26, Mission 2 Total Mass, Mass (CAD) g", "Table 26 (image)"],
+  ["gross_mass", "M2", "8854.6", "g", "measured", 155, "IMAGE: Table 26, Mission 2 Total Mass, Mass (Actual) g", "Table 26 (image): the cabinet came out 2891.6 g against 1417.5 g in CAD"],
+  ["gross_mass", "M3", "6676.0", "g", "measured", 155, "IMAGE: Table 26, Mission 3 Total Mass, Mass (Actual) g", "Table 26 (image)"],
+  ["battery_wh", "M2", "100", "Wh", "design", 149, "two 6-cell 2250 mAh batteries were selected. These totaled to 100 W-h", "Sec. 4.4.1 (two packs, two motors)"],
+  ["cruise_speed", "M2", "117.7", "ft/s", "predicted", 160, "IMAGE: Table 27 Mission Performance, Cruise Speed, Mission 2", "Table 27 (image), MotoCalc/XFLR5/AVL corrected with team history"],
+  ["max_speed", "M2", "120.3", "ft/s", "predicted", 160, "IMAGE: Table 27, Maximum Speed, Mission 2", "Table 27 (image)"],
+  ["max_speed", "M2", "120.2", "ft/s", "measured", 175, "a maximum speed for M2 as 120.2 ft/s (36.7 m/s) and M3 as 105.6 ft/s", "Sec. 8.1.1 Spektrum GPS"],
+  ["max_speed", "M3", "90.9", "ft/s", "predicted", 160, "IMAGE: Table 27, Maximum Speed, Mission 3", "Table 27 (image)"],
+  ["max_speed", "M3", "105.6", "ft/s", "measured", 175, "a maximum speed for M2 as 120.2 ft/s (36.7 m/s) and M3 as 105.6 ft/s", "Sec. 8.1.1 Spektrum GPS"],
+  ["lap_time", "M1", "33.0", "s", "predicted", 160, "IMAGE: Table 27, Mission Lap Time, Mission 1", "Table 27 (image)"],
+  ["lap_time", "M1", "44.8", "s", "measured", 176, "IMAGE: Table 30 Flight Test Matrix, AV1 flight 3 (Demonstrate M1), Lap Time (s)", "Table 30 (image), prototype AV1"],
+  ["lap_time", "M3", "33.0", "s", "predicted", 160, "IMAGE: Table 27, Mission Lap Time, Mission 3", "Table 27 (image)"],
+  ["lap_time", "M3", "40", "s", "measured", 176, "IMAGE: Table 30, AV1 flight 4 (Demonstrate M3, 52 PAX), Lap Time (s)", "Table 30 (image), prototype AV1"],
+  ["static_thrust", "M2", "21.6", "lbf", "predicted", 175, "IMAGE: Figure 42 Static Thrust, M2 Predicted bar label 21.6", "Figure 42 (image), MotoCalc"],
+  ["static_thrust", "M2", "23.1", "lbf", "measured", 175, "The static thrust of 23.1 lbs (102.3 N) and 26.5 lbs (117.9 N)", "Sec. 8.1.1 (two motors combined)"],
+["stall_speed", "M2", "39.5", "ft/s", "predicted", 160, "IMAGE: Table 27 Mission Performance, Stall Speed, Mission 2, 39.5 ft/s (12.0 m/s)", "Table 27 (image)"],
+["battery_mass", "M2", "702.2", "g", "measured", 155, "IMAGE: Table 26 Weight Breakdown, M2 Batteries, Mass (Actual) g", "Table 26 (image); two 6S 2250 mAh packs"],
+["wing_position", "", "high wing", "text", "design", 138, "high wing, conventional tail, twin motors and tricycle gear", "Sec. 3 selected configuration"],
+  ["tail", "", "conventional tail", "text", "design", 138, "high wing, conventional tail, twin motors and tricycle gear", "Sec. 3"],
+  ["propulsion", "", "twin motors", "text", "design", 138, "high wing, conventional tail, twin motors and tricycle gear", "Sec. 3 (counter-rotating tractors, p123)"],
+  ["gear", "", "tricycle", "text", "design", 138, "high wing, conventional tail, twin motors and tricycle gear", "Sec. 3"],
+]

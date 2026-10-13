@@ -1,0 +1,55 @@
+# Aircraft parameter sets: 00_START_HERE_RnD.md Sec. 3 (01 high-AR, 02 delta).
+# Geometry: WP-01 placeholders (R&D Sec. 2a, K1 and K7) until Script 4 sizes the
+# wing. Targets are YOUR decisions: nan = not set yet (run_all.py lists them).
+# Units: SI (m, kg, s, m/s, m/s^2, deg).
+
+[assumptions]
+# Sec. 3.3.3.3: stow "prior to landing" and "landing is not part of the 5 minute
+# time window"; whether the stow time itself counts is unstated (R&D Sec. 11 Q&A).
+# true = conservative (the last lap must leave time to stow inside the window).
+stow_counts_in_window = true
+
+[a01]
+name = "Aircraft 01, high-AR (MQ/RQ family)"
+span_m = 1.82              # design span (R&D Sec. 4, Script 4 notes, 11 Oct); rule max 1.8288
+wing_area_m2 = 0.414       # WP-01 K1 placeholder: AR 8, taper 0.5 (root 0.303 m, tip 0.152 m)
+aspect_ratio = 8.0
+# --- Script 1: race ---
+v_race_mps = nan           # race speed. airfoil.toml [band] carries the 35 m/s ESTIMATE
+bank_deg = nan             # sustained-turn bank. airfoil.toml [band] carries the 70 deg ESTIMATE
+v_tow_mps = nan            # M3 race speed with the sensor deployed (Scripts 3 and 5)
+marker_overshoot_m = 0.0   # straight and level past each marker before the 180-deg turn (Sec. 3.3.3); sweep 0-15
+# --- Script 1: take-off stub (Scripts 3-4 replace these) ---
+v_lof_mps = nan            # lift-off speed
+a_ground_mps2 = nan        # mean acceleration on the ground roll
+a_air_mps2 = nan           # mean acceleration from lift-off to race speed
+# --- Script 2: mission targets ---
+n_sim = nan                # M2 simulators flown (0 = sensor in container only)
+m_container_kg = nan       # shipping container, empty
+m_sensor_max_kg = nan      # declared at tech; M2 units and GM use it (Sec. 3.3.2, 3.3.4, 4.1)
+m_sensor_m3_kg = nan       # flown in M3, <= declared max (Sec. 3.1.1)
+h_drop_m = nan             # GM drop-height target; declared in whole inches, <= 1.524
+t_stow_s = 3.0             # ESTIMATE: ERAU 2021 measured 3 s sensor retraction (2020-21 winning
+                           # reports, ERAU Table 8-1). Our D&R cycle test (Table 10) replaces it.
+
+[a02]
+name = "Aircraft 02, delta variant"
+span_m = 1.82
+wing_area_m2 = 0.83        # WP-01 K7: pure delta, LE sweep 45 deg, root chord 0.91 m
+aspect_ratio = 4.0
+# --- Script 1: race ---
+v_race_mps = nan
+bank_deg = nan
+v_tow_mps = nan
+marker_overshoot_m = 0.0
+# --- Script 1: take-off stub ---
+v_lof_mps = nan
+a_ground_mps2 = nan
+a_air_mps2 = nan
+# --- Script 2: mission targets ---
+n_sim = nan
+m_container_kg = nan
+m_sensor_max_kg = nan
+m_sensor_m3_kg = nan
+h_drop_m = nan
+t_stow_s = 3.0             # ESTIMATE, as a01

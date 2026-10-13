@@ -1,0 +1,16 @@
+# Physical constants and exact unit conversions for the DBF analysis.
+# One source: every script reads these, nothing retypes them.
+
+[gravity]
+g0 = 9.80665   # m/s^2, standard gravity (exact by definition, 3rd CGPM 1901).
+               # Same value as proposal/make_charts.py G0.
+# Local gravity at TIMPA (32.26474 N, 667 m) is 9.7930 m/s^2 (-0.14 %):
+# WGS84 normal gravity (Somigliana) with the free-air correction, NGA TR8350.2.
+# Noted for the sensitivity study; not used.
+
+[units]
+# Exact (international yard and pound, 1959).
+ft_m = 0.3048
+in_m = 0.0254
+lb_kg = 0.45359237
+oz_kg = 0.028349523125

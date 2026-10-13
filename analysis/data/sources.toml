@@ -1,0 +1,141 @@
+# Source registry for analysis/data/. Every dataset row cites one of these ids.
+# fetch.py downloads each url into raw/<id>.<ext> (gitignored), records the
+# SHA-256 in sources.lock, and writes raw/<id>.txt (pdftotext) for verify.py.
+# Only primary sources: the publisher of the document is the authority for it.
+
+# ---------------------------------------------------------------------------
+# AIAA Design/Build/Fly: competition summaries (results), top-3 design reports,
+# top-3 proposals. Index page (read 2026-10-12):
+# https://aiaa.org/get-involved/university-students/dbf/previous-competitions/
+# ---------------------------------------------------------------------------
+[[source]]
+id = "aiaa-dbf-2026-results"
+title = "2026 DBF Competition Summary (results)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2026/06/2026-DBF-Competition-Summary.pdf"
+
+[[source]]
+id = "aiaa-dbf-2026-reports"
+title = "2026 DBF Top 3 Design Reports"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2026/06/Top-3-Design-Reports_2026.pdf"
+
+[[source]]
+id = "aiaa-dbf-2026-proposals"
+title = "2026 DBF Top 3 Proposals"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2026/06/Top-3-Proposals_2026.pdf"
+
+[[source]]
+id = "aiaa-dbf-2025-results"
+title = "2025 DBF Competition Summary (results)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2025/05/DBF-2025-Competition-Summary.pdf"
+
+[[source]]
+id = "aiaa-dbf-2025-reports"
+title = "2025 DBF Top 3 Design Reports"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2025/05/Top-3-Design-Reports.pdf"
+
+[[source]]
+id = "aiaa-dbf-2025-proposals"
+title = "2025 DBF Top 3 Proposals"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2025/05/Top-3-Proposals.pdf"
+
+[[source]]
+id = "aiaa-dbf-2024-results"
+title = "2024 DBF Competition Summary (results)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2024-dbf-competiton-summary.pdf"
+
+[[source]]
+id = "aiaa-dbf-2024-reports"
+title = "2024 DBF Top 3 Design Reports"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2024-dbf-top-3-reports.pdf"
+
+[[source]]
+id = "aiaa-dbf-2024-proposals"
+title = "2024 DBF Top 3 Proposals"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2024-dbf-competiton-top-3-proposals.pdf"
+
+[[source]]
+id = "aiaa-dbf-2023-results"
+title = "2023 DBF Competition Summary (results)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2023-dbf-competition-summary.pdf"
+
+[[source]]
+id = "aiaa-dbf-2023-reports"
+title = "2023 DBF Top 3 Design Reports"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2023-dbf-competition-top-3-reports.pdf"
+
+[[source]]
+id = "aiaa-dbf-2023-proposals"
+title = "2023 DBF Top 3 Proposals"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/dbf-2023-competition-top-3-proposals.pdf"
+
+[[source]]
+id = "aiaa-dbf-2022-results"
+title = "2022 DBF Competition Summary (results)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2022-dbf-competition-summary.pdf"
+
+[[source]]
+id = "aiaa-dbf-2022-reports"
+title = "2022 DBF Top 3 Design Reports"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2022-aiaa-dbf-top-3-reportsd97c1337115848488c92228e188607c7.pdf"
+
+[[source]]
+id = "aiaa-dbf-2022-proposals"
+title = "2022 DBF Top 3 Proposals"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2022-aiaa-dbf-top-proposals.pdf"
+
+[[source]]
+id = "aiaa-dbf-2021-results"
+title = "2021 DBF Competition Summary (results)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/dbf-2021-competition-summary.pdf"
+
+[[source]]
+id = "aiaa-dbf-2021-reports"
+title = "2020-21 DBF Winning Design Reports (UAV with Sensor Suite)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/winning-reports_2021c9f4fe09132c40a3921826a571f08608.pdf"
+
+[[source]]
+id = "aiaa-dbf-2021-proposals"
+title = "2020-21 DBF Top Proposals (UAV with Sensor Suite)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/2021-dbf-top-proposals.pdf"
+
+[[source]]
+id = "aiaa-dbf-2021-rules"
+title = "2020-21 DBF Rules (final)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2024/12/dbf-rules-2021-final-v01-3.pdf"
+
+[[source]]
+id = "aiaa-dbf-2025-rules"
+title = "2024-25 DBF Rules (X-1 Supersonic Flight Program)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2025/05/Rules_2025.pdf"
+
+[[source]]
+id = "aiaa-dbf-2026-rules"
+title = "2025-26 DBF Rules (final)"
+publisher = "AIAA"
+url = "https://aiaa.org/wp-content/uploads/2026/06/DBF-Rules-2026-Final.pdf"
+
+[[source]]
+id = "aiaa-dbf-2027-rules-draft"
+title = "2026-27 DBF Rules (DRAFT, 2 Sep 2026)"
+publisher = "AIAA"
+url = "repo:rules/2027_DBF_Rules_Draft.pdf"

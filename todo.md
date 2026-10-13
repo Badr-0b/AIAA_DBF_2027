@@ -6,7 +6,9 @@
 - [ ] Redesign the sensor as a fixed-geometry dart (ring tail / fixed fins / drag cone), ≥ 170 mm long: pop-out wings are banned (§3.1.1, see `brainstorm.md`)
 - [ ] Propulsion trade: dorsal prop nacelle vs dorsal commercial EDF (eCalc propCalc/fanCalc); no home-built turbine or printed fan (§3.2.1)
 - [ ] File PR-01 with university procurement; buy the Tier A test supplies locally this week
-- [ ] Requirements Review: confirm the SR list and design-variable ranges (Oct 9–10)
+- [x] Requirements Review: SR list confirmed, 19 SRs in proposal Table 04 (Oct 12)
+- [ ] Requirements Review: design-variable ranges and the Aircraft 01/02 targets (`analysis/inputs/aircraft.toml`)
+- [ ] Write the Script 1 and Script 2 function bodies (`analysis/s1_course.py`, `analysis/s2_scoring.py`) until `python -m unittest discover -s analysis/tests -v` is green
 - [ ] Run TC-01 and TC-02 before the Oct 13 decision day; TC-03 and TC-04 by Oct 18
 - [ ] Decide team name and logo, then update `design-system/latex/dbf-identity.tex`
 - [ ] Pick the two aircraft designations (YMQ-*aa*A / YMQ-*bb*A) and popular names
@@ -16,7 +18,7 @@
 - [ ] Fixed vs retractable gear trade: gear ΔCD0 in Script 3; set the gear-down fail-safe in the receiver WebUI
 - [ ] Run Scripts 3–4 for both aircraft: 01 high-AR, 02 delta
 - [ ] Collect every member's AIAA student membership number (required for the entry roster)
-- [ ] Build the scoring model and sensitivity study (feeds Section 3.2)
+- [ ] Sensitivity study (Script 6, feeds Section 3.2) on top of the Script 2 scoring model
 - [ ] Draft up potential aircraft design ideas
 - [ ] R&D
 - [ ] Find citation sources for studies

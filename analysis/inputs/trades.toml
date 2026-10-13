@@ -1,0 +1,145 @@
+# Configuration trade matrices.
+# Source: the team's comparison matrices, Matrix_Tables/ (screenshots dated 10 Oct 2026,
+# made by teammates), digitised VERBATIM on 13 Oct 2026, the printed totals included,
+# so analysis/trades.py can audit them.
+# Score convention: 1-5, higher is better. Weights in percent, as printed.
+# `category`: the Script 6 sensitivity category each criterion feeds. This is Claude's
+# documented mapping, used for the sensitivity-derived re-weighting:
+#   completion = anything whose failure loses a mission (reliability, handling,
+#                mechanism, staging, build schedule);
+#   mass = airframe mass; drag = parasite drag; structure = load capability;
+#   clmax, turn = lap performance; e = induced drag.
+
+[[matrix]]
+id = "tail"
+title = "Tail configuration"
+file = "Screenshot_2026-10-10_163237.png"
+options = ["Conventional", "T-tail", "Twin-boom"]
+printed_total = [64, 79, 69]          # percent
+total_scale = "percent"
+criteria = [
+  # [name, weight %, scores per option, category]
+  ["Line clearance safety", 25, [1, 5, 4], "completion"],
+  ["Structural load capacity", 20, [3, 5, 4], "structure"],
+  ["Control authority at high weight", 15, [5, 2, 3], "completion"],
+  ["Structural weight penalty", 15, [5, 3, 2], "mass"],
+  ["Winch & mechanism integration", 10, [2, 3, 5], "completion"],
+  ["Manufacturing complexity", 10, [5, 4, 2], "completion"],
+  ["Aerodynamic efficiency", 5, [3, 5, 4], "drag"],
+]
+
+[[matrix]]
+id = "wing_position"
+title = "Wing position"
+file = "Screenshot_2026-10-10_163243.png"
+options = ["High wing", "Mid wing", "Low wing"]
+printed_total = [91, 48, 51]
+total_scale = "percent"
+criteria = [
+  ["Cargo bay volume & loading", 25, [5, 2, 1], "completion"],
+  ["Ground clearance", 20, [5, 3, 2], "completion"],
+  ["Aerodynamic roll stability", 20, [5, 3, 2], "completion"],
+  ["Structural integration & weight", 15, [4, 2, 4], "mass"],
+  ["Landing gear complexity & weight", 10, [2, 3, 5], "mass"],
+  ["Manufacturing simplicity", 10, [5, 1, 4], "completion"],
+]
+
+[[matrix]]
+id = "fuselage_structure"
+title = "Fuselage structure"
+file = "Screenshot_2026-10-10_163249.png"
+options = ["Truss profile", "Semi-monocoque", "Box-beam bulkhead"]
+printed_total = [70, 64, 92]
+total_scale = "percent"
+criteria = [
+  ["Volumetric cargo efficiency", 25, [4, 3, 5], "completion"],
+  ["Large door integration safety", 20, [3, 1, 5], "completion"],
+  ["2.5g structural rigidity", 20, [3, 5, 4], "structure"],
+  ["Aerodynamic drag penalty", 15, [4, 5, 3], "drag"],
+  ["Winch mechanism integration", 10, [2, 4, 5], "completion"],
+  ["Manufacturing simplicity", 10, [4, 1, 5], "completion"],
+]
+
+[[matrix]]
+id = "airfoil"
+title = "Airfoil"
+file = "Screenshot_2026-10-10_163258.png"
+options = ["Selig S1223", "Eppler 423", "Clark Y"]
+printed_total = [77, 76, 71]
+total_scale = "percent"
+criteria = [
+  ["Max lift coefficient", 35, [5, 4, 2], "clmax"],
+  ["Lift-to-drag ratio", 25, [3, 4, 5], "turn"],
+  ["Spar thickness clearance", 20, [4, 4, 3], "mass"],
+  ["Manufacturing profile ease", 20, [2, 3, 5], "completion"],
+]
+
+[[matrix]]
+id = "planform"
+title = "Wing planform"
+file = "Screenshot_2026-10-10_163305.png"
+options = ["Rectangular", "Tapered", "Swept-back"]
+printed_total = [89, 85, 31]
+total_scale = "percent"
+criteria = [
+  ["Cargo bay volume & loading", 25, [4, 5, 1], "completion"],
+  ["Ground clearance", 20, [5, 4, 1], "completion"],
+  ["Aerodynamic roll stability", 20, [5, 4, 2], "completion"],
+  ["Structural integration & weight", 20, [5, 4, 2], "mass"],
+  ["Landing gear complexity & weight", 15, [3, 5, 2], "mass"],
+]
+
+[[matrix]]
+id = "landing_gear"
+title = "Landing gear"
+file = "image.png"
+options = ["Taildragger", "Tricycle", "Bicycle"]
+printed_total = [3.94, 4.00, 2.70]    # weighted score out of 5
+total_scale = "of5"
+criteria = [
+  ["Landing reliability and ground stability", 35, [3, 5, 2], "completion"],
+  ["Landing-gear mass", 20, [5, 3, 3], "mass"],
+  ["Structural durability and impact-load management", 20, [4, 4, 3], "completion"],
+  ["Aerodynamic drag", 8, [5, 3, 4], "drag"],
+  ["Propeller clearance", 7, [5, 3, 4], "completion"],
+  ["Takeoff performance", 5, [3, 5, 2], "completion"],
+  ["Manufacturing and integration simplicity", 5, [5, 3, 2], "completion"],
+]
+
+# ---------------------------------------------------------------------------
+# AUDIT (Claude, 13 Oct 2026). Score changes proposed where verified data, physics
+# or the rules contradict the printed score. Each change states its evidence. The
+# printed matrices above stay untouched; trades.py reports both.
+[[audit]]
+matrix = "tail"
+criterion = "Line clearance safety"
+scores = [4, 5, 4]
+reason = """Tow-line hang angle (straight-line equilibrium, rho 1.064, 2.73 m x 2.5 mm line, Cd 1.1,
+sensor CdA 0.002-0.005 m2): 61-86 deg below horizontal for a 2-5 kg sensor at 25-42 m/s; 31-38 deg
+for 0.5 kg at 42 m/s. From a ventral exit >= 0.5 m ahead of the tail the line passes >= 0.3 m below
+the exit at the tail station, so clearance is set by the exit location (SR-10), not the tail type.
+T-tail keeps a small edge in turns and gusts. ESTIMATE until Script 5."""
+
+[[audit]]
+matrix = "tail"
+criterion = "Structural load capacity"
+scores = [4, 3, 3]
+reason = """A T-tail's fin carries the horizontal-tail loads, which makes it heavier and more
+flutter-prone than a conventional tail (Raymer, Aircraft Design, ch. 4 tail arrangements); rules
+Sec. 3.2.1 require flutter stiffness. Rating the T-tail 5/5 and the conventional tail 3/5 reverses this."""
+
+[[audit]]
+matrix = "wing_position"
+criterion = "Cargo bay volume & loading"
+scores = [4, 2, 4]
+reason = """Low-wing top-3 teams chose low wing FOR payload access: WashU 2022 ('allows for payloads to
+be easily installed', p121), UW 2023 ('easy access to the payload', p7), ERAU 2023 and 2025 ('ease of
+internal payload integration', 2025 p135). High-wing teams cite bay volume (USC 2024 p4). Both have a
+case, so 4 and 4; mid wing's carry-through still cuts the bay."""
+
+[[audit]]
+matrix = "wing_position"
+criterion = "Aerodynamic roll stability"
+scores = [5, 4, 4]
+reason = """A high wing adds dihedral effect, but a low wing gets the same from geometric dihedral
+(WashU 2022 flew 5 deg); roll stability is a tunable handling quality, not a 3-point gap."""

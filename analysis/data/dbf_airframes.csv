@@ -1,0 +1,20 @@
+year,team,short,span_m,wing_area_m2,area_source,aspect_ratio,airframe_kg,airframe_source,m1_kg,gross_max_kg,battery_kg,battery_wh,pack_wh_per_kg,cd0,cd0_source,wing_loading_max_n_m2,airframe_per_area_kg_m2
+2021,Dayananda Sagar College of Engineering,DSCE,,,,,,,,,,,,,,,
+2021,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,,,,,,,,12.7006,,,,,,,
+2021,University of Central Florida,UCF,,,,,,,,5.73341,,,,,,,
+2021,University of Michigan,MICHIGAN,1.524,,,,,,,,,,,,,,
+2022,FH JOANNEUM University of Applied Sciences,JOANNEUM,2.24942,0.606657,printed,8.34,4.59035,"printed empty, no battery (design)",5.38868,6.881,0.630493,99.9,158.447,0.0303,build-up total - induced,111.232,7.56664
+2022,Massachusetts Institute of Technology,MIT,2.44,0.81,printed,7.29,4.77,M1 (design) - battery - ballast,5.49,9.29,0.72,99.9,138.75,,,112.474,5.88889
+2022,Washington University in St. Louis,WASHU,2.4025,0.996,printed,5.78,4.93,M1 (design) - battery - ballast,5.68,6.59,,,,0.1553,printed (predicted),64.8854,4.9498
+2023,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,1.70078,0.562063,printed,5.2,4.82622,"printed empty, no battery (measured)",5.76516,13.263,0.639565,99.9,156.2,0.0583,printed (measured),231.408,8.58662
+2023,University of Washington,UW,1.9685,0.624999,printed,6.2,3.46544,M1 (measured) - battery - ballast,4.19573,9.04463,0.730284,94.72,129.703,0.028,upper bound: total CD at cruise,141.916,5.54472
+2023,Virginia Polytechnic Institute and State University,VT,1.3208,0.273832,centre + tapered panels,6.37075,1.76896,M1 (measured) - battery - ballast,2.30505,4.21014,,,,,,150.776,6.46003
+2024,University of Ljubljana,LJUBLJANA,1.50139,0.609444,printed,3.81,2.52197,M1 (design) - battery - ballast,3.66956,6.41833,,,,0.02,upper bound: total CD at cruise,103.278,4.13815
+2024,University of Southern California,USC,1.524,0.611302,printed,3.8,4.49,M1 (design) - battery - ballast,5.21,7.72,0.72,97.68,135.667,,,123.846,7.34498
+2024,Virginia Polytechnic Institute and State University,VT,1.524,0.503225,"rectangular, span x chord",4.61538,4.359,M1 (measured) - battery - ballast,5.0612,8.8546,0.7022,100,142.41,,,172.555,8.66213
+2025,"Embry-Riddle Aeronautical University, Daytona Beach",ERAU,1.8288,0.67076,printed,4.98,5.45218,M1 (measured) - battery - ballast,6.15978,17.5722,,,,,,256.909,8.12836
+2025,"University of California, Los Angeles",UCLA,1.8288,0.491922,span x mean chord,6.79887,,,4.17759,8.49578,,,,,,169.367,
+2025,University of New South Wales,UNSW,1.8288,0.876076,printed,3.82,4.74911,"printed empty, no battery (measured)",5.70619,22.1761,,,,,,248.236,5.42089
+2026,Georgia Institute of Technology,GT,1.52146,0.412902,printed,5.6,1.55582,"printed empty, no battery (design)",2.03209,2.24891,0.471736,73.26,155.299,0.0152889,wing CD0 / wing share,53.4129,3.76802
+2026,University of Ljubljana,LJUBLJANA,1.50012,0.366038,printed,6.14,2.33147,M1 (measured) - battery - ballast,3.09804,3.65142,0.68946,99.9,144.896,,,97.8264,6.36946
+2026,University of Southern California,USC,1.524,0.966192,printed,2.4,5.769,M1 (design) - battery - ballast,6.5,9.75224,0.731,97.68,133.625,,,98.9832,5.97086

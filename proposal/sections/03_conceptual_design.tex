@@ -16,18 +16,66 @@
 
 % ---------------------------------------------------------------------
 \subsection{Mission Requirements Decomposition}
-\dbfnote{About 90 words. Explain how Table~\ref{tab:decomp} turns each rule into a numbered subsystem requirement (SR) that later sections cite. Do not restate the rules; state their design implications.}
-\dbffill{90}
+\dbfnote{About 40 words (Table~\ref{tab:decomp} grew to 19 SRs on 12 Oct and now carries the decomposition; 90 overflowed to 7 pages). Say how each mission score and rule became a numbered SR that later sections cite, and that \textsuperscript{†} marks the team's own requirements. Do not restate the rules.}
+\dbffill{40}
 
+% Table 04 sources: rules/2027_DBF_Rules_Draft.pdf, read verbatim 12 Oct 2026.
+% SR list confirmed at the Requirements Review, 12 Oct 2026 (renumbered in
+% table order; Oct 9 draft SR-09..13 are now SR-11, 12, 14, 15, 16).
+% "+" = team requirement beyond the rules (dagger in the table).
+%  SR-01+ Sec. 3.2.1 "radio-controlled with manual flight by the pilot ... Flight
+%         stabilization subsystems and rate gyros are allowed"; band from Script 4
+%  SR-02  Sec. 3.3.2 "Any and all work required to install the propulsion battery
+%         pack(s) and payloads, check flight controls and prepare the airplane for
+%         flight must be completed within the 5-minute time limit"
+%  SR-03  Sec. 3.3.3.2 payload "sensor in shipping container and shipping container
+%         simulators"; Sec. 3.1.3 loaded "with the surface marked TOP facing up"
+%  SR-04  Sec. 3.2.1 "mechanically fastened and not rely on friction to be the
+%         primary retention method"
+%  SR-05  Sec. 3.1 containers secured "without possible shift of aircraft CG outside
+%         of design limits"; Sec. 3.2.1 "loaded and empty CG locations must be marked"
+%  SR-06  Sec. 3.1.2 mechanism "internal", "permanently installed in the Mission 3
+%         location for all missions", deploy ">= 1.5 times the airplane wingspan";
+%         Sec. 3.1.1 "securely restrained by the deployment and recovery mechanism
+%         for take-off, flight and landing"
+%  SR-07  Sec. 3.1.1 three lights, modes OFF / SOLID ON / FLASHING ON, "visible in
+%         flight by the Flight Director"; "The Rx for the payload signal must be in
+%         the airplane"; mode signal "over the tow line"
+%  SR-08  Sec. 3.1.1 "aerodynamically stable ... (not spinning or rotating) with no
+%         effect on the stability of the aircraft"; length >= six inches
+%  SR-09  Sec. 3.1.1 "The sensor must contain its own battery ... compliant with the
+%         battery requirements in section 3.2.3"; Sec. 3.2.3 COTS, unaltered,
+%         "Original Manufacturer's Label must be clearly visible"
+%  SR-10+ Sec. 3.2.1 "No structure nor components may be dropped from the airplane
+%         during flight" (a cut tow line drops the sensor)
+%  SR-11  Sec. 3.1.3 container must "protect it from drop shock events"; Sec. 3.3.4
+%         "Any physical or structural damage is a mission failure"
+%  SR-12  Sec. 3.1.3 attachment "flush or below the surface"; ring to bottom "less
+%         than 15 inches"; Sec. 3.3.4 rigging changes inside the 5-minute limit
+%  SR-13  Sec. 3.1.1 "Teams must have a sensor test box ... The test box must connect
+%         to the sensor tow line electrical connection"; Sec. 3.3.4 light check
+%  SR-14  Sec. 3.2.1 "No autopilots/flight controllers ... No onboard GPS"; "Cameras
+%         on or in the airplane are not allowed"
+%  SR-15  Sec. 4.2.1 "positive, mechanical latching method ... Magnets are not an
+%         acceptable latching method"
+%  SR-16  Sec. 3.2.3.2 "shall not exceed 100 Watt-hours"; Sec. 3.2.1 "All energy for
+%         take-off must come from the on-board propulsion battery pack(s)"
+%  SR-17  Sec. 4.2.5 "Range Check (low power) mode"; fail-safe "Throttle closed, Full
+%         up elevator, Full right rudder, Full right aileron, Full Flaps down".
+%         + Gear down and locked: team choice (retract gear; drop it if Table 05
+%         selects fixed gear)
+%  SR-18  Sec. 4.2.4 wing-tip lift at MGTOW, '"roughly" equivalent to a 2.5g load
+%         case'; the race turn needs n = 1/cos(bank) (Script 1)
+%  SR-19+ cooling for the enclosed fuselage at up to 100 A (R&D Sec. 3a item 13)
 \begin{table*}[t]
-\caption{Mission requirements decomposed into subsystem requirements. Requirement IDs (SR) are cited in later trades and design decisions. \dbftbd{confirm SR list}}\label{tab:decomp}
-\begin{dbftable}{colspec={Q[l,wd=0.62in] Q[l,wd=1.28in] X[1.15,l] X[1.35,l]}}
+\caption{Mission requirements decomposed into subsystem requirements. Requirement IDs (SR) are cited in later trades and design decisions; \textsuperscript{†}\,team requirement beyond the rules.}\label{tab:decomp}
+\begin{dbftable}{colspec={Q[l,wd=0.52in] Q[l,wd=1.12in] X[1.1,l] X[1.5,l]}}
 Mission & Score & Key constraints & Derived subsystem requirements \\
-M1 Staging & $M_1 = 1.0$ & 3 laps in 5 min; no payload; may be waived and credited by a successful M2 & SR-01 stable and controllable empty; SR-02 full assembly and checks in the 5-min staging box \\
-M2 Delivery & $M_2 = 1 + \frac{W/t}{(W/t)_{\max}}$ & Sensor in container plus simulators; 5 laps timed; TOP face up; no friction-only retention & SR-03 bay sized for N units; SR-04 positive mechanical restraint; SR-05 CG in limits for every load case \\
-M3 Sensor & $M_3 = 2 + \frac{N W_s}{(N W_s)_{\max}}$ & Deploy before first downwind turn; lights OFF, SOLID, FLASHING, OFF; stow before landing & SR-06 internal powered reel, tow $\geq$ 1.5$b$; SR-07 light command over the tow line; SR-08 sensor aerodynamically stable \\
-Ground & $GM = 0.5 + \frac{W_s h}{(W_s h)_{\max}}$ & 6 drops onto concrete, $h \leq$ 1.524~m (60~in); rigging changes within 5 min; zero sensor damage & SR-09 container absorbs $W_s h$; SR-10 quick-swap O/E rigging, flush attachment \\
-System & -- & Span $\leq$ 1.829~m (6~ft); TOGW~$<$~24.95~kg (55~lb); $\leq$ 100 Wh; no autopilot, GPS or camera; positive hatch latches & SR-11 pilot-in-the-loop only; SR-12 latches without magnets; SR-13 energy for M2 at full payload \\
+M1 Staging & $M_1 = 1.0$ & 3 laps in 5 min; no payload; may be waived and credited by a successful M2 & SR-01 static margin \nStaticMargin\,\% MAC in all load cases\textsuperscript{†}; SR-02 battery, payload and control checks within the 5-min staging \\
+M2 Delivery & $M_2 = 1 + \frac{W/t}{(W/t)_{\max}}$ & Sensor in container plus simulators ($\pm$3.175~mm, $\pm$28.3~g); TOP face up; 5 laps timed from first throttle-up & SR-03 bay for the container and $N$ simulators; SR-04 positive mechanical restraint; SR-05 CG within marked limits in all load cases \\
+M3 Sensor & $M_3 = 2 + \frac{N W_s}{(N W_s)_{\max}}$ & Deploy before the first downwind turn; lights OFF, SOLID, FLASHING, OFF; stow before landing; sensor $\geq$ 152.4~mm (6~in), internal ballast & SR-06 internal, permanent powered reel, tow $\geq$ 1.5$b$, stowed sensor locked; SR-07 three lights and modes commanded over the tow line, visible in sun; SR-08 stable in tow; SR-09 own COTS battery (§3.2.3); SR-10 line clear of the propeller\textsuperscript{†} \\
+Ground & $GM = 0.5 + \frac{W_s h}{(W_s h)_{\max}}$ & 6 drops onto concrete, $h \leq$ 1.524~m (60~in), whole inches; ring to container bottom $<$ 381~mm (15~in); 5-min rigging clock; zero damage & SR-11 container absorbs $W_s h$, no sensor damage; SR-12 tool-less O/E rigging, flush fittings; SR-13 test box drives all three modes via the tow connector \\
+System & -- & Span $\leq$ 1.829~m (6~ft); TOGW~$<$~24.95~kg (55~lb); $\leq$ 100 Wh; no autopilot, GPS or camera & SR-14 pilot-in-the-loop only; SR-15 positive latches, no magnets; SR-16 energy for M2 at full payload; SR-17 §4.2.5 fail-safe on all outputs (gear down\textsuperscript{†}), low-power range check; SR-18 structure for the race turn ($n$~=~\nLoadFactor) and tip lift; SR-19 ESC and battery cooling\textsuperscript{†} \\
 \end{dbftable}
 \end{table*}
 
@@ -138,7 +186,7 @@ Tow-line length & \nTowLength & m \\
 Mission & Target & Score \\
 M1 Staging & \dbftbd{waive or fly} & \sMone \\
 M2 Delivery & \nMtwoUnits{} units, \nMtwoPayload{} kg, \nMtwoTime{} s & \sMtwo \\
-M3 Sensor & \nMthreeLaps{} laps at \nSensorWeight{} kg & \sMthree \\
+M3 Sensor & \nMthreeLaps{} laps at \nMthreeSensor{} kg & \sMthree \\
 GM Ground & \nDropHeight{} m at \nSensorWeight{} kg & \sGM \\
 Total mission score & & \sTotal \\
 \end{dbftable}

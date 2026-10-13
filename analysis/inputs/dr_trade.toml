@@ -1,0 +1,500 @@
+# Deployment-and-recovery (D&R) architecture trade: proposal Table 06 (tab:dr).
+# Inputs for analysis/dr_trade.py. Written 14 Oct 2026 (Claude, at the team lead's request
+# of 13 Oct: "run table 06 yourself ... compare EACH one against EACH one").
+# PROVISIONAL: nothing here is a team decision until the team lead approves it.
+#
+# Convention: every number is VERIFIED (primary or manufacturer source, quoted, with a
+# date), RESELLER (retail listing only; the manufacturer page was not reachable) or an
+# ESTIMATE with its reasoning. Estimates carry ranges, and the Monte Carlo samples the ranges.
+# Units: SI.
+
+[geometry]
+# Deploy distance: ">= 1.5 times the airplane wingspan when measured from the exit location
+# of the airplane to the forward tip of the sensor" (rules Sec. 3.1.2). Sized at the span
+# limit (rules.toml span_max_m) so the reel never limits the wing.
+deploy_margin_m = 0.10        # ESTIMATE: line stretch plus measuring tolerance at tech
+stowed_offset_m = 0.10        # ESTIMATE: sensor tip sits this far inside the exit when stowed
+dead_wraps = 2.0              # ESTIMATE (winch practice): wraps left on the drum at full deployment
+pitch_factor = 1.15           # ESTIMATE: helical groove pitch / line diameter
+fairlead_distance_m = 0.30    # ESTIMATE: drum to exit fairlead, set in CAD (WP-01)
+fleet_angle_max_deg = 2.0     # ESTIMATE (rule of thumb for grooved drums); reported, not enforced
+r_core_min_m = 0.008          # ESTIMATE: smallest drum radius for the conductors' bend life
+r_core_max_m = 0.040
+r_core_step_m = 0.001
+
+[line]
+# Strength member: braided UHMWPE (PR-01 A11, 50-80 lb class) with two PTFE leads (PR-01 B30).
+d_m = 0.0015                  # ESTIMATE: braid ~0.5 mm plus two 30 AWG PTFE leads laid alongside
+cd = 1.1                      # cylinder in cross-flow, subcritical Re (~3e3 here); Hoerner ch. 3;
+                              # same value as sizing.toml f_tow
+break_n = 356.0               # the "80 lb test" rating itself (80 lbf = 356 N); verify on the bought spool
+strain_break = 0.035          # ESTIMATE: UHMWPE fibre class elongation at break (3-4 %)
+mu = [0.10, 0.20]             # VERIFIED (generic UHMWPE, not Dyneema-branded): Goodfellow,
+                              # "UHMWPE Fiber - O 1.5mm L 1m", "Coefficient of friction 0.1-0.2",
+                              # https://www.goodfellow.com/usa/uhmwpe-fibre-1000003330 (read 14 Oct 2026)
+
+[flight]
+sensor_cda_m2 = [0.002, 0.005]  # ESTIMATE (as the Oct 13 tail audit); TC-01 and CFD replace it
+n_stow = 1.5                  # ESTIMATE: design load factor while stowing (gentle turn, gusts)
+n_reverse_check = 2.0         # the drive must not be back-driven in an accidental 60-deg bank turn
+t_after_liftoff_s = 3.0       # ESTIMATE: climb-out before the deploy command
+x_liftoff_m = 60.0            # ESTIMATE: ground roll from the start line
+t_door_s = 0.5                # ESTIMATE: door or latch actuation, each way (common to all)
+t_latch_s = 0.5               # ESTIMATE: docking latch engage or release (common to all)
+dock_zone_m = 0.10            # closed-loop options slow down for the last 0.10 m ...
+dock_speed_mps = 0.10         # ... at 0.10 m/s (ESTIMATE)
+duty_max = 0.50               # stow torque <= 50 % of stall (short duty; Pololu's continuous
+                              # guideline is <= 25 % of stall current, 37D datasheet note 2)
+v_governor_mps = 1.0          # ESTIMATE: governed free-spool payout speed (option C)
+
+[consequence]
+# A sensor that is not stowed hangs about 2.5 m below the airplane on final approach, so it
+# strikes the runway first. "Teams may have only one sensor" (Sec. 3.1.1).
+p_damage_severe = [0.5, 0.9]  # ESTIMATE: P(sensor damaged beyond a staging-box repair | severe)
+
+[value]
+# How many total-mission points a gram of mechanism and a second of stow cost: computed by
+# dr_trade.py from Script 6 at the robust reference (same draws, both fields). Not inputs.
+dm_grid_kg = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8]
+stow_grid_s = [0.0, 5.0, 10.0, 15.0, 20.0, 30.0, 45.0]
+
+# ---------------------------------------------------------------------------------------
+# DRIVES. torque N m, speed rpm, mass kg. limit_cont / limit_inst: gearbox torque limits.
+[[drive]]
+id = "37d_50"
+name = "Pololu 37D 50:1 12 V gearmotor, 64 CPR encoder (#4753)"
+kind = "gearmotor"
+tau_stall_nm = 2.059          # "21 kg-cm (290 oz-in)" extrapolated
+rpm_free = 200.0
+p_max_w = 10.0                # "Max output power: 10 W"
+limit_cont_nm = 0.981         # "recommended upper limit for continuously applied loads is 10 kg-cm"
+limit_inst_nm = 2.452         # "recommended upper limit for instantaneous torque is 25 kg-cm"
+mass_kg = [0.190, 0.210]      # datasheet rev 1.2: "Gearmotor versions with encoders ... weight: 190 g to 210 g"
+encoder = true
+needs_driver = true
+status = "VERIFIED"
+source = "https://www.pololu.com/product/4753 and Pololu 37D datasheet rev 1.2 (Jan 2020), read 14 Oct 2026"
+
+[[drive]]
+id = "37d_70"
+name = "Pololu 37D 70:1 12 V gearmotor, 64 CPR encoder (#4754)"
+kind = "gearmotor"
+tau_stall_nm = 2.648          # "27 kg-cm (380 oz-in)"
+rpm_free = 150.0
+p_max_w = 10.0
+limit_cont_nm = 0.981
+limit_inst_nm = 2.452
+mass_kg = [0.190, 0.210]
+encoder = true
+needs_driver = true
+status = "VERIFIED"
+source = "https://www.pololu.com/product/4754 and Pololu 37D datasheet rev 1.2, read 14 Oct 2026"
+
+[[drive]]
+id = "25d_99"
+name = "Pololu 25D 99:1 HP 12 V gearmotor, 48 CPR encoder (#4847)"
+kind = "gearmotor"
+tau_stall_nm = 2.844          # "29 kg-cm (400 oz-in)" extrapolated
+rpm_free = 100.0
+p_max_w = nan                 # not listed for this ratio
+limit_cont_nm = 0.392         # "recommended upper limit for continuously applied loads is 4 kg-cm"
+limit_inst_nm = 0.785         # "intermittently permissible torque ... 8 kg-cm"
+mass_kg = [0.095, 0.110]      # datasheet rev 2.0: "Gearmotor versions with encoders ... weight: 95-110 g"
+encoder = true
+needs_driver = true
+status = "VERIFIED"
+source = "https://www.pololu.com/product/4847 and Pololu 25D datasheet rev 2.0 (Jul 2026), read 14 Oct 2026"
+
+[[drive]]
+id = "gobilda_2000"
+name = "goBILDA 2000 Series Dual Mode Servo (25-2 Torque), continuous mode, 7.4 V"
+kind = "servo"
+tau_stall_nm = 2.471          # "350 oz-in (25.2 kg.cm)" at 7.4 V
+rpm_free = 60.0               # "0.17sec/60 deg (60RPM)" at 7.4 V
+p_max_w = nan
+limit_cont_nm = nan
+limit_inst_nm = nan
+mass_kg = [0.060, 0.060]      # "60g"
+encoder = false
+needs_driver = false          # continuous mode: "proportional speed control based on the PWM signal"
+status = "VERIFIED"
+source = "https://www.gobilda.com/2000-series-dual-mode-servo-25-2-torque/, read 14 Oct 2026"
+
+[[drive]]
+id = "savox_2290"
+name = "Savox SB-2290SG brushless servo, 7.4 V, modified for continuous rotation"
+kind = "servo"
+tau_stall_nm = 4.903          # 50 kg-cm (the lower of the retail figures, 50 and 55 kg-cm)
+rpm_free = 76.9               # "0.13 sec/60 deg" at 7.4 V
+p_max_w = nan
+limit_cont_nm = nan
+limit_inst_nm = nan
+mass_kg = [0.081, 0.081]      # "81 g"
+encoder = false
+needs_driver = false
+modified = true               # no continuous mode out of the box (DSCE 2021 modified theirs)
+status = "RESELLER"
+source = "retail listings (rcvisions.com, gator-rc.com, rc-modelshop.com), searched 14 Oct 2026; torque listed as 50 or 55 kg-cm"
+
+[[drive]]
+id = "neo550"
+name = "REV NEO 550 brushless, direct drive (ERAU 2021 layout) + SPARK MAX + 3S pack"
+kind = "brushless"
+tau_stall_nm = 0.97           # "Stall Torque: 0.97 Nm"
+rpm_free = 11000.0            # "Free Speed: 11000 RPM"
+p_max_w = 279.0               # "Peak Output Power: 279 W"
+limit_cont_nm = nan
+limit_inst_nm = nan
+mass_kg = [0.355, 0.405]      # motor "0.142kg" + SPARK MAX "113.3g" (both VERIFIED) + a separate
+                              # 3S LiPo for ~40 A (ESTIMATE 0.10-0.15 kg; the Rx battery cannot supply it)
+encoder = true                # ASSUMED (built-in Hall sensing via the SPARK MAX; not verified)
+needs_driver = false
+status = "VERIFIED (motor, controller); ESTIMATE (pack)"
+source = "https://www.revrobotics.com/rev-21-1651/ and https://www.revrobotics.com/rev-11-2158/, read 14 Oct 2026"
+
+# Screening-only drives (they do not enter the trade; dr_trade.py checks them).
+[[screen_drive]]
+id = "hs785hb"
+name = "Hitec HS-785HB sail-winch servo (position mode, multi-turn)"
+tau_stall_nm = 1.294          # "13.2 kg-cm" at 6.0 V
+turns_max = 5.25              # 3.5 turns rated; a dealer reports 5.25 at full transmitter travel
+mass_kg = 0.110
+status = "RESELLER"
+source = "robotshop.com, servodatabase.com, buddyrc.com listings, searched 14 Oct 2026"
+
+[[screen_drive]]
+id = "p16_256"
+name = "Actuonix P16 linear actuator, 256:1, 200 mm stroke (for the pulley-block option)"
+force_peak_n = 250.0          # "peak power point of 250N @2.5mm/s"
+speed_peak_mps = 0.0025
+speed_max_mps = 0.0048        # "Max Speed (no load) 4.8mm/s"
+mass_kg = 0.140               # 200 mm version "140g"
+status = "RESELLER"
+source = "robotshop.com P16 listings, searched 14 Oct 2026"
+
+# ---------------------------------------------------------------------------------------
+# PARTS other than the drive, mass kg [low, high]. All ESTIMATE unless marked.
+[parts]
+drum_frame = [0.040, 0.090]       # printed single-layer grooved drum, bearings, side plates
+slip_ring = [0.003, 0.008]        # Adafruit 1195 capsule ring, 12 mm x 20 mm, 12 wires, 2 A,
+                                  # 300 rpm (VERIFIED: adafruit.com/product/1195, 13 Oct); mass not listed
+dock_latch = [0.015, 0.035]       # docking cone plus a micro-servo latch pin (Sec. 3.1.1 restraint)
+fairlead_bead = [0.003, 0.008]    # exit fairlead with a stop-bead seat (sets the deploy length)
+wiring = [0.010, 0.020]
+mcu = [0.002, 0.004]              # Seeed XIAO RP2040, 21 x 17.5 mm (PR-01 B32)
+motor_driver = [0.002, 0.005]     # small H-bridge carrier, for gearmotors only
+encoder_addon = [0.002, 0.005]    # magnetic angle sensor on the drum, for drives without one
+limit_switch = [0.001, 0.003]     # each
+governor_clutch = [0.010, 0.035]  # centrifugal payout governor plus one-way clutch (option C)
+capstan_tailer = [0.025, 0.060]   # capstan, self-tailing pinch and spring (option E)
+line_bin = [0.015, 0.040]         # line storage bin (option E)
+capstan_frame = [0.020, 0.045]    # frame without a drum (option E)
+
+# ---------------------------------------------------------------------------------------
+# CANDIDATES that pass screening. Every one shares: stop bead at the fairlead (sets the
+# deploy length mechanically and carries the lap tow loads into the airframe, not the
+# drive), docking cone and latch, sensor's mode signal as 1000/1500/2000 us PWM.
+[[candidate]]
+id = "A"
+name = "Closed-loop drum"
+short = "Drum, closed loop"
+storage = "drum"
+control = "closed"
+joint = "slip ring"
+parts = ["drum_frame", "slip_ring", "dock_latch", "fairlead_bead", "wiring", "mcu"]
+drives = ["37d_50", "37d_70", "25d_99", "gobilda_2000", "savox_2290", "neo550"]
+precedent = """ERAU 2021 (3rd): brushless NEO 550 in a helical-groove spool with an integrated slip ring, sized
+to "deploy and retract at least 14 oz" (0.40 kg); measured deploy 2 s and retraction 3 s against 1 s
+designed (2021 reports, ERAU Sec. 5.3.4, Tables 5-4, 5-5, 8-1). Michigan 2021 (best paper): DC motor,
+3:1 reduction, spool with a self-reversing-screw line guide (Sec. 5.3.6)."""
+
+[[candidate]]
+id = "B"
+name = "Open-loop drum"
+short = "Drum, end switches"
+storage = "drum"
+control = "open"
+joint = "slip ring"
+parts = ["drum_frame", "slip_ring", "dock_latch", "fairlead_bead", "wiring", "mcu", "limit_switch", "limit_switch"]
+drives = ["gobilda_2000", "savox_2290", "37d_50", "37d_70", "25d_99"]
+precedent = """Dayananda Sagar 2021 (1st): servo winch with its potentiometer modified for 360 deg, chosen over a
+spring shaft and a telescopic boom (their Table 3.7: winch 12, spring 10, boom 7). UCF 2021 (2nd):
+"A spool was attached to a continuous rotation servo, and Kevlar wire was braided with the wires for
+the electronics system and spooled" (with telescoping rods, under the 2021 deploy rule)."""
+
+[[candidate]]
+id = "C"
+name = "Free-spool drum, powered stow"
+short = "Governed free-spool"
+storage = "drum"
+control = "free"
+joint = "slip ring"
+parts = ["drum_frame", "slip_ring", "dock_latch", "fairlead_bead", "wiring", "mcu", "limit_switch", "governor_clutch"]
+drives = ["gobilda_2000", "savox_2290", "37d_50", "37d_70", "25d_99"]
+precedent = """Michigan 2021: "The sensor will then drop out of the aircraft using its own weight and the resulting
+drag forces to unwind the 15-foot-long tether. To retract the sensor, the motor attached to the spool
+activates" (Sec. 5.3.4, p34); their sensor was 0.64 kg (1.41 lb, Sec. 5.3.7).
+Rutgers 2021 proposal: the sensor slides out on a 2 deg slope, drag pulls it to full deployment,
+a servo winch retrieves it."""
+
+[[candidate]]
+id = "E"
+name = "Capstan and line bin"
+short = "Capstan, bin"
+storage = "bin"
+control = "closed"
+joint = "fixed end"
+parts = ["capstan_frame", "capstan_tailer", "line_bin", "dock_latch", "fairlead_bead", "wiring", "mcu"]
+drives = ["37d_50", "37d_70", "25d_99", "gobilda_2000", "savox_2290"]
+precedent = """No DBF precedent found in the 2021 reports or proposals. The idea: the inner end of the line is
+fixed to the airframe, so no rotating electrical joint; a capstan feeds the line into a bin."""
+
+# ---------------------------------------------------------------------------------------
+# SCREENED OUT before the trade (rules or physics; dr_trade.py prints the numbers).
+[[screened]]
+id = "D"
+name = "Drum with the payload receiver riding on it (no slip ring)"
+reason = """The rules allow a payload Rx anywhere in the airplane (Sec. 3.1.1), but the radio system needs an
+"externally accessible SWITCH" (Sec. 3.2.1), and tech checks that "the airplane does not respond to
+commands with receiver switch OFF" (Sec. 4.2.5). A self-powered Rx on a spinning drum fails both
+unless its power comes through a rotating joint, which brings the slip ring back."""
+
+[[screened]]
+id = "F"
+name = "Linear actuator and pulley block (fixed line end)"
+reason = "computed: see the screening block of the report (force and speed of the actuator class)"
+
+[[screened]]
+id = "X1"
+name = "Telescopic boom (UCF 2021)"
+reason = """The sensor must connect "using a tow line" and deploy >= 1.5 x span (2.74 m) from the exit
+(Secs. 3.1.1, 3.1.2). UCF's 42.5 in (1.08 m) rods met the 2021 rule (10 x sensor length); a 2.74 m
+boom does not fit, and a boom is not a tow line."""
+
+[[screened]]
+id = "X2"
+name = "Wireless link to the sensor"
+reason = """"The Rx for the payload signal must be in the airplane, it may not be in the sensor"; the mode
+signal "must come from the airplane over the tow line" (Sec. 3.1.1)."""
+
+[[screened]]
+id = "X3"
+name = "Spring reel (deploy or retract)"
+reason = """computed: see the screening block (spring force against the sensor's weight). DSCE 2021 rejected
+it: "cannot be controlled once deployed. It also had low reliability" (Sec. 8.2.4)."""
+
+[[screened]]
+id = "X4"
+name = "Two-line bridle (UAB 2021 proposal)"
+reason = """The rule reads "using a tow line" (Sec. 3.1.1), singular; two lines need a Q&A ruling and two
+drums, for a roll-stability gain the sensor's fixed fins already give."""
+
+[[screened]]
+id = "X5"
+name = "Limited-turn lead instead of a slip ring (clock spring)"
+reason = "computed: turns needed against a few turns for flat-cable clock springs"
+
+[[screened]]
+id = "X6"
+name = "Position-mode sail-winch servo (PR-01 B29 candidate)"
+reason = "computed: the servo's turn limit forces a large drum, and torque runs out"
+
+# ---------------------------------------------------------------------------------------
+# FAILURE MODES, per M3 attempt that flies. range = [low, high] probability, ESTIMATES
+# (no failure statistics exist for DBF D&R mechanisms; 2021 had no fly-off). Ranges are
+# sampled log-uniformly. `key` ties draws together: modes with the same key use the same
+# random quantile, so shared physics cancels between options.
+# consequence: benign = attempt lost, sensor intact, retry allowed;
+#              severe = sensor not stowed for landing (damaged with p_damage_severe);
+#              catastrophic = sensor lost or destroyed (no more M3; GM flown after M3 is lost).
+# criterion: recovery (deploy, hold, stow, restrain) or signal (light modes over the line).
+
+[[failure]]
+id = "SH1"
+what = "Sensor light electronics or battery fault"
+key = "sh1"
+consequence = "benign"
+criterion = "signal"
+range = { A = [0.005, 0.03], B = [0.005, 0.03], C = [0.005, 0.03], E = [0.005, 0.03] }
+basis = "Shared by every option (the sensor is the same); included for the absolute level only."
+
+[[failure]]
+id = "SH2"
+what = "Tow-line connector at the sensor intermittent (attached in the 5-min staging, Sec. 3.3.2)"
+key = "sh2"
+consequence = "benign"
+criterion = "signal"
+range = { A = [0.005, 0.03], B = [0.005, 0.03], C = [0.005, 0.03], E = [0.005, 0.03] }
+basis = "Shared."
+
+[[failure]]
+id = "SH3"
+what = "Line cut at the exit edge or by the propeller"
+key = "sh3"
+consequence = "catastrophic"
+criterion = "recovery"
+range = { A = [0.001, 0.01], B = [0.001, 0.01], C = [0.001, 0.01], E = [0.001, 0.01] }
+basis = "Shared: set by the exit location and SR-10, not by the reel."
+
+[[failure]]
+id = "SH4"
+what = "Docking latch fails to release (no deploy) or to engage"
+key = "sh4"
+consequence = "benign"
+criterion = "recovery"
+range = { A = [0.003, 0.02], B = [0.003, 0.02], C = [0.003, 0.02], E = [0.003, 0.02] }
+basis = "Shared: same latch on every option."
+
+[[failure]]
+id = "R1"
+what = "Slip ring or rotor-side wiring drops the signal while the drum is still"
+key = "slipring"
+consequence = "benign"
+criterion = "signal"
+range = { A = [0.001, 0.01], B = [0.001, 0.01], C = [0.001, 0.01] }
+basis = """Gold-contact capsule ring, 2 A rating against a logic-level PWM signal; mode changes happen with
+the drum stopped (fully deployed), so brush noise while turning does not matter. Wear life is not an
+issue at ~25 turns a flight. The joint is still an extra connection in series."""
+
+[[failure]]
+id = "S1"
+what = "Line mis-spools or jams on the drum"
+key = "spool"
+consequence = "severe"
+criterion = "recovery"
+range = { A = [0.003, 0.015], B = [0.005, 0.025], C = [0.005, 0.025] }
+basis = """Single-layer helical groove (ERAU 2021 used one instead of a level wind). A keeps the line under
+tension in both directions (powered payout, stop bead) and its encoder sees a jam as a stall and stops
+before a nest forms. B and C wind at full speed into the end stops and only a timeout notices a jam."""
+
+[[failure]]
+id = "S2"
+what = "Payout continues after the stop bead seats: loose wraps, then a jam on the stow"
+key = "overrun"
+consequence = "severe"
+criterion = "recovery"
+range = { B = [0.003, 0.02], C = [0.01, 0.06] }
+basis = """Backlash, the classic free-spool reel failure. C: the governed drum keeps spinning on its own
+inertia after the line stops. B: the servo runs until the 'deployed' switch trips; a late or missed
+switch pays slack into the bay. A stops on the encoder count and is not exposed."""
+
+[[failure]]
+id = "S3"
+what = "End-switch, encoder or controller fault (missed stop, wrong length, wrong decode)"
+key = "control"
+consequence = "severe"
+criterion = "recovery"
+range = { A = [0.002, 0.012], B = [0.003, 0.02], C = [0.002, 0.015], E = [0.002, 0.012] }
+basis = """A and E: firmware plus an encoder, fully exercised on the bench with the test box. B and C:
+mechanical switches at the ends; a missed 'stowed' stop drives the sensor into the docking cone at
+full torque (line or tow-eye overload)."""
+
+[[failure]]
+id = "S4"
+what = "Drive stalls or overheats during the stow (turn, gust, heavy sensor)"
+key = "drive"
+consequence = "severe"
+criterion = "recovery"
+range = { A = [0.001, 0.005], B = [0.002, 0.01], C = [0.002, 0.01], E = [0.001, 0.005] }
+basis = """Every drive passes the n = 1.5 stow and n = 2 no-reversal checks (dr_trade.py). Closed-loop
+options see a stall and pause until the turn ends; open-loop ones keep driving a stalled motor."""
+
+[[failure]]
+id = "S5"
+what = "Governor out of range or one-way clutch slips (payout too slow, or an unbraked drop)"
+key = "governor"
+consequence = "severe"
+criterion = "recovery"
+range = { C = [0.003, 0.02] }
+basis = """An unbraked 3.4 kg drop over 2.9 m stores about 96 J; the 80 lb line stores ~18 J at break, so
+the bead stop would snap it (screening block). The governor and clutch must always work."""
+
+[[failure]]
+id = "S6"
+what = "Line tangles in the storage bin"
+key = "bin"
+consequence = "severe"
+criterion = "recovery"
+range = { E = [0.05, 0.20] }
+basis = """Each stow pushes ~3 m of light braid into a bin, then landing loads and vibration act on the pile;
+a knot reaching the capstan jams it. A line cannot be pushed into a neat pile; no DBF precedent."""
+
+[[failure]]
+id = "S7"
+what = "Capstan slips under load"
+key = "capstan"
+consequence = "severe"
+criterion = "recovery"
+range = { E = [0.01, 0.05] }
+basis = """UHMWPE friction 0.1-0.2 (Goodfellow): three wraps hold only exp(2 pi 3 mu) = 6.6-43 x the tail
+tension, so a self-tailing pinch must keep tension on the slack side (screening block)."""
+
+[[failure]]
+id = "G1"
+what = "Conductors damaged in the capstan pinch and wraps"
+key = "pinch"
+consequence = "benign"
+criterion = "signal"
+range = { E = [0.005, 0.03] }
+basis = """The PTFE leads ride through a spring pinch and three capstan wraps on every cycle, against one
+large-radius bend on a drum."""
+
+# ---------------------------------------------------------------------------------------
+# MANUFACTURABILITY: pairwise judgments (Saaty 1-9; value > 1 means the first option is
+# easier to build and test with the team's tools: FDM printers, laser cutter, no composites).
+[[make]]
+pair = ["A", "B"]
+saaty = 0.5
+reason = """B is a little easier: its servo carries its own driver and needs no speed loop, only two end
+switches. Both share the drum, the slip ring and the latch; A's extra work is encoder firmware, which the
+test box exercises on the bench."""
+
+[[make]]
+pair = ["A", "C"]
+saaty = 2.0
+reason = """A is easier: C adds a centrifugal governor and a one-way clutch, precision mechanical parts we
+would have to adapt from fishing reels and tune for one sensor mass and airspeed. A's complexity is
+software, which is cheaper to iterate."""
+
+[[make]]
+pair = ["A", "E"]
+saaty = 4.0
+reason = """A is much easier: drums were built by all four 2021 top teams with printed parts. E needs a
+capstan with a self-tailer and a bin, with no precedent to copy, and the tangle risk can only be found
+by flight-like shake testing."""
+
+[[make]]
+pair = ["B", "C"]
+saaty = 3.0
+reason = "B is easier: same drum and switches, without C's governor and clutch."
+
+[[make]]
+pair = ["B", "E"]
+saaty = 5.0
+reason = "B is much easier: COTS servo plus a printed drum, against a novel capstan and bin."
+
+[[make]]
+pair = ["C", "E"]
+saaty = 2.0
+reason = "C is easier: its novel parts (governor, clutch) are COTS-adaptable; E's are not."
+
+# CRITERIA WEIGHTS. Recovery reliability, signal path, deploy/stow time and weight are
+# weighted by their swing in expected total-mission points (computed). Manufacturability has
+# no points model, so it enters through one judgment against recovery reliability.
+[criteria]
+min_span_points = 0.01               # smallest difference the scales resolve: 0.01 points is about
+                                     # 32 g of mechanism or 5 s of stow (Script 6 exchange rates).
+                                     # A criterion whose options differ by less is not stretched to
+                                     # a 1-to-5 spread or a 9:1 judgment.
+make_vs_recovery = [3.0, 5.0, 7.0]   # Saaty: recovery is strongly more important; the Monte Carlo
+                                     # draws 3, 5 or 7. Reason: a hard build that works still
+                                     # scores, and build effort already buys reliability through
+                                     # test time.
+
+[monte_carlo]
+draws = 5000
+seed = 2027
+dirichlet_alpha = 40.0
+shared_keys = ["sh1", "sh2", "sh3", "sh4", "slipring"]   # the same hardware in every option
+judgment_step_p = 0.25             # each manufacturability judgment moves one Saaty step up or
+                                   # down with this probability each way

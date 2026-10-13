@@ -1,8 +1,8 @@
 % TC-03 Sensor light visibility in sun. Build: ../build.sh
 \def\dbfroot{../../design-system}
 \documentclass[final]{dbfdoc}
-\dbfsetdoc{Sensor Light Visibility}{Test Card TC-03}{AUM-DBF-27-TC-003}{B}
-\dbfsetdate{11 Oct 2026}
+\dbfsetdoc{Sensor Light Visibility}{Test Card TC-03}{AUM-DBF-27-TC-003}{C}
+\dbfsetdate{12 Oct 2026}
 \raggedbottom
 
 \begin{document}
@@ -72,7 +72,7 @@ where $I$ is the chosen light's mean current, $t$ the longest lights-on time per
 \section{Pass Criteria and Use of Results}
 \textbf{Pass:} at 200~m, at least 90\,\% correct calls with all observers pooled, and no SOLID read as FLASHING or the reverse.
 
-\textbf{Use:} the winning type, colour, optic and drive current define the sensor lights. The draft Table~04 has no light-visibility requirement yet, so propose one at the Requirements Review. The chosen flash preset goes into the payload light-control firmware, and the measured current sizes the sensor battery (§3.2.3). File the sheet as \texttt{testing/data/TC-03\_<date>.csv} and the media in \texttt{testing/media/TC-03/}.
+\textbf{Use:} the winning type, colour, optic and drive current define the sensor lights and close SR-07, ``visible in full sun'' (Table~04). The chosen flash preset goes into the payload light-control firmware, and the measured current sizes the sensor battery (SR-09, §3.2.3). File the sheet as \texttt{testing/data/TC-03\_<date>.csv} and the media in \texttt{testing/media/TC-03/}.
 
 \twocolumn[{%
 \section{Data Sheet}

@@ -9,6 +9,9 @@
 %  (rules Sec. 6.2), but score ratios are unit-free. The GM drop height
 %  is declared in whole inches: use 0.0254-m steps (1.524 m = 60 in).
 %  Macro names keep "Weight" for continuity; the values are masses (kg).
+%  Numbers the analysis computes live in data/analysis.tex instead, generated
+%  by analysis/s7_export.py (12 Oct 2026). Each macro is defined in exactly one
+%  of the two files: a duplicate \newcommand stops the build.
 % =====================================================================
 
 % --- Aircraft -----------------------------------------------------------
@@ -20,7 +23,8 @@
 \newcommand\nGrossMthree{\dbftbd{TOGW M3}}       % kg
 \newcommand\nBatteryWh{\dbftbd{Wh}}              % Wh  (rule: <= 100 total)
 \newcommand\nCruise{\dbftbd{V cruise}}           % m/s
-\newcommand\nLapTime{\dbftbd{lap time}}          % s
+\newcommand\nStaticMargin{\dbftbd{SM band}}      % % MAC, Table 04 SR-01 (Script 4; Raymer ch. 16)
+% \nLapTime, \nLoadFactor -> data/analysis.tex (Script 1)
 
 % --- Fly-off site air (verified 11 Oct 2026) ----------------------------
 % Site: TIMPA, 3250 N Reservation Rd, Marana AZ, 32.26474 N 111.27386 W
@@ -48,21 +52,13 @@
 \newcommand\fnRho{\footnote{10th percentile at the daily high of 2{,}878 hourly KTUS observations, 15--18~April 1996--2025, reduced to TIMPA's 667~m (USGS 3DEP). Iowa Environmental Mesonet, ``ASOS Data Download,'' Iowa State Univ., \url{https://mesonet.agron.iastate.edu} [retrieved 11 Oct.~2026].}}
 
 % --- Sensor / container -------------------------------------------------
-\newcommand\nSensorWeight{\dbftbd{m sensor}}     % kg (max declared)
+% \nSensorWeight (max declared), \nMthreeSensor (flown in M3) -> data/analysis.tex
 \newcommand\nSensorLength{\dbftbd{L sensor}}     % mm (rule: >= 152.4 = 6 in)
 \newcommand\nTowLength{\dbftbd{tow length}}      % m  (rule: >= 1.5 x actual span)
 \newcommand\nContainerWeight{\dbftbd{m container}} % kg
 
-% --- Mission targets ----------------------------------------------------
-\newcommand\nMtwoUnits{\dbftbd{units}}           % container + simulators
-\newcommand\nMtwoPayload{\dbftbd{m payload}}     % kg
-\newcommand\nMtwoTime{\dbftbd{5-lap time}}       % s
-\newcommand\nMthreeLaps{\dbftbd{laps}}
-\newcommand\nDropHeight{\dbftbd{h}}              % m  (rule: <= 1.524 = 60 in, whole inches)
-
-% --- Predicted scores ---------------------------------------------------
-\newcommand\sMone{1.00}
-\newcommand\sMtwo{\dbftbd{M2}}
-\newcommand\sMthree{\dbftbd{M3}}
-\newcommand\sGM{\dbftbd{GM}}
-\newcommand\sTotal{\dbftbd{total}}               % of 7.50
+% --- Mission targets and predicted scores -------------------------------
+% \nMtwoUnits, \nMtwoPayload, \nMtwoTime, \nMthreeLaps, \nDropHeight,
+% \nDropHeightIn, \sMone, \sMtwo, \sMthree, \sGM, \sTotal (of 7.50),
+% \sTotalAggressive, \sTotalConservative -> data/analysis.tex (Scripts 1-2;
+% targets in analysis/inputs/aircraft.toml, scenario in export.toml)

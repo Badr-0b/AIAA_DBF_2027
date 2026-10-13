@@ -1,0 +1,69 @@
+# Scripts 3-4 inputs: aerodynamics, propulsion, energy and mass build-up.
+# Every value is either sourced (AIAA report data verified in analysis/data/,
+# rules, textbook) or marked ESTIMATE with its reasoning and a sweep range.
+# Units: SI. Written 13 Oct 2026 (provisional for the Oct 13 gate).
+
+[air]
+# rho comes from proposal/data/numbers.tex \nRho (1.064 kg/m^3, TIMPA hot day, verified Oct 11).
+rho_sweep = [1.05, 1.10]
+
+[battery]
+energy_wh = 100.0              # rules Sec. 3.2.3.2
+usable_fraction = 0.80         # design practice: UCLA 2025 set usable energy at 80 % of 100 Wh
+                               # (dbf_aircraft, UCLA 2025 p78). ERAU 2023 measured 86 Wh used in M2
+                               # (86 % of 99.9 Wh), so 0.80 keeps a margin.
+# pack mass: 100 Wh / median same-pack specific energy, read from data/dbf_airframes.csv
+# (9 packs, 130-158 Wh/kg, median 142).
+fuse_a = 100.0                 # rules Sec. 3.2.3.2 (fuse up to 100 A)
+pack_v_loaded = 40.0           # ESTIMATE: 12S (44.4 V nominal, ERAU 2023 and Ljubljana 2024 flew 12S)
+                               # sagging to ~3.33 V/cell at 100 A. Sweep 27 (8S) to 42.
+[propulsion]
+eta_eff = 0.58                 # CALIBRATED (n = 1 aircraft): shaft -> battery efficiency over a whole
+                               # M2 flight that reproduces ERAU 2023's measured 1,243 W average in-air
+                               # power with their measured CD0 0.0583 and e 0.842 (s3.calibrate_eta,
+                               # printed by s4_sizing.py). Absorbs prop, motor, ESC, take-off, climb.
+eta_sweep = [0.45, 0.65]
+t_takeoff_s = 8.0              # ESTIMATE: clock time from throttle-up lost to take-off and climb
+                               # before race speed. Flight data range 0-28 s (ERAU 2025 M2 124 s for
+                               # 3 x 32 s laps; ERAU 2023 M1 68 s for 3 x 22.7 s). Sweep 4-15.
+
+[calibration]
+time_factor = 1.15             # measured / predicted lap and mission time: median of 24 pairs from 7 top-3
+                               # aircraft (data/calibration.csv, aircraft_model.py; per-aircraft median 1.07,
+                               # range 0.80-1.48). Applied to every lap and mission clock, and to M2 energy
+                               # (energy = mean power x time). Monte Carlo draws resample the measured pairs.
+
+[aero]
+cd_wing_per_area = 0.0086      # wing CD0 on its own area: GT 2026 OpenVSP build-up (dbf_aircraft,
+                               # GT 2026 p148, Table 4-2)
+f_body_m2 = 0.013              # ESTIMATE: drag area of everything except the wing (fuselage with the
+                               # container bay, tail, gear, protuberances). Evidence: GT 2026 0.0028,
+                               # Joanneum 2022 0.013, ERAU 2023 0.028 (measured CD0 x S minus wing).
+                               # Joanneum is the closest payload class. Sweep 0.006-0.028.
+f_tow_m2 = 0.008               # ESTIMATE (M3 only): tow line ~2.7 m x 2.5 mm cable at Cd 1.1 plus a
+                               # can-sized dart at CdA ~0.003. TC-01 and the CFD replace it.
+cl_turn_margin = 0.80          # sustained turns flown at <= 80 % of clean CLmax (ESTIMATE, buffet margin)
+n_struct = 4.0                 # design limit load factor (ESTIMATE; USC 2026 designed 3.4, UW 2023 saw
+                               # 4.2 in flight, USC 2024 saw 5.2). Sweep 3-5.
+v_stall_max = 14.0             # ESTIMATE anchored on the field: top-3 design stall speeds at max weight
+                               # 9.4-14.4 m/s (Joanneum 22 31 ft/s ... VT 23 47.2 ft/s, dbf_aircraft).
+
+[config.straight]              # Aircraft 01 family: straight tapered wing, flaps
+name = "Straight wing (01 family)"
+oswald = "raymer_straight"     # e = 1.78 (1 - 0.045 AR^0.68) - 0.64 (Raymer, Aircraft Design, ch. 12);
+                               # gives 0.89 at AR 5.2 where ERAU 2023 measured 0.842 (+6 %).
+clmax_flapped = 1.6            # Ljubljana 2024 design 1.6, WashU 2022 1.44 (dbf_aircraft)
+clmax_clean = 1.25             # ESTIMATE: low-Re cambered section (SD7062/MH-class) at Re ~3e5
+[config.delta]                 # Aircraft 02 family: 45 deg leading-edge delta, no flaps
+name = "Delta (02 family)"
+oswald = "raymer_swept"        # e = 4.61 (1 - 0.045 AR^0.68) (cos LE)^0.15 - 3.1 (Raymer ch. 12), LE 45 deg
+sweep_le_deg = 45.0
+clmax_flapped = 1.0            # ESTIMATE: usable CLmax limited by landing attitude; XFLR5/AVL replaces it
+clmax_clean = 1.0              # ESTIMATE
+
+[sweep]
+span_m = 1.82                  # design span (aircraft.toml)
+wing_area_m2 = [0.30, 1.10]    # S range; AR = b^2 / S for both families
+payload_kg = [0.0, 18.0]
+v_mps = [15.0, 45.0]
+bank_deg = [30.0, 80.0]

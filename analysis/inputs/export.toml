@@ -1,0 +1,7 @@
+# What s7_export.py writes into proposal/data/analysis.tex.
+
+selected = "a01"        # the aircraft Table 08 and the glance panel show (down-select: 17 Oct)
+scenario = "expected"   # the competitor scenario the predicted score is stated against
+confirmed = false       # set true at the numbers freeze (20 Oct). Until then every exported
+                        # value prints as an unfinished value (\dbftbd), visible in the draft
+                        # and counted by proposal/build.sh.

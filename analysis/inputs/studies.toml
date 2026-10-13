@@ -1,0 +1,46 @@
+# Script 6 study inputs (s6_studies.py). Written 13 Oct 2026.
+# Nothing here is a decision (user, 13 Oct). The reference point for the
+# sensitivities is the ROBUST OPTIMUM found by the robust design map, not a choice.
+# Physics and evidence inputs come from sizing.toml and analysis/data/.
+
+[design]
+family = "straight"           # wing family for the map; the delta is compared separately
+v_stall_max = 14.0            # accepted 1 g stall at M2 weight (Script 4 decision table: UCLA 2025 level)
+drop_height_m = 1.524         # rule maximum (Sec. 3.3.4); the GM score rises with it
+n_sim_max = 3                 # simulators searched per evaluation (0..3)
+t_stow_s = 3.0                # ESTIMATE, as aircraft.toml (ERAU 2021 measured retraction)
+sensor_min_kg = 0.2           # a sensor needs some mass for its battery, lights and structure (ESTIMATE)
+container_kg = 0.6            # ESTIMATE until Script 5 / TC-02 size the foam; drawn 0.4-1.0 in the Monte Carlo
+
+[grid]
+wing_area_m2 = [0.5, 1.1, 0.1]  # robust-map axis (start, stop, step)
+unit_kg = [2.0, 12.0, 1.0]      # payload unit = container + declared max sensor
+carpet_wing_area_m2 = [0.4, 1.1, 0.05]
+carpet_unit_kg = [1.0, 12.0, 0.5]
+
+[monte_carlo]
+draws = 120                   # paired draws shared by every design (common random numbers)
+seed = 2027
+# Ranges for inputs without a measured distribution (each an ESTIMATE; measured inputs are
+# resampled from data: time factor from the 24 lap/mission pairs, pack Wh/kg from 9 packs,
+# airframe factor from the fit's residual sd).
+f_body_m2 = [0.006, 0.028]    # GT 2026 0.0028 ... ERAU 2023 0.028 (sizing.toml)
+eta = [0.45, 0.65]            # around the ERAU 2023 calibration 0.584
+t_takeoff_s = [4.0, 15.0]
+pack_v_loaded = [27.0, 42.0]  # 8S to 12S under load
+rho = [1.05, 1.10]            # around nRho 1.064 (TIMPA)
+e_factor = [0.9, 1.1]
+clmax_factor_straight = [0.90, 1.0625]   # CLmax 1.44-1.70 (WashU 2022, Ljubljana 2024)
+clmax_factor_delta = [0.85, 1.30]
+f_tow_m2 = [0.004, 0.016]     # +/- 50 % around the sizing.toml estimate
+container_kg = [0.4, 1.0]
+
+[tornado]
+steps = [0.10, 0.20]          # relative change of each input, both directions
+
+[reliability]
+# AIAA competition summaries 2022-26 (data/attempts.py): 2.4-2.9 official attempts per team
+# that passed tech; 57-73 % of attempts scored.
+p_attempt = 0.65
+attempts = 3
+gm_attempts = 2               # one try plus the one improvement attempt (Sec. 3.3.4)
