@@ -1,0 +1,205 @@
+% =====================================================================
+%  dbfbrief.sty: research-report layer for decision briefs (DB-xx).
+%  Loads on top of dbfdoc.cls. Keeps the house fonts and monochrome
+%  palette; changes the page to a single-column Swiss grid:
+%
+%    |<- rail 1.55in ->|<0.25>|<-------- text 5.20in -------->|
+%     section numerals,        body copy (about 75 characters)
+%     subsection heads,
+%     captions, margin notes   full-width floats span 7.00in
+%
+%  Sentence case throughout. Mono is reserved for file names.
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dbfbrief}[2026/10/14 v1.0 DBF decision-brief layer]
+
+\makeatletter
+% ---------------------------------------------------------------------
+%  Grid
+% ---------------------------------------------------------------------
+\onecolumn
+\RequirePackage{float}   % [H]: pin a float inside its own section
+\RequirePackage{needspace}
+\newlength\railw    \setlength\railw{1.55in}
+\newlength\railgap  \setlength\railgap{0.25in}
+\newlength\railoff  \setlength\railoff{1.80in}
+\newlength\fullw    \setlength\fullw{7.00in}
+\newlength\bodyw    \setlength\bodyw{5.20in}
+\geometry{left=2.55in, right=0.75in, top=1.00in, bottom=0.90in,
+  headheight=18pt, headsep=0.26in, footskip=0.40in}
+
+% ---------------------------------------------------------------------
+%  Type: Geist Light for display, Medium for heads, 10/15 body
+% ---------------------------------------------------------------------
+\newfontfamily\brieflight{Geist}[Path=\dbf@fontdir Geist/, Extension=.ttf,
+  UprightFont=*-Light, BoldFont=*-Regular, LetterSpace=-1.0]
+\newfontfamily\briefmed{Geist}[Path=\dbf@fontdir Geist/, Extension=.ttf,
+  UprightFont=*-Medium, ItalicFont=*-MediumItalic, BoldFont=*-SemiBold]
+\newfontfamily\brieffig{Geist}[Path=\dbf@fontdir Geist/, Extension=.ttf,
+  UprightFont=*-Regular, BoldFont=*-Medium, ItalicFont=*-Italic, Numbers=Monospaced]
+
+\renewcommand\normalsize{%
+  \@setfontsize\normalsize{10}{15}%
+  \abovedisplayskip 6pt plus 2pt minus 2pt
+  \belowdisplayskip \abovedisplayskip
+  \let\@listi\@listI}
+\renewcommand\small{\@setfontsize\small{8.6}{11.4}}
+\normalsize
+\setlength\parindent{0pt}
+\setlength\parskip{7pt plus 1pt}
+\setlist{nosep, leftmargin=1.1em, topsep=3pt, itemsep=1.5pt}
+\setlist[itemize]{label={\color{dbfFog}\rule[0.32ex]{0.42em}{0.4pt}}}
+
+% ---------------------------------------------------------------------
+%  Headings
+%  Section: full-width ink rule, numeral in the rail, title in the text.
+%  Subsection: hangs in the rail beside its first paragraph.
+% ---------------------------------------------------------------------
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+
+\newcommand\brief@sec[1]{%
+  \dbf@secanchor
+  \makebox[\textwidth][r]{\parbox[t]{\fullw}{%
+    {\color{dbfInk}\rule{\fullw}{0.6pt}}\par\vspace{9pt}%
+    \makebox[\railoff][l]{\brieflight\fontsize{21}{24}\selectfont\color{dbfSteel}%
+      \two@digits{\value{section}}}%
+    {\briefmed\fontsize{15.5}{20}\selectfont\color{dbfInk}#1}}}}
+\titleformat{\section}[block]{\normalfont}{}{0pt}{\brief@sec}
+\titlespacing*{\section}{0pt}{20pt plus 4pt minus 2pt}{8pt plus 2pt}
+
+% \decision{D1}{Title}: a decision subsection; \subsection for the rest.
+% (The code is cleared when the run-in head is typeset. Not \dsub: unicode-math owns it.)
+\gdef\brief@dcode{}
+\newcommand\decision[2]{\gdef\brief@dcode{#1}\subsection{#2}}
+% Rail boxes are given zero depth so they never open up the first line of text.
+\newcommand\brief@rail[1]{\llap{\raisebox{0pt}[\height][0pt]{#1}}}
+\newcommand\brief@sub[1]{%
+  \leavevmode\brief@rail{\parbox[t]{\railw}{\raggedright
+    {\briefmed\fontsize{9.4}{12.2}\selectfont\color{dbfInk}#1}\par\vspace{2pt}%
+    {\brieffig\fontsize{7.8}{10}\selectfont\color{dbfSteel}\thesubsection
+      \ifx\brief@dcode\@empty\else\hspace{0.9em}Decision \brief@dcode\fi}}%
+    \hspace{\railgap}}\gdef\brief@dcode{}}
+\titleformat{\subsection}[runin]{\normalfont}{}{0pt}{\brief@sub}
+\titlespacing*{\subsection}{0pt}{16pt plus 3pt minus 2pt}{0pt}
+
+% Margin note: a quiet label in the rail beside a paragraph.
+%   \railnote{Recommendation}{text}   (text is set in the medium weight)
+\newcommand\raillabel[1]{\leavevmode\brief@rail{\parbox[t]{\railw}{\raggedright
+  \brieffig\fontsize{8.2}{11}\selectfont\color{dbfSteel}#1}\hspace{\railgap}}}
+\newcommand\railnote[2]{\par\raillabel{#1}{\briefmed #2}\par}
+
+% ---------------------------------------------------------------------
+%  Captions: label on its own line, takeaway sentence below
+% ---------------------------------------------------------------------
+\DeclareCaptionLabelFormat{brief}{{\briefmed\fontsize{8.2}{11}\selectfont
+  \color{dbfInk}#1~#2}}
+\DeclareCaptionLabelSeparator{brief}{\par\vspace{2.5pt}}
+\DeclareCaptionFont{brieftext}{\brieffig\fontsize{8.2}{11.4}\selectfont\color{dbfGraphite}}
+\captionsetup{format=dbf, labelformat=brief, labelsep=brief, font=brieftext,
+  justification=raggedright, singlelinecheck=false, skip=0pt}
+\captionsetup[figure]{name=Figure}
+\captionsetup[table]{name=Table, position=top}
+
+% Column figure, caption in the rail:  \railfig[pos]{file}{caption}{label}
+\NewDocumentCommand\railfig{O{t} m m m}{%
+  \begin{figure}[#1]\makebox[\textwidth][r]{%
+    \begin{minipage}[b]{\railw}\caption{#3}\label{#4}\end{minipage}%
+    \hspace{\railgap}%
+    \begin{minipage}[b]{\textwidth}\includegraphics{#2}\end{minipage}}%
+  \end{figure}}
+% Full-width figure, caption under the text column
+\NewDocumentCommand\widefig{O{t} m m m}{%
+  \begin{figure}[#1]\makebox[\textwidth][r]{\begin{minipage}{\fullw}%
+    \includegraphics{#2}\par\vspace{7pt}%
+    \hspace*{\railoff}\begin{minipage}{\bodyw}\caption{#3}\label{#4}\end{minipage}%
+  \end{minipage}}\end{figure}}
+% Table with its caption in the rail:  \begin{railtable}[pos]{caption}{label} ... \end{railtable}
+\NewDocumentEnvironment{railtable}{O{t} m m +b}{%
+  \begin{table}[#1]\makebox[\textwidth][r]{%
+    \begin{minipage}[t]{\railw}\vspace{0pt}\caption{#2}\label{#3}\end{minipage}%
+    \hspace{\railgap}%
+    \begin{minipage}[t]{\textwidth}\vspace{0pt}#4\end{minipage}}%
+  \end{table}}{}
+% Full-width table, caption above it under the text column
+\NewDocumentEnvironment{widetable}{O{t} m m +b}{%
+  \begin{table}[#1]\makebox[\textwidth][r]{\begin{minipage}{\fullw}%
+    \hspace*{\railoff}\begin{minipage}{\bodyw}\caption{#2}\label{#3}\end{minipage}%
+    \par\vspace{7pt}#4\end{minipage}}\end{table}}{}
+
+% ---------------------------------------------------------------------
+%  Tables: house hairlines, sentence-case medium header on Mist
+% ---------------------------------------------------------------------
+\newcommand\brief@thead{\briefmed\fontsize{7.8}{9.6}\selectfont}
+\NewTblrEnviron{brieftable}
+\SetTblrInner[brieftable]{
+  rowsep=3pt, colsep=5pt, stretch=0,
+  cells={font=\brieffig\fontsize{8.4}{11}\selectfont},
+  row{1}={bg=dbfMist, fg=dbfGraphite, font=\brief@thead, abovesep=4pt, belowsep=3.5pt},
+  hline{1}={0.6pt,dbfInk}, hline{2}={0.4pt,dbfGraphite}, hline{Z}={0.6pt,dbfInk},
+  hline{3-Y}={0.3pt,dbfMist},
+}
+\newcommand\brieftotal{\brieffig\fontsize{8.4}{11}\selectfont\bfseries}
+
+% Instrument strip: \briefreadout{label}{value}{unit} cells in a tblr row
+\newcommand\briefreadout[3]{%
+  {\brieffig\fontsize{7.6}{10}\selectfont\color{dbfSteel}#1}\\[1pt]
+  {\brieflight\fontsize{19}{22}\selectfont\color{dbfInk}#2}%
+  \ifx\relax#3\relax\else\hspace{0.18em}{\brieffig\fontsize{8}{10}\selectfont\color{dbfSteel}#3}\fi}
+
+% ---------------------------------------------------------------------
+%  Running head and foot (sentence case, extended over the rail)
+% ---------------------------------------------------------------------
+\newcommand\brief@run[1]{{\brieffig\fontsize{7.6}{9}\selectfont\color{dbfGraphite}#1}}
+\newcommand\brief@runs[1]{{\brieffig\fontsize{7.6}{9}\selectfont\color{dbfSteel}#1}}
+\newcommand\brief@gap{\hspace{1.6em}}
+\fancypagestyle{dbf}{%
+  \fancyhf{}%
+  \fancyheadoffset[L]{\railoff}\fancyfootoffset[L]{\railoff}%
+  \fancyhead[L]{\brief@run{\dbf@doctitle}}%
+  \fancyhead[R]{\brief@runs{\dbf@doctype\brief@gap Revision \dbf@rev}}%
+  \fancyfoot[L]{\brief@runs{\dbf@docid\brief@gap\dbf@date}}%
+  \fancyfoot[R]{\brief@runs{Page \thepage\ of \getpagerefnumber{LastPage}}}%
+  \renewcommand\headrulewidth{0.4pt}%
+  \renewcommand\headrule{{\color{dbfMist}\hrule height\headrulewidth width\headwidth}\vskip-\headrulewidth}%
+  \renewcommand\footrulewidth{0pt}}
+\pagestyle{dbf}
+
+% ---------------------------------------------------------------------
+%  Cover: full-bleed ink page, title, decision register, document control
+%    \briefcover{deck}{register rows}{control cells}
+%  Coordinates are inches from the top-left corner of the page.
+% ---------------------------------------------------------------------
+\newcommand\brief@teamline{%
+  \long\def\brief@tmp{[TEAM NAME]}%
+  \ifx\dbfteamname\brief@tmp\else\dbfteamname\hspace{1.4em}\fi}
+\newcommand\brief@cover[3]{%
+  \setlength\unitlength{1in}%
+  \put(0,-11){\color{dbfInk}\rule{\paperwidth}{\paperheight}}%
+  \put(0.75,-0.80){\makebox[0pt][l]{\brief@cv{dbfFog}{8}{\brief@teamline\dbfprogram}}}%
+  \put(7.75,-0.80){\makebox[0pt][r]{\brief@cv{dbfFog}{8}{\dbf@doctype}}}%
+  \put(0.75,-0.98){\color{dbfGraphite}\rule{7in}{0.4pt}}%
+  \put(0.75,-2.55){\parbox[t]{7in}{\raggedright\brieflight\fontsize{40}{43}\selectfont
+    \color{white}Sizing and\\Configuration Decisions}}%
+  \put(0.75,-4.22){\parbox[t]{4.7in}{\raggedright\brieffig\fontsize{11}{16}\selectfont
+    \color{dbfMist}#1}}%
+  \put(0.75,-6.55){\makebox[0pt][l]{\brief@cv{dbfFog}{8}{Decisions in this brief}}}%
+  \put(0.75,-6.70){\color{dbfGraphite}\rule{7in}{0.4pt}}%
+  #2%
+  \put(0.75,-9.42){\color{dbfGraphite}\rule{7in}{0.4pt}}%
+  \put(0.75,-9.62){\parbox[t]{7in}{#3}}}
+\newcommand\brief@cv[3]{{\brieffig\fontsize{#2}{#2}\selectfont\color{#1}#3}}
+% One register row: \briefreg{column 0|1}{row 0-5}{D1}{Wing area and planform}
+\newcommand\briefreg[4]{%
+  \put(\fpeval{0.75+#1*3.62},\fpeval{-6.98-#2*0.385}){\makebox[0pt][l]{%
+    \makebox[0.48in][l]{\brief@cv{dbfSteel}{8.6}{#3}}\brief@cv{white}{9.6}{#4}}}%
+  \put(\fpeval{0.75+#1*3.62},\fpeval{-7.115-#2*0.385}){\color{dbfGraphite}\rule{3.38in}{0.3pt}}}
+% One document-control cell: \briefctl{width}{label}{value}
+\newcommand\briefctl[3]{%
+  \parbox[t]{#1}{\raggedright\brief@cv{dbfFog}{7.6}{#2}\par\vspace{5pt}%
+    \brief@cv{white}{9.4}{#3}}}
+\NewDocumentCommand\briefcover{+m +m +m}{%
+  \AddToHookNext{shipout/background}{\brief@cover{#1}{#2}{#3}}%
+  \thispagestyle{empty}\null\clearpage}
+\makeatother
+\endinput
