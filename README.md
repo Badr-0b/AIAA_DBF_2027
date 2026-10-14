@@ -21,6 +21,9 @@ testing/                    Test cards TC-01 to TC-04 (printable PDFs). Run ./bu
 procurement/                Purchase requests: CSV source, PDF and .xlsx. Run ./build.sh
 design-system/              House style for ALL team documents (class, fonts, plot style, tools)
 rules/                      Official 2026-27 rules (draft) + proposal scoring rubric screenshot
+analysis/                   Mission math, studies and trades (Python). See analysis/README.md
+decisions/                  Decision briefs for the team (DB-01). Run ./build.sh
+SOURCES.md                  Every source behind any number, with links (generated: python analysis/data/sources_index.py)
 reference/                  Context from past years
   past_proposals/           Top-3 scoring proposals from 2025-26 (RMIT, UC San Diego, Arkansas)
 assets/branding/            Logos for reports/drawings

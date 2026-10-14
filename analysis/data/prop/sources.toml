@@ -1,0 +1,243 @@
+# Propulsion source registry (Script 3b). Every value in analysis/data/prop/ cites
+# one of these ids. fetch_prop.py downloads each url into
+# analysis/data/raw/prop/<id>.<ext> (gitignored), records the SHA-256 in
+# sources.lock, and writes raw/prop/<id>.txt (the page's visible text, or
+# pdftotext -layout) for verify_prop.py to check every quoted value against.
+#
+# Primary sources only: the publisher of a document is the authority for it.
+#   kind      zip | pdf | html | json   (checked by magic bytes or content)
+#   referer   sent with the request (APC serves files only to a browser session)
+#   nature    what the data is: COMPUTED (a model's output), MEASURED (a test),
+#             SPEC (a manufacturer's rating), RULE, STATEMENT
+# Read on 14 Oct 2026 unless stated.
+
+# ---------------------------------------------------------------------------
+# Propellers. APC publishes computed performance for every propeller it makes;
+# the UIUC Propeller Data Site publishes wind-tunnel measurements of a subset.
+# ---------------------------------------------------------------------------
+[[source]]
+id = "apc-perfiles-202602"
+title = "APC Propeller Performance Data, PERFILES_WEB-202602 (all PER3 files)"
+publisher = "Landing Products Inc. (APC Propellers)"
+url = "https://www.apcprop.com/wp-content/uploads/2026/02/PERFILES_WEB-202602.zipx"
+kind = "zip"
+referer = "https://www.apcprop.com/technical-information/file-downloads/"
+nature = "COMPUTED"
+
+[[source]]
+id = "apc-performance-page"
+title = "APC Performance Data page (method statement)"
+publisher = "Landing Products Inc. (APC Propellers)"
+url = "https://www.apcprop.com/technical-information/performance-data/"
+kind = "html"
+nature = "STATEMENT"
+
+[[source]]
+id = "apc-rpm-limits-rev5"
+title = "APC Propeller Speed Specification, Rev 5, 23 Mar 2022"
+publisher = "Landing Products Inc. (APC Propellers)"
+url = "https://www.apcprop.com/wp-content/uploads/2022/03/APC-Propeller-RPM-Limits-rev5.pdf"
+kind = "pdf"
+referer = "https://www.apcprop.com/technical-information/file-downloads/"
+nature = "SPEC"
+
+[[source]]
+id = "apc-price-list-202602"
+title = "APC Propeller Retail Price List, PROP-PRICE-LIST_202602"
+publisher = "Landing Products Inc. (APC Propellers)"
+url = "https://www.apcprop.com/wp-content/uploads/2026/02/PROP-PRICE-LIST_202602.xlsx"
+kind = "xlsx"
+referer = "https://www.apcprop.com/technical-information/file-downloads/"
+nature = "PRICE"
+
+[[source]]
+id = "uiuc-propdb-zip"
+title = "UIUC Propeller Database, Volumes 1-4 (download/UIUC-propDB.zip)"
+publisher = "UIUC Applied Aerodynamics Group (Brandt, Deters, Ananda, Dantsker, Selig)"
+url = "https://m-selig.ae.illinois.edu/props/download/UIUC-propDB.zip"
+kind = "zip"
+nature = "MEASURED"
+
+[[source]]
+id = "uiuc-propdb-vol4-page"
+title = "UIUC Propeller Database - Volume 4 (APC Thin Electric, 12-21 in)"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/props/volume-4/propDB-volume-4.html"
+kind = "html"
+nature = "STATEMENT"
+
+[[source]]
+id = "uiuc-vol4-paper"
+title = "Dantsker, Caccamo, Deters, Selig, Performance Testing of APC Electric Fixed-Blade UAV Propellers, AIAA Paper 2022-4020"
+publisher = "AIAA (author copy, UIUC)"
+url = "https://m-selig.ae.illinois.edu/pubs/DantskerCaccamoDetersSelig-2022-AIAA-Paper-2022-4020-APCEPropTestsVol4.pdf"
+kind = "pdf"
+nature = "MEASURED"
+
+# ---------------------------------------------------------------------------
+# Motors. T-Motor publishes, per Kv winding, a spec table and a measured test
+# table (voltage, current, power, RPM, torque, thrust) on each product page.
+# The -B variants of the AT5220/AT5230 carry identical tables and are omitted.
+# ---------------------------------------------------------------------------
+[[source]]
+id = "tmotor-at4120"
+title = "T-Motor AT4120 Long Shaft fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at4120-long-shaft-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at4125"
+title = "T-Motor AT4125 Long Shaft fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at4125-long-shaft-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at4130"
+title = "T-Motor AT4130 Long Shaft fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at4130-long-shaft-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at5220a"
+title = "T-Motor AT5220-A fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at5220-a-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at5230a"
+title = "T-Motor AT5230-A fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at5230-a-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at5330a"
+title = "T-Motor AT5330-A fixed-wing motor (spec)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at5330-a-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "tmotor-at7215"
+title = "T-Motor AT7215 fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at7215-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at7224"
+title = "T-Motor AT7224 fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at7224-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at8020"
+title = "T-Motor AT8020 fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at8020-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at8025"
+title = "T-Motor AT8025 fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at8025-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "tmotor-at8030"
+title = "T-Motor AT8030 fixed-wing motor (spec and test data)"
+publisher = "T-Motor (Jiangxi Xintuo Enterprise Co.)"
+url = "https://store.tmotor.com/product/at8030-brushless-outdoor-fixed-wing-motor.html"
+kind = "html"
+nature = "SPEC+MEASURED"
+
+[[source]]
+id = "sunnysky-x7015-30cc"
+title = "SunnySky X7015-30cc X-Fixed Wing Series-III (technical parameters)"
+publisher = "SunnySky (Zhongshan Langyu Model Co.)"
+url = "http://en.rcsunnysky.com/x-fixedwingseries/1147.html"
+kind = "html"
+nature = "SPEC"
+
+# ---------------------------------------------------------------------------
+# Propulsion batteries (manufacturer product pages).
+# ---------------------------------------------------------------------------
+[[source]]
+id = "tp-tp2250-6sr70"
+title = "Thunder Power RC TP2250-6SR70 (2250 mAh 6S Rampage 70C)"
+publisher = "Thunder Power RC"
+url = "https://www.thunderpowerrc.com/products/tp2250-6sr70"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "tp-tp4400-6sr70"
+title = "Thunder Power RC TP4400-6SR70 (4400 mAh 6S Rampage 70C)"
+publisher = "Thunder Power RC"
+url = "https://www.thunderpowerrc.com/products/tp4400-6sr70"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "tp-tp3850-7sr70"
+title = "Thunder Power RC TP3850-7SR70 (3850 mAh 7S Rampage 70C)"
+publisher = "Thunder Power RC"
+url = "https://www.thunderpowerrc.com/products/tp3850-7sr70"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "tp-tp3300-8sr70"
+title = "Thunder Power RC TP3300-8SR70 (3300 mAh 8S Rampage 70C)"
+publisher = "Thunder Power RC"
+url = "https://www.thunderpowerrc.com/products/tp3300-8sr70"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "tp-tp3300-8se55"
+title = "Thunder Power RC TP3300-8SE55 (3300 mAh 8S Elite 55C)"
+publisher = "Thunder Power RC"
+url = "https://www.thunderpowerrc.com/products/tp3300-8se55"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "maxamps-8s-3250"
+title = "MaxAmps LiPo 3250mAh 8S 29.6v Battery Pack"
+publisher = "MaxAmps.com"
+url = "https://maxamps.com/products/lipo-3250-8s-29-6v-battery-pack"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "maxamps-12s-2000"
+title = "MaxAmps LiPo 2000mAh 12S 44.4v Battery Pack"
+publisher = "MaxAmps.com"
+url = "https://maxamps.com/products/lipo-2000-12s-44-4v-battery-pack"
+kind = "html"
+nature = "SPEC"
+
+[[source]]
+id = "maxamps-13s-2000"
+title = "MaxAmps LiPo 2000mAh 13S 48.1v Battery Pack"
+publisher = "MaxAmps.com"
+url = "https://maxamps.com/products/lipo-2000-13s-48-1v-battery-pack"
+kind = "html"
+nature = "SPEC"

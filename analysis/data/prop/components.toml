@@ -1,0 +1,175 @@
+# Propulsion component data for Script 3b: batteries, the motors whose pages are
+# not parsed by code, and the method statements the model relies on. Every row
+# is checked by verify_prop.py: the quote must be in the cached text of its
+# source (analysis/data/raw/prop/<source>.txt, whitespace-normalised) and the
+# value must be inside the quote. SI conversion happens in verify_prop.py only.
+#
+# rows = [param, value, unit, quote, where]
+#   value  exactly as printed on the page
+#   where  which cell / column, when the quote is a table run
+# T-Motor AT motors are NOT typed here: propdata.py parses their spec tables
+# and measured test tables straight from the cached pages (tests pin values).
+# Read on 14 Oct 2026.
+
+# ---------------------------------------------------------------------------
+# Propulsion batteries. Rules Sec. 3.2.3.2: <= 100 Wh rated (capacity x rated
+# voltage) and fuse rating <= the pack's maximum continuous current (capacity x
+# C, or the labelled maximum), up to 100 A. Masses: Thunder Power labels its
+# figures "*estimate only*"; MaxAmps states them flatly.
+# ---------------------------------------------------------------------------
+[[battery]]
+id = "tp3300-8sr70"
+name = "Thunder Power RC TP3300-8SR70 (Rampage 70C)"
+source = "tp-tp3300-8sr70"
+rows = [
+  ["capacity", "3300", "mAh", "3300mAh 8-Cell/8S 29.6V Rampage Series 70C LiPo", "title"],
+  ["cells", "8", "cells", "3300mAh 8-Cell/8S 29.6V Rampage Series 70C LiPo", "title"],
+  ["c_cont", "70", "C", "Max Cont. Discharge: 70C", ""],
+  ["i_burst", "462", "A", "Max Burst Current: 462A", ""],
+  ["mass", "687", "g", "Weight (g) *estimate only*: 687 g", "manufacturer estimate"],
+  ["size", "53 x 43 x 141", "text", "Dimensions (mm) *estimate only*: 53 x 43 x 141", "mm"],
+]
+
+[[battery]]
+id = "tp3300-8se55"
+name = "Thunder Power RC TP3300-8SE55 (Elite 55C)"
+source = "tp-tp3300-8se55"
+rows = [
+  ["capacity", "3300", "mAh", "3300mAh 8-Cell/8S 29.6V Elite 55C LiPo", "title"],
+  ["cells", "8", "cells", "3300mAh 8-Cell/8S 29.6V Elite 55C LiPo", "title"],
+  ["c_cont", "55", "C", "Max Cont. Discharge: 55C", ""],
+  ["i_burst", "363", "A", "Max Burst Current: 363A", ""],
+  ["mass", "674", "g", "Weight (g) *estimate only*: 674 g", "manufacturer estimate"],
+  ["size", "53 x 43 x 137", "text", "Dimensions (mm) *estimate only*: 53 x 43 x 137", "mm"],
+]
+
+[[battery]]
+id = "tp3850-7sr70"
+name = "Thunder Power RC TP3850-7SR70 (Rampage 70C)"
+source = "tp-tp3850-7sr70"
+rows = [
+  ["capacity", "3850", "mAh", "3850mAh 7-Cell/7S 25.9V Rampage Series 70C LiPo, Split w/Interconnect", "title"],
+  ["cells", "7", "cells", "3850mAh 7-Cell/7S 25.9V Rampage Series 70C LiPo, Split w/Interconnect", "title"],
+  ["c_cont", "70", "C", "Max Cont. Discharge: 70C", ""],
+  ["i_burst", "539", "A", "Max Burst Current: 539A", ""],
+  ["mass", "700", "g", "Weight (g) *estimate only*: 700 g", "manufacturer estimate"],
+  ["size", "54 x 44 x 138", "text", "Dimensions (mm) *estimate only*: 54 x 44 x 138", "mm"],
+]
+
+[[battery]]
+id = "tp2250-6sr70"
+name = "Thunder Power RC TP2250-6SR70 (Rampage 70C), twin-layout pack"
+source = "tp-tp2250-6sr70"
+twin_only = true
+rows = [
+  ["capacity", "2250", "mAh", "2250mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo", "title"],
+  ["cells", "6", "cells", "2250mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo", "title"],
+  ["c_cont", "70", "C", "Max Cont. Discharge: 70C", ""],
+  ["i_burst", "315", "A", "Max Burst Current: 315A", ""],
+  ["mass", "347", "g", "Weight (g) *estimate only*: 347 g", "manufacturer estimate"],
+  ["size", "52 x 34 x 102", "text", "Dimensions (mm) *estimate only*: 52 x 34 x 102", "mm"],
+]
+
+[[battery]]
+id = "tp4400-6sr70"
+name = "Thunder Power RC TP4400-6SR70 (Rampage 70C)"
+source = "tp-tp4400-6sr70"
+rows = [
+  ["capacity", "4400", "mAh", "4400mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo", "title"],
+  ["cells", "6", "cells", "4400mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo", "title"],
+  ["c_cont", "70", "C", "Max Cont. Discharge: 70C", ""],
+  ["i_burst", "616", "A", "Max Burst Current: 616A", ""],
+  ["mass", "691", "g", "Weight (g) *estimate only*: 691 g", "manufacturer estimate"],
+  ["size", "46 x 45 x 155", "text", "Dimensions (mm) *estimate only*: 46 x 45 x 155", "mm"],
+]
+
+[[battery]]
+id = "maxamps-8s-3250"
+name = "MaxAmps LiPo 3250mAh 8S 29.6v"
+source = "maxamps-8s-3250"
+rows = [
+  ["capacity", "3250", "mAh", "Capacity (milliamps - amp hours) 3250mAh - 3.25Ah", ""],
+  ["cells", "8", "cells", "Nominal voltage 8S 29.6v", ""],
+  ["i_cont", "74.75", "A", "Maximum continuous discharge 74.75 amps", ""],
+  ["energy", "96.2", "Wh", "Watt hours 96.2Wh", ""],
+  ["mass", "590", "g", "Weight 20.81oz(590g)", ""],
+  ["v_land", "28", "V", "Recommended landing voltage(air) 28v", ""],
+  ["v_max", "33.6", "V", "Maximum voltage 33.6v", "full charge, 4.2 V per cell"],
+]
+
+[[battery]]
+id = "maxamps-12s-2000"
+name = "MaxAmps LiPo 2000mAh 12S 44.4v"
+source = "maxamps-12s-2000"
+rows = [
+  ["capacity", "2000", "mAh", "Capacity (milliamps - amp hours) 2000mAh - 2Ah", ""],
+  ["cells", "12", "cells", "Nominal voltage 12S 44.4v", ""],
+  ["i_cont", "54", "A", "Maximum continuous discharge 54 amps", ""],
+  ["energy", "88.8", "Wh", "Watt hours 88.8 Wh", ""],
+  ["mass", "586", "g", "Weight 20.67oz(586g)", ""],
+  ["v_land", "42", "V", "Recommended landing voltage(air) 42v", ""],
+]
+
+[[battery]]
+id = "maxamps-13s-2000"
+name = "MaxAmps LiPo 2000mAh 13S 48.1v"
+source = "maxamps-13s-2000"
+rows = [
+  ["capacity", "2000", "mAh", "Capacity (milliamps - amp hours) 2000mAh - 2Ah", ""],
+  ["cells", "13", "cells", "Nominal voltage 13S 48.1v", ""],
+  ["i_cont", "54", "A", "Maximum continuous discharge 54 amps", ""],
+  ["energy", "96.2", "Wh", "Watt hours 96.2 Wh", ""],
+  ["mass", "631", "g", "Weight 22.26oz(631g)", ""],
+  ["v_land", "45.5", "V", "Recommended landing voltage(air) 45.5", ""],
+]
+
+# ---------------------------------------------------------------------------
+# Motors whose pages are not parsed by code. Column order in the SunnySky
+# table: 7015KV200, 7015KV215, 7015KV245, 7015KV270 (the 270 kV value is last).
+# ---------------------------------------------------------------------------
+[[motor]]
+id = "sunnysky-x7015-270"
+name = "SunnySky X7015-30cc, 270 kV winding"
+source = "sunnysky-x7015-30cc"
+rows = [
+  ["kv", "270", "rpm/V", "Motor Model / KV 7015KV200 7015KV215 7015KV245 7015KV270", "4th column"],
+  ["rm", "12.1", "mOhm", "Internal resistance 23.7mΩ 16.6mΩ 16.6mΩ 12.1mΩ", "4th column (KV270)"],
+  ["mass", "606", "g", "Motor weight(wire included) 597g 603g 604g 606g", "4th column (KV270)"],
+  ["i0", "2.25", "A", "No-load current 1.4A 1.7A 2.2A 2.25A", "4th column (KV270); test voltage not stated"],
+  ["i_max", "111", "A", "Maximum continuous current 100A/30s 100A/30s 110A/30s 111A/30s", "4th column (KV270), 30 s rating"],
+]
+
+# ---------------------------------------------------------------------------
+# Statements the model relies on.
+# ---------------------------------------------------------------------------
+[[statement]]
+id = "apc-computed"
+source = "apc-performance-page"
+rows = [
+  ["method", "computational method", "text", "The propeller blade loads, and resulting performance data, are generated using a specialized computational method that is based on Vortex theory.", "APC data are COMPUTED"],
+]
+
+[[statement]]
+id = "apc-rpm-limit-e"
+source = "apc-rpm-limits-rev5"
+rows = [
+  ["rpm_limit_e", "150,000", "rpm*in", "Thin Electric (E) Propellers and Polycarbonate (Durable) FPV Propellers Maximum RPM = 150,000/prop diameter (inches)", "max RPM = 150000 / D(in)"],
+]
+
+[[statement]]
+id = "uiuc-vol4"
+source = "uiuc-propdb-vol4-page"
+rows = [
+  ["scope", "17 APC Thin Electric", "text", "This webpage includes wind tunnel measurements for 17 APC Thin Electric 2-bladed, fixed propellers with diameters of 12 to 21 in", ""],
+  ["diameter_basis", "true diameter", "text", "Coefficients are based on the propeller true diameter", "no geometry published for Vol. 4: basis treated as nominal (see README)"],
+]
+
+[[statement]]
+id = "uiuc-vol4-method"
+source = "uiuc-vol4-paper"
+rows = [
+  ["rpm_range", "1,000 to 7,000 RPM", "text", "The propellers were tested at rotation rates of 1,000 to 7,000 RPM", ""],
+  ["v_range", "8 to 80 ft/s", "text", "advancing flows of 8 to 80 ft/s", "2.4-24.4 m/s"],
+  ["calibration", "1% or less", "text", "any change in the slopes were typically 1% or less", "load and torque cell calibration drift"],
+  ["vintage", "2019 and 2021", "text", "all of the propellers tested were purchased between 2019 and 2021", ""],
+]

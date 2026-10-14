@@ -1,0 +1,44 @@
+point,year,team,param,value,unit,value_si,unit_si,source,page,verified,quote
+washu22-static,2022,Washington University in St. Louis,rpm,4953,rpm,4953.0,rpm,aiaa-dbf-2022-reports,175,text,RPM 4836 4953
+washu22-static,2022,Washington University in St. Louis,thrust,10.05,kgf,98.5568325,N,aiaa-dbf-2022-reports,175,text,Thrust [Kgf] 10.821 10.05
+washu22-static,2022,Washington University in St. Louis,current,120.84,A,120.84,A,aiaa-dbf-2022-reports,175,text,Max Current [A] 112.94 120.84
+washu22-static,2022,Washington University in St. Louis,power_elec,2658.48,W,2658.48,W,aiaa-dbf-2022-reports,175,text,Electrical Power [W] 2258.5 2658.48
+washu22-static,2022,Washington University in St. Louis,hardware,APC 24x12,text,,,aiaa-dbf-2022-reports,159,text,The propulsion system consists of a SunnySky X7025-30cc-270 motor spinning an APC 24x12 prop
+washu22-static,2022,Washington University in St. Louis,hardware,3000 mAh 6S 75C,text,,,aiaa-dbf-2022-reports,159,text,3000 mAh 6S 75C
+washu22-static,2022,Washington University in St. Louis,hardware,4500 mAh 6s 45/90C,text,,,aiaa-dbf-2022-reports,159,text,4500 mAh 6s 45/90C
+mit22-m1-static,2022,Massachusetts Institute of Technology,thrust,24.7,N,24.7,N,aiaa-dbf-2022-reports,114,text,Static 2.52 24.7 446
+mit22-m1-static,2022,Massachusetts Institute of Technology,power_elec,446,W,446.0,W,aiaa-dbf-2022-reports,114,text,Static 2.52 24.7 446
+mit22-m1-static,2022,Massachusetts Institute of Technology,condition,full-throttle,text,,,aiaa-dbf-2022-reports,114,text,Static: A full-throttle test at zero airspeed
+mit22-m1-static,2022,Massachusetts Institute of Technology,hardware,15x10,text,,,aiaa-dbf-2022-reports,114,text,Both motors were tested using a 15x10 propeller
+mit22-m1-static,2022,Massachusetts Institute of Technology,hardware,APC 15x10E,text,,,aiaa-dbf-2022-reports,95,text,two counter-rotating APC 15x10E and two Cobra C-4130-20 300kv motors
+mit22-m1-static,2022,Massachusetts Institute of Technology,hardware,Turnigy Nano-tech 45C 4500mAh,text,,,aiaa-dbf-2022-reports,88,text,Turnigy Nano-tech 45C 4500mAh
+mit22-m1-cruise,2022,Massachusetts Institute of Technology,thrust,15.0,N,15.0,N,aiaa-dbf-2022-reports,114,text,Cruise 1.53 15.0 446
+mit22-m1-cruise,2022,Massachusetts Institute of Technology,power_elec,446,W,446.0,W,aiaa-dbf-2022-reports,114,text,Cruise 1.53 15.0 446
+mit22-m1-cruise,2022,Massachusetts Institute of Technology,v_air,40,mph,17.8816,m/s,aiaa-dbf-2022-reports,114,text,Cruise: Full throttle at 40mph airspeed
+mit22-m2-static,2022,Massachusetts Institute of Technology,thrust,25.8,N,25.8,N,aiaa-dbf-2022-reports,114,text,Static 2.63 25.8 473
+mit22-m2-static,2022,Massachusetts Institute of Technology,power_elec,473,W,473.0,W,aiaa-dbf-2022-reports,114,text,Static 2.63 25.8 473
+mit22-m2-cruise,2022,Massachusetts Institute of Technology,thrust,15.5,N,15.5,N,aiaa-dbf-2022-reports,114,text,Cruise 1.58 15.5 483
+mit22-m2-cruise,2022,Massachusetts Institute of Technology,power_elec,483,W,483.0,W,aiaa-dbf-2022-reports,114,text,Cruise 1.58 15.5 483
+mit22-m2-cruise,2022,Massachusetts Institute of Technology,v_air,40,mph,17.8816,m/s,aiaa-dbf-2022-reports,114,text,Cruise: Full throttle at 40mph airspeed
+uw23-16x12,2023,University of Washington,rpm,8914,rpm,8914.0,rpm,aiaa-dbf-2023-reports,58,page image,"IMAGE: Table 26 Static Propulsion Test Results, APC 16X12E, Max RPM"
+uw23-16x12,2023,University of Washington,thrust,15.2,lbf,67.612968552,N,aiaa-dbf-2023-reports,58,page image,"IMAGE: Table 26 Static Propulsion Test Results, APC 16X12E, Max Static Thrust (lb)"
+uw23-16x12,2023,University of Washington,hardware,T-Motor AT4140 410KV,text,,,aiaa-dbf-2023-reports,58,text,the APC 16X12E and 17X10E propellers were evaluated using the T-Motor AT4140 410KV motor and the SMC 8S 3200 mAh 75C battery
+uw23-17x10,2023,University of Washington,rpm,8829,rpm,8829.0,rpm,aiaa-dbf-2023-reports,58,page image,"IMAGE: Table 26 Static Propulsion Test Results, APC 17X10E, Max RPM"
+uw23-17x10,2023,University of Washington,thrust,18.3,lbf,81.402455559,N,aiaa-dbf-2023-reports,58,page image,"IMAGE: Table 26 Static Propulsion Test Results, APC 17X10E, Max Static Thrust (lb)"
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",energy,86,Wh,86.0,Wh,aiaa-dbf-2023-reports,122,page image,"IMAGE: Table 8-3 Complete aircraft design versus actual performance, M2, Energy Consumption [Wh], Actual"
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",power_avg,1243,W,1243.0,W,aiaa-dbf-2023-reports,122,page image,"IMAGE: Table 8-3, M2, Average In-Air Power [W], Actual"
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",time,249,s,249.0,s,aiaa-dbf-2023-reports,122,page image,"IMAGE: Table 8-3, M2, Mission Time [s], Actual"
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",lap_time,42,s,42.0,s,aiaa-dbf-2023-reports,122,page image,"IMAGE: Table 8-3, M2, Air Lap Time [s], Actual"
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",v_air,89,ft/s,27.1272,m/s,aiaa-dbf-2023-reports,122,page image,"IMAGE: Table 8-3, M2, Cruise Airspeed [ft/s], Actual"
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",mass,29.24,lb,13.263040899,kg,aiaa-dbf-2023-reports,122,page image,"IMAGE: Table 8-3, M2, Gross Takeoff Weight [lb], Actual"
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",hardware,T-Motor AT 7215 220kV,text,,,aiaa-dbf-2023-reports,88,text,The T-Motor AT 7215 220kV motor was ultimately selected
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",hardware,12-cell,text,,,aiaa-dbf-2023-reports,88,text,a 12-cell battery with 3.7 V per cell was selected
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",hardware,2250 mAh,text,,,aiaa-dbf-2023-reports,88,text,a 2250 mAh capacity was selected
+erau23-m2-flight,2023,"Embry-Riddle Aeronautical University, Daytona Beach",hardware,APC 20x13E,text,,,aiaa-dbf-2023-reports,121,text,APC 20x15E APC 20x13E APC 20x15E
+uw23-resting-voltage,2023,University of Washington,v_cell_rest,3.7,V,3.7,V,aiaa-dbf-2023-reports,58,text,"With cells resting at 3.7V, it was deduced that there could be sufficient energy for the pilot to perform the landing lap"
+uw23-resting-voltage,2023,University of Washington,power,507,W,507.0,W,aiaa-dbf-2023-reports,58,text,the battery was proved to be capable of discharging at 507 Watts for the duration of the mission window
+erau-fuse-tests,2025,"Embry-Riddle Aeronautical University, Daytona Beach",fuse_135a,135 A for at least 60 seconds,text,,,aiaa-dbf-2025-reports,148,text,they could sustain a continuous current of 135 A for at least 60 seconds and endure up to 200 A for a maximum of two seconds
+erau23-fuse,2023,"Embry-Riddle Aeronautical University, Daytona Beach",fuse_135a,135 A,text,,,aiaa-dbf-2023-reports,120,text,the line at 135 A represents the maximum documented operational amperage that the fuse can endure for at least 60 s continuously
+uw23-fuse,2023,University of Washington,fuse_time,17 seconds,text,,,aiaa-dbf-2023-reports,58,text,the average time was approximately 17 seconds
+erau25-apc-high-rpm,2025,"Embry-Riddle Aeronautical University, Daytona Beach",observation,efficiency losses at high RPMs,text,,,aiaa-dbf-2025-reports,175,text,Initial tests with APC plastic propellers revealed efficiency losses at high RPMs
+usc24-thrust-vs-model,2024,University of Southern California,observation,20% higher,text,,,aiaa-dbf-2024-reports,56,text,Comparing static testing to QPROP and eCalc show the measured thrust was 20% higher than theoretical

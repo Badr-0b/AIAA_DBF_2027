@@ -93,6 +93,10 @@ class Params:
         self.time_cal = TIME_CAL
         self.clmax_factor = {}
         self.m_dr = SZ["dr"]["mass_kg"]
+        self.prop = None            # Script 3b PropulsionModel; None = the lumped eta model
+        self.pack_kg = None         # propulsion pack mass when a specific pack is chosen
+        self.m_prop_delta = 0.0     # motor mass minus the class mass inside the airframe fit
+        self.power_factor = 1.0     # uncertainty multiplier on Script 3b battery power
         self.__dict__.update(over)
 
     def airframe(self, s):
@@ -100,10 +104,40 @@ class Params:
 
     def empty(self, s):
         """Airframe plus the D&R mechanism, which flies in every mission (Sec. 3.1.2)."""
-        return self.airframe(s) + self.m_dr
+        return self.airframe(s) + self.m_dr + self.m_prop_delta
 
     def battery(self):
-        return SZ["battery"]["energy_wh"] / self.wh_per_kg
+        return self.pack_kg if self.pack_kg is not None else SZ["battery"]["energy_wh"] / self.wh_per_kg
+
+
+def with_propulsion(P, model, battery, motor_mass_delta=0.0):
+    """Params P switched to a Script 3b propulsion model: component battery power, the
+    chosen pack's mass and usable energy (usable fraction x its rated Wh)."""
+    P.prop, P.pack_kg, P.m_prop_delta = model, battery.mass * model.system.n, motor_mass_delta
+    P.e_usable = battery.energy_wh * model.system.n * SZ["battery"]["usable_fraction"]
+    return P
+
+
+def battery_power(P, V, B, s, cd0, k, m):
+    """Lap-mean battery power (W), turn power (W) and the power check, for every (mass,
+    speed, bank). Lumped model (P.prop None): mean shaft power / eta and the turn's
+    shaft power / eta <= fuse x pack voltage (exactly Script 3's s3.mission). Script 3b
+    model: component battery power x k_fl on the straights (n = 1) and the turns, and
+    the turn thrust within full-throttle thrust at the end-of-mission voltage."""
+    if P.prop is None:
+        _, p_mean, n, _ = s3.lap(P.rho, V, B, s, cd0, k, m, G0)
+        p_peak = s3.power_required(P.rho, V, s, cd0, k, m, n, G0) / P.eta
+        return p_mean / P.eta, p_peak, p_peak <= P.p_max
+    import s1_course as s1
+    r = s1.turn_radius(V, B, G0)
+    n = s1.load_factor(B)
+    turns = s1.TURN_ARC * r
+    straight = s1.lap_length(r, s1.STRAIGHTS_M) - turns
+    p1 = P.prop.p_batt(s3.drag(P.rho, V, s, cd0, k, m, 1.0, G0), V)
+    pn = P.prop.p_batt(s3.drag(P.rho, V, s, cd0, k, m, n, G0), V)
+    mean = P.power_factor * (p1 * straight + pn * turns) / (straight + turns)
+    ok = np.isfinite(mean)
+    return np.where(ok, mean, np.inf), np.where(ok, P.power_factor * pn, np.inf), ok
 
 
 def family(name, s, P=None):
@@ -133,10 +167,11 @@ def m2_search(name, s, P, fine=True):
     m = (P.empty(s) + P.battery() + pay)[:, None, None]
     V, B = v[None, :, None], bank[None, None, :]
     res = s3.mission(P.rho, V, B, s, cd0, k, m, RULES["missions"]["m2_laps"], P.eta, P.t_to, G0)
-    t_cal, e_cal = res["t"] * P.time_cal, res["e_wh"] * P.time_cal      # flown time base
+    p_mean, p_peak, ok_p = battery_power(P, V, B, s, cd0, k, m)
+    t_cal, e_cal = res["t"] * P.time_cal, p_mean * res["t"] / 3600.0 * P.time_cal   # flown time base
     ok = ((m < AIR["togw_max_kg"]) & (s3.stall_speed(P.rho, s, m, clf, G0) <= P.vs_max)
           & (res["cl_turn"] <= P.cl_margin * clc) & (res["n"] <= P.n_struct)
-          & (res["p_peak"] <= P.p_max) & (e_cal <= P.e_usable))
+          & ok_p & (e_cal <= P.e_usable))
     t = np.where(ok, t_cal, np.inf)
     flat = t.reshape(len(pay), -1)
     t_best = flat.min(axis=1)
@@ -147,7 +182,7 @@ def m2_search(name, s, P, fine=True):
     pick = lambda arr: float(np.broadcast_to(arr, t.shape)[i, jv, jb])
     best = {"payload": float(pay[i]), "rate": float(rate[i]), "t": float(t_best[i]), "v": float(v[jv]),
             "bank": float(bank[jb]), "n": pick(res["n"]), "e_wh": pick(e_cal),
-            "p_peak": pick(res["p_peak"]), "cl_turn": pick(res["cl_turn"]), "t_lap": pick(res["t_lap"]) * P.time_cal,
+            "p_peak": pick(p_peak), "cl_turn": pick(res["cl_turn"]), "t_lap": pick(res["t_lap"]) * P.time_cal,
             "mass": float(m[i, 0, 0]), "ar": ar, "e": e, "cd0": cd0,
             "v_stall": float(s3.stall_speed(P.rho, s, m[i, 0, 0], clf, G0))}
     best["binding"] = binding(best, P, clc)
@@ -158,7 +193,7 @@ def binding(b, P, clc):
     """Constraints within 3 % of their limit at the optimum."""
     out = []
     if b["e_wh"] >= 0.97 * P.e_usable: out.append("energy")
-    if b["p_peak"] >= 0.97 * P.p_max: out.append("peak power")
+    if P.prop is None and b["p_peak"] >= 0.97 * P.p_max: out.append("peak power")
     if b["v_stall"] >= 0.97 * P.vs_max: out.append("stall speed")
     if b["cl_turn"] >= 0.97 * P.cl_margin * clc: out.append("turn CL")
     if b["n"] >= 0.97 * P.n_struct: out.append("load factor")
@@ -205,10 +240,10 @@ def m3_search(name, s, m_sensor, P, stow_s=None, fine=True):
     limit = (window - stow)[:, None, None]
     t_first = P.t_to + t_lap
     laps = np.where(t_first > limit + EPS, 0, 1 + np.floor((limit - t_first) / t_lap + EPS))
-    e_wh = p_mean / P.eta * window / 3600.0
-    p_peak = s3.power_required(P.rho, V, s, cd0, k, m, n, G0) / P.eta
+    p_batt, _, ok_p = battery_power(P, V, B, s, cd0, k, m)
+    e_wh = p_batt * window / 3600.0
     ok = ((s3.stall_speed(P.rho, s, m, clf, G0) <= P.vs_max) & (cl <= P.cl_margin * clc) & (n <= P.n_struct)
-          & (p_peak <= P.p_max) & (e_wh <= P.e_usable))
+          & ok_p & (e_wh <= P.e_usable))
     best = np.where(ok, laps, 0).reshape(len(ms), -1).max(axis=1).astype(int)
     return int(best[0]) if np.ndim(m_sensor) == 0 else best
 
@@ -224,9 +259,10 @@ def m2_fixed(name, s, payload, P, fine=True):
     m = (P.empty(s) + P.battery() + pay)[:, None, None]
     V, B = v[None, :, None], bank[None, None, :]
     res = s3.mission(P.rho, V, B, s, cd0, k, m, RULES["missions"]["m2_laps"], P.eta, P.t_to, G0)
+    p_mean, _, ok_p = battery_power(P, V, B, s, cd0, k, m)
     ok = ((m < AIR["togw_max_kg"]) & (s3.stall_speed(P.rho, s, m, clf, G0) <= P.vs_max)
           & (res["cl_turn"] <= P.cl_margin * clc) & (res["n"] <= P.n_struct)
-          & (res["p_peak"] <= P.p_max) & (res["e_wh"] * P.time_cal <= P.e_usable))
+          & ok_p & (p_mean * res["t"] / 3600.0 * P.time_cal <= P.e_usable))
     t = np.where(ok, res["t"] * P.time_cal, np.inf).reshape(len(pay), -1).min(axis=1)
     return float(t[0]) if np.ndim(payload) == 0 else t
 

@@ -18,6 +18,8 @@ From the repo root (Git Bash or any shell):
 | `python analysis/trades.py` | Audit of the team's trade matrices (arithmetic, evidence, sensitivity-derived weights, robustness); inputs in `inputs/trades.toml` |
 | `python analysis/db01_data.py` | Numbers for decision brief DB-01 that no other report prints: stall-bound sweep, payload-unit table, M1 waiver (after Script 6); `decisions/build.sh` then builds the brief |
 | `python analysis/dr_trade.py` | Deploy-and-recover architecture trade, proposal Table 06: rules and physics screening, drive sizing, points at stake, pairwise comparison of every option, four decision lenses, Monte Carlo (after Script 6). Physics in `s5_tow.py` |
+| `python analysis/prop_validation.py` | Script 3b checked against measured data (APC vs UIUC wind tunnel, AIAA stands, T-Motor maps, ERAU 2023 flight); run before using any propulsion result |
+| `python analysis/prop_trade.py` | Propulsion trade (DB-01 D9, PR-01 B07-B10): every measured-map motor x APC prop x pack, mission scoring through Scripts 4/6, Monte Carlo, twin layout, prop diameter (about 6 min) |
 | `python analysis/s7_export.py` | Writes `proposal/data/analysis.tex`; `proposal/build.sh` runs it |
 
 A test whose function still raises `NotImplementedError` is **skipped** ("not
@@ -36,6 +38,8 @@ the team to defend.
 | `s1_course.py`, `s2_scoring.py` | Scripts 1-2: physics and scoring, checked by `tests/` |
 | `s3_performance.py` | Script 3: drag polar, power, lap and mission energy, efficiency calibration on flight data; checked by `tests/` |
 | `s4_sizing.py` | Script 4 (provisional): mass build-up from the data fit, constrained search over payload x speed x bank, 01 vs 02 |
+| `s3b_propulsion.py` | Script 3b (provisional): propeller (APC tables), motor + ESC (losses fitted to manufacturer-measured maps), battery, fuse; flight factor calibrated on ERAU 2023. Scripts 4/6 use it when `Params.prop` is set (`s4.with_propulsion`); the default stays the lumped eta |
+| `prop_validation.py`, `prop_trade.py` | Script 3b validation report and the propulsion trade |
 | `s6_studies.py` | Script 6 (provisional): total mission score of complete designs under uncertainty; sensitivities and trade weights; helpers checked by `tests/` |
 | `tests/` | Hand-checked expected values, derived independently of the code |
 | `common.py`, `run_all.py`, `figures.py`, `s7_export.py`, `check.py` | Tooling: inputs, runner, plots, export |
@@ -53,6 +57,7 @@ the team to defend.
 | `sizing.toml` | Scripts 3-4: battery, efficiency, drag areas, CLmax, stall and load-factor bounds, time calibration; each sourced or a labelled ESTIMATE with its sweep |
 | `studies.toml` | Script 6: grids, Monte Carlo ranges, tornado steps, attempt statistics. The reference point is computed (robust optimum), never chosen by hand |
 | `trades.toml` | The team's six trade matrices (Matrix_Tables/, 10 Oct), digitised verbatim, plus audit entries with evidence |
+| `propulsion.toml` | Script 3b: battery voltages and resistance, ESC, fuse, motor-mass reference, layout penalties, uncertainty bands; each ESTIMATE with its reasoning and range |
 | `dr_trade.toml` | Table 06 trade: drives (verified/reseller), part masses, screened concepts, failure modes with ranges and reasons, manufacturability judgments |
 
 Sources policy: a value is either read in a cited primary source on a stated

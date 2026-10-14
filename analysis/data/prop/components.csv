@@ -1,0 +1,63 @@
+kind,id,param,value,unit,value_si,unit_si,source,where,quote
+battery,tp3300-8sr70,capacity,3300,mAh,3.3,Ah,tp-tp3300-8sr70,title,3300mAh 8-Cell/8S 29.6V Rampage Series 70C LiPo
+battery,tp3300-8sr70,cells,8,cells,8.0,cells,tp-tp3300-8sr70,title,3300mAh 8-Cell/8S 29.6V Rampage Series 70C LiPo
+battery,tp3300-8sr70,c_cont,70,C,70.0,1/h,tp-tp3300-8sr70,,Max Cont. Discharge: 70C
+battery,tp3300-8sr70,i_burst,462,A,462.0,A,tp-tp3300-8sr70,,Max Burst Current: 462A
+battery,tp3300-8sr70,mass,687,g,0.687,kg,tp-tp3300-8sr70,manufacturer estimate,Weight (g) *estimate only*: 687 g
+battery,tp3300-8sr70,size,53 x 43 x 141,text,,,tp-tp3300-8sr70,mm,Dimensions (mm) *estimate only*: 53 x 43 x 141
+battery,tp3300-8se55,capacity,3300,mAh,3.3,Ah,tp-tp3300-8se55,title,3300mAh 8-Cell/8S 29.6V Elite 55C LiPo
+battery,tp3300-8se55,cells,8,cells,8.0,cells,tp-tp3300-8se55,title,3300mAh 8-Cell/8S 29.6V Elite 55C LiPo
+battery,tp3300-8se55,c_cont,55,C,55.0,1/h,tp-tp3300-8se55,,Max Cont. Discharge: 55C
+battery,tp3300-8se55,i_burst,363,A,363.0,A,tp-tp3300-8se55,,Max Burst Current: 363A
+battery,tp3300-8se55,mass,674,g,0.674,kg,tp-tp3300-8se55,manufacturer estimate,Weight (g) *estimate only*: 674 g
+battery,tp3300-8se55,size,53 x 43 x 137,text,,,tp-tp3300-8se55,mm,Dimensions (mm) *estimate only*: 53 x 43 x 137
+battery,tp3850-7sr70,capacity,3850,mAh,3.85,Ah,tp-tp3850-7sr70,title,"3850mAh 7-Cell/7S 25.9V Rampage Series 70C LiPo, Split w/Interconnect"
+battery,tp3850-7sr70,cells,7,cells,7.0,cells,tp-tp3850-7sr70,title,"3850mAh 7-Cell/7S 25.9V Rampage Series 70C LiPo, Split w/Interconnect"
+battery,tp3850-7sr70,c_cont,70,C,70.0,1/h,tp-tp3850-7sr70,,Max Cont. Discharge: 70C
+battery,tp3850-7sr70,i_burst,539,A,539.0,A,tp-tp3850-7sr70,,Max Burst Current: 539A
+battery,tp3850-7sr70,mass,700,g,0.7,kg,tp-tp3850-7sr70,manufacturer estimate,Weight (g) *estimate only*: 700 g
+battery,tp3850-7sr70,size,54 x 44 x 138,text,,,tp-tp3850-7sr70,mm,Dimensions (mm) *estimate only*: 54 x 44 x 138
+battery,tp2250-6sr70,capacity,2250,mAh,2.25,Ah,tp-tp2250-6sr70,title,2250mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo
+battery,tp2250-6sr70,cells,6,cells,6.0,cells,tp-tp2250-6sr70,title,2250mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo
+battery,tp2250-6sr70,c_cont,70,C,70.0,1/h,tp-tp2250-6sr70,,Max Cont. Discharge: 70C
+battery,tp2250-6sr70,i_burst,315,A,315.0,A,tp-tp2250-6sr70,,Max Burst Current: 315A
+battery,tp2250-6sr70,mass,347,g,0.347,kg,tp-tp2250-6sr70,manufacturer estimate,Weight (g) *estimate only*: 347 g
+battery,tp2250-6sr70,size,52 x 34 x 102,text,,,tp-tp2250-6sr70,mm,Dimensions (mm) *estimate only*: 52 x 34 x 102
+battery,tp4400-6sr70,capacity,4400,mAh,4.4,Ah,tp-tp4400-6sr70,title,4400mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo
+battery,tp4400-6sr70,cells,6,cells,6.0,cells,tp-tp4400-6sr70,title,4400mAh 6-Cell/6S 22.2V Rampage Series 70C LiPo
+battery,tp4400-6sr70,c_cont,70,C,70.0,1/h,tp-tp4400-6sr70,,Max Cont. Discharge: 70C
+battery,tp4400-6sr70,i_burst,616,A,616.0,A,tp-tp4400-6sr70,,Max Burst Current: 616A
+battery,tp4400-6sr70,mass,691,g,0.691,kg,tp-tp4400-6sr70,manufacturer estimate,Weight (g) *estimate only*: 691 g
+battery,tp4400-6sr70,size,46 x 45 x 155,text,,,tp-tp4400-6sr70,mm,Dimensions (mm) *estimate only*: 46 x 45 x 155
+battery,maxamps-8s-3250,capacity,3250,mAh,3.25,Ah,maxamps-8s-3250,,Capacity (milliamps - amp hours) 3250mAh - 3.25Ah
+battery,maxamps-8s-3250,cells,8,cells,8.0,cells,maxamps-8s-3250,,Nominal voltage 8S 29.6v
+battery,maxamps-8s-3250,i_cont,74.75,A,74.75,A,maxamps-8s-3250,,Maximum continuous discharge 74.75 amps
+battery,maxamps-8s-3250,energy,96.2,Wh,96.2,Wh,maxamps-8s-3250,,Watt hours 96.2Wh
+battery,maxamps-8s-3250,mass,590,g,0.59,kg,maxamps-8s-3250,,Weight 20.81oz(590g)
+battery,maxamps-8s-3250,v_land,28,V,28.0,V,maxamps-8s-3250,,Recommended landing voltage(air) 28v
+battery,maxamps-8s-3250,v_max,33.6,V,33.6,V,maxamps-8s-3250,"full charge, 4.2 V per cell",Maximum voltage 33.6v
+battery,maxamps-12s-2000,capacity,2000,mAh,2.0,Ah,maxamps-12s-2000,,Capacity (milliamps - amp hours) 2000mAh - 2Ah
+battery,maxamps-12s-2000,cells,12,cells,12.0,cells,maxamps-12s-2000,,Nominal voltage 12S 44.4v
+battery,maxamps-12s-2000,i_cont,54,A,54.0,A,maxamps-12s-2000,,Maximum continuous discharge 54 amps
+battery,maxamps-12s-2000,energy,88.8,Wh,88.8,Wh,maxamps-12s-2000,,Watt hours 88.8 Wh
+battery,maxamps-12s-2000,mass,586,g,0.586,kg,maxamps-12s-2000,,Weight 20.67oz(586g)
+battery,maxamps-12s-2000,v_land,42,V,42.0,V,maxamps-12s-2000,,Recommended landing voltage(air) 42v
+battery,maxamps-13s-2000,capacity,2000,mAh,2.0,Ah,maxamps-13s-2000,,Capacity (milliamps - amp hours) 2000mAh - 2Ah
+battery,maxamps-13s-2000,cells,13,cells,13.0,cells,maxamps-13s-2000,,Nominal voltage 13S 48.1v
+battery,maxamps-13s-2000,i_cont,54,A,54.0,A,maxamps-13s-2000,,Maximum continuous discharge 54 amps
+battery,maxamps-13s-2000,energy,96.2,Wh,96.2,Wh,maxamps-13s-2000,,Watt hours 96.2 Wh
+battery,maxamps-13s-2000,mass,631,g,0.631,kg,maxamps-13s-2000,,Weight 22.26oz(631g)
+battery,maxamps-13s-2000,v_land,45.5,V,45.5,V,maxamps-13s-2000,,Recommended landing voltage(air) 45.5
+motor,sunnysky-x7015-270,kv,270,rpm/V,270.0,rpm/V,sunnysky-x7015-30cc,4th column,Motor Model / KV 7015KV200 7015KV215 7015KV245 7015KV270
+motor,sunnysky-x7015-270,rm,12.1,mOhm,0.0121,Ohm,sunnysky-x7015-30cc,4th column (KV270),Internal resistance 23.7mΩ 16.6mΩ 16.6mΩ 12.1mΩ
+motor,sunnysky-x7015-270,mass,606,g,0.606,kg,sunnysky-x7015-30cc,4th column (KV270),Motor weight(wire included) 597g 603g 604g 606g
+motor,sunnysky-x7015-270,i0,2.25,A,2.25,A,sunnysky-x7015-30cc,4th column (KV270); test voltage not stated,No-load current 1.4A 1.7A 2.2A 2.25A
+motor,sunnysky-x7015-270,i_max,111,A,111.0,A,sunnysky-x7015-30cc,"4th column (KV270), 30 s rating",Maximum continuous current 100A/30s 100A/30s 110A/30s 111A/30s
+statement,apc-computed,method,computational method,text,,,apc-performance-page,APC data are COMPUTED,"The propeller blade loads, and resulting performance data, are generated using a specialized computational method that is based on Vortex theory."
+statement,apc-rpm-limit-e,rpm_limit_e,"150,000",rpm*in,150000.0,rpm*in,apc-rpm-limits-rev5,max RPM = 150000 / D(in),"Thin Electric (E) Propellers and Polycarbonate (Durable) FPV Propellers Maximum RPM = 150,000/prop diameter (inches)"
+statement,uiuc-vol4,scope,17 APC Thin Electric,text,,,uiuc-propdb-vol4-page,,"This webpage includes wind tunnel measurements for 17 APC Thin Electric 2-bladed, fixed propellers with diameters of 12 to 21 in"
+statement,uiuc-vol4,diameter_basis,true diameter,text,,,uiuc-propdb-vol4-page,no geometry published for Vol. 4: basis treated as nominal (see README),Coefficients are based on the propeller true diameter
+statement,uiuc-vol4-method,rpm_range,"1,000 to 7,000 RPM",text,,,uiuc-vol4-paper,,"The propellers were tested at rotation rates of 1,000 to 7,000 RPM"
+statement,uiuc-vol4-method,v_range,8 to 80 ft/s,text,,,uiuc-vol4-paper,2.4-24.4 m/s,advancing flows of 8 to 80 ft/s
+statement,uiuc-vol4-method,calibration,1% or less,text,,,uiuc-vol4-paper,load and torque cell calibration drift,any change in the slopes were typically 1% or less
+statement,uiuc-vol4-method,vintage,2019 and 2021,text,,,uiuc-vol4-paper,,all of the propellers tested were purchased between 2019 and 2021

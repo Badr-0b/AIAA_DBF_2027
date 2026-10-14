@@ -1,0 +1,226 @@
+# Measured propulsion data from AIAA DBF top-3 design reports: the points Script
+# 3b is validated against before any result is used. Quotes are checked by
+# verify_prop.py against the cached AIAA text (analysis/data/raw/<source>.txt,
+# from fetch.py), with the same whitespace-normalised rule as verify.py. A quote
+# starting "IMAGE:" is a table with no text layer, read on the page rendered with
+# pdftoppm (as in dbf_aircraft.toml). Extracted 14 Oct 2026.
+#
+# One [[point]] per test condition. rows = [param, value, unit, page, quote]
+#   param  rpm | thrust | current | power_elec | v_air | energy | time | ...
+#   value  exactly as printed; unit converted to SI by verify_prop.py
+# Each point lists the hardware with its own quotes, and `use` says what the
+# point can validate given what the report states (and what it leaves out).
+
+[[point]]
+id = "washu22-static"
+year = 2022
+team = "Washington University in St. Louis"
+source = "aiaa-dbf-2022-reports"
+condition = "static, maximum throttle (Fig. 8.1 sweeps throttle to 1), indoors"
+motor = "SunnySky X7015-30cc 270 kV (ASSUMED: the report names an 'X7025-30cc-270'; SunnySky's 30cc frame is the X7015 and its 270 kV winding is the 7015KV270, see components.toml)"
+prop = "apc:24x12E"
+battery = "6S LiPo, Turnigy Graphene Panther 3000 mAh 75C (M1/M2) or Nano-Tech 4500 mAh (M3); the report does not say which was on the stand"
+use = "prop: thrust at measured RPM. system: the terminal voltage follows from power / current (22.0 V)"
+rows = [
+  ["rpm", "4953", "rpm", 175, "RPM 4836 4953"],
+  ["thrust", "10.05", "kgf", 175, "Thrust [Kgf] 10.821 10.05"],
+  ["current", "120.84", "A", 175, "Max Current [A] 112.94 120.84"],
+  ["power_elec", "2658.48", "W", 175, "Electrical Power [W] 2258.5 2658.48"],
+  ["hardware", "APC 24x12", "text", 159, "The propulsion system consists of a SunnySky X7025-30cc-270 motor spinning an APC 24x12 prop"],
+  ["hardware", "3000 mAh 6S 75C", "text", 159, "3000 mAh 6S 75C"],
+  ["hardware", "4500 mAh 6s 45/90C", "text", 159, "4500 mAh 6s 45/90C"],
+]
+
+[[point]]
+id = "mit22-m1-static"
+year = 2022
+team = "Massachusetts Institute of Technology"
+source = "aiaa-dbf-2022-reports"
+condition = "static, full throttle (RCBenchmark 1580 stand)"
+motor = "Cobra C-4130/20 300 kV (motor 1 of 2)"
+prop = "apc:15x10E"
+battery = "6S Turnigy Nano-Tech 4500 mAh 45C"
+use = "system: thrust and electrical power at full throttle on a stated pack (no RPM, voltage or current given)"
+rows = [
+  ["thrust", "24.7", "N", 114, "Static 2.52 24.7 446"],
+  ["power_elec", "446", "W", 114, "Static 2.52 24.7 446"],
+  ["condition", "full-throttle", "text", 114, "Static: A full-throttle test at zero airspeed"],
+  ["hardware", "15x10", "text", 114, "Both motors were tested using a 15x10 propeller"],
+  ["hardware", "APC 15x10E", "text", 95, "two counter-rotating APC 15x10E and two Cobra C-4130-20 300kv motors"],
+  ["hardware", "Turnigy Nano-tech 45C 4500mAh", "text", 88, "Turnigy Nano-tech 45C 4500mAh"],
+]
+
+[[point]]
+id = "mit22-m1-cruise"
+year = 2022
+team = "Massachusetts Institute of Technology"
+source = "aiaa-dbf-2022-reports"
+condition = "wind tunnel 40 mph (17.88 m/s), full throttle"
+motor = "Cobra C-4130/20 300 kV (motor 1 of 2)"
+prop = "apc:15x10E"
+battery = "6S Turnigy Nano-Tech 4500 mAh 45C"
+use = "system: thrust and electrical power at full throttle and airspeed"
+rows = [
+  ["thrust", "15.0", "N", 114, "Cruise 1.53 15.0 446"],
+  ["power_elec", "446", "W", 114, "Cruise 1.53 15.0 446"],
+  ["v_air", "40", "mph", 114, "Cruise: Full throttle at 40mph airspeed"],
+]
+
+[[point]]
+id = "mit22-m2-static"
+year = 2022
+team = "Massachusetts Institute of Technology"
+source = "aiaa-dbf-2022-reports"
+condition = "static, full throttle (RCBenchmark 1580 stand)"
+motor = "Cobra C-4130/20 300 kV (motor 2 of 2)"
+prop = "apc:15x10E"
+battery = "6S Turnigy Nano-Tech 4500 mAh 45C"
+use = "system (repeatability: a second motor of the same type)"
+rows = [
+  ["thrust", "25.8", "N", 114, "Static 2.63 25.8 473"],
+  ["power_elec", "473", "W", 114, "Static 2.63 25.8 473"],
+]
+
+[[point]]
+id = "mit22-m2-cruise"
+year = 2022
+team = "Massachusetts Institute of Technology"
+source = "aiaa-dbf-2022-reports"
+condition = "wind tunnel 40 mph (17.88 m/s), full throttle"
+motor = "Cobra C-4130/20 300 kV (motor 2 of 2)"
+prop = "apc:15x10E"
+battery = "6S Turnigy Nano-Tech 4500 mAh 45C"
+use = "system (repeatability)"
+rows = [
+  ["thrust", "15.5", "N", 114, "Cruise 1.58 15.5 483"],
+  ["power_elec", "483", "W", 114, "Cruise 1.58 15.5 483"],
+  ["v_air", "40", "mph", 114, "Cruise: Full throttle at 40mph airspeed"],
+]
+
+[[point]]
+id = "uw23-16x12"
+year = 2023
+team = "University of Washington"
+source = "aiaa-dbf-2023-reports"
+condition = "static, 'operating at mission power limits' (Table 26 'Max' columns)"
+motor = "T-Motor AT4140 410 kV"
+prop = "apc:16x12E"
+battery = "SMC 8S 3200 mAh 75C"
+use = "prop: static thrust at measured RPM. Not system: the throttle setting is a team power limit, not stated"
+rows = [
+  ["rpm", "8914", "rpm", 58, "IMAGE: Table 26 Static Propulsion Test Results, APC 16X12E, Max RPM"],
+  ["thrust", "15.2", "lbf", 58, "IMAGE: Table 26 Static Propulsion Test Results, APC 16X12E, Max Static Thrust (lb)"],
+  ["hardware", "T-Motor AT4140 410KV", "text", 58, "the APC 16X12E and 17X10E propellers were evaluated using the T-Motor AT4140 410KV motor and the SMC 8S 3200 mAh 75C battery"],
+]
+
+[[point]]
+id = "uw23-17x10"
+year = 2023
+team = "University of Washington"
+source = "aiaa-dbf-2023-reports"
+condition = "static, 'operating at mission power limits' (Table 26 'Max' columns)"
+motor = "T-Motor AT4140 410 kV"
+prop = "apc:17x10E"
+battery = "SMC 8S 3200 mAh 75C"
+use = "prop: static thrust at measured RPM"
+rows = [
+  ["rpm", "8829", "rpm", 58, "IMAGE: Table 26 Static Propulsion Test Results, APC 17X10E, Max RPM"],
+  ["thrust", "18.3", "lbf", 58, "IMAGE: Table 26 Static Propulsion Test Results, APC 17X10E, Max Static Thrust (lb)"],
+]
+
+[[point]]
+id = "erau23-m2-flight"
+year = 2023
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+source = "aiaa-dbf-2023-reports"
+condition = "M2 flight at gross weight, five laps (Table 8-3 'Actual')"
+motor = "T-Motor AT7215 220 kV"
+prop = "apc:20x13E"
+battery = "12S 2250 mAh (99.9 Wh)"
+use = "flight: mission energy over the clock with the measured airframe (CD0 0.0583, e 0.842) - the calibration of the flight factor"
+rows = [
+  ["energy", "86", "Wh", 122, "IMAGE: Table 8-3 Complete aircraft design versus actual performance, M2, Energy Consumption [Wh], Actual"],
+  ["power_avg", "1243", "W", 122, "IMAGE: Table 8-3, M2, Average In-Air Power [W], Actual"],
+  ["time", "249", "s", 122, "IMAGE: Table 8-3, M2, Mission Time [s], Actual"],
+  ["lap_time", "42", "s", 122, "IMAGE: Table 8-3, M2, Air Lap Time [s], Actual"],
+  ["v_air", "89", "ft/s", 122, "IMAGE: Table 8-3, M2, Cruise Airspeed [ft/s], Actual"],
+  ["mass", "29.24", "lb", 122, "IMAGE: Table 8-3, M2, Gross Takeoff Weight [lb], Actual"],
+  ["hardware", "T-Motor AT 7215 220kV", "text", 88, "The T-Motor AT 7215 220kV motor was ultimately selected"],
+  ["hardware", "12-cell", "text", 88, "a 12-cell battery with 3.7 V per cell was selected"],
+  ["hardware", "2250 mAh", "text", 88, "a 2250 mAh capacity was selected"],
+  ["hardware", "APC 20x13E", "text", 121, "APC 20x15E APC 20x13E APC 20x15E"],
+]
+
+[[point]]
+id = "uw23-resting-voltage"
+year = 2023
+team = "University of Washington"
+source = "aiaa-dbf-2023-reports"
+condition = "SMC 8S 3200 mAh 75C discharged at the M2 average power (507 W) for the 10-min M2 window"
+use = "battery: open-circuit (resting) cell voltage after a full mission discharge, 3.7 V"
+rows = [
+  ["v_cell_rest", "3.7", "V", 58, "With cells resting at 3.7V, it was deduced that there could be sufficient energy for the pilot to perform the landing lap"],
+  ["power", "507", "W", 58, "the battery was proved to be capable of discharging at 507 Watts for the duration of the mission window"],
+]
+
+# ---------------------------------------------------------------------------
+# Fuse behaviour above the 100 A rating (rules Sec. 3.2.3.2 caps the RATING,
+# not the instantaneous current). The fuse the rules link to (Figure 5) is a
+# generic, unbranded 100 A MAXI blade fuse with no datasheet, so team tests are
+# the evidence. Text only (no values used as limits): Script 3b holds sustained
+# current to the 100 A rating.
+# ---------------------------------------------------------------------------
+[[point]]
+id = "erau-fuse-tests"
+year = 2025
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+source = "aiaa-dbf-2025-reports"
+condition = "100 A blade fuses, team bench tests"
+use = "fuse: overload margin evidence (not used as a design limit)"
+rows = [
+  ["fuse_135a", "135 A for at least 60 seconds", "text", 148, "they could sustain a continuous current of 135 A for at least 60 seconds and endure up to 200 A for a maximum of two seconds"],
+]
+
+[[point]]
+id = "erau23-fuse"
+year = 2023
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+source = "aiaa-dbf-2023-reports"
+condition = "100 A blade fuse, documented rating"
+use = "fuse: overload margin evidence"
+rows = [
+  ["fuse_135a", "135 A", "text", 120, "the line at 135 A represents the maximum documented operational amperage that the fuse can endure for at least 60 s continuously"],
+]
+
+[[point]]
+id = "uw23-fuse"
+year = 2023
+team = "University of Washington"
+source = "aiaa-dbf-2023-reports"
+condition = "fuse at maximum throttle on 8S (AT4140 410 kV), current not stated"
+use = "fuse: a fuse at full throttle blew after ~17 s on average"
+rows = [
+  ["fuse_time", "17 seconds", "text", 58, "the average time was approximately 17 seconds"],
+]
+
+[[point]]
+id = "erau25-apc-high-rpm"
+year = 2025
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+source = "aiaa-dbf-2025-reports"
+condition = "static stand, APC nylon vs carbon props of the same geometry"
+use = "prop: APC Thin Electric props lose efficiency at high RPM (keep below APC's RPM limit; carry as an uncertainty)"
+rows = [
+  ["observation", "efficiency losses at high RPMs", "text", 175, "Initial tests with APC plastic propellers revealed efficiency losses at high RPMs"],
+]
+
+[[point]]
+id = "usc24-thrust-vs-model"
+year = 2024
+team = "University of Southern California"
+source = "aiaa-dbf-2024-reports"
+condition = "static stand, 11x7 props on 8S 3300 mAh, Scorpion A-4220 540 kV"
+use = "context: a model under-predicting static thrust by 20 % (QPROP, eCalc)"
+rows = [
+  ["observation", "20% higher", "text", 56, "Comparing static testing to QPROP and eCalc show the measured thrust was 20% higher than theoretical"],
+]

@@ -1,0 +1,380 @@
+# Sources used for data or methods that are NOT in the two fetch registries
+# (analysis/data/sources.toml for AIAA documents, analysis/data/prop/sources.toml
+# for propulsion). sources_index.py merges all three, plus the price links in
+# procurement/pr01_items.csv, into SOURCES.md at the repo root, and fails if a
+# URL in the repo's data files is missing from the index.
+#
+#   nature   MEASURED | SPEC | COMPUTED | RULE | METHOD | RESELLER | CONSULTED
+#   status   VERIFIED (read on the primary page, date given) | RESELLER (retail
+#            listing only) | NOT USED (consulted, no value taken)
+#   used_for where the data or method enters the analysis
+# URLs re-checked on 14 Oct 2026 (each one answered and supports its line).
+
+# ---------------------------------------------------------------- rules
+[[source]]
+id = "rules-2027-draft"
+title = "2026-27 Design, Build, Fly Rules (DRAFT, 2 Sep 2026); repo copy rules/2027_DBF_Rules_Draft.pdf, SHA-256 d94773fb...ae1, byte-identical to aiaa.org (checked 13 Oct)"
+publisher = "AIAA"
+url = "https://www.aiaa.org/dbf"
+nature = "RULE"
+status = "VERIFIED"
+used_for = "every rule limit (analysis/inputs/rules.toml), Table 04, all trades"
+
+# ---------------------------------------------------------------- site and weather
+[[source]]
+id = "iem-asos"
+title = "ASOS hourly observations, Tucson Intl (KTUS), Ryan Airfield (KRYN), Marana (KAVQ), 15-18 Apr 1996-2025"
+publisher = "Iowa Environmental Mesonet, Iowa State University"
+url = "https://mesonet.agron.iastate.edu/request/download.phtml"
+nature = "MEASURED"
+status = "VERIFIED"
+used_for = "design air density 1.064 kg/m3 (proposal \\nRho); wind at TIMPA (data/wind_timpa.csv, fetch_wind.py)"
+also = ["https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py"]   # the download endpoint fetch_wind.py calls
+
+[[source]]
+id = "usgs-epqs"
+title = "USGS Elevation Point Query Service (3DEP 1 m DEM) at 32.26474 N, 111.27386 W: 667.07 m"
+publisher = "U.S. Geological Survey"
+url = "https://epqs.nationalmap.gov/v1/json?x=-111.27386&y=32.26474&wkid=4326&units=Meters&includeDate=false"
+nature = "MEASURED"
+status = "VERIFIED"
+used_for = "TIMPA ground elevation 667 m for the density reduction"
+
+[[source]]
+id = "timpa-location"
+title = "TIMPA location: 3250 N Reservation Rd, Marana AZ, 32.26474 N"
+publisher = "Tucson International Modelplex Park Association"
+url = "https://timpa.org/location/"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "site coordinates for the elevation and weather stations"
+
+[[source]]
+id = "ncei-normals-ktus"
+title = "U.S. Climate Normals 1991-2020, Tucson Intl AP (USW00023160): April normal high 82.9 F"
+publisher = "NOAA National Centers for Environmental Information"
+url = "https://www.ncei.noaa.gov/data/normals-monthly/1991-2020/access/USW00023160.csv"
+nature = "MEASURED"
+status = "VERIFIED"
+used_for = "cross-check of the density data (mean daily high 28.0 C vs the 82.9 F normal)"
+
+# ---------------------------------------------------------------- D&R drives and parts (inputs/dr_trade.toml)
+[[source]]
+id = "pololu-4753"
+title = "Pololu 37D 50:1 metal gearmotor with encoder (#4753)"
+publisher = "Pololu Robotics & Electronics"
+url = "https://www.pololu.com/product/4753"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 D&R trade drive data"
+
+[[source]]
+id = "pololu-4754"
+title = "Pololu 37D 70:1 metal gearmotor with encoder (#4754)"
+publisher = "Pololu Robotics & Electronics"
+url = "https://www.pololu.com/product/4754"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "reel drive in Scripts 4/6 (sizing.toml [dr]) and the stow-time model"
+
+[[source]]
+id = "pololu-37d-datasheet"
+title = "Pololu 37D Metal Gearmotors datasheet, rev 1.2"
+publisher = "Pololu Robotics & Electronics"
+url = "https://www.pololu.com/file/0J1736/pololu-37d-metal-gearmotors-rev-1-2.pdf"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "37D masses and gearbox torque limits"
+
+[[source]]
+id = "pololu-4847"
+title = "Pololu 25D 99:1 HP gearmotor with encoder (#4847)"
+publisher = "Pololu Robotics & Electronics"
+url = "https://www.pololu.com/product/4847"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 D&R trade (screened out: gearbox limit)"
+
+[[source]]
+id = "pololu-25d-datasheet"
+title = "Pololu 25D Metal Gearmotors datasheet, rev 2.0"
+publisher = "Pololu Robotics & Electronics"
+url = "https://www.pololu.com/file/0J1829/pololu-25d-metal-gearmotors-rev-2-0.pdf"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "25D masses and torque limits"
+
+[[source]]
+id = "gobilda-2000"
+title = "goBILDA 2000 Series Dual Mode Servo (25-2, Torque)"
+publisher = "goBILDA"
+url = "https://www.gobilda.com/2000-series-dual-mode-servo-25-2-torque/"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 D&R trade (verified-drive case)"
+
+[[source]]
+id = "rev-neo550"
+title = "REV NEO 550 Brushless Motor (REV-21-1651)"
+publisher = "REV Robotics"
+url = "https://www.revrobotics.com/rev-21-1651/"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 D&R trade (brushless direct drive, rejected)"
+
+[[source]]
+id = "rev-sparkmax"
+title = "REV SPARK MAX Motor Controller (REV-11-2158)"
+publisher = "REV Robotics"
+url = "https://www.revrobotics.com/rev-11-2158/"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 D&R trade (controller mass)"
+
+[[source]]
+id = "adafruit-736"
+title = "Adafruit slip ring, 22 mm flange, 6 wires (#736)"
+publisher = "Adafruit Industries"
+url = "https://www.adafruit.com/product/736"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 D&R trade; PR-01 B28"
+
+[[source]]
+id = "adafruit-1195"
+title = "Adafruit miniature slip ring, 12 mm, 12 wires (#1195)"
+publisher = "Adafruit Industries"
+url = "https://www.adafruit.com/product/1195"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 D&R trade"
+
+[[source]]
+id = "goodfellow-uhmwpe"
+title = "Goodfellow UHMWPE fibre (friction coefficient 0.1-0.2)"
+publisher = "Goodfellow"
+url = "https://www.goodfellow.com/usa/uhmwpe-fibre-1000003330"
+nature = "SPEC"
+status = "VERIFIED"
+used_for = "Table 06 capstan option (line friction)"
+
+[[source]]
+id = "reseller-savox-sb2290sg"
+title = "Savox SB-2290SG brushless servo, retail listings (rcvisions.com, gator-rc.com, rc-modelshop.com); torque listed as 50 or 55 kg-cm"
+publisher = "retailers (manufacturer page not reachable)"
+url = ""
+nature = "RESELLER"
+status = "RESELLER"
+used_for = "Table 06 D&R trade lightest drive; NOT used in Scripts 4/6 for that reason"
+
+[[source]]
+id = "reseller-hitec-hs785hb"
+title = "Hitec HS-785HB sail-winch servo, retail listings (robotshop.com, servodatabase.com, buddyrc.com)"
+publisher = "retailers (manufacturer page returned 404)"
+url = ""
+nature = "RESELLER"
+status = "RESELLER"
+used_for = "screening only (sail-winch option X6 rejected)"
+
+[[source]]
+id = "reseller-actuonix-p16"
+title = "Actuonix P16 linear actuator, retail listings (robotshop.com)"
+publisher = "retailers (manufacturer page returned 403)"
+url = ""
+nature = "RESELLER"
+status = "RESELLER"
+used_for = "screening only (option F rejected)"
+
+# ---------------------------------------------------------------- consulted, no value used
+[[source]]
+id = "scorpion-sii4035-330"
+title = "Scorpion SII-4035-330KV specifications (65 A continuous, 435 g, max 11S)"
+publisher = "Scorpion Power System"
+url = "https://www.scorpionsystem.com/catalog/aeroplane/motors_1/sii-40/SII-4035-330/"
+nature = "CONSULTED"
+status = "NOT USED"
+used_for = "propulsion screening note: no measured map, current too low for the 8S M2 turn"
+
+[[source]]
+id = "littelfuse-maxi"
+title = "Littelfuse MAXI Series blade fuses, 32 V (datasheet)"
+publisher = "Littelfuse"
+url = "https://www.littelfuse.com/assetdocs/littelfuse-datasheet-299-maxi32v?assetguid=68b8bbe8-3e51-4c7b-bbda-3c71667f75f3"
+nature = "CONSULTED"
+status = "NOT USED"
+used_for = "fuse behaviour reference; the server refused scripted and fetch-tool access, so no value was taken (AIAA team fuse tests used instead)"
+
+[[source]]
+id = "innov8tive-cobra-c4130"
+title = "Cobra C-4130/20 brushless motor, Kv 300 (MIT 2022 stand motor)"
+publisher = "Innov8tive Designs"
+url = "https://innov8tivedesigns.com/cobra-c-4130-20-brushless-motor-kv-300.html"
+nature = "CONSULTED"
+status = "NOT USED"
+used_for = "would have checked the MIT 2022 stand; the server refuses scripted access"
+
+[[source]]
+id = "rules-figure5-fuse"
+title = "Generic 100 A MAXI fuse 10-pack linked from rules Figure 5 (no manufacturer or datasheet)"
+publisher = "Amazon listing (linked by AIAA)"
+url = "https://www.amazon.com/10pcs-100AMP-Maxi-Fuses-Automotive/dp/B0BGWZFH3F"
+nature = "CONSULTED"
+status = "NOT USED"
+used_for = "identifies the fuse the rules picture; no data available"
+
+# ---------------------------------------------------------------- R&D notes (00_START_HERE_RnD.md): context, no analysis value
+# quality: PRIMARY (the publisher of the fact) | SECONDARY (third party; context only) |
+#          NON-AUTHORITATIVE (must be replaced before any value is used)
+[[source]]
+id = "rnd-centralinnovation"
+title = "SolidWorks Education package contents (reseller page)"
+publisher = "Central Innovation"
+url = "https://centralinnovation.com/?p=359"
+nature = "NOTE"
+status = "SECONDARY"
+used_for = "R&D Sec. 2: which SolidWorks add-ins a student licence may include (to confirm locally)"
+
+[[source]]
+id = "rnd-umu-solidworks"
+title = "SolidWorks installation guide 2022-23"
+publisher = "Umea University"
+url = "https://umu.se/ubnoy/globalassets/studentwebb/designhogskolan/institutionsinformation/solidworks-installation-guide-2022-2023.pdf"
+nature = "NOTE"
+status = "SECONDARY"
+used_for = "R&D Sec. 2: same question"
+
+[[source]]
+id = "rnd-nasa-tmr-naca0012"
+title = "Turbulence Modeling Resource: 2D NACA 0012 airfoil validation case"
+publisher = "NASA Langley / Turbulence Model Benchmarking Working Group"
+url = "https://tmbwg.github.io/turbmodels/naca0012_val.html"
+nature = "NOTE"
+status = "PRIMARY"
+used_for = "R&D WP-01 C0: CFD validation case for the team's OpenFOAM / Flow Simulation setup"
+
+[[source]]
+id = "rnd-designation-systems"
+title = "Directory of U.S. Military Rockets and Missiles / UAV designations"
+publisher = "designation-systems.net (A. Parsch)"
+url = "https://designation-systems.net/usmilav/missiles.html"
+nature = "NOTE"
+status = "SECONDARY"
+used_for = "R&D Sec. 3a and 8a: no RQ-9 exists; Q-series numbers already taken (naming only)"
+
+[[source]]
+id = "rnd-gaasi-mq9"
+title = "MQ-9A product page (fault-tolerant flight control system)"
+publisher = "General Atomics Aeronautical Systems"
+url = "https://www.ga-asi.com/remotely-piloted-aircraft/mq-9a"
+nature = "NOTE"
+status = "PRIMARY"
+used_for = "R&D Sec. 3a: reference aircraft use automatic flight control (rules ban autopilots)"
+
+[[source]]
+id = "rnd-ng-triton"
+title = "MQ-4C Triton product page (autonomous)"
+publisher = "Northrop Grumman"
+url = "https://www.northropgrumman.com/what-we-do/air/triton"
+nature = "NOTE"
+status = "PRIMARY"
+used_for = "R&D Sec. 3a: same point"
+
+[[source]]
+id = "rnd-afmil-rq4"
+title = "RQ-4 Global Hawk fact sheet (span 39.8 m, length 14.5 m, height 4.7 m)"
+publisher = "U.S. Air Force"
+url = "https://www.af.mil/News/Article-Display/Article/104516/rq-4-global-hawk/"
+nature = "NOTE"
+status = "PRIMARY"
+used_for = "R&D side task A: reference-aircraft proportions (not used in sizing)"
+
+[[source]]
+id = "rnd-migflug-rq4"
+title = "RQ-4 Global Hawk article (RQ-4A span 35.42 m, wing 50.2 m2)"
+publisher = "MigFlug (travel company)"
+url = "https://migflug.com/aircraft/rq-4-global-hawk/"
+nature = "NOTE"
+status = "SECONDARY"
+used_for = "R&D side task A: aspect ratio ~25 (context only; replace with a primary source if ever used)"
+
+[[source]]
+id = "rnd-wikipedia-designation"
+title = "1962 United States Tri-Service aircraft designation system (summary; the regulation is DoD 4120.15E / DAFI 16-401)"
+publisher = "Wikipedia"
+url = "https://en.wikipedia.org/wiki/1962_United_States_Tri-Service_aircraft_designation_system"
+nature = "NOTE"
+status = "SECONDARY"
+used_for = "R&D Sec. 8a: aircraft designation format (team naming only)"
+
+[[source]]
+id = "rnd-nmusaf-ymq9"
+title = "National Museum of the USAF fact sheet (YMQ-9 prototypes)"
+publisher = "National Museum of the U.S. Air Force"
+url = "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196042"
+nature = "NOTE"
+status = "PRIMARY"
+used_for = "R&D Sec. 8a: the Y (prototype) prefix (team naming only)"
+
+[[source]]
+id = "rnd-can-size"
+title = "473 mL can about 157 x 66 mm"
+publisher = "synonyme-du-mot.com (French dictionary site)"
+url = "https://www.synonyme-du-mot.com/les-articles/pourquoi-473-ml"
+nature = "NOTE"
+status = "NON-AUTHORITATIVE"
+used_for = "R&D Script 5 note on sensor length (design >= 170 mm, set by the 152.4 mm rule minimum). REPLACE: measure a can"
+
+# ---------------------------------------------------------------- methods (equations and tools)
+[[source]]
+id = "drela-motor1"
+title = "M. Drela, First-Order DC Electric Motor Model, MIT Aero & Astro, Feb 2007"
+publisher = "MIT"
+url = "https://web.mit.edu/drela/Public/web/qprop/motor1_theory.pdf"
+nature = "METHOD"
+status = "VERIFIED"
+used_for = "first-order motor model in Script 3b (checks only)"
+
+[[source]]
+id = "xfoil"
+title = "XFoil 6.99, M. Drela (panel method with coupled boundary layer); run by the team on 11 Oct 2026 (dbf_airfoil_study, commit 346b860)"
+publisher = "MIT"
+url = "https://web.mit.edu/drela/Public/web/xfoil/"
+nature = "METHOD"
+status = "VERIFIED"
+used_for = "airfoil polars in proposal/data/airfoil_polars/ (Fig. airfoil)"
+
+[[source]]
+id = "raymer"
+title = "D. P. Raymer, Aircraft Design: A Conceptual Approach, AIAA Education Series, ch. 12 (Oswald efficiency) and ch. 4 (tail arrangements)"
+publisher = "AIAA"
+url = ""
+nature = "METHOD"
+status = "VERIFIED"
+used_for = "Oswald efficiency in Scripts 3-4; tail audit in trades.toml"
+
+[[source]]
+id = "anderson-performance"
+title = "J. D. Anderson, Aircraft Performance and Design, McGraw-Hill, 1999 (level-turn relations)"
+publisher = "McGraw-Hill"
+url = ""
+nature = "METHOD"
+status = "VERIFIED"
+used_for = "turn radius and load factor in Script 1"
+
+[[source]]
+id = "hoerner-drag"
+title = "S. F. Hoerner, Fluid-Dynamic Drag, 1965, ch. 3 (cylinder in cross-flow)"
+publisher = "Hoerner Fluid Dynamics"
+url = ""
+nature = "METHOD"
+status = "VERIFIED"
+used_for = "tow-line drag (s5_tow.py, dr_trade.toml)"
+
+[[source]]
+id = "nga-tr8350"
+title = "NGA TR8350.2, Department of Defense World Geodetic System 1984 (normal gravity)"
+publisher = "National Geospatial-Intelligence Agency"
+url = ""
+nature = "METHOD"
+status = "NOT USED"
+used_for = "local gravity at TIMPA noted in constants.toml (9.7930 m/s2); not used in any calculation"

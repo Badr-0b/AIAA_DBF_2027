@@ -1,0 +1,85 @@
+# Script 3b inputs: propulsion component model (s3b_propulsion.py). Written 14 Oct 2026.
+# Measured and manufacturer data live in analysis/data/prop/ (verified by
+# verify_prop.py); this file holds only modelling choices and the ESTIMATES the
+# data cannot give, each with its reasoning and the range swept.
+
+[prop]
+# APC Thin Electric performance tables (COMPUTED by APC) are the baseline.
+# Check against UIUC wind-tunnel data (17 APC-E props, Vol. 4, s3b validation):
+# measured efficiency is above APC's by a nearly uniform +3.8 to +7.1 points
+# (per-prop medians), so APC ranks props reliably; the absolute bias is absorbed
+# by the flight calibration (same data source on both sides).
+rpm_limit_statement = "apc-rpm-limit-e"   # components.toml: max RPM = 150,000 / D(in)
+thrust_band = 0.15     # +/- on available (full-throttle) thrust: measured/APC spans
+                       # 0.87 (UW 2023 stands near the RPM limit) to 1.24 (UIUC at
+                       # 0.55-0.65 of the limit); 0.15 covers the stands near our RPMs
+
+[battery]
+cell_v_rated = 3.7     # LiPo rated (nominal) cell voltage: Wh = cells x 3.7 x Ah, the rule's
+                       # "rated capacity * rated voltage" (Sec. 3.2.3.2); every pack page uses it
+v_oc_end = 3.70        # resting cell voltage after a full M2-length discharge: UW 2023 measured
+                       # "cells resting at 3.7V" (stands.toml uw23-resting-voltage). Used for
+                       # the end-of-mission thrust check (worst case).
+v_oc_start = 4.15      # ESTIMATE: freshly charged pack (4.2 V/cell max charge, MaxAmps page) after
+                       # a short rest. Sweep 4.10-4.20.
+k_ir_mohm_ah = 14.0    # ESTIMATE: cell resistance x capacity, including leads, connectors, fuse.
+                       # Calibrated on WashU 2022: 22.0 V at 120.84 A on 6S (2658.48 W / 120.84 A)
+                       # = 3.667 V/cell loaded; with a resting 4.1-4.2 V/cell that is 3.6-4.4 mOhm
+                       # per cell on a 3.0 Ah pack (11-13 mOhm.Ah) or a 4.5 Ah pack (16-20); the
+                       # report does not say which pack was on the stand. Sweep 11-20.
+
+[esc]
+eta_first_order = 0.97 # ESTIMATE, only for motors WITHOUT a measured map (first-order model).
+                       # T-Motor maps already include their test ESC. Sweep 0.95-0.98.
+
+[fuse]
+rating_a = 100.0       # rules Sec. 3.2.3.2: fuse rating <= pack max continuous current, up to 100 A.
+                       # Held as the sustained-current limit. Team tests (stands.toml) show 100 A
+                       # blade fuses carry 135 A >= 60 s; NOT used as design margin.
+
+[mass]
+motor_ref_kg = 0.50    # ESTIMATE: motor mass already inside the airframe-mass fit (5.96 S^0.94 is
+                       # airframe without battery or payload, so it includes each aircraft's
+                       # motor). Single motors on those aircraft: 0.29 kg (Scorpion A-4220) to
+                       # 0.61 kg (SunnySky X7015). A candidate is charged motor mass - 0.50 kg;
+                       # the trade ranks on differences, so this offset moves every option equally.
+
+[trade]
+rho = 1.064            # design density (proposal \nRho), as Scripts 4/6
+props = "^(1[4-9]|2[0-2]|205)x\\d+E$"   # APC Thin Electric 14-22 in (ground clearance sets the top)
+stage2_keep = 40       # systems carried from the screen into the full mission evaluation
+mu_roll = 0.04         # ESTIMATE: rolling friction on pavement, for the take-off roll report only
+
+[layout]
+# Twin tractor = two propulsion systems (rules Sec. 3.2.3.1: identical packs, each with its own fuse
+# and arming plug), each pack <= 50 Wh so the total stays <= 100 Wh.
+twin_pack = "tp2250-6sr70"
+twin_extra_kg = 0.15      # ESTIMATE: second ESC, fuse harness, arming plug and wiring (no ESC mass is
+                          # published on T-Motor's ESC pages). Sweep 0.10-0.20.
+twin_extra_cda_m2 = 0.002 # ESTIMATE: two faired wing nacelles vs a nose-mounted motor (non-wing drag
+                          # area added). Sweep 0.001-0.004; Script 6 exchange: 10 cm2 = 123 g.
+
+[uncertainty]
+# Monte Carlo bands for Script 3b (prop_trade.py robustness), each an ESTIMATE from the validation
+# (prop_validation_report.txt), drawn uniformly and combined with Script 6's airframe and field draws.
+power_factor = [0.92, 1.08]   # battery power: root-sum-square of the motor loss fit's held-out error
+                              # (~6 % at P90 5.4 efficiency points), the prop-to-prop spread of APC's
+                              # efficiency offset (+/-1.7 points, ~2.3 %) and the one-flight calibration (~5 %)
+thrust_factor = [0.85, 1.15]  # available (full-throttle) thrust: prop [prop] thrust_band
+draws = 120                   # as Script 6, same seed (paired draws across systems)
+
+[motor_fit]
+huber_k = 1.5          # robust loss-model fit (Huber weights, c = 1.5 MAD), so a single
+                       # mistyped row in a manufacturer table does not drive the fit
+
+[calibration]
+# Flight factor k_fl = measured mean battery power / modelled lap-mean battery power for
+# ERAU 2023's M2 flight (stands.toml erau23-m2-flight), with ERAU's hardware in the model:
+# APC 20x13E, T-Motor AT7215 220 kV measured map, 12S 2250 mAh. Same convention as
+# s4_sizing.calibration_eta (sea-level rho 1.225, measured CD0 0.0583, e 0.842,
+# S 6.05 ft2, AR 5.2, 89 ft/s, 42 s lap, 29.24 lb). It absorbs take-off, climb,
+# throttle transients and the flight path the constant-speed lap model leaves out.
+erau_prop = "20x13E"
+erau_motor = ["tmotor-at7215", "KV220"]
+erau_cells = 12
+erau_capacity_ah = 2.25
