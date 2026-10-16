@@ -1,0 +1,201 @@
+# Aerodynamics source registry (wing CLmax, flaps, drag). Every value in
+# analysis/data/aero/ cites one of these ids. fetch_aero.py downloads each url
+# into analysis/data/raw/aero/<id>.<ext> (gitignored), records the SHA-256 in
+# sources.lock, and writes raw/aero/<id>.txt (pdftotext -layout, or the page's
+# visible text) for verify_aero.py to check quoted statements against.
+#
+# Primary sources only: the publisher of a document is the authority for it.
+#   kind      zip | pdf | html
+#   nature    MEASURED (a test), STATEMENT (method or conditions), COMPUTED
+# Read on 15 Oct 2026 unless stated.
+
+# ---------------------------------------------------------------------------
+# UIUC Low-Speed Airfoil Tests (LSATs): wind-tunnel polars at Re 40k-500k.
+# The tabulated data (zips) are the values; the volume PDFs state the method,
+# the corrections and the accuracy.
+# ---------------------------------------------------------------------------
+[[source]]
+id = "uiuc-lsat-page"
+title = "UIUC Low-Speed Airfoil Tests (LSATs) page"
+publisher = "UIUC Applied Aerodynamics Group (M. S. Selig)"
+url = "https://m-selig.ae.illinois.edu/uiuc_lsat.html"
+kind = "html"
+nature = "STATEMENT"
+
+[[source]]
+id = "uiuc-lsat-v1-data"
+title = "Summary of Low-Speed Airfoil Data, Vol. 1 (Selig, Guglielmo, Broeren, Giguere, 1995): tabulated data"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/pd/pub/lsat/volume01.zip"
+kind = "zip"
+nature = "MEASURED"
+
+[[source]]
+id = "uiuc-lsat-v2-data"
+title = "Summary of Low-Speed Airfoil Data, Vol. 2 (Selig, Lyon, Giguere, Ninham, Guglielmo, 1996): tabulated data"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/pd/pub/lsat/volume02.zip"
+kind = "zip"
+nature = "MEASURED"
+
+[[source]]
+id = "uiuc-lsat-v3-data"
+title = "Summary of Low-Speed Airfoil Data, Vol. 3 (Lyon, Broeren, Giguere, Gopalarathnam, Selig, 1997): tabulated data"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/pd/pub/lsat/volume03.zip"
+kind = "zip"
+nature = "MEASURED"
+
+[[source]]
+id = "uiuc-lsat-v5-data"
+title = "Summary of Low-Speed Airfoil Data, Vol. 5 (Selig, McGranahan, Broughton): tabulated data"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/pd/pub/lsat/volume05.zip"
+kind = "zip"
+nature = "MEASURED"
+
+[[source]]
+id = "uiuc-lsat-v6-data"
+title = "Williamson, Experimental Wind Tunnel Study of Airfoils with Large Flap Deflections at Low Reynolds Numbers (UIUC MS thesis, 2012): tabulated data"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/pd/pub/lsat/volume06.zip"
+kind = "zip"
+nature = "MEASURED"
+
+[[source]]
+id = "uiuc-lsat-v1-pdf"
+title = "Summary of Low-Speed Airfoil Data, Vol. 1 (SoarTech Publications, 1995)"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/uiuc_lsat/Low-Speed-Airfoil-Data-V1.pdf"
+kind = "pdf"
+nature = "STATEMENT"
+
+[[source]]
+id = "uiuc-lsat-v3-pdf"
+title = "Summary of Low-Speed Airfoil Data, Vol. 3 (SoarTech Publications, 1997)"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/uiuc_lsat/Low-Speed-Airfoil-Data-V3.pdf"
+kind = "pdf"
+nature = "STATEMENT"
+
+# ---------------------------------------------------------------------------
+# Section coordinates: UIUC Airfoil Coordinates Database (Selig format).
+# W1011 and W1015 are the Williamson-thesis sections (coord_updates/).
+# ---------------------------------------------------------------------------
+[[source]]
+id = "coord-sd7037"
+title = "SD7037 coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/sd7037.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-sd7034"
+title = "SD7034 coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/sd7034.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-sd7062"
+title = "SD7062 coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/sd7062.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-mh114"
+title = "MH 114 coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/mh114.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-clarky"
+title = "Clark Y coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/clarky.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-e387"
+title = "E387 coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/e387.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-fx63137"
+title = "FX 63-137 coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/fx63137.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-w1011"
+title = "W1011 coordinates (Williamson 2012), UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord_updates/w1011.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-w1015"
+title = "W1015 coordinates (Williamson 2012), UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord_updates/w1015.dat"
+kind = "dat"
+nature = "SPEC"
+
+[[source]]
+id = "coord-ag455ct02r"
+title = "AG455ct-02r coordinates, UIUC Airfoil Coordinates Database"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/ads/coord/ag455ct02r.dat"
+kind = "dat"
+nature = "SPEC"
+
+# ---------------------------------------------------------------------------
+# 3-D validation: measured wings with part-span flaps (NACA, via NASA NTRS).
+# ---------------------------------------------------------------------------
+[[source]]
+id = "naca-tn-663"
+title = "R. O. House, The Effects of Partial-Span Plain Flaps on the Aerodynamic Characteristics of a Rectangular and a Tapered Clark Y Wing, NACA TN 663, 1938"
+publisher = "NACA (NASA Technical Reports Server 19930081462)"
+url = "https://ntrs.nasa.gov/api/citations/19930081462/downloads/19930081462.pdf"
+kind = "pdf"
+nature = "MEASURED"
+
+# ---------------------------------------------------------------------------
+# Towed sensor stability (E10): towed-body dynamics and finned-body aerodynamics.
+# ---------------------------------------------------------------------------
+[[source]]
+id = "naca-tm-832"
+title = "C. Koning and T. P. de Haas, The Critical Velocity of a Body Towed by a Cable from an Airplane, NACA TM 832, July 1937"
+publisher = "NACA (NASA Technical Reports Server 19930094584)"
+url = "https://ntrs.nasa.gov/api/citations/19930094584/downloads/19930094584.pdf"
+kind = "pdf"
+nature = "MEASURED"
+
+[[source]]
+id = "barrowman-1967-thesis"
+title = "J. S. Barrowman, The Practical Calculation of the Aerodynamic Characteristics of Slender Finned Vehicles, MS thesis, Catholic University of America, 1967 (NASA/TM-2001-209983)"
+publisher = "NASA (Technical Reports Server 20010047838)"
+url = "https://ntrs.nasa.gov/api/citations/20010047838/downloads/20010047838.pdf"
+kind = "pdf"
+nature = "STATEMENT"
+
+[[source]]
+id = "williamson-2012-thesis"
+title = "G. A. Williamson, Experimental Wind Tunnel Study of Airfoils with Large Flap Deflections at Low Reynolds Numbers, MS thesis, University of Illinois at Urbana-Champaign, 2012"
+publisher = "UIUC Applied Aerodynamics Group"
+url = "https://m-selig.ae.illinois.edu/uiuc_lsat/Williamson-2012-UIUC-MS-Thesis.pdf"
+kind = "pdf"
+nature = "STATEMENT"

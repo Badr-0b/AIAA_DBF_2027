@@ -34,12 +34,15 @@ python analysis/data/sources_index.py  # SOURCES.md at the repo root: every sour
 | `calibration.csv` | Measured / predicted pairs (time, speed, mass, thrust, power, drag) for the same aircraft | Derived from `dbf_aircraft.csv` | Recomputed by `aircraft_model.py` |
 | `dbf_config.csv` | Wing position, gear, tail, propulsion and fuselage of the 19 top-3 aircraft (verbatim quotes), with that year's fly-off rank and M2/M3 completion | `dbf_aircraft.csv` + `dbf_results.csv` | Recomputed by `config_evidence.py` |
 | `field_stats.csv`, `field_bonus.csv` | Completion counts and bonus distributions per year | Derived from `dbf_results.csv` | Recomputed by `field_stats.py` |
+| `dbf_components.toml` | Component masses from 16 top-3 weight-and-balance tables, 2021-2026 (wing, fuselage, tail, gear, propulsion, avionics, payload mechanism), each row with its quote or IMAGE tag; every table is summed against its own printed total | AIAA top-3 design reports | `analysis/mass_breakdown.py` (quotes + sum check), `tests/test_mass_breakdown.py` |
+| `cushion_pe2.toml` | Polyethylene 2 pcf cushion curves (minimum peak g and optimum static stress for 1-6 in at 36/42/48 in drops), read on the scanned MIL-HDBK-304B pages | U.S. DoD MIL-HDBK-304B (1978), EverySpec mirror | `analysis/cushion_study.py`, `tests/test_cushion.py` |
+| `aero/` | Section and wing maximum lift: UIUC LSAT wind-tunnel polars (clean, tripped, plain flaps 0-65 deg), NACA TN 663 measured part-span flap wings, section coordinates (see `aero/README.md`) | UIUC, NACA | `tests/test_aero.py`; values read from the published files |
 | `prop/` | Propulsion evidence for Script 3b: APC computed tables, UIUC wind-tunnel data, T-Motor measured maps, pack specs, AIAA stand and flight data (see `prop/README.md`) | Manufacturers, UIUC, AIAA | `prop/verify_prop.py` |
 | `other_sources.toml` | Sources outside the two fetch registries (site and weather, D&R parts, methods, consulted, R&D-note links), each with nature and status; merged into `SOURCES.md` by `sources_index.py` | | `sources_index.py` completeness check |
 | `wind_timpa.csv` | Sustained wind, 15-18 April 1996-2025, 07-18 h, at RYN, AVQ and TUS | IEM ASOS archive (raw CSV in `raw/`) | Recomputed by `fetch_wind.py` |
 
 ## Not yet gathered (and why)
-- **Foam crush properties** (container, Ground Mission): JSP (ARPRO EPP) and Zotefoams (Plastazote PE) datasheets were not reachable from the manufacturers on 12 Oct 2026, and the distributor copies disagree. TC-02 (drop test) measures what we need directly.
+- **Foam crush properties** (container, Ground Mission): JSP (ARPRO EPP) and Zotefoams (Plastazote PE) datasheets were not reachable from the manufacturers on 12 Oct 2026. Since 16 Oct, `cushion_pe2.toml` carries the MIL-HDBK-304B curves for polyethylene 2 pcf (1978 foam); EPP is not in that handbook. TC-02 (drop test) measures our own foam.
 
 ## Findings so far (12 Oct 2026)
 - Completing M3 is what places a team: 15-31 teams per year complete it, and every top-20 team in 2023-2025 did. In 2026, ranks 19-20 placed without M3 on near-max M2 scores of 1.93 and 2.00.

@@ -6,6 +6,7 @@
 Merges, without retyping anything:
   analysis/data/sources.toml + sources.lock          AIAA documents (hashes, pages, fetch dates)
   analysis/data/prop/sources.toml + sources.lock     propulsion sources (hashes, fetch dates)
+  analysis/data/aero/sources.toml + sources.lock     aerodynamics sources (hashes, fetch dates)
   analysis/data/other_sources.toml                   site, weather, D&R parts, methods, consulted
   procurement/pr01_items.csv                         price links (PR-01)
   brainstorm.md                                      links behind the brainstorm notes
@@ -95,6 +96,7 @@ def main():
     c = usage()
     aiaa, aiaa_lock = toml(HERE / "sources.toml")["source"], lock(HERE / "sources.lock")
     prop, prop_lock = toml(HERE / "prop" / "sources.toml")["source"], lock(HERE / "prop" / "sources.lock")
+    aero, aero_lock = toml(HERE / "aero" / "sources.toml")["source"], lock(HERE / "aero" / "sources.lock")
     other = toml(HERE / "other_sources.toml")["source"]
     pr = [r for r in csv.DictReader((REPO / "procurement" / "pr01_items.csv").open(encoding="utf-8-sig")) if r["ref_url"].strip()]
     brain = sorted({norm_url(u) for u in URL_RX.findall((REPO / "brainstorm.md").read_text(encoding="utf-8"))})
@@ -134,9 +136,16 @@ def main():
 
     refs = sorted({s_["referer"] for s_ in prop if s_.get("referer")})
     L += ["", "APC files are downloaded from APC's downloads page (opened first as the Referer): " + ", ".join(refs)]
+
+    L += ["", "## 3b. Aerodynamics: section and wing maximum lift (clmax_study.py, wing_clmax.py)", "",
+          "| Source | Publisher | Nature | SHA-256 | Fetched | Link |", "|---|---|---|---|---|---|"]
+    for s in aero:
+        lk = aero_lock.get(s["id"], ["", "", "", ""])
+        L.append(f"| {s['title']} | {s['publisher']} | {s['nature']} | `{lk[0][:12]}` | {lk[2]} | {s['url']} |")
     groups = (("## 4. Deploy-and-recover mechanism parts (Table 06 trade)",
                lambda s: s["id"].startswith(("pololu", "gobilda", "rev-", "adafruit", "goodfellow", "reseller"))),
               ("## 5. Methods and tools", lambda s: s["nature"] == "METHOD"),
+              ("## 5b. Other measured data (handbooks)", lambda s: s["nature"] == "MEASURED"),
               ("## 6. Consulted, no value used", lambda s: s["nature"] == "CONSULTED"),
               ("## 7. R&D notes references (context only, no analysis value; quality in Status)",
                lambda s: s["nature"] == "NOTE"))
@@ -176,8 +185,8 @@ def main():
              if not missing else "**Links found in the repository but missing from this index:**")
     L += [f"- {m}" for m in missing]
     OUTFILE.write_text("\n".join(L) + "\n", encoding="utf-8")
-    n_src = len(aiaa) + len(prop) + len(other)
-    print(f"wrote {OUTFILE.name}: {n_src} sources ({len(aiaa)} AIAA, {len(prop)} propulsion, {len(other)} other), "
+    n_src = len(aiaa) + len(prop) + len(aero) + len(other)
+    print(f"wrote {OUTFILE.name}: {n_src} sources ({len(aiaa)} AIAA, {len(prop)} propulsion, {len(aero)} aero, {len(other)} other), "
           f"{len(pr)} price links, {len(brain)} brainstorm links; {len(missing)} unindexed links")
     for m in missing:
         print("  MISSING", m)

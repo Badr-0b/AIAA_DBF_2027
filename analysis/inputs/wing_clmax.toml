@@ -1,0 +1,35 @@
+# Inputs for wing_clmax.py: 3-D wing CLmax by the critical-section method.
+# Nothing here is a decision (user, 13 Oct). The planform values span the
+# options; the reference is Script 6's robust optimum (0.9 m2 on the 1.82 m span).
+# Section data come from out/clmax_sections.csv (clmax_study.py) and the
+# Williamson / LSAT files (data/aero/). Units: SI, angles in deg.
+
+[wing]
+span_m = 1.82                 # design span (aircraft.toml); rule limit 1.829 m (6 ft)
+areas_m2 = [0.8, 0.9, 1.0]    # Script 6 plateau
+tapers = [0.5, 0.7, 1.0]      # tip / root chord; 1.0 = rectangular
+flap_span = [0.5, 0.6, 0.7]   # flapped fraction of the semispan, from the root (ailerons outboard)
+flap_blend = 0.05             # twist step at the flap end spread over this fraction of the semispan
+                              # (a step makes a log singularity in lifting-surface theory)
+flap_cf = 0.25                # flap chord ratio, as the AG40d-02r tests (thesis Table 6.1)
+deltas = [0.0, 20.0, 30.0, 40.0]
+sections = ["SD7037", "SD7062", "SD7034"]
+
+[avl]
+n_chord = 12
+n_span = 40                   # per semispan, cosine spacing
+alpha_runs = [0.0, 10.0]      # AVL is linear; two runs give each strip's cl(alpha)
+
+[stall]
+v_mps = 14.0                  # accepted stall speed (studies.toml), for the strip Reynolds numbers
+rho = 1.064                   # \nRho, TIMPA hot day (proposal/data/numbers.tex)
+mu = 1.86e-5                  # Pa s, dry air at 29 C (Sutherland, 1.716e-5 (T/273.15)^1.5 (383.55/(T+110.4)))
+exclude_flap_edge = 0.03      # sensitivity: also report CLmax with strips within this fraction of the
+                              # semispan from the flap end ignored (the flap-end vortex peak)
+
+[trim]
+# Tail load to trim at CLmax (ESTIMATE band, tail not yet sized):
+# CL_trim = CL_w + (cbar / l_t) (Cm_ac,w + CL_w (h - h_ac,w)).
+lt_over_cbar = [2.5, 3.5]     # tail arm / mean chord; DBF tails ~2.5-3.5 cbar (estimate until D7/CAD)
+h_minus_hac = [-0.05, 0.10]   # CG aft of the wing aerodynamic centre, fraction of cbar (estimate;
+                              # depends on the static margin and the tail volume)

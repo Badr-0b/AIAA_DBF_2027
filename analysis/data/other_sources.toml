@@ -341,7 +341,27 @@ publisher = "MIT"
 url = "https://web.mit.edu/drela/Public/web/xfoil/"
 nature = "METHOD"
 status = "VERIFIED"
-used_for = "airfoil polars in proposal/data/airfoil_polars/ (Fig. airfoil)"
+used_for = "airfoil polars in proposal/data/airfoil_polars/ (Fig. airfoil); section Cl_max check against the UIUC tunnel (clmax_study.py, 15 Oct 2026)"
+
+[[source]]
+id = "avl"
+title = "AVL 3.52, M. Drela and H. Youngren (vortex-lattice method), Windows executable avl352.exe and user guide, downloaded 15 Oct 2026 (SHA-256 in analysis/tools/README.md)"
+publisher = "MIT"
+url = "https://web.mit.edu/drela/Public/web/avl/"
+also = ["https://web.mit.edu/drela/Public/web/avl/avl352.exe", "https://web.mit.edu/drela/Public/web/avl/avl_doc.txt"]
+nature = "METHOD"
+status = "VERIFIED"
+used_for = "span loading for the wing CLmax (wing_clmax.py, wing_clmax_validation.py)"
+
+[[source]]
+id = "mil-hdbk-304b"
+title = "MIL-HDBK-304B, Package Cushioning Design, U.S. Department of Defense, 31 Oct 1978 (Appendix V peak acceleration - static stress curves); EverySpec mirror, SHA-256 a7d40fdbbf9d..., read 16 Oct 2026"
+publisher = "U.S. Department of Defense (mirror: EverySpec; official host DLA ASSIST)"
+url = "https://everyspec.com/MIL-HDBK/MIL-HDBK-0300-0499/MIL_HDBK_304B_1778/"
+also = ["https://everyspec.com/MIL-HDBK/MIL-HDBK-0300-0499/download.php?spec=MIL_HDBK_304B.1778.pdf"]
+nature = "MEASURED"
+status = "VERIFIED (read on the scanned pages; mirror of the official DoD document)"
+used_for = "polyethylene 2 pcf cushion curves for the container (data/cushion_pe2.toml, cushion_study.py)"
 
 [[source]]
 id = "raymer"
@@ -350,7 +370,7 @@ publisher = "AIAA"
 url = ""
 nature = "METHOD"
 status = "VERIFIED"
-used_for = "Oswald efficiency in Scripts 3-4; tail audit in trades.toml"
+used_for = "Oswald efficiency in Scripts 3-4; tail audit in trades.toml; part-span flap increment form 0.9 dCl_max S_f/S (ch. 12; not re-read 15 Oct, tested instead against NACA TN 663 in wing_clmax_validation.py)"
 
 [[source]]
 id = "anderson-performance"

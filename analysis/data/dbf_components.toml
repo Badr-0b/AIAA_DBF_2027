@@ -1,0 +1,519 @@
+# Component mass breakdowns (weight-and-balance tables) of the AIAA DBF top-3 design
+# reports, 2021-2026, for evidence gap E02 (airframe mass). Extracted 16 Oct 2026.
+#
+# One [[aircraft]] per table. Each row: [label, category, value, quote(, page if not the table's)]
+#   label     the team's own row name, as printed
+#   category  wing | fuselage | empennage | gear | propulsion | avionics | payload_system |
+#             battery | payload | ballast | other   (see `analysis/mass_breakdown.py`)
+#   value     as printed, in the table's `unit`
+#   quote     the row as it reads in the cached text layer (verify.py's find, whitespace-
+#             normalised), or "IMAGE" for tables with no text layer, read on the page
+#             rendered at 130 dpi and confirmed by the table's own sum (sum check below)
+# total       the table's printed total for `total_label` and what it includes; the
+#             checker sums the rows of `total_rows` categories against it (a reading or a
+#             team typo shows up as a mismatch, which is reported, never "fixed")
+# not_in_total  rows listed outside the printed total (e.g. a per-mission propeller)
+# lumped      categories the team merged into another row (e.g. motors inside the wing):
+#             those aircraft are excluded from the per-category statistics of that category
+# basis       measured (weighed parts), cad (CAD/estimated), mixed, as the report states
+
+[[aircraft]]
+year = 2021
+team = "University of Michigan"
+aircraft = "MACH 5"
+source = "aiaa-dbf-2021-reports"
+page = 40
+table = "Table 16"
+unit = "lb"
+basis = "design"
+total = [12.5, "Empty Total 12.5 6.10 0 0.09"]
+total_label = "Empty Total (includes 2x Battery Pack)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "payload_system", "battery"]
+lumped = []
+rows = [
+  ["Wing", "wing", "3.41", "Wing 3.41 3.02 0 0.83"],
+  ["Fuselage", "fuselage", "1.91", "Fuselage 1.91 11.66 0 -0.86"],
+  ["Vertical Tail", "empennage", "0.04", "Vertical Tail 0.04 51.30 0 5.06"],
+  ["Horizontal Tail", "empennage", "0.09", "Horizontal Tail 0.09 51.70 0 0.56"],
+  ["Sensor Deployment/Retract Mechanism", "payload_system", "0.46", "Mechanism 0.46 -3.26 0 -1.38"],
+  ["Sensor Claw", "payload_system", "0.38", "Sensor Claw 0.38 0.36 0 -4.24"],
+  ["Nose Gear", "gear", "0.31", "Nose Gear 0.31 -5.21 0 -6.40"],
+  ["Main Gear", "gear", "0.43", "Main Gear 0.43 7.0 0 -6.03"],
+  ["Arduino", "payload_system", "0.02", "Arduino 0.02 -0.85 0 -4.91"],
+  ["2x Motors", "propulsion", "1.34", "2x Motors 1.34 0.4633 0 0.88"],
+  ["2x Propellers", "propulsion", "0.19", "2x Propellers 0.19 1.35 0 0.88"],
+  ["6x Control Surface Servos", "avionics", "0.32", "6x Control Surface Servos 0.32 9.02 0 0.38"],
+  ["Nose Gear Servo", "avionics", "0.08", "Nose Gear Servo 0.08 -3.5 0 -4.41"],
+  ["Bomb Bay Door Servo", "payload_system", "0.04", "Bomb Bay Door Servo 0.04 -0.76 0 -5.37"],
+  ["2x Speed Controllers", "propulsion", "0.36", "2x Speed Controllers 0.36 3.7 0 -0.97"],
+  ["Receiver", "avionics", "0.04", "Receiver 0.04 -1.51 0 -4.50"],
+  ["2x Battery Pack", "battery", "2.68", "2x Battery Pack 2.68 10.17 0 -0.42"],
+]
+
+[[aircraft]]
+year = 2021
+team = "Dayananda Sagar College of Engineering"
+aircraft = "Team Arcis"
+source = "aiaa-dbf-2021-reports"
+page = 100
+table = "Table 5.3"
+unit = "lb"
+basis = "design"
+total = [8.98, "Total 8.98"]
+total_label = "Mission 1 Total (includes Battery 2.76)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "payload_system", "battery"]
+total_page = 101
+lumped = []
+rows = [
+  ["Propeller", "propulsion", "0.29", "Propeller 0.29 -16.34 -4.68"],
+  ["Motor", "propulsion", "0.96", "Motor 0.96 -14.17 -13.59"],
+  ["ESC", "propulsion", "0.22", "ESC 0.22 -6.89 -1.52"],
+  ["Reciever", "avionics", "0.04", "Reciever 0.04 -6.89 -0.30"],
+  ["Red Arming Plug", "avionics", "0.08", "Red Arming Plug 0.08 -6.89 -0.53"],
+  ["Fuselage", "fuselage", "1.34", "Fuselage 1.34 7.36 9.89"],
+  ["Wing", "wing", "0.92", "Wing 0.92 5.21 4.82"],
+  ["Nose Landing Gear", "gear", "0.38", "Nose Landing Gear 0.38 -2.56 -0.97"],
+  ["Main Landing Gear", "gear", "0.69", "Main Landing Gear 0.69 7.82 5.42"],
+  ["Horizontal Tail", "empennage", "0.18", "Horizontal Tail 0.18 32.73 6.04"],
+  ["Vertical Tail", "empennage", "0.09", "Vertical Tail 0.09 29.42 2.65"],
+  ["Aileron and Flap Servos", "avionics", "0.08", "Aileron and Flap Servos 0.08 7.86 0.62"],
+  ["Elevator Servos", "avionics", "0.04", "Elevator Servos 0.04 33.30 1.32"],
+  ["Rudder Servos", "avionics", "0.02", "Rudder Servos 0.02 29.78 0.66"],
+  ["Wires", "avionics", "0.22", "Wires 0.22 -2.56 -0.56"],
+  ["DRM", "payload_system", "0.66", "DRM 0.66 20.39 13.49"],
+  ["Battery (Mission 1)", "battery", "2.76", "Mission 1 Battery 2.76 7.68 21.16"],
+]
+
+[[aircraft]]
+year = 2021
+team = "University of Central Florida"
+aircraft = "Knightmobile"
+source = "aiaa-dbf-2021-reports"
+page = 160
+table = "Table 5.3"
+unit = "lb"
+basis = "design"      # "approximate weight" (text above the table)
+total = [5.428, "IMAGE"]
+total_label = "Total Empty Weight (no propeller, battery or mechanism)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion"]
+lumped = ["avionics"]   # no avionics, servo or ESC row; the listed rows sum 0.63 lb below the total
+not_in_total = ["15 X 8 Propeller (Mission 1)", "Battery (Mission 1)", "Mechanism (Mission 3)"]
+rows = [
+  ["Motor", "propulsion", "0.86", "IMAGE"],
+  ["Fuselage", "fuselage", "1.8", "IMAGE"],
+  ["Landing Gear", "gear", "0.82", "IMAGE"],
+  ["Wing", "wing", "1.02", "IMAGE"],
+  ["Horizontal Tail", "empennage", "0.1", "IMAGE"],
+  ["Vertical Tail", "empennage", "0.2", "IMAGE"],
+  ["15 X 8 Propeller (Mission 1)", "propulsion", "0.097", "IMAGE"],
+  ["Battery (Mission 1)", "battery", "0.816", "IMAGE"],
+  ["Mechanism (Mission 3)", "payload_system", "1.5", "IMAGE"],
+]
+
+[[aircraft]]
+year = 2022
+team = "FH JOANNEUM University of Applied Sciences"
+aircraft = "Hornet"
+source = "aiaa-dbf-2022-reports"
+page = 44
+table = "Table 33"
+unit = "lb"
+basis = "mixed"       # "estimation based on component volumes with known densities, measured component masses"
+total = [10.12, "Empty weight excl. batteries 10.12 24.43 -0.05 -0.55"]
+total_label = "Empty weight excl. batteries"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "payload_system"]
+lumped = ["avionics"]   # wing and tail rows include their avionics (servos)
+not_in_total = ["Propulsion battery (Mission 1)", "Avionics battery (Mission 1)"]
+rows = [
+  ["Fuselage without cowling", "fuselage", "1.76", "Fuselage without cowling 1.76 31.50 0 -0.87"],
+  ["Propulsion with cowling", "propulsion", "1.21", "Propulsion with cowling 1.21 2.76 0 -0.39"],
+  ["Wing with avionics", "wing", "2.65", "Wing with avionics 2.65 23.43 0 2.95"],
+  ["Winglets", "wing", "0.26", "Winglets 0.26 27.17 0 3.94"],
+  ["Fuselage and wing connection", "fuselage", "0.09", "Fuselage and wing connection 0.09 20.47 0 2.05"],
+  ["Fuselage and empennage connection", "empennage", "0.10", "Fuselage and empennage connection 0.10 57.09 0 2.17"],
+  ["Horizontal stabilizer with avionics", "empennage", "0.33", "Horizontal stabilizer with avionics 0.33 58.27 -0.39 2.36"],
+  ["Vertical stabilizer with avionics", "empennage", "0.18", "Vertical stabilizer with avionics 0.18 58.27 0 7.09"],
+  ["Main landing gear assembly", "gear", "1.10", "Main landing gear assembly 1.10 26.77 0 -7.09"],
+  ["Nose landing gear assembly", "gear", "0.26", "Nose landing gear assembly 0.26 9.06 0 -6.30"],
+  ["Propeller", "propulsion", "0.09", "Propeller 0.09 0 0 0"],
+  ["Deployment mechanism", "payload_system", "1.32", "Deployment mechanism 1.32 24.02 0 -3.15"],
+  ["Cargo door mechanism", "payload_system", "0.09", "Cargo door mechanism 0.09 37.40 0 -3.54"],
+  ["Cargo door servo mechanism", "payload_system", "0.08", "Cargo door servo mechanism 0.08 37.01 2.36 1.18"],
+  ["Electronic speed control", "propulsion", "0.25", "Electronic speed control 0.25 7.09 0 -3.15"],
+  ["PCB with DC/DC converters", "payload_system", "0.22", "PCB with DC/DC converters 0.22 35.43 -2.36 0.00"],
+  ["Central control unit", "payload_system", "0.08", "Central control unit 0.08 14.96 0 -3.15"],
+  ["Receiver", "avionics", "0.04", "Receiver 0.04 35.43 0 0.79"],
+  ["Propulsion battery (Mission 1)", "battery", "1.39", "Propulsion battery 1.39 13.78 0 -1.97"],
+  ["Avionics battery (Mission 1)", "avionics", "0.37", "Avionics battery 0.37 13.78 0 -0.79"],
+]
+
+[[aircraft]]
+year = 2022
+team = "Washington University in St. Louis"
+aircraft = "Pflyzer"
+source = "aiaa-dbf-2022-reports"
+page = 160
+table = "Table 5.3"
+unit = "kg"           # printed as "Weight [kgf]": a mass in kg (1 kgf weighs 1 kg)
+basis = "design"
+total = [5.68, "M1 Overall 5.68 -157.5 0.00 -35.81"]
+total_label = "M1 Overall (includes Propulsion Battery)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "payload_system", "battery"]
+lumped = []
+rows = [
+  ["Wing", "wing", "1.82", "Wing 1.82 -299.7 0.00 -56.39"],
+  ["Fuselage", "fuselage", "1.37", "Fuselage 1.37 -321.3 0.00 -42.16"],
+  ["VT", "empennage", "0.03", "VT 0.03 -1390 0.00 -190.5"],
+  ["HT", "empennage", "0.04", "HT 0.04 -1458 0.00 -26.42"],
+  ["Main Gear", "gear", "0.34", "Main Gear 0.34 19.05 0.00 104.6"],
+  ["Tailwheel", "gear", "0.01", "Tailwheel 0.01 -1267 -12.45 12.45"],
+  ["7x Control Servos", "avionics", "0.09", "7x Control Servos 0.09 -833.4 19.56 -72.90"],
+  ["4x Release Servos", "payload_system", "0.05", "4x Release Servos 0.05 -201.2 0.00 -46.23"],
+  ["2x Pulley Servos", "payload_system", "0.11", "2x Pulley Servos 0.11 -204.7 0.00 -64.77"],
+  ["ESC", "propulsion", "0.12", "ESC 0.12 257.3 0.00 -123.4"],
+  ["Control Electronics", "avionics", "0.54", "Control Electronics 0.54 -274.1 0.00 -55.63"],
+  ["Propulsion Battery", "battery", "0.75", "Propulsion Battery 0.75 125.0 0.00 -74.93"],
+  ["Motor", "propulsion", "0.61", "Motor 0.61 350.0 0.00 -100.08"],
+]
+
+[[aircraft]]
+year = 2023
+team = "University of Washington"
+aircraft = "UW-23 Sailfin"
+source = "aiaa-dbf-2023-reports"
+page = 41
+table = "Table 20"
+unit = "lb"
+basis = "design"      # analytical; the flight-test aircraft weighed 9.25 lb in M1 (dbf_aircraft.toml)
+total = [10.61, "IMAGE"]
+total_label = "M1 (includes Propulsion and Avionics Battery)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "battery", "other"]
+lumped = []
+rows = [
+  ["Propulsion Battery", "battery", "1.61", "IMAGE"],
+  ["Avionics Battery", "avionics", "0.22", "IMAGE"],
+  ["Motor", "propulsion", "1.23", "IMAGE"],
+  ["Propeller", "propulsion", "0.08", "IMAGE"],
+  ["Flight Control Electronics", "avionics", "0.52", "IMAGE"],
+  ["Wiring", "avionics", "0.27", "IMAGE"],
+  ["Wing Structure", "wing", "2.67", "IMAGE"],
+  ["Nose Tapered Section", "fuselage", "0.32", "IMAGE"],
+  ["Fuselage Midsection", "fuselage", "0.28", "IMAGE"],
+  ["Empennage Section", "fuselage", "0.73", "IMAGE"],
+  ["Empennage Connection", "fuselage", "0.47", "IMAGE"],
+  ["Motor Mount", "propulsion", "0.10", "IMAGE"],
+  ["Wing Mount", "fuselage", "0.37", "IMAGE"],
+  ["Main Landing Gear", "gear", "0.74", "IMAGE"],
+  ["Tail Landing Gear", "gear", "0.25", "IMAGE"],
+  ["Horizontal Stabilizer", "empennage", "0.41", "IMAGE"],
+  ["Vertical stabilizer", "empennage", "0.15", "IMAGE"],
+  ["Glue", "other", "0.20", "IMAGE"],
+]
+
+[[aircraft]]
+year = 2023
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+aircraft = "ROOSTER"
+source = "aiaa-dbf-2023-reports"
+page = 103
+table = "Table 5-4"
+unit = "lb"
+basis = "design"
+total = [10.77, "Empty 10.77 14.61 0.00 1.03"]
+total_label = "Empty (no battery)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics"]
+lumped = []
+rows = [
+  ["Wing", "wing", "3.35", "Wing 3.35 14.29 0.00 1.00"],
+  ["Horizontal Tail", "empennage", "0.46", "Horizontal Tail 0.46 45.79 0.00 0.00"],
+  ["Vertical Tail", "empennage", "0.30", "Vertical Tail 0.30 43.79 0.00 -6.50"],
+  ["Fuselage", "fuselage", "2.04", "Fuselage 2.04 12.79 0.00 0.00"],
+  ["Tail Boom", "fuselage", "0.56", "Tail Boom 0.56 29.79 0.00 0.00"],
+  ["Main Landing Gear", "gear", "1.25", "Main Landing Gear 1.25 15.29 0.00 5.50"],
+  ["Nose Gear", "gear", "0.28", "Nose Gear 0.28 2.99 0.00 7.50"],
+  ["Propulsion System", "propulsion", "1.67", "Propulsion System 1.67 1.50 0.00 0.00"],
+  ["Forward Avionics", "avionics", "0.55", "Forward Avionics 0.55 6.54 0.00 0.50"],
+  ["Aft Avionics", "avionics", "0.32", "Aft Avionics 0.32 21.29 0.00 1.50"],
+  ["Battery (Mission 1)", "battery", "1.41", "Mission 1 Battery 1.41 7.54 0.00 -0.50"],
+]
+
+[[aircraft]]
+year = 2023
+team = "Virginia Polytechnic Institute and State University"
+aircraft = "Spirit of Blacksburg"
+source = "aiaa-dbf-2023-reports"
+page = 160
+table = "Table 26"
+unit = "g"            # the "Mass (Actual)" g column (weighed)
+basis = "measured"
+total = [2305.05, "IMAGE"]
+total_label = "Mission 1 Total Mass, actual (includes M1 Propeller and M1 Batteries)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "battery"]
+lumped = []
+rows = [
+  ["Left Fuselage", "fuselage", "79.38", "IMAGE"],
+  ["Right Fuselage", "fuselage", "73.71", "IMAGE"],
+  ["Boom", "fuselage", "127.57", "IMAGE"],
+  ["Motor Mount", "propulsion", "5.67", "IMAGE"],
+  ["Left Wing", "wing", "93.55", "IMAGE"],
+  ["Mid Wing", "wing", "45.36", "IMAGE"],
+  ["Right Wing", "wing", "87.88", "IMAGE"],
+  ["Right Aileron", "wing", "14.17", "IMAGE"],
+  ["Left Aileron", "wing", "14.17", "IMAGE"],
+  ["Right Flap", "wing", "25.51", "IMAGE"],
+  ["Left Flap", "wing", "25.51", "IMAGE"],
+  ["Wing Spar", "wing", "306.17", "IMAGE"],
+  ["Left Horizontal Stabilizer", "empennage", "19.84", "IMAGE"],
+  ["Right Horizontal Stabilizer", "empennage", "19.84", "IMAGE"],
+  ["Elevator", "empennage", "31.18", "IMAGE"],
+  ["Vertical Stabilizer", "empennage", "22.68", "IMAGE"],
+  ["Rudder", "empennage", "17.01", "IMAGE"],
+  ["Main Landing Gear", "gear", "119.07", "IMAGE"],
+  ["Nose Gear", "gear", "34.02", "IMAGE"],
+  ["Motor", "propulsion", "289.16", "IMAGE"],
+  ["Futaba Receiver", "avionics", "11.34", "IMAGE"],
+  ["Receiver Battery", "avionics", "116.23", "IMAGE"],
+  ["ESC", "propulsion", "70.87", "IMAGE"],
+  ["Wire Harness", "avionics", "73.71", "IMAGE"],
+  ["M1 Propeller", "propulsion", "45.36", "IMAGE"],
+  ["M1 Batteries", "battery", "536.09", "IMAGE"],
+]
+
+[[aircraft]]
+year = 2024
+team = "University of Southern California"
+aircraft = "EmergenSC"
+source = "aiaa-dbf-2024-reports"
+page = 38
+table = "Table 27"
+unit = "g"            # the g column; the lb column does not sum to its own total (9.98 vs 11.5)
+basis = "mixed"       # "measured component weights and empirical material measurements"
+total = [5210, "Total 11.5 5210"]
+total_label = "M1 Total (includes M1 Propellers and Battery)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "payload_system", "battery"]
+lumped = ["propulsion"]   # motors and wiring are inside the wing row
+rows = [
+  ["Fuselage with Boom", "fuselage", "1107", "Fuselage with Boom 2.37 1107"],
+  ["Wing (Includes Motors and wiring)", "wing", "2470", "Wing (Includes Motors and wiring) 4.16 2470"],
+  ["Tail", "empennage", "414", "Tail 0.91 414"],
+  ["Main Landing Gear", "gear", "125", "Main Landing Gear 0.22 125"],
+  ["Nose Landing Gear", "gear", "34", "Nose Landing Gear 0.07 34"],
+  ["Fixed Avionics", "avionics", "209", "Fixed Avionics 0.41 209"],
+  ["Crew", "payload_system", "78", "Crew 0.17 78"],
+  ["M1 Propellers", "propulsion", "80", "M1 Propellers 0.18 80"],
+  ["Battery (M1)", "battery", "720", "Battery 1.49 720 -9.45"],
+]
+
+[[aircraft]]
+year = 2024
+team = "University of Ljubljana"
+aircraft = "Adria"
+source = "aiaa-dbf-2024-reports"
+page = 100
+table = "Table 9"
+unit = "lb"
+basis = "mixed"       # "calculated from CAD models and weighting of the manufactured components"
+total = [8.09, "Total M1 8.09 24.36 1.29"]
+total_label = "Total M1 (includes Propulsion battery and M1 ballast)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "battery", "ballast"]
+lumped = []
+rows = [
+  ["Propeller", "propulsion", "0.099", "Propeller 0.099 -1.96 0"],
+  ["Wing", "wing", "2.20", "Wing 2.20 27.56 3.54"],
+  ["Motor", "propulsion", "0.99", "Motor 0.99 -0.98 0"],
+  ["Servo battery", "avionics", "0.15", "Servo battery 0.15 5.51 0.59"],
+  ["Fuselage", "fuselage", "0.92", "Fuselage 0.92 31.50 -0.20"],
+  ["Transmitter", "avionics", "0.03", "Transmitter 0.03 7.09 0.79"],
+  ["ESC", "propulsion", "0.26", "ESC 0.26 4.72 0.39"],
+  ["Vertical stabiliser", "empennage", "0.18", "Vertical stabiliser 0.18 58.27 7.28"],
+  ["Propulsion battery", "battery", "1.43", "Propulsion battery 1.43 5.90 0"],
+  ["Horizontal stabiliser", "empennage", "0.26", "Horizontal stabiliser 0.26 62.00 12.01"],
+  ["Front landing gear", "gear", "0.18", "Front landing gear 0.18 11.61 -4.52"],
+  ["M1 balast weight", "ballast", "1.10", "M1 balast weight 1.10 55.12 0"],
+  ["Rear landing gear", "gear", "0.26", "Rear landing gear 0.26 30.51 -4.13"],
+]
+
+[[aircraft]]
+year = 2024
+team = "Virginia Polytechnic Institute and State University"
+aircraft = "The Hokie Express"
+source = "aiaa-dbf-2024-reports"
+page = 155
+table = "Table 26"
+unit = "g"            # the "Mass (Actual)" g column (weighed)
+basis = "measured"
+total = [5061.2, "IMAGE"]
+total_label = "Mission 1 Total Mass, actual (includes M1 Propellers and M1 Batteries)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "battery"]
+lumped = []
+rows = [
+  ["Fuselage", "fuselage", "635.0", "IMAGE"],
+  ["Boom", "fuselage", "226.8", "IMAGE"],
+  ["Nose Cone", "fuselage", "244.9", "IMAGE"],
+  ["Left Motor Mount", "propulsion", "18.1", "IMAGE"],
+  ["Right Motor Mount", "propulsion", "18.1", "IMAGE"],
+  ["Left Wing", "wing", "233.1", "IMAGE"],
+  ["Auxiliary Spar", "wing", "13.6", "IMAGE"],
+  ["Right Wing", "wing", "233.1", "IMAGE"],
+  ["Right Aileron", "wing", "20.9", "IMAGE"],
+  ["Left Aileron", "wing", "20.9", "IMAGE"],
+  ["Right Flap", "wing", "39.0", "IMAGE"],
+  ["Left Flap", "wing", "39.0", "IMAGE"],
+  ["Wing Spar", "wing", "267.6", "IMAGE"],
+  ["Right Winglet", "wing", "22.7", "IMAGE"],
+  ["Left Winglet", "wing", "22.7", "IMAGE"],
+  ["Tail Cone", "fuselage", "95.3", "IMAGE"],
+  ["Left Horizontal Stabilizer", "empennage", "27.2", "IMAGE"],
+  ["Right Horizontal Stabilizer", "empennage", "27.2", "IMAGE"],
+  ["Left Elevator", "empennage", "31.8", "IMAGE"],
+  ["Right Elevator", "empennage", "31.8", "IMAGE"],
+  ["Vertical Stabilizer", "empennage", "81.6", "IMAGE"],
+  ["Rudder", "empennage", "36.3", "IMAGE"],
+  ["Tail Mount", "empennage", "49.9", "IMAGE"],
+  ["Main Landing Gear", "gear", "199.6", "IMAGE"],
+  ["Nose Gear", "gear", "91.6", "IMAGE"],
+  ["Left Motor", "propulsion", "324.8", "IMAGE"],
+  ["Right Motor", "propulsion", "324.8", "IMAGE"],
+  ["Spektrum Receiver", "avionics", "90.7", "IMAGE"],
+  ["Brake Battery Pack", "avionics", "40.8", "IMAGE"],
+  ["Receiver Battery Pack", "avionics", "40.8", "IMAGE"],
+  ["ESC", "propulsion", "181.4", "IMAGE"],
+  ["Wire Harness", "avionics", "589.7", "IMAGE"],
+  ["M1 Propellers", "propulsion", "38.1", "IMAGE"],
+  ["M1 Batteries", "battery", "702.2", "IMAGE"],
+]
+
+[[aircraft]]
+year = 2025
+team = "University of New South Wales"
+aircraft = "BRICK"
+source = "aiaa-dbf-2025-reports"
+page = 46
+table = "Table 5.6"
+unit = "lb"
+basis = "measured"    # "measured using scales"
+total = [10.47, "Empty (CG) 10.47 8.28 0.00 1.00"]
+total_page = 47
+total_label = "Empty (no propulsion batteries)"
+total_rows = ["wing", "fuselage", "empennage", "propulsion"]
+lumped = ["avionics", "gear", "propulsion"]   # avionics, boom and gear inside Fuselage; motors and servos inside the wings
+rows = [
+  ["Fuselage", "fuselage", "2.31", "Fuselage 2.31 6.89 0.00 3.74"],
+  ["HT Left", "empennage", "0.44", "HT Left 0.44 47.52 8.07 5.59"],
+  ["HT Right", "empennage", "0.44", "HT Right 0.44 47.52 -8.07 5.59"],
+  ["Left Prop", "propulsion", "0.19", "Left Prop 0.19 -5.71 9.17 0.00"],
+  ["Right Prop", "propulsion", "0.19", "Right Prop 0.19 -5.71 -9.17 0.00"],
+  ["VT", "empennage", "0.28", "VT 0.28 47.36 0.00 -7.09"],
+  ["Right Wing (inc. motor)", "wing", "2.86", "Right Wing (inc. motor) 2.86 1.97 -10.83 -0.20"],
+  ["Left Wing (inc. motor)", "wing", "2.86", "Left Wing (inc. motor) 2.86 1.97 10.83 -0.20"],
+  ["Right Winglet", "wing", "0.45", "Right Winglet 0.45 7.20 -32.95 0.00"],
+  ["Left Winglet", "wing", "0.45", "Left Winglet 0.45 7.20 32.95 0.00", 47],
+]
+
+[[aircraft]]
+year = 2025
+team = "Embry-Riddle Aeronautical University, Daytona Beach"
+aircraft = "VIPER"
+source = "aiaa-dbf-2025-reports"
+page = 163
+table = "Table 5-4"
+unit = "lb"
+basis = "measured"    # "were recorded" for each flight configuration
+total = [13.58, "Empty 13.58 20.30 0.00 -1.23"]
+total_label = "Empty (includes Battery)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "battery"]
+lumped = []
+rows = [
+  ["Wing", "wing", "4.12", "Wing 4.12 26.03 0.00 -2.80"],
+  ["Horizontal Tail", "empennage", "0.30", "Horizontal Tail 0.30 62.92 0.00 0.02"],
+  ["Vertical Tail", "empennage", "0.36", "Vertical Tail 0.36 61.43 0.00 6.60"],
+  ["Fuselage", "fuselage", "2.32", "Fuselage 2.32 21.99 0.00 -0.26"],
+  ["Main Landing Gear", "gear", "0.56", "Main Landing Gear 0.56 26.24 9.50 -9.70"],
+  ["Nose Gear", "gear", "0.14", "Nose Gear 0.14 4.94 0.00 10.25"],
+  ["Avionics", "avionics", "1.86", "Avionics 1.86 7.12 0.00 -0.88"],
+  ["Tail Boom", "fuselage", "0.44", "Tail Boom 0.44 46.43 0.00 0.00"],
+  ["Propulsion System", "propulsion", "1.92", "Propulsion System 1.92 2.09 0.00 0.00"],
+  ["Battery", "battery", "1.56", "Battery 1.56 12.97 0.00 -0.79"],
+]
+
+[[aircraft]]
+year = 2026
+team = "University of Southern California"
+aircraft = "Trojan HorSCe"
+source = "aiaa-dbf-2026-reports"
+page = 42
+table = "Table 26"
+unit = "g"
+basis = "mixed"
+total = [6500, "Total 14.3 6500 4.68"]
+total_label = "M1 Total (includes M1 Propeller and Battery)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "payload_system", "battery"]
+lumped = ["propulsion"]   # motor and wiring inside the fuselage row
+rows = [
+  ["Fuselage (Includes Wiring & Motor)", "fuselage", "1830", "Fuselage (Includes Wiring & Motor) 4.04 1830"],
+  ["Wing", "wing", "2350", "Wing 5.18 2350"],
+  ["Tail", "empennage", "599", "Tail 1.32 599"],
+  ["Main Landing Gear", "gear", "295", "Main Landing Gear 0.650 295"],
+  ["Tail Landing Gear", "gear", "90.7", "Tail Landing Gear 0.200 90.7"],
+  ["Fixed Avionics", "avionics", "437", "Fixed Avionics 0.963 437"],
+  ["Fixed Banner Mechanisms", "payload_system", "70.0", "Fixed Banner Mechanisms 0.154 70.0"],
+  ["M1 Propeller", "propulsion", "98.1", "M1 Propeller 0.216 98.1"],
+  ["Battery (M1)", "battery", "731", "Battery 1.61 731 -7.9"],
+]
+
+[[aircraft]]
+year = 2026
+team = "University of Ljubljana"
+aircraft = ""
+source = "aiaa-dbf-2026-reports"
+page = 100
+table = "Table 20"
+unit = "lb"
+basis = "measured"    # "every sub-component was weighed after it was manufactured"
+total = [6.83, "Total M1 6.83 18.90"]
+total_label = "Total M1 (includes Propulsion battery and M1 ballast)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "battery", "ballast"]
+lumped = []
+rows = [
+  ["Propeller", "propulsion", "0.10", "Propeller 0.10"],
+  ["Fuselage", "fuselage", "1.23", "Fuselage 1.23 24.25"],
+  ["Motor", "propulsion", "0.86", "Motor 0.86 1.48"],
+  ["Wing", "wing", "1.87", "Wing 1.87 22.87"],
+  ["ESC", "propulsion", "0.11", "ESC 0.11 4.94"],
+  ["Horizontal stabilizer", "empennage", "0.29", "Horizontal stabilizer 0.29 56.57"],
+  ["Propulsion battery", "battery", "1.52", "Propulsion battery 1.52 8.48"],
+  ["Transmitter and battery", "avionics", "0.15", "Transmitter and battery 0.15 34.25"],
+  ["Front landing gear", "gear", "0.18", "Front landing gear 0.18 3.54"],
+  ["M1 ballast weight", "ballast", "0.17", "M1 ballast weight 0.17 57"],
+  ["Rear landing gear", "gear", "0.35", "Rear landing gear 0.35 28.54"],
+]
+
+[[aircraft]]
+year = 2026
+team = "Georgia Institute of Technology"
+aircraft = "Buzzerang"
+source = "aiaa-dbf-2026-reports"
+page = 160
+table = "Table 5-5"
+unit = "lb"
+basis = "design"      # "predicted weights"
+total = [4.48, "M1 - 4.48 5.38"]
+total_label = "M1 (includes Receiver Battery and Main Battery)"
+total_rows = ["wing", "fuselage", "empennage", "gear", "propulsion", "avionics", "battery"]
+lumped = []
+rows = [
+  ["Nose Landing Gear", "gear", "0.1", "Nose Landing Gear 0.1 -5.6"],
+  ["Main Landing Gear", "gear", "0.4", "Main Landing Gear 0.4 8 3.2"],
+  ["Tail", "empennage", "0.3", "Tail 0.3 32.25"],
+  ["Fuselage", "fuselage", "1.2", "Fuselage 1.2 11 13.2"],
+  ["Wing", "wing", "0.71", "Wing 0.71 3.33"],
+  ["Propellor", "propulsion", "0.1", "Propellor 0.1 -7"],
+  ["Motor", "propulsion", "0.4", "Motor 0.4 -6.3"],
+  ["ESC", "propulsion", "0.1", "ESC 0.1 -5.8"],
+  ["Receiver", "avionics", "0.05", "Receiver 0.05 -4"],
+  ["Aileron Servos", "avionics", "0.04", "Aileron Servos 0.04 5"],
+  ["Tail Servos", "avionics", "0.04", "Tail Servos 0.04 36"],
+  ["Wiring/Connectors", "avionics", "0.1", "Wiring/Connectors 0.1 12"],
+  ["Receiver Battery", "avionics", "0.05", "Receiver Battery 0.05 -5"],
+  ["Main Battery", "battery", "0.89", "Main Battery 0.89 -2.675"],
+]

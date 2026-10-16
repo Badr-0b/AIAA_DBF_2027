@@ -1,0 +1,112 @@
+% TC-06 Propulsion bench: both D9 candidate systems, propeller sweep, fuse and thermal duty. Build: ../build.sh
+\def\dbfroot{../../design-system}
+\documentclass[final]{dbfdoc}
+\dbfsetdoc{Propulsion Bench and Fuse Duty}{Test Card TC-06}{AUM-DBF-27-TC-006}{A}
+\dbfsetdate{16 Oct 2026}
+\raggedbottom
+
+\begin{document}
+
+\begin{frontmatter}
+\section{Objective}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\setlength\parindent{1.15em}\noindent
+Measure thrust, torque, RPM, voltage and current of the two propulsion systems still open at decision D9, across the propeller sweep, and check every reading against the Script~3b prediction printed on this card. Then run each system through the Mission~2 current profile on its rule-legal fuse. The results replace the model's weakest inputs (propeller tables near the RPM limit, motor maps, pack resistance) with our own measurements, and they settle whether each fuse survives the mission.
+
+\noindent\textbf{Systems.} 8S: Thunder Power TP3300-8SE55, T-Motor AT7215 KV270. 12S: MaxAmps 2000 12S, T-Motor AT7215 KV200. Both on the Castle Phoenix Edge HV~120 and APC 20$\times$15E, 20$\times$13E, 20.5$\times$14E and 21$\times$13E.
+
+\noindent\textbf{Limitation.} The stand is static. The propeller at 30~m/s airspeed is checked only in flight (ESC logs) or on an open-jet fan.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\vspace{-11pt}
+\begin{dbfpanel}[Test at a Glance]
+\dbfreadout{Crew}{3}{people}\hfill\dbfreadout{Duration}{5--6}{h}\dbfreadoutgap
+\dbfreadout{Configurations}{8}{}\hfill\dbfreadout{Steps each}{4--5 + full}{}\dbfreadoutgap
+\dbfreadout{Peak thrust}{$\approx$120}{N}\hfill\dbfreadout{Peak current}{$\approx$97}{A}
+\end{dbfpanel}
+\end{minipage}
+\end{frontmatter}
+
+\section{Rules That Apply}
+\begin{itemize}
+\item \textbf{Motor and propeller} (§3.2.1): an unmodified, commercially available motor; a commercially produced propeller. Tips may be clipped; nothing else may be modified.
+\item \textbf{Packs} (§3.2.3.1--3.2.3.2): one pack per propulsion system, at most 100~Wh (rated capacity $\times$ rated voltage), in the original labelled packaging at tech.
+\item \textbf{Fuse} (§3.2.3.1--3.2.3.2): a blade fuse in its own harness between the pack and the arming plug, rated at most the pack's maximum continuous current, up to 100~A. The 8S pack (55C, 3.3~Ah) allows 100~A. The 12S pack is rated 54~A, so its fuse can be no larger than 54~A: with MAXI ratings in 10~A steps that is 50~A (confirm the available ratings on the Littelfuse pages).
+\item \textbf{Fuse voltage} (open question, PR-01 B13): the 100~A MAXI is reported as a 32~V part and the 58~V MAXI series as 20--80~A. A full 8S pack is 33.6~V and a full 12S pack 50.4~V. Run the duty test on every fuse the team might fly.
+\end{itemize}
+
+\section{Test Articles and Equipment}
+\begin{itemize}
+\item Thrust stand (PR-01 B18): Tyto Flight Stand 15, thrust 15~kgf, torque 8~N·m, 180~V, 150~A, optical RPM probe. Bolt it to a bench that cannot move.
+\item Motors B07 (one KV270, one KV200), ESC B08 with logging on, propellers B09 and B09b, packs B10 and B10b, fuses B13 in holder B14, arming plug B15, 10~AWG leads B16, charger B12 with supply B12b.
+\item Propeller balancer, torque driver for the prop nut, IR thermometer, a phone for photos and the weather (temperature and pressure), stopwatch.
+\item Polycarbonate shield or cage around the propeller plane, LiPo sack (B11), sand bucket, fire extinguisher, eye and ear protection (A05).
+\end{itemize}
+
+\section{Safety}
+\begin{itemize}
+\item A 20~in propeller at 7,000~rpm has a tip speed of about 190~m/s. \textbf{Nobody stands in or near the propeller plane}, on either side, while a pack is connected. The throttle operator stands behind the stand.
+\item Never exceed APC's limit for Thin Electric propellers, 150{,}000/$D$ rpm: 7,500~rpm at 20~in, 7,317 at 20.5~in, 7,143 at 21~in. The full-throttle predictions are all below it.
+\item Balance each propeller and torque the nut before the first run. Inspect the hub and blades between runs; retire any propeller with a crack or a strike.
+\item Arming plug in last, out first. The fuse is in the circuit for every run. Charge and store packs in a LiPo sack. Stop at a pack temperature of 60~°C or any swelling.
+\item After a full-throttle run, let the motor and ESC cool below 50~°C before the next.
+\end{itemize}
+
+\section{Procedure}
+\begin{enumerate}
+\item Log the temperature $T$ (K) and pressure $p$ (Pa); compute $\rho = p/(287.05\,T)$. Tare the stand with the propeller fitted and stationary.
+\item Charge the pack to full and let it rest 10~minutes. Log its rest voltage.
+\item For each configuration, step the throttle until the RPM reads each step of the prediction table (3,000, 4,000, ... rpm, up to the last one listed). Hold 3~s at each step and log thrust, torque, RPM, voltage and current.
+\item Then full throttle for 3~s; log the same, and the pack voltage under load.
+\item Repeat the 20$\times$15E sweep three times on each system (repeatability), with the pack recharged in between.
+\item \textbf{Duty test.} With the 20$\times$15E on each system and its flight fuse, repeat this cycle for 200~s (the Mission~2 time): 10~s at the straight-flight current, then 7~s at the turn current, from the table below. Log fuse survival, the time at each current (ESC log), and the motor, ESC, pack and fuse-body temperatures at the end.
+\item Repeat the duty test on each alternative fuse (80~A 58~V part for 8S; 50~A for 12S).
+\end{enumerate}
+
+\captionof{table}{Mission~2 currents for the duty test (Script~3b at the reference design: 14.0~N straight, 47.1~N in the turn, 29.5~m/s, $\rho$ 1.064, 20$\times$15E), from a fresh to an end-of-mission pack.}
+\begin{dbftable}{width=\linewidth, colspec={X[1.2,l] X[1,c] X[1,c]}}
+System & Straight, A & Turn, A \\
+8S, KV270 & 21--23 & 68--78 \\
+12S, KV200 & 13--14 & 46--52 \\
+\end{dbftable}
+\par\vspace{4pt}
+At the end of the pack the 8S turn needs more voltage than the pack has (46.8~N available against 47.1~N), and the 12S turn draws more than 50~A (45.4~N available on a 50~A fuse).
+
+\section{Data Reduction}
+\begin{enumerate}
+\item \textbf{Density.} Thrust and torque at a given RPM scale with density: multiply the predicted values by $\rho/1.17$ before comparing.
+\item \textbf{Propeller check.} Measured thrust and torque against the prediction at the same RPM. Ratios near 1.00 confirm APC's tables; the 14~Oct study expects measured thrust 5--13~\% below APC near the RPM limit (AIAA stand data), and measured efficiency above it at lower RPM (UIUC).
+\item \textbf{Motor check.} Electrical power $VI$ against the prediction at the same RPM and torque. The ratio checks the T-Motor map fit (expected within about 3 points of efficiency).
+\item \textbf{Pack resistance.} $R = (V_\mathrm{rest} - V_\mathrm{load})/I$ at full throttle; compare with the model's $k_{ir} = 14$~m$\Omega\cdot$Ah ($R = 8k_{ir}/3.3$~Ah = 34~m$\Omega$ for 8S; $12k_{ir}/2.0$~Ah = 84~m$\Omega$ for 12S).
+\item File the CSV in \texttt{testing/data/}, named TC-06 and the date. Script~3b's propeller factors (\texttt{k\_ct}, \texttt{k\_cp}) and $k_{ir}$ are refitted from it.
+\end{enumerate}
+
+\section{Pass Criteria and Use of Results}
+\textbf{Model:} every step within $\pm$10~\% of the predicted thrust and current after density scaling; otherwise Script~3b is refitted before any D9 figure is used. \textbf{Fuse:} the fuse survives three consecutive duty cycles with its body below its rated maximum temperature. \textbf{System:} full-throttle static thrust and the end-of-pack turn thrust (recomputed with the refitted model) decide D9 together with the flight logs. Media in \texttt{testing/media/TC-06/}.
+
+\twocolumn[{%
+\section{Predicted Values (Script 3b)}
+\noindent{\small Static, $\rho = 1.17$~kg/m$^3$, fresh pack (4.15~V/cell). 8S rows: AT7215 KV270 on the TP3300-8SE55; 12S rows: AT7215 KV200 on the MaxAmps 2000 12S. Generated by \texttt{analysis/tc06\_predictions.py}. ``full'': the largest static thrust within every limit; ``Limit'' names the one that binds.}\par\vspace{6pt}
+{\footnotesize\input{tc06_predictions.tex}}
+}]
+
+\twocolumn[{%
+\section{Data Sheet}
+\noindent{\small Date \rule{1.2in}{0.4pt}\hfill Site \rule{2.0in}{0.4pt}\hfill $T$ (°C) \rule{0.5in}{0.4pt}\hfill $p$ (hPa) \rule{0.6in}{0.4pt}\hfill $\rho$ \rule{0.5in}{0.4pt}}\par\vspace{7pt}
+\noindent{\small Pack ID and rest voltage \rule{1.8in}{0.4pt}\hfill Motor \rule{0.9in}{0.4pt}\hfill Propeller \rule{0.8in}{0.4pt}\hfill Fuse \rule{0.8in}{0.4pt}}\par\vspace{10pt}
+\captionof{table}{Bench log, one row per step.}
+\begin{dbftable}{colspec={Q[c,wd=0.45in] Q[c,wd=0.6in] Q[c,wd=0.65in] Q[c,wd=0.7in] Q[c,wd=0.75in] Q[c,wd=0.65in] Q[c,wd=0.65in] Q[c,wd=0.7in] X[l]}, row{2-Z}={ht=0.19in, valign=m}}
+Run & Step & RPM & Thrust, N & Torque, N·m & Volts & Amps & Temp, °C & Notes \\
+&&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\
+&&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\
+&&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\
+\end{dbftable}
+\par\vspace{10pt}
+\captionof{table}{Duty test, one row per fuse.}
+\begin{dbftable}{colspec={Q[c,wd=0.55in] Q[c,wd=0.8in] Q[c,wd=0.55in] Q[c,wd=0.65in] Q[c,wd=0.65in] Q[c,wd=0.6in] Q[c,wd=0.6in] Q[c,wd=0.6in] X[l]}, row{2-Z}={ht=0.22in, valign=m}}
+System & Fuse (A, V) & Cycles & Survived & Motor °C & ESC °C & Pack °C & Fuse °C & Notes \\
+&&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\ &&&&&&&& \\
+\end{dbftable}
+}]
+
+\end{document}

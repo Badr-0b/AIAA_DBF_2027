@@ -1,0 +1,99 @@
+% TC-05 Tow line, reel and slip ring: counted cycles for the D&R trade (Table 06). Build: ../build.sh
+\def\dbfroot{../../design-system}
+\documentclass[final]{dbfdoc}
+\dbfsetdoc{Tow Reel and Slip Ring Cycles}{Test Card TC-05}{AUM-DBF-27-TC-005}{A}
+\dbfsetdate{16 Oct 2026}
+\raggedbottom
+
+\begin{document}
+
+\begin{frontmatter}
+\section{Objective}
+\noindent\begin{minipage}[t]{0.62\textwidth}
+\setlength\parindent{1.15em}\noindent
+Count failures of the deploy-and-recover mechanism over hundreds of cycles, so the failure rates in the Table~06 trade (\texttt{inputs/dr\_trade.toml}, engineering estimates of 0.1--3~\% per attempt) become measured numbers. Measure the deploy and stow times and motor current at the Mission~3 sensor mass, and check that the light-mode signal passes through the slip ring while the drum turns.
+
+\noindent\textbf{Article.} Option A, the closed-loop drum: Pololu 37D 70:1 gearmotor with encoder on a 28~mm-radius grooved drum, slip ring, exit fairlead with a stop bead, docking cone and latch. The model predicts a 7.5~s deploy and an 11.9~s stow at 3.4~kg.
+
+\noindent\textbf{Limitation.} Gravity stands in for the tow load; airflow on the line and sensor (under 10~\% of the tension in the model) is absent. TC-01 covers the sensor in airflow.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\vspace{-11pt}
+\begin{dbfpanel}[Test at a Glance]
+\dbfreadout{Crew}{2}{people}\hfill\dbfreadout{Duration}{2 $\times$ 4}{h}\dbfreadoutgap
+\dbfreadout{Cycles}{300+}{}\hfill\dbfreadout{Deploy length}{$\geq$2.74}{m}\dbfreadoutgap
+\dbfreadout{Loads}{3.4, 5.1}{kg}\hfill\dbfreadout{Drum radius}{28}{mm}
+\end{dbfpanel}
+\end{minipage}
+\end{frontmatter}
+
+\section{Rules That Apply}
+\begin{itemize}
+\item \textbf{Deploy distance} (§3.1.2): at least 1.5 times the wingspan, from the airplane's exit to the sensor's forward tip: 2.74~m at the 1.829~m (6~ft) span limit. The stop bead is set for 2.84~m (0.10~m margin for stretch and measuring at tech).
+\item \textbf{Mechanism} (§3.1.2): permanently installed in the Mission~3 location for every mission.
+\item \textbf{Connection} (§3.1.1): the tow line carries both the mechanical and the electrical connection to the sensor; no wireless link.
+\item \textbf{Sequence} (§3.3.3.3): deploy before the first downwind turn; lights OFF, SOLID, FLASHING, OFF on command; stow before landing.
+\end{itemize}
+
+\section{Test Articles and Equipment}
+\begin{itemize}
+\item The mechanism as it will fly: drum, gearmotor and driver, encoder, slip ring (PR-01 B28), latch servo, fairlead with stop bead, MCU (B32), tow line (A11 braid with B30 conductors), sensor connector (B31).
+\item Dummy sensors of 3.4~kg (the reference design's sensor) and 5.1~kg (the same at $n = 1.5$, the stow design load), each with a mode-decoding board and three LEDs.
+\item A drop of at least 3.2~m below the fairlead (stairwell or gantry), so the dummy hangs free at full deploy; a guard rail around the drop zone.
+\item Bench supply set to the flight battery voltage, inline current logger (A27 for low currents; the ESC-class meter B17 if above 5~A), test-box PWM source (B33) on the mode channel, stopwatch or the MCU's log, tape measure.
+\end{itemize}
+
+\section{Safety}
+\begin{itemize}
+\item Nobody stands under the dummy. Keep the drop zone roped off; a 5.1~kg mass falling 3~m hurts.
+\item Fit a catch net or a soft landing pad under the dummy in case the line parts.
+\item Keep fingers out of the drum and fairlead while powered; the gearmotor stalls at 2.6~N·m.
+\end{itemize}
+
+\section{Procedure}
+\begin{enumerate}
+\item Measure the deployed length from the fairlead exit to the dummy's forward tip with the stop bead seated. It must be at least 2.74~m.
+\item \textbf{Timed cycles, 3.4~kg.} Command deploy; log the time from command to stop bead seated, and the motor current. Hold 10~s. Command stow; log the time to latch engaged and the peak current. That is one cycle. Time the first eight by hand, then automate the rest from the MCU.
+\item \textbf{Endurance, 3.4~kg.} 250 automated cycles, 30~s rest every 10 cycles. The MCU logs every cycle: times, peak current, encoder count at the stop, latch state.
+\item \textbf{Overload, 5.1~kg.} 50 cycles, the first eight timed by hand. Check the drive does not stall and the motor case stays below 60~°C.
+\item \textbf{Side load.} 20 cycles at 3.4~kg with the line pulled 45° aft at the fairlead (the tow line hangs 31--86° below the horizontal in flight), to check spooling.
+\item \textbf{Signal.} During 20 deploy-stow cycles, step the test box OFF, SOLID, FLASHING continuously and log every mode the dummy decodes. Count dropouts and wrong decodes while the drum turns and while it is still.
+\item After every 50 cycles, inspect the line (fraying at the fairlead), the conductor insulation, the slip-ring brushes and the latch.
+\end{enumerate}
+
+\section{Data Reduction}
+\begin{enumerate}
+\item \textbf{Failure rates.} Count each failure mode of the trade separately: S1 mis-spool or jam, S3 missed stop or wrong length, S4 stall or overheat, R1 slip-ring signal dropout, SH2 intermittent connector, SH4 latch failing to release or engage. With $k$ failures in $N$ cycles the rate is $k/N$; with none, the 95~\% upper bound is $3/N$ (1~\% at 300 cycles).
+\item \textbf{Times.} Mean and worst deploy and stow time against the model (7.5~s and 11.9~s at 3.4~kg). The stow time sets \texttt{t\_stow\_extra\_s} in \texttt{inputs/studies.toml}.
+\item \textbf{Current.} Peak stow current against the 37D stall current; the model runs at 36~\% of stall torque at $n = 1$ and 73~\% at $n = 2$.
+\item File the cycle log in \texttt{testing/data/}, named TC-05 and the date; \texttt{dr\_trade.py} reads the counted rates in place of the estimates.
+\end{enumerate}
+
+\section{Pass Criteria and Use of Results}
+\textbf{Pass:} no S1, S3, S4 or SH4 failure in 300 cycles at 3.4~kg (each rate below 1~\% at 95~\% confidence); no stall at 5.1~kg; no signal dropout while the drum is still; stow time within 20~\% of the model. \textbf{Use:} the counted rates replace the Table~06 estimates and re-run the trade (decision D12); the stow time feeds Script~6. Media in \texttt{testing/media/TC-05/}.
+
+\twocolumn[{%
+\section{Data Sheet}
+\noindent{\small Date \rule{1.2in}{0.4pt}\hfill Site \rule{2.0in}{0.4pt}\hfill Crew \rule{2.0in}{0.4pt}\hfill Supply (V) \rule{0.5in}{0.4pt}}\par\vspace{7pt}
+\noindent{\small Deployed length, fairlead to sensor tip (m) \rule{0.8in}{0.4pt}\hfill Drum radius (mm) \rule{0.6in}{0.4pt}\hfill Line and conductor IDs \rule{1.4in}{0.4pt}}\par\vspace{10pt}
+\captionof{table}{Hand-timed cycles: the first eight at 3.4~kg and the first eight at 5.1~kg; the MCU log covers the rest.}
+\begin{dbftable}{colspec={Q[c,wd=0.45in] Q[c,wd=0.6in] Q[c,wd=0.85in] Q[c,wd=0.85in] Q[c,wd=0.85in] Q[c,wd=0.85in] Q[c,wd=0.7in] X[l]}, row{2-Z}={ht=0.19in, valign=m}}
+Cycle & Load, kg & Deploy, s & Stow, s & Peak A & Latch OK & Length OK & Notes \\
+&&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\
+&&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\ &&&&&&& \\
+\end{dbftable}
+\par\vspace{10pt}
+\captionof{table}{Failure tally by mode (all cycles).}
+\begin{dbftable}{colspec={Q[l,wd=2.6in] Q[c,wd=0.9in] Q[c,wd=0.9in] Q[c,wd=0.9in] X[l]}, row{2-Z}={ht=0.2in, valign=m}}
+Mode & 3.4 kg & 5.1 kg & Side load & Notes \\
+S1 mis-spool or jam &&&& \\
+S3 missed stop or wrong length &&&& \\
+S4 stall or overheat &&&& \\
+R1 slip-ring dropout (drum still) &&&& \\
+SH2 connector intermittent &&&& \\
+SH4 latch release or engage &&&& \\
+Cycles run &&&& \\
+\end{dbftable}
+}]
+
+\end{document}

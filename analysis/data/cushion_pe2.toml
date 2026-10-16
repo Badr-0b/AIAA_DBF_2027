@@ -1,0 +1,42 @@
+# Peak acceleration of polyethylene foam cushions, 2.0 pcf (32 kg/m3), from
+# MIL-HDBK-304B "Package Cushioning Design" (U.S. Department of Defense, 31 Oct 1978),
+# Appendix V, Graphs 10.36, 10.42 and 10.48 (PDF pages 268-269, printed pages 250-251).
+# Evidence gap E05 (container mass, Ground Mission drop survival). Read 16 Oct 2026.
+#
+# Source copy: the DoD handbook PDF as mirrored by EverySpec
+#   https://everyspec.com/MIL-HDBK/MIL-HDBK-0300-0499/MIL_HDBK_304B_1778/
+#   SHA-256 a7d40fdbbf9d9ed69e5b38642534d209076ac2e9feea5a453039328f8c5e154a, 22,833,160 bytes.
+# The official host (DLA ASSIST QuickSearch) is an interactive form that cannot be scripted;
+# confirm against it when someone can search it by hand. Rev C (1997) dropped these curves
+# (EverySpec's note), so Rev B is the source for them.
+#
+# What the curves are (handbook, Appendix V introduction, verbatim):
+#   "Peak acceleration - static stress curves (Graphs 1.12 thru 22.48) are presented in this
+#    Appendix for drop heights of 12, 18, 24, 30, 36, 42 and 48 inches. Material thicknesses
+#    are given in inches at the end of each curve."
+#   "All data given herein were derived from empirical tests conducted under contract by AFPEA,
+#    Wright-Patterson AFB OH, under controlled atmospheric conditions of 73 F and 50 percent
+#    relative humidity and are generally representative of commercially available materials"
+#
+# Values: IMAGE. Each curve's MINIMUM peak acceleration (the bottom of its curve, where the
+# static stress is optimal) and that static stress, read against the plotted frame (0-180 G,
+# 20 G gridlines; stress on a log axis, 0.02-2.0 psi) on pages rendered at 160 dpi.
+# Reading uncertainty about +/- 3 G and +/- 15 % in stress. Foam from 1978 (AFPEA); modern
+# foams of the same density are similar but not identical: TC-02 measures ours.
+
+material = "Polyethylene, 2.0 pcf (32 kg/m3)"
+density_kg_m3 = 32.04          # 2.0 lb/ft3 x 16.0185 (exact conversion)
+heights_in = [36, 42, 48]
+thickness_in = [1, 2, 3, 4, 5, 6]
+
+# minimum peak acceleration, G, per thickness (rows) and drop height (columns 36, 42, 48 in)
+gmin = [
+  [136.0, 145.0, 164.0],   # 1 in
+  [71.0, 86.0, 101.0],     # 2 in
+  [48.0, 58.0, 60.0],      # 3 in
+  [40.0, 44.0, 46.0],      # 4 in
+  [34.0, 38.0, 39.0],      # 5 in
+  [28.5, 32.0, 33.0],      # 6 in
+]
+# static stress W/A at that minimum, psi (48 in graph; the optimum moves little with height)
+stress_opt_psi = [0.20, 0.27, 0.40, 0.60, 0.70, 0.75]

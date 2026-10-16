@@ -20,6 +20,13 @@ From the repo root (Git Bash or any shell):
 | `python analysis/dr_trade.py` | Deploy-and-recover architecture trade, proposal Table 06: rules and physics screening, drive sizing, points at stake, pairwise comparison of every option, four decision lenses, Monte Carlo (after Script 6). Physics in `s5_tow.py` |
 | `python analysis/prop_validation.py` | Script 3b checked against measured data (APC vs UIUC wind tunnel, AIAA stands, T-Motor maps, ERAU 2023 flight); run before using any propulsion result |
 | `python analysis/prop_trade.py` | Propulsion trade (DB-01 D9, PR-01 B07-B10): every measured-map motor x APC prop x pack, mission scoring through Scripts 4/6, Monte Carlo, twin layout, prop diameter (about 6 min) |
+| `python analysis/clmax_study.py` | Section Cl_max (E03): UIUC wind-tunnel data, XFoil checked against it (clean and flapped), candidate sections SD7037/SD7034/SD7062/MH 114 with plain flaps (about 9 min first run, then cached) |
+| `python analysis/wing_clmax_validation.py` | The 3-D wing method checked against NACA TN 663's measured part-span flap wings; writes the calibration `wing_clmax.py` reads |
+| `python analysis/wing_clmax.py` | Wing CLmax, clean and flapped, from AVL span loading and measured sections (after the two above) |
+| `python analysis/clmax_impact.py` | Script 6 robust map re-run with the measured CLmax ranges (defaults unchanged) |
+| `python analysis/mass_breakdown.py` | Airframe mass by component (E02): top-3 weight tables, per-part ratios, bottom-up budget for the reference design against the Script 4 fit |
+| `python analysis/cushion_study.py` | Container foam, size and mass for the Ground Mission drop (E05): MIL-HDBK-304B cushion curves, by the sensor's g rating and drop height |
+| `python analysis/tc06_predictions.py` | Script 3b predictions printed on test card TC-06 (writes `testing/cards/tc06_predictions.tex`) |
 | `python analysis/s7_export.py` | Writes `proposal/data/analysis.tex`; `proposal/build.sh` runs it |
 
 A test whose function still raises `NotImplementedError` is **skipped** ("not
@@ -40,6 +47,7 @@ the team to defend.
 | `s4_sizing.py` | Script 4 (provisional): mass build-up from the data fit, constrained search over payload x speed x bank, 01 vs 02 |
 | `s3b_propulsion.py` | Script 3b (provisional): propeller (APC tables), motor + ESC (losses fitted to manufacturer-measured maps), battery, fuse; flight factor calibrated on ERAU 2023. Scripts 4/6 use it when `Params.prop` is set (`s4.with_propulsion`); the default stays the lumped eta |
 | `prop_validation.py`, `prop_trade.py` | Script 3b validation report and the propulsion trade |
+| `clmax_study.py`, `wing_clmax_validation.py`, `wing_clmax.py`, `clmax_impact.py` | Maximum lift from measured data (E03): section, 3-D wing, validation on NACA TN 663, effect on the optimum. Tools: `xfoil_tools.py`, `tools/` (XFoil, AVL) |
 | `s6_studies.py` | Script 6 (provisional): total mission score of complete designs under uncertainty; sensitivities and trade weights; helpers checked by `tests/` |
 | `tests/` | Hand-checked expected values, derived independently of the code |
 | `common.py`, `run_all.py`, `figures.py`, `s7_export.py`, `check.py` | Tooling: inputs, runner, plots, export |

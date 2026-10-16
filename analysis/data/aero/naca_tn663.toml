@@ -1,0 +1,39 @@
+# Measured wing CLmax with partial-span plain flaps: NACA TN 663 (R. O. House, 1938),
+# source id "naca-tn-663" in sources.toml. Used to validate wing_clmax.py's 3-D method.
+#
+# Test (text, pp. 1-2, verified against raw/aero/naca-tn-663.txt):
+#   "Clark Y wings of laminated mahogany, each model having a span of 60 inches and an
+#    aspect ratio of 6. One airfoil is rectangular in plan form (fig. 1) and the other is
+#    tapered 5:1"; "The chord of the flaps is 20 percent of the wing chord";
+#   "The gaps between flap and wing were sealed for all tests";
+#   "dynamic pressure of 16.37 pounds per square foot, corresponding to an air speed of
+#    about 80 miles per hour"; flaps "deflected 60 deg"; "corrected for the effects of
+#    the wind-tunnel jet boundaries to aspect ratio 6 in free air".
+# Reynolds number (DERIVED, not printed): 35.8 m/s x 0.254 m / 1.46e-5 m2/s = 6.2e5 on
+# the rectangular wing's 10 in chord, standard sea level.
+#
+# CLmax values: IMAGE, read 15 Oct 2026 from Fig. 7 (rectangular) and Fig. 12 (tapered),
+# PDF page 13, rendered at 400 dpi against the printed 0.2 gridlines; reading
+# uncertainty about +/- 0.02. The text confirms the trend: CLmax rises with flap span and
+# is higher with a centre-section flap than with tip-section flaps of the same span.
+
+[test]
+aspect_ratio = 6.0
+span_m = 1.524            # 60 in
+flap_chord_ratio = 0.20
+flap_deg = 60.0
+section = "Clark-Y"
+re_rect = 6.2e5           # DERIVED (above)
+
+[rectangular]
+taper = 1.0
+# flap span as a fraction of the wing span; centre-section flaps (from the plane of symmetry)
+flap_span = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+clmax_centre = [1.24, 1.33, 1.52, 1.70, 1.86, 1.94]
+clmax_tip = [1.24, 1.31, 1.45, 1.60, 1.76, 1.94]
+
+[tapered]
+taper = 0.2               # 5:1
+flap_span = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+clmax_centre = [1.29, 1.48, 1.64, 1.79, 1.85, 1.87]
+clmax_tip = [1.29, 1.29, 1.375, 1.53, 1.70, 1.87]
