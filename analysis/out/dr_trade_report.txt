@@ -1,0 +1,171 @@
+D&R ARCHITECTURE TRADE, proposal Table 06 (PROVISIONAL; nothing here is a team decision)
+Reference (Script 6 robust optimum): S 0.90 m2, unit 4.0 kg, declared sensor 3.4 kg, M3 flown at 3.4 kg for 7 laps.
+M3 race point: V 26.5 m/s, bank 72 deg (n 3.24), turn radius 23 m, lap 39.1 s (flown time base); q 374 Pa at rho 1.064.
+Deploy distance at the span limit 1.8288 m: 1.5 b = 2.743 m, + margin -> 2.84 m; line on the reel 2.94 m.
+Deploy window, take-off to the first downwind 180 (Sec. 3.3.3.3): 20 s (upwind leg from lift-off at 60 m, upwind 180, back leg with the 360, less 3 s climb-out).
+Tow tension at the airplane end (sensor CdA high end, whole line in cross-flow):
+  n 1.00:   33.5 N   80 lb line (356 N) margin x10.6
+  n 1.50:   50.1 N   80 lb line (356 N) margin x7.1
+  n 2.00:   66.8 N   80 lb line (356 N) margin x5.3
+  n 3.24:  108.0 N   80 lb line (356 N) margin x3.3
+  n 4.00:  133.4 N   80 lb line (356 N) margin x2.7
+  -> at n_struct the 80 lb line keeps < x3 margin for knots and wear; specify >= 80 lb, spliced ends.
+
+Score value (Script 6 draws at the reference; mean total mission score; least-squares slope):
+  expected   field: -0.0464 points per 100 g of D&R mass (-0.464/kg);  -0.0021 points per second of stow
+  aggressive field: -0.0435 points per 100 g of D&R mass (-0.435/kg);  -0.0026 points per second of stow
+  exchange rate (expected field): 1 s of stow = 4.5 g of D&R mass
+  stow counts inside the window here (aircraft.toml, conservative until Q&A); if it does not, time is free.
+
+SCREENING (before the trade):
+  D   Drum with the payload receiver riding on it (no slip ring): The rules allow a payload Rx anywhere in the airplane (Sec. 3.1.1), but the radio system needs an "externally accessible SWITCH" (Sec. 3.2.1), and tech checks that "the airplane does not respond to commands with receiver switch OFF" (Sec. 4.2.5). A self-powered Rx on a spinning drum fails both unless its power comes through a rotating joint, which brings the slip ring back.
+  X1  Telescopic boom (UCF 2021): The sensor must connect "using a tow line" and deploy >= 1.5 x span (2.74 m) from the exit (Secs. 3.1.1, 3.1.2). UCF's 42.5 in (1.08 m) rods met the 2021 rule (10 x sensor length); a 2.74 m boom does not fit, and a boom is not a tow line.
+  X2  Wireless link to the sensor: "The Rx for the payload signal must be in the airplane, it may not be in the sensor"; the mode signal "must come from the airplane over the tow line" (Sec. 3.1.1).
+  X4  Two-line bridle (UAB 2021 proposal): The rule reads "using a tow line" (Sec. 3.1.1), singular; two lines need a Q&A ruling and two drums, for a roll-stability gain the sensor's fixed fins already give.
+  F  pulley block, 2 sheave pairs: stroke 0.74 m, actuator force 165 N at n = 1 (P16 peak-power point 250 N), payout at the P16's no-load speed 153 s against a 20 s deploy window -> out
+  F  pulley block, 3 sheave pairs: stroke 0.49 m, actuator force 274 N at n = 1 (P16 peak-power point 250 N), payout at the P16's no-load speed 102 s against a 20 s deploy window -> out
+  F  pulley block, 4 sheave pairs: stroke 0.37 m, actuator force 404 N at n = 1 (P16 peak-power point 250 N), payout at the P16's no-load speed 77 s against a 20 s deploy window -> out
+  X3 spring reel: retracting needs >= 50 N (n = 1.5) at full deployment, but weight plus drag at n = 1 gives only 34 N to pull the line out against it; stored energy >= 148 J over 2.94 m -> out
+  X5 limited-turn lead: 23 drum turns at a 20 mm drum radius, against a few turns for flat-cable clock springs -> out
+  X6 sail-winch servo (position mode): 5.25 turns -> drum radius 89 mm; torque 2.99 N m at n = 1 against 1.29 N m stall -> out
+  C  unbraked free-spool: the sensor falls 2.84 m to 7.5 m/s, 95 J at the stop, against 18 J the line stores at break -> C is kept only with a governor (S5)
+  E  capstan: UHMWPE mu 0.1-0.2; 3 wraps hold 6.6-43 x the tail tension, so a 50 N stow needs 1.2-7.6 N from a self-tailer -> kept, with S6, S7
+
+DRIVE SIZING (each candidate at its best drum radius; deploy must beat the window; stow at n = 1, checks at n = 1.5 and 2.0; sensor CdA 0.005):
+  A 37d_50        r   28 mm  deploy   5.9 s  stow  10.9 s  tau/stall 0.47 (n=2 0.93)  drum   106 rpm  mass  322 g  cost 0.1720 pts
+  A 37d_70        r   28 mm  deploy   7.5 s  stow  11.9 s  tau/stall 0.36 (n=2 0.73)  drum    95 rpm  mass  322 g  cost 0.1741 pts
+  A 25d_99        infeasible: gearbox continuous limit at n = 1
+  A gobilda_2000  r   36 mm  deploy  13.7 s  stow  26.6 s  tau/stall 0.50 (n=2 0.99)  drum    30 rpm  mass  182 g  cost 0.1395 pts
+  A savox_2290    r   40 mm  deploy  10.0 s  stow  14.0 s  tau/stall 0.28 (n=2 0.56)  drum    55 rpm  mass  204 g  cost 0.1233 pts
+  A neo550        r   13 mm  deploy   1.2 s  stow   2.3 s  tau/stall 0.48 (n=2 0.95)  drum  5770 rpm  mass  499 g  cost 0.2362 pts
+  B gobilda_2000  r   36 mm  deploy  13.7 s  stow  26.4 s  tau/stall 0.50 (n=2 0.99)  drum    30 rpm  mass  183 g  cost 0.1394 pts
+  B savox_2290    r   40 mm  deploy  10.0 s  stow  13.4 s  tau/stall 0.28 (n=2 0.56)  drum    55 rpm  mass  204 g  cost 0.1223 pts
+  B 37d_50        r   28 mm  deploy   5.9 s  stow  10.2 s  tau/stall 0.47 (n=2 0.93)  drum   106 rpm  mass  326 g  cost 0.1724 pts
+  B 37d_70        r   28 mm  deploy   7.5 s  stow  11.2 s  tau/stall 0.36 (n=2 0.73)  drum    95 rpm  mass  326 g  cost 0.1746 pts
+  B 25d_99        infeasible: gearbox continuous limit at n = 1
+  C gobilda_2000  r   36 mm  deploy   3.9 s  stow  26.4 s  tau/stall 0.50 (n=2 0.99)  drum    30 rpm  mass  204 g  cost 0.1489 pts
+  C savox_2290    r   40 mm  deploy   3.9 s  stow  13.4 s  tau/stall 0.28 (n=2 0.56)  drum    55 rpm  mass  224 g  cost 0.1318 pts
+  C 37d_50        r   28 mm  deploy   3.9 s  stow  10.2 s  tau/stall 0.47 (n=2 0.93)  drum   106 rpm  mass  347 g  cost 0.1819 pts
+  C 37d_70        r   28 mm  deploy   3.9 s  stow  11.2 s  tau/stall 0.36 (n=2 0.73)  drum    95 rpm  mass  347 g  cost 0.1841 pts
+  C 25d_99        r   10 mm  deploy   3.9 s  stow  30.9 s  tau/stall 0.13 (n=2 0.25)  drum    87 rpm  mass  250 g  cost 0.1796 pts
+  E 37d_50        r   28 mm  deploy   5.9 s  stow  10.9 s  tau/stall 0.47 (n=2 0.93)  drum   106 rpm  mass  355 g  cost 0.1868 pts
+  E 37d_70        r   28 mm  deploy   7.5 s  stow  11.9 s  tau/stall 0.36 (n=2 0.73)  drum    95 rpm  mass  355 g  cost 0.1889 pts
+  E 25d_99        infeasible: gearbox continuous limit at n = 1
+  E gobilda_2000  r   36 mm  deploy  13.7 s  stow  26.6 s  tau/stall 0.50 (n=2 0.99)  drum    30 rpm  mass  214 g  cost 0.1543 pts
+  E savox_2290    r   40 mm  deploy  10.0 s  stow  14.0 s  tau/stall 0.28 (n=2 0.56)  drum    55 rpm  mass  236 g  cost 0.1381 pts
+  chosen (least points lost to mass + stow time):
+  A Closed-loop drum               Savox SB-2290SG brushless servo, 7.4 V, modified for continuous rotation; r 40 mm, 13 turns on a 23 mm face, fairlead >= 0.33 m for 2 deg; deploy 10.0 s, stow 14.0 s, mass 204 g (drum_frame, slip_ring, dock_latch, fairlead_bead, wiring, mcu, encoder_addon)
+  B Open-loop drum                 Savox SB-2290SG brushless servo, 7.4 V, modified for continuous rotation; r 40 mm, 13 turns on a 23 mm face, fairlead >= 0.33 m for 2 deg; deploy 10.0 s, stow 13.4 s, mass 204 g (drum_frame, slip_ring, dock_latch, fairlead_bead, wiring, mcu, limit_switch, limit_switch)
+  C Free-spool drum, powered stow  Savox SB-2290SG brushless servo, 7.4 V, modified for continuous rotation; r 40 mm, 13 turns on a 23 mm face, fairlead >= 0.33 m for 2 deg; deploy 3.9 s, stow 13.4 s, mass 224 g (drum_frame, slip_ring, dock_latch, fairlead_bead, wiring, mcu, limit_switch, governor_clutch)
+  E Capstan and line bin           Savox SB-2290SG brushless servo, 7.4 V, modified for continuous rotation; r 40 mm; deploy 10.0 s, stow 14.0 s, mass 236 g (capstan_frame, capstan_tailer, line_bin, dock_latch, fairlead_bead, wiring, mcu, encoder_addon)
+
+FAILURE MODES (base case: log-uniform medians; p_damage severe 0.70); per M3 attempt that flies:
+  A: recovery benign  1.2 %, catastrophic  1.3 %;  signal benign  2.7 %
+  B: recovery benign  1.7 %, catastrophic  2.5 %;  signal benign  2.7 %
+  C: recovery benign  2.3 %, catastrophic  4.0 %;  signal benign  2.7 %
+  E: recovery benign  4.6 %, catastrophic  9.2 %;  signal benign  3.6 %
+
+POINTS AT STAKE (expected total-mission points lost, base case; lower is better):
+  option                            Recovery reliability  Signal path integrit      Deploy/stow time     Weight and volume        sum
+  A Closed-loop drum                              0.0523                0.0371                0.0289                0.0943     0.2127
+  B Open-loop drum                                0.0932                0.0371                0.0277                0.0946     0.2526
+  C Free-spool drum, powered stow                 0.1453                0.0371                0.0277                0.1041     0.3142
+  E Capstan and line bin                          0.3261                0.0494                0.0289                0.1092     0.5136
+  swing (points between best and worst option): Recovery reliability 0.2738, Signal path integrity 0.0123, Deploy/stow time 0.0012, Weight and volume 0.0148
+  weights: Recovery reliability 74.9 %, Signal path integrity 3.4 %, Deploy/stow time 2.7 %, Weight and volume 4.1 %, Manufacturability 15.0 %  (manufacturability = recovery swing / 5)
+  manufacturability AHP priorities: A 0.288, B 0.477, C 0.154, E 0.081   CR 0.008 (< 0.10 acceptable)
+
+PAIRWISE, EACH OPTION AGAINST EACH OTHER (base case). Per criterion: Saaty value (>1 favours the first) and the points difference; then the weighted head-to-head share:
+  A vs B  (Closed-loop drum vs Open-loop drum)
+     Recovery reliability      2.19   A better by 0.0409 points
+     Signal path integrity     1.00   neither better by 0.0000 points
+     Deploy/stow time          0.51   B better by 0.0012 points
+     Weight and volume         1.12   A better by 0.0002 points
+     Manufacturability         0.50   B is a little easier: its servo carries its own driver and needs no speed loop, only two end switches. Both share the drum, the slip ring and the latch; A's extra work is encoder firmware, which the test box exercises on the bench.
+     head-to-head share for A: 0.612 -> A wins
+  A vs C  (Closed-loop drum vs Free-spool drum, powered stow)
+     Recovery reliability      3.72   A better by 0.0930 points
+     Signal path integrity     1.00   neither better by 0.0000 points
+     Deploy/stow time          0.51   C better by 0.0012 points
+     Weight and volume         6.25   A better by 0.0097 points
+     Manufacturability         2.00   A is easier: C adds a centrifugal governor and a one-way clutch, precision mechanical parts we would have to adapt from fishing reels and tune for one sensor mass and airspeed. A's complexity is software, which is cheaper to iterate.
+     head-to-head share for A: 0.751 -> A wins
+  A vs E  (Closed-loop drum vs Capstan and line bin)
+     Recovery reliability      9.00   A better by 0.2738 points
+     Signal path integrity     9.00   A better by 0.0123 points
+     Deploy/stow time          1.00   neither better by 0.0000 points
+     Weight and volume         9.00   A better by 0.0148 points
+     Manufacturability         4.00   A is much easier: drums were built by all four 2021 top teams with printed parts. E needs a capstan with a self-tailer and a bin, with no precedent to copy, and the tangle risk can only be found by flight-like shake testing.
+     head-to-head share for A: 0.874 -> A wins
+  B vs C  (Open-loop drum vs Free-spool drum, powered stow)
+     Recovery reliability      2.52   B better by 0.0521 points
+     Signal path integrity     1.00   neither better by 0.0000 points
+     Deploy/stow time          1.00   neither better by 0.0000 points
+     Weight and volume         6.12   B better by 0.0095 points
+     Manufacturability         3.00   B is easier: same drum and switches, without C's governor and clutch.
+     head-to-head share for B: 0.714 -> B wins
+  B vs E  (Open-loop drum vs Capstan and line bin)
+     Recovery reliability      7.81   B better by 0.2329 points
+     Signal path integrity     9.00   B better by 0.0123 points
+     Deploy/stow time          1.95   B better by 0.0012 points
+     Weight and volume         8.88   B better by 0.0146 points
+     Manufacturability         5.00   B is much easier: COTS servo plus a printed drum, against a novel capstan and bin.
+     head-to-head share for B: 0.873 -> B wins
+  C vs E  (Free-spool drum, powered stow vs Capstan and line bin)
+     Recovery reliability      6.28   C better by 0.1808 points
+     Signal path integrity     9.00   C better by 0.0123 points
+     Deploy/stow time          1.95   C better by 0.0012 points
+     Weight and volume         3.75   C better by 0.0051 points
+     Manufacturability         2.00   C is easier: its novel parts (governor, clutch) are COTS-adaptable; E's are not.
+     head-to-head share for C: 0.826 -> C wins
+
+DECISION, BASE CASE:
+  option                          exp. points  Table-06 total  AHP priority  Copeland wins
+  A Closed-loop drum                   -0.2127            4.70         0.456              3
+  B Open-loop drum                     -0.2526            4.55         0.331              2
+  C Free-spool drum, powered stow      -0.3142            3.39         0.165              1
+  E Capstan and line bin               -0.5136            1.10         0.048              0
+  Condorcet winner: A
+
+ROBUSTNESS (5000 draws each: failure rates log-uniform in their ranges, part masses, p_damage, score value of either field, manufacturability judgments +/-1 step, its weight 1/3-1/7 of recovery, Dirichlet on the weights). Two ways to draw the failure rates:
+  SHARED: one quantile per failure key for every option (common level uncertain, the ranking inside each key follows the ranges)
+    option                          P(win): points   Table-06   AHP   Condorcet
+    A Closed-loop drum                        100.0 %     76.0 %   99.5 %     99.5 %
+    B Open-loop drum                            0.0 %     24.0 %    0.5 %      0.5 %
+    C Free-spool drum, powered stow             0.0 %      0.0 %    0.0 %      0.0 %
+    E Capstan and line bin                      0.0 %      0.0 %    0.0 %      0.0 %
+    no Condorcet winner in 0.0 % of draws; P(row beats column head-to-head):
+                A       B       C       E
+    A           -   99.5%  100.0%  100.0%
+    B        0.5%       -  100.0%  100.0%
+    C        0.0%    0.0%       -   98.9%
+    E        0.0%    0.0%    1.1%       -
+  INDEPENDENT: each option draws its own quantile, except the shared hardware (overlapping ranges can reverse a ranking)
+    option                          P(win): points   Table-06   AHP   Condorcet
+    A Closed-loop drum                         97.9 %     70.8 %   94.9 %     95.2 %
+    B Open-loop drum                            2.1 %     29.2 %    5.1 %      4.8 %
+    C Free-spool drum, powered stow             0.0 %      0.0 %    0.0 %      0.0 %
+    E Capstan and line bin                      0.0 %      0.0 %    0.0 %      0.0 %
+    no Condorcet winner in 0.0 % of draws; P(row beats column head-to-head):
+                A       B       C       E
+    A           -   95.2%  100.0%  100.0%
+    B        4.8%       -   96.6%  100.0%
+    C        0.0%    3.4%       -   98.9%
+    E        0.0%    0.0%    1.1%       -
+
+BREAK-EVEN against the expected-points leader A (base case): factor on each rival's own failure rates (shared hardware unchanged) that ties it with the leader:
+  B Open-loop drum                 x0.46  (its own failure rates must fall to 46 % of the estimate)
+  C Free-spool drum, powered stow  x0.19  (its own failure rates must fall to 19 % of the estimate)
+  E Capstan and line bin           x0.07  (its own failure rates must fall to 7 % of the estimate)
+
+CHECK with VERIFIED drives only (no reseller data): A gobilda_2000 (27 s, 182 g), B gobilda_2000 (26 s, 183 g), C gobilda_2000 (26 s, 204 g), E gobilda_2000 (27 s, 214 g)
+  expected points: A -0.2289, B -0.2697, C -0.3313, E -0.5298;  Table-06 totals: A 4.71, B 4.55, C 3.39, E 1.11;  Condorcet winner A
+
+PROPOSED TABLE 06 (top three by the Table-06 total; scores 1-5 interval-scaled across all four candidates, never stretched below a 0.01 point range, with weights on the same scale, so the weighted total ranks exactly as expected points plus manufacturability):
+  criterion                 wt.              A Drum, closed loop          B Drum, end switches         C Governed free-spool
+  Recovery reliability     0.75                             5.0                           4.4                           3.6
+  Signal path integrity    0.03                             5.0                           5.0                           5.0
+  Deploy/stow time         0.03                             4.5                           5.0                           5.0
+  Weight and volume        0.04                             5.0                           4.9                           2.4
+  Manufacturability        0.15                             3.1                           5.0                           1.7
+  Weighted total           1.00                            4.70                          4.55                          3.39

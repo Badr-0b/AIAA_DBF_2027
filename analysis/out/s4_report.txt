@@ -1,0 +1,60 @@
+Script 4 (PROVISIONAL)  inputs/sizing.toml + data/dbf_airframes.csv + nRho
+  rho 1.064 kg/m3; airframe 5.96 S^0.94 kg (n=14, x1.31 1-sd); battery 0.702 kg (100 Wh at 142 Wh/kg, n=9)
+  eta_eff 0.58 (ERAU 2023 M2 calibration gives 0.584 at a 60.7 deg bank); usable 80 Wh; peak 4000 W; take-off 8 s
+
+Best M2 (five laps) at the design points, baseline inputs:
+  a01 Straight wing (01 family): S 0.414 m2, AR 8.00, e 0.811, CD0 0.0400
+     payload 3.25 kg, TOGW 6.88 kg, V 42.25 m/s, bank 75 deg (n 3.86, turn CL 0.66), stall 13.8 m/s
+     lap 33.3 s, M2 175.6 s (model x1.15), energy 72.0 Wh, peak 1764 W; binding: stall speed
+     M2 score vs expected   field: 1.27
+     M2 score vs aggressive field: 1.21
+     M3 laps by towed sensor mass: 0.5 kg 8, 1 kg 8, 1.5 kg 8, 2 kg 8, 2.5 kg 7, 3 kg 7, 4 kg 0, 5 kg 0, 6 kg 0, 7 kg 0, 8 kg 0
+  a02 Delta (02 family): S 0.83 m2, AR 3.99, e 0.772, CD0 0.0243
+     payload 2.75 kg, TOGW 8.78 kg, V 38.50 m/s, bank 75 deg (n 3.86, turn CL 0.51), stall 14.0 m/s
+     lap 33.4 s, M2 176.3 s (model x1.15), energy 79.5 Wh, peak 2213 W; binding: energy, stall speed
+     M2 score vs expected   field: 1.23
+     M2 score vs aggressive field: 1.17
+     M3 laps by towed sensor mass: 0.5 kg 7, 1 kg 7, 1.5 kg 7, 2 kg 7, 2.5 kg 7, 3 kg 0, 4 kg 0, 5 kg 0, 6 kg 0, 7 kg 0, 8 kg 0
+  straight 0.80 m2, M3 laps by towed sensor mass: 0.5 kg 8, 1 kg 7, 1.5 kg 7, 2 kg 7, 2.5 kg 7, 3 kg 7, 4 kg 7, 5 kg 6, 6 kg 6, 7 kg 5, 8 kg 0
+
+Wing-area sweep (best M2 rate, g/s):
+  straight: 0.30:11 0.35:14 0.40:17 0.45:19 0.50:22 0.55:25 0.60:28 0.65:33 0.70:35 0.75:36 0.80:37 0.85:39 0.90:39 0.95:38 1.00:39 1.05:37 1.10:37   peak at S 0.90 (39 g/s, payload 8.5 kg)
+  delta   : 0.30:0 0.35:0 0.40:3 0.45:3 0.50:6 0.55:6 0.60:8 0.65:8 0.70:11 0.75:11 0.80:14 0.85:14 0.90:16 0.95:16 1.00:19 1.05:19 1.10:22   peak at S 1.10 (22 g/s, payload 4.0 kg)
+
+Decision table: best M2 by accepted stall speed (M2 score vs expected field, times x1.15):
+  design   family    S m2  Vs<=  payload kg  TOGW kg     M2 s  W/t g/s  M2 score  binding
+  a01      straight  0.41    12        1.50     5.13     175.6      8.5      1.13  stall speed
+  a01      straight  0.41    14        3.25     6.88     175.6     18.5      1.27  stall speed
+  a01      straight  0.41    16        5.50     9.13     175.6     31.3      1.47  energy, stall speed
+  a01      straight  0.41    18        8.00    11.63     219.4     36.5      1.54  energy, stall speed, turn CL
+  S 0.60   straight  0.60    12        2.75     7.47     175.6     15.7      1.23  energy, stall speed
+  S 0.60   straight  0.60    14        5.25     9.97     176.1     29.8      1.44  energy, stall speed
+  S 0.60   straight  0.60    16        8.50    13.22     213.5     39.8      1.59  energy, stall speed
+  S 0.60   straight  0.60    18        9.25    13.97     223.7     41.4      1.61  energy, turn CL
+  S 0.80   straight  0.80    12        4.00     9.86     176.4     22.7      1.34  energy, stall speed
+  S 0.80   straight  0.80    14        7.75    13.61     200.4     38.7      1.57  energy, stall speed, turn CL
+  S 0.80   straight  0.80    16        9.50    15.36     229.7     41.4      1.61  energy, turn CL
+  S 0.80   straight  0.80    18        9.50    15.36     229.7     41.4      1.61  energy, turn CL
+  a02      delta     0.83    12        0.25     6.28     175.6      1.4      1.02  energy, stall speed
+  a02      delta     0.83    14        2.75     8.78     176.3     15.6      1.23  energy, stall speed
+  a02      delta     0.83    16        5.25    11.28     189.1     27.8      1.41  energy, stall speed
+  a02      delta     0.83    18        8.25    14.28     248.5     33.2      1.49  energy, stall speed, turn CL
+
+Strategy table (complete choices; container 0.6 kg ESTIMATE; M1 waived and credited by M2; drop 1.524 m; times x1.15):
+  wing            Vs  unit kg  N_sim  W kg  M2 s   M3 sensor  laps  | expected: M2   M3   GM  total | aggressive: M2   M3   GM  total
+  straight 0.414   14     3.50      0   3.50    inf       2.00     8  |          0.00 0.00 0.98  1.98 |            0.00 0.00 0.86  1.86
+  straight 0.414   14     1.75      1   3.50    inf       1.15     8  |          0.00 0.00 0.69  1.69 |            0.00 0.00 0.64  1.64
+  straight 0.800   14     8.00      0   8.00    inf       5.00     6  |          0.00 0.00 1.50  2.50 |            0.00 0.00 1.43  2.43
+  straight 0.800   14     4.00      1   8.00    inf       3.40     7  |          0.00 0.00 1.07  2.07 |            0.00 0.00 0.92  1.92
+  straight 0.800   14     6.00      0   6.00  179.2       5.00     6  |          1.50 3.00 1.40  6.90 |            1.37 3.00 1.18  6.55
+  straight 0.800   16    11.50      0  11.50    inf       6.00     6  |          0.00 0.00 1.50  2.50 |            0.00 0.00 1.50  2.50
+  delta    0.830   14     3.00      0   3.00    inf       2.00     7  |          0.00 0.00 0.90  1.90 |            0.00 0.00 0.80  1.80
+
+Monte Carlo, 300 paired draws over the uncertain inputs (f_body 0.006-0.028 m2, eta 0.45-0.65, airframe x lognormal(sd of the fit), take-off 4-15 s, pack 27-42 V, rho 1.05-1.10, e x0.9-1.1, CLmax straight x0.9-1.06 (1.44-1.70), delta x0.85-1.30), accepted stall 14 m/s:
+  a01 straight 0.414  : best M2 rate P10 11 / P50 17 / P90 21 g/s
+  straight 0.83       : best M2 rate P10 23 / P50 33 / P90 42 g/s
+  a02 delta 0.83      : best M2 rate P10 5 / P50 17 / P90 28 g/s
+  straight 0.83 beats delta 0.83 (same area, planform only) in 100 % of draws
+  delta 0.83 beats the 01 placeholder (0.414) in 45 % of draws
+
+wrote out/m2_rate_vs_area.pdf, m2_rate_vs_payload.pdf, m3_laps_x_mass.pdf, m2_score_vs_stall.pdf

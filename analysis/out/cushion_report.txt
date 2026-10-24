@@ -1,0 +1,28 @@
+Container foam, size and mass for the Ground Mission drop (cushion_study.py, PROVISIONAL)
+Polyethylene 2.0 pcf, MIL-HDBK-304B Graphs 10.36-10.48 (minimum peak g, read on the scans).
+ESTIMATES: inner box 80 x 80 x 270 mm; inner box + latch + rigging 0.1 kg; shell 0.6-2.0 kg/m2.
+
+Foam thickness for the sensor's g rating (mm; 60 in = 1.524 m extrapolated: measured p / p = 1):
+    rating       36 in       42 in       48 in   60 in (meas. p - p = 1)
+      50 g          73          89          93                 105 - 123
+      75 g          48          58          64                   74 - 76
+     100 g          35          42          51                   61 - 61
+     150 g          25          25          29                   40 - 40
+
+Container at 1.524 m for the reference 3.4 kg sensor (the thicker of the two extrapolations):
+    rating  foam mm         outer mm  volume L  pads cm2  foam kg    mass kg (shell 0.6 / 1.0 / 2.0 kg/m2)
+      50 g      123      325x325x515      54.6        73     0.17                       0.80 / 1.15 / 2.04
+      75 g       76      232x232x422      22.8       124     0.18                       0.58 / 0.78 / 1.28
+     100 g       61      202x202x392      16.0       154     0.18                       0.52 / 0.68 / 1.08
+     150 g       40      160x160x350       9.0       207     0.16                       0.42 / 0.54 / 0.81
+
+Reading:
+- Script 6 draws the container from 0.4-1.0 kg. A sensor rated 100 g needs 61 mm of
+  foam and a 16 L container of 0.52-1.08 kg; rated 150 g, 40 mm, 9 L, 0.42-0.81 kg;
+  rated 50 g, 123 mm, 55 L, 0.80-2.04 kg. M2 carries two units.
+- So the sensor's own ruggedness (potted electronics, solid ballast, a tow fitting that does not
+  rely on the body shell) is the main lever on container size, fuselage bay and payload mass.
+- Dropping from less than the rule maximum shrinks the container; the GM score falls in proportion
+  to the declared height (GM = 0.5 + W h / (W h)max), so this is a D5 trade.
+Limits: 1978 foam data (AFPEA); minimum-g reading +/- 3 G; 60 in extrapolated; flat drops on a
+rigid floor only (corner and edge drops are not part of the GM); TC-02 measures our foam and box.

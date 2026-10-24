@@ -1,0 +1,91 @@
+Section Cl_max: measured data, XFoil check, candidate sections (clmax_study.py, PROVISIONAL)
+Sources: UIUC LSATs Vols 1-3, 5, 6 (data/aero/sources.toml); XFoil 6.99, 240 panels, Ncrit 9.
+
+1. Measured clean Cl_max (untripped models; Re within 12 % of the column):
+   section             100k          200k          300k          400k
+   SD7037         1.19-1.25     1.19-1.29     1.22-1.30             -
+   SD7062              1.52          1.63          1.66          1.66
+   Clark-Y             1.30          1.32          1.35          1.35
+   E387           1.20-1.21     1.23-1.26     1.25-1.33             -
+   FX 63-137      1.69-1.71          1.73          1.75             -
+   W1011          0.91-0.92     1.00-1.00             -     1.08-1.09
+   W1015          0.97-1.02     1.14-1.15             -     1.20-1.22
+   Rough leading edge (zig-zag trip at 2 % upper / 5 % lower, h = 0.58 mm on the test models):
+   SD7037     Re 200k: clean 1.26 -> tripped 1.28 (+2%)
+   SD7037     Re 300k: clean 1.27 -> tripped 1.32 (+4%)
+   SD7062     Re 200k: clean 1.63 -> tripped 1.24 (-24%)
+   SD7062     Re 300k: clean 1.66 -> tripped 1.23 (-26%)
+   SD7062     Re 400k: clean 1.66 -> tripped 1.21 (-27%)
+   Clark-Y    Re 200k: clean 1.32 -> tripped 1.14 (-14%)
+   Clark-Y    Re 300k: clean 1.35 -> tripped 1.13 (-17%)
+   Clark-Y    Re 400k: clean 1.35 -> tripped 1.13 (-16%)
+
+2. Measured plain-flap increment dCl_max = Cl_max(delta) - Cl_max(0), same model and Re:
+   AG40d-02r  cf/c 0.25 Re 200k: clean 1.14; 10 deg 1.36 (+0.22), 20 deg 1.53 (+0.39), 30 deg 1.61 (+0.47), 40 deg 1.68 (+0.54)
+   AG40d-02r  cf/c 0.25 Re 300k: clean 1.17; 10 deg 1.39 (+0.22), 20 deg 1.55 (+0.38), 30 deg 1.65 (+0.48), 40 deg 1.69 (+0.52)
+   AG40d-02r  cf/c 0.25 Re 400k: clean 1.20; 10 deg 1.40 (+0.20), 20 deg 1.55 (+0.35), 30 deg 1.67 (+0.47), 40 deg 1.73 (+0.53)
+   W1011      cf/c 0.20 Re 200k: clean 1.00; 10 deg 1.23 (+0.23), 20 deg 1.35 (+0.35), 30 deg 1.43 (+0.43), 40 deg 1.50 (+0.50)
+   W1011      cf/c 0.20 Re 400k: clean 1.08; 10 deg 1.30 (+0.22), 20 deg 1.48 (+0.40), 30 deg 1.60 (+0.52), 40 deg 1.67 (+0.59)
+   W1011      cf/c 0.30 Re 200k: clean 1.00; 10 deg 1.24 (+0.24), 20 deg 1.41 (+0.41), 30 deg 1.51 (+0.51), 40 deg 1.61 (+0.61)
+   W1011      cf/c 0.30 Re 400k: clean 1.09; 10 deg 1.33 (+0.24), 20 deg 1.53 (+0.44), 30 deg 1.63 (+0.54), 40 deg 1.74 (+0.65)
+   W1015      cf/c 0.20 Re 200k: clean 1.15; 10 deg 1.39 (+0.24), 20 deg 1.57 (+0.42), 30 deg 1.69 (+0.54), 40 deg 1.78 (+0.63)
+   W1015      cf/c 0.20 Re 400k: clean 1.22; 10 deg 1.47 (+0.25), 20 deg 1.66 (+0.44), 30 deg 1.80 (+0.58), 40 deg 1.91 (+0.69)
+   W1015      cf/c 0.30 Re 200k: clean 1.14; 10 deg 1.42 (+0.28), 20 deg 1.61 (+0.47), 30 deg 1.73 (+0.59), 40 deg 1.88 (+0.74)
+   W1015      cf/c 0.30 Re 400k: clean 1.20; 10 deg 1.49 (+0.29), 20 deg 1.69 (+0.49), 30 deg 1.85 (+0.65), 40 deg 1.97 (+0.77)
+
+3. XFoil against the measurements (stall captured in XFoil):
+   clean Cl_max, measured / XFoil, all Re >= 1e5: median 0.935, range 0.822-1.066, n 54
+   clean Cl_max, measured / XFoil, Re >= 2e5:    median 0.942, range 0.865-1.066, n 36
+   flapped Cl_max (W1011, W1015), measured / XFoil: median 0.921, range 0.795-1.075, n 48
+   flap increment dCl_max, measured / XFoil:     median 1.084, range 0.612-1.707, n 48
+   by section (clean, Re >= 2e5): SD7037 0.930; SD7062 1.020; Clark-Y 0.969; E387 0.945; FX 63-137 1.065; W1011 0.869; W1015 0.922
+   sweeps where XFoil did not capture stall (excluded): 0
+
+4. Candidate sections, 2-D Cl_max (a: XFoil corrected by the ratios above; b: measured clean +
+   measured Williamson increment interpolated on t/c and cf/c). Flap hinge on the chord line.
+   SD7037  t/c 0.092 Re 300k  clean 1.27 [measured (5 runs, 1.22-1.30)], XFoil 1.38
+           cf/c 0.25 (a/b) 10: 1.49/1.50, 20: 1.63/1.65, 30: 1.73/1.74, 40: 1.78/1.82
+           cf/c 0.30 (a/b) 10: 1.49/1.51, 20: 1.64/1.68, 30: 1.75/1.78, 40: 1.82/1.88
+   SD7037  t/c 0.092 Re 400k  clean 1.27 [measured (5 runs, 1.22-1.30)], XFoil 1.42
+           cf/c 0.25 (a/b) 10: 1.49/1.50, 20: 1.64/1.69, 30: 1.72/1.80, 40: 1.77/1.89
+           cf/c 0.30 (a/b) 10: 1.49/1.51, 20: 1.64/1.71, 30: 1.73/1.81, 40: 1.79/1.92
+   SD7037  t/c 0.092 Re 500k  clean 1.27 [measured (5 runs, 1.22-1.30)], XFoil 1.45
+           cf/c 0.25 (a/b) 10: 1.49/1.50, 20: 1.64/1.69, 30: 1.72/1.80, 40: 1.77/1.89
+           cf/c 0.30 (a/b) 10: 1.49/1.51, 20: 1.64/1.71, 30: 1.73/1.81, 40: 1.79/1.92
+   SD7034  t/c 0.105 Re 300k  clean 1.39 [XFoil x 0.942], XFoil 1.48
+           cf/c 0.25 (a/b) 10: 1.61/1.63, 20: 1.75/1.77, 30: 1.84/1.86, 40: 1.88/1.95
+           cf/c 0.30 (a/b) 10: 1.60/1.63, 20: 1.75/1.80, 30: 1.84/1.90, 40: 1.90/2.00
+   SD7034  t/c 0.105 Re 400k  clean 1.43 [XFoil x 0.942], XFoil 1.51
+           cf/c 0.25 (a/b) 10: 1.64/1.66, 20: 1.79/1.85, 30: 1.87/1.96, 40: 1.91/2.05
+           cf/c 0.30 (a/b) 10: 1.64/1.67, 20: 1.78/1.87, 30: 1.87/1.97, 40: 1.93/2.08
+   SD7034  t/c 0.105 Re 500k  clean 1.46 [XFoil x 0.942], XFoil 1.55
+           cf/c 0.25 (a/b) 10: 1.67/1.69, 20: 1.82/1.88, 30: 1.90/1.99, 40: 1.94/2.08
+           cf/c 0.30 (a/b) 10: 1.67/1.70, 20: 1.81/1.90, 30: 1.90/2.00, 40: 1.96/2.11
+   SD7062  t/c 0.140 Re 300k  clean 1.66 [measured (1 runs, 1.66-1.66)], XFoil 1.61
+           cf/c 0.25 (a/b) 10: 1.87/1.92, 20: 2.01/2.09, 30: 2.10/2.20, 40: 2.13/2.31
+           cf/c 0.30 (a/b) 10: 1.87/1.93, 20: 2.01/2.12, 30: 2.11/2.23, 40: 2.15/2.37
+   SD7062  t/c 0.140 Re 400k  clean 1.66 [measured (1 runs, 1.66-1.66)], XFoil 1.63
+           cf/c 0.25 (a/b) 10: 1.88/1.92, 20: 2.02/2.12, 30: 2.10/2.26, 40: 2.13/2.37
+           cf/c 0.30 (a/b) 10: 1.87/1.94, 20: 2.02/2.14, 30: 2.11/2.29, 40: 2.15/2.40
+   SD7062  t/c 0.140 Re 500k  clean 1.66 [measured (1 runs, 1.66-1.66)], XFoil 1.66
+           cf/c 0.25 (a/b) 10: 1.88/1.92, 20: 2.02/2.12, 30: 2.10/2.26, 40: 2.13/2.36
+           cf/c 0.30 (a/b) 10: 1.87/1.94, 20: 2.01/2.14, 30: 2.10/2.28, 40: 2.14/2.40
+   MH 114  t/c 0.131 Re 300k  clean 1.67 [XFoil x 0.942], XFoil 1.77
+           cf/c 0.25 (a/b) 10: 1.83/1.92, 20: 1.93/2.08, 30: 1.97/2.19, 40: 1.96/2.29
+           cf/c 0.30 (a/b) 10: 1.83/1.93, 20: 1.92/2.11, 30: 1.98/2.22, 40: 1.70/2.35
+   MH 114  t/c 0.131 Re 400k  clean 1.69 [XFoil x 0.942], XFoil 1.79
+           cf/c 0.25 (a/b) 10: 1.85/1.94, 20: 1.94/2.13, 30: 1.97/2.26, 40: 1.97/2.36
+           cf/c 0.30 (a/b) 10: 1.84/1.95, 20: 1.93/2.15, 30: 1.98/2.28, 40: 1.99/2.40
+   MH 114  t/c 0.131 Re 500k  clean 1.71 [XFoil x 0.942], XFoil 1.81
+           cf/c 0.25 (a/b) 10: 1.86/1.96, 20: 1.95/2.15, 30: 1.99/2.28, 40: 1.99/2.38
+           cf/c 0.30 (a/b) 10: 1.86/1.97, 20: 1.94/2.17, 30: 1.99/2.30, 40: 2.00/2.42
+
+Notes:
+- Measured values are 2-D section data from the UIUC tunnel (turbulence about 0.1 %); Cl_max is the
+  highest Cl of the sweep. Williamson states lift uncertainty 1.5 % and angle 0.08 deg (thesis Sec. 3.7).
+- SD7037 was tested only up to Re 3e5; its 4-5e5 values reuse the 3e5 measurement (Cl_max rises
+  slowly with Re for this section: +0.02-0.06 from 1e5 to 3e5).
+- No wind-tunnel data exist in these volumes for SD7034 or MH 114; their clean values are XFoil
+  corrected by the measured/XFoil ratio of the tested sections (method a), a weaker basis.
+- These are 2-D section values. The wing's CLmax is lower (span loading, flap span, tail trim):
+  wing_clmax.py.

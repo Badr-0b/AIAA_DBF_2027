@@ -1,0 +1,41 @@
+Validation of the wing CLmax method on NACA TN 663 (wing_clmax_validation.py)
+Clark Y clean Cl_max (UIUC Vol. 3): 61k 1.250, 101k 1.301, 201k 1.325, 302k 1.354, 402k 1.351; lift slope 0.1098/deg (CLAF 1.001)
+Flap, W1011 cf/c 0.20 at 60 deg, Re 4e5 (Williamson): dCl +1.212 -> twist +11.04 deg; dCl_max +0.680; dCm -0.210
+Test Re (derived): 6.23e+05 on the rectangular chord; section data held at their 4e5 value above.
+
+Rectangular wing, AR 6, taper 1, centre-section flaps:
+   flap span measured A strict   B 3 %  C 10 %  D area
+         0.0     1.24    1.142   1.142   1.142   1.142
+         0.2     1.33    1.043   1.094   1.175   1.265
+         0.4     1.52    1.248   1.248   1.369   1.387
+         0.6     1.70    1.378   1.487   1.538   1.509
+         0.8     1.86    1.640   1.640   1.640   1.632
+         1.0     1.94    1.712   1.712   1.712   1.754
+
+Tapered wing, AR 6, taper 0.2, centre-section flaps:
+   flap span measured A strict   B 3 %  C 10 %  D area
+         0.0     1.29    1.188   1.188   1.188   1.188
+         0.2     1.48    1.311   1.330   1.334   1.376
+         0.4     1.64    1.327   1.327   1.386   1.531
+         0.6     1.79    1.317   1.387   1.473   1.654
+         0.8     1.85    1.425   1.509   1.730   1.743
+         1.0     1.87    1.777   1.777   1.777   1.800
+
+Error, predicted - measured, over both wings and every flap span (12 points):
+   A strict critical section          mean -0.250, RMS 0.277, worst -0.473
+   B ignore 3 % at the flap end       mean -0.222, RMS 0.242, worst -0.403
+   C ignore 10 % at the flap end      mean -0.171, RMS 0.183, worst -0.317
+   D area ratio, 0.9 dCl_max S_f/S    mean -0.127, RMS 0.136, worst -0.228
+
+Calibration (written to out/wing_clmax_calibration.json for wing_clmax.py):
+   clean: measured / strict critical section = 1.086, 1.085; mean 1.086
+   flap increment: measured / area-ratio increment, points with a measured increment >= 0.15:
+   1.14, 1.25, 1.27, 1.14, 1.01, 1.02, 1.07, 1.01, 0.95; median 1.07
+   Reading for our wing: method D unscaled is the CONSERVATIVE value (it under-predicted all 12
+   measured points); D with both factors is the CALIBRATED value. Part of the clean factor is the
+   Re gap below, which our wing (section data at its own Re) does not have, so the truth for our
+   wing is expected between the two.
+
+Caveats: TN 663 Re 6.2e5 against section data at 4e5 (Clark Y Cl_max is flat from 3e5 to 4e5: 1.354,
+1.351); the W1011 flap stands in for a flapped Clark Y; the TN's flap gaps were sealed; values read
+from the figures carry about +/- 0.02.

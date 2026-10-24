@@ -1,0 +1,9 @@
+criterion,delta_total_at_10pct,weight
+Airframe mass,0.0447,0.0668
+Parasite drag,0.0052,0.0077
+High lift (CLmax),0.0683,0.1021
+Induced drag (e),0.0250,0.0374
+Propulsive efficiency,0.0331,0.0495
+Turn and lap performance,0.1159,0.1733
+Structural load capability,0.0084,0.0126
+Mission completion (reliability),0.3683,0.5507

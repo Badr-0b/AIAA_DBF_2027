@@ -1,0 +1,69 @@
+Airframe mass by component, AIAA top-3 weight-and-balance tables (mass_breakdown.py, PROVISIONAL)
+16 aircraft, 2021-2026 (data/dbf_components.toml). Quote checks: all text rows found on their pages
+
+Sum check: rows against each table's own printed total (a mismatch is the table's, reported as is):
+   2021 MICHIGAN p40    rows    12.100 lb printed    12.500  diff -0.400 (-3.2%)   <-- table does not add up
+   2021 DSCE p100       rows     8.970 lb printed     8.980  diff -0.010 (-0.1%)
+   2021 UCF p160        rows     4.800 lb printed     5.428  diff -0.628 (-11.6%)   <-- table does not add up
+   2022 JOANNEUM p44    rows    10.110 lb printed    10.120  diff -0.010 (-0.1%)
+   2022 WASHU p160      rows     5.880 kg printed     5.680  diff +0.200 (+3.5%)   <-- table does not add up
+   2023 UW p41          rows    10.620 lb printed    10.610  diff +0.010 (+0.1%)
+   2023 ERAU p103       rows    10.780 lb printed    10.770  diff +0.010 (+0.1%)
+   2023 VT p160         rows  2305.050 g  printed  2305.050  diff +0.000 (+0.0%)
+   2024 USC p38         rows  5237.000 g  printed  5210.000  diff +27.000 (+0.5%)
+   2024 LJUBLJANA p100  rows     8.059 lb printed     8.090  diff -0.031 (-0.4%)
+   2024 VT p155         rows  5061.100 g  printed  5061.200  diff -0.100 (-0.0%)
+   2025 UNSW p46        rows    10.470 lb printed    10.470  diff +0.000 (+0.0%)
+   2025 ERAU p163       rows    13.580 lb printed    13.580  diff +0.000 (+0.0%)
+   2026 USC p42         rows  6500.800 g  printed  6500.000  diff +0.800 (+0.0%)
+   2026 LJUBLJANA p100  rows     6.830 lb printed     6.830  diff +0.000 (+0.0%)
+   2026 GT p160         rows     4.480 lb printed     4.480  diff +0.000 (+0.0%)
+
+Per aircraft, kg (airframe = all but propulsion battery, payload, ballast); 'lumped' = merged by the team:
+   aircraft          wing  fuse   emp  gear  prop  avio  payl  oth  frame  S m2 kg/m2  lumped / basis
+   2021 MICHIGAN     1.55  0.87  0.06  0.34  0.86  0.20  0.41 0.00   4.27  0.00  0.00  - / design
+   2021 DSCE         0.42  0.61  0.12  0.49  0.67  0.22  0.30 0.00   2.82  0.00  0.00  - / design
+   2021 UCF          0.46  0.82  0.14  0.37  0.43  0.00  0.68 0.00   2.90  0.00  0.00  avionics / design
+   2022 JOANNEUM     1.32  0.84  0.28  0.62  0.70  0.19  0.81 0.00   4.75  0.61  7.84  avionics / mixed
+   2022 WASHU        1.82  1.37  0.07  0.35  0.73  0.63  0.16 0.00   5.13  1.00  5.15  - / design
+   2023 UW           1.21  0.98  0.25  0.45  0.64  0.46  0.00 0.09   4.09  0.62  6.54  - / design
+   2023 ERAU         1.52  1.18  0.34  0.69  0.76  0.39  0.00 0.00   4.89  0.56  8.70  - / design
+   2023 VT           0.61  0.28  0.11  0.15  0.41  0.20  0.00 0.00   1.77  0.27  6.46  - / measured
+   2024 USC          2.47  1.11  0.41  0.16  0.08  0.21  0.08 0.00   4.52  0.61  7.39  propulsion / mixed
+   2024 LJUBLJANA    1.00  0.42  0.20  0.20  0.61  0.08  0.00 0.00   2.51  0.61  4.12  - / mixed
+   2024 VT           0.91  1.20  0.29  0.29  0.91  0.76  0.00 0.00   4.36  0.50  8.66  - / measured
+   2025 UNSW         3.00  1.05  0.53  0.00  0.17  0.00  0.00 0.00   4.75  0.88  5.42  avionics+gear+propulsion / measured
+   2025 ERAU         1.87  1.25  0.30  0.32  0.87  0.84  0.00 0.00   5.45  0.67  8.13  - / measured
+   2026 USC          2.35  1.83  0.60  0.39  0.10  0.44  0.07 0.00   5.77  0.97  5.97  propulsion / mixed
+   2026 LJUBLJANA    0.85  0.56  0.13  0.24  0.49  0.07  0.00 0.00   2.33  0.37  6.37  - / measured
+   2026 GT           0.32  0.54  0.14  0.23  0.27  0.13  0.00 0.00   1.63  0.41  3.94  - / design
+   Share of airframe, aircraft with nothing lumped (n = 11): wing 34%, fuselage 24%, empennage 6%, gear 9%, propulsion 20%, avionics 8%, payload_system 0%
+
+Normalised (median, P25-P75, min-max, n):
+   wing_kg_per_m2               1.938  (1.814-2.317; 0.780-2.786; n 9)
+   empennage_kg_per_m2_wing     0.446  (0.359-0.601; 0.070-0.677; n 13)
+   gear_frac_of_gross_max       0.050  (0.033-0.065; 0.018-0.101; n 13)
+   fuselage_frac_of_gross_max   0.109  (0.071-0.153; 0.065-0.242; n 9)
+   avionics_kg                  0.218  (0.200-0.458; 0.068-0.844; n 13)
+   propulsion_kg                0.667  (0.485-0.757; 0.272-0.905; n 13)
+   payload_system_kg            0.299  (0.119-0.544; 0.070-0.812; n 7)
+
+Bottom-up budget for the reference design (S 0.9 m2, M2 gross 14.42 kg), P25 / median / P75, kg:
+   wing        1.63 / 1.74 / 2.09
+   empennage   0.32 / 0.40 / 0.54
+   fuselage    1.03 / 1.57 / 2.20
+   gear        0.47 / 0.72 / 0.94
+   propulsion  0.49 / 0.67 / 0.76
+   avionics    0.20 / 0.22 / 0.46
+   total       4.14 / 5.32 / 6.98   (without the payload mechanism; Script 4 adds
+               the 0.32 kg reel separately, sizing.toml [dr])
+   Script 4 fit 5.96 S^0.94 = 5.40 kg at S 0.9 (scatter x1.31 at 1 sd: 4.12-7.07)
+
+Notes:
+- Drivers are assumptions: wing and tail scale with wing area, fuselage and gear with the heaviest
+  gross mass, propulsion and avionics are taken as absolute (one motor; the twin aircraft are in the
+  propulsion sample, so its upper quartile is high). Our own parts (motor, ESC, servos) replace these
+  medians once chosen.
+- Bases differ: 'measured' tables were weighed; 'design' and 'mixed' are CAD or estimates.
+- The fit's airframe masses include each team's payload mechanism; Script 4 also adds our reel
+  (0.32 kg) on top. The payload_system column shows what the field's mechanisms weighed.

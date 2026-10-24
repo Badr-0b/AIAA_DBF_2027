@@ -1,0 +1,53 @@
+Category weights from Script 6: mass 6.7 %, drag 0.8 %, clmax 10.2 %, e 3.7 %, prop 5.0 %, turn 17.3 %, structure 1.3 %, completion 55.1 %
+
+== Tail configuration (Screenshot_2026-10-10_163237.png)
+  option              printed  recomputed  audited  audited + sensitivity weights | P(first) as made / evidence-weighted
+  Conventional          64.0        64.0     83.0                           83.3 |     7 % /    78 %
+  T-tail                79.0        79.0     71.0                           73.4 |    78 % /    14 %
+  Twin-boom             69.0        69.0     65.0                           68.2 |    16 % /     8 %
+  sensitivity weights: Line clearance safety 36 %, Structural load capacity 2 %, Control authority at high weight 22 %, Structural weight penalty 10 %, Winch & mechanism integration 14 %, Manufacturing complexity 14 %, Aerodynamic efficiency 1 %
+  audit: 'Line clearance safety' [1, 5, 4] -> [4, 5, 4]: Tow-line hang angle (straight-line equilibrium, rho 1.064, 2.73 m x 2.5 mm line, Cd 1.1, sensor CdA 0.002-0.005 m2): 61-86 deg below horizontal for a 2-5 kg sensor at 25-42 m/s; 31-38 deg for 0.5 kg at 42 m/s. From a ventral exit >= 0.5 m ahead of the tail the line passes >= 0.3 m below the exit at the tail station, so clearance is set by the exit location (SR-10), not the tail type. T-tail keeps a small edge in turns and gusts. ESTIMATE until Script 5.
+  audit: 'Structural load capacity' [3, 5, 4] -> [4, 3, 3]: A T-tail's fin carries the horizontal-tail loads, which makes it heavier and more flutter-prone than a conventional tail (Raymer, Aircraft Design, ch. 4 tail arrangements); rules Sec. 3.2.1 require flutter stiffness. Rating the T-tail 5/5 and the conventional tail 3/5 reverses this.
+  VERDICT: Do not use as made. Its decisive criterion (line clearance, 25 %) is set by the exit location, not the tail type (hang angle 31-86 deg), and it rates the T-tail strongest structurally, the reverse of standard practice. After the audit the three options are close. Field practice: conventional 16 of 19.
+
+== Wing position (Screenshot_2026-10-10_163243.png)
+  option              printed  recomputed  audited  audited + sensitivity weights | P(first) as made / evidence-weighted
+  High wing             91.0        91.0     86.0                           90.2 |   100 % /    95 %
+  Mid wing              48.0        48.0     52.0                           52.8 |     0 % /     0 %
+  Low wing              51.0        51.0     74.0                           71.4 |     0 % /     5 %
+  sensitivity weights: Cargo bay volume & loading 30 %, Ground clearance 24 %, Aerodynamic roll stability 24 %, Structural integration & weight 6 %, Landing gear complexity & weight 4 %, Manufacturing simplicity 12 %
+  audit: 'Cargo bay volume & loading' [5, 2, 1] -> [4, 2, 4]: Low-wing top-3 teams chose low wing FOR payload access: WashU 2022 ('allows for payloads to be easily installed', p121), UW 2023 ('easy access to the payload', p7), ERAU 2023 and 2025 ('ease of internal payload integration', 2025 p135). High-wing teams cite bay volume (USC 2024 p4). Both have a case, so 4 and 4; mid wing's carry-through still cuts the bay.
+  audit: 'Aerodynamic roll stability' [5, 3, 2] -> [5, 4, 4]: A high wing adds dihedral effect, but a low wing gets the same from geometric dihedral (WashU 2022 flew 5 deg); roll stability is a tunable handling quality, not a 3-point gap.
+  VERDICT: Usable framework; the as-made 91 vs 51 overstates certainty. Low-wing top-3 teams chose low wing for payload access, and low-wing designs completed M3 5 of 6 times (high 4 of 9, p = 0.29). Decide on the sensor exit path, staging access and the pilot.
+
+== Fuselage structure (Screenshot_2026-10-10_163249.png)
+  option              printed  recomputed  audited  audited + sensitivity weights | P(first) as made / evidence-weighted
+  Truss profile         70.0        68.0     68.0                           67.7 |     2 % /     0 %  ARITHMETIC ERROR
+  Semi-monocoque        64.0        64.0     64.0                           46.6 |     0 % /     0 %
+  Box-beam bulkhead     92.0        90.0     90.0                           99.0 |    98 % /   100 %  ARITHMETIC ERROR
+  sensitivity weights: Volumetric cargo efficiency 37 %, Large door integration safety 30 %, 2.5g structural rigidity 2 %, Aerodynamic drag penalty 1 %, Winch mechanism integration 15 %, Manufacturing simplicity 15 %
+  VERDICT: Arithmetic fixed (68 / 64 / 90); ranking unchanged. Missing a structural-mass criterion, although airframe mass is the second-strongest global sensitivity (Spearman -0.62). Belongs in the manufacturing plan and the design report, not Table 05.
+
+== Airfoil (Screenshot_2026-10-10_163258.png)
+  option              printed  recomputed  audited  audited + sensitivity weights | P(first) as made / evidence-weighted
+  Selig S1223           77.0        74.0     74.0                           53.7 |    29 % /     0 %  ARITHMETIC ERROR
+  Eppler 423            76.0        76.0     76.0                           67.7 |    52 % /     7 %
+  Clark Y               71.0        71.0     71.0                           90.1 |    18 % /    93 %
+  sensitivity weights: Max lift coefficient 11 %, Lift-to-drag ratio 19 %, Spar thickness clearance 7 %, Manufacturing profile ease 62 %
+  VERDICT: Drop. The arithmetic error flips the winner (E423 76 over S1223 74), and the proposal already chooses the airfoil quantitatively (Fig. 05: 13 sections, XFoil, race-envelope c_l/c_d).
+
+== Wing planform (Screenshot_2026-10-10_163305.png)
+  option              printed  recomputed  audited  audited + sensitivity weights | P(first) as made / evidence-weighted
+  Rectangular           89.0        89.0     89.0                           91.3 |    49 % /    60 %
+  Tapered               85.0        88.0     88.0                           87.8 |    51 % /    40 %  ARITHMETIC ERROR
+  Swept-back            31.0        31.0     31.0                           27.7 |     0 % /     0 %
+  sensitivity weights: Cargo bay volume & loading 34 %, Ground clearance 27 %, Aerodynamic roll stability 27 %, Structural integration & weight 6 %, Landing gear complexity & weight 5 %
+  VERDICT: Drop. Four of its five criteria are copied from the wing-position matrix and do not depend on planform; planform is set by span efficiency, stall behaviour, root bending and manufacturing (Scripts 3-4, XFLR5).
+
+== Landing gear (image.png)
+  option              printed  recomputed  audited  audited + sensitivity weights | P(first) as made / evidence-weighted
+  Taildragger           78.8        80.0     80.0                           75.5 |    51 % /    24 %  ARITHMETIC ERROR
+  Tricycle              80.0        80.0     80.0                           84.5 |    49 % /    76 %
+  Bicycle               54.0        54.0     54.0                           50.9 |     0 % /     0 %
+  sensitivity weights: Landing reliability and ground stability 43 %, Landing-gear mass 11 %, Structural durability and impact-load management 24 %, Aerodynamic drag 1 %, Propeller clearance 9 %, Takeoff performance 6 %, Manufacturing and integration simplicity 6 %
+  VERDICT: Usable; it is a tie (4.00 each) once the arithmetic is fixed. Field outcomes do not separate the two (p = 1.00); the pilot's preference, crosswind handling and the sensor exit decide it. Fixed rather than retractable (break-even 120-240 g).

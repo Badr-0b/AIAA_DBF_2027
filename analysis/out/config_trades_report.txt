@@ -1,0 +1,8 @@
+Reference: straight wing S 0.9 m2, payload 8.0 kg (unit 4.0 + 1 simulator), baseline f_body 0.013 m2; M2 207.1 s (flown time base)
+  +0.002 m2 non-wing drag area -> M2 +5.30 s;  +0.2 kg airframe -> M2 +4.32 s
+  exchange rate: 10 cm2 (0.001 m2) of drag area costs the same M2 time as 123 g of airframe mass; 1 s of M2 time = 0.0028 M2 points (expected field)
+
+Retractable gear: break-even retract-system mass = fixed-gear drag area x exchange rate
+  2026 Georgia Institute of Technology    gear CD 0.0024 (measured ) -> drag area   9.9 cm2 -> break-even  122 g, and the M2 time saved at most 2.6 s
+  2022 FH JOANNEUM University of Applied  gear CD 0.0032 (predicted) -> drag area  19.4 cm2 -> break-even  238 g, and the M2 time saved at most 5.1 s
+  2022 Washington University in St. Louis gear CD 0.0124 (predicted) -> drag area 123.5 cm2 -> break-even 1514 g, and the M2 time saved at most 32.7 s

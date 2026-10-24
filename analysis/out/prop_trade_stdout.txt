@@ -1,0 +1,121 @@
+Propulsion trade (PROVISIONAL), Script 3b component model. Reference design: straight wing 0.9 m2, 4 kg payload unit (Script 6).
+Flight factor k_fl = 1.035 (ERAU 2023 M2: model 1201 W, measured 1243 W, with ERAU's own APC 20x13E, AT7215 KV220 and 12S).
+Candidates: 23 T-Motor windings with measured maps, 37 APC Thin Electric props 14-22 in, 7 packs.
+
+  reference M2: 14.42 kg at 29.50 m/s, bank 70 deg (n 2.92): drag 14.0 N straight, 47.1 N turn; turns 40 % of the lap
+  reference M3: 9.82 kg at 26.50 m/s, bank 72 deg (n 3.24): drag 13.3 N straight, 37.2 N turn; turns 32 % of the lap
+
+Stage 1: 1575 combinations inside the motors' rated cell ranges. Turn limits (APC RPM limit, current cap, full-throttle voltage) met by 74 at the mid-mission voltage (3.925 V/cell) and by 25 at the end-of-mission voltage (3.7 V/cell, measured resting value after a full M2).
+  best per pack (lowest M2 + M3 lap-mean battery power; end-of-mission margins: voltage, current):
+    MaxAmps LiPo 2000mAh 12S 44.4v             T-Motor AT7224 KV160     APC 20x15E  M2  1205 W M3   843 W  eta(M2) 0.667  end: V  -0.8 %, I  +3.5 %
+    Thunder Power RC TP3300-8SR70 (Rampage 70C) T-Motor AT7215 KV270     APC 20x15E  M2  1245 W M3   877 W  eta(M2) 0.645  end: V  -0.3 %, I +21.8 %
+    Thunder Power RC TP3300-8SE55 (Elite 55C)  T-Motor AT7215 KV270     APC 20x15E  M2  1245 W M3   877 W  eta(M2) 0.645  end: V  -0.3 %, I +21.8 %
+    MaxAmps LiPo 3250mAh 8S 29.6v              T-Motor AT7215 KV270     APC 20x15E  M2  1245 W M3   877 W  eta(M2) 0.645  end: V  -0.5 %, I  -4.8 %
+    MaxAmps LiPo 2000mAh 13S 48.1v             T-Motor AT8020 KV180     APC 20x15E  M2  1324 W M3   963 W  eta(M2) 0.607  end: V +12.6 %, I  +7.5 %
+    Thunder Power RC TP3850-7SR70 (Rampage 70C) no motor in the measured-map set meets the turn limits (rated cells, Kv, current)
+    Thunder Power RC TP4400-6SR70 (Rampage 70C) no motor in the measured-map set meets the turn limits (rated cells, Kv, current)
+
+Stage 2: 40 systems through the Script 4/6 mission evaluation at the reference design (speed and bank re-optimised per system; expected field; motor and pack mass charged). 'total' checks the M2/M3 turn thrust at the mid-mission voltage; 'end' at the end-of-mission voltage (worst case).
+  lumped-eta reference (eta 0.58, 100 Wh at 142 Wh/kg): total 6.64 (M2 1.57, M3 3.00, GM 1.07; M2 207.1 s)
+   rank  motor                    prop      pack                                       total  end    M2    M3   M2 s  laps  static N  T@30 N  dmass kg
+      1  T-Motor AT7215 KV270     20x15E    Thunder Power RC TP3300-8SE55 (Elite 55C)   6.66   6.63  1.59  3.00  201.2     7    101.3    53.8  +0.032
+      2  T-Motor AT7215 KV270     20x15E    Thunder Power RC TP3300-8SR70 (Rampage 70C)  6.66   6.63  1.59  3.00  201.2     7    101.3    53.8  +0.045
+      3  T-Motor AT7215 KV270     205x14E   Thunder Power RC TP3300-8SE55 (Elite 55C)   6.66   6.63  1.59  3.00  201.8     7    105.7    52.1  +0.032
+      4  T-Motor AT7215 KV270     205x14E   Thunder Power RC TP3300-8SR70 (Rampage 70C)  6.66   6.63  1.59  3.00  201.8     7    105.7    52.1  +0.045
+      5  T-Motor AT7215 KV270     20x15E    MaxAmps LiPo 3250mAh 8S 29.6v               6.65   6.63  1.58  3.00  205.2     7     91.1    47.6  -0.052
+      6  T-Motor AT7215 KV270     205x14E   MaxAmps LiPo 3250mAh 8S 29.6v               6.64   6.63  1.58  3.00  205.7     7     94.6    47.5  -0.052
+      7  T-Motor AT7215 KV270     21x13E    Thunder Power RC TP3300-8SR70 (Rampage 70C)  6.64   6.62  1.58  3.00  206.2     7    112.1    50.4  +0.045
+      8  T-Motor AT7215 KV270     21x13E    Thunder Power RC TP3300-8SE55 (Elite 55C)   6.64   6.62  1.58  3.00  206.2     7    112.1    50.4  +0.032
+      9  T-Motor AT7215 KV270     21x13E    MaxAmps LiPo 3250mAh 8S 29.6v               6.64   6.62  1.57  3.00  206.8     7     98.3    47.2  -0.052
+     10  T-Motor AT7215 KV200     20x15E    MaxAmps LiPo 2000mAh 12S 44.4v              6.63   6.63  1.56  3.00  210.9     7     95.9    50.6  -0.066
+     11  T-Motor AT7215 KV200     205x14E   MaxAmps LiPo 2000mAh 12S 44.4v              6.63   6.63  1.56  3.00  211.2     7     99.5    50.9  -0.066
+     12  T-Motor AT7215 KV270     22x12E    Thunder Power RC TP3300-8SR70 (Rampage 70C)  6.63   6.62  1.56  3.00  211.5     7    122.1    49.3  +0.045
+     13  T-Motor AT7215 KV270     22x12E    Thunder Power RC TP3300-8SE55 (Elite 55C)   6.63   6.62  1.56  3.00  211.5     7    122.1    49.3  +0.032
+     14  T-Motor AT7215 KV200     20x13E    MaxAmps LiPo 2000mAh 12S 44.4v              6.63   6.63  1.56  3.00  211.8     7     99.2    50.7  -0.066
+     15  T-Motor AT7215 KV270     22x12E    MaxAmps LiPo 3250mAh 8S 29.6v               6.63   6.62  1.56  3.00  211.8     7    103.8    46.5  -0.052
+     16  T-Motor AT7224 KV160     20x15E    MaxAmps LiPo 2000mAh 12S 44.4v              6.63   6.63  1.56  3.00  212.1     7     96.4    50.8  +0.164
+     17  T-Motor AT7215 KV200     21x13E    MaxAmps LiPo 2000mAh 12S 44.4v              6.63   6.63  1.56  3.00  212.1     7    103.0    50.8  -0.066
+     18  T-Motor AT7224 KV160     205x14E   MaxAmps LiPo 2000mAh 12S 44.4v              6.63   6.62  1.56  3.00  212.1     7    100.0    51.1  +0.164
+     19  T-Motor AT7215 KV200     19x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.63   6.63  1.56  3.00  212.4     7     96.9    50.5  -0.066
+     20  T-Motor AT7224 KV160     21x13E    MaxAmps LiPo 2000mAh 12S 44.4v              6.62   6.62  1.55  3.00  215.8     7    103.3    49.6  +0.164
+     21  T-Motor AT7215 KV200     18x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.62   6.62  1.55  3.00  215.8     7     90.9    50.0  -0.066
+     22  T-Motor AT7224 KV190     20x15E    MaxAmps LiPo 2000mAh 12S 44.4v              6.62   6.62  1.55  3.00  216.1     7     96.4    51.0  +0.164
+     23  T-Motor AT7224 KV190     205x14E   MaxAmps LiPo 2000mAh 12S 44.4v              6.62   6.62  1.55  3.00  216.4     7    100.0    51.2  +0.164
+     24  T-Motor AT5230A KV200    20x15E    MaxAmps LiPo 2000mAh 12S 44.4v              6.62   6.62  1.55  3.00  216.4     7     95.0    50.2  -0.006
+     25  T-Motor AT5230A KV200    205x14E   MaxAmps LiPo 2000mAh 12S 44.4v              6.62   6.62  1.55  3.00  216.7     7     98.6    50.3  -0.006
+     26  T-Motor AT7224 KV190     20x13E    MaxAmps LiPo 2000mAh 12S 44.4v              6.61   6.61  1.55  3.00  217.0     7     99.6    50.9  +0.164
+     27  T-Motor AT7215 KV200     22x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.61   6.61  1.55  3.00  217.0     7    108.0    50.4  -0.066
+     28  T-Motor AT7224 KV190     21x13E    MaxAmps LiPo 2000mAh 12S 44.4v              6.61   6.61  1.55  3.00  217.4     7    103.6    51.1  +0.164
+     29  T-Motor AT5220A KV220    19x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.61   6.61  1.55  3.00  217.7     7     91.4    46.9  -0.166
+     30  T-Motor AT8020 KV180     20x15E    MaxAmps LiPo 2000mAh 13S 48.1v              6.60   6.60  1.54  3.00  221.0     6     99.3    53.2  +0.294
+     31  T-Motor AT7224 KV160     22x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.60   6.60  1.54  3.00  221.0     7    108.0    48.3  +0.164
+     32  T-Motor AT7224 KV190     19x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.60   6.60  1.54  3.00  221.3     7     97.0    50.5  +0.164
+     33  T-Motor AT5230A KV200    21x13E    MaxAmps LiPo 2000mAh 12S 44.4v              6.60   6.60  1.54  3.00  221.3     7    102.4    50.1  -0.006
+     34  T-Motor AT8020 KV180     205x14E   MaxAmps LiPo 2000mAh 13S 48.1v              6.60   6.60  1.54  3.00  221.6     6    103.1    53.3  +0.294
+     35  T-Motor AT7224 KV190     18x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.60   6.60  1.54  3.00  221.6     7     90.9    48.8  +0.164
+     36  T-Motor AT5230A KV200    20x13E    MaxAmps LiPo 2000mAh 12S 44.4v              6.60   6.60  1.54  3.00  221.6     7     97.7    49.5  -0.006
+     37  T-Motor AT7224 KV190     22x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.60   6.60  1.53  3.00  222.3     6    108.7    50.7  +0.164
+     38  T-Motor AT8020 KV180     21x13E    MaxAmps LiPo 2000mAh 13S 48.1v              6.59   6.59  1.53  3.00  226.2     6    107.0    53.1  +0.294
+     39  T-Motor AT5230A KV200    22x12E    MaxAmps LiPo 2000mAh 12S 44.4v              6.59   6.59  1.52  3.00  226.9     7    107.8    49.5  -0.006
+     40  T-Motor AT8030 KV160     20x15E    MaxAmps LiPo 2000mAh 13S 48.1v              6.58   6.58  1.51  3.00  230.9     6    100.4    53.9  +0.539
+
+Monte Carlo at the reference (120 paired draws: Script 6 draws + battery power x U(0.92, 1.08) + available thrust x U(0.85, 1.15)):
+  system                                                                           mean   P10   P50   P90  P(M2)
+  lumped eta (Script 6 draws, eta 0.45-0.65)                                        6.33  6.00  6.44  6.86
+  Thunder Power RC TP3300-8SE55 (Elite 55C) | T-Motor AT7215 KV270 | APC 20x15E     6.37  6.04  6.49  6.81   98 %
+  Thunder Power RC TP3300-8SR70 (Rampage 70C) | T-Motor AT7215 KV270 | APC 20x15E   6.33  6.04  6.49  6.81   97 %   best beats it in   7 % of draws, mean gain +0.035
+  MaxAmps LiPo 3250mAh 8S 29.6v | T-Motor AT7215 KV270 | APC 20x15E                 6.33  6.04  6.49  6.79   97 %   best beats it in  61 % of draws, mean gain +0.039
+  MaxAmps LiPo 2000mAh 12S 44.4v | T-Motor AT7215 KV200 | APC 20x15E                6.31  6.00  6.46  6.82   97 %   best beats it in  80 % of draws, mean gain +0.054
+  MaxAmps LiPo 2000mAh 13S 48.1v | T-Motor AT8020 KV180 | APC 20x15E                6.17  5.97  6.40  6.81   94 %   best beats it in  82 % of draws, mean gain +0.199
+
+Reference check with real propulsion: mean total (P(M2 feasible)) over the same draws, wing area x unit:
+  Thunder Power RC TP3300-8SE55 (Elite 55C) | T-Motor AT7215 KV270 | APC 20x15E
+     S m2 \ unit kg      3.0             4.0             5.0
+      0.8         6.12 (100 %)   6.26 ( 96 %)   6.22 ( 91 %)
+      0.9         6.12 ( 99 %)   6.37 ( 98 %)   6.31 ( 92 %)
+      1.0         6.13 ( 99 %)   6.33 ( 97 %)   6.41 ( 93 %)
+     best cell: S 1.0 m2, unit 5.0 kg
+  MaxAmps LiPo 2000mAh 12S 44.4v | T-Motor AT7215 KV200 | APC 20x15E
+     S m2 \ unit kg      3.0             4.0             5.0
+      0.8         6.08 ( 99 %)   6.29 ( 97 %)   6.18 ( 90 %)
+      0.9         6.10 ( 99 %)   6.31 ( 97 %)   6.30 ( 92 %)
+      1.0         6.04 ( 98 %)   6.31 ( 97 %)   6.32 ( 92 %)
+     best cell: S 1.0 m2, unit 5.0 kg
+
+Propeller diameter (ground clearance drives tricycle-gear height): best Stage-1 system per diameter, evaluated as Stage 2 (deterministic, mid-voltage check):
+  D in   cells  motor                    prop      total   M2 s   tip clearance radius mm
+  20.0      8S  T-Motor AT7215 KV270     20x15E     6.66  201.2     254
+  20.5      8S  T-Motor AT7215 KV270     205x14E    6.66  201.8     260
+  21.0      8S  T-Motor AT7215 KV270     21x13E     6.64  206.2     267
+  22.0      8S  T-Motor AT7215 KV270     22x12E     6.63  211.5     279
+  18.0     12S  T-Motor AT7215 KV200     18x12E     6.62  215.8     229
+  19.0     12S  T-Motor AT7215 KV200     19x12E     6.63  212.4     241
+  20.0     12S  T-Motor AT7224 KV160     20x15E     6.63  212.1     254
+  20.5     12S  T-Motor AT7224 KV160     205x14E    6.63  212.1     260
+  21.0     12S  T-Motor AT7224 KV160     21x13E     6.62  215.8     267
+  22.0     12S  T-Motor AT7224 KV160     22x12E     6.60  221.0     279
+  19.0     13S  T-Motor AT8020 KV180     19x12E     6.58  232.1     241
+  20.0     13S  T-Motor AT8020 KV180     20x15E     6.60  221.0     254
+  20.5     13S  T-Motor AT8020 KV180     205x14E    6.60  221.6     260
+  21.0     13S  T-Motor AT8020 KV180     21x13E     6.59  226.2     267
+  22.0     13S  T-Motor AT8020 KV180     22x12E     6.58  231.8     279
+
+Take-off roll at M2 weight, full throttle from rest to 1.2 x flapped stall (friction 0.04, no lift credit), fresh pack:
+  Thunder Power RC TP3300-8SE55 (Elite 55C) | T-Motor AT7215 KV270 | APC 20x15E    14.45 kg:  2.7 s,  23.2 m
+  Thunder Power RC TP3300-8SR70 (Rampage 70C) | T-Motor AT7215 KV270 | APC 20x15E  14.47 kg:  2.7 s,  23.1 m
+  MaxAmps LiPo 3250mAh 8S 29.6v | T-Motor AT7215 KV270 | APC 20x15E                14.37 kg:  3.2 s,  27.4 m
+  MaxAmps LiPo 2000mAh 12S 44.4v | T-Motor AT7215 KV200 | APC 20x15E               14.35 kg:  3.0 s,  26.1 m
+  MaxAmps LiPo 2000mAh 13S 48.1v | T-Motor AT8020 KV180 | APC 20x15E               14.71 kg:  3.0 s,  26.1 m
+
+Layout: twin tractor, two systems on Thunder Power RC TP2250-6SR70 (Rampage 70C), twin-layout pack (2 x 50.0 Wh, 2 x 100 A fuses), +0.15 kg and +20 cm2 drag area (ESTIMATES) vs a single nose motor:
+  48 twin motor-prop pairs meet the turn limits at the mid-mission voltage (6S-rated windings, props <= 18 in).
+  TWIN 2x T-Motor AT5220A KV380 | 2x APC 15x12E | 2x 6S 2250                       mean  6.16  P10  6.00  P(M2)  94 %   best single beats it in  98 % of draws, mean gain +0.203
+  TWIN 2x T-Motor AT5220A KV380 | 2x APC 14x14E | 2x 6S 2250                       mean  6.16  P10  5.97  P(M2)  94 %   best single beats it in  97 % of draws, mean gain +0.205
+  TWIN 2x T-Motor AT4130 KV450 | 2x APC 14x14E | 2x 6S 2250                        mean  6.21  P10  5.98  P(M2)  95 %   best single beats it in  95 % of draws, mean gain +0.159
+  with NO layout penalty, TWIN 2x T-Motor AT5220A KV380 2x APC 15x12E: mean  6.26; best single still ahead in  87 % of draws
+  with NO layout penalty, TWIN 2x T-Motor AT5220A KV380 2x APC 14x14E: mean  6.26; best single still ahead in  85 % of draws
+  with NO layout penalty, TWIN 2x T-Motor AT4130 KV450 2x APC 14x14E: mean  6.30; best single still ahead in  57 % of draws
+
+wrote out/prop_trade_report.txt, prop_trade_stage2.csv, prop_trade_mc.csv, prop_trade_mc.pdf, prop_trade_diameter.pdf
+
+(355 s)
