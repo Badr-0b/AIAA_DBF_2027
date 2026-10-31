@@ -65,6 +65,10 @@ def main(force=False):
     for s in sources():
         if s["url"].startswith("repo:"):
             pdf = REPO / s["url"][5:]
+            if not pdf.exists():   # third-party file, not redistributed: see SOURCES.md for the official link
+                print(f"skip   {s['id']}  ({pdf.relative_to(REPO)} absent; download it from the link in SOURCES.md)",
+                      flush=True)
+                continue
         else:
             pdf = RAW / f"{s['id']}.pdf"
             if force or not pdf.exists():

@@ -12,10 +12,14 @@ import unittest
 
 import numpy as np
 
-from _support import Case
+from _support import ANALYSIS, Case
 import s3b_propulsion as pb
 import s4_sizing as s4
 import s3_performance as s3
+
+PROP_RAW = ANALYSIS / "data" / "raw" / "prop"
+HAVE_PROP_RAW = all((PROP_RAW / n).exists() for n in ("apc-perfiles-202602.zip", "tmotor-at7215.txt"))
+NEEDS_RAW = unittest.skipUnless(HAVE_PROP_RAW, "raw prop cache absent: run analysis/data/prop/fetch_prop.py")
 
 
 class Battery(Case):
@@ -52,6 +56,7 @@ class FirstOrder(Case):
         self.assertClose(float(self.m.volts_needed(600.0, 1.2, 0.0)), 20.90161497558739)
 
 
+@NEEDS_RAW
 class PropTable(Case):
     """Against APC's own printed columns (PER3_20x10E.dat, v2022-0915): 4000 rpm static,
     30.357 N and 327.652 W. Coefficients are printed to 4 decimals, so 1 % tolerance."""
@@ -75,6 +80,7 @@ class PropTable(Case):
         self.assertTrue(math.isnan(float(pb.Prop("14x7E").rpm_for_thrust(1.064, 5000.0, 30.0))))
 
 
+@NEEDS_RAW
 class MeasuredMap(Case):
     def setUp(self):
         self.m = pb.MapMotor("tmotor-at7215", "KV220")
@@ -94,6 +100,7 @@ class MeasuredMap(Case):
         self.assertClose(float(self.m.p_in(w, 3.363)), 3871.53, rel=0.03)
 
 
+@NEEDS_RAW
 class Calibration(Case):
     def test_flight_factor_regression(self):
         # Regression pin (model output, not a hand value): ERAU 2023 M2 with ERAU's hardware.
@@ -116,6 +123,7 @@ class LegacyPath(Case):
         self.assertEqual(bool(one(ok)), bool(one(res["p_peak"]) <= P.p_max))
 
 
+@NEEDS_RAW
 class GridModel(Case):
     def test_grid_matches_point(self):
         sysm = pb.erau_2023_system()
@@ -125,6 +133,7 @@ class GridModel(Case):
         self.assertClose(float(model.p_batt(t, v)), float(direct["p_batt"]), rel=1e-9)
 
 
+@NEEDS_RAW
 class DataVerified(Case):
     def test_verify_prop_passes(self):
         import io
