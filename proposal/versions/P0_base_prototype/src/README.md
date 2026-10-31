@@ -9,7 +9,7 @@
 | Output | Purpose |
 |---|---|
 | `build/main.pdf` | **Draft** with writer notes. Use it while writing and reviewing |
-| `2027DBF_American_University_of_the_Middle_East_PROPOSAL.pdf` | **Shipping** build, notes removed. This is the file to submit |
+| `2027DBF_Badr_Obtel_PROPOSAL.pdf` | **Shipping** build, notes removed. This is the file to submit |
 
 `build.sh` checks the shipping build against the rules and prints PASS or FAIL for each item. Submit only when it prints `READY TO SUBMIT`.
 

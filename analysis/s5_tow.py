@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 5, part 1: tow line and reel physics (PROVISIONAL).
 
 Question: what does the deployment-and-recovery (D&R) mechanism have to do, and

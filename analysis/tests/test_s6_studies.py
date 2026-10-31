@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Hand-checked expected values for Script 6's pure helpers (s6_studies.py). TOOLING.
 
 Values computed on 13 Oct 2026 by an independent scalar implementation

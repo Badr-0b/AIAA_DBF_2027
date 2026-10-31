@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Field statistics from five years of AIAA results (TOOLING).
 
     python analysis/data/field_stats.py

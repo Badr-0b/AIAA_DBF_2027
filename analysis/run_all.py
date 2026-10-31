@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Run Scripts 1-2 end to end (TOOLING): tables to the terminal, figures to
 analysis/out/.
 

@@ -33,8 +33,8 @@ A test whose function still raises `NotImplementedError` is **skipped** ("not
 written yet"). **FAIL** always means a wrong answer.
 
 ## Who writes what
-On 12 Oct 2026 (evening) the team lead directed Claude to write and run all
-the analysis code, on condition that every datum is verified against a
+On 12 Oct 2026 (evening) the team lead directed that all
+the analysis code be written and run, on condition that every datum is verified against a
 reliable, cited source. Pair mode (the team writing the function bodies) is
 lifted. The team reviews, decides, and owns every number. Rules Sec. 1.3: the
 analysis is the team's responsibility, so every derivation is documented for

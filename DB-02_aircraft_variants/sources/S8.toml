@@ -83,7 +83,7 @@ nature = "SPEC"
 [[source]]
 id = "S8-DRTRADE"
 title = "DB-01 D&R trade inputs and report (dr_trade.toml, dr_trade_report.txt)"
-author = "team analysis (Claude), 14 Oct 2026"
+author = "team analysis, 14 Oct 2026"
 year = 2026
 url = "REPO/analysis/inputs/dr_trade.toml"
 date_read = "2026-10-29"

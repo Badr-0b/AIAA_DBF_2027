@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """What the measured wing CLmax does to the Script 6 robust optimum (E03 impact study).
 
     PYTHONIOENCODING=utf-8 python analysis/clmax_impact.py     (after wing_clmax.py)

@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Container foam, size and mass for the Ground Mission drop (evidence gap E05).
 
     PYTHONIOENCODING=utf-8 python analysis/cushion_study.py

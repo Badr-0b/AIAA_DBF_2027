@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Check every propulsion value against its source, then write SI tables (TOOLING).
 
     python analysis/data/prop/verify_prop.py

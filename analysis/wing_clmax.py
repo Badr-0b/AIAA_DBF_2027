@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Wing CLmax, clean and with part-span plain flaps (evidence gap E03, 3-D step).
 
     PYTHONIOENCODING=utf-8 python analysis/wing_clmax.py      (run clmax_study.py first)

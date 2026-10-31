@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Summarise a harvested external-aero case: coefficients, breakdown, WP-01 checks, plots.
 
     PYTHONIOENCODING=utf-8 python cfd/tools/report_case.py cfd/cases/<case>

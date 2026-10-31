@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Numbers for decision brief DB-01 that no other report prints (PROVISIONAL).
 
     python analysis/db01_data.py          (after s6_studies.py)

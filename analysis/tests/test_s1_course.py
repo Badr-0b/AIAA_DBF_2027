@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Hand-checked expected values for Script 1 (s1_course.py). TOOLING.
 
 Every expected value was derived independently on 12 Oct 2026, from the closed

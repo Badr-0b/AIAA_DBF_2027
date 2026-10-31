@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Readers for the cached propulsion sources (TOOLING, no physics).
 
 Everything is read from analysis/data/raw/prop/ (fetch_prop.py), so no number is

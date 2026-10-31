@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Integrity of analysis/inputs/*.toml (TOOLING): exact rule conversions, the
 competitor scenarios, and every target you set kept inside the rules."""
 import math

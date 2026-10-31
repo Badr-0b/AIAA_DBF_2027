@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Stop a running foamRun once its force history is flat (the WP-01 rule, report_case.flat).
 
     python3 cfd/tools/converge_watch.py <run dir> <min iterations>    (Allrun starts it beside foamRun)

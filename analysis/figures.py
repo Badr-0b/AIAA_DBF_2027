@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """House-style figures for Scripts 1-2 (TOOLING). They call your functions in
 s1_course.py, so they draw once those are written. Output: analysis/out/*.pdf
 at the exact printed size (dbfplot: Geist, monochrome).

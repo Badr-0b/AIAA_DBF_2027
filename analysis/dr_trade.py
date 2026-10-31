@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Deployment-and-recovery (D&R) architecture trade: proposal Table 06 (PROVISIONAL).
 
     python analysis/dr_trade.py          (after s6_studies.py)

@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Configuration field practice of the AIAA top-3 design reports, with fly-off outcomes (TOOLING).
 
     python analysis/data/config_evidence.py

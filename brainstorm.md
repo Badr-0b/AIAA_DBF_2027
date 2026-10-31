@@ -14,7 +14,7 @@
 
 ## Ground tracking + pilot guidance display (Oct 10)
 > **Idea: Badr Ob (team lead), 10 Oct 2026.** Not for the proposal.
-> Feasibility was checked by Claude on 10–11 Oct 2026 against the 2026-27 draft rules and public sources.
+> Feasibility was checked on 10–11 Oct 2026 against the 2026-27 draft rules and public sources.
 
 ### The idea
 - A **phased-array radar** and a **live camera** sit on the ground, pointed at the sky. Both connect to the pilot's controller.
@@ -80,7 +80,7 @@
 ---
 
 ## "Retarded bomb" sensor with pop-out wings (Oct 11)
-> **Idea: sensor team (relayed by Badr Ob), 11 Oct 2026.** Rule check by Claude, 11 Oct 2026.
+> **Idea: sensor team (relayed by Badr Ob), 11 Oct 2026.** Rule check, 11 Oct 2026.
 
 ### The idea
 - A towed sensor shaped like a retarded bomb: a thick dart about the size of a large Red Bull can.

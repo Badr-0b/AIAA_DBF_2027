@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Checks for the component-mass dataset (data/dbf_components.toml) and mass_breakdown.py. TOOLING.
 
 Hand-checked values (16 Oct 2026, read on the rendered pages):

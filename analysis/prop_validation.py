@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Validation of the Script 3b propulsion model against measured data. PROVISIONAL.
 
     python analysis/prop_validation.py     (writes out/prop_validation_report.txt and charts)

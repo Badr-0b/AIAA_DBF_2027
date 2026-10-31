@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Hand-checked expected values for Script 3b (s3b_propulsion.py) and its data readers. TOOLING.
 
 Closed-form values were computed on 14 Oct 2026 with the math module only (not by

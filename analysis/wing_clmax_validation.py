@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Validate wing_clmax.py's 3-D method on measured wings: NACA TN 663 (House, 1938).
 
     PYTHONIOENCODING=utf-8 python analysis/wing_clmax_validation.py

@@ -1,10 +1,10 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Audit and re-weighting of the team's configuration trade matrices (PROVISIONAL).
 
     python analysis/trades.py          (after s6_studies.py)
 
 Input: inputs/trades.toml. It holds the team's six matrices (Matrix_Tables/,
-10 Oct), digitised verbatim with their printed totals, plus Claude's audit
+10 Oct), digitised verbatim with their printed totals, plus the audit
 entries (score changes, each with its evidence). Also out/s6_trade_weights.csv,
 the Script 6 sensitivity weights.
 

@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Propulsion trade (DB-01 D9; PR-01 B07-B10). PROVISIONAL.
 
     python analysis/prop_trade.py        (about 5 min; writes out/prop_trade_report.txt, .csv, charts)

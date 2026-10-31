@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Hand-checked expected values for Script 3 (s3_performance.py). TOOLING.
 
 Every expected value was computed on 13 Oct 2026 by an independent scalar

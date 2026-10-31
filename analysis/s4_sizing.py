@@ -1,9 +1,9 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 4: sizing and the 01-vs-02 trade (R&D Sec. 4, Script 4). PROVISIONAL.
 
     python analysis/s4_sizing.py
 
-Written by Claude (Oct 13) after Pair mode was lifted; the team reviews and owns
+Written 13 Oct 2026 after Pair mode was lifted; the team reviews and owns
 the numbers (rules Sec. 1.3). Inputs: inputs/sizing.toml (every value sourced
 or marked ESTIMATE), data/dbf_airframes.csv (verified AIAA report data),
 proposal/data/numbers.tex (rho).

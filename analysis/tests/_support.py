@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Shared helpers for the analysis tests (TOOLING).
 
 - A function that still raises NotImplementedError is SKIPPED with the reason

@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Hand-checked values for cushion_study.py (container foam, E05). TOOLING.
 
 Derived by hand on 16 Oct 2026 from data/cushion_pe2.toml (MIL-HDBK-304B readings):

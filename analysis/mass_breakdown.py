@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Airframe mass by component from the top-3 weight-and-balance tables (evidence gap E02).
 
     PYTHONIOENCODING=utf-8 python analysis/mass_breakdown.py

@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Hand-checked expected values for Script 5's tow and reel physics (s5_tow.py). TOOLING.
 
 Values computed on 14 Oct 2026 by an independent scalar implementation

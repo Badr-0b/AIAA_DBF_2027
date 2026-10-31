@@ -5,13 +5,13 @@
 #
 # Produces
 #   build/main.pdf    DRAFT: writer notes visible (for editing and review)
-#   2027DBF_American_University_of_the_Middle_East_PROPOSAL.pdf
+#   2027DBF_Badr_Obtel_PROPOSAL.pdf
 #                     SHIPPING build (notes removed): the file to submit,
 #                     and the one every check below is run against.
 set -uo pipefail
 cd "$(dirname "$0")"
 DS=../design-system
-OUT="2027DBF_American_University_of_the_Middle_East_PROPOSAL.pdf"
+OUT="2027DBF_Badr_Obtel_PROPOSAL.pdf"
 
 echo "---- charts ----"
 python make_charts.py || exit 1        # Gantt + org chart from data/*.toml

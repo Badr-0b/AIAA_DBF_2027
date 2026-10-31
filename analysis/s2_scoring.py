@@ -1,9 +1,9 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 2: scoring model.
 
 Question: given our performance, what do we score?
 
-Bodies written by Claude at the team lead's direction (12 Oct 2026, Pair mode
+Bodies written 12 Oct 2026 (Pair mode
 lifted), checked against analysis/tests/test_s2_scoring.py.
 The scoring formulas are rules Sec. 3.3.3.1-3.3.4 and Sec. 6.3, copied verbatim
 into analysis/inputs/rules.toml [scoring].

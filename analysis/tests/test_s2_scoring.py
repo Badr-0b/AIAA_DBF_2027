@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Hand-checked expected values for Script 2 (s2_scoring.py). TOOLING.
 
 Derived on 12 Oct 2026 from rules Sec. 3.3.3.1-3.3.4, 6.2 and 6.3, read

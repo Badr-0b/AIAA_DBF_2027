@@ -18,7 +18,7 @@ The team lead (Badr Ob, "the user") leads an AIAA Design/Build/Fly team. The 202
 - The proposal (`REPO\proposal\`) is a different document. **Never touch it.**
 - The incomplete CFD of the RQ-4-style CAD is to be used, with images.
 
-**Deliverable:** `W\report\DB-02_aircraft_variants.pdf` (document ID AUM-DBF-27-DB-002, rev A). Its look is described in §9.
+**Deliverable:** `W\report\DB-02_aircraft_variants.pdf` (document ID OBTEL-DBF-27-DB-002, rev A). Its look is described in §9.
 
 ## 2. Hard rules for every agent (user directives; breaking one is a failure)
 

@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Download every aerodynamics source in aero/sources.toml and cache its text (TOOLING).
 
     python analysis/data/aero/fetch_aero.py            fetch what is missing

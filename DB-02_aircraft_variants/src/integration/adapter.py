@@ -1,6 +1,6 @@
 """S12 adapter: evaluate a DB-02 "design" through the DB-01 pipeline (s4_sizing, s6_studies).
 
-Written by Claude (S12), 27 Oct 2026. Read-only use of REPO/analysis: functions are imported,
+Written (S12), 27 Oct 2026. Read-only use of REPO/analysis: functions are imported,
 no script entry point is called, nothing under REPO/analysis is written.
 
 A design is a wing family + wing area S + payload unit (container + declared max sensor)

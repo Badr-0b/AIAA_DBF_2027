@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Rough decision maps from the scoring model and the competitor scenarios
 (TOOLING; first step of Script 6).
 

@@ -1,9 +1,9 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 1: course and lap model.
 
 Question: how long is a lap, and how long does it take at a given speed?
 
-Bodies written by Claude at the team lead's direction (12 Oct 2026, Pair mode
+Bodies written 12 Oct 2026 (Pair mode
 lifted). Every function is checked against hand-derived values in
 analysis/tests/test_s1_course.py:
     python -m unittest discover -s analysis/tests -v
@@ -143,7 +143,7 @@ def lap_time_wind(v, bank_deg, wind, g=G0, straights=STRAIGHTS_M):
       upwind leg   (S/2 + w b) / (v - w)   (it starts w b past the downwind marker)
       downwind leg (S/2 - 3 w b) / (v + w) (the upwind turn and the 360 drift it on)
       turns        4 pi r / v              (unchanged in the air frame)
-    Derivation: Claude, 12 Oct 2026 (00_START_HERE_RnD.md Sec. 4, Script 1 notes).
+    Derivation: 12 Oct 2026 (00_START_HERE_RnD.md Sec. 4, Script 1 notes).
     wind: m/s, blowing down the course (|wind| < v).
     returns  lap time, s
     """

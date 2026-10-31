@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Propose verbatim quotes for a value on a page (TOOLING, for extraction work).
 
     python analysis/data/snip.py <source_id> <page> <value> [--before N] [--after N]

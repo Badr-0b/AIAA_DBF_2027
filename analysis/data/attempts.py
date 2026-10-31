@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Should we waive Mission 1? Attempt-budget model (TOOLING + rough decision).
 
     python analysis/data/attempts.py

@@ -245,7 +245,7 @@
 \input{dbf-identity.tex}
 \newcommand\dbf@doctitle{Untitled Document}
 \newcommand\dbf@doctype{Document}
-\newcommand\dbf@docid{AUM-DBF-27-XXX-000}
+\newcommand\dbf@docid{OBTEL-DBF-27-XXX-000}
 \newcommand\dbf@rev{A}
 \newcommand\dbf@date{\today}
 \newcommand\dbfsetdoc[4]{% {title}{type}{doc id}{rev}
@@ -271,7 +271,7 @@
 
 \fancypagestyle{dbf}{%
   \fancyhf{}%
-  \fancyhead[L]{\dbf@runhead{{\bfseries\dbfteamname}\dbf@sep\dbfuniversity}}%
+  \fancyhead[L]{\dbf@runhead{\bfseries\dbfteamname}}%
   \fancyhead[R]{\dbf@runhead{\dbfprogram\dbf@sep\dbf@doctype}}%
   \fancyfoot[L]{\dbf@runfoot{\dbf@doccontrol}}%
   \fancyfoot[R]{\dbf@runfoot{\dbf@pageof}}%
@@ -422,6 +422,6 @@
 \RequirePackage{hyperref}
 \hypersetup{hidelinks, pdfdisplaydoctitle=true, pdfcreator={dbfdoc.cls / XeLaTeX}}
 \AtBeginDocument{\hypersetup{pdftitle={\dbf@doctitle\space-- \dbf@doctype},
-  pdfauthor={\dbfuniversity}, pdfsubject={\dbfprogram}}}
+  pdfauthor={\dbfteamname}, pdfsubject={\dbfprogram}}}
 
 \endinput

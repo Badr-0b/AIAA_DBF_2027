@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Airfoil coordinate files from the UIUC database, in either published layout (TOOLING).
 
 Selig:     name line, then x y from the trailing edge over the upper surface to

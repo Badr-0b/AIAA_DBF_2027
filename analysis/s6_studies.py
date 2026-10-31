@@ -1,9 +1,9 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 6: studies (R&D Sec. 4, Script 6). PROVISIONAL.
 
     python analysis/s6_studies.py
 
-Written by Claude (Oct 13); the team reviews and owns the numbers (rules
+Written 13 Oct 2026; the team reviews and owns the numbers (rules
 Sec. 1.3). Nothing here is a decision (user, 13 Oct): the outputs feed the
 decision brief.
 

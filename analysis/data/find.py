@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Search a cached source by page (TOOLING, for extraction work).
 
     python analysis/data/find.py <source_id> <first_page> <last_page> <regex> [--layout] [--context N]

@@ -1,7 +1,7 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 3: aerodynamics, power and energy (R&D Sec. 4, Script 3).
 
-Written by Claude (Oct 13) after Pair mode was lifted; the team reviews and
+Written 13 Oct 2026 after Pair mode was lifted; the team reviews and
 owns the numbers (rules Sec. 1.3). SI units, angles in degrees.
 
 Model: a constant-speed lap (Script 1 geometry). Straights are flown at n = 1;

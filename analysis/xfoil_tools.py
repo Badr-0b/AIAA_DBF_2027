@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Headless XFoil 6.99 driver: lift sweeps with an optional plain flap (TOOLING).
 
 Method follows the team's airfoil study (dbf_airfoil_study/scripts/xfoil_driver.py,

@@ -3,7 +3,7 @@
 # made by teammates), digitised VERBATIM on 13 Oct 2026, the printed totals included,
 # so analysis/trades.py can audit them.
 # Score convention: 1-5, higher is better. Weights in percent, as printed.
-# `category`: the Script 6 sensitivity category each criterion feeds. This is Claude's
+# `category`: the Script 6 sensitivity category each criterion feeds. This is the
 # documented mapping, used for the sensitivity-derived re-weighting:
 #   completion = anything whose failure loses a mission (reliability, handling,
 #                mechanism, staging, build schedule);
@@ -107,7 +107,7 @@ criteria = [
 ]
 
 # ---------------------------------------------------------------------------
-# AUDIT (Claude, 13 Oct 2026). Score changes proposed where verified data, physics
+# AUDIT (13 Oct 2026). Score changes proposed where verified data, physics
 # or the rules contradict the printed score. Each change states its evidence. The
 # printed matrices above stay untouched; trades.py reports both.
 [[audit]]

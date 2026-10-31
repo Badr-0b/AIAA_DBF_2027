@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 7: export the analysis into the proposal (TOOLING; R&D Sec. 4).
 
     python analysis/s7_export.py        (proposal/build.sh runs it)

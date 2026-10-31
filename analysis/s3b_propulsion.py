@@ -1,7 +1,7 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Script 3b: propulsion component model (prop + motor/ESC + battery + fuse). PROVISIONAL.
 
-Written by Claude (14 Oct 2026); the team reviews and owns the numbers (rules
+Written 14 Oct 2026; the team reviews and owns the numbers (rules
 Sec. 1.3). Replaces Script 3's single lumped efficiency (eta_eff 0.58) with
 components whose data are measured or published, each checked before use:
 

@@ -1,10 +1,10 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """Configuration trades from physics: the mass-for-drag exchange rate, the
 retractable-gear break-even, and the body-shape test (PROVISIONAL).
 
     python analysis/config_trades.py
 
-Written by Claude (Oct 13). Nothing here is a decision (user, 13 Oct).
+Written 13 Oct 2026. Nothing here is a decision (user, 13 Oct).
 
 At Script 6's robust reference (straight wing, payload = one unit plus one
 simulator), the fastest feasible five-lap M2 (Script 4, flown time base) is

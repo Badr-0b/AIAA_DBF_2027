@@ -1,4 +1,4 @@
-# Copyright © 2026 the members of the AUM AIAA DBF team. All rights reserved.
+# Copyright © 2026 Badr Obtel. All rights reserved.
 """CAD STL -> snappyHexMesh-ready surface, reference geometry and case parameters.
 
     PYTHONIOENCODING=utf-8 python cfd/tools/prep_geometry.py cfd/cases/<case>
