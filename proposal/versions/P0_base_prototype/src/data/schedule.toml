@@ -1,0 +1,130 @@
+# Proposal Fig. 01: schedule and milestone chart (Gantt).
+# Edit here, then run ./build.sh (it runs make_charts.py).
+# Dates are YYYY-MM-DD. Write "TBD" for anything not scheduled yet; the chart
+# shows an "items to schedule" tag until every item has a date.
+# source: "rules ..." = fixed by the contest rules; "plan" = 00_START_HERE_RnD.md §10;
+#         "team" = the team still has to set it.
+
+lanes = ["Design", "Manufacturing", "Test", "Reports", "Competition"]
+
+[[task]]
+name = "Requirements, analysis, studies"
+lane = "Design"
+start = "2026-10-07"
+end = "2026-10-20"
+source = "plan"
+
+[[task]]
+name = "Prototype build"
+lane = "Manufacturing"
+start = "TBD"
+end = "TBD"
+source = "team"
+
+[[task]]
+name = "Competition aircraft build"
+lane = "Manufacturing"
+start = "TBD"
+end = "TBD"
+source = "team"
+
+[[task]]
+name = "Tests TC-01 to TC-04"
+lane = "Test"
+start = "2026-10-08"
+end = "2026-10-18"
+source = "plan"
+
+[[task]]
+name = "Flight test campaign"
+lane = "Test"
+start = "TBD"
+end = "TBD"
+source = "team"
+
+[[task]]
+name = "Proposal writing"
+lane = "Reports"
+start = "2026-10-20"
+end = "2026-10-30"
+source = "plan"
+
+[[task]]
+name = "Design report window"
+lane = "Reports"
+start = "2027-02-01"
+end = "2027-02-19"
+source = "rules 2.3"
+
+[[task]]
+name = "Fly-off, Tucson"
+lane = "Competition"
+start = "2027-04-15"
+end = "2027-04-18"
+source = "rules 2.5"
+
+[[milestone]]
+name = "Configuration freeze"
+lane = "Design"
+date = "2026-10-17"
+source = "plan"
+
+[[milestone]]
+name = "PDR"
+lane = "Design"
+date = "TBD"
+source = "team"
+
+[[milestone]]
+name = "CDR"
+lane = "Design"
+date = "TBD"
+source = "team"
+
+[[milestone]]
+name = "Sensor bench test"
+lane = "Test"
+date = "TBD"
+source = "team"
+
+[[milestone]]
+name = "Prototype first flight"
+lane = "Test"
+date = "TBD"
+source = "team"
+
+[[milestone]]
+name = "Competition aircraft first flight"
+lane = "Test"
+date = "TBD"
+source = "team"
+
+[[milestone]]
+name = "Pre-Tech / First-Flight certification"
+lane = "Competition"
+date = "TBD"
+source = "team"
+
+[[milestone]]
+name = "Entry opens"
+lane = "Competition"
+date = "2026-10-15"
+source = "rules 2.1"
+
+[[milestone]]
+name = "Proposal due"
+lane = "Reports"
+date = "2026-10-31"
+source = "rules 2.1"
+
+[[milestone]]
+name = "Q&A opens"
+lane = "Reports"
+date = "2026-11-01"
+source = "rules 1.5"
+
+[[milestone]]
+name = "Proposal results"
+lane = "Reports"
+date = "2026-11-20"
+source = "rules 2.2"

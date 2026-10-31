@@ -1,0 +1,73 @@
+% Chapter: evidence and method
+\section{Evidence and method}
+
+\subsection{What the numbers rest on}
+Every number in this dossier traces to a result file in the DB-02 work folder, and each result carries its source and one of four grades.
+
+\begin{railtable}[h]{Evidence grades used throughout. The tag sits beside the number it qualifies.}{tab:grades}
+\begin{brieftable}{width=\textwidth, colspec={Q[l,wd=0.9in] X[l]}}
+Tag & Meaning \\
+\gV & read in a primary source (rules text, NACA or NASA report, UIUC tunnel data, manufacturer datasheet) and checked against it \\
+\gR & taken from a retail listing only \\
+\gC & produced by our own model, which was itself checked against measured data (named where used) \\
+\gE & a reasoned range with its derivation; sampled across that range in the Monte Carlo \\
+\end{brieftable}
+\end{railtable}
+
+The evidence base is the one DB-01 built, extended:
+
+\begin{itemize}
+\item \textbf{Contest record.} The 2026--27 rules (draft of 2 September 2026, the latest official version), 99 of whose clauses are quoted verbatim in a compliance matrix and machine-checked against the text; 1,008 verified values from the AIAA top-3 design reports of 2021--26; 513 rows of fly-off results from 2022--26.
+\item \textbf{Aerodynamics.} UIUC low-speed airfoil tests (SD7037 and flap data), NACA TN 663 (twelve measured wings, used to validate the lift method), NACA TR 534 and TR 664 (Fowler and slotted flaps), XFoil 6.99 and AVL 3.52, and the team's own OpenFOAM simulation of the RQ-4-style concept.
+\item \textbf{Propulsion and payload.} APC and T-Motor measured performance maps calibrated on ERAU's 2023 flight; MIL-HDBK-304B cushioning curves for the container.
+\item \textbf{Site.} 30 years of mid-April weather at Tucson and the TIMPA elevation, which set the design air density of 1.064~kg/m³ (a hot afternoon) and the wind.
+\end{itemize}
+
+\subsection{How a design is scored}
+A candidate is scored the way it will actually be flown, in four steps, over 120 paired draws of every uncertain input (the same draws for every candidate, so differences between candidates are not noise).
+
+\begin{enumerate}
+\item \textbf{Build.} The draw fixes what the finished aircraft turns out to be: airframe mass (the fit to fourteen top-3 aircraft, anchored at 0.9~m² with only the wing and tail growing with area; $\pm$31\,\% at one standard deviation), maximum lift, propulsive efficiency, drag, container mass, and how much slower than predicted the laps really are (24 measured flights, median $\times$1.15).
+\item \textbf{Declare.} At technical inspection the team knows the built aircraft but not the weather of the day or the field. It declares the heaviest sensor that maximises the expected score on a hot afternoon ($\rho = 1.04$~kg/m³).
+\item \textbf{Fly.} Missions are flown with that declaration under the draw's real conditions. Each attempt succeeds with a probability that falls as stall speed rises and thrust falls, and with every added mechanism.
+\item \textbf{Compete.} Each of our draws is matched against simulated fields of about 80 rival teams, whose report scores, completions and results are drawn jointly and calibrated on the 2022--26 fly-offs. The mission maxima are recomputed with our result included. Intervals resample both our 120 draws and the fields; two candidates are compared on their paired, draw-by-draw difference.
+\end{enumerate}
+
+\railnote{What is ranked}{Designs are ranked by the probability that their mission total is the highest in the field. A selection rule was fixed on 27 October, before any result existed (Section~\ref{sec:rule}).}
+
+\subsection{The selection rule}\label{sec:rule}
+\begin{itemize}
+\item \textbf{Gates.} Every compliance row passes; the probability of finishing both Mission~2 and Mission~3 is at least 90\,\% of the best candidate's; the worst-tenth score is no lower than the DB-01 control's.
+\item \textbf{Variant A.} The gated candidate with the highest probability of the top mission total. If two candidates differ by less than the Monte Carlo uncertainty (a paired 95\,\% interval on their difference that includes zero), the simpler one wins.
+\item \textbf{Variant B.} Physically different from A in a feature the rules freeze at the design report (gear type, tail type, wing configuration, tractor or pusher, number of motors), chosen as the minimum-regret candidate in the two scenarios where A loses most.
+\end{itemize}
+
+\subsection{What the model does not know}
+\begin{itemize}
+\item The field's 2027 maxima are estimates anchored on 2021 and 2025 results. They are drawn over a wide range, and every comparison between our candidates uses the same draws.
+\item The per-attempt reliability rests on thin data: 2022--26 attempt statistics and a handful of documented failures. Its coefficients are graded estimates and are varied in the regret analysis.
+\item Within one draw the scoring code still chooses the number of simulators flown and the Mission~3 ballast with knowledge of that draw. This flatters every candidate about equally; the declaration itself is chosen without that knowledge.
+\item The family mass split is an estimate: the wing (34\,\%) and tail (6\,\%) shares grow with wing area, the rest is held at the 0.9~m² value. The layout keeps a 1.2~m box fuselage and lengthens the tail boom for larger wings (0.10~kg/m); the longer boom's drag is not charged.
+\item Pilot skill, build quality and the design report enter only through reliability and schedule. They are where a real team wins or loses.
+\end{itemize}
+
+\Needspace{3in}
+\subsection{Revision B: what was corrected}\label{sec:revb}
+A review of revision~A on 30 October traced every number in it back to code and data. The rules, sources and field statistics held. Six faults in the scoring chain did not, and correcting them cascaded into three more. Table~\ref{tab:revb} lists all nine. Revision~A's results are kept in \texttt{out/\_prefix\_30oct/}; the whole chain re-runs with \texttt{tools/rerun\_chain.sh}.
+
+\begin{widetable}[h]{Faults found in revision A, their fixes and their effects. Lift values are trimmed landing $C_{L,\max}$; P(top) is the probability of the top mission total.}{tab:revb}
+\begin{brieftable}{width=\fullw, colspec={Q[l,wd=0.25in] X[1.15,l] X[1.2,l] X[1.25,l]}}
+\# & Fault in revision A & Fix & Effect \\
+1 & The screen scored 25\,\% chord flaps at 30° (the model default); the specification and the quoted lift were 30\,\% chord & Score S3's own flap definitions (30\,\% chord; Fowler at 35°) & $+0.01$ (Fowler) to $+0.05$ (slotted) in lift \\
+2 & The cross-team mass fit charged the whole airframe, fuselage and motor included, for wing area & Only the wing and tail grow with area; the fit is anchored at 0.9~m² & 1.0~m²: $-0.34$~kg; 1.2~m²: $-1.01$~kg. Larger wings move up the ranking \\
+3 & Lift was trimmed with a generic three-chord tail arm, and the text claimed A's shorter arm cost 0.06 & Trim at each layout's own tail arm and centre of gravity & $+0.02$ to $+0.04$ in lift; the claim was the wrong way round \\
+4 & Intervals counted the 5,000 fields but not the 120 aircraft draws & Cluster bootstrap over the draws; paired differences between candidates & P(top) intervals about twice as wide ($\pm$0.03); differences resolved to $\pm$0.007 \\
+5 & B's wing area (1.0~m²) was chosen by judgement; 1.1~m² scored better where A is weak & Slotted wings of 1.0 to 1.2~m² among the finalists; B chosen by the rule & B is 1.2~m² \\
+6 & Flap-based cards graded as a validated model; unanalysed specification items not marked & Regraded as estimates; placeholders listed in each variant chapter & -- \\
+7 & Cascade of 2--3: the layout fixed the tail station, so a 1.2~m² wing got a 1.35-chord arm and a 1.40~m tailplane & Tail arm at least 1.89 chords (revision~A's 0.9~m² ratio), boom mass charged & Sensible tails on every area; trim no longer penalises large wings \\
+8 & Cascade of the selection: A's 3 to 8~kg range needs the 303~mm container, but the fuselage was sized for 288~mm & Fuselage 0.345 by 0.355~m for both variants; drum sized for 8~kg (0.30~kg) & Drawings and masses only \\
+9 & The integrated screen predated the calibrated reliability model (S2 v1) used by the finalists & Screen re-run on S2 v1 & Shortlist changed; finalists unaffected \\
+\end{brieftable}
+\end{widetable}
+
+\railnote{Net effect}{Variant A moves from 0.9~m² with a 3 to 6~kg range to 1.0~m² with 3 to 8~kg; its P(top) is \val{F-A-PTOP} against revision~A's 0.286 for the old A, which scores \val{F-S09F6-PTOP} today. Variant B moves from 1.0 to 1.2~m², and B rather than A now has the smaller worst-case regret.}

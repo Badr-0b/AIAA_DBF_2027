@@ -1,34 +1,34 @@
 % =====================================================================
-%  5.0 TEST PLANNING  (10 pts)                budget: ~0.5 page, ~100 words
-%  Rubric (5.1.4):  [ ] Component and ground test plan
-%                   [ ] Flight test plan
-%  Judges 2026 praised checklists: mention them.
-%  Layout: column-width table (see note in 04 on last-page floats).
+%  5.0 TEST PLANNING  (10 pts)   P1.2, 31 Oct 2026
+%  Rubric (5.1.4):  [x] Component and ground test plan
+%                   [x] Flight test plan
+%  P1.2: tests renumbered in table order; method and SR per test; the prototype's tip lift and fail-safe
+%  before first flight. Old card -> new: TC-01 -> 01, TC-06 -> 02, TC-02 -> 03, TC-03 -> 04, TC-05 -> 05,
+%  (new) -> 06, TC-07 -> 09, TC-04 -> 08, TC-08 -> 07, TC-09 -> 10 (cards in testing/cards/, DB-02 Sec. 11).
+%  P1.3 (31 Oct): ground tests 01-08, flight 09-14 (weigh-in now 07, Fowler stalls 09); 06 named "Tip lift"
+%  (the Sec. 4.2.4 tip test); 10 "Timed laps" (no GPS on board, rules Sec. 3.2.1).
 % =====================================================================
 \section{Test Planning}
-\dbfnote{About 100 words. How the tests retire the riskiest assumptions first (sensor stability, reel recovery, drop survival); how data feed back into the design; pre-flight and mission checklists. Refer to Table~\ref{tab:tests}.}
-\dbffill{100}
+Tests are ordered by the risk they retire and verify the SR column (Table~\ref{tab:tests}); the Fowler test (TC-09, 15 Jan) measures trimmed $C_{L,\max}$ in prototype stalls and cycles the tracks 100 times. Flights build up from taxi and a light, trimmed first flight through stalls and flaps to payload in steps, and stop if control or CG margins, temperatures or the pack reserve are off. The prototype logs at least 20 flights before freeze, each on the checklist below; the weigh-in also checks the span, and TC-14 runs by 10 April. Instruments: thrust-stand load cell, drop-rig accelerometer, ESC telemetry over ExpressLRS (no GPS), video lap timing, scales, CG rig. Top risks (likelihood, consequence): Fowler underdelivers (M, H; TC-09, else B), dart swing (M, H; TC-01), stow failure (H, M; TC-05), fuse opening (L, H; TC-02).
 
-\begin{table}[h]
-\caption{Component, ground and flight test plan.}\label{tab:tests}
-% Criteria trace to test cards TC-01..04 (testing/cards/) and rules sections.
-\begin{dbftable}{colspec={X[1.15,l] X[1,l] Q[l]}, row{2,12}={font=\dbflabelfont\fontsize{6.4}{8}\selectfont, fg=dbfSteel}, hline{12}={0.4pt,dbfGraphite}}
-Test & Pass criterion & Date \\
-\SetCell[c=3]{l} Ground and component & & \\
-Thrust stand & Amps $<$ fuse rating & \dbftbd{date} \\
-Wing-tip lift at MGTOW & No damage (§4.2.4) & \dbftbd{date} \\
-Light visibility in sun & $\geq$\,90\,\% at 200~m & \dbftbd{date} \\
-Tow-line signal & 3 of 3 modes & \dbftbd{date} \\
-D\&R cycle & $\geq$\,1.5$b$ out, stows & \dbftbd{date} \\
-Drop series to 1.524~m & No damage, 3/3 lit & \dbftbd{date} \\
-GM drill, 5 min & Worst run $\leq$\,4:00 & \dbftbd{date} \\
-Staging drill, 5 min & Worst run $\leq$\,4:00 & \dbftbd{date} \\
-Range, fail-safe, CG & §4.2.5 checks pass & \dbftbd{date} \\
-\SetCell[c=3]{l} Flight & & \\
-Handling and trim & Level-flight video & \dbftbd{date} \\
-Sensor tow stability & No rotation & \dbftbd{date} \\
-Stepped M2 payload & 5 laps $<$ 5 min & \dbftbd{date} \\
-Full M3 sequence & §3.3.3.3 sequence & \dbftbd{date} \\
-Energy per mission & $\geq$\,20\,\% reserve & \dbftbd{date} \\
+\begin{table}[!htb]
+\caption{Test plan (TC-01 to 08 ground, 09 to 14 flight); a failure triggers the Section~3.0 alternative.}\label{tab:tests}
+\begin{dbftable}{colspec={X[l] Q[l,wd=0.56in] Q[l,wd=1.14in] Q[l,wd=0.36in]}, colsep=3pt, rowsep=1.0pt, hline{10}={0.4pt,dbfGraphite}}
+Test, method & SR & Pass criterion & Date \\
+TC-01 Tow rig & 08 & No divergent swing & Nov \\
+TC-02 Thrust stand & 19, 20 & $\geq$ 95~N, fuse holds & Nov \\
+TC-03 Drop rig & 12 & No damage & Dec \\
+TC-04 Sun test & 07, 09, 14 & Read at 200~m & Dec \\
+TC-05 Drum bench & 06 & 98\,\% recovery & Dec \\
+TC-06 Tip lift & 18 & Tips hold \nMGTOW~kg & Dec \\
+TC-07 Weigh, CG & 01, 05 & Mass $\pm$15, CG $\pm$3\,\% & Jan \\
+TC-08 Timed drills & 02, 13 & Under 240~s & Jan \\
+TC-09 Fowler test & 20 & $C_{L,\max}$ $\geq$ 1.75 & Jan \\
+TC-10 Timed laps & 20 & Model $\pm$15\,\% & Jan \\
+TC-11 Stepped M2 & 03, 04, 21 & 5 laps $<$ 300~s & Feb \\
+TC-12 Fail-safe & 15--19 & §4.2.5, range check & Feb \\
+TC-13 Full M3 & 06--11 & 3 modes, stowed & Mar \\
+TC-14 Hot-day run & 20, 21 & 15\,\% of 97.7~Wh left & Apr \\
 \end{dbftable}
 \end{table}
+\textbf{Checklist.} Before flight: Rx switch off, plug out; pack, CG and latches checked; §4.2.5 fail-safe and low-power range check; plug in last, at the line. After: plug out first; voltage and temperatures logged; LiPo sacks.

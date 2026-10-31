@@ -1,0 +1,27 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      momentumTransport;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Re(MAC) is ~6e4 at scale 1 (~2e5 at the 1.82 m span): laminar runs, separation
+// bubbles and transition set the drag, so fully turbulent SST would over-predict
+// skin friction. Langtry-Menter gamma-ReThetat transition SST (4 equations).
+simulationType RAS;
+
+RAS
+{
+    model           kOmegaSSTLM;
+    turbulence      on;
+}
+
+// ************************************************************************* //

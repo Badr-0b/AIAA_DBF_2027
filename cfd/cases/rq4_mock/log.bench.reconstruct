@@ -1,0 +1,41 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : reconstructPar -constant -noFields
+Date   : Oct 24 2026
+Time   : 19:52:39
+Host   : "DESKTOP-949FKM6"
+PID    : 1747
+I/O    : uncollated
+Case   : /home/nitro/dbf_cfd/rq4_mock
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Skipping reconstructing fields
+
+Create time
+
+Reconstructing meshes
+
+    Merging mesh 0 with 1
+    Merging mesh 2 with 3
+    Merging mesh 4 with 5
+    Merging mesh 6 with 7
+    Merging mesh 8 with 9
+    Merging mesh 0 with 2
+    Merging mesh 4 with 6
+    Merging mesh 0 with 4
+    Merging mesh 0 with 8
+
+Time = constant
+
+End
+

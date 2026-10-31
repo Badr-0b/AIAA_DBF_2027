@@ -1,0 +1,43 @@
+% Chapter: what wins in 2027 (scoring primer, completion, report multiplier)
+\section{What wins in 2027}
+
+\subsection{The score in one line}
+Every flight and ground mission is scored against the best result any team posts that year, our own included:
+\[
+  \text{Total Mission} = M_1 + \underbrace{1 + \frac{W/t}{\max(W/t)}}_{M_2}
+    + \underbrace{2 + \frac{N_{\text{laps}}\,W_s}{\max(N_{\text{laps}}\,W_s)}}_{M_3}
+    + \underbrace{0.5 + \frac{W_s\,h}{\max(W_s h)}}_{GM} \;\le\; 7.5
+\]
+Three facts follow directly from the rule text, and they shape everything in this dossier.
+
+\begin{itemize}
+\item \textbf{Most of the score is paid for finishing.} Completing the four missions earns $1 + 1 + 2 + 0.5 = 4.5$ of the 7.5 points before any performance bonus. The bonuses add at most 3.0, and each is shared out as a ratio to the field's best.
+\item \textbf{One number appears three times.} The declared sensor mass $W_s$ sets the Ground Mission product, sets the mass of every Mission~2 payload unit (container plus maximum sensor, rules §3.1.3), and caps the Mission~3 ballast. The rules let the team choose that number at technical inspection in April (§4.1), after the aircraft has flown.
+\item \textbf{The best result is a moving target that includes ours.} If we set the maximum in a mission, our ratio is exactly 1 and every rival's shrinks.
+\end{itemize}
+
+\subsection{Finishing beats speed}
+The fly-off results since 2022 make completion the dominant term. In 2026, 83 teams passed technical inspection and only 17 completed every mission. Between 2022 and 2026 the share of Mission~2 finishers who went on to finish Mission~3 ranged from 0.35 to 0.66, and teams that passed inspection received only 2.4 to 2.9 official flight attempts each.\footnote{\texttt{analysis/data/field\_stats.csv} and \texttt{attempts.py}, built from the AIAA competition summaries 2022--26; verified against the source tables on 13 October 2026.} DB-01's trade-weight study gave mission completion 55\,\% of the weight across all design criteria, more than three times the 17\,\% given to turn and lap performance.\footnote{\texttt{analysis/out/s6\_trade\_weights.csv}: each criterion weighted by the change in total score for a $\pm$10\,\% change in it.}
+
+\railnote{Consequence}{Every design choice in this dossier is judged first by what it does to the chance of finishing Missions~2 and~3, and only then by the bonus it buys.}
+
+\subsection{The report multiplies everything}
+The competition score is the Total Report Score multiplied by the Total Mission Score. At a report score near 88 and a mission score near 6.3, one mission point is worth \val{S1-R04} report points. Between 2022 and 2026 a team with a report score of 88 needed a mission total of about \val{S1-R05} to win.\footnote{Stream S1, \texttt{out/rules/results.json}, computed from \texttt{analysis/data/dbf\_results.csv} (513 rows).} The aircraft decides the mission score; the design report decides the multiplier. Neither can carry the other.
+
+\subsection{Where the bonus points are}
+Each bonus has a different shape, and the shapes point to one strategy.
+
+\begin{itemize}
+\item \textbf{Ground Mission.} Linear in the declared sensor mass at a 1.524~m drop. A 6~kg sensor gives \val{O-R10}~kg\,m, the expected-field anchor; 8~kg gives \val{O-R11}~kg\,m, the aggressive anchor. Above that the bonus is saturated.
+\item \textbf{Mission 3.} Laps times towed mass, inside five minutes. Laps come in whole numbers, so the product jumps: seven laps at 4.4~kg gives \val{O-R12}~kg\,laps against an aggressive-field anchor of 27.
+\item \textbf{Mission 2.} Payload per second over five laps. The DB-01 baseline carried 8~kg in 207~s, \val{O-R13}~kg/s, against an expected-field anchor of 0.067~kg/s. This is the hardest bonus to lead, because it needs a heavy aircraft that is also fast.
+\end{itemize}
+
+\railnote{Reading}{A heavy declared sensor feeds two bonuses at once and costs Mission~2 almost nothing, provided the aircraft can still land it. That proviso is the design problem.}
+
+\begin{decisioncard}{P-01}{A worked example: the same aircraft, two ways of declaring the sensor}{Choose the declared sensor mass at technical inspection, not now.}{WORKED EXAMPLE\hspace{1.2em}/\hspace{1.2em}EXPECTED FIELD\hspace{1.2em}/\hspace{1.2em}120 PAIRED DRAWS}
+\why{DB-01 froze a 4~kg payload unit at design time, so a heavy sensor looked dangerous: if the finished aircraft came out heavy, the unit could not be lightened and Mission~2 would fail. Declaring in April, after the aircraft has been weighed and flown, removes that gamble. The team declares as heavy as the real aircraft can safely carry on a hot afternoon.}
+\engineering{On the same 0.9~m² aircraft and the same uncertain inputs, freezing the unit with the same hardware scores a mean of 6.30 to 6.34, while choosing the declaration at tech scores \val{S8-R33} for a 3 to 6~kg range and \val{S8-R40} for 3 to 8~kg. The gain comes almost entirely from the Ground Mission, which rises from about 1.0 to 1.4, while Mission~2 and Mission~3 hold. Planning the declaration for an average day instead of a hot one lets heavy declarations fail on hot afternoons and drops the worst-tenth score to 2.5.}
+\derivation{Per draw $i$ of the uncertain inputs: $\;m^{*}_i = \arg\max_{m \in [3,\,m_{hi}]} \; \text{Total}(m \mid \text{inputs known at tech},\; \rho = 1.04)$, then score $\text{Total}(m^{*}_i \mid \text{draw } i)$. Inputs known at tech: airframe mass, $C_{L,\max}$, propulsive efficiency, container mass, our measured lap factor. Not known: the day's density and wind, the field.}
+\flipsif{A Q\&A ruling that fixes the declared mass before April, or a container that cannot protect the sensor across the whole range (TC-02).}
+\end{decisioncard}

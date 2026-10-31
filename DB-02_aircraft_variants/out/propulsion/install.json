@@ -1,0 +1,107 @@
+{
+ "19in_Lp0.8": {
+  "prop_d_m": 0.4826,
+  "tip_clearance_m": 0.10793661559339819,
+  "axis_height_m": 0.3492366155933982,
+  "strut_length_m": 0.1892366155933982,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "19in_Lp1.0": {
+  "prop_d_m": 0.4826,
+  "tip_clearance_m": 0.11492076949174773,
+  "axis_height_m": 0.35622076949174775,
+  "strut_length_m": 0.19622076949174774,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "19in_Lp1.2": {
+  "prop_d_m": 0.4826,
+  "tip_clearance_m": 0.12190492339009729,
+  "axis_height_m": 0.36320492339009725,
+  "strut_length_m": 0.20320492339009724,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "20in_Lp0.8": {
+  "prop_d_m": 0.508,
+  "tip_clearance_m": 0.10793661559339819,
+  "axis_height_m": 0.3619366155933982,
+  "strut_length_m": 0.20193661559339818,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "20in_Lp1.0": {
+  "prop_d_m": 0.508,
+  "tip_clearance_m": 0.11492076949174773,
+  "axis_height_m": 0.36892076949174774,
+  "strut_length_m": 0.20892076949174773,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "20in_Lp1.2": {
+  "prop_d_m": 0.508,
+  "tip_clearance_m": 0.12190492339009729,
+  "axis_height_m": 0.3759049233900973,
+  "strut_length_m": 0.2159049233900973,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "205in_Lp0.8": {
+  "prop_d_m": 0.5207,
+  "tip_clearance_m": 0.10793661559339819,
+  "axis_height_m": 0.3682866155933982,
+  "strut_length_m": 0.2082866155933982,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "205in_Lp1.0": {
+  "prop_d_m": 0.5207,
+  "tip_clearance_m": 0.11492076949174773,
+  "axis_height_m": 0.37527076949174776,
+  "strut_length_m": 0.21527076949174775,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "205in_Lp1.2": {
+  "prop_d_m": 0.5207,
+  "tip_clearance_m": 0.12190492339009729,
+  "axis_height_m": 0.3822549233900973,
+  "strut_length_m": 0.2222549233900973,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "21in_Lp0.8": {
+  "prop_d_m": 0.5334,
+  "tip_clearance_m": 0.10793661559339819,
+  "axis_height_m": 0.37463661559339817,
+  "strut_length_m": 0.21463661559339817,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "21in_Lp1.0": {
+  "prop_d_m": 0.5334,
+  "tip_clearance_m": 0.11492076949174773,
+  "axis_height_m": 0.3816207694917477,
+  "strut_length_m": 0.22162076949174772,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "21in_Lp1.2": {
+  "prop_d_m": 0.5334,
+  "tip_clearance_m": 0.12190492339009729,
+  "axis_height_m": 0.3886049233900973,
+  "strut_length_m": 0.22860492339009728,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "22in_Lp0.8": {
+  "prop_d_m": 0.5588,
+  "tip_clearance_m": 0.10793661559339819,
+  "axis_height_m": 0.38733661559339816,
+  "strut_length_m": 0.22733661559339816,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "22in_Lp1.0": {
+  "prop_d_m": 0.5588,
+  "tip_clearance_m": 0.11492076949174773,
+  "axis_height_m": 0.3943207694917477,
+  "strut_length_m": 0.2343207694917477,
+  "arming_plug_min_offset_m": 0.1524
+ },
+ "22in_Lp1.2": {
+  "prop_d_m": 0.5588,
+  "tip_clearance_m": 0.12190492339009729,
+  "axis_height_m": 0.40130492339009727,
+  "strut_length_m": 0.24130492339009726,
+  "arming_plug_min_offset_m": 0.1524
+ }
+}

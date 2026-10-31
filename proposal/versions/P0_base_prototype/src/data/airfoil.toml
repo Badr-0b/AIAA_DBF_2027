@@ -1,0 +1,38 @@
+# Data for the airfoil figure (figures/airfoil.pdf, Sec. 3.3). make_charts.py
+# draws it; edit this file, never the PDF.
+#
+# Polars: data/airfoil_polars/, copied verbatim from the team's airfoil study
+# (dbf_airfoil_study, commit 346b860, run 11 Oct 2026). XFoil 6.99 for Windows
+# (xfoil.exe SHA-256 c17342f84ae260c2b11a74cd0e2fb8189a5f8954c6bb7a8467a0f27055c7faea),
+# 240 panels, Ncrit 9, Mach 0, 0.25 deg steps. XFoil is a panel method with a
+# coupled boundary-layer solver (the 2D engine inside XFLR5); never call it CFD.
+# Against UIUC wind-tunnel data it over-predicted (L/D)max by 9 to 22 % (study
+# README Sec. 5), so absolute values are optimistic.
+
+# The section drawn in ink ("ours"). PROVISIONAL (11 Oct 2026): the study's
+# decision rule (cruise c_l <= 0.6 -> SD7037) applied to the band below.
+# Confirm or change at the numbers freeze (20 Oct).
+selected = "sd7037"
+shortlist = ["mh114", "sd7034", "sd7037"]   # study README Sec. 4
+compare = "mh114"                            # trade-study winner and highest peak c_l/c_d of all 13
+                                             # (131 at Re 500k); the caption says so. Its turn L/D is marked in grey
+baseline = "clarky"                          # 2025-26 baseline section
+re = 500000      # = the study's fast-lap criterion (Cd at c_l 0.4, Re 500k);
+                 # race Re is ~6-8e5 (c 0.31-0.39 m at 35 m/s), so conservative
+
+[names]
+mh114 = "MH 114"
+sd7034 = "SD7034"
+sd7037 = "SD7037"
+clarky = "Clark Y (2025–26)"
+
+# Race envelope: section c_l from cruise (n = 1) to the sustained turn,
+# c_l = 2 n (W/S) / (rho V^2), with rho = \nRho from data/numbers.tex (the
+# verified TIMPA hot-day density; one source for the whole proposal).
+# Set confirmed = true once Script 4 fixes W/S and V. Until then the figure
+# carries a PRELIMINARY tag and the caption's W/S and V print as unfinished.
+[band]
+confirmed = false
+wing_loading_kgpm2 = 9.91   # ESTIMATE: UCSD 2026 proposal, Table 3.5 (competitor anchor)
+v = 35.0                    # m/s, ESTIMATE: 33-35 s lap target (00_START_HERE_RnD.md, Script 1 notes)
+bank_deg = 70.0             # ESTIMATE: same source; n = 1 / cos(70 deg) = 2.92

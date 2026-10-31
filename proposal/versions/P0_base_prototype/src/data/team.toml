@@ -1,0 +1,52 @@
+# Proposal Fig. 02: organization chart, by function. Names are not required
+# (rules §5.1.4). Edit here, then run ./build.sh (it runs make_charts.py).
+# DRAFT: this structure comes from the proposal template (Table 01 sub-teams,
+# Team Lead and Chief Engineer under the Faculty Advisor). Confirm it with the
+# team, then set confirmed = true; until then the chart carries a DRAFT tag.
+# label: the text in the box; "\n" breaks the line.
+
+confirmed = false
+
+[[unit]]
+id = "advisor"
+label = "Faculty Advisor"
+
+[[unit]]
+id = "lead"
+label = "Team Lead"
+reports_to = "advisor"
+
+[[unit]]
+id = "chief"
+label = "Chief Engineer"
+reports_to = "lead"
+
+[[unit]]
+id = "flightops"
+label = "Flight\nOperations"
+reports_to = "lead"
+
+[[unit]]
+id = "business"
+label = "Business &\nLogistics"
+reports_to = "lead"
+
+[[unit]]
+id = "aero"
+label = "Aero &\nPerformance"
+reports_to = "chief"
+
+[[unit]]
+id = "structures"
+label = "Structures &\nManufacturing"
+reports_to = "chief"
+
+[[unit]]
+id = "propulsion"
+label = "Propulsion &\nAvionics"
+reports_to = "chief"
+
+[[unit]]
+id = "sensor"
+label = "Sensor\nSystems"
+reports_to = "chief"

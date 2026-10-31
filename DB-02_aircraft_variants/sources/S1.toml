@@ -1,0 +1,41 @@
+# S1 rules and strategy: sources (29 Oct 2026). nature: MEASURED, SPEC, COMPUTED, RULE, METHOD.
+
+[[source]]
+id = "S1-RULES-2026-09-02"
+title = "2026-27 DBF rules, DRAFT dated 2 Sep 2026"
+author = "AIAA"
+year = 2026
+url = "REPO/rules/2027_DBF_Rules_Draft.pdf, SHA-256 d94773fb17ee3bdac88191bf4cbce96c8d0b2166b9b089ed670052bf9ca3bae1"
+date_read = "2026-10-27 and 2026-10-29"
+used = "all 99 clause quotes in out/rules/compliance.csv, checked against analysis/data/raw/aiaa-dbf-2027-rules-draft.layout.txt by tests/test_v_rules.py"
+nature = "RULE"
+
+[[source]]
+id = "S1-RESULTS-2022-26"
+title = "AIAA DBF competition results 2022-2026 (513 team rows)"
+author = "AIAA, parsed in REPO/analysis/data/dbf_results.csv"
+year = 2026
+url = "REPO/analysis/data/dbf_results.csv"
+date_read = "2026-10-29"
+used = "report and mission score distributions, winning scores 501.26-567.51, participation 3"
+nature = "MEASURED"
+
+[[source]]
+id = "S1-ATTEMPTS"
+title = "Attempt-budget model, 2.4-2.9 official attempts per team that passed tech, 57-73 % of attempts scored"
+author = "REPO/analysis/data/attempts.py (AIAA competition summaries 2022-26)"
+year = 2026
+url = "REPO/analysis/data/attempts.py"
+date_read = "2026-10-29"
+used = "p_complete for the M1 waiver value"
+nature = "COMPUTED"
+
+[[source]]
+id = "S1-ADAPTER"
+title = "S12 integration adapter over DB-01 s6_studies.evaluate"
+author = "S12 (this effort)"
+year = 2026
+url = "W/src/integration/adapter.py"
+date_read = "2026-10-29"
+used = "H1 study: 120 paired draws seed 2027, expected field; REF-D01 6.3326"
+nature = "COMPUTED"

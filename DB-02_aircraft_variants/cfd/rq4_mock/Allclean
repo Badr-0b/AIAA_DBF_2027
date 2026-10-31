@@ -1,0 +1,6 @@
+#!/bin/sh
+# Remove the mesh and all run output from this directory (the WSL run copy, not the repo setup).
+cd "${0%/*}" || exit 1
+. "$WM_PROJECT_DIR/bin/tools/CleanFunctions"
+cleanCase
+rm -rf results constant/geometry/*.eMesh constant/extendedFeatureEdgeMesh

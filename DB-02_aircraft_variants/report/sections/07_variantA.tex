@@ -1,0 +1,73 @@
+% Variant A
+\dosdivider{04}{Variant A}{The recommended aircraft: a 1.0~m² wing with Fowler flaps that lands a heavy, late-declared sensor slowly enough to finish.}
+  {\dosdivrow{0}{06}{Specification}\dosdivrow{1}{06}{Decision cards}\dosdivrow{2}{06}{Stability and balance}\dosdivrow{3}{06}{Missions, score and risks}}
+
+\dosspecA{A}{Fowler-flap carrier}{Straight 1.0~m² wing with Fowler flaps, high wing, conventional tail, fixed tricycle gear, single 8S tractor; sensor declared at tech between 3 and 8~kg.}{figures/threeview_A_dark.pdf}
+  {SPAN 1.820 M\hspace{1.4em}WING AREA 1.00 M²\hspace{1.4em}PAYLOAD BAY (DASHED) CENTRED ON THE CG\hspace{1.4em}CROSSHAIR: DESIGN CG, ALL LOADINGS}
+
+\dosspecB{A}{FOWLER-FLAP CARRIER}
+  {\dosro{0}{0}{SPAN}{1.820}{M}\dosro{1}{0}{WING AREA}{\val{F-A-S}}{M²}\dosro{2}{0}{ASPECT RATIO}{\val{F-A-AR}}{}\dosro{3}{0}{LENGTH}{\val{F-A-LEN}}{M}%
+   \dosro{0}{1}{EMPTY MASS}{\val{F-A-EMPTY}}{KG}\dosro{1}{1}{M2 GROSS}{\val{F-A-G2}}{KG}\dosro{2}{1}{STALL AT M2}{\val{F-A-VS2}}{M/S}\dosro{3}{1}{DECLARED SENSOR}{\val{F-A-MDECL}}{KG}%
+   \dosro{0}{2}{M2 SCORE}{\val{F-A-M2}}{}\dosro{1}{2}{M3 SCORE}{\val{F-A-M3}}{}\dosro{2}{2}{GM SCORE}{\val{F-A-GM}}{}\dosro{3}{2}{STATIC MARGIN}{16}{\%}%
+   \dosro{0}{3}{MEAN TOTAL}{\val{F-A-MEAN}}{/ 7.5}\dosro{1}{3}{P10 TOTAL}{\val{F-A-P10}}{}\dosro{2}{3}{P(TOP OF FIELD)}{\val{F-A-PTOP}}{}\dosro{3}{3}{P(1ST), REPORT 90}{\val{F-A-P1ST}}{}}
+  {\doscfg{0}{WING}{Straight, taper 0.7, SD7037, 2° washout}\doscfg{1}{HIGH LIFT}{Fowler, 30 \% chord, 60 \% semispan}\doscfg{2}{POSITION}{High wing, 2° dihedral}%
+   \doscfg{3}{TAIL}{Conventional, $V_h$ 0.55, $V_v$ 0.040}\doscfg{4}{GEAR}{Fixed tricycle, faired}\doscfg{5}{PROPULSION}{1 x AT7215 KV270, APC 20x15E}%
+   \doscfg{6}{BATTERY}{8S 3300 mAh, 97.7 Wh}\doscfg{7}{FUSE}{80 A blade, 58 V rated}%
+   \doscfg{8}{SENSOR}{Tungsten dart, 150 g, 3--8 kg}\doscfg{9}{CONTAINER}{288 x 303 x 303 mm, 1.18 kg}\doscfg{10}{D\&R}{Closed-loop drum, slip ring}%
+   \doscfg{11}{BAY AND EXIT}{Both on the CG}\doscfg{12}{STRUCTURE}{Rib and spar, CF tube spar}\doscfg{13}{JOINT}{Two-piece wing}%
+   \doscfg{14}{RADIO}{ExpressLRS 2.4 GHz, PWM}\doscfg{15}{FAIL-SAFE}{Set per output (§4.2.5)}}
+  {\dosmis{0}{M1}{Waived; the first successful Mission 2 credits it.}{1.00}%
+   \dosmis{1}{M2}{One unit at the declared mass; simulators only if the weigh-in leaves margin.}{\val{F-A-M2}}%
+   \dosmis{2}{M3}{Ballast chosen per attempt for laps and a safe landing; stow inside the window.}{\val{F-A-M3}}%
+   \dosmis{3}{GM}{Declared sensor from 1.524 m, six drops.}{\val{F-A-GM}}}
+
+\section{Variant A: the Fowler-flap carrier}
+
+\subsection{What it is}
+Variant A is a 1.0~m² straight wing on the full 1.82~m span, with Fowler flaps across the inner 60\,\% of each half-span, a high-mounted wing over a box fuselage 0.345~m wide and 0.355~m tall, a conventional tail on a boom, fixed tricycle gear and a single 8S tractor. It carries one dense sensor whose maximum mass is declared at technical inspection between 3 and 8~kg, and it is laid out so that the payload bay and the tow-line exit both sit exactly on the centre of gravity.
+
+\railnote{Why A}{Of every design that passed the gates, A has the highest probability of posting the top mission total in the simulated field, \val{F-A-PTOP} against \val{F-C-PTOP} for the DB-01 control, and it leads three of the five stress scenarios. It does not have the smallest worst-case regret: B does (\val{F-B-MAXREG} against A's \val{F-A-MAXREG}), because A's lead rests on a flap the team has never built.}
+
+\begin{decisioncard}{A-01}{A mid-size wing that lands like a big one}{1.0~m² with Fowler flaps (trimmed landing $C_{L,\max}$ about 1.9).}{EVIDENCE ESTIMATE (FLAP DATA) AND COMPUTED\hspace{1.2em}/\hspace{1.2em}FREEZE 19 FEB 2027}
+\why{A bigger wing lands a heavy load more slowly, but it is heavier and draggier in every lap. A Fowler flap gives a 1.0~m² wing the landing speed of a much bigger one: it slides back and down, adding area and lift only when it is needed. That combination lets A declare up to 8~kg and still land slowly, which is what makes Mission~2 and Mission~3 finish.}
+\engineering{At Mission~2 weight (median \val{F-A-G2}~kg) Variant~A stalls at \val{F-A-VS2}~m/s, against \val{F-C-VS2}~m/s for the DB-01 control with an honest plain flap. Per-attempt success is \val{F-A-PM2} in Mission~2 and \val{F-A-PM3} in Mission~3. The trimmed landing $C_{L,\max}$ is \val{F-A-CLMAX}, from Platt's NACA TR 534 Fowler data through the TN 663-validated area method, trimmed at A's own tail arm of \val{F-A-LT}~m (1.89 mean chords) with the centre of gravity 0.12 chords behind the wing's aerodynamic centre. The \emph{Fowler underdelivers} scenario takes 8\,\% off $C_{L,\max}$ and doubles the mechanism hazard.}
+\derivation{$V_s = \sqrt{\dfrac{2 m g}{\rho S C_{L,\max}}}$; at $m = 14.6$~kg, $S = 1.0$~m², $\rho = 1.064$~kg/m³, $C_{L,\max} = 1.93$: $V_s = \sqrt{\dfrac{2 \times 14.6 \times 9.807}{1.064 \times 1.0 \times 1.93}} \approx 11.8$~m/s (the median over the draws, with their lift scatter, is \val{F-A-VS2}~m/s).}
+\flipsif{A bench and flight test of the Fowler flap below 1.75 in trimmed $C_{L,\max}$, or a track mechanism that jams in more than one cycle in a hundred. Either moves the team to Variant~B (Section~\ref{sec:h2h}).}
+\end{decisioncard}
+
+\begin{decisioncard}{A-02}{Put the payload and the tow line on the centre of gravity}{Wing placed so the empty aircraft balances at the design CG; payload bay and tow exit centred on it.}{EVIDENCE COMPUTED (AVL 3.52)\hspace{1.2em}/\hspace{1.2em}CDR LAYOUT}
+\why{The aircraft flies four very different loadings: empty, carrying a 9.2~kg unit, towing a 3~kg sensor, towing an 8~kg sensor. If any of them moves the balance point, the pilot meets a different aircraft on each flight, and a hand-flown aircraft with no autopilot is only as good as its consistency. Putting the heavy items on the balance point makes all four feel the same.}
+\engineering{AVL places the wing-and-tail neutral point at \val{F-A-XNP}~m aft of the propeller plane; the design CG is set at \val{F-A-XCG}~m, a 16\,\% margin, which is a layout input rather than a result. Because the wing is positioned so the empty aircraft balances there, every loading stays between \val{F-A-SMMIN} and \val{F-A-SMMAX}\,\% of mean chord. The fuselage removes about 4\,\% (Raymer's fuselage term, an estimate), leaving about 12\,\% in flight. AVL gives $C_{m\alpha} = $ \val{F-A-CMA}, $C_{n\beta} = $ \val{F-A-CNB} and $C_{l\beta} = $ \val{F-A-CLB} per radian: stable in pitch, in weathercock and in roll.}
+\derivation{Static margin $= (x_{np} - x_{cg})/\bar c$. Horizontal tail: $S_h = V_h S \bar c / l_t$ with $V_h = 0.55$, raised above the usual 0.5 because a wing of aspect ratio 3.3 throws strong downwash on the tail. Tail arm $l_t = \max(\text{fuselage station}, 1.89\,\bar c)$; A's boom is 0.12~m longer than the 1.2~m fuselage alone would give.}
+\flipsif{Measured CG at the first weigh-in more than 3\,\% of mean chord from the design point; ballast or battery position then trims it.}
+\end{decisioncard}
+
+\begin{decisioncard}{A-03}{One proven motor, and a fuse that is actually rated for the pack}{Single AT7215 KV270 with an APC 20x15E on an 8S 3300~mAh pack; an 80~A blade fuse rated for 58~V.}{EVIDENCE VERIFIED (FUSES) AND COMPUTED\hspace{1.2em}/\hspace{1.2em}TC-06}
+\why{The DB-01 propulsion study already showed this motor, propeller and pack to be the best single system, and twin layouts lose. What it missed is the fuse. The rules demand a blade fuse, and the common 100~A blade fuse is rated for only 32~V, while a full 8S pack sits at 33.6~V. The rules set no voltage rating, but a fuse used above its voltage rating may not clear a fault safely, so we pick the strongest blade fuse that is genuinely rated for the pack.}
+\engineering{Littelfuse rates its 100~A MAXI blade at \val{F-FUSE-100-32}~V DC; its 58~V MAXI series stops at \val{F-FUSE-58-MAXA}~A. The 80~A part is legal (the cap is the lower of 100~A and the pack's continuous rating) and carries the cruise and turn currents with margin; take-off peaks of about 93~A are inside a slow-blow fuse's time-current curve, which TC-06 must confirm. Static thrust is \val{F-PROP-T0}~N. Above about \val{F-PROP-MAXG}~kg of Mission~2 gross the 80\,\%-usable energy budget, not thrust, becomes the limit; A's heaviest Mission~2 loading is \val{F-A-M2G}~kg.}
+\flipsif{A 58~V, 100~A blade fuse in stock (the ESKA part is listed only on request), or TC-06 showing the 80~A fuse opening in a simulated Mission~2.}
+\end{decisioncard}
+
+\begin{decisioncard}{A-04}{High wing, conventional tail, fixed tricycle gear}{Keep DB-01's layout choices; fair the gear; tall nose leg for the 20-inch propeller.}{EVIDENCE COMPUTED AND FIELD PRACTICE\hspace{1.2em}/\hspace{1.2em}FREEZE 19 FEB 2027}
+\why{None of these choices wins points on its own; each one avoids losing them. A high wing keeps the wing clear of the tow line leaving the belly and puts the bay under the spar. A conventional tail is the only common tail that can give the rule-mandated fail-safe of full up elevator with full right rudder. Fixed gear avoids the gear-up landings that retractable gear invites, for about one hundredth of a point of drag.}
+\engineering{The 20-inch propeller needs its axis \val{F-PROP-AXH}~m above the runway for tip clearance, so the nose leg is tall and the gear is faired. Retractable gear pays only below 120 to 240~g of mechanism (DB-01). The field gives no configuration a measurable edge (Fisher tests, $p \ge 0.24$), so these follow from physics, packaging and risk.}
+\flipsif{The pilot's strong preference for a taildragger after test flying, which would also shorten the nose leg.}
+\end{decisioncard}
+
+\begin{qualitybox}{NOT YET ANALYSED}
+These entries in the specification are placeholders with no analysis behind them, carried from DB-01 or chosen by judgement: the 2° washout, the 2° dihedral and the 2° wing incidence; the NACA 0009 tail sections and the tail planforms (aspect ratio 4.0 and 1.5); rib-and-spar construction, the carbon-tube spar and the two-piece wing; the ExpressLRS receiver; the control-surface sizes, the flap deflections and the Fowler track geometry. Each must be sized before the 19 February freeze.
+\end{qualitybox}
+
+\subsection{What can go wrong}
+\begin{widetable}[h]{Variant A's main risks, each with the test or decision that retires it.}{tab:riskA}
+\begin{brieftable}{width=\fullw, colspec={X[1.4,l] Q[c,wd=0.3in] Q[c,wd=0.3in] X[1.4,l] X[1.0,l]}}
+Risk & L & C & Mitigation & Retired by \\
+Fowler tracks bind or misalign, so the flaps do not fully extend & M & H & Printed carriages on carbon rods; single servo per side with travel stops & Bench cycles, 100 at full load \\
+Fowler gives less lift than the tunnel data & M & H & Variant B's wing built in parallel; B leads if the flap underdelivers & TC-07 by 15 Jan \\
+Airframe heavier than the fit & M & M & Declare at tech after weigh-in; A holds the top rank at $+15$\,\% mass & Weigh every part \\
+Landing a 14.6~kg aircraft at about 12~m/s on pavement & M & H & Long flap travel; hot-day declaration rule & Heavy-landing flight tests \\
+An 8~kg dart swings in turns (0.5~Hz pitch mode, lightly damped) & M & H & Tow eye above the sensor's CG; small fins far aft & TC-01 at full weight \\
+Stow takes 24.6~s at 8~kg and costs the seventh lap & H & M & Mission~3 flown lighter, ballast chosen per attempt & TC-05 timing \\
+Fuse opens on take-off & L & H & 58~V slow-blow part & TC-06 fuse duty \\
+\end{brieftable}
+\end{widetable}

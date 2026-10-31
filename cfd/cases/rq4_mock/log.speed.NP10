@@ -1,0 +1,296 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : foamRun -parallel
+Date   : Oct 24 2026
+Time   : 19:50:02
+Host   : "DESKTOP-949FKM6"
+PID    : 1708
+I/O    : uncollated
+Case   : /home/nitro/dbf_cfd/rq4_mock
+nProcs : 10
+Slaves : 
+9
+(
+"DESKTOP-949FKM6.1709"
+"DESKTOP-949FKM6.1710"
+"DESKTOP-949FKM6.1711"
+"DESKTOP-949FKM6.1712"
+"DESKTOP-949FKM6.1713"
+"DESKTOP-949FKM6.1714"
+"DESKTOP-949FKM6.1715"
+"DESKTOP-949FKM6.1716"
+"DESKTOP-949FKM6.1717"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+Selecting solver incompressibleFluid
+
+Selecting viscosity model constant
+
+Selecting momentum transport model type RAS
+    Selecting RAS turbulence model kOmegaSSTLM
+        bounding k, min: 0 max: 0.0042135 average: 0.0042135
+
+Selecting patchDistMethod meshWave
+
+SIMPLE: No convergence criteria found
+
+
+SIMPLE: Operating solver in steady-state mode with 1 outer corrector
+SIMPLE: Operating solver in SIMPLE mode
+
+
+
+Starting time loop
+
+
+Constructing functionObjects from system/functions
+    Selecting residuals with name residuals(p,U,k,omega,gammaInt,ReThetat)
+    Selecting forceCoeffs with name coeffs
+    Selecting forceCoeffs with name coeffsWing
+    Selecting forceCoeffs with name coeffsFuselage
+    Selecting forceCoeffs with name coeffsVtail
+    Selecting forceCoeffs with name coeffsNacelle
+    Selecting forces with name forces
+    Selecting yPlus with name yPlus
+    Selecting wallShearStress with name wallShearStress
+        processing all wall patches
+Time = 1s
+
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.035615436, No Iterations 3
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 0.075865305, No Iterations 4
+smoothSolver:  Solving for Uz, Initial residual = 1, Final residual = 0.068870679, No Iterations 3
+GAMG:  Solving for p, Initial residual = 1, Final residual = 0.044101413, No Iterations 47
+GAMG:  Solving for p, Initial residual = 6.6472674e-06, Final residual = 1.4584314e-07, No Iterations 2
+time step continuity errors : sum local = 4.484762e-05, global = 4.2473259e-07, cumulative = 4.2473259e-07
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.99999996, Final residual = 0.0046911363, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 1, Final residual = 0.98412221, No Iterations 10
+smoothSolver:  Solving for omega, Initial residual = 0.00022439625, Final residual = 1.7726051e-05, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 1, Final residual = 0.0082997172, No Iterations 1
+ExecutionTime = 23.586472 s  ClockTime = 24 s
+
+Time = 2s
+
+smoothSolver:  Solving for Ux, Initial residual = 0.0010053851, Final residual = 5.445336e-05, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.026646713, Final residual = 0.001371137, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.0076587387, Final residual = 0.0003755934, No Iterations 2
+GAMG:  Solving for p, Initial residual = 1.8512168e-05, Final residual = 9.005121e-07, No Iterations 8
+GAMG:  Solving for p, Initial residual = 5.4359056e-05, Final residual = 2.206439e-06, No Iterations 30
+time step continuity errors : sum local = 0.00015264804, global = 6.9820497e-05, cumulative = 7.024523e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.063916267, Final residual = 1.4837096e-05, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 1, Final residual = 0.005070397, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 5.8227436e-05, Final residual = 2.4019696e-07, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.030647653, Final residual = 0.00023781647, No Iterations 1
+ExecutionTime = 38.444773 s  ClockTime = 38 s
+
+Time = 3s
+
+smoothSolver:  Solving for Ux, Initial residual = 0.00036774417, Final residual = 1.0488311e-05, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.014758345, Final residual = 0.00040692505, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.0024793884, Final residual = 7.5244605e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 6.4336309e-05, Final residual = 3.15895e-06, No Iterations 24
+GAMG:  Solving for p, Initial residual = 6.1016774e-05, Final residual = 2.4034696e-06, No Iterations 26
+time step continuity errors : sum local = 3.4140691e-05, global = -2.8889844e-05, cumulative = 4.1355386e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.046649067, Final residual = 6.4311819e-06, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 0.00060094321, Final residual = 4.6172268e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 1.4911668e-05, Final residual = 1.0874693e-07, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.038873726, Final residual = 0.00030593196, No Iterations 1
+ExecutionTime = 54.903672 s  ClockTime = 56 s
+
+Time = 4s
+
+smoothSolver:  Solving for Ux, Initial residual = 0.00016749368, Final residual = 5.0551268e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.010829357, Final residual = 0.00027777003, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.0015437931, Final residual = 4.6829732e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00019464922, Final residual = 9.5146826e-06, No Iterations 4
+GAMG:  Solving for p, Initial residual = 6.1887856e-05, Final residual = 2.6873666e-06, No Iterations 9
+time step continuity errors : sum local = 1.7863481e-05, global = 6.6803857e-06, cumulative = 4.8035771e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.035377846, Final residual = 3.789454e-06, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 0.0002339517, Final residual = 2.5568398e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 3.2859057e-06, Final residual = 3.6212386e-08, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.041405323, Final residual = 0.00033119137, No Iterations 1
+ExecutionTime = 66.709871 s  ClockTime = 67 s
+
+Time = 5s
+
+smoothSolver:  Solving for Ux, Initial residual = 0.00010526431, Final residual = 3.5587922e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.0095679848, Final residual = 0.00027994666, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.00113453, Final residual = 3.8418301e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00024455033, Final residual = 1.069357e-05, No Iterations 4
+GAMG:  Solving for p, Initial residual = 5.0235177e-05, Final residual = 2.5101483e-06, No Iterations 12
+time step continuity errors : sum local = 1.3845138e-05, global = -5.9370753e-06, cumulative = 4.2098696e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.027965149, Final residual = 2.560859e-06, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 0.00011190609, Final residual = 1.8746401e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 8.6037339e-07, Final residual = 1.4241758e-08, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.03860594, Final residual = 0.00031481497, No Iterations 1
+ExecutionTime = 77.959291 s  ClockTime = 78 s
+
+Time = 6s
+
+smoothSolver:  Solving for Ux, Initial residual = 8.1013145e-05, Final residual = 2.9368494e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.011614672, Final residual = 0.00036718189, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.00097021877, Final residual = 3.4488942e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00020620605, Final residual = 9.4499724e-06, No Iterations 3
+GAMG:  Solving for p, Initial residual = 4.3059447e-05, Final residual = 2.0029642e-06, No Iterations 9
+time step continuity errors : sum local = 1.0032815e-05, global = -1.4156221e-06, cumulative = 4.0683074e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.022909614, Final residual = 1.8506617e-06, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 5.9734431e-05, Final residual = 1.5235972e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 3.9995645e-07, Final residual = 8.5024141e-09, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.032676457, Final residual = 0.00027226243, No Iterations 1
+ExecutionTime = 88.985734 s  ClockTime = 89 s
+
+Time = 7s
+
+smoothSolver:  Solving for Ux, Initial residual = 6.6553065e-05, Final residual = 2.5738239e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.01681058, Final residual = 0.00056059945, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.00087585862, Final residual = 3.1685601e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00018927273, Final residual = 8.7206039e-06, No Iterations 3
+GAMG:  Solving for p, Initial residual = 4.1130742e-05, Final residual = 1.8837761e-06, No Iterations 9
+time step continuity errors : sum local = 8.2021758e-06, global = 5.3808274e-07, cumulative = 4.1221157e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.019305097, Final residual = 1.4880406e-06, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 3.8288935e-05, Final residual = 1.3058487e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 2.8835534e-07, Final residual = 6.6085039e-09, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.024643636, Final residual = 0.00021099173, No Iterations 1
+ExecutionTime = 99.735094 s  ClockTime = 99 s
+
+Time = 8s
+
+smoothSolver:  Solving for Ux, Initial residual = 5.7339104e-05, Final residual = 2.2953579e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.0303651, Final residual = 0.0010227405, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.00081540447, Final residual = 2.9250394e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00021384048, Final residual = 9.8698687e-06, No Iterations 3
+GAMG:  Solving for p, Initial residual = 4.8430443e-05, Final residual = 2.3804042e-06, No Iterations 15
+time step continuity errors : sum local = 7.5771924e-06, global = 3.4630096e-06, cumulative = 4.4684166e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.016626544, Final residual = 1.2551069e-06, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 2.920035e-05, Final residual = 1.1824548e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 2.4583243e-07, Final residual = 5.7007887e-09, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.016552349, Final residual = 0.00014650451, No Iterations 1
+ExecutionTime = 111.20999 s  ClockTime = 110 s
+
+Time = 9s
+
+smoothSolver:  Solving for Ux, Initial residual = 5.1242676e-05, Final residual = 2.1208656e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.056935191, Final residual = 0.0019326953, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.00078019639, Final residual = 2.7571046e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00029125907, Final residual = 1.2629536e-05, No Iterations 3
+GAMG:  Solving for p, Initial residual = 6.9560086e-05, Final residual = 3.3301997e-06, No Iterations 8
+time step continuity errors : sum local = 6.4929355e-06, global = -1.1704164e-06, cumulative = 4.351375e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.014557031, Final residual = 1.0823079e-06, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 2.4862529e-05, Final residual = 1.1123838e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 2.212017e-07, Final residual = 5.144881e-09, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.010639852, Final residual = 9.8347413e-05, No Iterations 1
+ExecutionTime = 121.79757 s  ClockTime = 123 s
+
+Time = 10s
+
+smoothSolver:  Solving for Ux, Initial residual = 4.6823411e-05, Final residual = 1.9695044e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.024870213, Final residual = 0.00083612041, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.0007574335, Final residual = 2.6351796e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00035386454, Final residual = 1.5816698e-05, No Iterations 3
+GAMG:  Solving for p, Initial residual = 8.488013e-05, Final residual = 4.1856514e-06, No Iterations 7
+time step continuity errors : sum local = 6.1046619e-06, global = -4.09643e-07, cumulative = 4.3104107e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.01289458, Final residual = 9.6228259e-07, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 2.2504285e-05, Final residual = 1.0642136e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 2.000771e-07, Final residual = 4.7018063e-09, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.0068686597, Final residual = 6.7473403e-05, No Iterations 1
+ExecutionTime = 132.09893 s  ClockTime = 132 s
+
+Time = 11s
+
+smoothSolver:  Solving for Ux, Initial residual = 4.3347399e-05, Final residual = 1.8420102e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.016232273, Final residual = 0.00053388314, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.00074256967, Final residual = 2.5407881e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00041154606, Final residual = 1.7833195e-05, No Iterations 3
+GAMG:  Solving for p, Initial residual = 0.0001007495, Final residual = 4.8403807e-06, No Iterations 7
+time step continuity errors : sum local = 5.4554542e-06, global = -5.055886e-08, cumulative = 4.3053548e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.011540721, Final residual = 8.6661035e-07, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 2.0860115e-05, Final residual = 1.0220233e-06, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 1.8263807e-07, Final residual = 4.326728e-09, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.0045719093, Final residual = 4.8514925e-05, No Iterations 1
+ExecutionTime = 145.14535 s  ClockTime = 144 s
+
+Time = 12s
+
+smoothSolver:  Solving for Ux, Initial residual = 4.0566965e-05, Final residual = 1.7341985e-06, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.012482416, Final residual = 0.00039890989, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.00073249333, Final residual = 2.4579348e-05, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00046041283, Final residual = 1.9752941e-05, No Iterations 3
+GAMG:  Solving for p, Initial residual = 0.00010637625, Final residual = 5.094381e-06, No Iterations 8
+time step continuity errors : sum local = 5.0741802e-06, global = 3.9282708e-07, cumulative = 4.3446375e-05
+--> FOAM Warning: 
+    From function Foam::tmp<Foam::DimensionedField<double, Foam::fvMesh> > Foam::RASModels::kOmegaSSTLM<BasicMomentumTransportModel>::ReThetat0(const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&, const Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal&) const [with BasicMomentumTransportModel = Foam::incompressibleMomentumTransportModel; Foam::GeometricField<double, Foam::fvMesh, Foam::Field>::Internal = Foam::DimensionedField<double, Foam::fvMesh>]
+    in file ../momentumTransportModels/lnInclude/kOmegaSSTLM.C at line 304
+    Number of lambda iterations exceeds maxLambdaIter(10)
+smoothSolver:  Solving for ReThetat, Initial residual = 0.010426445, Final residual = 7.9023692e-07, No Iterations 1
+smoothSolver:  Solving for gammaInt, Initial residual = 1.9476257e-05, Final residual = 9.6412708e-07, No Iterations 1
+smoothSolver:  Solving for omega, Initial residual = 1.6763451e-07, Final residual = 4.0095175e-09, No Iterations 1
+smoothSolver:  Solving for k, Initial residual = 0.0031799755, Final residual = 3.6744379e-05, No Iterations 1
+ExecutionTime = 155.54869 s  ClockTime = 156 s
+
+End
+
+Finalising parallel run

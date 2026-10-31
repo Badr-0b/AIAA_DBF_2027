@@ -1,0 +1,298 @@
+% =====================================================================
+%  dbfdossier.sty: dossier layer for DB-02 (aircraft variants).
+%  Loads on top of dbfdoc.cls + dbfbrief.sty (both read-only, unchanged).
+%  Keeps the house type and monochrome palette. Adds:
+%    - dark full-bleed pages: cover, chapter dividers, variant spec spreads
+%    - structural accents (Palantir-grade, monochrome): registration marks,
+%      edge rulers, mono coordinate strips, hairline frames
+%    - light-page components: decision cards, evidence-grade tags,
+%      derivation panels, data-quality box
+%  Coordinates in the dark-page macros are inches from the page's top-left.
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dbfdossier}[2026/10/29 v1.0 DBF dossier layer]
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\RequirePackage{graphicx}
+\RequirePackage{xparse}
+\makeatletter
+
+% ---------------------------------------------------------------------
+%  Type
+% ---------------------------------------------------------------------
+\newfontfamily\dos@mono{GeistMono}[Path=\dbf@fontdir GeistMono/, Extension=.ttf,
+  UprightFont=*-Regular, BoldFont=*-Medium, LetterSpace=5]
+\newfontfamily\dos@monotight{GeistMono}[Path=\dbf@fontdir GeistMono/, Extension=.ttf,
+  UprightFont=*-Regular, BoldFont=*-Medium]
+\newfontfamily\dos@light{Geist}[Path=\dbf@fontdir Geist/, Extension=.ttf,
+  UprightFont=*-Light, BoldFont=*-Regular, LetterSpace=-0.2, WordSpace=2.8]
+\newfontfamily\dos@lightnum{Geist}[Path=\dbf@fontdir Geist/, Extension=.ttf,
+  UprightFont=*-Light, BoldFont=*-Regular, Numbers=Monospaced, LetterSpace=-0.6]
+% mono label: \dos@lab{colour}{size}{text}
+\newcommand\dos@lab[3]{{\dos@mono\fontsize{#2}{#2}\selectfont\color{#1}#3}}
+\newcommand\doslabel[1]{\dos@lab{dbfSteel}{6.6}{#1}}
+
+% ---------------------------------------------------------------------
+%  Dark-page canvas.  \dos@canvas{content}: full-bleed ink, then content
+%  drawn by TikZ in inches from the page's top-left corner.
+% ---------------------------------------------------------------------
+\newcommand\dos@at[2]{(#1in,-#2in)}
+\tikzset{dos/hair/.style={line width=0.3pt}, dos/rule/.style={line width=0.4pt}}
+
+% Registration mark (crosshair with a ring)
+\newcommand\dos@reg[3][dbfSteel]{%
+  \draw[#1, line width=0.3pt] (#2in-0.085in,-#3in) -- (#2in+0.085in,-#3in)
+    (#2in,-#3in-0.085in) -- (#2in,-#3in+0.085in);
+  \draw[#1, line width=0.3pt] (#2in,-#3in) circle (0.032in);}
+
+% Edge ruler on the left: ticks every 0.25 in, labelled every inch
+\newcommand\dos@ruler[1][dbfGraphite]{%
+  \foreach \i in {4,...,40} {\pgfmathsetmacro\y{\i*0.25}%
+    \pgfmathtruncatemacro\m{mod(\i,4)}%
+    \ifnum\m=0
+      \draw[#1, line width=0.3pt] (0.30in,-\y in) -- (0.46in,-\y in);
+      \node[anchor=east, inner sep=0pt] at (0.27in,-\y in)
+        {\dos@lab{dbfGraphite}{5.2}{\two@digits{\the\numexpr\i/4\relax}}};
+    \else
+      \draw[#1, line width=0.3pt] (0.38in,-\y in) -- (0.46in,-\y in);
+    \fi}}
+
+% Four registration marks on the 0.5 in frame
+\newcommand\dos@frame{%
+  \dos@reg{0.50}{0.50}\dos@reg{8.00}{0.50}\dos@reg{0.50}{10.50}\dos@reg{8.00}{10.50}}
+
+% Top strip: left label, right label, hairline under
+\newcommand\dos@topstrip[2]{%
+  \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{0.80} {\dos@lab{dbfFog}{6.8}{#1}};
+  \node[anchor=base east, inner sep=0pt] at \dos@at{7.75}{0.80} {\dos@lab{dbfFog}{6.8}{#2}};
+  \draw[dbfGraphite, dos/rule] \dos@at{0.75}{0.92} -- \dos@at{7.75}{0.92};}
+% Bottom strip
+\newcommand\dos@botstrip[2]{%
+  \draw[dbfGraphite, dos/rule] \dos@at{0.75}{10.08} -- \dos@at{7.75}{10.08};
+  \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{10.26} {\dos@lab{dbfSteel}{6.4}{#1}};
+  \node[anchor=base east, inner sep=0pt] at \dos@at{7.75}{10.26} {\dos@lab{dbfSteel}{6.4}{#2}};}
+
+% Shared document-control strings (set in the master)
+\newcommand\dos@docid{AUM-DBF-27-DB-002}
+\newcommand\dos@pageidx{\dos@docid\hspace{1.4em}\two@digits{\thepage}}
+
+% The dark page itself
+\newcommand\dos@darkpage[1]{\clearpage
+  \AddToHookNext{shipout/background}{%
+    \put(0,-11in){\color{dbfInk}\rule{\paperwidth}{\paperheight}}}%
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture, overlay, shift={(current page.north west)}]
+    #1
+  \end{tikzpicture}\null\clearpage}
+
+% ---------------------------------------------------------------------
+%  Cover.  \doscover{title lines}{deck}{site block}{variant rows}{control cells}
+%    variant rows: \doscovervariant{row}{code}{name}{role}{readout}
+%    control cells: \doscoverctl{x}{label}{value}
+% ---------------------------------------------------------------------
+\NewDocumentCommand\doscover{+m +m +m +m +m}{%
+  \dos@darkpage{%
+    \dos@frame
+    \dos@topstrip{AIAA DESIGN/BUILD/FLY 2026--27}{DECISION BRIEF DB-02}%
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{1.16} {\dos@lab{dbfSteel}{6.4}{DB-02 / 00 / COVER}};
+    \node[anchor=north west, inner sep=0pt, text width=6.8in] at \dos@at{0.75}{2.05}
+      {\raggedright\dos@light\fontsize{42}{45}\selectfont\spaceskip=0.30em\relax\color{white}#1};
+    \node[anchor=north west, inner sep=0pt, text width=4.55in] at \dos@at{0.75}{4.05}
+      {\raggedright\brieffig\fontsize{10.6}{15.5}\selectfont\color{dbfMist}#2};
+    \draw[dbfGraphite, dos/hair] \dos@at{5.72}{4.05} -- \dos@at{5.72}{5.30};
+    \node[anchor=north west, inner sep=0pt, text width=1.95in] at \dos@at{5.88}{4.08}
+      {\raggedright\dos@monotight\fontsize{6.6}{11}\selectfont\color{dbfFog}#3};
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{6.30} {\dos@lab{dbfFog}{6.8}{VARIANTS IN THIS DOSSIER}};
+    \draw[dbfGraphite, dos/rule] \dos@at{0.75}{6.44} -- \dos@at{7.75}{6.44};
+    #4
+    \draw[dbfGraphite, dos/rule] \dos@at{0.75}{9.30} -- \dos@at{7.75}{9.30};
+    #5
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{10.26}
+      {\dos@lab{dbfGraphite}{6.0}{TIMPA 32.2647 N 111.2739 W / 667 M}};
+    \node[anchor=base east, inner sep=0pt] at \dos@at{7.75}{10.26}
+      {\dos@lab{dbfGraphite}{6.0}{\dos@docid\hspace{1.2em}REV A}};
+  }}
+% one variant row on the cover (row 0, 1, 2 ...)
+\newcommand\doscovervariant[5]{%
+  \pgfmathsetmacro\dos@y{6.86+#1*1.02}%
+  \node[anchor=north west, inner sep=0pt] at (0.75in,-\dos@y in)
+    {\dos@light\fontsize{30}{30}\selectfont\color{dbfSteel}#2};
+  \node[anchor=north west, inner sep=0pt, text width=3.6in] at (1.42in,-\dos@y in)
+    {\raggedright{\briefmed\fontsize{12}{14}\selectfont\color{white}#3}\par\vspace{4pt}%
+     {\brieffig\fontsize{8.8}{12}\selectfont\color{dbfFog}#4}};
+  \node[anchor=north east, inner sep=0pt, text width=2.4in, align=right] at (7.75in,-\dos@y in)
+    {\dos@monotight\fontsize{7}{11}\selectfont\color{dbfFog}#5};
+  \pgfmathsetmacro\dos@yy{\dos@y+0.86}%
+  \draw[dbfGraphite, dos/hair] (0.75in,-\dos@yy in) -- (7.75in,-\dos@yy in);}
+% one control cell at x (in)
+\newcommand\doscoverctl[3]{%
+  \node[anchor=north west, inner sep=0pt, text width=1.8in] at (#1in,-9.48in)
+    {\raggedright\dos@lab{dbfFog}{6.4}{#2}\par\vspace{5pt}{\brieffig\fontsize{9.2}{11.5}\selectfont\color{white}#3}};}
+
+% ---------------------------------------------------------------------
+%  Chapter divider.  \dosdivider{num}{title}{thesis}{contents rows}
+%    contents rows: \dosdivrow{i}{index}{title}
+% ---------------------------------------------------------------------
+\NewDocumentCommand\dosdivider{m m +m +m}{%
+  \dos@darkpage{%
+    \dos@frame\dos@ruler
+    \dos@topstrip{AIAA DESIGN/BUILD/FLY 2026--27}{DB-02 / CHAPTER #1}%
+    \node[anchor=north west, inner sep=0pt] at \dos@at{0.68}{1.55}
+      {\dos@lightnum\fontsize{150}{150}\selectfont\color{dbfGraphite}#1};
+    \node[anchor=north west, inner sep=0pt, text width=6.6in] at \dos@at{0.75}{4.25}
+      {\raggedright\dos@light\fontsize{34}{38}\selectfont\spaceskip=0.30em\relax\color{white}#2};
+    \node[anchor=north west, inner sep=0pt, text width=4.9in] at \dos@at{0.75}{5.55}
+      {\raggedright\brieffig\fontsize{11}{16}\selectfont\color{dbfMist}#3};
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{7.55} {\dos@lab{dbfFog}{6.8}{IN THIS CHAPTER}};
+    \draw[dbfGraphite, dos/rule] \dos@at{0.75}{7.68} -- \dos@at{7.75}{7.68};
+    #4
+    \dos@botstrip{\dos@docid}{\two@digits{\thepage}}%
+  }}
+\newcommand\dosdivrow[3]{%
+  \pgfmathsetmacro\dos@y{7.98+#1*0.34}%
+  \node[anchor=base west, inner sep=0pt] at (0.75in,-\dos@y in) {\dos@lab{dbfSteel}{7.4}{#2}};
+  \node[anchor=base west, inner sep=0pt] at (1.42in,-\dos@y in) {\brieffig\fontsize{10}{12}\selectfont\color{white}#3};
+  \pgfmathsetmacro\dos@yy{\dos@y+0.12}%
+  \draw[dbfGraphite, dos/hair] (0.75in,-\dos@yy in) -- (7.75in,-\dos@yy in);}
+
+% ---------------------------------------------------------------------
+%  Variant spec spread (two dark pages).
+%  \dosspecA{code}{name}{role}{3-view file or empty}{view caption}
+%  \dosspecB{code}{name}{readouts}{configuration}{missions}
+%    readouts: \dosro{col}{row}{label}{value}{unit}   (4 x 4 grid)
+%    configuration rows: \doscfg{i}{key}{value}       (two columns of 8)
+%    missions: \dosmis{i}{mission}{plan}{score}
+% ---------------------------------------------------------------------
+\NewDocumentCommand\dosspecA{m m +m m +m}{%
+  \dos@darkpage{%
+    \dos@frame
+    \dos@topstrip{VARIANT #1 / SPECIFICATION}{SHEET 1 OF 2}%
+    \node[anchor=north west, inner sep=0pt] at \dos@at{0.75}{1.25}
+      {\dos@light\fontsize{60}{60}\selectfont\color{dbfSteel}#1};
+    \node[anchor=north west, inner sep=0pt, text width=5.6in] at \dos@at{1.62}{1.33}
+      {\raggedright{\dos@light\fontsize{26}{29}\selectfont\spaceskip=0.30em\relax\color{white}#2}\par\vspace{6pt}%
+       {\brieffig\fontsize{10}{14}\selectfont\color{dbfFog}#3}};
+    % drawing field: 7.0 x 6.6 in, hairline frame with corner ticks
+    \draw[dbfGraphite, dos/hair] \dos@at{0.75}{2.95} rectangle \dos@at{7.75}{9.55};
+    \foreach \x/\y in {0.75/2.95, 7.75/2.95, 0.75/9.55, 7.75/9.55}
+      {\draw[dbfSteel, line width=0.5pt] (\x in-0.06in,-\y in) -- (\x in+0.06in,-\y in)
+         (\x in,-\y in-0.06in) -- (\x in,-\y in+0.06in);}
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.86}{3.14} {\dos@lab{dbfSteel}{6.2}{GENERAL ARRANGEMENT / TOP, SIDE, FRONT, ISO}};
+    \ifx\relax#4\relax
+      \node[inner sep=0pt] at \dos@at{4.25}{6.25} {\dos@lab{dbfGraphite}{7}{THREE-VIEW PENDING}};
+    \else
+      \node[inner sep=0pt] at \dos@at{4.25}{6.30} {\includegraphics[width=6.7in,height=6.05in,keepaspectratio]{#4}};
+    \fi
+    \node[anchor=north west, inner sep=0pt, text width=7in] at \dos@at{0.75}{9.70}
+      {\raggedright\dos@monotight\fontsize{6.6}{9.5}\selectfont\color{dbfFog}#5};
+    \dos@botstrip{\dos@docid\hspace{1.2em}VARIANT #1}{\two@digits{\thepage}}%
+  }}
+\NewDocumentCommand\dosspecB{m m +m +m +m}{%
+  \dos@darkpage{%
+    \dos@frame
+    \dos@topstrip{VARIANT #1 / #2}{SHEET 2 OF 2}%
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{1.22} {\dos@lab{dbfFog}{6.8}{PRINCIPAL CHARACTERISTICS}};
+    \draw[dbfGraphite, dos/rule] \dos@at{0.75}{1.34} -- \dos@at{7.75}{1.34};
+    \foreach \c in {1,2,3} {\draw[dbfGraphite, dos/hair] (0.75in+\c*1.75in,-1.34in) -- ++(0,-3.6in);}
+    \foreach \r in {1,2,3} {\draw[dbfGraphite, dos/hair] (0.75in,-1.34in-\r*0.9in) -- ++(7in,0);}
+    \draw[dbfGraphite, dos/rule] \dos@at{0.75}{4.94} -- \dos@at{7.75}{4.94};
+    #3
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{5.42} {\dos@lab{dbfFog}{6.8}{CONFIGURATION}};
+    \draw[dbfGraphite, dos/rule] \dos@at{0.75}{5.54} -- \dos@at{7.75}{5.54};
+    #4
+    \node[anchor=base west, inner sep=0pt] at \dos@at{0.75}{8.30} {\dos@lab{dbfFog}{6.8}{MISSION PLAN}};
+    \draw[dbfGraphite, dos/rule] \dos@at{0.75}{8.42} -- \dos@at{7.75}{8.42};
+    #5
+    \dos@botstrip{\dos@docid\hspace{1.2em}VARIANT #1}{\two@digits{\thepage}}%
+  }}
+\newcommand\dosro[5]{%
+  \pgfmathsetmacro\dos@x{0.75+#1*1.75+0.12}\pgfmathsetmacro\dos@y{1.34+#2*0.9+0.16}%
+  \node[anchor=north west, inner sep=0pt] at (\dos@x in,-\dos@y in) {\dos@lab{dbfFog}{5.8}{#3}};
+  \pgfmathsetmacro\dos@yy{\dos@y+0.30}%
+  \node[anchor=north west, inner sep=0pt] at (\dos@x in,-\dos@yy in)
+    {{\dos@lightnum\fontsize{22}{22}\selectfont\color{white}#4}\hspace{0.22em}{\dos@monotight\fontsize{7}{7}\selectfont\color{dbfFog}#5}};}
+\newcommand\doscfg[3]{%
+  \pgfmathtruncatemacro\dos@c{#1/8}\pgfmathtruncatemacro\dos@r{mod(#1,8)}%
+  \pgfmathsetmacro\dos@x{0.75+\dos@c*3.6}\pgfmathsetmacro\dos@y{5.80+\dos@r*0.30}%
+  \node[anchor=base west, inner sep=0pt] at (\dos@x in,-\dos@y in) {\dos@lab{dbfSteel}{6.2}{#2}};
+  \node[anchor=base west, inner sep=0pt, text width=2.25in] at (\dos@x in+1.15in,-\dos@y in)
+    {\brieffig\fontsize{8.6}{10}\selectfont\color{white}#3};
+  \pgfmathsetmacro\dos@yy{\dos@y+0.10}%
+  \draw[dbfGraphite, dos/hair] (\dos@x in,-\dos@yy in) -- ++(3.4in,0);}
+\newcommand\dosmis[4]{%
+  \pgfmathsetmacro\dos@y{8.70+#1*0.32}%
+  \node[anchor=base west, inner sep=0pt] at (0.75in,-\dos@y in) {\dos@lab{dbfSteel}{6.4}{#2}};
+  \node[anchor=base west, inner sep=0pt, text width=4.9in] at (1.55in,-\dos@y in)
+    {\brieffig\fontsize{8.6}{10}\selectfont\color{white}#3};
+  \node[anchor=base east, inner sep=0pt] at (7.75in,-\dos@y in) {\dos@lightnum\fontsize{12}{12}\selectfont\color{white}#4};
+  \pgfmathsetmacro\dos@yy{\dos@y+0.11}%
+  \draw[dbfGraphite, dos/hair] (0.75in,-\dos@yy in) -- (7.75in,-\dos@yy in);}
+
+% ---------------------------------------------------------------------
+%  Light-page components
+% ---------------------------------------------------------------------
+% Evidence-grade tag: hairline box, mono capitals
+\newcommand\dos@tag[1]{{\setlength\fboxsep{1.6pt}\setlength\fboxrule{0.3pt}%
+  \fcolorbox{dbfFog}{white}{\dos@mono\fontsize{5.6}{5.6}\selectfont\color{dbfGraphite}#1}}}
+\newcommand\gV{\dos@tag{VERIFIED}}
+\newcommand\gR{\dos@tag{RESELLER}}
+\newcommand\gE{\dos@tag{ESTIMATE}}
+\newcommand\gC{\dos@tag{COMPUTED}}
+\newcommand\gtag[1]{\dos@tag{#1}}
+
+% Control strip above a card: \dosstrip{D-04 / ...}
+\newcommand\dosstrip[1]{\par\vspace{2pt}\noindent\makebox[\textwidth][r]{\parbox{\fullw}{%
+  {\color{dbfInk}\rule{\fullw}{0.4pt}}\par\vspace{3.5pt}%
+  \dos@lab{dbfSteel}{6.2}{#1}}}\par\vspace{5pt}}
+
+% Decision card.
+%  \begin{decisioncard}{ID}{Title}{Recommendation}{strip text}
+%    \why{plain-language reasoning}
+%    \engineering{the argument with numbers}
+%    \derivation{display math / short steps}
+%    \flipsif{what would change it}
+%  \end{decisioncard}
+\NewDocumentEnvironment{decisioncard}{m m +m m}{%
+  \par\Needspace{2.2in}\vspace{8pt}%
+  \dosstrip{#1\hspace{1.2em}/\hspace{1.2em}#4}%
+  \noindent\brief@rail{\parbox[t]{\railw}{\raggedright
+    {\dos@lightnum\fontsize{17}{18}\selectfont\color{dbfSteel}#1}}\hspace{\railgap}}%
+  {\briefmed\fontsize{12.5}{16}\selectfont\color{dbfInk}#2}\par\vspace{5pt}%
+  \raillabel{Recommendation}{\briefmed #3}\par\vspace{2pt}}{\par\vspace{6pt}}
+\newcommand\why[1]{\par\raillabel{Why, plainly}#1\par}
+\newcommand\engineering[1]{\par\raillabel{The engineering}#1\par}
+\newcommand\flipsif[1]{\par\raillabel{What would change it}{\color{dbfGraphite}#1}\par}
+% Derivation panel: Bone field across the text column
+\newcommand\derivation[1]{\par\vspace{3pt}\raillabel{Derivation}%
+  \setlength\fboxsep{7pt}\colorbox{dbfBone}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+    \small\color{dbfGraphite}#1}}\par\vspace{3pt}}
+
+% Data-quality box: hairline frame, mono header, honest caveats
+\NewDocumentEnvironment{qualitybox}{m +b}{%
+  \par\vspace{6pt}\noindent\begin{tikzpicture}
+    \node[inner sep=7pt, text width=\dimexpr\textwidth-14pt-0.6pt\relax, draw=dbfGraphite, line width=0.3pt,
+      anchor=north west] (q) at (0,0)
+      {\dos@lab{dbfSteel}{6.2}{DATA QUALITY / #1}\par\vspace{5pt}%
+       {\small\color{dbfGraphite}\raggedright #2\par}};
+    \draw[dbfInk, line width=1.2pt] (q.north west) -- (q.south west);
+  \end{tikzpicture}\par\vspace{6pt}}{}
+
+% Key number strip in the text column: \keyfigs{\keyfig{label}{value}{unit} & ...}
+\newcommand\keyfig[3]{\briefreadout{#1}{#2}{#3}}
+
+% ---------------------------------------------------------------------
+%  Numbers from results.json (report/data/numbers.tex, generated)
+%    \defval{ID}{value}{unit}{grade tag}{range}
+%    \val{ID}  value      \valu{ID}  value + unit      \grade{ID}  tag      \rng{ID}  range
+% ---------------------------------------------------------------------
+\newcommand\defval[5]{\expandafter\def\csname dosv@#1\endcsname{#2}%
+  \expandafter\def\csname dosu@#1\endcsname{#3}\expandafter\def\csname dosg@#1\endcsname{#4}%
+  \expandafter\def\csname dosr@#1\endcsname{#5}}
+\newcommand\val[1]{\ifcsname dosv@#1\endcsname\csname dosv@#1\endcsname\else\dbftbd{#1}\fi}
+\newcommand\valu[1]{\ifcsname dosv@#1\endcsname\csname dosv@#1\endcsname
+  \ifx\relax\csname dosu@#1\endcsname\relax\else~\csname dosu@#1\endcsname\fi\else\dbftbd{#1}\fi}
+\newcommand\grade[1]{\ifcsname dosg@#1\endcsname\csname dosg@#1\endcsname\fi}
+\newcommand\rng[1]{\ifcsname dosr@#1\endcsname\csname dosr@#1\endcsname\else\dbftbd{#1 range}\fi}
+
+\makeatother
+\endinput

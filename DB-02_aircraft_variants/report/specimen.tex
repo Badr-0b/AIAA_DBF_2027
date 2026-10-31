@@ -1,0 +1,74 @@
+% DB-02 style specimens (illustrative values only; not results).
+% Build: bash build.sh specimen.tex
+\def\dbfroot{../../design-system}
+\documentclass[final]{dbfdoc}
+\usepackage{dbfbrief}
+\usepackage{dbfdossier}
+\dbfsetdoc{Aircraft Variants for the 2027 Fly-off}{Decision brief DB-02}{AUM-DBF-27-DB-002}{A}
+\dbfsetdate{30 October 2026}
+\raggedbottom
+
+\begin{document}
+
+\doscover
+  {Aircraft Variants\\for the 2027 Fly-off}
+  {Two complete aircraft, built from every dataset the team holds, and the reasoning behind each choice. The recommendation is written for the team to test, challenge and sign.}
+  {SITE\hspace{1em}TIMPA, TUCSON AZ\\32.2647 N\hspace{0.8em}111.2739 W\\ELEV\hspace{1em}667 M\\DESIGN AIR\hspace{1em}1.064 KG/M\textsuperscript{3}\\FLY-OFF\hspace{1em}15--18 APR 2027\\CONFIG FREEZE\hspace{1em}19 FEB 2027}
+  {\doscovervariant{0}{A}{Variant A: specimen name}{Straight flapped high wing, one heavy sensor declared at tech.}{MEAN SCORE\hspace{0.8em}6.71\\P(1ST)\hspace{0.8em}0.42}%
+   \doscovervariant{1}{B}{Variant B: specimen name}{Physically distinct hedge: winglet planform, different tail.}{MEAN SCORE\hspace{0.8em}6.58\\P(1ST)\hspace{0.8em}0.36}}
+  {\doscoverctl{0.75}{DOCUMENT}{AUM-DBF-27-DB-002}%
+   \doscoverctl{2.55}{REVISION}{A, 30 October 2026}%
+   \doscoverctl{4.35}{PREPARED BY}{Badr Obtel}%
+   \doscoverctl{6.05}{STATUS}{Recommendation; team decision pending}}
+
+\section{Decision register}
+\subsection{How to read this}
+Every decision in the dossier appears once in this register and once as a card in the body. The shaded column is left for the team.
+
+\begin{widetable}[h]{Specimen register.}{tab:reg}
+\begin{brieftable}{width=\fullw, colspec={Q[l,wd=0.42in] X[1.0,l] X[1.4,l] Q[l,wd=0.62in] X[1.2,l] X[0.8,l]},
+  column{6}={bg=dbfBone}, cell{1}{6}={bg=dbfInk, fg=white}}
+ID & Decision & Recommendation & Grade & Changes if & Team \\
+D-01 & Wing area & 1.0 m², straight, slotted flap & \gC & Weigh-in 15 \% heavy & \\
+D-02 & Declared sensor & At tech, 3--8 kg range & \gC & Container fails TC-02 & \\
+D-03 & Propulsion & 8S single tractor & \gV & Bench thrust below 95 N & \\
+\end{brieftable}
+\end{widetable}
+
+\begin{decisioncard}{D-02}{Declare the sensor mass at technical inspection}{Build one sensor body and one container that serve 3 to 8 kg; choose the declared maximum at tech, after the airframe is weighed and flown.}{EVIDENCE COMPUTED\hspace{1.2em}/\hspace{1.2em}CONFIDENCE HIGH\hspace{1.2em}/\hspace{1.2em}FREEZE AT TECH, APR 2027}
+\why{The heavier the sensor we declare, the more the ground mission scores, but a declaration we cannot carry in Mission~2 scores nothing there. Choosing the number in April, when the real aircraft has been weighed and flown, removes most of that gamble.}
+\engineering{Across 120 paired draws at 0.9~m², freezing the unit now averages 6.30; choosing it at tech with what is known then averages 6.77, within 0.03 of perfect hindsight.}
+\derivation{$GM = 0.5 + \dfrac{W_s\,h}{\max(W_s h)}$, \quad $h \le 1.524$~m. \quad A 6~kg sensor gives $6 \times 1.524 = 9.14$~kg\,m, the expected-field anchor.}
+\flipsif{The container cannot hold the g rating across the whole range (TC-02), or a Q\&A ruling fixes the declared mass earlier.}
+\end{decisioncard}
+
+\begin{qualitybox}{CFD, INDICATIVE}
+y+ averages 5.8 against a 1.5 target; the mesh fails three extra checkMesh tests from the relaxed layer pass; the two stalled angles end at the 1000-iteration cap with a 1.2--1.9~\% force spread. Use for body and nacelle drag and moment trends, not for maximum lift.
+\end{qualitybox}
+
+\railfig[h]{figures/sample/score_dist.pdf}{Specimen: the caption states the takeaway, not the topic.}{fig:spec}
+
+\dosdivider{04}{Variant A}{The recommended aircraft: what it is, why each part is the way it is, and how it scores against the field.}
+  {\dosdivrow{0}{4.1}{Specification}\dosdivrow{1}{4.2}{Decision cards}\dosdivrow{2}{4.3}{Aerodynamics and CFD}%
+   \dosdivrow{3}{4.4}{Stability and control}\dosdivrow{4}{4.5}{Missions and score}}
+
+\dosspecA{A}{Specimen variant name}{Straight flapped high wing; conventional tail; fixed tricycle gear; single 8S tractor; closed-loop drum.}{}
+  {SPAN 1.820 M\hspace{1.5em}LENGTH 1.18 M\hspace{1.5em}SCALE 1:12.5 AT THIS SIZE\hspace{1.5em}CG MARKED AT M2 GROSS}
+
+\dosspecB{A}{SPECIMEN}
+  {\dosro{0}{0}{SPAN}{1.820}{M}\dosro{1}{0}{WING AREA}{1.00}{M²}\dosro{2}{0}{ASPECT RATIO}{3.31}{}\dosro{3}{0}{EMPTY MASS}{6.4}{KG}%
+   \dosro{0}{1}{M2 GROSS}{15.9}{KG}\dosro{1}{1}{STALL, M2}{14.0}{M/S}\dosro{2}{1}{M2 SPEED}{29.5}{M/S}\dosro{3}{1}{LAP, FLOWN}{39.6}{S}%
+   \dosro{0}{2}{DECLARED SENSOR}{3--8}{KG}\dosro{1}{2}{M3 LAPS}{7}{}\dosro{2}{2}{DROP HEIGHT}{1.524}{M}\dosro{3}{2}{ENERGY, M2}{71}{WH}%
+   \dosro{0}{3}{MEAN SCORE}{6.71}{/ 7.5}\dosro{1}{3}{P10}{6.20}{}\dosro{2}{3}{P(M2 AND M3)}{0.81}{}\dosro{3}{3}{P(1ST)}{0.42}{}}
+  {\doscfg{0}{WING}{Straight, taper 0.7, SD7037}\doscfg{1}{HIGH LIFT}{Single-slotted flap, 60 \% semispan}\doscfg{2}{TAIL}{Conventional}%
+   \doscfg{3}{GEAR}{Fixed tricycle, faired}\doscfg{4}{PROPULSION}{1 x AT7215 KV270, APC 20x15E}\doscfg{5}{BATTERY}{8S 3300 mAh, 97.7 Wh}%
+   \doscfg{6}{FUSE}{100 A blade}\doscfg{7}{RADIO}{ExpressLRS 2.4 GHz, PWM}%
+   \doscfg{8}{SENSOR}{Tungsten dart, 3--8 kg}\doscfg{9}{CONTAINER}{PE foam, 381 mm envelope}\doscfg{10}{D\&R}{Closed-loop drum, slip ring}%
+   \doscfg{11}{TOW LINE}{2.84 m braided, 2 leads}\doscfg{12}{BAY}{Two units, door}\doscfg{13}{STRUCTURE}{Rib and spar, CF tube}%
+   \doscfg{14}{JOINT}{Two-piece wing}\doscfg{15}{SHIPPING}{Crate 1.2 x 0.5 x 0.4 m}}
+  {\dosmis{0}{M1}{Waived; credited by a successful Mission 2.}{1.00}%
+   \dosmis{1}{M2}{One unit at the declared mass plus simulators as the weigh-in allows.}{1.71}%
+   \dosmis{2}{M3}{Seven laps at 26.5 m/s with the ballast chosen per attempt.}{3.00}%
+   \dosmis{3}{GM}{Declared mass from 1.524 m.}{1.50}}
+
+\end{document}

@@ -1,0 +1,245 @@
+% =====================================================================
+%  3.0 CONCEPTUAL DESIGN APPROACH  (55 pts)   budget: ~3.25 pages, ~1,100 words
+%  Rubric (5.1.4):  [ ] Decomposition of mission reqs into subsystem reqs
+%                   [ ] Trade studies conducted, with results
+%                   [ ] Preliminary design / sizing results; concept sketch
+%                   [ ] Sensitivity study of design parameters
+%                   [ ] Design approach per mission WITH initial targets for
+%                       scoring parameters (payloads, weights, lap times)
+%  One argument: what matters (3.1-3.2) -> what we chose (3.3) ->
+%  what we sized (3.4) -> what it will score (3.5).
+%  Judges 2026: "Mission math is missing" was the #1 criticism. Numbers.
+% =====================================================================
+\section{Conceptual Design Approach}
+\dbfnote{Two-sentence lead-in that states the argument of the whole section.}
+\dbffill{30}
+
+% ---------------------------------------------------------------------
+\subsection{Mission Requirements Decomposition}
+\dbfnote{About 40 words (Table~\ref{tab:decomp} grew to 19 SRs on 12 Oct and now carries the decomposition; 90 overflowed to 7 pages). Say how each mission score and rule became a numbered SR that later sections cite, and that \textsuperscript{†} marks the team's own requirements. Do not restate the rules.}
+\dbffill{40}
+
+% Table 04 sources: rules/2027_DBF_Rules_Draft.pdf, read verbatim 12 Oct 2026.
+% SR list confirmed at the Requirements Review, 12 Oct 2026 (renumbered in
+% table order; Oct 9 draft SR-09..13 are now SR-11, 12, 14, 15, 16).
+% "+" = team requirement beyond the rules (dagger in the table).
+%  SR-01+ Sec. 3.2.1 "radio-controlled with manual flight by the pilot ... Flight
+%         stabilization subsystems and rate gyros are allowed"; band from Script 4
+%  SR-02  Sec. 3.3.2 "Any and all work required to install the propulsion battery
+%         pack(s) and payloads, check flight controls and prepare the airplane for
+%         flight must be completed within the 5-minute time limit"
+%  SR-03  Sec. 3.3.3.2 payload "sensor in shipping container and shipping container
+%         simulators"; Sec. 3.1.3 loaded "with the surface marked TOP facing up"
+%  SR-04  Sec. 3.2.1 "mechanically fastened and not rely on friction to be the
+%         primary retention method"
+%  SR-05  Sec. 3.1 containers secured "without possible shift of aircraft CG outside
+%         of design limits"; Sec. 3.2.1 "loaded and empty CG locations must be marked"
+%  SR-06  Sec. 3.1.2 mechanism "internal", "permanently installed in the Mission 3
+%         location for all missions", deploy ">= 1.5 times the airplane wingspan";
+%         Sec. 3.1.1 "securely restrained by the deployment and recovery mechanism
+%         for take-off, flight and landing"
+%  SR-07  Sec. 3.1.1 three lights, modes OFF / SOLID ON / FLASHING ON, "visible in
+%         flight by the Flight Director"; "The Rx for the payload signal must be in
+%         the airplane"; mode signal "over the tow line"
+%  SR-08  Sec. 3.1.1 "aerodynamically stable ... (not spinning or rotating) with no
+%         effect on the stability of the aircraft"; length >= six inches
+%  SR-09  Sec. 3.1.1 "The sensor must contain its own battery ... compliant with the
+%         battery requirements in section 3.2.3"; Sec. 3.2.3 COTS, unaltered,
+%         "Original Manufacturer's Label must be clearly visible"
+%  SR-10+ Sec. 3.2.1 "No structure nor components may be dropped from the airplane
+%         during flight" (a cut tow line drops the sensor)
+%  SR-11  Sec. 3.1.3 container must "protect it from drop shock events"; Sec. 3.3.4
+%         "Any physical or structural damage is a mission failure"
+%  SR-12  Sec. 3.1.3 attachment "flush or below the surface"; ring to bottom "less
+%         than 15 inches"; Sec. 3.3.4 rigging changes inside the 5-minute limit
+%  SR-13  Sec. 3.1.1 "Teams must have a sensor test box ... The test box must connect
+%         to the sensor tow line electrical connection"; Sec. 3.3.4 light check
+%  SR-14  Sec. 3.2.1 "No autopilots/flight controllers ... No onboard GPS"; "Cameras
+%         on or in the airplane are not allowed"
+%  SR-15  Sec. 4.2.1 "positive, mechanical latching method ... Magnets are not an
+%         acceptable latching method"
+%  SR-16  Sec. 3.2.3.2 "shall not exceed 100 Watt-hours"; Sec. 3.2.1 "All energy for
+%         take-off must come from the on-board propulsion battery pack(s)"
+%  SR-17  Sec. 4.2.5 "Range Check (low power) mode"; fail-safe "Throttle closed, Full
+%         up elevator, Full right rudder, Full right aileron, Full Flaps down".
+%         + Gear down and locked: team choice (retract gear; drop it if Table 05
+%         selects fixed gear)
+%  SR-18  Sec. 4.2.4 wing-tip lift at MGTOW, '"roughly" equivalent to a 2.5g load
+%         case'; the race turn needs n = 1/cos(bank) (Script 1)
+%  SR-19+ cooling for the enclosed fuselage at up to 100 A (R&D Sec. 3a item 13)
+\begin{table*}[t]
+\caption{Mission requirements decomposed into subsystem requirements. Requirement IDs (SR) are cited in later trades and design decisions; \textsuperscript{†}\,team requirement beyond the rules.}\label{tab:decomp}
+\begin{dbftable}{colspec={Q[l,wd=0.52in] Q[l,wd=1.12in] X[1.1,l] X[1.5,l]}}
+Mission & Score & Key constraints & Derived subsystem requirements \\
+M1 Staging & $M_1 = 1.0$ & 3 laps in 5 min; no payload; may be waived and credited by a successful M2 & SR-01 static margin \nStaticMargin\,\% MAC in all load cases\textsuperscript{†}; SR-02 battery, payload and control checks within the 5-min staging \\
+M2 Delivery & $M_2 = 1 + \frac{W/t}{(W/t)_{\max}}$ & Sensor in container plus simulators ($\pm$3.175~mm, $\pm$28.3~g); TOP face up; 5 laps timed from first throttle-up & SR-03 bay for the container and $N$ simulators; SR-04 positive mechanical restraint; SR-05 CG within marked limits in all load cases \\
+M3 Sensor & $M_3 = 2 + \frac{N W_s}{(N W_s)_{\max}}$ & Deploy before the first downwind turn; lights OFF, SOLID, FLASHING, OFF; stow before landing; sensor $\geq$ 152.4~mm (6~in), internal ballast & SR-06 internal, permanent powered reel, tow $\geq$ 1.5$b$, stowed sensor locked; SR-07 three lights and modes commanded over the tow line, visible in sun; SR-08 stable in tow; SR-09 own COTS battery (§3.2.3); SR-10 line clear of the propeller\textsuperscript{†} \\
+Ground & $GM = 0.5 + \frac{W_s h}{(W_s h)_{\max}}$ & 6 drops onto concrete, $h \leq$ 1.524~m (60~in), whole inches; ring to container bottom $<$ 381~mm (15~in); 5-min rigging clock; zero damage & SR-11 container absorbs $W_s h$, no sensor damage; SR-12 tool-less O/E rigging, flush fittings; SR-13 test box drives all three modes via the tow connector \\
+System & -- & Span $\leq$ 1.829~m (6~ft); TOGW~$<$~24.95~kg (55~lb); $\leq$ 100 Wh; no autopilot, GPS or camera & SR-14 pilot-in-the-loop only; SR-15 positive latches, no magnets; SR-16 energy for M2 at full payload; SR-17 §4.2.5 fail-safe on all outputs (gear down\textsuperscript{†}), low-power range check; SR-18 structure for the race turn ($n$~=~\nLoadFactor) and tip lift; SR-19 ESC and battery cooling\textsuperscript{†} \\
+\end{dbftable}
+\end{table*}
+
+% ---------------------------------------------------------------------
+\subsection{Scoring Model and Sensitivity Study}
+\dbfnote{About 220 words across this subsection. (1) The scoring model below. (2) How the competitor maxima are estimated, and a check that the conclusions survive if they change. (3) The findings: completion is worth 4.5 of 7.5; sensor weight appears in M2, M3 and GM; GM is drop energy with height capped at 1.524 m (60 in); container size sets simulator size and so fuselage volume. (4) Refer to Fig.~\ref{fig:sens} and Fig.~\ref{fig:carpet}.}
+The total mission score is the sum of four mission scores, each a fixed completion credit plus a term normalized by the best team in the field:\footnote{AIAA, \emph{2026--27 Design, Build, Fly Rules}, Draft, Sep.~2026, Sec.~3.3.}
+\begin{equation}
+\begin{aligned}
+S_\mathrm{M} &= M_1 + \Bigl[1 + \tfrac{(W/t)}{(W/t)_\mathrm{max}}\Bigr]
+  + \Bigl[2 + \tfrac{N W_s}{(N W_s)_\mathrm{max}}\Bigr] \\
+ &\quad + \Bigl[0.5 + \tfrac{W_s h}{(W_s h)_\mathrm{max}}\Bigr]
+\end{aligned}
+\end{equation}
+\dbffill{170}
+
+\begin{figure}[t]
+\dbfplaceholder{\columnwidth}{2.0in}{Sensitivity / spider or tornado / column}
+\caption{\dbftbd{takeaway}: which parameter moves total mission score most.}\label{fig:sens}
+\end{figure}
+
+\begin{figure}[t]
+\dbfplaceholder{\columnwidth}{2.0in}{Carpet: score vs sensor weight and units}
+\caption{\dbftbd{takeaway}: the chosen design point on the coupled M2/M3/GM trade.}\label{fig:carpet}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Configuration Trade Studies}
+\dbfnote{About 40 words (Fig.~\ref{fig:airfoil} took the other 110 of this subsection's 150; 55 already overflows to 7 pages, so move words here from another subsection if needed). Weights come from the sensitivity study, and say so. Keep generic choices short (Table~\ref{tab:config}); spend the words on this year's unique trade, the D\&R architecture (Table~\ref{tab:dr}). Cite SR IDs.}
+\dbfnote{Airfoil, about 20 of those words; the caption carries the method (Fig.~\ref{fig:airfoil}). 13 low-Re sections, Re $0.8$--$8\times10^{5}$, XFoil. The section is picked by $c_l/c_d$ inside the race envelope, not by peak $c_l/c_d$: the weighted-score winner (MH~114, first in 11 of 15 weightings) gives about half the $c_l/c_d$ of the pick in the turn. UIUC wind-tunnel check (E387, FX~63-137): XFoil over-predicts $(L/D)_{\max}$ by 9--22\,\%, so state the $L/D$ margin carried into performance. AIAA footnotes: Drela 1989 (XFOIL); Selig and McGranahan, NREL/SR-500-34515, 2004.}
+\dbffill{40}
+
+\begin{figure}[t]
+\includegraphics{figures/airfoil.pdf}% 3.35 x 2.00 in, from data/airfoil.toml (make_charts.py)
+\caption{\nAfCheck Selected for the race envelope, not peak efficiency: in the turn, \nAfSel{} gives \nAfRatio$\times$ the $c_l/c_d$ of \nAfCmp{} (\nAfLDsel{} against \nAfLDcmp), the highest-peak section of the 13 tested. XFoil 6.99, $Re = \nAfRe$, $N_\mathrm{crit} = 9$; it over-predicts $(L/D)_{\max}$ by 9--22\,\% against UIUC tunnel data. Curves end at $c_{l,\max}$. Shaded: $c_l = 2n(W/S)/(\rho V^2)$ from cruise to the $n = \nAfNturn$ turn at $\rho = \nRho$~kg/m³, the 1-in-10 hot afternoon at TIMPA.}\label{fig:airfoil}
+\end{figure}
+
+\begin{table}[t]
+\caption{Configuration decisions and the requirement that drove each.}\label{tab:config}
+\begin{dbftable}{colspec={Q[l] X[l] Q[l] Q[l]}}
+Decision & Options considered & Selected & Driver \\
+Wing planform & High-AR, delta & \dbftbd{sel.} & \dbftbd{SR} \\
+Airfoil & 13 sections & \dbftbd{sel.} & \dbftbd{SR} \\
+Wing position & Low, mid, high & \dbftbd{sel.} & \dbftbd{SR} \\
+Tail & Conventional, V, H & \dbftbd{sel.} & \dbftbd{SR} \\
+Landing gear & Tricycle, taildragger & \dbftbd{sel.} & \dbftbd{SR} \\
+Retraction & Fixed, retractable & \dbftbd{sel.} & \dbftbd{SR} \\
+Propulsion & Tractor, pusher, twin & \dbftbd{sel.} & \dbftbd{SR} \\
+Sensor bay & Door, open slot & \dbftbd{sel.} & SR-06 \\
+\end{dbftable}
+\end{table}
+
+\begin{table}[t]
+\caption{Deployment-and-recovery architecture trade (scores 1--5; selected option inverted).}\label{tab:dr}
+\begin{dbftable}{colspec={X[l] Q[c] Q[c] Q[c] Q[c]}, column{4}={bg=dbfAccentTint}, cell{1}{4}={bg=dbfInk, fg=white}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
+Criterion & Wt. & Opt. A & Opt. B & Opt. C \\
+Recovery reliability & \dbftbd{w} & -- & -- & -- \\
+Signal path integrity & \dbftbd{w} & -- & -- & -- \\
+Deploy/stow time & \dbftbd{w} & -- & -- & -- \\
+Weight and volume & \dbftbd{w} & -- & -- & -- \\
+Manufacturability & \dbftbd{w} & -- & -- & -- \\
+Weighted total & 1.00 & -- & \dbfselected{--} & -- \\
+\end{dbftable}
+\end{table}
+
+% ---------------------------------------------------------------------
+\subsection{Preliminary Design and Sizing}
+\subsubsection{Sizing method}
+\dbfnote{About 65 words (the air-density footnote, the density row of Table~\ref{tab:params} and the longer Fig.~\ref{fig:airfoil} caption took the rest of 110; 75 overflows to 7 pages). Constraint diagram (turn, climb, cruise, stall at the TIMPA hot-day density, $\rho = $ \textbackslash nRho = \nRho~kg/m³, density altitude \textbackslash nDensityAlt = \nDensityAlt~m; keep \textbackslash fnRho right after its first use, it is the AIAA source footnote); weight build-up; lap-time and energy model of the 152.4-m (500-ft) course with the 360-deg turn. Footnote-cite any method source.}
+\dbffill{65}\fnRho
+
+\begin{figure}[t]
+\dbfplaceholder{\columnwidth}{2.0in}{Constraint diagram / design point}
+\caption{\dbftbd{takeaway}: which requirement sets T/W and W/S.}\label{fig:constraint}
+\end{figure}
+
+\subsubsection{Aircraft concept}
+\dbfnote{About 70 words. Describe the concept sketch (it need not match the final design) and the parameters in Table~\ref{tab:params}.}
+\dbffill{70}
+
+\begin{figure}[t]
+\dbfplaceholder{\columnwidth}{1.85in}{Concept 3-view / sensor bay visible}
+\caption{\dbftbd{takeaway}: the configuration and where the sensor exits.}\label{fig:concept}
+\end{figure}
+
+\begin{table}[t]
+\caption{Preliminary design parameters.}\label{tab:params}
+\begin{dbftable}{colspec={X[l] Q[r] Q[l]}}
+Parameter & Value & Unit \\
+Wingspan & \nSpan & m \\
+Wing area & \nWingArea & m² \\
+Aspect ratio & \nAR & -- \\
+Empty mass & \nEmptyWeight & kg \\
+Gross mass, M2 / M3 & \nGrossMtwo{} / \nGrossMthree & kg \\
+Battery energy & \nBatteryWh & Wh \\
+Cruise speed & \nCruise & m/s \\
+Air density, hot day & \nRho & kg/m³ \\
+Sensor mass (max) & \nSensorWeight & kg \\
+Tow-line length & \nTowLength & m \\
+\end{dbftable}
+\end{table}
+
+% Targets table (3.5) source placed here so it lands before the 4.0 heading
+% (verified by the sequence guard in build.sh).
+\begin{table}[t]
+\caption{Mission targets and predicted scores.}\label{tab:targets}
+\begin{dbftable}{colspec={Q[l] X[l] Q[r]}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
+Mission & Target & Score \\
+M1 Staging & \dbftbd{waive or fly} & \sMone \\
+M2 Delivery & \nMtwoUnits{} units, \nMtwoPayload{} kg, \nMtwoTime{} s & \sMtwo \\
+M3 Sensor & \nMthreeLaps{} laps at \nMthreeSensor{} kg & \sMthree \\
+GM Ground & \nDropHeight{} m at \nSensorWeight{} kg & \sGM \\
+Total mission score & & \sTotal \\
+\end{dbftable}
+\end{table}
+
+\subsubsection{Sensor and D\&R system}
+\dbfnote{About 110 words. Sensor body, fins, internal ballast bay, own battery, three light groups; reel; command path over the tow line; the slip ring as the critical technology (Fig.~\ref{fig:block}). Keep the compliance sentence below.}
+\dbffill{80}
+The aircraft is flown pilot-in-the-loop at all times: no autopilot or flight controller is carried, and stabilization is limited to optional rate gyros.
+
+\begin{figure}[t]
+% Command path (rules 3.1.1): receiver in the airplane, mode signal over the tow
+% line, light control and battery inside the sensor; the test box drives the
+% same connector on the ground. ELRS PWM receiver: team decision, 8 Oct 2026.
+\begin{tikzpicture}[x=1in, y=1in,
+  box/.style={draw=dbfGraphite, line width=0.4pt, fill=white, inner sep=0pt,
+    minimum height=0.30in, align=center, text=dbfInk,
+    font=\dbflabelfont\fontsize{5.6}{6.8}\selectfont},
+  lab/.style={inner sep=1pt, align=center, text=dbfSteel,
+    font=\dbflabelfont\fontsize{5.0}{6.0}\selectfont},
+  sig/.style={-stealth, line width=0.5pt, draw=dbfInk}]
+\useasboundingbox (0,0) rectangle (3.35,1.30);
+\fill[dbfBone] (0.86,0.38) rectangle (2.49,1.24);
+\draw[dbfFog, line width=0.4pt] (2.70,0.02) rectangle (3.35,1.24);
+\node[lab, anchor=north west] at (0.88,1.22) {AIRPLANE};
+\node[lab, anchor=north west] at (2.72,1.22) {SENSOR};
+\node[box, minimum width=0.56in] (tx)   at (0.28,0.83) {PILOT TX\\ELRS 2.4G};
+\node[box, minimum width=0.56in] (rx)   at (1.21,0.83) {RECEIVER\\ER8, PWM};
+\node[box, minimum width=0.56in] (reel) at (2.14,0.83) {REEL\\SLIP RING};
+\node[box, minimum width=0.56in] (mcu)  at (3.025,0.83) {LIGHT\\CONTROL};
+\node[box, minimum width=0.56in, minimum height=0.17in] (rxb) at (1.21,0.53) {RX BATTERY};
+\node[box, minimum width=0.56in, minimum height=0.16in] (sb)  at (3.025,0.27) {1S BATTERY};
+\node[box, minimum width=0.56in] (tb)   at (2.14,0.19) {TEST BOX\\3-POS PWM};
+\draw[sig, dashed] (tx.east) -- node[lab, above] {RF} (rx.west);
+\draw[sig] (rx.east) -- node[lab, above] {PWM} (reel.west);
+\draw[sig, line width=0.9pt] (reel.east) -- node[lab, above] {TOW\\LINE} (mcu.west);
+\draw[dbfGraphite, line width=0.4pt] (rxb.north) -- (rx.south);
+\draw[sig, dashed] (tb.east) -- node[lab, above] {BENCH} (2.70,0.19);
+\foreach \x/\t in {2.85/FWD, 3.025/CTR, 3.20/AFT} {
+  \draw[dbfGraphite, line width=0.4pt] (\x,0.68) -- (\x,0.60);
+  \fill[dbfInk] (\x-0.04,0.52) rectangle (\x+0.04,0.60);
+  \node[lab, anchor=north] at (\x,0.51) {\t};
+}
+\end{tikzpicture}
+\caption{\dbftbd{takeaway}: the command path to the sensor lights.}\label{fig:block}
+\end{figure}
+
+\subsubsection{Shipping container and rigging}
+\dbfnote{About 70 words. Energy-absorbing design sized for $W_s h$; fast O/E rigging swap within the 5-min budget; flush attachment points.}
+\dbffill{55}
+All hatches and the container lid use positive mechanical latches; magnets are never the latching method.
+
+% ---------------------------------------------------------------------
+\subsection{Mission Design Approach and Scoring Targets}
+\dbfnote{About 150 words. One short paragraph per mission with numbers. M1: the waiver decision and why (2.2 attempts per team in 2026). M2: units, weight, 5-lap time. M3: flown sensor weight, laps, and the deploy, SOLID, FLASHING, stow timeline. GM: declared height and weight, plus the 5-min rigging workflow. Staging: the 5-min plan, including unpacking the sensor for M3. Refer to Table~\ref{tab:targets}.}
+\dbffill{150}

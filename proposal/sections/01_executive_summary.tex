@@ -1,33 +1,23 @@
 % =====================================================================
-%  1.0 EXECUTIVE SUMMARY  (5 pts)            budget: ~0.45 page, ~190 words
-%  Rubric (5.1.4):  [ ] Objective statement
-%                   [ ] Planned approach to achieve all objectives
-%                   [ ] Main points from every subsequent section
-%  Judges 2026: put the key numbers HERE (span, targets, predicted score).
-%  Set full width (abstract style) with the Design-at-a-Glance panel.
+%  1.0 EXECUTIVE SUMMARY  (5 pts)   P1.2, 31 Oct 2026
+%  Rubric (5.1.4):  [x] Objective statement
+%                   [x] Planned approach to achieve all objectives
+%                   [x] Main points from every subsequent section (budget and funding included, P1.2)
 % =====================================================================
 \section{Executive Summary}
-\noindent\begin{minipage}[t]{0.62\textwidth}
-\setlength\parindent{1.15em}\noindent
-\dbfnote{Para 1, objective (about 40 words): what we will design, build and fly for the 2026--27 towed-sensor mission, and the goal, which is maximum total competition score.}
-\dbffill{40}
+% P1.2: the side panel became a full-width readout strip so page 1 no longer grows with the panel
+% (and stays fixed when the team's drawings arrive; the GA plate in 3.4 carries them).
+\newcommand\gl[3]{\parbox[t]{0.163\linewidth}{\raggedright
+  {\dbflabelfont\fontsize{7}{8.4}\selectfont\color{dbfFog}\MakeUppercase{#1}}\par\vspace{2pt}%
+  {\dbftablefont\bfseries\fontsize{12.5}{14.5}\selectfont\color{white}#2}\hspace{0.2em}{\sffamily\fontsize{7.6}{9}\selectfont\color{dbfFog}#3}}}
+\textbf{Objective.} Machine Masters will design, build and fly a hand-flown electric aircraft that delivers the sensor in its container (Mission~2), tows it through its light sequence and recovers it (Mission~3), and protects it in the Ground Mission drop, to post the highest total score at Tucson in April 2027.
 
-\dbfnote{Para 2, approach (about 65 words): requirement decomposition, then the coupled scoring model, then the sensitivity study. State the headline finding (e.g. completion is worth 4.5 of 7.5 points; sensor weight sits in three of four mission scores) and the strategy it leads to.}
-\dbffill{65}
+\textbf{Approach.} The rules became 21 subsystem requirements. A mission model calibrated on the 2022--26 fly-offs flew 162 candidate aircraft through every mission, failed attempts included, against simulated rival fields; completion pays 4.5 of 7.5 points, so reliability carries \tCompletion\,\% of the trade weight. Sensor and container are built for 3--8~kg, with the maximum declared at inspection ($+$\tDeclGain{} points over fixing it at design).
 
-\dbfnote{Para 3, selected concept with numbers (about 50 words): configuration, then \textbackslash nSpan, \textbackslash nGrossMtwo, \textbackslash nSensorWeight, M2/M3/GM targets and \textbackslash sTotal.}
-\dbffill{50}
+\textbf{Design.} A \nSpan~m, \nWingArea~m² high wing with Fowler flaps ($C_{L,\max}$ \nCLmaxLand), conventional tail, fixed tricycle gear and one 8S tractor stalls at \nStallMtwo~m/s at its \nGrossMtwo~kg Mission~2 mass. It waives Mission~1, carries one \nMtwoPayload~kg sensor container, tows \nMthreeMass~kg and drops the declared sensor from \nDrop~m: \sTotal{} of 7.5 with every mission completed and the field's highest mission total in \sPtopPct\,\% of simulated contests, failed attempts counted (first iteration \sPtopCtlPct\,\%); a slotted 1.2~m² wing is the fallback.
 
-\dbfnote{Para 4 (about 35 words): one sentence each on team and schedule, manufacturing approach, and test campaign.}
-\dbffill{35}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.35\textwidth}
-\vspace{-11pt}
-\begin{dbfpanel}[Design at a Glance]
-\dbfplaceholder{\linewidth}{1.0in}{Concept render}\par\vspace{6pt}
-\dbfreadout{Wingspan}{\nSpan}{m}\hfill\dbfreadout{M2 gross mass}{\nGrossMtwo}{kg}\dbfreadoutgap
-\dbfreadout{Sensor mass}{\nSensorWeight}{kg}\hfill\dbfreadout{M2 payload}{\nMtwoUnits}{units}\dbfreadoutgap
-\dbfreadout{M2 five-lap time}{\nMtwoTime}{s}\hfill\dbfreadout{M3 laps}{\nMthreeLaps}{laps}\dbfreadoutgap
-\dbfreadout{GM drop height}{\nDropHeight}{m}\hfill\dbfreadout{Pred. mission score}{\sTotal}{/ 7.50}
-\end{dbfpanel}
-\end{minipage}
+\textbf{Execution.} Six sub-teams build two airframes of laser-cut ply and balsa on carbon tubes, retire the top risks in 14 bench and flight tests by 15~January, fly the prototype at least 20 times and freeze the design on 19~February; the \$\bTotalK{}k budget, travel included, is fully funded by the university.
+
+\vspace{6pt}\noindent\begin{dbfinkpanel}[Design at a glance / Variant A]
+\gl{Wingspan}{\nSpan}{m}\hfill\gl{Wing area}{\nWingArea}{m²}\hfill\gl{M2 gross mass}{\nGrossMtwo}{kg}\hfill\gl{Stall, M2}{\nStallMtwo}{m/s}\hfill\gl{Score, if done}{\sTotal}{/ 7.5}\hfill\gl{P(top of field)}{\sPtop}{}
+\end{dbfinkpanel}

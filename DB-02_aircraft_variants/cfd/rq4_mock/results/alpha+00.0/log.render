@@ -1,0 +1,12 @@
+time 601.0 regions ['internalMesh', 'group/symmetryPlane', 'patch/farfield', 'patch/midPlane', 'group/aircraft', 'group/wall', 'patch/nacelle', 'patch/vtail', 'patch/wing', 'patch/fuselage']
+wrote cp_top.png
+wrote cp_bottom.png
+wrote cf_top.png
+wrote yplus_top.png
+wrote cp_iso.png
+wrote u_mac_section.png
+wrote u_centreline.png
+wrote mesh_mac_section.png
+wrote wake_cp0.png
+wrote streamlines_tip.png
+done

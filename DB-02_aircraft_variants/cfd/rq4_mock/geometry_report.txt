@@ -1,0 +1,33 @@
+Geometry preparation: rq4_mock  (2026-10-24 20:22, 61 s)
+Source assets/3D_Models/RQ4_BadrObtel.stl: 157922 triangles, 78105 vertices, header 'STLB ATF 15.15.0.0 COLOR=   ÿ'
+  edges: open 0, non-manifold 1257; closed bodies 2
+  bounding box (mm, CAD frame): [-301.  -79.  -21.] to [301.   200.    52.18]
+Outer skin (voxel 0.4 mm, grid [1514, 707, 192], 2378 sealed air pockets incl. outside):
+  kept 68937 of 157922 faces; area kept 129850 mm2, dropped 93179 mm2 (inner skins, buried roots)
+  kept surface: open edges 1343 (buried flaps of straddling faces), non-manifold 541
+  straddling faces (touch outside air but mostly face a sealed pocket; kept whole): 144
+  wetted area by patch (CAD mm2, scale 1): nacelle 20770, vtail 11247, wing 48903, fuselage 48931
+Wing reference (CAD mm, scale 1; stations |x| [50.0, 290.0]):
+  span 602.00, root chord (centreline) 47.38, tip chord 36.96, taper 0.780
+  S 25385 mm2, AR 14.28, MAC 42.38 at |x| 144.3, MAC LE y 40.02, chord-line z -11.16
+  incidence to the fuselage datum 2.48 deg (LE-TE line); chord fit residual max 0.000 mm
+  stations |x|, LE y, LE z, TE y, TE z, chord, incidence:
+      50.00    40.02   -10.35    85.62   -12.33    45.65     2.48
+      70.00    40.02   -10.33    84.93   -12.27    44.95     2.48
+      90.00    40.02   -10.31    84.24   -12.22    44.26     2.48
+     110.00    40.02   -10.28    83.55   -12.17    43.57     2.48
+     130.00    40.02   -10.26    82.86   -12.12    42.88     2.48
+     150.00    40.02   -10.24    82.16   -12.07    42.18     2.48
+     170.00    40.02   -10.22    81.47   -12.01    41.49     2.48
+     190.00    40.02   -10.20    80.78   -11.96    40.80     2.48
+     210.00    40.02   -10.17    80.09   -11.91    40.11     2.48
+     230.00    40.02   -10.15    79.40   -11.86    39.42     2.48
+     250.00    40.02   -10.13    78.70   -11.81    38.72     2.48
+     270.00    40.02   -10.11    78.01   -11.76    38.03     2.48
+     290.00    40.02   -10.09    77.32   -11.70    37.34     2.48
+CFD frame (m) at scale 3.023: span 1.8198, Sref 0.23198, MAC 0.12812, CofR [ 0.15301  0.      -0.03375]
+  body box [-0.2388 -0.9099 -0.0635] to [0.6046 0.9099 0.1577]
+Flow: U 26.5 m/s, nu 1.761e-05 -> Re(MAC) 192,798; alphas [0.0, 4.0, 8.0, 12.0, 10.0, 6.0, 2.0, -2.0, -4.0]
+Mesh: base 303.3 mm, domain x [-7.583, 15.165] y [0, 7.279] z [-7.279, 7.583], [75, 24, 49] background cells
+  skin cells 2.370 mm (level 7), features 1.185 mm; walls ~3.0 mm thick
+  layers 20 x 1.25: first 10.5 um (y+ 1.0 at Cf 0.008), stack 3.60 mm = 1.52 skin cells, last layer 0.31 cell

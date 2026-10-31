@@ -1,0 +1,48 @@
+% Back matter: rules questions, glossary, sources
+\dosdivider{07}{Questions, terms and sources}{The rules questions worth asking in round one, the vocabulary of this dossier, and every source it rests on.}
+  {\dosdivrow{0}{10}{Rules Q\&A, ranked by points at stake}\dosdivrow{1}{11}{Glossary}\dosdivrow{2}{12}{Sources}}
+
+\section{Rules Q\&A, ranked by points at stake}\label{sec:qa}
+\subsection{How to use this list}
+Round one of the official Q\&A opens on 1 November and accepts five questions; later rounds accept three. Each question below states what rides on the answer and the design the team builds to until it is answered, so no answer can strand the aircraft.
+
+\begin{widetable}[h]{Round-one questions, in order of the points they protect. The fallback is what the design assumes until the answer arrives.}{tab:qa}
+\begin{brieftable}{width=\fullw, colspec={Q[l,wd=0.35in] X[1.45,l] X[1.0,l] X[1.1,l]}}
+Rank & Question, as it would be submitted & What rides on it & Fallback until answered \\
+1 & In Mission~3, is the time to stow the sensor after the final lap inside the 300~s flight window? & Seven laps against six at 39~s laps; the choice of drum drive & Assume it counts; trim the Mission~3 ballast so the stow fits \\
+2 & Staging allows no adjustments such as opening hatches. May a hatch be opened and latched inside the box, without tools, to load payload and batteries? & A misreading fails staging & Enter with the bay open; latch-only closure inside the box \\
+3 & Does the 381~mm ring-to-bottom limit apply to a sling to the container's corners, and may the sling legs sit at 10 to 15°? & The container envelope and the declared drop height & 150~g sensor and 41~mm foam fit at 15°; a lower drop height costs 8\,\% of the Ground Mission bonus per 5~in \\
+4 & Do identical bolt-on spare panels and control surfaces count as repair of the original airframe? & Whether one broken surface ends the contest & Carry identical bolt-on spares as repair stock \\
+5 & May the sensor's internal battery stay in the sensor while it is packed in its container for the Ground Mission? & Ground Mission compliance & A removable sensor battery fitted at the light check \\
+Later & Is the 1.5-span deployment distance checked statically or in flight? & Line length & Static exit-to-nose length with a 0.10~m margin \\
+Later & Is wingspan the projected tip-to-tip width when vertical tip surfaces are fitted? & Only matters if winglets return & Not needed: winglets were eliminated (Table~\ref{tab:elim}) \\
+\end{brieftable}
+\end{widetable}
+
+\railnote{Already answered}{Packs may change between flights, within the identical-pack rule (FAQ, layout lines 1670--1673). Rate gyros and stabilisation are allowed (line 600). Neither needs a question.}
+
+\section{Glossary}
+\begin{railtable}[h]{Terms used in this dossier.}{tab:gloss}
+\begin{brieftable}{width=\textwidth, colspec={Q[l,wd=1.2in] X[l]}}
+Term & Meaning \\
+Declared sensor mass & The maximum sensor mass the team states at technical inspection; it fixes every Mission~2 unit and the Ground Mission score \\
+Payload unit & One container holding the sensor at its declared mass, or one simulator matching it within 28~g \\
+Field maximum & The best result any team posts in a mission, our own included; every bonus is a ratio to it \\
+P(top) & Probability that our total mission score is the highest in the field \\
+P(1st) & Probability that our competition score (report times mission, plus participation) is the highest \\
+P10, P90 & The score below which the worst tenth, or above which the best tenth, of the uncertain outcomes fall \\
+Paired draws & The same 120 sets of uncertain inputs applied to every candidate, so differences are real \\
+Trimmed $C_{L,\max}$ & Maximum lift after the tail's balancing load is subtracted \\
+Oswald $e$ & How close the wing's drag due to lift is to the ideal; 1.0 is ideal \\
+Fowler flap & A flap that slides aft on tracks as it lowers, adding wing area and opening a slot \\
+Single-slotted flap & A flap that rotates down and opens a gap that re-energises the flow over it \\
+Stall speed $V_s$ & The slowest speed at which the wing can carry the aircraft's weight; landings are made somewhat above it \\
+Decision timing & Choosing each number at the moment the information to choose it well exists, and not before \\
+\end{brieftable}
+\end{railtable}
+
+\section{Sources}
+\subsection{How sources are graded}
+Each row gives the source, what was taken from it, when it was read, and its nature: measured data, a specification, a computation, a rule, or a method. Sources used by DB-01 and the analysis scripts are indexed in the repository's \texttt{SOURCES.md}.
+
+\input{data/sources.tex}

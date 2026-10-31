@@ -1,130 +1,201 @@
-# Proposal Fig. 01: schedule and milestone chart (Gantt).
-# Edit here, then run ./build.sh (it runs make_charts.py).
-# Dates are YYYY-MM-DD. Write "TBD" for anything not scheduled yet; the chart
-# shows an "items to schedule" tag until every item has a date.
-# source: "rules ..." = fixed by the contest rules; "plan" = 00_START_HERE_RnD.md §10;
-#         "team" = the team still has to set it.
+# Proposal Fig. 01: schedule and milestone chart (Gantt). P1.2, 31 Oct 2026.
+# Edit here, then run ./build.sh (it runs make_charts.py). Dates are YYYY-MM-DD.
+# source: "rules x.y" = fixed by the contest rules (drawn OUTLINED / hollow); "DB-02" = decision
+#   calendar of DB-02 rev B (Sec. 11-12, 30 Oct 2026); "plan" = team plan date (drawn FILLED).
+#   First flight moved to early January by the team lead, 31 Oct 2026.
+# Optional keys: track = k pins an item to sub-track k of its lane; label = "left" puts an outside label
+#   left of its bar. Names are short so they fit inside their bars at 7 pt (mock-judging note M2, 31 Oct).
+# [[gate]]s are drawn on the rail above the lanes, with a hairline through every lane.
 
-lanes = ["Design", "Manufacturing", "Test", "Reports", "Competition"]
+lanes = ["Design", "Build", "Test", "Flight", "Reports", "Contest"]
+today = "2026-10-31"
 
+[[gate]]
+name = "Proposal"
+date = "2026-10-31"
+source = "rules 2.1"
+
+[[gate]]
+name = "PDR"
+date = "2026-11-28"
+source = "plan"
+
+[[gate]]
+name = "CDR, A/B gate"
+date = "2027-01-15"
+source = "DB-02"
+
+[[gate]]
+name = "Report, freeze"
+date = "2027-02-19"
+source = "rules 2"
+
+[[gate]]
+name = "Fly-off"
+date = "2027-04-15"
+source = "rules 2"
+
+# ---------------- Design
 [[task]]
-name = "Requirements, analysis, studies"
+name = "Sizing, trades"
 lane = "Design"
 start = "2026-10-07"
-end = "2026-10-20"
-source = "plan"
-
-[[task]]
-name = "Prototype build"
-lane = "Manufacturing"
-start = "TBD"
-end = "TBD"
-source = "team"
-
-[[task]]
-name = "Competition aircraft build"
-lane = "Manufacturing"
-start = "TBD"
-end = "TBD"
-source = "team"
-
-[[task]]
-name = "Tests TC-01 to TC-04"
-lane = "Test"
-start = "2026-10-08"
-end = "2026-10-18"
-source = "plan"
-
-[[task]]
-name = "Flight test campaign"
-lane = "Test"
-start = "TBD"
-end = "TBD"
-source = "team"
-
-[[task]]
-name = "Proposal writing"
-lane = "Reports"
-start = "2026-10-20"
 end = "2026-10-30"
 source = "plan"
 
 [[task]]
-name = "Design report window"
-lane = "Reports"
-start = "2027-02-01"
-end = "2027-02-19"
-source = "rules 2.3"
-
-[[task]]
-name = "Fly-off, Tucson"
-lane = "Competition"
-start = "2027-04-15"
-end = "2027-04-18"
-source = "rules 2.5"
-
-[[milestone]]
-name = "Configuration freeze"
+name = "Detail design, A and B"
 lane = "Design"
-date = "2026-10-17"
+start = "2026-11-01"
+end = "2027-01-15"
 source = "plan"
 
-[[milestone]]
-name = "PDR"
+[[task]]
+name = "Refinements"
 lane = "Design"
-date = "TBD"
-source = "team"
+start = "2027-01-16"
+end = "2027-02-19"
+source = "plan"
+
+# ---------------- Build
+[[task]]
+name = "Long-lead parts"
+lane = "Build"
+start = "2026-11-01"
+end = "2026-12-15"
+source = "DB-02"
+track = 0
+
+[[task]]
+name = "Prototype airframe"
+lane = "Build"
+start = "2026-12-01"
+end = "2027-01-05"
+source = "plan"
+track = 1
+
+[[task]]
+name = "Comp. airframe"
+lane = "Build"
+start = "2027-01-16"
+end = "2027-02-13"
+source = "DB-02"
+track = 1
 
 [[milestone]]
-name = "CDR"
-lane = "Design"
-date = "TBD"
-source = "team"
+name = "Comp. 1st flight"
+lane = "Build"
+date = "2027-02-14"
+source = "DB-02"
+track = 1
 
-[[milestone]]
-name = "Sensor bench test"
+[[task]]
+name = "Spares, crate"
+lane = "Build"
+start = "2027-03-01"
+end = "2027-03-31"
+source = "plan"
+track = 0
+
+# ---------------- Test (bench)
+[[task]]
+name = "Tow, drop, drum tests"
 lane = "Test"
-date = "TBD"
-source = "team"
+start = "2026-11-10"
+end = "2026-12-20"
+source = "DB-02"
 
-[[milestone]]
-name = "Prototype first flight"
+[[task]]
+name = "Fowler bench test"
 lane = "Test"
-date = "TBD"
-source = "team"
+start = "2026-12-01"
+end = "2027-01-15"
+source = "DB-02"
 
-[[milestone]]
-name = "Competition aircraft first flight"
+[[task]]
+name = "5-min drills"
 lane = "Test"
-date = "TBD"
-source = "team"
+start = "2027-01-18"
+end = "2027-02-12"
+source = "plan"
 
+# ---------------- Flight
 [[milestone]]
-name = "Pre-Tech / First-Flight certification"
-lane = "Competition"
-date = "TBD"
-source = "team"
+name = "Prototype 1st flight"
+lane = "Flight"
+date = "2027-01-06"
+source = "plan"
+label = "left"
 
-[[milestone]]
-name = "Entry opens"
-lane = "Competition"
-date = "2026-10-15"
-source = "rules 2.1"
+[[task]]
+name = "Laps, weigh-in"
+lane = "Flight"
+start = "2027-01-07"
+end = "2027-02-10"
+source = "plan"
 
-[[milestone]]
-name = "Proposal due"
+[[task]]
+name = "Rehearsals, practice"
+lane = "Flight"
+start = "2027-02-20"
+end = "2027-04-04"
+source = "plan"
+
+# ---------------- Reports
+[[task]]
+name = "Proposal"
 lane = "Reports"
-date = "2026-10-31"
-source = "rules 2.1"
+start = "2026-10-20"
+end = "2026-10-31"
+source = "plan"
+label = "left"
 
 [[milestone]]
-name = "Q&A opens"
+name = "Q&A"
 lane = "Reports"
 date = "2026-11-01"
 source = "rules 1.5"
 
 [[milestone]]
-name = "Proposal results"
+name = "Results"
 lane = "Reports"
 date = "2026-11-20"
 source = "rules 2.2"
+
+[[task]]
+name = "Design report"
+lane = "Reports"
+start = "2027-01-15"
+end = "2027-01-31"
+source = "plan"
+label = "left"
+
+[[task]]
+name = "Submission window"
+lane = "Reports"
+start = "2027-02-01"
+end = "2027-02-19"
+source = "rules 2"
+
+# ---------------- Contest
+[[milestone]]
+name = "Pre-Tech cert."
+lane = "Reports"
+date = "2027-03-31"
+source = "plan"
+
+[[task]]
+name = "Travel, fly-off"
+lane = "Contest"
+start = "2027-04-12"
+end = "2027-04-14"
+source = "plan"
+label = "left"
+
+[[task]]
+name = "Fly-off"
+lane = "Contest"
+start = "2027-04-15"
+end = "2027-04-18"
+source = "rules 2"
+label = "none"

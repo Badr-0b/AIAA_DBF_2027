@@ -1,0 +1,656 @@
+{
+ "schema": 1,
+ "stream": "S8",
+ "generated": "2026-10-29T21:48+03:00",
+ "items": {
+  "S8-R01": {
+   "name": "db01_100g_container_worst_ring_to_bottom",
+   "value": 0.4493,
+   "range": [
+    0.392,
+    0.4935
+   ],
+   "dist": "uniform",
+   "unit": "m",
+   "grade": "computed",
+   "source": "S1 rules.model.container_ring_to_bottom on cushion_report.txt 202x202x392 mm; L538-542",
+   "note": "392 mm long even with no sling; 15 deg sling gives 0.449 m (0.494 m at 30 deg); limit 0.381 m"
+  },
+  "S8-R02": {
+   "name": "container_mass_3.0kg_150g",
+   "value": 0.63,
+   "range": [
+    0.473,
+    0.787
+   ],
+   "dist": "uniform",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.container (MIL-HDBK-304B minima verified; curve shape, bearing area, shell mass estimated)",
+   "note": "[288, 228, 228] mm, foam 41 mm, worst ring-to-bottom 350 mm, ok_381 True"
+  },
+  "S8-R03": {
+   "name": "container_mass_4.4kg_150g",
+   "value": 0.81,
+   "range": [
+    0.608,
+    1.013
+   ],
+   "dist": "uniform",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.container (MIL-HDBK-304B minima verified; curve shape, bearing area, shell mass estimated)",
+   "note": "[298, 257, 257] mm, foam 41 mm, worst ring-to-bottom 366 mm, ok_381 True"
+  },
+  "S8-R04": {
+   "name": "container_mass_6.0kg_150g",
+   "value": 1.004,
+   "range": [
+    0.753,
+    1.255
+   ],
+   "dist": "uniform",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.container (MIL-HDBK-304B minima verified; curve shape, bearing area, shell mass estimated)",
+   "note": "[298, 288, 288] mm, foam 41 mm, worst ring-to-bottom 372 mm, ok_381 True"
+  },
+  "S8-R05": {
+   "name": "container_mass_8.0kg_150g",
+   "value": 1.184,
+   "range": [
+    0.888,
+    1.48
+   ],
+   "dist": "uniform",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.container (MIL-HDBK-304B minima verified; curve shape, bearing area, shell mass estimated)",
+   "note": "[288, 303, 303] mm, foam 41 mm, worst ring-to-bottom 378 mm, ok_381 True"
+  },
+  "S8-R06": {
+   "name": "container_mass_10.0kg_150g",
+   "value": 1.368,
+   "range": [
+    1.026,
+    1.71
+   ],
+   "dist": "uniform",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.container (MIL-HDBK-304B minima verified; curve shape, bearing area, shell mass estimated)",
+   "note": "[308, 305, 305] mm, foam 41 mm, worst ring-to-bottom 385 mm, ok_381 False"
+  },
+  "S8-R07": {
+   "name": "g100_container_worst_rtb_range_3_to_10kg",
+   "value": 385,
+   "range": [
+    385,
+    435
+   ],
+   "dist": "uniform",
+   "unit": "mm",
+   "grade": "computed",
+   "source": "model.container, 15 deg sling, tungsten",
+   "note": "a 100 g-rated sensor never meets 381 mm for 3-10 kg (foam 62 mm); build for 150 g"
+  },
+  "S8-R08": {
+   "name": "one_container_declared_range_recut",
+   "value": [
+    3.0,
+    8.0
+   ],
+   "range": [
+    3.0,
+    8.0
+   ],
+   "dist": "uniform",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.design_for_range(3, 8, recut=True)",
+   "note": "150 g sensor, 41 mm PE foam, [288, 303, 303] mm, 1.184 kg, ok_381 True; pads re-cut at tech"
+  },
+  "S8-R09": {
+   "name": "one_container_declared_range_as_built_pads",
+   "value": [
+    3.0,
+    8.0
+   ],
+   "range": [
+    3.0,
+    8.0
+   ],
+   "dist": "uniform",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.design_for_range(3, 8, recut=False)",
+   "note": "foam thickened to 53 mm (g margin 1.192): [322, 323, 323] mm, worst rtb 404 mm, ok_381 False"
+  },
+  "S8-R10": {
+   "name": "heavy_range_4p4_10_container_recut_10deg_sling",
+   "value": 1.363,
+   "range": null,
+   "dist": "point",
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "model.design_for_range(4.4, 10, recut, 10 deg sling)",
+   "note": "[278, 319, 319] mm, worst rtb 375 mm, ok_381 True"
+  },
+  "S8-R11": {
+   "name": "sensor_6kg_tungsten_diameter",
+   "value": 69.9,
+   "range": null,
+   "dist": "point",
+   "unit": "mm",
+   "grade": "estimate",
+   "source": "model.sensor, tungsten 17000 kg/m3 (grade V)",
+   "note": "L 200 mm, ballast 5.38 kg = 0.32 L; tungsten.com 1 lb bags of 17.6 g/cc alloy, US$499.99-799.99 (R, 29 Oct 2026); bulk 95WNiFe rod US$58-65/kg, 5 kg MOQ, unverified marketplace listing (E)"
+  },
+  "S8-R12": {
+   "name": "sensor_6kg_lead_diameter",
+   "value": 85.6,
+   "range": null,
+   "dist": "point",
+   "unit": "mm",
+   "grade": "estimate",
+   "source": "model.sensor, lead 11340 kg/m3 (grade E)",
+   "note": "L 200 mm, ballast 5.38 kg = 0.47 L; primary ingot US$0.89-1.17 per lb (Expert Market Research Q2 2026; Argus 12 Jan 2026), commodity not retail (R); cast/handling extra; lead is toxic, encapsulate"
+  },
+  "S8-R13": {
+   "name": "sensor_6kg_steel_diameter",
+   "value": 102.9,
+   "range": null,
+   "dist": "point",
+   "unit": "mm",
+   "grade": "estimate",
+   "source": "model.sensor, steel 7850 kg/m3 (grade E)",
+   "note": "L 200 mm, ballast 5.38 kg = 0.69 L; commodity bar stock; price not sourced"
+  },
+  "S8-R14": {
+   "name": "sensor_6kg_static_margin_cal",
+   "value": 0.27,
+   "range": null,
+   "dist": "point",
+   "unit": "cal",
+   "grade": "computed",
+   "source": "Barrowman 1967, 4 trapezoid fins; model.dart_stability",
+   "note": "CP 119 mm, CG 100 mm from the nose; pitch frequency 0.50 Hz (aero stiffness only)"
+  },
+  "S8-R15": {
+   "name": "nose_tow_equilibrium_angle_6kg",
+   "value": 77.0,
+   "range": [
+    50.0,
+    82.0
+   ],
+   "dist": "uniform",
+   "unit": "deg nose-up",
+   "grade": "computed",
+   "source": "tan(theta) = W x_cg / (q A CNa x_cp), q 374 Pa",
+   "note": "a nose tow hangs the dart nose-up; put the tow eye above the CG"
+  },
+  "S8-R16": {
+   "name": "dr_stow_s_3p4kg_37d_70",
+   "value": 11.9,
+   "range": [
+    10.2,
+    14.0
+   ],
+   "dist": "uniform",
+   "unit": "s",
+   "grade": "computed",
+   "source": "dr_trade.toml (datasheet) + s5_tow; reproduces report 11.9 s",
+   "note": "DB-01 option A"
+  },
+  "S8-R17": {
+   "name": "dr_stow_s_10kg_savox",
+   "value": 30.3,
+   "range": null,
+   "dist": "point",
+   "unit": "s",
+   "grade": "estimate",
+   "source": "dr_trade.toml Savox (reseller) scaled by tow tension",
+   "note": "mass 0.336 kg"
+  },
+  "S8-R18": {
+   "name": "dr_stow_s_10kg_neo550_g15",
+   "value": 3.3,
+   "range": null,
+   "dist": "point",
+   "unit": "s",
+   "grade": "estimate",
+   "source": "NEO 550 (verified) + 15:1 gearbox (estimate)",
+   "note": "mass 0.781 kg"
+  },
+  "S8-R19": {
+   "name": "tow_tension_10kg_n4",
+   "value": 392.3,
+   "range": [
+    176.5,
+    392.3
+   ],
+   "dist": "uniform",
+   "unit": "N",
+   "grade": "computed",
+   "source": "s5_tow.tow_tension, q 374 Pa",
+   "note": "line 2.00 mm, break margin 3.0; 3.4 kg at n 4 is 133 N"
+  },
+  "S8-R20": {
+   "name": "hang_angle_from_vertical_6kg_n1",
+   "value": 3.11,
+   "range": [
+    2.42,
+    4.69
+   ],
+   "dist": "uniform",
+   "unit": "deg",
+   "grade": "computed",
+   "source": "line_shape: weights, cross-flow line drag (Cd 1.1), sensor CdA",
+   "note": "sensor 0.10 m aft and 2.84 m below the exit"
+  },
+  "S8-R21": {
+   "name": "line_aft_of_exit_1kg_n1",
+   "value": 0.56,
+   "range": null,
+   "dist": "point",
+   "unit": "m",
+   "grade": "computed",
+   "source": "line_shape",
+   "note": "light M3 ballast trails further aft: the tail clearance case"
+  },
+  "S8-R22": {
+   "name": "m3_laps_39p1s_lap_12s_stow",
+   "value": 7,
+   "range": null,
+   "dist": "point",
+   "unit": "laps",
+   "grade": "computed",
+   "source": "floor((300 - 8 - stow)/lap)",
+   "note": "7 laps for any stow up to 18.3 s; an 8th lap needs lap <= 35.0 s at 12 s stow"
+  },
+  "S8-R23": {
+   "name": "m3_lap_time_for_8_laps_at_12s_stow",
+   "value": 35.0,
+   "range": null,
+   "dist": "point",
+   "unit": "s",
+   "grade": "computed",
+   "source": "(300 - 8 - 12)/8",
+   "note": "stow gain alone never buys the 8th lap at 39.1 s"
+  },
+  "S8-R24": {
+   "name": "light_intensity_per_light",
+   "value": 223,
+   "range": [
+    100,
+    400
+   ],
+   "dist": "uniform",
+   "unit": "cd",
+   "grade": "estimate",
+   "source": "4 x 3 W LED class, 100 lm/W, 20 % optics, 4.3 sr band",
+   "note": "no primary visibility source read; outdoor test at 150 m"
+  },
+  "S8-R25": {
+   "name": "light_energy_per_m3",
+   "value": 1.4,
+   "range": null,
+   "dist": "point",
+   "unit": "Wh",
+   "grade": "estimate",
+   "source": "SOLID lap 2 then FLASH 50 % duty",
+   "note": "battery at 2x margin"
+  },
+  "S8-R26": {
+   "name": "staging_m2_total_1_unit",
+   "value": 195,
+   "range": [
+    150,
+    240
+   ],
+   "dist": "uniform",
+   "unit": "s",
+   "grade": "estimate",
+   "source": "drill estimate",
+   "note": "3 units 285 s: crowds the 300 s box"
+  },
+  "S8-R27": {
+   "name": "h1_b3_8_savox_S0.9_tech_total",
+   "value": 6.292,
+   "range": [
+    6.188,
+    6.749
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg as-built pads, planning rho 1.075; frozen 6.188 (m 3.0), oracle 6.749, REF-D01 6.3326; tech M2/M3/GM 1.33/2.56/1.40, P(M2) 0.867, mean pick 6.20 kg, P10 2.50"
+  },
+  "S8-R28": {
+   "name": "h1_b3_8_savox_S1.0_tech_total",
+   "value": 6.277,
+   "range": [
+    6.033,
+    6.57
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg as-built pads, planning rho 1.075; frozen 6.033 (m 3.25), oracle 6.570, REF-D01 6.3326; tech M2/M3/GM 1.32/2.53/1.43, P(M2) 0.850, mean pick 6.49 kg, P10 2.50"
+  },
+  "S8-R29": {
+   "name": "h1_b3_8_savox_S1.1_tech_total",
+   "value": 6.016,
+   "range": [
+    5.855,
+    6.42
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg as-built pads, planning rho 1.075; frozen 5.855 (m 3.0), oracle 6.420, REF-D01 6.3326; tech M2/M3/GM 1.23/2.36/1.43, P(M2) 0.792, mean pick 6.50 kg, P10 2.50"
+  },
+  "S8-R30": {
+   "name": "h1_r3_5_savox_S0.9_tech_total",
+   "value": 6.485,
+   "range": [
+    6.345,
+    6.68
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 5.0] kg recut pads, planning rho 1.075; frozen 6.345 (m 3.5), oracle 6.680, REF-D01 6.3326; tech M2/M3/GM 1.40/2.82/1.27, P(M2) 0.950, mean pick 4.66 kg, P10 6.05"
+  },
+  "S8-R31": {
+   "name": "h1_r3_5_savox_S1.0_tech_total",
+   "value": 6.426,
+   "range": [
+    6.277,
+    6.613
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 5.0] kg recut pads, planning rho 1.075; frozen 6.277 (m 3.25), oracle 6.613, REF-D01 6.3326; tech M2/M3/GM 1.38/2.76/1.28, P(M2) 0.933, mean pick 4.71 kg, P10 5.93"
+  },
+  "S8-R32": {
+   "name": "h1_r3_5_savox_S1.1_tech_total",
+   "value": 6.182,
+   "range": [
+    6.07,
+    6.384
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 5.0] kg recut pads, planning rho 1.075; frozen 6.070 (m 3.25), oracle 6.384, REF-D01 6.3326; tech M2/M3/GM 1.31/2.58/1.29, P(M2) 0.867, mean pick 4.78 kg, P10 2.32"
+  },
+  "S8-R33": {
+   "name": "h1_r3_6_hot_S0.9_tech_total",
+   "value": 6.735,
+   "range": [
+    6.34,
+    6.814
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 6.0] kg recut pads, planning rho 1.04; frozen 6.340 (m 3.5), oracle 6.814, REF-D01 6.3326; tech M2/M3/GM 1.44/2.89/1.40, P(M2) 0.975, mean pick 5.46 kg, P10 6.20"
+  },
+  "S8-R34": {
+   "name": "h1_r3_6_hot_S1.0_tech_total",
+   "value": 6.697,
+   "range": [
+    6.239,
+    6.74
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 6.0] kg recut pads, planning rho 1.04; frozen 6.239 (m 3.0), oracle 6.740, REF-D01 6.3326; tech M2/M3/GM 1.43/2.86/1.41, P(M2) 0.967, mean pick 5.50 kg, P10 6.07"
+  },
+  "S8-R35": {
+   "name": "h1_r3_6_hot_S1.1_tech_total",
+   "value": 6.497,
+   "range": [
+    6.068,
+    6.511
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 6.0] kg recut pads, planning rho 1.04; frozen 6.068 (m 3.25), oracle 6.511, REF-D01 6.3326; tech M2/M3/GM 1.37/2.72/1.41, P(M2) 0.917, mean pick 5.55 kg, P10 5.85"
+  },
+  "S8-R36": {
+   "name": "h1_r3_6_hot_S12_S1.2_tech_total",
+   "value": 6.312,
+   "range": [
+    5.853,
+    6.354
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 6.0] kg recut pads, planning rho 1.04; frozen 5.853 (m 3.5), oracle 6.354, REF-D01 6.3326; tech M2/M3/GM 1.30/2.60/1.41, P(M2) 0.875, mean pick 5.55 kg, P10 2.49"
+  },
+  "S8-R37": {
+   "name": "h1_r3_6_savox_S0.9_tech_total",
+   "value": 6.561,
+   "range": [
+    6.34,
+    6.814
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 6.0] kg recut pads, planning rho 1.075; frozen 6.340 (m 3.5), oracle 6.814, REF-D01 6.3326; tech M2/M3/GM 1.39/2.77/1.41, P(M2) 0.933, mean pick 5.52 kg, P10 6.03"
+  },
+  "S8-R38": {
+   "name": "h1_r3_6_savox_S1.0_tech_total",
+   "value": 6.568,
+   "range": [
+    6.239,
+    6.74
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 6.0] kg recut pads, planning rho 1.075; frozen 6.239 (m 3.0), oracle 6.740, REF-D01 6.3326; tech M2/M3/GM 1.39/2.77/1.41, P(M2) 0.933, mean pick 5.56 kg, P10 5.86"
+  },
+  "S8-R39": {
+   "name": "h1_r3_6_savox_S1.1_tech_total",
+   "value": 6.363,
+   "range": [
+    6.068,
+    6.511
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 6.0] kg recut pads, planning rho 1.075; frozen 6.068 (m 3.25), oracle 6.511, REF-D01 6.3326; tech M2/M3/GM 1.32/2.63/1.41, P(M2) 0.883, mean pick 5.55 kg, P10 2.49"
+  },
+  "S8-R40": {
+   "name": "h1_r3_8_hot_S0.9_tech_total",
+   "value": 6.764,
+   "range": [
+    6.297,
+    6.798
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.04; frozen 6.297 (m 3.25), oracle 6.798, REF-D01 6.3326; tech M2/M3/GM 1.48/2.89/1.40, P(M2) 0.975, mean pick 6.13 kg, P10 6.09"
+  },
+  "S8-R41": {
+   "name": "h1_r3_8_hot_S1.0_tech_total",
+   "value": 6.702,
+   "range": [
+    6.197,
+    6.754
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.04; frozen 6.197 (m 3.0), oracle 6.754, REF-D01 6.3326; tech M2/M3/GM 1.46/2.83/1.41, P(M2) 0.958, mean pick 6.34 kg, P10 5.92"
+  },
+  "S8-R42": {
+   "name": "h1_r3_8_hot_S1.1_tech_total",
+   "value": 6.53,
+   "range": [
+    5.987,
+    6.545
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.04; frozen 5.987 (m 3.0), oracle 6.545, REF-D01 6.3326; tech M2/M3/GM 1.39/2.71/1.42, P(M2) 0.917, mean pick 6.40 kg, P10 5.78"
+  },
+  "S8-R43": {
+   "name": "h1_r3_8_hot_S12_S1.2_tech_total",
+   "value": 6.341,
+   "range": [
+    5.833,
+    6.38
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.04; frozen 5.833 (m 3.0), oracle 6.380, REF-D01 6.3326; tech M2/M3/GM 1.33/2.59/1.42, P(M2) 0.875, mean pick 6.39 kg, P10 2.50"
+  },
+  "S8-R44": {
+   "name": "h1_r3_8_neo_S0.9_tech_total",
+   "value": 6.268,
+   "range": [
+    6.176,
+    6.719
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.075; frozen 6.176 (m 3.0), oracle 6.719, REF-D01 6.3326; tech M2/M3/GM 1.30/2.57/1.39, P(M2) 0.867, mean pick 6.07 kg, P10 2.50"
+  },
+  "S8-R45": {
+   "name": "h1_r3_8_neo_S1.0_tech_total",
+   "value": 6.287,
+   "range": [
+    6.034,
+    6.546
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.075; frozen 6.034 (m 3.25), oracle 6.546, REF-D01 6.3326; tech M2/M3/GM 1.31/2.55/1.43, P(M2) 0.858, mean pick 6.39 kg, P10 2.50"
+  },
+  "S8-R46": {
+   "name": "h1_r3_8_neo_S1.1_tech_total",
+   "value": 6.175,
+   "range": [
+    5.851,
+    6.398
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.075; frozen 5.851 (m 3.0), oracle 6.398, REF-D01 6.3326; tech M2/M3/GM 1.26/2.48/1.43, P(M2) 0.833, mean pick 6.44 kg, P10 2.50"
+  },
+  "S8-R47": {
+   "name": "h1_r3_8_savox_S0.9_tech_total",
+   "value": 6.416,
+   "range": [
+    6.297,
+    6.798
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.075; frozen 6.297 (m 3.25), oracle 6.798, REF-D01 6.3326; tech M2/M3/GM 1.36/2.64/1.42, P(M2) 0.892, mean pick 6.34 kg, P10 2.50"
+  },
+  "S8-R48": {
+   "name": "h1_r3_8_savox_S1.0_tech_total",
+   "value": 6.467,
+   "range": [
+    6.197,
+    6.754
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.075; frozen 6.197 (m 3.0), oracle 6.754, REF-D01 6.3326; tech M2/M3/GM 1.38/2.66/1.42, P(M2) 0.900, mean pick 6.45 kg, P10 5.41"
+  },
+  "S8-R49": {
+   "name": "h1_r3_8_savox_S1.1_tech_total",
+   "value": 6.258,
+   "range": [
+    5.987,
+    6.545
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [3.0, 8.0] kg recut pads, planning rho 1.075; frozen 5.987 (m 3.0), oracle 6.545, REF-D01 6.3326; tech M2/M3/GM 1.30/2.52/1.43, P(M2) 0.850, mean pick 6.52 kg, P10 2.50"
+  },
+  "S8-R50": {
+   "name": "h1_r44_10_savox_S0.9_tech_total",
+   "value": 5.788,
+   "range": [
+    5.89,
+    6.215
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [4.4, 10.0] kg recut pads, planning rho 1.075; frozen 5.890 (m 4.9), oracle 6.215, REF-D01 6.3326; tech M2/M3/GM 1.14/2.17/1.47, P(M2) 0.725, mean pick 6.82 kg, P10 2.50"
+  },
+  "S8-R51": {
+   "name": "h1_r44_10_savox_S1.0_tech_total",
+   "value": 5.99,
+   "range": [
+    5.883,
+    6.219
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [4.4, 10.0] kg recut pads, planning rho 1.075; frozen 5.883 (m 4.4), oracle 6.219, REF-D01 6.3326; tech M2/M3/GM 1.21/2.30/1.48, P(M2) 0.767, mean pick 7.01 kg, P10 2.50"
+  },
+  "S8-R52": {
+   "name": "h1_r44_10_savox_S1.1_tech_total",
+   "value": 5.953,
+   "range": [
+    5.795,
+    6.104
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "h1_study + S12 adapter, 120 paired draws (seed 2027), expected field, ONE container per range",
+   "note": "range [4.4, 10.0] kg recut pads, planning rho 1.075; frozen 5.795 (m 4.9), oracle 6.104, REF-D01 6.3326; tech M2/M3/GM 1.20/2.27/1.48, P(M2) 0.758, mean pick 7.04 kg, P10 2.50"
+  }
+ }
+}

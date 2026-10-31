@@ -5,7 +5,7 @@
 # team, then set confirmed = true; until then the chart carries a DRAFT tag.
 # label: the text in the box; "\n" breaks the line.
 
-confirmed = false
+confirmed = true
 
 [[unit]]
 id = "advisor"

@@ -1,0 +1,17 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      caseParameters;
+}
+// Written by cfd/tools/prep_geometry.py from case.toml. 
+
+UMag        26.5;     // m/s
+nuAir       1.761e-05;    // m2/s
+rhoDesign   1.064;   // kg/m3 (forces are reported with it; the solver is incompressible)
+alphas      (0 4 8 12 10 6 2 -2 -4);   // deg, body axis
+kInf        0.0042135;        // 1.5 (Tu U)^2, Tu = 0.002
+omegaInf    23.9267;       // k / (nu_t/nu * nu), nu_t/nu = 10.0
+ReThetatInf 1061.11;    // Langtry-Menter correlation at Tu = 0.20 %
+gammaIntInf 1;
+nIter       1000;   // SIMPLE iterations per angle

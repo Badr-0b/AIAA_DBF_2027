@@ -1,0 +1,112 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : potentialFoam -parallel
+Date   : Oct 24 2026
+Time   : 21:44:20
+Host   : "DESKTOP-949FKM6"
+PID    : 1164
+I/O    : uncollated
+Case   : /home/nitro/dbf_cfd/rq4_mock
+nProcs : 6
+Slaves : 
+5
+(
+"DESKTOP-949FKM6.1165"
+"DESKTOP-949FKM6.1166"
+"DESKTOP-949FKM6.1167"
+"DESKTOP-949FKM6.1168"
+"DESKTOP-949FKM6.1169"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading velocity field U
+
+Constructing pressure field p
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    farfield
+    {
+        type            freestreamPressure;
+        freestreamValue nonuniform List<scalar> 0();
+        supersonic      false;
+        value           nonuniform List<scalar> 0();
+    }
+    midPlane
+    {
+        type            symmetryPlane;
+    }
+    nacelle
+    {
+        type            zeroGradient;
+    }
+    vtail
+    {
+        type            zeroGradient;
+    }
+    wing
+    {
+        type            zeroGradient;
+    }
+    fuselage
+    {
+        type            zeroGradient;
+    }
+    procBoundary0to2
+    {
+        type            processor;
+        value           uniform 0;
+    }
+    procBoundary0to3
+    {
+        type            processor;
+        value           uniform 0;
+    }
+}
+
+Constructing velocity potential field Phi
+
+No MRF regions present
+
+Calculating potential flow
+GAMG:  Solving for Phi, Initial residual = 1, Final residual = 9.9277335e-08, No Iterations 190
+GAMG:  Solving for Phi, Initial residual = 0.00015422358, Final residual = 9.1375878e-08, No Iterations 10
+GAMG:  Solving for Phi, Initial residual = 1.5826787e-05, Final residual = 8.6813823e-08, No Iterations 6
+GAMG:  Solving for Phi, Initial residual = 6.0679461e-06, Final residual = 9.2335086e-08, No Iterations 4
+GAMG:  Solving for Phi, Initial residual = 3.0938283e-06, Final residual = 7.6847216e-08, No Iterations 4
+GAMG:  Solving for Phi, Initial residual = 1.7977768e-06, Final residual = 8.1406114e-08, No Iterations 3
+GAMG:  Solving for Phi, Initial residual = 1.1328195e-06, Final residual = 6.9048286e-08, No Iterations 3
+GAMG:  Solving for Phi, Initial residual = 7.9427481e-07, Final residual = 8.218686e-08, No Iterations 2
+GAMG:  Solving for Phi, Initial residual = 5.8127369e-07, Final residual = 6.8653349e-08, No Iterations 2
+GAMG:  Solving for Phi, Initial residual = 4.6600395e-07, Final residual = 5.981607e-08, No Iterations 2
+GAMG:  Solving for Phi, Initial residual = 3.8238957e-07, Final residual = 8.8680568e-08, No Iterations 1
+Continuity error = 5.7514941e-07
+Interpolated velocity error = 0.00014266415
+ExecutionTime = 36.013623 s  ClockTime = 37 s
+
+End
+
+Finalising parallel run

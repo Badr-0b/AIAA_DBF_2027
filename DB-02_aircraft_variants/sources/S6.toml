@@ -1,0 +1,52 @@
+# S6 propulsion: fuse sources behind card A-03 (read 29 Oct 2026 by the S6 stream, see src/propulsion/model.py FUSES).
+# Added 30 Oct 2026: the rev A PDF graded these values but did not list them. nature: MEASURED, SPEC, COMPUTED, RULE, METHOD.
+
+[[source]]
+id = "S6-LF-MAXI32"
+title = "MAXI Blade Fuse Rated 32V, series 0299 (datasheet)"
+author = "Littelfuse"
+year = 2026
+url = "https://static.chipdip.ru/lib/649/DOC028649404.pdf (mirror; littelfuse.com refused scripted access)"
+date_read = "2026-10-29"
+used = "voltage rating 32 V DC, 1000 A interrupting rating at 32 V DC, ratings 20-80 A"
+nature = "SPEC"
+
+[[source]]
+id = "S6-LF-SMARTGLOW"
+title = "Indicator MAXI Smart Glow fuse, Rated 32 V DC, rev 5/03/2023; Digikey listings 0MAX100.HXGLO and 0MAX100.XPGLO"
+author = "Littelfuse; Digi-Key"
+year = 2023
+url = "https://www.digikey.com (keyword 0MAX100); datasheet via Digikey-hosted copy"
+date_read = "2026-10-29"
+used = "the only 100 A MAXI blade found is rated 32 V DC (value F-FUSE-100-32)"
+nature = "SPEC"
+
+[[source]]
+id = "S6-LF-MAXI58"
+title = "MAXI 58V Slo-Blo series 0999, part 0999080.ZXN (reseller listing)"
+author = "Digi-Key (Littelfuse product)"
+year = 2026
+url = "https://www.digikey.com (part 0999080ZXN); littelfuse.com series page returned HTTP 403"
+date_read = "2026-10-29"
+used = "80 A at 58 V DC, 1 kA breaking capacity; series stops at 80 A (value F-FUSE-58-MAXA, reseller grade)"
+nature = "SPEC"
+
+[[source]]
+id = "S6-ESKA-58V"
+title = "ESKA 343.400-58V MAXI blade fuse range"
+author = "ESKA (summarised from soselectronic.com listings)"
+year = 2020
+url = "https://www.soselectronic.com (ESKA 343.400 series); datasheet PDF HTTP 403, not read"
+date_read = "2026-10-29"
+used = "100 A at 58 V listed 'available on request' only; stock and lead time unknown (card A-03 flip condition)"
+nature = "SPEC"
+
+[[source]]
+id = "S6-RULES-FUSE"
+title = "2026-27 DBF rules draft, 2 Sep 2026, section 3.2 propulsion: fuse type, harness and rating"
+author = "AIAA"
+year = 2026
+url = "REPO/rules/2027_DBF_Rules_Draft.pdf (layout text analysis/data/raw/aiaa-dbf-2027-rules-draft.layout.txt)"
+date_read = "2026-10-30"
+used = "L750 one fuse per system; L754-755 blade style in a separate harness; L776-777 rating up to the pack's continuous rating, max 100 A; no voltage rating stated"
+nature = "RULE"

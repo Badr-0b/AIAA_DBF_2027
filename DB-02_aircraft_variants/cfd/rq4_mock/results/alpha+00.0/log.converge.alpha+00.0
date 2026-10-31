@@ -1,0 +1,5 @@
+watching /home/nitro/dbf_cfd/rq4_mock: min 600 iterations, window 200, tolerance x1
+--- replaced: CONV_SPREAD 2 from 23:10
+watching /home/nitro/dbf_cfd/rq4_mock: min 600 iterations, window 200, tolerance x1, spread x2
+599: CL 0.48967 spread 0.0046 drift 0.00024 | CD 0.054533 spread 0.00045 drift 4.5e-05 | drift tol 0.0024, 0.00055, spread x2 -> flat
+flat at iteration 599: stopAt writeNow

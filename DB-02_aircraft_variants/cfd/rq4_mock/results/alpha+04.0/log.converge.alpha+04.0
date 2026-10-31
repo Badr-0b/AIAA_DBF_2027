@@ -1,0 +1,27 @@
+watching /home/nitro/dbf_cfd/rq4_mock: min 300 iterations, window 200, tolerance x1, spread x2
+watching /home/nitro/dbf_cfd/rq4_mock: min 300 iterations, window 200, tolerance x1, spread x2
+watching /home/nitro/dbf_cfd/rq4_mock: min 300 iterations, window 200, tolerance x1, spread x2
+399: CL 0.78599 spread 0.0075 drift 0.0095 | CD 0.076338 spread 0.00032 drift 0.0038 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+403: CL 0.78589 spread 0.007 drift 0.0035 | CD 0.076334 spread 0.00032 drift 0.0035 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+406: CL 0.78584 spread 0.0063 drift 3.9e-05 | CD 0.076332 spread 0.00032 drift 0.0033 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+410: CL 0.78580 spread 0.0051 drift 0.0017 | CD 0.076333 spread 0.00037 drift 0.0028 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+414: CL 0.78579 spread 0.0049 drift 0.00011 | CD 0.076338 spread 0.00045 drift 0.0024 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+417: CL 0.78580 spread 0.0049 drift 0.0016 | CD 0.076341 spread 0.00045 drift 0.0022 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+421: CL 0.78581 spread 0.0049 drift 0.0032 | CD 0.076344 spread 0.00045 drift 0.0022 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+425: CL 0.78582 spread 0.0049 drift 0.0044 | CD 0.076346 spread 0.00045 drift 0.0021 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+428: CL 0.78583 spread 0.0049 drift 0.0053 | CD 0.076347 spread 0.00045 drift 0.002 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+432: CL 0.78587 spread 0.0049 drift 0.0066 | CD 0.076349 spread 0.00045 drift 0.0018 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+436: CL 0.78592 spread 0.0049 drift 0.0079 | CD 0.076352 spread 0.00045 drift 0.0016 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+439: CL 0.78595 spread 0.0045 drift 0.0088 | CD 0.076355 spread 0.00045 drift 0.0015 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+443: CL 0.78598 spread 0.0034 drift 0.0098 | CD 0.076358 spread 0.00045 drift 0.0013 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+447: CL 0.78598 spread 0.003 drift 0.011 | CD 0.076360 spread 0.00045 drift 0.0011 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+450: CL 0.78597 spread 0.003 drift 0.011 | CD 0.076360 spread 0.00045 drift 0.00094 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+454: CL 0.78594 spread 0.003 drift 0.011 | CD 0.076360 spread 0.00045 drift 0.00076 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+458: CL 0.78592 spread 0.003 drift 0.01 | CD 0.076360 spread 0.00045 drift 0.00061 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+461: CL 0.78591 spread 0.003 drift 0.0095 | CD 0.076360 spread 0.00045 drift 0.00054 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+465: CL 0.78588 spread 0.003 drift 0.008 | CD 0.076360 spread 0.00045 drift 0.00047 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+468: CL 0.78585 spread 0.003 drift 0.0068 | CD 0.076362 spread 0.00045 drift 0.00043 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+472: CL 0.78580 spread 0.003 drift 0.0052 | CD 0.076364 spread 0.00045 drift 0.00037 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+475: CL 0.78576 spread 0.003 drift 0.0042 | CD 0.076365 spread 0.00045 drift 0.00032 | drift tol 0.0039, 0.00076, spread x2 -> not yet
+479: CL 0.78570 spread 0.0026 drift 0.0029 | CD 0.076365 spread 0.00045 drift 0.00028 | drift tol 0.0039, 0.00076, spread x2 -> flat
+flat at iteration 479: stopAt writeNow

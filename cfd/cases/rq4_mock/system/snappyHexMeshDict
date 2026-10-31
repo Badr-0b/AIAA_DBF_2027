@@ -1,0 +1,154 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Levels, boxes, layer sizes and the inside point come from prep_geometry.py.
+#include "$FOAM_CASE/constant/geometry/reference"
+#includeEtc "caseDicts/mesh/generation/snappyHexMeshDict.cfg"
+
+// Pass 1 (this dictionary): castellate and snap. Pass 2 (snappyHexMeshDict.layers) adds the prism
+// layers on the snapped mesh with a relaxed tet-quality check; Allrun runs both.
+castellatedMesh on;
+snap            on;
+addLayers       off;
+
+geometry
+{
+    aircraft
+    {
+        type triSurface;
+        file "rq4_mock.obj";
+        regions
+        {
+            wing     { name wing; }
+            fuselage { name fuselage; }
+            vtail    { name vtail; }
+            nacelle  { name nacelle; }
+        }
+    }
+    near
+    {
+        type box;
+        min  $nearMin;
+        max  $nearMax;
+    }
+    wake
+    {
+        type box;
+        min  $wakeMin;
+        max  $wakeMax;
+    }
+};
+
+castellatedMeshControls
+{
+    maxLocalCells       2000000;
+    maxGlobalCells      8000000;
+    nCellsBetweenLevels 3;
+
+    features
+    (
+        {
+            file  "rq4_mock.eMesh";
+            level $featureLevel;
+        }
+    );
+
+    refinementSurfaces
+    {
+        aircraft
+        {
+            level $surfaceLevel;
+            regions
+            {
+                nacelle { level $nacelleLevel; }    // thin duct wall and mount plates
+            }
+            patchInfo
+            {
+                type     wall;
+                inGroups (aircraft);
+            }
+        }
+    }
+
+    resolveFeatureAngle 30;
+
+    refinementRegions
+    {
+        aircraft
+        {
+            mode   distance;
+            levels $distLevels;
+        }
+        near
+        {
+            mode  inside;
+            level $nearLevel;
+        }
+        wake
+        {
+            mode  inside;
+            level $wakeLevel;
+        }
+    }
+
+    insidePoint $locationInMesh;
+}
+
+snapControls
+{
+    nSmoothPatch    3;
+    tolerance       2.0;
+    nSolveIter      100;
+    nRelaxIter      5;
+    nFeatureSnapIter 15;
+    implicitFeatureSnap    false;
+    explicitFeatureSnap    true;
+    multiRegionFeatureSnap false;
+}
+
+addLayersControls
+{
+    relativeSizes   false;      // absolute sizes: first layer set for y+ ~ 1
+    layers
+    {
+        "(wing|fuselage|vtail|nacelle)"
+        {
+            nSurfaceLayers $nLayers;
+        }
+    }
+    firstLayerThickness $firstLayerThickness;
+    expansionRatio      $expansionRatio;
+    minThickness        $minLayerThickness;
+    featureAngle        130;    // keep layers round the wing trailing edge
+    maxThicknessToMedialRatio 0.5;
+}
+
+meshQualityControls
+{
+    #include "meshQualityDict"
+    relaxed
+    {
+        maxNonOrtho 75;
+    }
+}
+
+writeFlags
+(
+    scalarLevels
+    layerSets
+    layerFields
+);
+
+// ************************************************************************* //

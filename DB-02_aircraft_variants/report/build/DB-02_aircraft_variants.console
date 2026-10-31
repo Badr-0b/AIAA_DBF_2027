@@ -1,0 +1,313 @@
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(DB-02_aircraft_variants.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(C:/Users/Nitro/Documents/GitHub/AIAA_DBF/design-system/latex\dbfdoc.cls
+Document Class: dbfdoc 2026/10/06 v1.0 DBF team document class
+
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+)) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def)
+ (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
+ex.def)))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex
+.sty (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
+)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-ma
+th.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-ma
+th-xetex.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
+eys2e.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/base\fix-cm.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1enc.def))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-ma
+th-table.tex)))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-xet
+ex.def)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cfg
+))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-savepos.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty))
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg)))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/sttools\stfloats.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/tabularray\tabularray.s
+ty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/ninecolors\ninecolors.s
+ty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty)
+(C:/Users/Nitro/Documents/GitHub/AIAA_DBF/design-system/latex\dbf-identity.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.sty
+
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemodern
+.sty) 
+))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-xetex.def
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-dvipdfmx.def
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def))))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex)))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/translations\translatio
+ns.sty)
+Include code introduced on 2026-09-12
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty)))
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty)))) (C:/Users/Nitro/Documents/GitHub/AIAA_DBF/decisions\dbfbrief.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty)
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
+)) (dbfdossier.sty
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarycalc.code.tex)) (data/numbers.tex) (data/cover.tex)
+(C:\Users\Nitro\Documents\GitHub\AIAA_DBF\DB-02_aircraft_variants\report\build\
+DB-02_aircraft_variants.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+
+(C:\Users\Nitro\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tran
+slations-basic-dictionary-english.trsl)
+(C:\Users\Nitro\Documents\GitHub\AIAA_DBF\DB-02_aircraft_variants\report\build\
+DB-02_aircraft_variants.out)
+(C:\Users\Nitro\Documents\GitHub\AIAA_DBF\DB-02_aircraft_variants\report\build\
+DB-02_aircraft_variants.out)
+Underfull \hbox (badness 7814) in paragraph at lines 27--27
+ [][][]\TU/GeistMono(4)/m/n/7 P(TOP OF FIELD) 0.313
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+ []\TU/GeistMono(4)/m/n/7 MEAN TOTAL 6.76
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+ []\TU/GeistMono(4)/m/n/7 DB-01 CONTROL 0.128[]
+
+Underfull \hbox (badness 7814) in paragraph at lines 27--27
+ [][][]\TU/GeistMono(4)/m/n/7 P(TOP OF FIELD) 0.295
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+ []\TU/GeistMono(4)/m/n/7 MEAN TOTAL 6.71
+
+Underfull \hbox (badness 5939) in paragraph at lines 27--27
+ []\TU/GeistMono(4)/m/n/7 SWITCH GATE 15 JAN 2027[]
+[1] (sections/00_register.tex) (sections/01_summary.tex [2] [3]) [4] [5]
+(sections/02_wins.tex [6]) (sections/03_changed.tex [7] [8])
+(sections/04_method.tex [9] [10] [11]) [12] [13] (sections/05_space.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15]) [16] [17] (sections/06_shared.tex [18] [19] [20])
+(sections/07_variantA.tex [21] [22] [23] [24] [25] [26]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (sections/08_variantB.tex [27] [28] [29] [30] [31] [32]) (sections/09_h2h.tex
+ [33] [34] (data/h2h_table.tex) [35] [36]) (sections/10_playbook.tex [37])
+(sections/11_tests.tex [38]) (sections/12_back.tex [39] [40]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(data/sources.tex [41] [42] [43] [44] [45])) [46]
+
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+
+(C:\Users\Nitro\Documents\GitHub\AIAA_DBF\DB-02_aircraft_variants\report\build\
+DB-02_aircraft_variants.aux)miktex-dvipdfmx: major issue: So far, you have not checked for MiKTeX updates.
+ )
+(see the transcript file for additional information)
+Output written on C:\Users\Nitro\Documents\GitHub\AIAA_DBF\DB-02_aircraft_varia
+nts\report\build\DB-02_aircraft_variants.pdf (46 pages).
+Transcript written on C:\Users\Nitro\Documents\GitHub\AIAA_DBF\DB-02_aircraft_v
+ariants\report\build\DB-02_aircraft_variants.log.
+xelatex: major issue: So far, you have not checked for MiKTeX updates.

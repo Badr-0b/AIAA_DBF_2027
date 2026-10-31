@@ -1,0 +1,38 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Pass 2: prism layers on the snapped mesh from pass 1 (snappyHexMesh -dict system/snappyHexMeshDict.layers).
+// Same settings, with the face-decomposition tet check off: the ~10 um y+ = 1 prisms on the curved
+// skin failed it at ~24,000 faces, and those faces were left with no layers (y+ 40-55 there, wing
+// mean 4.5 at the 1.82 m span). The check guards particle tracking, not the finite-volume solve;
+// pass 1 keeps it, so snapping cannot fold cells.
+#include "snappyHexMeshDict"
+
+castellatedMesh off;
+snap            off;
+addLayers       on;
+
+meshQualityControls
+{
+    #include "meshQualityDict"
+    minTetQuality   -1e30;
+    minVol          1e-18;      // pyramid check back on (default -1e30 = off): no inverted cells (layer pyramids ~1e-11 m3)
+    relaxed
+    {
+        maxNonOrtho 75;
+    }
+}
+
+// ************************************************************************* //

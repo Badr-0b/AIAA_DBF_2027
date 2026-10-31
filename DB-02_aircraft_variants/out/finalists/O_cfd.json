@@ -1,0 +1,175 @@
+{
+ "schema": 1,
+ "stream": "CFD",
+ "generated": "2026-10-29",
+ "items": {
+  "CFD-R01": {
+   "name": "S_ref",
+   "value": 0.231979,
+   "unit": "m2",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R02": {
+   "name": "AR",
+   "value": 14.28,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R03": {
+   "name": "MAC",
+   "value": 0.12812,
+   "unit": "m",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R04": {
+   "name": "CL_a0",
+   "value": 0.4897,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R05": {
+   "name": "CD_a0",
+   "value": 0.05453,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R06": {
+   "name": "LD_a0",
+   "value": 9.0,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R07": {
+   "name": "CL_a4",
+   "value": 0.7857,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R08": {
+   "name": "CD_a4",
+   "value": 0.07636,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R09": {
+   "name": "LD_a4",
+   "value": 10.3,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R10": {
+   "name": "CL_a8",
+   "value": 0.8898,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R11": {
+   "name": "CD_a8",
+   "value": 0.14563,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R12": {
+   "name": "CL_a12",
+   "value": 0.8956,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R13": {
+   "name": "CD_a12",
+   "value": 0.24501,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R14": {
+   "name": "CLmax_indicative",
+   "value": 0.89,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": "between 8 and 12 deg body; stalled at 12"
+  },
+  "CFD-R15": {
+   "name": "stall_speed_7kg",
+   "value": 24.921384353777658,
+   "unit": "m/s",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": "from CL 0.896 at rho 1.064"
+  },
+  "CFD-R16": {
+   "name": "cells",
+   "value": 2.58,
+   "unit": "M",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R17": {
+   "name": "yplus_mean_worst",
+   "value": 5.8,
+   "unit": "-",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": "target 1.5"
+  },
+  "CFD-R18": {
+   "name": "drag_share_wing_a0",
+   "value": 44,
+   "unit": "%",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R19": {
+   "name": "drag_share_fuselage_a0",
+   "value": 29,
+   "unit": "%",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R20": {
+   "name": "drag_share_nacelle_a0",
+   "value": 24,
+   "unit": "%",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  },
+  "CFD-R21": {
+   "name": "cla_0_4_per_deg",
+   "value": 0.074,
+   "unit": "1/deg",
+   "grade": "computed",
+   "source": "cfd/rq4_mock RESULTS.md (OpenFOAM 14 kOmegaSSTLM, 2.58 M cells, 26.5 m/s, mean of last 200 iterations); WP-01 verdict CHECK",
+   "note": ""
+  }
+ }
+}

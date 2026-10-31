@@ -1,0 +1,111 @@
+# S8 payload: sources read or used (29 Oct 2026 unless stated). nature: MEASURED, SPEC, COMPUTED, RULE, METHOD.
+
+[[source]]
+id = "S8-MILHDBK304B"
+title = "MIL-HDBK-304B, Package Cushioning Design, Appendix V Graphs 10.36, 10.42, 10.48 (polyethylene 2 pcf)"
+author = "U.S. Department of Defense (data by AFPEA, Wright-Patterson AFB)"
+year = 1978
+url = "https://everyspec.com/MIL-HDBK/MIL-HDBK-0300-0499/MIL_HDBK_304B_1778/"
+date_read = "2026-10-16 (minima, REPO analysis/data/cushion_pe2.toml); 2026-10-29 (curve shape, page 251 re-rendered)"
+used = "minimum peak g per thickness at 36-48 in drops (verified); normalised curve shape g/gmin versus stress/stress_opt read by eye from curves 3 and 4 (estimate, +-10 %)"
+nature = "MEASURED"
+
+[[source]]
+id = "S8-RULES"
+title = "2026-27 DBF rules draft, 2 Sep 2026, sections 3.1.1-3.1.3, 3.3.4, Figure 1"
+author = "AIAA"
+year = 2026
+url = "REPO/rules/2027_DBF_Rules_Draft.pdf (layout text analysis/data/raw/aiaa-dbf-2027-rules-draft.layout.txt)"
+date_read = "2026-10-29"
+used = "L438-453 sensor, L538-542 ring-to-bottom 15 in, L556-560 simulators, L996-1008 Ground Mission, L1002 whole inches"
+nature = "RULE"
+
+[[source]]
+id = "S8-ASTM-B777"
+title = "ASTM B777-15 (reapproved 2026), Tungsten Base High-Density Metal; GS Alloy datasheet"
+author = "ASTM International; GS Alloy"
+year = 2026
+url = "https://gsalloy.com/product/astm-b777-tungsten-high-density-metal/"
+date_read = "2026-10-29"
+used = "density classes 1-4: 16.85-17.25, 17.15-17.85, 17.75-18.35, 18.25-18.85 g/cc; design value 17.0 g/cc"
+nature = "SPEC"
+
+[[source]]
+id = "S8-TUNGSTEN-RETAIL"
+title = "tungsten.com 1 lb bags of tungsten alloy shot and cubes, 17.6 g/cc, US$499.99-799.99"
+author = "tungsten.com (reseller)"
+year = 2026
+url = "https://shop.tungsten.com/tungsten-alloy-cubes-various-mm-sizes-industrial-use-1-lb-bags/"
+date_read = "2026-10-29"
+used = "retail price band US$1100-1800 per kg (computed); grade reseller. Bulk 95WNiFe rod US$58-65/kg, 5 kg MOQ is an unverified marketplace listing (estimate)"
+nature = "SPEC"
+
+[[source]]
+id = "S8-TUNGSTEN-PUTTY"
+title = "Tungsten putty 1 oz, minimum density 10 g/cc, US$6.25"
+author = "Maximum Velocity (reseller); Pinewood Pro US$10.95"
+year = 2026
+url = "https://maximum-velocity.com/product/tungsten-putty-1-ounce"
+date_read = "2026-10-29"
+used = "putty density and price for fine-trim ballast"
+nature = "SPEC"
+
+[[source]]
+id = "S8-LEAD"
+title = "Lead ingot US$0.89-1.17 per lb; density 11.34 g/cc"
+author = "Expert Market Research (Q2 2026); Argus Media (12 Jan 2026); density from standard handbooks (not re-read)"
+year = 2026
+url = "https://www.argusmedia.com/metals-platform/price/assessment/lead-ingot-primary-99-97--del-us-transaction-prices-PA00229370000"
+date_read = "2026-10-29"
+used = "commodity price band (reseller grade); density grade estimate"
+nature = "SPEC"
+
+[[source]]
+id = "S8-SK78-LINE"
+title = "SK78 12-strand 2 mm line: break 399-410 kgf, 1.8 g/m"
+author = "Murray's (Robline mini spool, 880 lb); Binks Marine (Liros 410 kg)"
+year = 2026
+url = "https://murrays.com/products/sk78-mini-spool-2mm-dyneema-lashing-line"
+date_read = "2026-10-29"
+used = "reference strength 3.9 kN at 2 mm, scaled with d^2 for the strength member (scaling estimate)"
+nature = "SPEC"
+
+[[source]]
+id = "S8-POLOLU-4756"
+title = "Pololu 131:1 metal gearmotor 37Dx73L mm 12 V, 64 CPR encoder (#4756): 76 rpm, 45 kg-cm stall (extrapolated)"
+author = "Pololu; Core Electronics listing"
+year = 2026
+url = "https://www.pololu.com/product/4756/specs"
+date_read = "2026-10-29"
+used = "added drive 37d_131 and the 2x variant for heavier sensors (grade reseller for the search summary)"
+nature = "SPEC"
+
+[[source]]
+id = "S8-DRTRADE"
+title = "DB-01 D&R trade inputs and report (dr_trade.toml, dr_trade_report.txt)"
+author = "team analysis (Claude), 14 Oct 2026"
+year = 2026
+url = "REPO/analysis/inputs/dr_trade.toml"
+date_read = "2026-10-29"
+used = "drives, parts masses, tension, drum sizing checks (imported read-only through s5_tow)"
+nature = "COMPUTED"
+
+[[source]]
+id = "S8-BARROWMAN"
+title = "The Theoretical Prediction of the Center of Pressure (Barrowman and Barrowman), NARAM-8"
+author = "J. Barrowman, B. Barrowman"
+year = 1967
+url = "https://www.apogeerockets.com/education/downloads/Barrowman_Report.pdf"
+date_read = "formulae applied from the method; paper not re-read this session"
+used = "nose CNa 2, CP 0.466 L (ogive); 4-fin trapezoid CNa and CP; subsonic"
+nature = "METHOD"
+
+[[source]]
+id = "S8-NACA-TM832"
+title = "NACA TM 832 towed-body guidance (heavy, compact, damped, small fins far aft), as cited in brief section 5"
+author = "NACA"
+year = 1937
+url = "not re-read; cited in the orchestrator brief"
+date_read = "not read by S8"
+used = "design guidance only; no number taken from it"
+nature = "METHOD"

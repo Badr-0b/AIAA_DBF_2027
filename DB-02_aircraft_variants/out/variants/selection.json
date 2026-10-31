@@ -1,0 +1,18 @@
+{
+ "A": {
+  "cid": "S10F8",
+  "S": 1.0,
+  "flap": "fowler",
+  "m_hi": 8.0,
+  "prop": "8s",
+  "container_kg": 1.183535503748054
+ },
+ "B": {
+  "cid": "S12S6",
+  "S": 1.2,
+  "flap": "slotted",
+  "m_hi": 6.0,
+  "prop": "8s",
+  "container_kg": 1.0040516534016233
+ }
+}

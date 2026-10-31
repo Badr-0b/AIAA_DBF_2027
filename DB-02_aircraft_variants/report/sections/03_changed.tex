@@ -1,0 +1,33 @@
+% Chapter: what changed since DB-01
+\section{What changed since DB-01}
+
+\subsection{Why this chapter exists}
+DB-01 (14 October) recommended a 0.9~m² straight flapped wing, a 4~kg payload unit, a waived Mission~1, a high wing, a conventional tail, fixed tricycle gear, a single tractor and a closed-loop drum, with a mean of 6.33 of the 7.5 available mission points. None of it was signed. Since then five evidence streams have tested its inputs. Some held, some were optimistic, and one change of method moved the answer more than all the corrections together. Table~\ref{tab:changed} lists them; the cards that follow explain the three that matter most.
+
+\begin{widetable}[h]{Every DB-01 input that new evidence moved. Effects are on the DB-01 design's mean mission score over the same 120 paired draws unless stated.}{tab:changed}
+\begin{brieftable}{width=\fullw, colspec={X[1.0,l] X[0.9,l] X[1.25,l] X[1.05,l]}}
+Input & DB-01 assumed & New evidence & Effect \\
+Landing $C_{L,\max}$, plain flap & 1.60 & \val{S3-R12} trimmed, area method validated on NACA TN 663 \gC & about $-0.15$; recovered by slotted or Fowler flaps \\
+Clean $C_{L,\max}$ & 1.25 & \val{S3-R11} \gC & limits turn lift \\
+Oswald $e$ & 0.946 (Raymer) & \val{S3-R04}; same method gives 0.868 where ERAU measured 0.842 \gC & $-0.05$ \\
+Parasite drag $C_{D0}$ & 0.0230 & build-up \val{S3-R15} \gE, not banked (card C-02) & 0 (upside held back) \\
+Container & 0.6~kg, 100~g sensor & 100~g container breaks the 381~mm drop envelope (\val{S8-R01}~m); 150~g sensor, 0.63 to 1.18~kg \gE & sensor must be built to 150~g \\
+Payload unit & frozen at 4~kg & declared at tech, 3 to 8~kg, one container \gC & $+0.40$ to $+0.43$ \\
+Airframe mass against wing area & whole airframe $\propto S^{0.94}$ (cross-team fit) & only the wing and tail grow with area; fuselage, power, gear and avionics fixed (rev.~B) \gE & larger wings 0.3 to 1.3~kg lighter; the best wing moves to 1.0--1.2~m² \\
+Reliability per attempt & flat 0.65 & depends on stall speed, thrust and complexity \gE & reorders designs \\
+Field & two fixed scenarios & 5,000 simulated fields, calibrated on 2022--26 \gE & enables P(1st) \\
+\end{brieftable}
+\end{widetable}
+
+\begin{decisioncard}{C-01}{Maximum lift was optimistic, and the fix is a better flap}{Use a high-lift flap (slotted or Fowler), not a plain flap.}{EVIDENCE ESTIMATE AND COMPUTED\hspace{1.2em}/\hspace{1.2em}UIUC, NACA TN 663, TR 534, TR 664}
+\why{The slowest safe landing speed sets how heavy the aircraft can be in Mission~2. DB-01 assumed the wing could reach a lift coefficient of 1.6 with a simple hinged flap. Wind-tunnel data for our airfoil, run through a method that we checked against twelve measured wings, say 1.44 once the tail's balancing load is included. That gap costs about 0.15 points. A flap that slides back and opens a slot recovers it and more.}
+\engineering{Trimmed landing $C_{L,\max}$ at 0.9~m² with a generic tail arm of three mean chords: plain 25\,\% chord flap \val{S3-R12}, single-slotted 30\,\% chord \val{S3-R13}, Fowler 30\,\% chord \val{S3-R14}. Trimmed at each variant's own tail arm and centre of gravity, Variant~A's Fowler wing reaches \val{F-A-CLMAX} and Variant~B's slotted wing \val{F-B-CLMAX}; these are the values scored. The section increments come from Williamson's UIUC flap tests (plain, measured at $Re = 3\times10^5$), Wenzinger and Harris NACA TR 664 (slotted) and Platt NACA TR 534 (Fowler). The wing value uses the area-ratio method, which never over-predicted on NACA TN 663's twelve measured wings.}
+\derivation{$\Delta C_{L,\max,\text{wing}} = 0.9\,K\,\Delta C_{l,\max}\,S_{\text{flapped}}/S$, with $K = 1.07$ (TN 663 calibration). Trim about a centre of gravity $h\bar c$ aft of the wing's aerodynamic centre: $C_{L,\text{trim}} = C_{L,w} + (C_{m,ac} + h\,C_{L,w})\,\bar c/l_t$, with $C_{m,ac} < 0$ when the flaps are down. Generic: $l_t = 3\bar c$, $h = 0.05$. Variants: $l_t = 1.89\bar c$, $h = 0.12$ (A) and $0.11$ (B).}
+\flipsif{A wing-model test or flight test showing the slotted or Fowler gain below 0.1 in $C_{L,\max}$.}
+\end{decisioncard}
+
+\begin{decisioncard}{C-02}{A lower drag estimate exists, and we deliberately do not use it}{Keep DB-01's drag ($C_{D0} = 0.0086 + 0.013/S$) as the central value.}{ORCHESTRATOR JUDGEMENT\hspace{1.2em}/\hspace{1.2em}UPSIDE HELD IN RESERVE}
+\why{A careful component-by-component estimate says the aircraft could have about 30\,\% less drag than DB-01 assumed. Banking that would raise every score. We do not, for two reasons. When the same method was applied to the RQ-4-style model we also ran through CFD, it under-predicted the body and nacelle drag by about a third. And the lap-time factor the model already applies, taken from 24 flights where teams compared their predictions with reality, exists precisely because drag estimates like ours come out optimistic.}
+\engineering{Build-up $C_{D0}$ \val{S3-R15} (range \rng{S3-R15}) against DB-01's 0.0230; non-wing drag area \val{S3-R16}~m² against 0.013. RQ-4 cross-check: the build-up gives 0.0042~m² of non-wing drag area where the CFD gives 0.0067~m². If the build-up proved right in flight, Variant~A would gain \val{F-A-CD0UP} points of mean total and Variant~B \val{F-B-CD0UP}, on the same draws; it would not separate them.}
+\flipsif{Measured drag from the first flight tests (power at known speed and mass), which closes this question within a week of first flight.}
+\end{decisioncard}

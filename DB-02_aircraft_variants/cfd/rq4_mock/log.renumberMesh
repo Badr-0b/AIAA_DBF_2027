@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : renumberMesh -parallel
+Date   : Oct 24 2026
+Time   : 20:27:45
+Host   : "DESKTOP-949FKM6"
+PID    : 1208
+I/O    : uncollated
+Case   : /home/nitro/dbf_cfd/rq4_mock
+nProcs : 6
+Slaves : 
+5
+(
+"DESKTOP-949FKM6.1209"
+"DESKTOP-949FKM6.1210"
+"DESKTOP-949FKM6.1211"
+"DESKTOP-949FKM6.1212"
+"DESKTOP-949FKM6.1213"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Mesh size: 2575795
+Before renumbering :
+    band           : 433307
+    profile        : 6.9029933e+10
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+Reading geometric fields
+
+Reading volScalarField nSurfaceLayers
+Reading volScalarField thickness
+Reading volScalarField thicknessFraction
+Reading volScalarField cellLevel
+Reading pointScalarField pointLevel
+
+After renumbering :
+    band           : 17786
+    profile        : 2.1651749e+10
+
+Writing mesh to "constant"
+
+Renumbering cellSets:
+    addedCells
+Renumbering faceSets:
+    layerFaces
+End
+
+Finalising parallel run

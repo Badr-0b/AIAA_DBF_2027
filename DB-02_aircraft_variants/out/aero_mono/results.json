@@ -1,0 +1,358 @@
+{
+ "schema": 1,
+ "stream": "S3",
+ "generated": "2026-10-29T21:44+03:00",
+ "items": {
+  "S3-R01": {
+   "name": "e_inv_AVL_taper0.7_AR3.68",
+   "value": 0.9931075742387726,
+   "range": [
+    0.985,
+    1.0
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "AVL 3.52 Trefftz plane, wing alone",
+   "note": "inviscid, planar; taper 0.5 / 0.7 / 1.0 gives 0.988 / 0.993 / 0.995 (S 0.9)"
+  },
+  "S3-R02": {
+   "name": "k_fuse",
+   "value": 0.9707764762709817,
+   "range": [
+    0.96,
+    0.98
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "Kroo 2000 (Annu Rev Fluid Mech) / Raymer fuselage factor 1-2(df/b)^2, df 0.22 m",
+   "note": "AVL BODY gave unphysical CL (1.8 at 4 deg) and was rejected"
+  },
+  "S3-R03": {
+   "name": "K_visc_dCd_dCL2",
+   "value": 0.006247618944699211,
+   "range": [
+    0.0045,
+    0.0075
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "XFoil SD7037 Re 8.5e5, Ncrit 9/5 mean, x1.11 UIUC calibration x1.15 build",
+   "note": "Kroo rule 0.38 CD0 = 0.0061 agrees"
+  },
+  "S3-R04": {
+   "name": "e_oswald_REF-D01",
+   "value": 0.901314808302262,
+   "range": [
+    0.8491321380179038,
+    0.9059244573953977
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "1/e = 1/(e_inv k_fuse) + pi AR K_visc",
+   "note": "vs Raymer 0.946 (DB-01) and ERAU 2023 measured 0.842 at AR 5.2"
+  },
+  "S3-R05": {
+   "name": "e_oswald_AR5.2_check",
+   "value": 0.8683146122867449,
+   "range": [
+    0.842,
+    0.89
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "same method at AR 5.2",
+   "note": "ERAU 2023 measured 0.842 (dbf_aircraft.toml); Raymer 0.89"
+  },
+  "S3-R06": {
+   "name": "plain_flap_dClmax_2D_20deg",
+   "value": 0.3800000000000001,
+   "range": [
+    0.34200000000000014,
+    0.41800000000000015
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "verified",
+   "source": "Williamson 2012 (UIUC LSAT Vol 6), AG40d-02r 25 % flap, Re 3e5",
+   "note": "dCl(a0) 0.81, dCm -0.140"
+  },
+  "S3-R07": {
+   "name": "plain_flap_dClmax_2D_30deg",
+   "value": 0.48,
+   "range": [
+    0.432,
+    0.528
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "verified",
+   "source": "Williamson 2012 (UIUC LSAT Vol 6), AG40d-02r 25 % flap, Re 3e5",
+   "note": "dCl(a0) 0.92, dCm -0.159"
+  },
+  "S3-R08": {
+   "name": "plain_flap_dClmax_2D_40deg",
+   "value": 0.52,
+   "range": [
+    0.468,
+    0.5720000000000001
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "verified",
+   "source": "Williamson 2012 (UIUC LSAT Vol 6), AG40d-02r 25 % flap, Re 3e5",
+   "note": "dCl(a0) 1.05, dCm -0.174"
+  },
+  "S3-R09": {
+   "name": "slotted_flap_dClmax_2D_30deg_cf0.30",
+   "value": 0.8,
+   "range": [
+    0.59,
+    1.02
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "estimate",
+   "source": "TR 664 fig. 30 (slotted/plain 1.5); Leng 2022 ICAS Sec. 6.4 measured +1.02 at Re 2.3e5; ESDU 0.59",
+   "note": "range spans ESDU to the quasi-2-D tunnel measurement"
+  },
+  "S3-R10": {
+   "name": "fowler_flap_dClmax_2D_eff_cf0.30",
+   "value": 1.505,
+   "range": [
+    1.3,
+    1.71
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "estimate",
+   "source": "TR 534 fig. 5 (Re 6.1e5, full-span 0.20/0.30/0.40c: dCLmax 1.16/1.54/1.88 on retracted area) / 0.9; TR 664 fig. 30 Fowler peak 1.45",
+   "note": "area extension is inside the figure (retracted-area basis)"
+  },
+  "S3-R11": {
+   "name": "CLmax_clean_S0.9_taper0.7_SD7037",
+   "value": 1.186121991081343,
+   "range": [
+    1.137,
+    1.235
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "AVL critical section + measured SD7037 sections, calibrated x1.0-1.086 (NACA TN 663)",
+   "note": "DB-01 assumed 1.25"
+  },
+  "S3-R12": {
+   "name": "clmax_landing_plain_S0.9_60pct",
+   "value": 1.4385172288096568,
+   "range": [
+    1.3706412665339436,
+    1.4890700832086874
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "area method 0.9 dClmax2D Sf/S x calibration; trimmed, lt 2.5-3.5 cbar",
+   "note": "untrimmed 1.47; cm -0.180; mass +0.00 kg"
+  },
+  "S3-R13": {
+   "name": "clmax_landing_slotted_S0.9_60pct",
+   "value": 1.6186455109048765,
+   "range": [
+    1.4476307250482074,
+    1.7776063912230775
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "estimate",
+   "source": "area method 0.9 dClmax2D Sf/S x calibration; trimmed, lt 2.5-3.5 cbar",
+   "note": "untrimmed 1.67; cm -0.225; mass +0.12 kg"
+  },
+  "S3-R14": {
+   "name": "clmax_landing_fowler_S0.9_60pct",
+   "value": 1.9152017695121228,
+   "range": [
+    1.7573958498477702,
+    2.052914195186652
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "estimate",
+   "source": "area method 0.9 dClmax2D Sf/S x calibration; trimmed, lt 2.5-3.5 cbar",
+   "note": "untrimmed 2.02; cm -0.419; mass +0.30 kg"
+  },
+  "S3-R15": {
+   "name": "CD0_total_REF-D01_buildup",
+   "value": 0.016117877520936547,
+   "range": [
+    0.013480490013920599,
+    0.02086058032469986
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "estimate",
+   "source": "XFoil wing + Hoerner body/tail + GT 2026 gear",
+   "note": "DB-01 used 0.0230 (0.0086 + 0.013/S)"
+  },
+  "S3-R16": {
+   "name": "nonwing_drag_area_REF-D01",
+   "value": 0.009043614175236572,
+   "range": [
+    0.008020080790690417,
+    0.010693126293840137
+   ],
+   "dist": "uniform",
+   "unit": "m2",
+   "grade": "estimate",
+   "source": "Hoerner body (0.22 x 0.22 x 1.05 m), tails Vh 0.5 / Vv 0.04, gear 12 cm2, other 7 cm2",
+   "note": "DB-01 0.013 (0.006-0.028)"
+  },
+  "S3-R17": {
+   "name": "wing_cd0_intercept",
+   "value": 0.006069417326229244,
+   "range": [
+    0.0046,
+    0.009
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "XFoil SD7037 Re 8.5e5 x UIUC calibration 1.11 x build 1.0-1.5",
+   "note": "DB-01 0.0086"
+  },
+  "S3-R18": {
+   "name": "xfoil_to_measured_cd_ratio_SD7037_Re3e5",
+   "value": 1.11,
+   "range": [
+    1.07,
+    1.17
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "UIUC LSAT Vol 1-3 SD7037 clean models vs XFoil Ncrit 9 at cl 0.35 / 0.7 / 1.0",
+   "note": "tripped model x1.7-1.9 (zigzag trip, severe)"
+  },
+  "S3-R19": {
+   "name": "winglet_de_h0.10semispan",
+   "value": 0.015078539527156876,
+   "range": [
+    0.007539269763578438,
+    0.04523561858147063
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "AVL flat wake, toe optimised 0-3 deg, vertical",
+   "note": "h/b 0.050; cd0 change +0.0007; root bending x1.009; upper bracket x3 = literature theory, UNRECONCILED"
+  },
+  "S3-R20": {
+   "name": "winglet_de_h0.15semispan",
+   "value": 0.027767257394702538,
+   "range": [
+    0.013883628697351269,
+    0.08330177218410761
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "AVL flat wake, toe optimised 0-3 deg, vertical",
+   "note": "h/b 0.075; cd0 change +0.0011; root bending x1.014; upper bracket x3 = literature theory, UNRECONCILED"
+  },
+  "S3-R21": {
+   "name": "clmax_turn_avail_flap10",
+   "value": 1.293215261456222,
+   "range": [
+    1.2458438221804102,
+    1.3252193209393568
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "plain flap 10 deg, Williamson dClmax 0.22, area method, trimmed",
+   "note": "clean trimmed 1.18; e in turns x0.947 (AVL flap twist)"
+  },
+  "S3-R22": {
+   "name": "biplane_induced_k_ratio_gap0.15",
+   "value": 0.7721949319804909,
+   "range": [
+    0.75,
+    0.8
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "computed",
+   "source": "AVL equal span, equal S, no stagger",
+   "note": "literature value about 0.78 (Prandtl 1924; not re-read here)"
+  },
+  "S3-R23": {
+   "name": "biplane_e_oswald",
+   "value": 1.1216265393430132,
+   "range": [
+    0.9585023973044198,
+    1.190914245648666
+   ],
+   "dist": "uniform",
+   "unit": "-",
+   "grade": "estimate",
+   "source": "AVL k ratio + Re/2 profile + strut and interference terms",
+   "note": "CLmax x0.92, mass +0.6 kg, cd0 0.0178"
+  },
+  "S3-R24": {
+   "name": "adapter_mean_REF-D01_baseline",
+   "value": 6.3326001152054685,
+   "range": [
+    5.998725170632163,
+    6.3326001152054685
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "S12 adapter, 120 DB-01 draws",
+   "note": "DB-01 6.33"
+  },
+  "S3-R25": {
+   "name": "adapter_mean_REF-D01_ALL_mono",
+   "value": 6.180878534851146,
+   "range": [
+    6.060212234025559,
+    6.180878534851146
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "S12 adapter, full S3 aero dict with ranges",
+   "note": "P10 6.06; P(M2) 0.942"
+  },
+  "S3-R26": {
+   "name": "adapter_mean_REF-D01_ALL_slotted",
+   "value": 6.368750533805566,
+   "range": [
+    6.051727069503108,
+    6.368750533805566
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "S12 adapter, full S3 aero dict with ranges",
+   "note": "P10 6.05; P(M2) 0.975"
+  },
+  "S3-R27": {
+   "name": "adapter_mean_REF-D01_ALL_fowler",
+   "value": 6.418852397672123,
+   "range": [
+    6.043090274440254,
+    6.418852397672123
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "S12 adapter, full S3 aero dict with ranges",
+   "note": "P10 6.04; P(M2) 0.975"
+  }
+ }
+}

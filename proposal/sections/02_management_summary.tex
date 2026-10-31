@@ -1,77 +1,67 @@
 % =====================================================================
-%  2.0 MANAGEMENT SUMMARY  (20 pts)           budget: ~1.15 pages, ~250 words
-%  Rubric (5.1.4):  [ ] Organization, roles of each team, individual skill sets
-%                   [ ] Organization chart (by team/function; no names needed)
-%                   [ ] Schedule / major milestone chart
-%                   [ ] Budget: materials AND travel AND all other expenses
-%  Judges 2026: itemize test articles, crating, spare props, adhesives and
-%  consumables; tie funding to a CONFIRMED amount; include contingency.
-%  Layout: the two full-width floats (roles table, Gantt) are defined here,
-%  at the top of the section, so they land at the top of page 2.
+%  2.0 MANAGEMENT SUMMARY  (20 pts)   P1.2, 31 Oct 2026
+%  Rubric (5.1.4):  [x] Organization, roles of each team, individual skill sets
+%                   [x] Organization chart (by team/function; no names needed)
+%                   [x] Schedule / major milestone chart
+%                   [x] Budget: materials AND travel AND all other expenses
+%  Budget numbers: data/p1.tex (tools/p1_data.py: purchase-list rows, DB-02 changes, travel quotes,
+%  GSA meals, visa fees and AMA dues of 31 Oct 2026). Funding: team lead, 31 Oct 2026.
 % =====================================================================
 \section{Management Summary}
 
 \begin{table*}[t]
-\caption{Sub-team responsibilities and the skill sets each requires.}\label{tab:roles}
-\begin{dbftable}{colspec={Q[l,wd=1.45in] X[1.3,l] X[1,l]}}
-Sub-team & Responsibility & Required skills \\
-Aero \& Performance & Sizing, lap and energy model, stability and control & \dbftbd{skills} \\
-Structures \& Manufacturing & Airframe design, layup and build, load tests & \dbftbd{skills} \\
-Propulsion \& Avionics & Motor, propeller, battery, ESC, radio and fail-safe & \dbftbd{skills} \\
-Sensor Systems & Sensor, D\&R reel, shipping container, rigging & \dbftbd{skills} \\
-Flight Operations & Pilot, observer, ground crew, checklists & \dbftbd{skills} \\
-Business \& Logistics & Budget, sponsorship, travel, documentation & \dbftbd{skills} \\
+\caption{Sub-teams, what each owns and the skills each requires. Every scored subsystem has exactly one owner.}\label{tab:roles}
+\begin{dbftable}{colspec={Q[l,wd=1.62in] X[1.0,l] X[1.2,l]}}
+Sub-team & Owns & Required skills \\
+Aero \& Performance & Sizing, lap model, stability, CFD & Python modelling; XFoil, AVL, OpenFOAM \\
+Structures \& Manufacturing & Wing, Fowler tracks, fuselage, tests & CAD; laser cutting, printing, foam cutting \\
+Propulsion \& Avionics & Motor, propeller, pack, fuse, radio & Thrust-stand testing; LiPo safety; ExpressLRS \\
+Sensor Systems & Dart, lights, drum, container, test box & Embedded C; servo drives; cushioning design \\
+Flight Operations & Pilot, observer, crew, checklists & AMA-member pilot; timed staging drills \\
+Business \& Logistics & Budget, purchasing, travel, visas & Lead-time planning; cost control; writing \\
 \end{dbftable}
 \end{table*}
 
-\begin{figure*}[t]
-\includegraphics{figures/gantt.pdf}% 7.00 x 1.50 in, from data/schedule.toml (make_charts.py)
-\caption{\dbftbd{takeaway}. Milestones: proposal 31 Oct; Q\&A rounds from 1 Nov; PDR; CDR; prototype first flight; sensor bench test; design report 19 Feb; competition aircraft first flight; Pre-Tech/First-Flight certification; fly-off 15--18 Apr.}\label{fig:gantt}
-\end{figure*}
-
 \subsection{Team Organization}
-\dbfnote{About 110 words. Functional structure: Team Lead and Chief Engineer, with the Faculty Advisor above; why Sensor Systems exists this year; how decisions are made (weekly leads meeting, PDR/CDR gates); requirement-ID traceability. Refer to Fig.~\ref{fig:org} and Table~\ref{tab:roles}.}
-\dbffill{110}
+\noindent\begin{minipage}{\linewidth}\centering
+\includegraphics{figures/orgchart.pdf}% in the text flow so it sits on page 1 beside its paragraph
+\captionof{figure}{The chief engineer leads the four technical sub-teams (shaded); each scored subsystem has one owner.}\label{fig:org}
+\end{minipage}\par
+\vspace{4pt}\noindent
+Machine Masters has \bMembers{} members in six sub-teams organized by function, mirroring how the aircraft is scored (Fig.~\ref{fig:org}, Table~\ref{tab:roles}). The faculty advisor signs off spending and flight safety, the team lead owns schedule, budget and rules, and the chief engineer owns the configuration and alone may change a requirement. Sub-teams meet weekly on one version-controlled repository; every decision records its evidence and is reviewed at PDR (28 Nov), CDR with the A/B gate (15 Jan) and freeze (19 Feb). The pilot is an AMA member.
 
-\begin{figure}[t]
-\includegraphics{figures/orgchart.pdf}% 3.35 x 1.35 in, from data/team.toml (make_charts.py)
-\caption{\dbftbd{takeaway}: one owner for every scored subsystem.}\label{fig:org}
-\end{figure}
 
-% Budget/funding float sources sit here, ahead of the 2.2/2.3 text, so that
-% they land inside Section 2.0 (verified by the sequence guard in build.sh).
-\begin{table}[t]
-\caption{Program budget, all costs including travel (USD).}\label{tab:budget}
-\begin{dbftable}{colspec={X[l] Q[r] Q[r]}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
-Category & Cost & Share \\
-Airframe, prototypes, test rigs & \$\bAirframe & \dbftbd{\%} \\
-Propulsion, avionics, radio & \$\bPropulsion & \dbftbd{\%} \\
-Batteries, charging sacks, fuses & \$\bBatteries & \dbftbd{\%} \\
-Sensor electronics and lights & \$\bSensor & \dbftbd{\%} \\
-Containers, simulators, drop rig & \$\bContainers & \dbftbd{\%} \\
-Spares, props, adhesives, consumables & \$\bConsumables & \dbftbd{\%} \\
-Crating materials & \$\bCrating & \dbftbd{\%} \\
-Travel and aircraft freight & \dbftbd{\$} & \dbftbd{\%} \\
-Fly-off fee, AIAA/AMA memberships & \dbftbd{\$} & \dbftbd{\%} \\
-Contingency (\dbftbd{\%}) & \dbftbd{\$} & \dbftbd{\%} \\
-Total & \dbftbd{\$} & 100\% \\
-\end{dbftable}
-\end{table}
-
-\begin{table}[t]
-\caption{Funding sources and status.}\label{tab:funding}
-\begin{dbftable}{colspec={X[l] Q[r] Q[l]}, row{Z}={font=\dbftotalrow}, hline{Y}={0.4pt,dbfGraphite}}
-Source & Amount & Status \\
-\dbftbd{college allocation} & \dbftbd{\$} & \dbftbd{confirmed?} \\
-\dbftbd{sponsor} & \dbftbd{\$} & \dbftbd{pending?} \\
-Total & \dbftbd{\$} & \\
-\end{dbftable}
-\end{table}
 
 \subsection{Schedule and Milestones}
-\dbfnote{About 60 words. Built backward from the fly-off; prototypes; internal PDR/CDR gates; owners and pass criteria per milestone. Refer to Fig.~\ref{fig:gantt}.}
-\dbffill{60}
+\begin{figure*}[t]
+\includegraphics{figures/gantt.pdf}% 7.00 x 1.76 in, from data/schedule.toml (make_charts.py)
+\caption{Decision-gated schedule: long-lead parts first; the prototype flies the Variant A wing in early January; the Fowler test decides A or B on 15 Jan; the configuration freezes with the report on 19 Feb. Outlined: rules dates; filled: team plan.}\label{fig:gantt}
+\end{figure*}
+
+The schedule (Fig.~\ref{fig:gantt}) runs backward from the fly-off, ordering parts common to both variants first so the A/B decision costs one wing. The prototype is built in December and flies on 6 January; the competition airframe is built from 16 January and flies on 14 February.
+
+\begin{table}[t]
+\caption{Program budget, travel included (USD, rows rounded to \$10). Basis: vendor list, quote of 31 Oct 2026, online average, GSA per diem or estimate.}\label{tab:budget}
+\begin{dbftable}{colspec={X[l] Q[l] Q[r]}, row{Y}={font=\dbftotalrow}, row{Z}={fg=dbfSteel}, hline{Y}={0.4pt,dbfGraphite}}
+Item & Basis & Cost \\
+Prototype airframe, rigs, tools & list & \bHwproto \\
+Comp.\ airframe, B wing, Fowler test & est. & \bHwcomp \\
+Motors, ESCs, radio, servos & list & \bHwmotors \\
+8S packs, chargers, 58~V fuses & list & \bHwpacks \\
+Sensor, drum, containers, tungsten & list, avg. & \bHwpayload \\
+Props, adhesives, consumables & list & \bConsumables \\
+Crate; Tucson paint, glue & list, est. & \bHwcrate \\
+Airfare, Kuwait--Tucson, \bTravellers{} people & quote & \bAirfare \\
+Lodging, \bRooms{} rooms, 6 nights & quote & \bLodging \\
+Meals, \bTravellers{} people, 6.5 days & GSA & \bMeals \\
+Van, fuel, crate baggage & est. & \bGround \\
+US visa fees, \bTravellers{} people & fee & \bVisas \\
+Fly-off fee; AIAA, AMA dues & rules, fee & \bFees \\
+Contingency, 15\,\% & & \bContingency \\
+Total & & \bTotal \\
+Funding: university, full cost & confirmed & \bTotal \\
+\end{dbftable}
+\end{table}
 
 \subsection{Budget}
-\dbfnote{About 80 words. Every expense, including Kuwait--Tucson travel; the funding sources and which are confirmed; the contingency rationale. Refer to Table~\ref{tab:budget} and Table~\ref{tab:funding}.}
-\dbffill{80}
+Table~\ref{tab:budget} covers the year: the purchase list, a second airframe and wing, 8~kg of tungsten at the \$\bTungstenKg/kg online average, and for \bTravellers{} travellers the quoted fares (\$\bAirfareEach{} each), \$\bMIE/day federal meals and \$\bVisa{} visa fees.\footnote{Lastminute.com quotes, 12--20 Apr.~2027; GSA FY2027 Tucson per diem; U.S. visa fees; six tungsten listings; read 31 Oct.~2026.} Hardware rows are priced line by line at vendor prices, and the long-lead items (fuse, motor, packs, CNC parts) are ordered in November; Business \& Logistics tracks spending against each row monthly. A 15\,\% contingency covers a crash rebuild and outsourced CNC cutting. The university funds the full cost, confirmed.

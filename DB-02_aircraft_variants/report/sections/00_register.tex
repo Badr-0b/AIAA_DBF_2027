@@ -1,0 +1,29 @@
+% Decision register (front of the dossier)
+\section{Decision register}
+\subsection{How to read it}
+Every decision in this dossier appears once here and once as a card in the body, under the same identifier. Revision~B regrades every card that rests on the flap lift estimates from \gC\ to \gE (Section~\ref{sec:revb}). The register gives the recommendation, the strength of its evidence, what would change it and when it freezes. The shaded column is left for the team to sign; nothing here is decided until it is signed.
+
+\begin{widetable}[h]{The decisions this dossier recommends. Grades: \gV\ verified source, \gC\ our validated model, \gE\ reasoned estimate.}{tab:register}
+\begin{brieftable}{width=\fullw, colspec={Q[l,wd=0.42in] X[1.3,l] Q[l,wd=0.62in] X[1.25,l] Q[l,wd=0.7in] X[0.6,l]},
+  column{6}={bg=dbfBone}, cell{1}{6}={bg=dbfInk, fg=white}}
+ID & Recommendation & Grade & Changes if & Freezes & Team \\
+P-01 & Declare the sensor mass at technical inspection, planned for a hot day & \gC & Q\&A fixes it earlier & Tech, Apr 2027 & \\
+S-01 & Waive Mission~1 & \gC & Q\&A denies the credit & Fly-off & \\
+S-02 & One tungsten dart rated to 150~g, tow eye above its CG & \gE & TC-02 failures below 150~g & CDR & \\
+S-03 & One container (re-cut pads) and adjustable simulators, built for the top of the declared range & \gE & TC-02 & CDR & \\
+S-04 & Closed-loop drum with slip ring; ballast chosen so the stow fits & \gC & Stow ruled outside the window & CDR & \\
+S-05 & Drop from 1.524~m & \gV & TC-02 failures at 1.524~m & GM & \\
+S-06 & SD7037 airfoil & \gV & Better tunnel-tested section & 19 Feb & \\
+S-07 & Three LED arrays, one-button sequencing & \gE & TC-03 below 90\,\% & CDR & \\
+C-01 & High-lift flap (Fowler on A, slotted on B), not a plain flap & \gE & Flap gain below 0.1 & 19 Feb & \\
+C-02 & Keep DB-01's drag; hold the lower estimate in reserve & \gE & First measured flight drag & First flight & \\
+E-01 & No RQ-4 proportions; styling only where free & \gC & -- & -- & \\
+A-01 & Variant A: 1.0~m² wing with Fowler flaps, sensor declared 3 to 8~kg & \gE & TC-07 below 1.75 & 15 Jan & \\
+A-02 & Bay and tow exit on the CG; 16\,\% wing-tail margin & \gC & Weigh-in CG off by 3\,\% & CDR & \\
+A-03 & Single 8S AT7215 / 20x15E; 80~A blade fuse rated 58~V & \gV & TC-06 fuse duty & 19 Feb & \\
+A-04 & High wing, conventional tail, fixed faired tricycle & \gC & Pilot prefers a taildragger & 19 Feb & \\
+B-01 & Variant B: 1.2~m² wing with slotted flaps, sensor declared 3 to 6~kg, if A fails its gate & \gE & TC-07 passes & 15 Jan & \\
+B-02 & A and B share every long-lead part & -- & -- & Now & \\
+H-01 & Build A; switch to B on the dated gate, or earlier if the Fowler risk is judged above \val{F-AB-BREAKEVEN} & \gE & TC-07 result & 15 Jan & \\
+\end{brieftable}
+\end{widetable}

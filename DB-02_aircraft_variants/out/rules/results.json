@@ -1,0 +1,135 @@
+{
+ "schema": 1,
+ "stream": "S1",
+ "generated": "2026-10-29T21:48+03:00",
+ "items": {
+  "S1-R01": {
+   "name": "clauses_in_compliance_matrix",
+   "value": 99,
+   "range": null,
+   "dist": "point",
+   "unit": "-",
+   "grade": "verified",
+   "source": "out/rules/compliance.csv; rules draft 2 Sep 2026",
+   "note": "99 of 99 quotes found verbatim in the layout text (test_v_rules)"
+  },
+  "S1-R02": {
+   "name": "m1_waiver_gain_expected_total",
+   "value": 1.054,
+   "range": [
+    0.419,
+    1.054
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "attempts.p_complete (field 2.4-2.9 attempts, 57-73 % scored, verified); parts 1.0/1.58/3.0/1.10 from the DB-01 reference",
+   "note": "waiving M1 (L879-882) always wins in the attempt model; a failed M2 cannot fall back to M1"
+  },
+  "S1-R03": {
+   "name": "p_m3_waive_vs_fly_p0.65_A3",
+   "value": [
+    0.718,
+    0.401
+   ],
+   "range": null,
+   "dist": "point",
+   "unit": "-",
+   "grade": "computed",
+   "source": "attempts.p_complete",
+   "note": "waive 0.718 against fly 0.401"
+  },
+  "S1-R04": {
+   "name": "mission_points_worth_one_report_point_inverse",
+   "value": 13.97,
+   "range": [
+    12.14,
+    16.73
+   ],
+   "dist": "uniform",
+   "unit": "report points",
+   "grade": "computed",
+   "source": "Competition = TR x TM + participation (section 6.3); TR 88, TM 6.3",
+   "note": "one mission point equals TR/TM report points"
+  },
+  "S1-R05": {
+   "name": "mission_total_needed_to_win_at_TR88_2022_26",
+   "value": 5.66,
+   "range": [
+    5.66,
+    6.41
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "dbf_results.csv winning scores 501.26-567.51, participation 3",
+   "note": "needed TM = (winning score - 3) / TR; 2026 value shown"
+  },
+  "S1-R06": {
+   "name": "m3_stow_threshold_7_laps_lap39p1",
+   "value": 18.3,
+   "range": null,
+   "dist": "point",
+   "unit": "s",
+   "grade": "computed",
+   "source": "300 - t_TO 8 - 7 x 39.1",
+   "note": "stow counted in the window"
+  },
+  "S1-R07": {
+   "name": "m3_lap_time_for_8_laps_stow_counted_12s",
+   "value": 35.0,
+   "range": [
+    36.5,
+    35.0
+   ],
+   "dist": "uniform",
+   "unit": "s",
+   "grade": "computed",
+   "source": "(300 - 8 - stow)/8",
+   "note": "36.5 s if the stow is outside the window (L964-972 silent)"
+  },
+  "S1-R08": {
+   "name": "m3_points_per_lap_4p4kg_expected_field",
+   "value": 0.217,
+   "range": [
+    0.163,
+    0.217
+   ],
+   "dist": "uniform",
+   "unit": "points",
+   "grade": "computed",
+   "source": "competitor.toml expected 20.25 and aggressive 27 kg-laps (estimates)",
+   "note": "0.217 expected field, 0.163 aggressive field, until the cap at 1.0"
+  },
+  "S1-R09": {
+   "name": "container_ring_to_bottom_limit",
+   "value": 0.381,
+   "range": null,
+   "dist": "point",
+   "unit": "m",
+   "grade": "verified",
+   "source": "L538-542",
+   "note": "'should be less than 15 inches'; only 15 in of rigging plus container is guaranteed"
+  },
+  "S1-R10": {
+   "name": "sim_mass_tolerance",
+   "value": 0.028349523125,
+   "range": null,
+   "dist": "point",
+   "unit": "kg",
+   "grade": "verified",
+   "source": "L559-560",
+   "note": "+-1 oz = 28.35 g"
+  },
+  "S1-R11": {
+   "name": "togw_limit_true_mass",
+   "value": 24.945,
+   "range": null,
+   "dist": "point",
+   "unit": "kg",
+   "grade": "verified",
+   "source": "L627 and section 6.2 rounding",
+   "note": "display rounding to 0.01 lb"
+  }
+ }
+}

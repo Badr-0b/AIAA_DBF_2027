@@ -1,0 +1,111 @@
+{
+ "schema": 1,
+ "stream": "orchestrator",
+ "generated": "2026-10-29",
+ "items": {
+  "O-R01": {
+   "name": "lap_length_REF_D01_M2",
+   "value": 1015.4813428916477,
+   "unit": "m",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R02": {
+   "name": "turn_fraction_of_lap",
+   "value": 39.96935499926318,
+   "unit": "%",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R03": {
+   "name": "drag_straight_REF_D01_M2",
+   "value": 13.991048047944556,
+   "unit": "N",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R04": {
+   "name": "drag_turn_REF_D01_M2",
+   "value": 47.12190427124446,
+   "unit": "N",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R05": {
+   "name": "induced_share_turn",
+   "value": 79.62293721253634,
+   "unit": "%",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R06": {
+   "name": "induced_share_lap_energy",
+   "value": 64.74139371188795,
+   "unit": "%",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R07": {
+   "name": "m2_energy_eta058",
+   "value": 79.2,
+   "unit": "Wh",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": "shaft 803 W / 0.58 x 206 s; usable 80 Wh"
+  },
+  "O-R08": {
+   "name": "stall_cap_gross_S0.9_cl1.6_vs14",
+   "value": 15.311210250187376,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R09": {
+   "name": "ws_vs14_cl1.6",
+   "value": 166.83520000000001,
+   "unit": "N/m2",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R10": {
+   "name": "gm_6kg_product",
+   "value": 9.144,
+   "unit": "kg m",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R11": {
+   "name": "gm_8kg_product",
+   "value": 12.192,
+   "unit": "kg m",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R12": {
+   "name": "m3_7x4.4",
+   "value": 30.800000000000004,
+   "unit": "kg laps",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  },
+  "O-R13": {
+   "name": "m2_wt_db01",
+   "value": 0.03864734299516908,
+   "unit": "kg/s",
+   "grade": "computed",
+   "source": "ledger/checks.py (orchestrator hand check, 29 Oct 2026)",
+   "note": ""
+  }
+ }
+}

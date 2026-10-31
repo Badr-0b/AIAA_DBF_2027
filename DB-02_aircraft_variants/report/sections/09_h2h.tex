@@ -1,0 +1,31 @@
+% Head-to-head, recommendation, switch condition
+\dosdivider{06}{Head to head}{How the two aircraft compare when the inputs go against them, which one to build, and the test result that switches the team from one to the other.}
+  {\dosdivrow{0}{08}{Five stress scenarios}\dosdivrow{1}{08}{The report decides the win}\dosdivrow{2}{08}{Recommendation and switch}\dosdivrow{3}{09}{Decision calendar and playbook}\dosdivrow{4}{10}{Test gates and schedule}}
+
+\section{Head to head}\label{sec:h2h}
+
+\subsection{Five ways the inputs could go wrong}
+Each finalist was re-scored in five scenarios built to attack Variant A: the base case; the Fowler flap delivering 8\,\% less lift with double the mechanism hazard; every airframe 15\,\% heavier than the fit; every attempt 8 points less likely to succeed; and the Fowler and mass problems together. Figure~\ref{fig:regret} shows the probability of the top mission total in each, with intervals that resample both the fields and our 120 aircraft draws.
+
+\widefig[h]{figures/regret.pdf}{Variant A leads the base case, the heavier airframe and the lower reliability; Variant B leads both scenarios in which the Fowler flap underdelivers. The marginal bars (95\,\%) overlap, but the paired, draw-by-draw differences do not: A's base-case lead over B is \val{F-AB-base} (95\,\% interval \rng{F-AB-base}). The DB-01 control trails throughout.}{fig:regret}
+
+\input{data/h2h_table.tex}
+
+\railnote{Reading}{No finalist is statistically tied with A in the base case: the nearest, a 1.1~m² Fowler wing, trails by \val{F-S11F6-REG-base} with a paired interval of \rng{F-S11F6-REG-base}. A's lead is real but small, and it reverses when the Fowler flap underdelivers: there B leads by \val{F-A-REG-fowler_low}. Weighing the two cases, B has the higher expected chance of the top total if the probability that the Fowler underdelivers exceeds \val{F-AB-BREAKEVEN}.}
+
+\Needspace{2.6in}
+\subsection{The aircraft makes the win possible; the report decides it}
+The competition score multiplies the mission total by the report score, so the same aircraft has very different chances depending on the design report. With Variant~A, the probability of finishing first overall is \val{F-A-P1ST-R80} at a report score of 80, \val{F-A-P1ST-R86} at 86, \val{F-A-P1ST-R90} at 90 and \val{F-A-P1ST-R94} at 94 (Figure~\ref{fig:p1st}); B's curve runs within about 0.03 of it. The simulated 2027 field's best mission total has a median of \val{F-FLD-2027-P50} (80\,\% range \val{F-FLD-2027-P10} to \val{F-FLD-2027-P90}), because rivals who read the rules as we do will also declare heavy sensors: the field's Ground Mission maximum has a median of \val{F-FLD-GMRIV}~kg\,m.
+
+\railfig[h]{figures/p1st.pdf}{Near a report score of 88, each report point adds about two points of win probability. At a report score of 80, even Variant A wins only about one time in seven.}{fig:p1st}
+
+\begin{qualitybox}{FIELD MODEL}
+The field simulator reproduces the real winning mission totals of 2022 to 2025 inside its 10 to 90\,\% band, and puts 2026's 5.61 just below its band, so it errs toward stronger rivals. It reproduces the number of teams completing every mission in all five years. Its 2027 maxima are anchored on 2021 and 2025 results and drawn over a wide range. Probabilities here are comparative evidence between candidates on identical draws, not forecasts of the fly-off.
+\end{qualitybox}
+
+\subsection{Recommendation}
+\begin{decisioncard}{H-01}{Build Variant A; keep Variant B one wing away}{Variant A as the competition aircraft; Variant B's wing and tail as the funded fallback, decided at a dated gate.}{RECOMMENDATION\hspace{1.2em}/\hspace{1.2em}TEAM DECISION BY 15 JAN 2027}
+\why{A is the best aircraft when its flap works and when the airframe comes out heavy or the attempts go badly. Its one real weakness is a mechanism the team has not built yet, and that weakness is large enough that B is the safer aircraft overall: B never falls far behind, A does if the flap fails. B covers the weakness with parts the team already knows how to make, and because the two aircraft share everything long-lead, carrying B costs one extra wing and tail, not a second programme.}
+\engineering{Base case: A \val{F-A-PTOP}, B \val{F-B-PTOP}, control \val{F-C-PTOP} probability of the top mission total; mean totals \val{F-A-MEAN}, \val{F-B-MEAN} and \val{F-C-MEAN}; worst-tenth totals \val{F-A-P10}, \val{F-B-P10} and \val{F-C-P10}. A's largest regret across five scenarios is \val{F-A-MAXREG}; B's is \val{F-B-MAXREG}. Break-even probability that the Fowler underdelivers: \val{F-AB-BREAKEVEN}.}
+\flipsif{\textbf{Switch to B} if, by 15 January 2027, the Fowler flap on the bench or on the prototype wing gives less than 1.75 in trimmed $C_{L,\max}$, or jams in more than one of a hundred full-load cycles; or earlier, if the team judges the chance of either above \val{F-AB-BREAKEVEN} before the test can run. Otherwise build A and stop work on B's wing.}
+\end{decisioncard}

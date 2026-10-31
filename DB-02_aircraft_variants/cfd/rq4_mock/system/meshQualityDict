@@ -1,0 +1,24 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      meshQualityDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#includeEtc "caseDicts/mesh/generation/meshQualityDict"
+
+// The y+ = 1 first layer (about 10 um) on 2.4 mm skin faces is a flat cell:
+// determinant ~ 27 (t/a)^2 = 5e-4, under the default 1e-3, which made snappyHexMesh
+// strip the layers (wing 1.8 of 20 at the 1.82 m span). The solver is fine with
+// such prisms; only snappy's moves use this check.
+minDeterminant  1e-5;
+
+// ************************************************************************* //

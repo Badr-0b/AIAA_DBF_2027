@@ -1,0 +1,876 @@
+   A STUDY OF HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+                                       APPLICATIONS
+
+                                                            Abstract
+This paper presented a study on low Reynolds number high-lift trailing edge devices to facilitate take-off and
+landing performance improvement of small unmanned aerial vehicles (sUAV). Little researches have been
+conducted at Reynolds number range of 1×105, where the boundary layer's load carrying capability is reduced.
+Furthermore, simplicity and robustness dictated the use of such devices on sUAV. This study employed existing
+semi-empirical method to prototype a single- and double-slotted flap for a DAE31 low Reynolds number airfoil.
+The detailed designs were tested in low-speed windtunnel and analysed through URANS simulations. The
+scope of the paper was to survey the applicability of available design tools and to provide a detailed analyses
+of aerodynamic phenomena on such type of high-lift devices.
+Keywords: High-lift devices, low Reynolds number, unmanned aerial vehicle.
+
+1. Introduction
+
+High-lift devices have been extensively studied and used at the scale of commercial and light aircraft,
+however there is insufficient research in the behaviour of these devices at low Reynolds number in the
+order of 1 × 105. This regime of flow is particularly of interest for small Unmanned Aircraft Systems
+(sUAS) applications under 25kg, notably allowing for short take-off and landing to better adapt for
+various constrained operation fields. There are numerous types of high-lift devices as illustrated
+in Fig. 1. They are chosen based on the aircraft scale as well as the required performance. This
+study is driven by the need for reduced landing distance, consequently flap deflections were able to
+achieve 30 to 40.
+
+                 Figure 1 - Various types of high-lift devices, illustrations from DATCOM [1]
+For the application of sUAS, simple mechanisms are preferred for reliability and ease of manufac-
+turing. In the scope of the current study, plain flaps, single- and double-slotted hinged flaps are
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+investigated. Their performance is estimated using empirical method, quasi-2D wind tunnel test as
+well as 2D and 3D computational fluid dynamics (CFD) simulations. Various deflection angles and
+gap sizes were studied.
+When fully deployed, high lift coefficients CL is expected, as well as a relatively high CD. This implies
+large perturbations in pressure distributions, which could introduce error in small windtunnels typically
+employed for sUAS research. A full CFD simulation of the test section has been performed to identify
+and quantify these errors to facilitate future studies.
+The current study aims to provide a clear view of available analytical and experimental approach
+in low Reynolds number high lift device analysis. Section III presents a survey of previous studies
+of high lift devices, and demonstrates current limited scope in low Reynolds number applications.
+Section IV provides an analytical analysis using available design approaches for a proposed high
+lift configuration, and the experimental as well as numerical studies on the designs are presented
+in Section V and VI. The study will conclude the applicability and potential corrections of available
+method applied to low Reynolds number conditions.
+
+2. Past Studies
+
+The theoretical explanation of high lift devices, especially for multi-element airfoil, was systematically
+developped in Ref. [2]. Smith has explained the pressure recovery limit of single airfoil and its
+implication in guiding high lift airfoil design. He further pointed out that the aerodynamic interaction
+between multiple airfoil elements work to distribute suction peak between elements to relief pressure
+recovery margin over each single airfoil, which results in overall higher lift coefficients. Smith's work
+serves as a theoretical guide for further development of high-lift devices at high Reynolds number,
+however the limited database means his work could not be used in practical design applications.
+Various NACA and further NASA studies [3, 4, 5, 6] have accumulated valuable experimental data
+for various high-lift device configurations. These studies confirmed the effectiveness of multi-element
+airfoil in improving maximum lift coefficient, which could be increased well over 2.5 for slotted flaps.
+These studies also pointed out that the boundary layer condition at the slot between elements is
+critical for lift enhancement [7]. Characteristics of boundary layer at operating condition is sensitive
+to viscous effects, which can be characterised from Reynolds number Re. However only limited data
+could be accessed for low Reynolds number Re  5 × 105 for typical sUAS operation.
+For small-scale applications such as sUAV or light aircraft, simplicity in manufacturing and handling
+usually prevented the adoption of high lift devices other than plain or split flap [7]. Therefore, the pur-
+suit for high lift resorts either to powered circulation control system [8] or to use specifically designed
+airfoil [9], which don't include complicated exterior articulation mechanism but is more difficult to com-
+promise between cruise and high-lift performances. As manufacture technology advances with the
+growing interest in sUAV, recent studies have looked at fixed leading edge devices in low Reynolds
+number regime [10], as well as Fowler flaps [11] based on 4-link mechanism. These studies have
+shown that significant lift enhancement still could be achieved with existing high-lift system principles,
+but the expected performance departs from observations in higher Reynolds number and depends
+particularly on the implementation of actuation mechanism.
+Calculation methods for multi-element airfoil design are also limited. Semi-empirical method could be
+found in ESDU reports [12, 13], the method considers various geometry parameters to correct for the
+lift enhancement effect of trailing and leading edge devices. The applicability of the method however
+is only verified for Re  1 × 106. Another semi-empirical approach is proposed in Ref. [14], which
+is also aimed at high Reynolds number applications and is integrated in stability analysis platform
+DATCOM. Higher fidelity methods include MSES [15] which was coupled with a integral boundary
+layer formulation to for relatively low Reynolds number treatment.
+
+3. Empirical Methods
+
+The initial geometry of trailing edge device is analysed through empirical methods [13, 14, 16] based
+on previous experimental data. These were all obtained at high Reynolds number regime between
+1  9 × 106, and therefore the results could only be referenced as a maximal limit for intended design.
+Nevertheless, these analytical approaches are fast to perform, and thus allow for rapid parametric
+studies at early design stage of high lift devices.
+
+                                                                        2
+                                                                                       HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+                                                   Figure 2 - DAE31 airfoil
+
+The current research focuses on the DAE31 airfoil depicted in Fig. 2 as the baseline profile. It was de-
+veloped and used for Daedalus human powered aircraft, in order to achieve high cruise efficiency[17].
+The aerodynamic polar calculated from XFOIL is shown in Fig. 3b, which indicates maximal 2D lift
+to drag ratio of 78 at Reynolds number 3.0 × 105. For maximal lift coefficient, the airfoil is able to
+achieve CLm0 = 1.64 at 15 angle of attack. Typical landing constraint of fixed wing drone would desire
+CLm0  1.8 depends on specific applications, and thus it is necessary to enhance the airfoil's lifting
+performance with a high lift device.
+
+(a) Lift coefficient curve                             (b) Aerodynamic polar
+
+Figure 3 - DAE31 airfoil characteristics at Rec = 3.0 × 105 from XFOIL calculations
+
+Two well established methods have been performed on the same flap geometries, the first approach
+is presented in ESDU documentation [16] and a second approach can be found in DATCOM [14]. This
+section presents a brief introduction of both methods, followed by the preliminary lift augmentation
+estimation on a DAE31 airfoil. The general assumptions for trailing-edge device are listed in Table. 1.
+
+                                  c¯f 0.3
+
+                                  f     30
+
+                                  Rec 3 × 105
+
+Table 1 - Flap design parameters
+
+3.1 ESDU method
+
+The necessary equations and dataset to estimate incremental lift on plain, single- and double-slotted
+flap were documented in reports 5c. 94028, 94030 and 94031. These constitute an semi-empirical
+approach for assessing maximal lift coefficient with trailing-edge devices.
+
+3.1.1 Plain Flap
+
+The increment in maximum lift coefficient for plain flap is given in Eq. 4.8 in item 5c. 94028 as following
+
+                                  CLm f = KGKt T CL0t                                (1)
+
+where KG is empirical factor for airfoil leading edge radius, Kt is empirical factor for flap deflection and
+T is thin airfoil estimation of the ratio between increment in maximum lift coefficient and increment in
+zero angle of attack lift coefficient CL0t, which is estimated from flap deflection and flap chord length
+using equation extracted from the same report :
+
+                                     3
+                                           HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+              CL0t = 2Jp f  - cos-1 (2c¯t - 1) + 1 - (2c¯t - 1)2                 (2)
+
+where Jp is in function of the sum of flap angle and the angle between the airfoill datum and the
+tangent to the upper surface at the trailing edge.
+To account for Reynolds number effect, the increment in maximal lift coefficient is multiplied by a
+Reynolds number factor
+
+                            FR = 0.153 log10 Rec                                 (3)
+
+which is based on reference Reynolds number Rec = 3.5 × 106.
+Based on the DAE31 airfoil performance and flap design parameters given in Table. 1, the increment
+in maximum lift coefficient is estimated to be 0.48 at Rec = 2.3 × 105, and thus maximum lift coefficient
+can be estimated to be 2.12.
+
+3.1.2 Single-Slotted Flap
+
+The increment in maximum lift coefficient for single-slotted flap is given in Eq. 4.9 in item 5c. 94030
+
+as following
+
+              CLmf = 1 - c/c (1 - sin t )CLm0 + KT Kt1 Jt1 CL 1                  (4)
+
+where CLm0 is base airfoil maximum lift coefficient at Rec = 3.5 × 106; c is the extended chord length;
+and Jt1, KT , Kt1, CL 1 are correction factors found in the report.
+The calculated CLm f should also be corrected for Reynolds number effect using the same correction
+
+factor FR.
+
+With the same assumption for flap deflection and flap chord length, and assuming the slotted flap
+extends total chord by 15% at  f = 30, the increment in maximum lift coefficient is calculated to be
+0.587 at Rec = 2.3 × 105 with CLmf = 2.23.
+
+3.2 DATCOM method
+
+Another semi-empirical approach is summarised in Ref. [1] for assessment of various trailing-edge
+devices. The increment of lift coefficient for these is calculated by
+
+                            CLm f = k1k2k3 CLm f base                            (5)
+
+where CLmf base is the increment in maximum lift coefficient for a reference 25% flap, k1 is a correc-
+tion factor for flap chord length, k2 and k3 are correction factor for flap angle determined in Ref. [14]
+from flap configuration and its design parameters.
+The coefficients and estimated performance of plain and single-slotted flap are summarised in Ta-
+ble. 2, combined with results obtained previously with ESDU method.
+
+                            Plain Flap     Single-Slotted Flap
+
+                Method      DATCOM ESDU    DATCOM ESDU
+              (CLmax )base
+                            0.85        -         1.22  -
+                   k1
+                   k2       1.05        -         1.05  -
+                   k3
+                 CLm f      0.76        -         0.86  -
+                  CLm f
+                            1.0         -         1.0   -
+
+                            0.68  0.48            1.10  0.59
+
+                            2.32  2.12            2.75  2.23
+
+Table 2 - Lift enhancement of trailing edge devices from semi-empirical methods
+
+The method doesn't propose Reynolds number correction and the estimations are considerably more
+optimistic than that from ESDU method. The large difference between the methods thus justifies
+detailed analysis from experimental and high resolution numerical methods.
+
+                                  4
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+4. Mixed-inverse Design
+
+The empirical methods provided initial estimations with expected performances of high-lift devices,
+however they were unable to inform detailed geometry design. When deployed the wing section
+equipped with flap will be operated at Re  3 × 105, coupled with large deflection angle, viscous effects
+is of great concern when shaping the flap airfoil. In high-lift configuration, the airfoil will need to sustain
+large pressure gradient which tends to destabilise boundary layer and promotes flow separation. This
+is especially the case at lower Reynolds number where the boundary layer thickness is larger and
+more susceptible to adverse pressure gradient. Therefore, it was concluded that the preliminary
+design method must include viscous phenomena that is able to at least treat limited flow separation.
+MSES is such a tool that achieves compromise between computational efficiency and fidelity in flow
+physics. The flow domain around the airfoil is discretised and solved using Euler equations. This
+allows the existence of shear layer, however viscous terms are still not included at arbitrary space.
+The boundary layer is thus resolved separately from integral relations, which allow calculation of
+viscous drag and viscous displacement effect. The formulation uses envelope method for transition
+prediction and is admissible to limited flow separation including separation bubbles.
+
+4.1 Design procedure
+
+The design for the double-slotted flap was aided by the mixed-inverse design routine of MSES. The
+baseline DAE31 airfoil was separated manually into three parts : 1) main element; 2) flap vane
+element; and 3) flap element. An initial calculation is required to serve as the starting point of inverse
+design procedure. The pressure distribution on three elements are then analysed and modified in an
+iterative fashion :
+
+   1. Check pressure peak and recovery on flap element, if desirable, the procedure is considered
+       terminated.
+
+   2. Otherwise, check pressure distribution on vane, if it doesn't present major flow separation, re-
+       prescribe the leading edge pressure distribution on flap element so a more gradual pressure
+       gradient can be achieved.
+
+   3. Otherwise, reshape vane pressure distribution to eliminate or greatly minimise separation.
+
+The procedure involves principally modification to the vane and flap leading edge section so that
+cruise performance won't be significantly altered as these surfaces are embedded when the mecha-
+nism is retracted. For the same reason, the main element remained unchanged except when reshap-
+ing is required for the slot entry to clear interference.
+Given the limitations of MSES formulation, the design procedure is based at chord Reynolds num-
+ber Re = 3.0 × 105 and angle of attack  = 2, with  f = 20. The design procedure always yielded
+significant improvement of lift coefficient over initial design, however it should be mentioned that the
+maximum lift coefficient could be even higher since CLmax of such high-lift configurations is always
+achieved with a certain amount of separated flow beyond the capability of MSES. Thus the angle of
+attack and/or flap deflection angle at CLmax might differ from the design point.
+
+4.2 Location of flap element
+
+The effect of flap element position can also be examined in MSES at design and off-design conditions.
+Having determined the flap geometry and deflection angle, the flap element is being placed according
+to two parameters : 1) overlap length x¯c between flap leading edge and main element trailing edge
+and 2) gap size z¯g, which is defined as the shortest distance from main element trailing edge to the
+flap upper surface. Figure 4 clearly demonstrates the definition of flap position.
+
+                                                                        5
+                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+                                z¯g
+
+                 x¯c
+
+                                     Figure 4 - Flap overlap length and gap size
+
+In this study, the single-slotted flap performance was estimated using MSES at different x¯c ranging
+from 0% to 10% and z¯g from 1.5% to 3%. To demonstrate the effect of both x¯c and z¯g, the calculation
+results are presented as iso-CL lines in Fig. 6.
+Solid line represents lift coefficients obtained under design Reynolds number of 3 × 105. A peak value
+over 2.3 is found to be at x¯c = 2.5% and z¯g = 1.5%. CL would decrease at a larger gap size or a different
+overlap length.
+Lift coefficients obtained at higher Reynolds numbers Re = 5 × 105 and 1 × 106 are depicted as dashed
+and pointed isolines. As the Reynolds number increases, the contour tends to become verticle at
+x¯c > 5%, suggesting that the gap size has less influence in this region.
+Figure. 5 plots the total boundary layer thickness   of main element's lower surface and flap el-
+ement's upper surface at the main element's trailing edge. The curves were all calculated with
+x¯c = 2.5%, and show evolution of boundary layer displacement effects under three tested Reynolds
+numbers. At x¯c = 2.5%, the gap size has the greatest effect at Re = 3 × 105 where   grows by 46%
+as gap size increases from 1.5% to 3%. At the Re = 1 × 106 the growth of displacement thickness with
+gap size is less significant hence less effect of gap size on CL.
+
+                                 ·10-3
+                              1
+
+                                         Re = 3 × 105
+                           0.9 Re = 5 × 105
+
+                                         Re = 1 × 106
+
+                           0.8
+
+                   [m] 0.7
+
+0.6
+
+0.5
+
+0.4  1.6 1.8  2  2.2 2.4 2.6 2.8  3
+
+                 z¯g[%]
+
+Figure 5 - Total displacement thickness at main element trailing edge with x¯c = 2.5%
+                                                            6
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+The effect of Reynolds number shows that the optimal position of flap element to maximize CL could
+be differently influenced. At high Reynolds number, a smaller or negative overlap could be adopted
+while gap size has a secondary effect; at low Reynolds number, gap size and overlap length should
+coupled to achieve the maximal CL for a given flap deflection angle.
+
+           Figure 6 - Single-slotted flap lift coefficient at various x¯c, z¯g and Re,  = 2,  f = 20
+
+5. Flap Designs
+
+Based on analysis in section 3.and section 4,.two flap geometries were designed for detailed study.
+The single-slotted flap makes up the last 30% chord of the airfoil. The leading edge is based on
+DAE31 profile and blends smoothly with the main airfoil trailing edge. The geometry is illustrated in
+Fig. 7. Point H is the hinge location which is offset by 15% chord below the airfoil to provide the nec-
+essary chord extension. The offset hinge mechanism is preferred than a 4-link or track mechanism
+thanks to its simplicity in fabrication.
+
+0.74c  0.15c
+             H
+
+Figure 7 - DAE31 airfoil with single-slotted flap
+
+The double-slotted flap is designed with multi-element airfoil design tool MSES which is a Euler solver
+coupled with integral boundary layer formulation. The design tool is capable of inverse airfoil design
+from specified pressure distribution and includes treatment for laminar-turbulent separation bubble
+and limited seperated flow. The first element starts from 60% chord length and spans 18% chord;
+the second element starts from 74.5% chord and is 25.5% chord in length. The two flaps elements
+connected in a solid fashion, meaning that they would rotate at the same angle when deployed and
+the gap size between them remains unchanged. The geometry is depicted in Fig. 8, noted that the
+gaps between airfoil elements don't close during cruise. Three hinge positions denoted H1, H2 and
+
+                                                                        7
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+H3 are planned to be tested to investigate the effect of gap size between the main airfoil and the first
+element.
+
+                                  0.66c  0.05c 0.05c H1
+                                                 H
+
+                                         0.05c 2 H3
+
+Figure 8 - DAE31 airfoil with double-slotted flap
+
+6. Experimental Analysis
+
+The plain flap, single- and double-slotted flap geometries have been established in the previous sec-
+tions using reduced-order methods that are conventionally used for higher Reynolds number regime,
+discrepencies are thus expected and must be quantified in experimental conditions. This section
+describes the manufacture, testing and synthesis of previously proposed high lift devices.
+
+6.1 Experimental setup
+
+The experiments were conducted at ISAE subsonic wind tunnels in the Department of Aerodynamics,
+Energetics and Propulsion (DAEP). These are Prandtl type wind tunnels with a square test section
+of 0.45m sides and 0.7m long. A pitot tube is placed ahead of the model in the convergent section
+of the tunnel and allows for a measurement of wind speed. Since the tube is placed at the end of
+convergent section and not in the test section, a correction factor based on the test section geometry
+is applied to obtain the actual velocity in the test section. The measurement system is a 6-axe scale
+with max load of 30N placed outside the test section with three profiled supports protruding into the
+test section. Each model is 3D printed allowing for high accuracy in the airfoil shape and has three
+mounting points. It is mounted on to the masts with two of the masts being fixed and one mobile
+for adjusting the model's angle of attack. Two plexiglas end plates are mounted to both sides of the
+model to obtain quasi-2D flow on the wing section.
+
+                                        Airfoil  DAE31
+                                      Chord c    170mm
+                                       Span b    300mm
+                                  Aspect Ratio 
+                                                   1.76
+
+Table 3 - Clean model dimensions
+
+Three sets of models were studied in the current paper. The flapless configuration is a single DAE31
+section with its dimensions given in Table. 3, whose purpose is to validate the experiment apparatus
+with computational method. The single- and double-slot flap designs take the same overall dimension
+as the flapless configuration but consist of respective trailing edge devices described in section 5..The
+main wing section and flap were fabricated separately through addictive manufacturing. The model
+doesn't include an actuation mechanism, and the flap angle was adjusted by fixing the flap hinge at
+different positioning holes on the end plate as demonstrated in Fig. 9a and Fig. 9b.
+
+                                         8
+                   HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+(a)  f = 10        (b)  f = 40
+
+Figure 9 - Single-slotted flap model at ISAE low-speed wind tunnels
+
+For the double-slotted flap, additional positioning holes were drilled to investigate the effect of first gap
+size. This is achieved by moving the hinge position perpendicular to the clean airfoil's mean chord
+line. Three locations were tested at z¯h = -5%, -10% and -15%, where the negative sign signifies
+that the hinge point is located below the mean chord line. The model setups for z¯h = -10% and -15%
+are shown in Fig. 10a and Fig. 10b.
+
+(a) z¯h = -10%     (b) z¯h = -15%
+
+Figure 10 - Double-slotted flap model at 30 flap setting and two hinge positions
+
+As a result of the proximity of the positioning holes, it has been decided that the single-slotted flap
+would be deployed at  f = 10, 20, 30 and 40 while the double-slotted flap would be deployed at
+ f = 15, 30 and 45. The comparison of these two configurations would therefore only be made for
+ f = 30 in subsection 6.6.
+
+6.2 Preliminary runs for calibration
+
+To find the setup that best represents 2D condition, three different setups with the flapless model
+were tested at 15m/s :
+
+     · Closed section, small end plates (255mm/1.5c),
+
+     · Closed section, large end plates (340mm/2.0c),
+
+     · Open section, large end plates.
+
+                9
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+The end plates with different sizes are shown in Fig. 11. Each of the setups was tested for 3 runs
+from -13 to 14. Prior to the test the balance was calibrated in lift, drag and pitch axis using weights.
+The sensor readings were reset to zero at 0 angle of attack before every run. The angle of attack
+was calibrated using an inclinometer mounted horizontally on the model. A no-wind gravity polar was
+recorded for both the small and large end plates, and was subtracted from force and moment mea-
+surements. The results are compared with aerodynamic polar calculated from XFOIL. Ultimately it
+was found that the closest result in agreement with XFOIL calculations from the preliminary runs were
+obtained using the closed section, small end plates setup. The subsequent tests were performed with
+this setup.
+
+       (a) Closed section with 1.5c diameter end plates (b) Closed section with 2.0c diameter end plates
+                        Figure 11 - Clean model setup at ISAE low-speed wind tunnels
+
+6.3 Clean Configuration
+
+Presented below are the results averaged from test runs of the DAE31 models in clean configurations.
+Lift coefficient computed from XFOIL and StarCCM+ at the same Reynolds number are superposed.
+The results are in agreement in the linear lift curve, although slight 3D effect can be observed that
+produces a lower lift line slope for the experimental curve. The maximal lift coefficient CLm0 = 1.48 is
+obtained at 16.5.
+
+                                  Figure 12 - Clean model results at Re = 230, 000
+
+6.4 Single-Slotted Flap Model
+
+The single-slotted flap model was tested at the same conditions as the clean model at Reynolds
+number 2.3 × 105. The results are presented in Fig. 13a and Fig. 13b.
+
+                                                                       10
+                                HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+(a) Lift coefficient curve      (b) Aerodynamic polar
+
+Figure 13 - Single-slotted flap aerodynamic characteristics for various flap settings
+
+According to measured lift coefficient curve, lift augmentation is significant for flap deflection up to
+30. Maximal lift coefficient CLmf = 2.5 is obtained at  = 10 and  f = 30. At  f = 40, the deployment
+of the single-slotted flap has reduced lift enhancement and the lift augmentation is comparable to 20
+flap deflection.
+The aerodynamic polar demonstrates an increase in drag coefficient even when the flap is retracted.
+There however isn't such significant difference in lift measurement except for the stall region where
+the single-slotted flap model reached a higher maximal lift coefficient. The drag increase is most
+probably caused by the form of flap nave, and thus reduces lift to drag ratio.
+With increasing flap deflection, the drag polar continues to shift to the right and the minimal drag point
+moves slightly upwards. At 40 flap deflection, the drag coefficient could double that at  f = 30 for the
+same lift coefficient. This suggests that although deflecting flap beyond 30 doesn't further enhance
+lift production, it is effective to increase aerodynamic drag in order to achieve steeper approach angle
+without significant increase in airspeed.
+
+6.5 Double-Slotted Flap Model
+
+The double-slotted flap model was tested at the same conditions at Reynolds number 2.3 × 105.
+Different flap settings were tested from the single-slotted flap, and the hinge was adjusted to three
+different positions z¯h situated at 5%, 10% and 15% chord length below the mean chord line. The effect
+of different flap settings for z¯h = 15% is first presented in Fig. 14a and Fig. 14b, and the results for
+other hinge positions are included in the appendix.
+
+                            11
+                            HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+(a) Lift coefficient curve  (b) Aerodynamic polar
+
+Figure 14 - Double-slotted flap aerodynamic characteristics for various flap settings, z¯h = 15%
+
+When retracted, the double-slotted flap model has similar lifting behaviour in linear region, though
+
+the discrepancy is larger than that from the single-slotted flap shown in Fig. 13a. The stall region is
+
+apparently delayed and maximal lift coefficient could achieve 1.75 without flap deflection.
+When deployed, the lift enhancement effect is more complicated than that for single-slotted flap. 15
+
+flap deflection could generate considerable extra lift over the airfoil and maximal lift coefficient is
+
+increased to 2.4. The reduction of lift coefficient beyond stall is more rapid than that observed on
+single-slotted flap. At 30 deflection, the lift enhancement over 15 flap deflection is smaller but the
+CLmf is still increased to 2.6 at  = 16, after which there is a steep reduction in lift coefficient. At
+45 deflection, the difference in lift coefficient from flap retracted configuration reduces with angle of
+
+attack, the airfoil observes a benign stall at CLmf = 1.8.
+The effect of z¯h at  f = 30 is demonstrated in Fig. 15a and Fig. 15b, and results at other flap settings
+will be included in the appendix.
+
+(a) Lift coefficient curve  (b) Aerodynamic polar
+
+Figure 15 - Double-slotted flap aerodynamic characteristics for various hinge positions,  f = 30
+
+At 30 flap deflection, significant effect can be observed on the aerodynamics characteristics from
+different gap sizes. In the linear region, the lift is enhanced by increasing the gap size which is done
+by lowering hinge point from 5% to 10% chord length. The improvement of flow condition is also
+evidenced from the decrease of drag coefficient observed in the aerodynamic polar from Fig. 15b.
+Further lowering the hinge point to 15% chord length doesn't bring increase in lift coefficient in linear
+
+                                                                       12
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+region, however aerodynamic stall is further delayed by 3 compared to when the hinge point was
+located at 10% chord length. The maximal lift coefficient is thus achieved at 2.6.
+
+6.6 Comparison between Single- and Double-Slotted Flap
+
+Figure. 16a and Fig. 16b present the comparison of single- and double-slotted flap at 0 and 30 flap
+deflections.
+When retracted, the minimal drag coefficient is comparable for both configurations and is higher than
+the clean DAE31 model. The double-slotted flap achieves its minimal value at lower lift coefficient.
+The lift to drag ratio is thus lower for double-slotted flap.
+
+(a) Lift coefficient curve      (b) Aerodynamic polar
+
+Figure 16 - Aerodynamic characteristics for single- and double-slotted flap
+
+At 30 flap deflection, where the best lift enhancement is achieved for both configurations, the lift
+slope is steeper for single-slotted flap but the delay in stall onset enables the double-slotted flap to
+reach highest lift coefficient of 2.6. Double-slotted flap also generates up to 70% less drag in linear
+region, though the drag production is comparable at higher lift coefficient.
+The two configurations differ vastly in their stall behaviors. The single-slotted flap reaches stall onset
+at 10 followed by a relatively gentle reduction in lift coefficient. The double-slotted flap retains good
+linearity of lift coefficient curve up until 16 where a shart reduction occurs.
+These behaviours can also be confirmed from the photo captured during experiment upon stall onset.
+Tufts were attached to both models in order to visualise the flow field near airfoil surface. In Fig. 17a,
+flow separation on the single-slotted flap configuration initiated at the trailing edge of main element,
+however the separated region has yet dominated the airfoil surface, thus yielding more benign be-
+haviour. The tufts visualisation for double-slotted flap is shown in Fig. 17b. The flow is separated well
+upstream that almost all tufts on the main element were disturbed, causing the sharp reduction in lift.
+The flow around the flap section however remained attached.
+
+                            13
+                         HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+(a) Single-slotted flap  (b) Double-slotted flap
+
+Figure 17 - Flow visualisation upon stall onset
+
+7. Numerical Analysis
+
+A numerical study is conducted using STARCCM+ on single- and double-slotted flap configurations.
+The objective of the numerical study is to obtain high resolution flow field data free from windtunnel
+blockage and wall effects. Despite the use of end plates, 3D effects from wind tunnel walls cannot be
+entirely eliminated, and thus high resolution numerical studies are beneficial to make detailed study
+of the refined configuration.
+
+7.1 Domain and Solver Settings
+
+A conventional circular arc domain is used for the simulation with an arc radius of 5c and 10c in the
+downstream direction. The arc is defined as the velocity inlet and the downstream boundary is defined
+as a pressure outlet. An implicit unsteady solver is used to capture the unsteady flow downstream of
+the flap. K- SST model is used as the turbulence model to include laminar-turbulence transition.
+The computation domain was discretised using quadrilateral mesh as presented in Fig. 18. A wake
+refinement region spreads downstream for 5c with a spread angle of 5.
+
+                                       Figure 18 - Computational domain mesh
+
+Close-up Figure. 19 demonstrates the gradual transition of near wall prism layer to far field region.
+The prism layer was set-up so that wall y+  1 where possible, and all-y+ treatment option was used
+to provide best solution of boundary layer.
+
+                                                                       14
+                                     HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+                             Figure 19 - Computational domain: airfoil closeup mesh
+
+In addition, a 3D simulation was performed to inform comparison between experimental data and
+numerical results. The simulation retains the windtunnel and 1.5c diameter end plate dimensions to
+include wall effects, the test section extends 3 chord length unpstream and 5 chord length down-
+stream. Single-slotted flap was modelled with 10 angle of attack and 30 flap deflection. The half-
+model domain contains 2.5 million cells and the associated boundary conditions are illustrated in
+Fig. 20.
+
+                                                                                                                Pressure Outlet
+
+                Plane of Symmetry
+
+                                     End Plate
+
+                Single-Slotted Flap
+
+Velocity Inlet
+
+                                                                                                  Inviscid Wall
+
+                Figure 20 - Computational domain for 3D simulation
+                                                    15
+                HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+7.2 Mesh Convergence
+
+A mesh convergence study was performed for clean DAE31 airfoil with three mesh density levels. The
+coarse mesh has 32600 cells ; the medium mesh has 46000 cells and the fine mesh consists 70586
+cells. The results shown in Fig. 21] at  = 2 suggests asymptotic trends in drag coefficient prediction
+and the relative difference falls below 5% convergence bound. Therefore the mesh was considered
+valid for the current study, and the medium density mesh was used in subsequent analyses.
+
+                         ·10-2
+
+1                               2.2
+
+                                                                                        2.15
+0.95
+
+                                                                                        2.1
+ 0.9
+
+                                                                                        2.05
+
+CL 0.85                         2 CD
+       0.8                      1.95
+                                1.9
+      0.75                      1.85
+
+0.7                             1.8
+            3 3.5 4 4.5 5 5.5 6 6.5 7 7.5
+
+            Cell Number  ·104
+
+Figure 21 - Lift and drag coefficient of DAE31 airfoil computed with different mesh density
+
+7.3 Results and Discussion
+
+7.3.1 Maximal lift coefficient
+
+The single- and double-slotted flap configurations were computed at  = 10, Re = 3 × 105 and  f =
+30, which are the most capable to generate lift according to experimental data. The lift coefficient
+of both configurations are denoted as circle symbol together with experimental measurements in
+Fig. 22.
+
+            16
+                                     HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+Figure 22 - Calculated lift coefficient of single- and double-slotted flap configurations
+
+The lift coefficients from numerical studies were notably larger than the experimental data. In com-
+parison, the lift coefficient from 3D simulation at the same condition is found to be 2.343, which lies
+closer to the experimental results. This indicates that 3D effects aren't completely eliminated by the
+use of end plates.
+
+7.3.2 Three dimensional effects
+
+The ratio   =  CL3D  is a measure of 3D effects between untwisted finite straight wing of identical airfoil
+               CL
+               2D
+[18], the ratio is found to be ss = 0.926 for single-slotted flap and ds = 0.834 for double-slotted flap.
+
+To further study the 3D flow condition over the airfoil model, pressure data was extracted from main
+
+and flap element surface in order to calculate spanwise lift distribution and local circulation, as pre-
+
+sented in Fig. 23.
+
+                                 17
+                                                                   HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+       Figure 23 - Spanwise lift and circulation distribution of 3D single-slotted flap simulation
+
+Local lift coefficient in Fig. 23 stays close to total lift coefficient CL3D over majority of span stations,
+however the value reduces noticeably towards the wing tip. The circulation distribution allows for
+equivalent aspect ratio  . Fitting the circulation distribution to Fourier sine series :
+
+                                                                   N
+
+                                        ( ) = 2bV A0 +  An sin n                                                (6)
+
+                                                                   n=1
+
+where  variable  transformation  y  =  -  b  cos    .  A0  = 0  because  the    presence  of  end  plate.  The  Oswald
+                                          2
+
+coefficient can then be calculated from the higher-order Fourier coefficients.
+
+                                       e=         1    =              1                                         (7)
+
+                                             1+                    N     An  2
+
+                                                           1 + n=2 n A1
+
+For the 3D simulation, Oswald coefficient is estimated to be 0.905. For non-twisted straight wing
+segment with identical airfoil, the ratio  is the quotient of 2D lift gradient over 3D lift gradient, and is
+proved to be related to wing aspect ratio :
+
+                                                       =        1                                               (8)
+
+                                                           1 + e   2
+
+From 2D and 3D numerical results for single-slotted flap CFD = 0.877, and the equivalent aspect ratio
+of the model with end plates can then be solved to be   = 15.9, which is much higher than the actual
+model aspect ratio  = 1.76.
+The higher  calculated between experimental and numerical results demonstrates that the end plates
+compensate partly the finite span effects. The 3D effects can still accounts for 8-20% error for high-lift
+conditions. Interestingly, the 3D effect appears to be stronger for double-slotted flap configurations.
+This is probably caused by wall boundary layer interaction between end plate and flap gap, which
+affects double-slotted flap configuration more.
+Iso-surface of Q-criterion around the single-slotted flap in 3D simulation is shown in Figure. 24. Q-
+criterion is a parameter for vortex identification, and thus it demonstrates the vortical structure around
+the gap between main and flap element. The region of vortical layer at the flap leading edge remains
+small and constant in stream-wise expansion close to the centre span. This region however expands
+
+                                                           18
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+rapidly in downstream direction closer to end plate, and eventually joins the vortex system formed at
+the junction between upper surface and end plate. This implies increased boundary layer thickness at
+the flap leading edge which may adversely affect the flow condition at the gap as shown in section. 4..
+
+                                                                                     Leading edge
+                                                                                                            V
+
+                          Main element
+
+                 Juncture vortex
+
+                                                                                                     Flap element
+                           Figure 24 - Pressure coefficient and Q-criterion iso-surface
+
+8. Conclusions
+
+This research draws several conclusions of the aerodynamic phenomena and design methodology
+of high-lift devices design for low Reynolds number applications :
+
+     · Lift generation is expected to be reduced due to boundary layer carrying capability and simpli-
+       fication of mechanism kinematics.
+
+     · Semi-empirical methods are less reliable for low Reynolds number designs due to database
+       availabilities, and current methods tend to yield wide range of results.
+
+     · Potential methods or Euler-based solver such as MSES remain an efficient tool for detailed de-
+       sign of airfoil profile and kinematics. However the results are less reliable and/or more restricted
+       due to separation treatment.
+
+     · At low Reynolds number, the gap size and overlap length are strongly coupled to maximise lift
+       generation, the sensitivity of design parameters are usually within 1% of total chord length. The
+       highest lift coefficient design usually has a small overlap.
+
+     · Experimental methods provide essential validation for high-lift devices design, and low-speed
+       windtunnels are sufficient to simulate operating conditions. However the results tend to un-
+       derestimate lift generation due to 3D effects, and the effects are stronger particular for more
+       complex configurations such as double-slotted flaps.
+
+9. Copyright Statement
+
+The authors confirm that they, and/or their company or organization, hold copyright on all of the original material
+included in this paper. The authors also confirm that they have obtained permission, from the copyright holder
+of any third party material included in this paper, to publish it as part of their paper. The authors confirm that
+they give permission, or have obtained permission from the copyright holder of this paper, for the publication
+and distribution of this paper as part of the ICAS proceedings or as individual off-prints from the proceedings.
+
+                                                                       19
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+A Double-Slotted Flap Experimental Results for Various Hinge Position
+
+(a) Lift coefficient curve      (b) Aerodynamic polar
+
+Figure 25 - Double-slotted flap aerodynamic characteristics for z¯h = -5%
+
+(a) Lift coefficient curve      (b) Aerodynamic polar
+
+Figure 26 - Double-slotted flap aerodynamic characteristics for z¯h = -5%
+
+                            20
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+B Double-Slotted Flap Experimental Results for Various Flap Settings
+
+(a) Lift coefficient curve      (b) Aerodynamic polar
+
+Figure 27 - Double-slotted flap aerodynamic characteristics for  f = 15
+
+(a) Lift coefficient curve      (b) Aerodynamic polar
+
+Figure 28 - Double-slotted flap aerodynamic characteristics for  f = 45
+
+Acknowledgments
+
+The authors would like to thank Delair for the financial support of the project as well Prof. Jean-Marc
+Moschetta and Mr. Marc Grellet for facilitating the use of the wind tunnels and their valued input
+throughout the project. The authors would also like to thank Dr. Murat Bronz for providing access to
+the Windshape facility which was the start of the experimental test and highlighted important issues
+with the fabrication of the wing models and test setup. The design study was carried out by MSES
+software under licence ID 4916600, and the authors would like to thank MIT Technology Licensing
+Office and Prof. Mark Drela for their assistance. Lastly Mr. Karim Fayez would like to thank Mr.
+Emilien Delagarde for his contribution on the fabrication of the models used in the experiments.
+
+References
+
+ [1] Finck, R., "USAF (United States Air Force) Stability and Control DATCOM (Data Compendium),"
+      Tech. rep., MCDONNELL AIRCRAFT CO ST LOUIS MO, 1978.
+
+ [2] Smith, A. M., "High-lift aerodynamics," Journal of Aircraft, Vol. 12, No. 6, 1975, pp. 501-530.
+
+                            21
+                                                                                      HIGH-LIFT DEVICES FOR LOW REYNOLDS NUMBER
+
+ [3] Hayter, N.-L. F. and Kelly, J. A., "Lift and Pitching Moment at Low Speeds of the Naca 64A010
+      Airfoil Section Equipped with Various Combinations of a Leading-edge Slat, Leading-edge Flap,
+      Split Flap, and Double-slotted Flap," Tech. Rep. NACA-TN-3007, NACA, 1953.
+
+ [4] Peter, K., "High-Lift systems on commercial subsonic airliners," Tech. Rep. NASA CR-4746,
+      NASA, 1996.
+
+ [5] Cahill, J. F., "Summary of section data on trailing-edge high-lift devices," Tech. Rep. NACA-TR-
+      938, NACA, 1949.
+
+ [6] Young, A., "The Aerodynamic Characteristics of Flaps." Tech. Rep. No. 2622, British ARC, 1947.
+
+ [7] Gudmundsson, S., General aviation aircraft design: Applied Methods and Procedures,
+      Butterworth-Heinemann, 2013.
+
+ [8] Yamada, Y., Vasilieva, I., Takayama, A., Fukushima, E. F., and Endo, G., "Circulation-controlled
+      high-lift wing for small unmanned aerial vehicle," ROBOMECH Journal, Vol. 2, No. 1, 2015, pp.
+      1-11.
+
+ [9] Selig, M. S. and Guglielmo, J. J., "High-lift low Reynolds number airfoil design," Journal of aircraft,
+      Vol. 34, No. 1, 1997, pp. 72-79.
+
+[10] Jones, A., Bakhtian, N., and Babinsky, H., "Low Reynolds number aerodynamics of leading-edge
+      flaps," Journal of Aircraft, Vol. 45, No. 1, 2008, p. 342.
+
+[11] Oliveira, A. D. S., Low Reynolds Number Fowler Flap Design, Ph.D. thesis, Universidade da
+      Beira Interior (Portugal), 2017.
+
+[12] Garner, H., Bean, G., Birch, N., Dexter, P., Dovey, J., Garry, K., Graham, D., Green, M., Horton,
+      H., Hurst, D., Jones, P., Karling, K., Maurel, M., Newbold, C., Newton, J., Sanderson, R., Sewell,
+      A., Smith, M., and Tweedie, J., "Introduction to the estimation of the lift coefficients at zero angle
+      of attack and at maximum lift for aerofoils with high-lift devices at low speeds," Tech. Rep. 94026,
+      Engineering Sciences Data Unit, 1994.
+
+[13] Garner, H., Bean, G., Birch, N., Dexter, P., Dovey, J., Garry, K., Graham, D., Green, M., Horton,
+      H., Hurst, D., Jones, P., Karling, K., Maurel, M., Newbold, C., Newton, J., Sanderson, R., Sewell,
+      A., Smith, M., and Tweedie, J., "Increments in aerofoil lift coefficient at zero angle of attack and in
+      maximum lift coefficient due to deployment of a double-slotted or triple-slotted trailing-edge flap,
+      with or without a leading-edge high-lift device, at low speeds," Tech. Rep. 94031, Engineering
+      Sciences Data Unit, 1994.
+
+[14] Daniel, P. R. et al., Aircraft design: a conceptual approach, American Institute of Aeronautics
+      and Astronautics Inc, 1992.
+
+[15] Drela, M., A User's Guide to MSES 3.05, MIT Press, 2007. https://web.mit.edu/drela/
+      Public/web/mses/mses.pdf.
+
+[16] Garner, H., Bean, G., Birch, N., Dexter, P., Dovey, J., Garry, K., Graham, D., Green, M., Horton,
+      H., Hurst, D., Jones, P., Karling, K., Maurel, M., Newbold, C., Newton, J., Sanderson, R., Sewell,
+      A., Smith, M., and Tweedie, J., "Increments in aerofoil lift coefficient at zero angle of attack and
+      in maximum lift coefficient due to deployment of a single-slotted trailing-edge flap, with or without
+      a leading-edge high-lift device, at low speeds," Tech. Rep. 94030, Engineering Sciences Data
+      Unit, 1994.
+
+[17] "MIT Human Powered Aircraft and Hydrofoil info web page," , 2007. https://web.mit.edu/
+      drela/Public/web/hpa/.
+
+[18] Anderson, J. and Hughes, W., Fundamentals of Aerodynamics, McGraw-Hill Education, 2009.
+
+                                                                       22
+

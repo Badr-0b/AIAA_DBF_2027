@@ -288,6 +288,9 @@
 % ---------------------------------------------------------------------
 %  Page-1 masthead (absolute positioning on the page background)
 % ---------------------------------------------------------------------
+% Masthead x positions in inches: left margin, right text edge, text width (a document with other
+% side margins redefines all three after \geometry).
+\def\dbf@mx{0.75}\def\dbf@mr{7.75}\def\dbf@tw{7}
 \newlength\dbf@bandh \setlength\dbf@bandh{1.52in}
 \newcommand\dbf@mast@dark{%
   \setlength\unitlength{1in}%
@@ -295,24 +298,26 @@
   \dbf@mast@content{white}{dbfFog}{dbfMist}{dbfGraphite}}
 \newcommand\dbf@mast@light{%
   \setlength\unitlength{1in}%
-  \put(0.75,-0.36){\color{dbfInk}\rule{7in}{2.4pt}}%
-  \put(0.75,-1.52){\color{dbfFog}\rule{7in}{0.4pt}}%
+  \put(\dbf@mx,-0.36){\color{dbfInk}\rule{\dbf@tw in}{2.4pt}}%
+  \put(\dbf@mx,-1.52){\color{dbfFog}\rule{\dbf@tw in}{0.4pt}}%
   \dbf@mast@content{dbfInk}{dbfSteel}{dbfGraphite}{dbfMist}}
 % #1 primary  #2 secondary  #3 university  #4 hairline
 \newcommand\dbf@mast@content[4]{%
-  \put(0.75,-0.585){\makebox[0pt][l]{\dbf@trackedsans\bfseries\fontsize{8.6}{10}\selectfont
+  \put(\dbf@mx,-0.585){\makebox[0pt][l]{\dbf@trackedsans\bfseries\fontsize{8.6}{10}\selectfont
     \color{#1}\MakeUppercase{\dbfteamname}}}%
-  \put(7.75,-0.585){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.8}{8}\selectfont
+  \put(\dbf@mr,-0.585){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.8}{8}\selectfont
     \color{#2}\MakeUppercase{\dbfprogram\dbf@sep\dbf@doctype}}}%
-  \put(0.75,-0.70){\color{#4}\rule{7in}{0.4pt}}%
-  \put(0.75,-1.07){\makebox[0pt][l]{\dbf@display\fontsize{21}{24}\selectfont\color{#1}\dbf@doctitle}}%
-  \put(0.75,-1.32){\makebox[0pt][l]{\dbf@trackedsans\fontsize{8.4}{10}\selectfont
+  \put(\dbf@mx,-0.70){\color{#4}\rule{\dbf@tw in}{0.4pt}}%
+  \put(\dbf@mx,-1.07){\makebox[0pt][l]{\dbf@display\fontsize{21}{24}\selectfont\color{#1}\dbf@doctitle}}%
+  \put(\dbf@mx,-1.32){\makebox[0pt][l]{\dbf@trackedsans\fontsize{8.4}{10}\selectfont
     \color{#3}\MakeUppercase{\dbfuniversity}}}%
-  \put(7.75,-1.07){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.6}{8}\selectfont\color{#2}DOC\hspace{0.8em}\dbf@docid}}%
-  \put(7.75,-1.20){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.6}{8}\selectfont\color{#2}REV \dbf@rev\dbf@sep\MakeUppercase{\dbf@date}}}%
-  \put(7.75,-1.33){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.6}{8}\selectfont\color{#2}\dbf@pageof}}}
+  \put(\dbf@mr,-1.07){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.6}{8}\selectfont\color{#2}DOC\hspace{0.8em}\dbf@docid}}%
+  \put(\dbf@mr,-1.20){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.6}{8}\selectfont\color{#2}REV \dbf@rev\dbf@sep\MakeUppercase{\dbf@date}}}%
+  \put(\dbf@mr,-1.33){\makebox[0pt][r]{\dbf@trackedmono\fontsize{6.6}{8}\selectfont\color{#2}\dbf@pageof}}}
 
 % frontmatter: full-width top matter on page 1 (masthead + summary)
+% \dbffrontskip: clear space for the masthead band; a document with a smaller top margin enlarges it.
+\newlength\dbffrontskip \setlength\dbffrontskip{0.78in}
 \NewDocumentEnvironment{frontmatter}{+b}{%
   \def\dbf@tmp{dark}%
   \ifx\dbf@opt@titleblock\dbf@tmp
@@ -320,7 +325,7 @@
   \else
     \AddToHookNext{shipout/background}{\dbf@mast@light}%
   \fi
-  \twocolumn[{\thispagestyle{dbffirst}\vspace*{0.78in}#1\vspace{15pt}}]%
+  \twocolumn[{\thispagestyle{dbffirst}\vspace*{\dbffrontskip}#1\vspace{15pt}}]%
 }{}
 
 % ---------------------------------------------------------------------
@@ -337,12 +342,35 @@
   \vspace{3pt}{\color{dbfFog}\hrule height 0.4pt}\vspace{5pt}}%
   {\end{minipage}\end{lrbox}%
   \colorbox{dbfBone}{\usebox{\dbf@box}}}
+% Ink panel (added 31 Oct 2026 for the proposal): the same panel on an Ink
+% field, for the page-1 "Design at a Glance" plate. Readouts inside it switch
+% to light type automatically.
+\NewDocumentEnvironment{dbfinkpanel}{O{Design at a Glance}}{%
+  \setlength\fboxsep{8pt}%
+  \begin{lrbox}{\dbf@box}\begin{minipage}[t]{\dimexpr\linewidth-2\fboxsep\relax}%
+  \def\dbf@rdlab{dbfFog}\def\dbf@rdval{white}\def\dbf@rdunit{dbfFog}%
+  \raggedright\sffamily\color{dbfMist}%
+  {\dbf@trackedmono\fontsize{6.6}{8}\selectfont\color{dbfFog}\MakeUppercase{#1}}\par
+  \vspace{3pt}{\color{dbfGraphite}\hrule height 0.4pt}\vspace{6pt}}%
+  {\end{minipage}\end{lrbox}%
+  \colorbox{dbfInk}{\usebox{\dbf@box}}}
+% Plate: an Ink field holding a dark figure, with a mono label line and an
+% optional right-hand note.  \begin{dbfplate}{LABEL}{NOTE} ... \end{dbfplate}
+\NewDocumentEnvironment{dbfplate}{mm}{%
+  \setlength\fboxsep{0pt}%
+  \begin{lrbox}{\dbf@box}\begin{minipage}[t]{\linewidth}%
+  \vspace{6pt}\hspace*{7pt}{\dbf@trackedmono\fontsize{6.4}{8}\selectfont\color{dbfFog}\MakeUppercase{#1}}%
+  \hfill{\dbf@trackedmono\fontsize{6.4}{8}\selectfont\color{dbfSteel}\MakeUppercase{#2}}\hspace*{7pt}\par
+  \vspace{4pt}{\color{dbfGraphite}\hrule height 0.4pt}\vspace{2pt}\centering}%
+  {\par\vspace{3pt}\end{minipage}\end{lrbox}%
+  \colorbox{dbfInk}{\usebox{\dbf@box}}}
 % Instrument-style readout:  \dbfreadout{label}{value}{unit}
+\def\dbf@rdlab{dbfSteel}\def\dbf@rdval{dbfInk}\def\dbf@rdunit{dbfSteel}
 \newcommand\dbfreadout[3]{%
   \parbox[t]{0.485\linewidth}{\raggedright
-    {\dbf@trackedmono\fontsize{6.2}{7.6}\selectfont\color{dbfSteel}\MakeUppercase{#1}}\par
-    \vspace{1.5pt}{\dbf@tablefont\bfseries\fontsize{12.5}{14.5}\selectfont\color{dbfInk}#2}%
-    \hspace{0.25em}{\sffamily\fontsize{7.6}{9}\selectfont\color{dbfSteel}#3}}}
+    {\dbf@trackedmono\fontsize{6.2}{7.6}\selectfont\color{\dbf@rdlab}\MakeUppercase{#1}}\par
+    \vspace{1.5pt}{\dbf@tablefont\bfseries\fontsize{12.5}{14.5}\selectfont\color{\dbf@rdval}#2}%
+    \hspace{0.25em}{\sffamily\fontsize{7.6}{9}\selectfont\color{\dbf@rdunit}#3}}}
 % Vertical rhythm between readout rows
 \newcommand\dbfreadoutgap{\par\vspace{9pt}}
 % Figure placeholder:  \dbfplaceholder{width}{height}{label}

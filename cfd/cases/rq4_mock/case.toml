@@ -1,0 +1,88 @@
+# RQ-4-style mock (Badr's CAD, assets/3D_Models/RQ4_BadrObtel.stl): the one input file.
+# cfd/tools/prep_geometry.py reads it and writes constant/geometry/rq4.obj,
+# constant/geometry/reference and system/caseParameters; Allrun reads those.
+# Every value marked PARAMETER is a placeholder until the team supplies it.
+
+[source]
+stl = "assets/3D_Models/RQ4_BadrObtel.stl"   # repo-relative; SolidWorks 2015 binary STL, 157,922 triangles
+units_m = 0.001                              # the file is in mm (bounding box 602 x 279 x 73)
+
+[frame]
+# CAD axes as exported: x = span (right wing at +x), y = nose-to-tail (nose at -y), z = up.
+# CFD axes: x = downstream (flow +x, nose at -x), y = span (half model y >= 0), z = up.
+x = "+y"
+y = "-x"
+z = "+z"
+scale = 3.023        # 1.82 m design span (analysis/inputs/sizing.toml span_m; chosen by Badr 24 Oct); 1.0 = as modelled (0.602 m)
+
+[skin]
+# The CAD is a hollow shell (about 1 mm walls) made of overlapping closed bodies.
+# Faces whose every sample point is buried or inside a cavity are dropped; faces
+# touching the outside air are kept whole, so the wetted surface stays closed.
+voxel_mm = 0.4       # CAD-frame voxel for the outside-air flood fill
+offset_mm = [0.6, 1.0]   # test points sit this far off the face, along its outward normal
+                         # (both under the ~1 mm wall, so an inner skin cannot see past its wall)
+
+# Patches for the per-component force breakdown. CAD frame, mm, by face centroid;
+# the first matching rule wins and anything unmatched is fuselage.
+# "body" = index of the closed body (connected component) by face count, 0 = largest.
+[[region]]
+name = "nacelle"
+body = 1             # the separate nacelle shell (x +-15, y 90-180, z 17-47)
+[[region]]
+name = "nacelle"     # mount: the side plates and saddle above the fuselage top line (z 14.5-15)
+abs_x = [0.0, 16.8]
+y = [88.0, 182.0]
+z = [15.2, 60.0]
+[[region]]
+name = "vtail"       # fuselage half-width is 16.3 at most, so 16.8 clears it
+abs_x = [16.8, 80.0]
+y = [96.0, 154.0]
+z = [-3.0, 60.0]
+[[region]]
+name = "wing"
+abs_x = [16.8, 400.0]
+y = [30.0, 110.0]
+z = [-20.0, -3.0]
+
+[wing]
+# Reference geometry from section cuts of the wing (CAD frame, mm). The exposed
+# panel between these stations is fitted and extended to the centreline
+# (trapezoidal reference wing, the usual convention).
+fit_abs_x = [50.0, 290.0]
+
+[flow]
+# Fly-off air, hot-day design value (proposal/data/numbers.tex \nRho, verified 11 Oct).
+rho = 1.064          # kg/m^3
+# nu: Sutherland viscosity at the hot-day temperature implied by rho at TIMPA
+# (p 93.5 kPa from the 667 m elevation; T = p / (rho R) = 306 K; mu 1.874e-5 Pa s).
+# DERIVED ESTIMATE; replace with the ASOS temperature behind \nRho when it is pulled.
+nu = 1.761e-5        # m^2/s
+U = 26.5             # PARAMETER: m/s; default = M3 race speed (analysis/inputs/sizing.toml v_ref_mps)
+alpha_deg = [0.0, 4.0, 8.0, 12.0, 10.0, 6.0, 2.0, -2.0, -4.0]
+                     # PARAMETER: body-axis angles of attack (fuselage datum = CFD x axis), run in this
+                     # order; each starts from the previous solution (Allrun WARM=1), so steps stay <= 4 deg
+iterations = 1000    # SIMPLE iteration cap per angle; cfd/tools/converge_watch.py stops earlier once the forces are flat
+Tu = 0.002           # ESTIMATE: freestream turbulence intensity in calm air (0.1-0.3 %)
+nut_ratio = 10.0     # freestream nu_t / nu
+yplus = 1.0          # target first-cell y+ (transition model needs ~1)
+cf_sizing = 0.008    # skin friction used only to size the first layer
+
+[moment]
+# PARAMETER: centre of gravity (CAD frame, mm). Default = quarter chord of the
+# mean aerodynamic chord, on the centreline, at the wing chord-line height.
+cg_mm = "mac_quarter"
+
+[mesh]
+base_per_span = 6         # background cell = span / 6
+surface_level = [7, 7]    # span/768: 0.78 mm cells on the skin at scale 1 (walls are ~1 mm)
+feature_level = 8         # wing and tail leading/trailing edges, nacelle lips
+nacelle_level = [7, 7]    # the duct wall and mount plates are 1.3 skin cells thick. Level 8 snaps them
+                          # better, but at the 1.82 m span it cost ~0.9M of 3.7M cells (14 s per iteration);
+                          # level 7 meshed cleanly at the 0.602 m scale (checkMesh OK). Revisit for a final run.
+distance_mac = [[0.1, 6], [0.3, 5]]  # refine to level 6 within 0.1 MAC of the skin, 5 within 0.3 MAC
+near_level = 4            # box: body + 0.1 span
+wake_level = 4            # box: wing leading edge to 0.5 span behind the tail, 0.55 span out, +-0.1 span
+n_layers = 20            # at 1.82 m (Re 193k) the first layer is 10.5 um: 20 x 1.25 gives a 3.6 mm stack,
+expansion = 1.25         # about the turbulent boundary-layer thickness at the trailing edge (15 gave 1.15 mm)
+domain_span = [4.0, 8.0, 4.0, 4.0]   # upstream, downstream, lateral, vertical (in spans)

@@ -6,7 +6,7 @@ and the airfoil figure in Sec. 3.3.
 
 Reads data/schedule.toml, data/team.toml and data/airfoil.toml (+ the XFoil
 polars in data/airfoil_polars/ and nRho from data/numbers.tex) and writes
-figures/gantt.pdf (7.00 x 1.50 in), figures/orgchart.pdf (3.35 x 1.35 in) and
+figures/gantt.pdf (7.00 x 1.85 in), figures/orgchart.pdf (3.35 x 1.35 in) and
 figures/airfoil.pdf (3.35 x 2.00 in), the exact sizes of their slots in
 sections/, plus data/airfoil.tex (the airfoil caption's numbers). Edit the
 TOML, never the PDFs or the generated .tex.
@@ -30,6 +30,7 @@ from matplotlib.patches import Rectangle
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "design-system" / "matplotlib"))
 import dbfplot as dp  # noqa: E402
+dp.COL, dp.PAGE = 3.48, 7.26     # proposal P1.2: 0.62 in side margins (main.tex), column 3.48 in
 
 DATA = HERE / "data"
 OUT = HERE / "figures"
@@ -48,89 +49,165 @@ def is_rules(item):
 # Fig. 01 Gantt
 # --------------------------------------------------------------------------
 def gantt():
+    """Fig. 01 (P1.2, 31 Oct 2026, after the mock-judging readability notes): every label 7 pt; bars tall
+    enough to carry their label inside, otherwise the label sits beside the bar on the same track; rules-fixed
+    dates are OUTLINED bars and hollow diamonds, team-plan dates are FILLED, so the two read apart in print.
+    Gate rail with hairlines through every lane. Optional `track = k` pins a task or milestone to a sub-track,
+    `label = "left"` asks for a label left of its bar. Text widths are measured, not guessed."""
     data = tomllib.loads((DATA / "schedule.toml").read_text(encoding="utf-8"))
     lanes = data["lanes"]
-    y_of = {name: len(lanes) - 1 - i for i, name in enumerate(lanes)}   # first lane on top
     todo = []
-
-    fig, ax = dp.figure("page", 1.50)
-    ax.grid(False)
-    ax.spines["left"].set_visible(False)
-    ax.tick_params(axis="y", length=0)
-    # month grid
-    m = dt.date(START.year, START.month, 1)
-    while m <= STOP:
-        ax.axvline(mdates.date2num(m), color=dp.MIST, lw=0.5, zorder=0)
-        m = dt.date(m.year + (m.month == 12), m.month % 12 + 1, 1)
-    for y in range(len(lanes) - 1):
-        ax.axhline(y + 0.5, color=dp.MIST, lw=0.5, zorder=0)
-
-    # Labels go right of their bar or diamond (left of it near the right edge).
-    # Within a lane, a label that would overlap an earlier one moves to the next
-    # free level: on the bar line, then above it, then below it.
-    placed = {lane: [] for lane in lanes}   # (x_from, x_to, level)
-    shapes = {lane: [] for lane in lanes}   # bars and diamonds, which sit on level 0
-    days_per_char = (STOP - START).days / (6.2 / 0.040)   # axis ~6.2 in, ~0.040 in per char
-    x_stop = mdates.date2num(STOP)
-
-    def blocked(lane, a, b, level):
-        if any(a < x1 and b > x0 and lvl == level for x0, x1, lvl in placed[lane]):
-            return True
-        return level == 0 and any(a < x1 and b > x0 for x0, x1 in shapes[lane])
-
-    def put_label(lane, x_right, x_left, text):
-        width = len(text) * days_per_char
-        sides = [(x_right, x_right + width, x_right, "left"), (x_left - width, x_left, x_left, "right")]
-        if x_right + width >= x_stop:
-            sides.reverse()
-        # first free (level, side): right side preferred, then the other side, then stack
-        choice = next(((lvl, s) for lvl in range(3) for s in sides
-                       if s[0] > mdates.date2num(START) and not blocked(lane, s[0], s[1], lvl)),
-                      (2, sides[0]))
-        level, (a, b, x, ha) = choice
-        placed[lane].append((a, b, level))
-        y = y_of[lane] + (0.0, 0.31, -0.31)[level]
-        ax.text(x, y, text, fontsize=5.6, va="center", ha=ha, color=dp.INK, zorder=4)
-
+    FS = 7.0                                  # 7.5 collides at this width (tried in P1.4)
+    TRACK, BAR = 0.150, 0.120                                  # inches: sub-track pitch, bar height
+    RAIL, HEAD, PAD = 0.22, 0.17, 0.03
+    stop = dt.date(2027, 5, 11)
     items = []
     for t in data.get("task", []):
         a, b = day(t["start"]), day(t["end"])
         if a is None or b is None:
-            todo.append(t["name"])
-            continue
+            todo.append(t["name"]); continue
         items.append(("task", a, b, t))
     for ms in data.get("milestone", []):
         d = day(ms["date"])
         if d is None:
-            todo.append(ms["name"])
-            continue
+            todo.append(ms["name"]); continue
         items.append(("ms", d, d, ms))
-    for kind, a, b, it in items:   # register every shape before placing any label
-        x0, x1 = mdates.date2num(a), mdates.date2num(b + dt.timedelta(days=1))
-        shapes[it["lane"]].append((x0, x1) if kind == "task" else (x0 - 1.5, x0 + 2.5))
-    for kind, a, b, it in sorted(items, key=lambda k: k[1]):
-        y = y_of[it["lane"]]
-        colour = dp.INK if is_rules(it) else dp.STEEL
-        x0, x1 = mdates.date2num(a), mdates.date2num(b + dt.timedelta(days=1))
-        if kind == "task":
-            ax.add_patch(Rectangle((x0, y - 0.13), x1 - x0, 0.26, color=colour, lw=0, zorder=3))
-            put_label(it["lane"], x1 + 1.5, x0 - 1.5, it["name"])
+    x0n, x1n = mdates.date2num(START), mdates.date2num(stop)
+    xn = mdates.date2num
+    # sub-tracks: pinned items keep their track, other tasks pack greedily, milestones default to track 0
+    track_end = {lane: {} for lane in lanes}
+    track_of = {}
+    for kind, a, b, it in sorted(items, key=lambda q: (q[1], q[0] != "task")):
+        xa, xb = xn(a), xn(b + dt.timedelta(days=1))
+        ends = track_end[it["lane"]]
+        if "track" in it:
+            k = it["track"]
+        elif kind == "ms":
+            k = 0
         else:
-            ax.plot([x0 + 0.5], [y], marker="D", ms=3.6, color=colour, mec="white", mew=0.5, zorder=5)
-            put_label(it["lane"], x0 + 3.0, x0 - 2.0, it["name"])
+            k = next((i for i in sorted(ends) if ends[i] <= xa + 0.01), max(ends, default=-1) + 1)
+        if kind == "task":
+            ends[k] = max(ends.get(k, -1e9), xb)
+        else:
+            ends.setdefault(k, -1e9)
+        track_of[id(it)] = k
+    ntrack = {lane: max(1, len(track_end[lane])) for lane in lanes}
+    H = RAIL + HEAD + TRACK * sum(ntrack.values()) + PAD
+    fig = plt.figure(figsize=(dp.PAGE, H))
+    fig.set_layout_engine(None)
+    left, right = 0.088, 0.997
+    ax = fig.add_axes([left, 0, right - left, 1])
+    ax.axis("off")
+    ax.set_xlim(x0n, x1n)
+    ax.set_ylim(0, H)
+    y_line = H - RAIL + 0.035                                  # rail line; gate diamonds sit on it
+    y_month = H - RAIL - HEAD / 2 + 0.01
+    top = H - RAIL - HEAD                                      # first lane's top edge
+    lane_top, y = {}, top
+    for lane in lanes:
+        lane_top[lane] = y
+        y -= TRACK * ntrack[lane]
+    bottom = y
 
-    ax.set_ylim(-0.6, len(lanes) - 0.4)
-    ax.set_yticks(range(len(lanes)))
-    ax.set_yticklabels([lane.upper() for lane in reversed(lanes)], fontsize=5.6,
-                       family=dp.MONO, color=dp.STEEL)
-    ax.set_xlim(mdates.date2num(START), mdates.date2num(STOP))
-    ax.xaxis.set_major_locator(mdates.MonthLocator())
-    ax.xaxis.set_major_formatter(
-        plt.FuncFormatter(lambda v, _: mdates.num2date(v).strftime("%b %Y").upper()))
-    ax.tick_params(axis="x", labelsize=5.8, length=2)
+    def ty(lane, k):
+        return lane_top[lane] - (k + 0.5) * TRACK
+
+    # month columns (alternate Bone) and month names in the header
+    m, k = dt.date(START.year, START.month, 1), 0
+    while m <= stop:
+        nxt = dt.date(m.year + (m.month == 12), m.month % 12 + 1, 1)
+        a, b = xn(m), xn(min(nxt, stop + dt.timedelta(days=1)))
+        if k % 2 == 1:
+            ax.add_patch(Rectangle((a, bottom), b - a, top - bottom, color=dp.BONE, lw=0, zorder=0))
+        lab = m.strftime("%b").upper() + (f" {m.strftime('%y')}" if m.month in (10, 1) else "")
+        if b - a > 12:
+            ax.text((a + b) / 2, y_month, lab, ha="center", va="center", fontsize=FS, family=dp.MONO,
+                    color=dp.STEEL, zorder=2)
+        m, k = nxt, k + 1
+    for lane in lanes:
+        ax.plot([x0n, x1n], [lane_top[lane]] * 2, color=dp.MIST, lw=0.5, ls="-", zorder=1)
+        ax.text(x0n - 2.2, lane_top[lane] - TRACK * ntrack[lane] / 2, lane.upper(), ha="right", va="center",
+                fontsize=FS, family=dp.MONO, color=dp.STEEL, clip_on=False)
+    ax.plot([x0n, x1n], [bottom] * 2, color=dp.MIST, lw=0.5, ls="-", zorder=1)
+    ax.plot([x0n, x1n], [y_line] * 2, color=dp.INK, lw=0.8, ls="-", zorder=1)
+    ax.text(x0n - 2.2, y_line, "GATES", ha="right", va="center", fontsize=FS, family=dp.MONO, color=dp.INK,
+            weight="bold", clip_on=False)
+
+    renderer = fig.canvas.get_renderer()
+    ppd = ax.get_window_extent(renderer).width / (x1n - x0n)          # pixels per day
+
+    def width_days(text):
+        t = ax.text(0, 0, text, fontsize=FS, family=dp.SANS)
+        w = t.get_window_extent(renderer).width / ppd
+        t.remove()
+        return w
+
+    def diamond(x, yv, rules, size=4.4):
+        ax.plot([x], [yv], marker="D", ms=size, color="white" if rules else dp.INK, mec=dp.INK, mew=0.7, zorder=6)
+
+    # gates on the rail; hairlines through the lanes, gapped around the month names
+    gates = sorted(data.get("gate", []), key=lambda g: g["date"])
+    used = []
+    for i, g in enumerate(gates):
+        d = day(g["date"])
+        x = xn(d) + 0.5
+        ax.plot([x, x], [bottom, top], color=dp.GRAPHITE, lw=0.5, ls=(0, (1, 1.6)), zorder=2)
+        diamond(x, y_line, is_rules(g))
+        lab = g.get("label", f"{g['name']} {d.day} {d.strftime('%b')}")
+        w = width_days(lab)
+        nxt = xn(day(gates[i + 1]["date"])) if i + 1 < len(gates) else x1n
+        a, ha, xt = (x + 2.0, "left", x + 2.0) if x + 2.0 + w < nxt - 4.0 else (x - 2.0 - w, "right", x - 2.0)
+        if a < x0n or any(a < q1 and a + w > q0 for q0, q1 in used):
+            a, ha, xt = x + 2.0, "left", x + 2.0
+        used.append((a, a + w))
+        ax.text(xt, y_line + 0.075, lab, ha=ha, va="center", fontsize=FS, color=dp.INK, zorder=6)
+
+    # bars and milestones; labels inside, else beside on the same sub-track (right, then left)
+    occ = {}                                                    # (lane, track) -> [(x0, x1)]
+    for kind, a, b, it in items:
+        key = (it["lane"], track_of[id(it)])
+        xa, xb = xn(a), xn(b + dt.timedelta(days=1))
+        occ.setdefault(key, []).append((xa, xb) if kind == "task" else (xa - 1.8, xa + 2.8))
+
+    def free(key, a, b):
+        return a >= x0n and b <= x1n and not any(a < q1 - 0.01 and b > q0 + 0.01 for q0, q1 in occ.get(key, []))
+
+    def beside(key, xa, xb, text, yv, prefer="right"):
+        if prefer == "none":                                    # labelled by its neighbour
+            return
+        w = width_days(text)
+        opts = [(xb + 1.4, xb + 1.4 + w, "left"), (xa - 1.4 - w, xa - 1.4, "right")]
+        if prefer == "left":
+            opts.reverse()
+        for a, b, ha in opts:
+            if free(key, a, b):
+                break
+        else:
+            todo.append(f"label overlap: {text}")
+        occ[key].append((a, b))
+        ax.text(a if ha == "left" else b, yv, text, fontsize=FS, va="center", ha=ha, color=dp.INK, zorder=5)
+
+    for kind, a, b, it in sorted(items, key=lambda q: (q[1], q[0])):
+        key = (it["lane"], track_of[id(it)])
+        yv = ty(*key)
+        rules = is_rules(it)
+        xa, xb = xn(a), xn(b + dt.timedelta(days=1))
+        if kind == "task":
+            ax.add_patch(Rectangle((xa, yv - BAR / 2), xb - xa, BAR, facecolor="white" if rules else dp.GRAPHITE,
+                                   edgecolor=dp.INK, lw=0.7 if rules else 0, zorder=3))
+            w = width_days(it["name"])
+            if w + 2.6 <= xb - xa:
+                ax.text(xa + 1.3, yv, it["name"], fontsize=FS, va="center", ha="left",
+                        color=dp.INK if rules else "white", zorder=4)
+            else:
+                beside(key, xa, xb, it["name"], yv, it.get("label", "right"))
+        else:
+            diamond(xa + 0.5, yv, rules)
+            beside(key, xa - 1.3, xa + 2.3, it["name"], yv, it.get("label", "right"))
     if todo:
         dp.tag(ax, f"{len(todo)} items to schedule", "upper right")
     dp.save(fig, OUT / "gantt.pdf")
+    print(f"gantt {dp.PAGE:.2f} x {H:.2f} in")
     return todo
 
 
@@ -162,35 +239,39 @@ def orgchart():
         walk(r, 0)
     levels = max(depth.values()) + 1
 
-    W, H = dp.COL, 1.35
+    W, H = dp.COL, 1.06
     fig = plt.figure(figsize=(W, H), layout="none")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis("off")
 
-    bh, gap = 0.21, (H - 0.04 - levels * 0.21) / max(levels - 1, 1)
+    bh, gap = 0.245, (H - 0.04 - levels * 0.245) / max(levels - 1, 1)
     pos = {}
     for lvl in range(levels):
         row = [u["id"] for u in units if depth[u["id"]] == lvl]
-        bw = min(0.80, (W - 0.06 * (len(row) - 1)) / len(row))
+        par = [r for r in row if children.get(r)]                    # P1.4: a parent with a team goes in the middle
+        if par and len(row) > 2:
+            rest = [r for r in row if r not in par]
+            row = rest[:len(rest) // 2] + par + rest[len(rest) // 2:]
+        bw = min(0.80, (W - 0.05 * (len(row) - 1)) / len(row))
         step = W / len(row)
         y = H - 0.02 - bh - lvl * (bh + gap)
         for i, uid in enumerate(row):
             x = step * i + (step - bw) / 2
             pos[uid] = (x, y, bw)
     for uid, (x, y, bw) in pos.items():
-        lead_role = depth[uid] in (1,) or uid == "chief"
-        ax.add_patch(Rectangle((x, y), bw, bh, facecolor=dp.BONE if lead_role else "white",
-                               edgecolor=dp.GRAPHITE, lw=0.5))
-        ax.text(x + bw / 2, y + bh / 2, by_id[uid]["label"].upper(), ha="center", va="center",
-                fontsize=5.5, family=dp.MONO, color=dp.INK, linespacing=1.1)
+        tech = uid == "chief" or uid in children.get("chief", [])     # P1.4: the chief engineer's team shaded
+        ax.add_patch(Rectangle((x, y), bw, bh, facecolor=dp.BONE if tech else "white",
+                               edgecolor=dp.INK if tech else dp.GRAPHITE, lw=0.6))
+        ax.text(x + bw / 2, y + bh / 2, by_id[uid]["label"], ha="center", va="center",
+                fontsize=7.0, family=dp.SANS, color=dp.INK, linespacing=1.05)
     for parent, kids in children.items():
         if not kids:
             continue
         px, py, pw = pos[parent]
         bus = py - gap / 2
-        line = dict(color=dp.GRAPHITE, lw=0.5, ls="-")   # the house cycle would dash them
+        line = dict(color=dp.INK, lw=0.7, ls="-")        # the house cycle would dash them; P1.4: darker
         ax.plot([px + pw / 2] * 2, [py, bus], **line)
         xs = [pos[k][0] + pos[k][2] / 2 for k in kids]
         ax.plot([min(xs + [px + pw / 2]), max(xs + [px + pw / 2])], [bus, bus], **line)

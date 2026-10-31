@@ -1,0 +1,59 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+// Included inside controlDict's functions{}; $variables come from controlDict scope.
+
+#includeFunc residuals(p, U, k, omega, gammaInt, ReThetat)
+
+// Coefficients use the HALF-model force with Aref = S/2, so they equal full-aircraft coefficients.
+coeffsTemplate      // copied below, then removed
+{
+    type        forceCoeffs;
+    libs        ("libforces.so");
+    writeControl timeStep;
+    writeInterval 1;
+    rho         rhoInf;
+    rhoInf      1;              // kinematic pressure: coefficients are density-free
+    magUInf     $UMag;
+    lRef        $refLength;
+    Aref        $refArea;
+    CofR        $refCofR;
+    liftDir     $liftDirection;
+    dragDir     $dragDirection;
+    pitchAxis   (0 1 0);        // +y: positive moment = nose up
+}
+
+// Each force object evaluates the full-field stress, so only the total runs every iteration
+// (cfd/tools/converge_watch.py stops on it); the breakdown runs every 10th.
+coeffs          { $coeffsTemplate; patches (aircraft); }
+coeffsWing      { $coeffsTemplate; patches (wing);     executeInterval 10; writeInterval 10; }
+coeffsFuselage  { $coeffsTemplate; patches (fuselage); executeInterval 10; writeInterval 10; }
+coeffsVtail     { $coeffsTemplate; patches (vtail);    executeInterval 10; writeInterval 10; }
+coeffsNacelle   { $coeffsTemplate; patches (nacelle);  executeInterval 10; writeInterval 10; }
+#remove coeffsTemplate
+
+// Dimensional half-model forces (N) at the design density
+forces
+{
+    type        forces;
+    libs        ("libforces.so");
+    executeControl timeStep;
+    executeInterval 10;
+    writeControl timeStep;
+    writeInterval 10;
+    patches     (aircraft);
+    rho         rhoInf;
+    rhoInf      $rhoDesign;
+    CofR        $refCofR;
+    pitchAxis   (0 1 0);
+}
+
+// Wall fields for the images and the y+ check (the templates run at write time only)
+#includeFunc yPlus
+#includeFunc wallShearStress
+
+// ************************************************************************* //

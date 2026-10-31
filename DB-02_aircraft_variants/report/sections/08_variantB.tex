@@ -1,0 +1,41 @@
+% Variant B
+\dosdivider{05}{Variant B}{The hedge: a broader wing with simple slotted flaps that wins exactly where Variant A is weakest, and shares every long-lead part.}
+  {\dosdivrow{0}{07}{Specification}\dosdivrow{1}{07}{How B differs, and why}\dosdivrow{2}{07}{What it shares with A}}
+
+\dosspecA{B}{Slotted-flap broad-wing carrier}{Straight 1.2~m² wing with single-slotted flaps on a longer tail boom; otherwise the same fuselage, gear, propulsion and payload system as Variant A, with the sensor declared between 3 and 6~kg.}{figures/threeview_B_dark.pdf}
+  {SPAN 1.820 M\hspace{1.4em}WING AREA 1.20 M²\hspace{1.4em}PAYLOAD BAY (DASHED) CENTRED ON THE CG\hspace{1.4em}CROSSHAIR: DESIGN CG, ALL LOADINGS}
+
+\dosspecB{B}{SLOTTED-FLAP BROAD-WING CARRIER}
+  {\dosro{0}{0}{SPAN}{1.820}{M}\dosro{1}{0}{WING AREA}{\val{F-B-S}}{M²}\dosro{2}{0}{ASPECT RATIO}{\val{F-B-AR}}{}\dosro{3}{0}{LENGTH}{\val{F-B-LEN}}{M}%
+   \dosro{0}{1}{EMPTY MASS}{\val{F-B-EMPTY}}{KG}\dosro{1}{1}{M2 GROSS}{\val{F-B-G2}}{KG}\dosro{2}{1}{STALL AT M2}{\val{F-B-VS2}}{M/S}\dosro{3}{1}{DECLARED SENSOR}{\val{F-B-MDECL}}{KG}%
+   \dosro{0}{2}{M2 SCORE}{\val{F-B-M2}}{}\dosro{1}{2}{M3 SCORE}{\val{F-B-M3}}{}\dosro{2}{2}{GM SCORE}{\val{F-B-GM}}{}\dosro{3}{2}{STATIC MARGIN}{16}{\%}%
+   \dosro{0}{3}{MEAN TOTAL}{\val{F-B-MEAN}}{/ 7.5}\dosro{1}{3}{P10 TOTAL}{\val{F-B-P10}}{}\dosro{2}{3}{P(TOP OF FIELD)}{\val{F-B-PTOP}}{}\dosro{3}{3}{P(1ST), REPORT 90}{\val{F-B-P1ST}}{}}
+  {\doscfg{0}{WING}{Straight, taper 0.7, SD7037, 2° washout}\doscfg{1}{HIGH LIFT}{Single-slotted, 30 \% chord, 60 \% semispan}\doscfg{2}{POSITION}{High wing, 2° dihedral}%
+   \doscfg{3}{TAIL}{Conventional, $V_h$ 0.55, $V_v$ 0.040}\doscfg{4}{GEAR}{Fixed tricycle, faired}\doscfg{5}{PROPULSION}{1 x AT7215 KV270, APC 20x15E}%
+   \doscfg{6}{BATTERY}{8S 3300 mAh, 97.7 Wh}\doscfg{7}{FUSE}{80 A blade, 58 V rated}%
+   \doscfg{8}{SENSOR}{A's dart, ballasted to 6 kg max}\doscfg{9}{CONTAINER}{298 x 288 x 288 mm, 1.00 kg}\doscfg{10}{D\&R}{Same as A}%
+   \doscfg{11}{BAY AND EXIT}{Both on the CG}\doscfg{12}{STRUCTURE}{Rib and spar, CF tube spar}\doscfg{13}{JOINT}{Two-piece wing}%
+   \doscfg{14}{RADIO}{ExpressLRS 2.4 GHz, PWM}\doscfg{15}{SHARED PARTS}{Fuselage, gear, power, sensor, drum}}
+  {\dosmis{0}{M1}{Waived; the first successful Mission 2 credits it.}{1.00}%
+   \dosmis{1}{M2}{One unit at the declared mass.}{\val{F-B-M2}}%
+   \dosmis{2}{M3}{Ballast chosen per attempt; stow inside the window.}{\val{F-B-M3}}%
+   \dosmis{3}{GM}{Declared sensor from 1.524 m, six drops.}{\val{F-B-GM}}}
+
+\section{Variant B: the slotted-flap broad-wing carrier}
+
+\subsection{Why a second aircraft}
+Variant A's lead rests on one component the team has never built: a Fowler flap that slides on tracks. If that flap gives less lift than the tunnel data promise, or proves unreliable, A's advantage disappears. Variant B is the aircraft that wins in exactly that case. It replaces the Fowler flap with a single-slotted flap, which hinges like an ordinary flap and opens a slot, and buys back the lost lift with 20\,\% more wing area.
+
+\railnote{Selection}{The rule fixed on 27 October asks for a B that differs from A in a feature the rules freeze at the design report, with the least regret where A loses most. The only such candidate the search can score is a twin, and the best twin fails both gates and falls further than A when the Fowler underdelivers. Following revision~A's reading, B is therefore the minimum-regret wing in A's two worst scenarios: the 1.2~m² slotted wing leads both, ahead of the 1.1~m² (\val{F-S11S6-MAXREG} maximum regret) and 1.0~m² (\val{F-S10S6-MAXREG}) slotted wings. It differs from A in wing area and flap type; the rules' list of major configuration changes includes neither, though the Tech Inspector has the final word.}
+
+\begin{decisioncard}{B-01}{Trade the sliding flap for a hinged one and a larger wing}{1.2~m² wing with single-slotted flaps on the same span, declared 3 to 6~kg.}{EVIDENCE ESTIMATE (FLAP DATA) AND COMPUTED\hspace{1.2em}/\hspace{1.2em}SWITCH GATE 15 JAN 2027}
+\why{A slotted flap is a hinge and a gap: easy to build from laser-cut ply and printed brackets, easy to inspect, hard to jam. It gives less extra lift than a Fowler flap, so the wing grows by a fifth, and B actually lands slightly slower than A. The bigger wing costs some speed and payload in every mission, which is why B scores a little lower than A when everything works, and why it is the better aircraft if the Fowler flap disappoints.}
+\engineering{Trimmed landing $C_{L,\max}$ \val{F-B-CLMAX} at B's own layout, from Wenzinger and Harris's NACA TR 664 slotted-flap data (\val{S3-R13} at the generic reference geometry, range \rng{S3-R13}). At Mission~2 weight (median \val{F-B-G2}~kg) B stalls at \val{F-B-VS2}~m/s. Its probability of the top mission total is \val{F-B-PTOP} in the base case, \val{F-AB-base} below A, and \val{F-B-PTOP-fowler_low} if the Fowler flap underdelivers, against \val{F-A-PTOP-fowler_low} for A in that case. B's largest regret in any scenario is \val{F-B-MAXREG}, the smallest of all finalists.}
+\flipsif{Fowler bench tests passing by 15 January, in which case A is built; a heavier airframe than the fit or lower reliability, which both favour A.}
+\end{decisioncard}
+
+\begin{decisioncard}{B-02}{Share every long-lead part with A}{Same fuselage, gear, propulsion system, sensor, drum and radio; only the wing, flaps, tail surfaces, boom and container differ.}{PROGRAMME DECISION\hspace{1.2em}/\hspace{1.2em}PROCUREMENT NOW}
+\why{A hedge is only cheap if it shares the parts that take longest to buy. Every long-lead item, the motor, propeller, packs, ESC, fuse, receiver, tungsten ballast, drum drive and slip ring, is common to both aircraft, so ordering for A is ordering for B. The fuselage is sized for A's larger container and holds B's as well. What differs, the wing, flaps, tail surfaces, boom and a smaller container, is built in house.}
+\engineering{B's empty mass is \val{F-B-EMPTY}~kg against \val{F-A-EMPTY}~kg for A: the larger wing and a tail 0.26~m further aft (tail arm \val{F-B-LT}~m against \val{F-A-LT}~m, both 1.89 mean chords). Its neutral point is \val{F-B-XNP}~m and design CG \val{F-B-XCG}~m, with the same 16\,\% margin across every loading, and its horizontal tail is \val{F-B-SH}~m² against A's \val{F-A-SH}~m². At aspect ratio \val{F-B-AR} its roll stability is the weaker of the two ($C_{l\beta} = $ \val{F-B-CLB} per radian against \val{F-A-CLB}); dihedral may need to rise.}
+\flipsif{Nothing in the evidence; this is a programme choice that keeps the switch cheap.}
+\end{decisioncard}

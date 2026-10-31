@@ -13,11 +13,15 @@ cd "$(dirname "$0")"
 DS=../design-system
 OUT="2027DBF_American_University_of_the_Middle_East_PROPOSAL.pdf"
 
+export PYTHONDONTWRITEBYTECODE=1
 echo "---- charts ----"
 python make_charts.py || exit 1        # Gantt + org chart from data/*.toml
 
-echo "---- analysis ----"
-python ../analysis/s7_export.py || exit 1   # data/analysis.tex from analysis/ (Scripts 1-2)
+echo "---- numbers and figures (P1) ----"
+# p1_nominal.py and p1_sensitivity.py (about 4 min) are re-run only when DB-02 results change:
+#   python tools/p1_nominal.py && python tools/p1_sensitivity.py && python tools/p1_payload.py
+python tools/p1_data.py || exit 1      # data/p1.tex from DB-02 results + data/p1_*.json
+python tools/p1_figures.py > /dev/null 2>&1 || { echo "FAIL  p1_figures"; exit 1; }
 
 echo "---- build ----"
 $DS/tools/build.sh main.tex || exit 1
@@ -38,7 +42,8 @@ case "$size" in 612\ x\ 792*) r=ok;; *) r=no;; esac; check $r "page size $size (
 [ "$bytes" -lt 20000000 ] && r=ok || r=no;       check $r "file size $((bytes/1024)) KB (20 MB recommended max)"
 [ -z "$bad" ] && r=ok || r=no;                   check $r "fonts: house fonts only${bad:+ (unexpected: $bad)}"
 python $DS/tools/check_order.py build/final.aux || fails=$((fails+1))
-an=$(python ../analysis/check.py) && r=ok || r=no; check $r "${an%%$'\n'*} (numbers come from tested code)"
+(cd .. && python -m unittest discover -s DB-02_aircraft_variants/tests -p "test_v_*.py" > proposal/build/db02_tests.txt 2>&1) && r=ok || r=no
+check $r "DB-02 test suite: $(tail -1 build/db02_tests.txt) (numbers come from tested code)"
 [ "$tbd" -eq 0 ] && r=ok || r=no;                check $r "unfinished values and placeholder prose: $tbd distinct"
 
 echo "----"

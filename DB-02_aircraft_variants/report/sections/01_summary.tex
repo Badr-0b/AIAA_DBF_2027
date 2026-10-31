@@ -1,0 +1,32 @@
+% Executive summary
+\section{Summary}
+
+\subsection{The answer}
+Build \textbf{Variant A}: a 1.0~m² straight wing with Fowler flaps on the full 1.82~m span, a high wing over a box fuselage, a conventional tail, fixed tricycle gear and a single 8S tractor, carrying one dense sensor whose maximum mass is declared at technical inspection between 3 and 8~kg. Keep \textbf{Variant B}, the same fuselage, gear and power with a 1.2~m² wing, simple slotted flaps and a 3 to 6~kg declaration, one wing and tail away, and choose between them on 15 January 2027 on the result of a Fowler-flap bench test.
+
+\vspace{4pt}
+\noindent\makebox[\textwidth][r]{\begin{tblr}{width=\fullw, colspec={X X X X X X},
+  rowsep=6pt, colsep=7pt, hline{1}={0.6pt,dbfInk}, hline{2}={0.4pt,dbfFog}, vline{2-6}={0.3pt,dbfMist}}
+\briefreadout{P(top), A}{\val{F-A-PTOP}}{} & \briefreadout{P(top), DB-01}{\val{F-C-PTOP}}{} &
+\briefreadout{Mean total, A}{\val{F-A-MEAN}}{/ 7.5} & \briefreadout{Stall at M2, A}{\val{F-A-VS2}}{m/s} &
+\briefreadout{Declared sensor}{3--8}{kg} & \briefreadout{P(1st), report 90}{\val{F-A-P1ST}}{} \\
+\end{tblr}}
+
+\subsection{Why, in six sentences}
+\begin{enumerate}
+\item Most of the 2027 score is paid for finishing, and teams get only two or three flight attempts, so every choice is judged first by what it does to the chance of completing Missions~2 and~3.
+\item The declared sensor mass feeds the Ground Mission and Mission~2 together; choosing it at technical inspection, once the real aircraft has been weighed and flown, is worth about four tenths of a point and is the single largest gain in this study.
+\item A heavy sensor is only an asset if the aircraft can land it slowly; on a 1.0~m² wing the Fowler flap gives Variant~A a Mission~2 stall speed of \val{F-A-VS2}~m/s against \val{F-C-VS2}~m/s for the DB-01 design, and keeps the wing small enough to declare up to 8~kg.
+\item Placing the payload bay and the tow-line exit on the centre of gravity makes every loading fly the same, which matters more than any aerodynamic refinement for a hand-flown aircraft.
+\item The margin between the two variants is small and conditional: A leads by \val{F-AB-base} in the chance of the top mission total when its flap works, and B leads by \val{F-A-REG-fowler_low} when the flap underdelivers (Section~\ref{sec:h2h}), so the Fowler bench test decides the aircraft.
+\item The aircraft makes winning possible, but the design report decides it: Variant~A's chance of finishing first rises from \val{F-A-P1ST-R80} at a report score of 80 to \val{F-A-P1ST-R90} at 90.
+\end{enumerate}
+
+\subsection{What changed from DB-01, and what did not}
+DB-01's direction survives: a straight flapped wing, a single tractor, a high wing, a conventional tail, fixed gear, a closed-loop drum and a waived Mission~1. Five things changed. The wing grows from 0.9 to 1.0~m² once the mass model stops charging the fuselage and motor for wing area. Its plain flap reached less lift than assumed, and a high-lift flap replaces it. Its container broke the drop-height envelope, and a tougher, denser sensor fixes that. Its frozen 4~kg payload unit gives way to a declaration of up to 8~kg made at technical inspection. And its 100~A fuse was never rated for an 8S pack, so a 58~V, 80~A part replaces it.
+
+\subsection{Revision B}
+Revision~A of this dossier, issued earlier on 30 October, recommended a 0.9~m² Fowler wing (A) and a 1.0~m² slotted wing (B). A review the same day found six faults in the scoring chain: the flaps scored were narrower than those specified, the mass model charged the whole airframe for wing area, the trim used a generic tail arm, the uncertainty intervals ignored the finite number of aircraft draws, B's wing area was chosen outside the selection rule, and several cards were graded higher than their inputs. Correcting them moved A to 1.0~m² with a 3 to 8~kg range and B to 1.2~m², and reversed one claim: B, not A, has the smaller worst-case regret. Section~\ref{sec:revb} lists each fault, its fix and its effect.
+
+\subsection{What the team must sign}
+The decision register (Table~\ref{tab:register}) lists eighteen recommendations. Three need action now: order the long-lead parts common to both variants, build the Fowler test section (TC-07), and file the five round-one rules questions by their deadline (Section~\ref{sec:qa}).

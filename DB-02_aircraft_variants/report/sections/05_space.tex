@@ -1,0 +1,51 @@
+% Chapter: design space and eliminations
+\section{The design space, and what was ruled out}
+
+\subsection{How wide the search was}
+The search covered every aircraft family the team proposed or the rules allow, then every combination of wing area (0.8 to 1.3~m²), flap type (plain, slotted, Fowler), declared-sensor range (3 to 4.4, 6 or 8~kg) and propulsion (single 8S, single 12S, twin) on the families that survived. Each family below was removed for a stated reason, and each reason is a number.
+
+\subsection{The RQ-4 reference family}
+The team's starting reference was the MQ-9, MQ-4C and RQ-4 family of long-wing surveillance aircraft (Badr Ob, 10 October 2026), and the team modelled a scaled RQ-4-style concept in CAD and ran it through CFD. That work is the clearest single piece of evidence in this dossier for why the 2027 aircraft has to look different.
+
+\begin{decisioncard}{E-01}{Keep the RQ-4 look where it is free; drop its proportions}{Do not use a long, narrow RQ-4-proportioned wing. Body styling may borrow from the family where it costs nothing.}{EVIDENCE COMPUTED (CFD, INDICATIVE)\hspace{1.2em}/\hspace{1.2em}DECIDES WING SHAPE}
+\why{A long, slender wing is the right answer for staying airborne for a day. This contest asks for the opposite: a heavy load lifted at a slow, safe landing speed and flown hard around tight turns, with the span capped at 1.829~m (6~ft). At that span a long, slender wing has very little area. The CFD of the team's own RQ-4-style model shows the result: the whole aircraft cannot produce much more lift than a coefficient of 0.9, so carrying even 7~kg it would have to land at about 25~m/s, roughly twice the speed of a safe touchdown.}
+\engineering{At the 1.82~m span the RQ-4-style wing has $S = $ \val{CFD-R01}~m² and an aspect ratio of \val{CFD-R02}. OpenFOAM gives a lift coefficient of \val{CFD-R04} at 0° body angle, \val{CFD-R07} at 4° and \val{CFD-R12} at 12°, where the wing is fully stalled. With $C_{L,\max}\approx$ \val{CFD-R14}, a 7~kg aircraft stalls at \val{CFD-R15}~m/s. The design study's wings carry 0.8 to 1.3~m² on the same span, 3.4 to 5.6 times the area.}
+\derivation{$V_s = \sqrt{2mg/(\rho S C_{L,\max})} = \sqrt{2 \times 7 \times 9.807 / (1.064 \times 0.232 \times 0.896)} \approx 24.9$~m/s.}
+\flipsif{Nothing within these rules: the span cap and the landing-speed requirement fix the wing area, whatever the styling.}
+\end{decisioncard}
+
+\widefig[h]{figures/cfd_panel.pdf}{The RQ-4-style concept in CFD at 26.5~m/s. Left: surface pressure at 4° body angle, where the aircraft reaches its best lift-to-drag ratio of \val{CFD-R09}. Right: speed on the wing's mean section at 12°, where the flow has left the upper surface from about 10\,\% chord; the wing is stalled at a lift coefficient of about 0.9.}{fig:cfd}
+
+\begin{qualitybox}{CFD, INDICATIVE}
+OpenFOAM 14, steady RANS with the $k$--$\omega$ SST $\gamma$--$Re_\theta$ transition model, half model, \val{CFD-R16} million cells. Mean $y^+$ is \val{CFD-R17} against a target of 1.5; the relaxed boundary-layer pass fails three of checkMesh's extra quality tests; the two stalled angles ended at the 1,000-iteration cap with a 1.2 to 1.9\,\% spread in forces; the hollow CAD shell leaked a small volume of flow into the fuselage. The sweep has four of nine angles complete. The results are used here for one purpose, the order of magnitude of the maximum lift, where they agree with the airfoil and wing data. They are not used to calibrate maximum lift or drag anywhere in the scoring.
+\end{qualitybox}
+
+\Needspace{3.2in}
+\subsection{Families removed by the numbers}
+Table~\ref{tab:elim} lists every family removed from the search and the number that removed it. Each was scored on the same 120 paired draws as the finalists.
+
+\begin{widetable}[h]{Every family removed from the search, with the number that removed it. Score changes are on the mean mission score over the same 120 paired draws.}{tab:elim}
+\begin{brieftable}{width=\fullw, colspec={X[0.9,l] X[1.6,l] X[1.0,l]}}
+Family & Why it was removed & Evidence \\
+Delta, flying wing, blended body & Low maximum lift without a tail, high landing attitude: 4.60 against 6.29 for a straight wing of the same area & DB-01, \gC \\
+Biplane and box wing & Induced drag falls to 77\,\% of a monoplane's, but halved chords, struts and lower lift per area cost 0.32 points & S3 kill gate, \gC \\
+Tandem wing & No induced-drag gain at zero vertical gap (Munk's stagger theorem) & theory \\
+Winglets and tip plates & $+$0.015 to $+$0.041 in $e$ at heights of 5 to 10\,\% of the span; drag of the added surface and 0.10 to 0.15~kg cost more than they return: $-$0.01 to $-$0.05 & S3, AVL, \gC \\
+Flap in the turns & Raises turn lift from 1.18 to 1.29 but costs 5\,\% of span efficiency: $-$0.04 & S3, \gC \\
+Pusher propeller & The tow line and sensor trail behind and below the aircraft, through the pusher's disc during deployment and recovery & DB-01 risk R9 \\
+Retractable gear & Pays only if lighter than 120 to 240~g; saves about 0.01 points against a gear-up landing risk & DB-01, \gC \\
+Frozen heavy payload unit & Superseded by declaring at technical inspection (card P-01) & S8, \gC \\
+\end{brieftable}
+\end{widetable}
+
+\Needspace{2.4in}
+\subsection{The integrated screen}
+Every surviving combination was then scored on the same draws and fields: six wing areas from 0.8 to 1.3~m², three flap types, declared ranges of 3 to 4.4, 6 or 8~kg, and single 8S, single 12S or twin propulsion, \val{F-SCR-N} designs in all. \val{F-SCR-NG} pass the gates of Section~\ref{sec:rule}. Three patterns shape the shortlist.
+
+\begin{itemize}
+\item \textbf{The best wings are 1.0 to 1.3~m².} Every one of the ten gated leaders sits in that range. Revision~A's 0.9~m² Fowler wing scores within about 0.02 of them but misses the completion gate by a hair in the screen; it is carried into the finalists for comparison.
+\item \textbf{Area substitutes for flap complexity.} A 1.3~m² wing with a plain flap passes the gates within about 0.02 of the leaders, so the high-lift flap buys a smaller wing, not a different league.
+\item \textbf{Heavy declarations and one motor.} The 3 to 4.4~kg range trails the 6 and 8~kg ranges by about 0.09 in P(top); the best 12S and twin designs trail the best 8S design by 0.02 and 0.05.
+\end{itemize}
+
+The \val{F-SEL-NFIN} finalists of Section~\ref{sec:h2h} are the five gated leaders, the best design of each flap type, slotted wings of 1.0 to 1.2~m², revision~A's two 0.9~m² designs and the best twin, re-scored with the reliability-aware declaration in five stress scenarios.

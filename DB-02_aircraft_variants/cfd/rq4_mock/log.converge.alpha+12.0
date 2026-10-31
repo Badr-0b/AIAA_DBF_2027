@@ -1,0 +1,21 @@
+watching /home/nitro/dbf_cfd/rq4_mock: min 300 iterations, window 200, tolerance x1, spread x2
+watching /home/nitro/dbf_cfd/rq4_mock: min 300 iterations, window 200, tolerance x1, spread x2
+401: CL 0.89737 spread 0.14 drift 0.028 | CD 0.245772 spread 0.022 drift 0.001 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+405: CL 0.89546 spread 0.13 drift 0.03 | CD 0.245500 spread 0.022 drift 0.0021 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+409: CL 0.89397 spread 0.13 drift 0.029 | CD 0.245171 spread 0.021 drift 0.0028 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+412: CL 0.89341 spread 0.13 drift 0.025 | CD 0.244958 spread 0.021 drift 0.0031 | drift tol 0.0045, 0.0024, spread x2 -> not yet
+416: CL 0.89364 spread 0.13 drift 0.018 | CD 0.244808 spread 0.021 drift 0.0032 | drift tol 0.0045, 0.0024, spread x2 -> not yet
+419: CL 0.89451 spread 0.13 drift 0.012 | CD 0.244829 spread 0.021 drift 0.003 | drift tol 0.0045, 0.0024, spread x2 -> not yet
+422: CL 0.89578 spread 0.12 drift 0.0053 | CD 0.244952 spread 0.021 drift 0.0024 | drift tol 0.0045, 0.0024, spread x2 -> not yet
+425: CL 0.89719 spread 0.11 drift 0.0012 | CD 0.245141 spread 0.021 drift 0.0014 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+428: CL 0.89846 spread 0.11 drift 0.0072 | CD 0.245355 spread 0.019 drift 0.00014 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+431: CL 0.89941 spread 0.11 drift 0.012 | CD 0.245561 spread 0.018 drift 0.0012 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+434: CL 0.89992 spread 0.11 drift 0.014 | CD 0.245736 spread 0.018 drift 0.0023 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+438: CL 0.89983 spread 0.11 drift 0.012 | CD 0.245891 spread 0.018 drift 0.0028 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+441: CL 0.89925 spread 0.11 drift 0.0078 | CD 0.245930 spread 0.018 drift 0.0025 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+444: CL 0.89831 spread 0.11 drift 0.0025 | CD 0.245893 spread 0.018 drift 0.0018 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+448: CL 0.89674 spread 0.1 drift 0.0033 | CD 0.245726 spread 0.018 drift 0.00096 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+451: CL 0.89556 spread 0.1 drift 0.0061 | CD 0.245533 spread 0.018 drift 0.00039 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+454: CL 0.89458 spread 0.1 drift 0.0073 | CD 0.245318 spread 0.016 drift 5.2e-05 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+457: CL 0.89400 spread 0.1 drift 0.0068 | CD 0.245123 spread 0.016 drift 0.00032 | drift tol 0.0045, 0.0025, spread x2 -> not yet
+461: CL 0.89400 spread 0.1 drift 0.0041 | CD 0.244957 spread 0.016 drift 0.00042 | drift tol 0.0045, 0.0024, spread x2 -> not yet

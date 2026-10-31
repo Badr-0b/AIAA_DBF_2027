@@ -1,0 +1,29 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      reference;
+}
+// Written by cfd/tools/prep_geometry.py from case.toml. Scale 3.023.
+
+span        1.81985;      // m, full span
+Sref        0.231979;      // m2, trapezoidal reference wing to the centreline
+refArea     0.11599;  // m2, half model: coefficients use S/2 with half-model forces
+refLength   0.12812;    // m, mean aerodynamic chord
+refCofR     (0.153009 0 -0.0337473);  // m, moment reference (MAC quarter chord, PARAMETER until the CG is given)
+macY        0.43623;      // m, spanwise station of the MAC (half model, +y)
+macLE       (0.120979 0.43623 -0.0337473);  // m, MAC leading edge on the chord line
+bodyMin    (-0.238817 -0.909923 -0.0634828);
+bodyMax     (0.604601 0.909923 0.157743);
+xMin -7.58269; xMax 15.1654; yMax 7.27938; zMin -7.27938; zMax 7.58269;
+nx 75; ny 24; nz 49;
+nearMin (-0.420801 -0.0181985 -0.245467); nearMax (0.786585 1.09191 0.339728);
+wakeMin (0.120979 -0.0181985 -0.215732); wakeMax (1.51452 1.00092 0.148237);
+locationInMesh (-7.47047 5.31395 7.45834);
+surfaceLevel (7 7); featureLevel 8;
+nacelleLevel (7 7);
+nearLevel 4; wakeLevel 4;
+distLevels ((0.01281 6) (0.03844 5));
+nLayers 20; expansionRatio 1.25; firstLayerThickness 1.051e-05;
+minLayerThickness 0.0003603;
+patchNames (nacelle vtail wing fuselage);

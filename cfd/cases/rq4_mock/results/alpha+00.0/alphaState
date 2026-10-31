@@ -1,0 +1,5 @@
+// Written by Allrun
+alphaDeg        0;
+UInf            (26.5 0 0);
+liftDirection   (-0 0 1);
+dragDirection   (1 0 0);

@@ -1,0 +1,138 @@
+#!/bin/sh
+# RQ-4-style mock: mesh once, then one steady transitional-RANS run per angle of attack.
+#   Windows: PYTHONIOENCODING=utf-8 python cfd/tools/prep_geometry.py cfd/cases/rq4_mock
+#   WSL:     cfd/tools/run_case.sh rq4_mock [np]       (copies here to ~/dbf_cfd and runs this)
+#            cfd/tools/sweep.sh rq4_mock [np]          (the same, detached from any terminal)
+# Per angle, results/<tag>/ keeps the force and residual histories, y+, logs and images;
+# the field data is replaced by the next angle (disk is tight).
+# Resumable: running it again skips every angle that has results/<tag>/run_summary (delete that
+# directory in the run directory to redo one) and carries an interrupted angle on from its newest
+# checkpoint (written every CKPT iterations). log.start.<tag> marks an angle whose fields are set up.
+# Environment: NP, MESH_ONLY=1, ALPHAS="0 4", NITER, CKPT (default 100), KEEP_FIELDS=1,
+#   HARVEST=1 (copy each finished angle into the repo with cfd/tools/harvest.sh),
+#   WARM=1 (start each angle from the previous one's solution, freestream turned to the new angle),
+#   CONV_MIN / CONV_MIN_WARM (fewest iterations before cfd/tools/converge_watch.py may stop a run;
+#   600 / 300), and CONV_WINDOW, CONV_TOL, CONV_SPREAD, CONV_POLL (read by converge_watch.py).
+cd "${0%/*}" || exit 1
+. "$WM_PROJECT_DIR/bin/tools/RunFunctions"
+
+NP=${NP:-8}
+foamDictionary -entry numberOfSubdomains -set "$NP" system/decomposeParDict > /dev/null
+
+# ---- mesh (skipped if this run directory already has one) ----
+if [ ! -d processor0/constant/polyMesh ]; then
+    rm -f log.surfaceFeatures log.blockMesh log.decomposePar log.snappyHexMesh* log.renumberMesh log.checkMesh
+    runApplication surfaceFeatures || exit 1
+    runApplication blockMesh || exit 1
+    runApplication decomposePar || exit 1
+    runParallel snappyHexMesh -overwrite || exit 1     # castellate and snap
+    runParallel -s layers snappyHexMesh -dict system/snappyHexMeshDict.layers -overwrite || exit 1   # prism layers
+    runParallel renumberMesh || exit 1     # bandwidth reduction (overwrites in OpenFOAM 14): faster linear solves
+    runParallel checkMesh -allGeometry -allTopology
+fi
+[ "${MESH_ONLY:-0}" = 1 ] && exit 0
+
+# ---- one run per angle ----
+P=system/caseParameters
+U=$(foamDictionary -entry UMag -value $P)
+N=${NITER:-$(foamDictionary -entry nIter -value $P)}
+ALPHAS=${ALPHAS:-$(foamDictionary -entry alphas -value $P | tr -d '()')}
+foamDictionary -entry endTime -set "$N" system/controlDict > /dev/null
+foamDictionary -entry writeInterval -set "${CKPT:-100}" system/controlDict > /dev/null
+
+render() {   # images of the latest solution into results/$1/images
+    pvbatch --force-offscreen-rendering "$DBF_TOOLS/render_aero.py" . "results/$1/images" \
+        > "results/$1/log.render" 2>&1 || echo "render failed: see results/$1/log.render"
+}
+
+checkpoint() {   # newest time directory that every processor holds whole; partial ones are dropped
+    for t in $(ls -d processor0/[1-9]* 2>/dev/null | sed 's|.*/||' | sort -gr); do
+        n0=$(ls "processor0/$t" | wc -l)
+        ok=1
+        for d in processor*; do
+            [ -f "$d/$t/U" ] && [ -f "$d/$t/p" ] && [ "$(ls "$d/$t" | wc -l)" = "$n0" ] || { ok=0; break; }
+        done
+        [ $ok = 1 ] && { echo "$t"; return; }
+        rm -rf processor*/"$t"
+    done
+}
+
+for a in $ALPHAS; do
+    tag=$(awk -v a="$a" 'BEGIN { printf "alpha%+05.1f", a }')
+    if [ -f "results/$tag/run_summary" ]; then
+        echo "=== $tag: done earlier, skipped ($(cat "results/$tag/run_summary"))"
+        # killed while rendering: the latest solution is still this angle's if no later angle has begun
+        [ -f "results/$tag/images/streamlines_tip.png" ] || ls log.start.* > /dev/null 2>&1 || render "$tag"
+        continue
+    fi
+    echo "=== $tag (U = $U m/s, up to $N iterations) $(date '+%F %H:%M')"
+    # Freestream rotated, body fixed: U = U (cos a, 0, sin a); lift normal to it, drag along it
+    awk -v a="$a" -v U="$U" 'BEGIN {
+        r = a * atan2(0, -1) / 180; c = cos(r); s = sin(r);
+        printf "// Written by Allrun\nalphaDeg        %s;\nUInf            (%.9g 0 %.9g);\n", a, U * c, U * s;
+        printf "liftDirection   (%.9g 0 %.9g);\ndragDirection   (%.9g 0 %.9g);\n", -s, c, c, s }' > system/alphaState
+    UINF=$(awk '$1 == "UInf" { sub(/^UInf +/, ""); sub(/;$/, ""); print }' system/alphaState)
+    foamDictionary -entry stopAt -set endTime system/controlDict > /dev/null
+
+    if [ -f "log.start.$tag" ]; then
+        # Interrupted: carry on from the newest checkpoint (foamRun starts from the latest time)
+        ck=$(checkpoint)
+        if [ -n "$ck" ]; then
+            echo "resuming from the checkpoint at iteration $ck"
+            for d in postProcessing/*/*; do   # output of an earlier resume from here on is recomputed
+                [ -d "$d" ] && awk -v t="${d##*/}" -v c="$ck" 'BEGIN { exit !(t + 0 >= c + 0) }' && rm -rf "$d"
+            done
+        else
+            echo "resuming from the start fields (no checkpoint yet)"
+            rm -rf postProcessing "log.foamRun.$tag" "log.converge.$tag"
+        fi
+        echo "resumed $(date '+%F %H:%M') at iteration ${ck:-0}" >> "log.start.$tag"
+    else
+        # runParallel skips any step whose log exists: clear this angle's logs from an aborted setup
+        rm -rf postProcessing "results/$tag" log.*."$tag"
+        # Warm start: the latest solution becomes time 0, with the farfield freestream turned
+        last=$(checkpoint)
+        warm=0
+        if [ "${WARM:-0}" = 1 ] && [ -n "$last" ]; then
+            warm=1
+            for d in processor*; do
+                { rm -rf "$d/0" && mv "$d/$last" "$d/0" && rm -rf "$d/0/uniform" "$d/0/yPlus" "$d/0/wallShearStress" &&
+                  foamDictionary -entry boundaryField/farfield/freestreamValue -set "uniform $UINF" "$d/0/U" > /dev/null &&
+                  foamDictionary -entry boundaryField/farfield/value -set "uniform $UINF" "$d/0/U" > /dev/null; } || warm=0
+            done
+            [ $warm = 1 ] && echo "warm start from the solution at iteration $last" || echo "warm start failed: cold start"
+        fi
+        if [ $warm = 0 ]; then
+            rm -rf processor*/[0-9]*
+            for d in processor*; do cp -r 0.orig "$d/0"; done
+            runParallel -s "$tag" potentialFoam || echo "potentialFoam failed: starting from uniform flow"
+        fi
+        rm -rf processor*/[1-9]*   # stale times (left by a resumed angle) would be taken as the latest
+        [ $warm = 1 ] && echo "warm $last" > "log.start.$tag" || echo "cold" > "log.start.$tag"
+    fi
+    warm=0; head -1 "log.start.$tag" | grep -q '^warm' && warm=1
+
+    nmin=${CONV_MIN:-600}
+    [ $warm = 1 ] && nmin=${CONV_MIN_WARM:-300}
+    python3 "${DBF_TOOLS:?run via cfd/tools/run_case.sh}/converge_watch.py" . "$nmin" >> "log.converge.$tag" 2>&1 &
+    watch=$!
+    t0=$(date +%s)
+    runParallel -a -s "$tag" foamRun && status=ok || status=FAILED
+    kill $watch 2>/dev/null
+    n=$(awk '/^Time = / { t = $3 } END { sub(/s$/, "", t); print t + 0 }' "log.foamRun.$tag")
+    s="foamRun $status, $n iterations, $(( $(date +%s) - t0 )) s wall (last segment), $(head -1 "log.start.$tag")"
+    echo "$tag: $s"
+
+    mkdir -p "results/$tag"
+    echo "$s" > "results/$tag/run_summary"
+    mv postProcessing "results/$tag/"
+    mv log.*."$tag" "results/$tag/"
+    cp system/alphaState "results/$tag/"
+    render "$tag"
+    [ $status = ok ] || rm -rf processor*/[1-9]*   # a failed solution must not seed the next angle: cold start
+    [ "${HARVEST:-0}" = 1 ] && bash "$DBF_TOOLS/harvest.sh" "${PWD##*/}" > /dev/null 2>&1
+    echo "$tag: done $(date '+%H:%M')"
+done
+
+# ---- disk: drop the last solution unless asked to keep it (the mesh stays for more angles) ----
+[ "${KEEP_FIELDS:-0}" = 1 ] || rm -rf processor*/[1-9]*

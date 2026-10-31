@@ -1,0 +1,72 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : renumberMesh -parallel
+Date   : Oct 24 2026
+Time   : 19:52:54
+Host   : "DESKTOP-949FKM6"
+PID    : 1753
+I/O    : uncollated
+Case   : /home/nitro/dbf_cfd/rq4_mock
+nProcs : 6
+Slaves : 
+5
+(
+"DESKTOP-949FKM6.1754"
+"DESKTOP-949FKM6.1755"
+"DESKTOP-949FKM6.1756"
+"DESKTOP-949FKM6.1757"
+"DESKTOP-949FKM6.1758"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning: 
+    From function static Foam::instantList Foam::timeSelector::select0(Foam::Time&, const Foam::argList&)
+    in file db/Time/timeSelector.C at line 269
+    No time specified or available, selecting 'constant'
+Create mesh for time = constant
+
+Mesh size: 2930348
+Before renumbering :
+    band           : 486941
+    profile        : 1.8756706e+10
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+Reading geometric fields
+
+
+Renumbering processor cell decomposition map cellProcAddressing
+Renumbering processor face decomposition map faceProcAddressing
+Renumbering processor point decomposition map pointProcAddressing
+After renumbering :
+    band           : 20651
+    profile        : 2.7238727e+10
+
+Writing mesh to "constant"
+
+Renumbering cellSets:
+    addedCells
+Renumbering faceSets:
+    layerFaces
+End
+
+Finalising parallel run

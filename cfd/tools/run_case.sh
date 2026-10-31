@@ -12,9 +12,12 @@ RUN=/home/nitro/dbf_cfd/$CASE
 [ -d "$SRC" ] || { echo "no case $SRC"; exit 1; }
 mkdir -p "$RUN"
 # setup only: never copy harvested results or logs back over a run
-rsync -a --delete --exclude postProcessing --exclude 'log.*' --exclude '*.png' --exclude RESULTS.md "$SRC/" "$RUN/"
+# (excluded paths are also protected from --delete: the mesh and per-angle results survive a re-sync)
+rsync -a --delete --exclude postProcessing --exclude 'log.*' --exclude '*.png' --exclude RESULTS.md \
+    --exclude 'processor*' --exclude results --exclude polyMesh --exclude '*.eMesh' "$SRC/" "$RUN/"
 cd "$RUN"
 export NP
+export DBF_TOOLS=/mnt/c/Users/Nitro/Documents/GitHub/AIAA_DBF/cfd/tools
 [ -x ./Allrun ] || chmod +x ./Allrun
 ./Allrun
 echo "done: $RUN   next: cfd/tools/harvest.sh $CASE"

@@ -1,0 +1,31 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeaturesDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaces ("rq4_mock.obj");
+
+// Feature where the faces meet at more than 30 deg (leading/trailing edges, lips, corners)
+includedAngle   150;
+
+// The patch split is a bookkeeping choice, not geometry: ignore region boundaries
+geometricTestOnly yes;
+
+subsetFeatures
+{
+    // The skin's open and non-manifold edges are buried inside solids (prep_geometry.py)
+    nonManifoldEdges    no;
+    openEdges           no;
+}
+
+// ************************************************************************* //

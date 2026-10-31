@@ -1,0 +1,49 @@
+% Chapter: decisions shared by both variants
+\section{Decisions both variants share}
+
+\subsection{Why these come first}
+The two variants differ in how they are built, but they fly the same missions with the same payload hardware and the same strategy. Fixing these decisions once lets the variant chapters concentrate on the aircraft. Each card gives the recommendation, the reasoning in plain terms, the numbers, and what would change it.
+
+\begin{decisioncard}{S-01}{Skip Mission 1 and take its credit through Mission 2}{Waive Mission~1 at the flight line.}{EVIDENCE COMPUTED\hspace{1.2em}/\hspace{1.2em}CONFIDENCE HIGH\hspace{1.2em}/\hspace{1.2em}DECIDED PER CONTEST, APRIL 2027}
+\why{Flight attempts are scarce: teams get two or three. Mission~1 is worth exactly one point, and a successful Mission~2 now awards that same point automatically. Flying Mission~1 spends an attempt to win something we are given anyway, and every attempt spent is one fewer chance to finish Mission~3, which is worth three.}
+\engineering{At the field's typical 65\,\% success per attempt and three attempts, waiving Mission~1 raises the probability of completing Mission~3 from 0.40 to 0.72 \gC. Across the range of plausible success rates the waiver is worth up to \val{S1-R02}~expected points. The cost is one fallback: if Mission~2 never succeeds, there is no Mission~1 score to keep.}
+\flipsif{A Q\&A ruling that the Mission~2 credit does not apply, or an aircraft whose Mission~2 success rate on test falls well below its Mission~1 rate.}
+\end{decisioncard}
+
+\begin{decisioncard}{S-02}{Build one heavy, dense sensor rated to 150 g}{A tungsten-ballasted dart, about 200~mm long and 70~mm across, rated to survive 150~g, with its tow eye above its centre of gravity.}{EVIDENCE ESTIMATE AND COMPUTED\hspace{1.2em}/\hspace{1.2em}MIL-HDBK-304B, BARROWMAN\hspace{1.2em}/\hspace{1.2em}FREEZE AT CDR}
+\why{The sensor must survive six drops onto concrete from 1.524~m inside a container whose lifting ring should sit less than 381~mm (15~in) above the bottom of any face; the rules guarantee the full 1.524~m drop only inside that envelope. A softer sensor needs thicker foam, and thicker foam pushes the container past 381~mm. DB-01's container, sized for a 100~g sensor, already breaks that envelope. Making the sensor tougher and denser makes everything around it smaller: the container, the bay and the fuselage.}
+\engineering{The DB-01 container's worst ring-to-bottom distance is \val{S8-R01}~m against the 0.381~m limit, and every 100~g design from 3 to 10~kg fails (\val{S8-R07}~mm at best). At 150~g, 41~mm of polyethylene foam suffices and the container passes up to 8~kg. A 6~kg tungsten sensor is \val{S8-R11}~mm in diameter (lead would need \val{S8-R12}~mm, steel \val{S8-R13}~mm); Variant~A's 8~kg maximum needs about 85~mm in a 288 by 303 by 303~mm container (memo 08). Towed from its nose it would hang \val{S8-R15}° nose-up; towed from a point above its centre of gravity it flies level with a static margin of \val{S8-R14}~calibres.}
+\derivation{Cushion thickness from the MIL-HDBK-304B minimum-acceleration curves for 2~lb/ft³ polyethylene: $t = f(G_{\text{rating}}, h, \sigma_{\text{static}})$; at $G = 150$, $h = 1.524$~m: $t \approx 41$~mm. Envelope: $L_{\text{sensor}} + 2t + 2t_{\text{wall}} + \text{rigging} < 381$~mm on every face that can be dropped.}
+\flipsif{TC-02 drops showing the potted electronics or LED windows failing below 150~g, which would force thicker foam and a lighter maximum declaration.}
+\end{decisioncard}
+
+\begin{decisioncard}{S-03}{One container and adjustable simulators serve every declaration}{One container with re-cuttable foam pads, built for the top of the declared range; simulators with adjustable internal ballast.}{EVIDENCE ESTIMATE\hspace{1.2em}/\hspace{1.2em}ENABLES DECISION P-01}
+\why{Choosing the declared mass in April only helps if the hardware can follow the choice. The container is built once, for the heaviest sensor we might declare; its pads are re-cut at tech for the mass actually declared, so a lighter sensor is not over-cushioned. Simulators must match the container plus the declared sensor within 28~g, so they carry adjustable ballast.}
+\engineering{One container serves declarations from 3 to 8~kg with pads re-cut at tech (3 to 8~kg, \gE). Container mass is \val{S8-R04}~kg built for 6~kg and \val{S8-R05}~kg for 8~kg. Container mass counts toward the Mission~2 payload, so it is not wasted mass in the mission it is carried. Simulator tolerance is $\pm$\val{S1-R10}~kg.}
+\flipsif{TC-02 showing that re-cut pads change the drop response beyond the sensor's rating.}
+\end{decisioncard}
+
+\begin{decisioncard}{S-04}{Recover the sensor fast enough to keep the seventh lap}{Closed-loop drum with a slip ring and a docking latch (DB-01 option A), driven by a high-torque servo drive sized for the declared maximum; Mission~3 ballast chosen per attempt so the stow fits the window.}{EVIDENCE COMPUTED\hspace{1.2em}/\hspace{1.2em}TC-05}
+\why{Mission~3 counts whole laps inside five minutes, and the sensor must be back inside before landing. At about 39-second laps, seven laps fit only if take-off plus stowing takes less than about 26 seconds. A heavier sensor winds in more slowly, so the drum drive, the ballast flown and the lap time are one decision.}
+\engineering{Seven laps at 39.1~s need a stow of no more than \val{S1-R06}~s. The servo drum stows 3.4~kg in 14.0~s, 6~kg in 19.0~s and 8~kg in 24.6~s, so an 8~kg dart costs the seventh lap and Mission~3 is flown lighter; the brushed gearmotor of DB-01 takes 11.9 and 19.6~s; a geared brushless drive stows any mass in about 3~s but weighs 0.70~kg, flown in every mission. Tow tension in a 4~g pull-up reaches \val{S8-R19}~N with a 10~kg sensor, so the line and its anchor are sized for that case.}
+\derivation{Laps $= \lfloor (300 - t_{\text{take-off}} - t_{\text{stow}})/t_{\text{lap}} \rfloor$, with the stow counted inside the window until a Q\&A ruling says otherwise.}
+\flipsif{A Q\&A ruling that the stow time falls outside the window (then the drive choice is free), or TC-05 cycle counts showing the servo drum below 98\,\% recovery.}
+\end{decisioncard}
+
+\begin{decisioncard}{S-05}{Drop from the full height}{Declare 1.524~m (60~in) for the Ground Mission.}{EVIDENCE VERIFIED (RULES)\hspace{1.2em}/\hspace{1.2em}DECLARED AT THE GROUND MISSION}
+\why{The Ground Mission score is the sensor mass times the drop height. Every inch below the maximum throws away score that the container was designed to protect.}
+\engineering{The container of card S-03 is sized for the full 1.524~m drop at 150~g; at 6~kg the product reaches \val{O-R10}~kg\,m, the expected-field anchor.}
+\flipsif{TC-02 failures at 1.524~m; then the declared height drops in whole inches to the highest height that passes.}
+\end{decisioncard}
+
+\begin{decisioncard}{S-06}{Keep the proven airfoil}{SD7037 throughout the wing.}{EVIDENCE VERIFIED AND COMPUTED\hspace{1.2em}/\hspace{1.2em}UIUC, XFOIL}
+\why{The airfoil has to work well across the racing range, take a flap well, and not lose lift when its surface is imperfect, because a student-built wing will be imperfect. SD7037 does all three, and it has been measured in a wind tunnel at our speeds.}
+\engineering{SD7037's maximum lift is unchanged by a leading-edge trip in the UIUC tests, while SD7062 loses 24 to 27\,\%. It has the best or equal-best lift-to-drag ratio of thirteen candidates across the racing lift range. Measured clean maximum lift is 1.22 to 1.30 at $Re = 2$--$3\times10^5$.}
+\flipsif{A section with tunnel data showing equal roughness tolerance and higher flapped lift at $Re = 4$--$9\times10^5$.}
+\end{decisioncard}
+
+\begin{decisioncard}{S-07}{Lights the judges can see in the Tucson sun}{Three LED arrays of about 220~cd each, flash at 1 to 2~Hz, one-button sequencing on the observer's transmitter.}{EVIDENCE ESTIMATE\hspace{1.2em}/\hspace{1.2em}TC-03}
+\why{Mission~3 fails if the judges cannot tell OFF, SOLID and FLASHING apart from the ground in bright sun. The sequence must also be impossible to fumble mid-lap, so one button steps it.}
+\engineering{Required intensity per light is estimated at \val{S8-R24}~cd for 150 to 250~m slant range; energy per Mission~3 is \val{S8-R25}~Wh from the sensor's own labelled pack.}
+\flipsif{TC-03 visibility scores below 90\,\% at 200~m.}
+\end{decisioncard}

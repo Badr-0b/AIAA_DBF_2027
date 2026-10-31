@@ -1,0 +1,115 @@
+# S3 monoplane aerodynamics: sources used (read 27-29 Oct 2026). nature: MEASURED / SPEC / COMPUTED / RULE / METHOD
+
+[[source]]
+id = "S3-naca-tr534"
+title = "Aerodynamic characteristics of a wing with Fowler flaps, including flap loads, downwash, and calculated effect on take-off"
+author = "R. C. Platt"
+year = 1935
+url = "NACA Report 534 (NTRS); local copy out/aero_mono/raw/naca/tr534.pdf"
+date_read = "2026-10-28"
+used = "fig. 5 (p. 4): CLmax of a Clark Y wing AR 6, Re 6.1e5, with 0.20c/0.30c/0.40c full-span Fowler flaps, 1.29 clean to 2.45/2.83/3.17 on retracted area; Tables II-III (p. 15): Cm c/4 -0.085 clean, -0.508 at alpha 0 with 0.20c flap at 30 deg"
+nature = "MEASURED"
+
+[[source]]
+id = "S3-naca-tr664"
+title = "Wind-tunnel investigation of an N.A.C.A. 23012 airfoil with various arrangements of slotted flaps"
+author = "C. J. Wenzinger, T. A. Harris"
+year = 1939
+url = "NACA Report 664 (NTRS); local copy out/aero_mono/raw/naca/tr664.pdf"
+date_read = "2026-10-28"
+used = "fig. 30: increments of section Clmax for split, plain, external-airfoil, Fowler and slotted 2-h flaps vs deflection (read by eye, +/-0.05); p. 29: slotted-flap pitching moment equals plain-flap moment at equal lift"
+nature = "MEASURED"
+
+[[source]]
+id = "S3-leng2022"
+title = "A study of high-lift devices for low Reynolds number applications"
+author = "Leng et al."
+year = 2022
+url = "ICAS 2022; local copy out/aero_mono/raw/icas2022/leng2022.pdf"
+date_read = "2026-10-28"
+used = "Sec. 6.3-6.4: DAE31, Re 2.3e5, clean CLmax 1.48; single-slotted 30 % flap at 30 deg CLmax 2.5 (+1.0); ESDU estimate +0.587; DATCOM 1.10"
+nature = "MEASURED (quasi-2-D tunnel with end plates)"
+
+[[source]]
+id = "S3-williamson2012"
+title = "Plain flaps on low-Re airfoils (UIUC MS thesis); UIUC LSAT Vol 6"
+author = "G. Williamson"
+year = 2012
+url = "REPO analysis/data/raw/aero/williamson-2012-thesis.pdf and uiuc-lsat-v6-data.zip"
+date_read = "2026-10-29"
+used = "AG40d-02r 25 % plain flap: dCl, dCm, dClmax vs deflection 5-40 deg at Re 3e5; flap drag files"
+nature = "MEASURED"
+
+[[source]]
+id = "S3-uiuc-lsat-sd7037"
+title = "UIUC Low-Speed Airfoil Tests Vol 1-3, SD7037 drag files (DRAG01-03.TXT)"
+author = "Selig et al."
+year = 1995
+url = "REPO analysis/data/raw/aero/uiuc-lsat-v1-data.zip (also v2, v3)"
+date_read = "2026-10-29"
+used = "SD7037 cd at Re about 3e5: clean cdmin 0.0071-0.0077; 0.0092-0.0097 at cl 0.7; 0.0131-0.0145 at cl 1.0; tripped 0.0125 / 0.0178 / 0.0233"
+nature = "MEASURED"
+
+[[source]]
+id = "S3-xfoil"
+title = "XFoil 6.99 polars: SD7037 Re 3e5-1.1e6 Ncrit 9 and 5; SD7034, E387, MH114 Re 5e5 and 8e5"
+author = "computed with REPO analysis/tools/xfoil.exe via analysis/xfoil_tools.py (import only)"
+year = 2026
+date_read = "2026-10-29"
+used = "profile drag a + kp CL^2; section comparison; XFoil CLmax over-predicts (SD7037 Re 3e5: 1.38 vs 1.22-1.30 measured)"
+nature = "COMPUTED"
+
+[[source]]
+id = "S3-avl"
+title = "AVL 3.52 vortex lattice: Trefftz-plane e, critical-section loading, winglet, flap-twist and biplane studies"
+author = "M. Drela, H. Youngren"
+year = 2025
+date_read = "2026-10-29"
+used = "e of tapered wings 0.988-0.999; winglet de; biplane k ratio 0.77 at gap/span 0.15 (literature about 0.78, Prandtl 1924, not re-read)"
+nature = "COMPUTED"
+
+[[source]]
+id = "S3-kroo2000"
+title = "Drag due to lift: concepts for prediction and reduction"
+author = "I. Kroo"
+year = 2001
+url = "Annu. Rev. Fluid Mech. 33, 587-617"
+date_read = "not re-read this session; method relayed by the orchestrator 29 Oct 2026"
+used = "fuselage factor 1 - 2 (d/b)^2; K_visc about 0.38 CD0"
+nature = "METHOD"
+
+[[source]]
+id = "S3-hoerner"
+title = "Fluid-Dynamic Drag"
+author = "S. F. Hoerner"
+year = 1965
+date_read = "not re-read; standard formulas"
+used = "fuselage form factor 1 + 1.5 (d/l)^1.5 + 7 (d/l)^3"
+nature = "METHOD"
+
+[[source]]
+id = "S3-tn663-cal"
+title = "NACA TN 663 area-method calibration, kappa 1.086 (clean) and 1.075 (flap increment)"
+author = "REPO analysis/wing_clmax_validation.py"
+year = 2026
+date_read = "2026-10-29"
+used = "area method calibration and range"
+nature = "COMPUTED"
+
+[[source]]
+id = "S3-gear"
+title = "GT 2026 measured fixed-gear drag area 9.9 cm2, Joanneum 2022 predicted 19.4 cm2; NACA TR 485 fairing cuts drag about 23 %"
+author = "REPO analysis/out/config_trades_report.txt; claude_docs/evidence_plan.md (E06)"
+year = 2026
+date_read = "2026-10-29"
+used = "gear drag area range 9.9-19.4 cm2"
+nature = "MEASURED / COMPUTED"
+
+[[source]]
+id = "S3-rq4-cfd"
+title = "rq4_mock CFD RESULTS.md (indicative only)"
+author = "S10 / REPO cfd/cases/rq4_mock"
+year = 2026
+date_read = "2026-10-29"
+used = "non-wing drag area about 0.0070 m2 at alpha 0 as a cross-check, never a calibration"
+nature = "COMPUTED"

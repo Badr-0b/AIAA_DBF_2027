@@ -1,0 +1,73 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : surfaceFeatures
+Date   : Oct 24 2026
+Time   : 20:23:00
+Host   : "DESKTOP-949FKM6"
+PID    : 1118
+I/O    : uncollated
+Case   : /home/nitro/dbf_cfd/rq4_mock
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reading "surfaceFeaturesDict"
+
+Surface            : "rq4_mock.obj"
+
+
+Feature line extraction is only valid on closed manifold surfaces.
+Statistics:
+Triangles    : 68937
+Vertices     : 34795
+Bounding Box : (-0.2388166 -0.9099231 -0.06348278) (0.6046008 0.9099231 0.1577434)
+
+
+Constructing feature set from included angle 2.6179939
+Selecting edges purely based on geometric tests: yes
+Removing all non-manifold edges (edges with > 2 connected faces) unless they cross multiple regions
+Removing all open edges (edges with 1 connected face)
+
+Initial feature set:
+    feature points : 82
+    feature edges  : 1118
+    of which
+        region edges   : 113
+        external edges : 708
+        internal edges : 297
+
+
+Final feature set:
+points      : 1144
+edges       : 1118
+boundingBox : (-0.238744 -0.9099231 -0.06348278) (0.6046008 0.9099231 0.1570573)
+point classification :
+    convex feature points          :        8
+    concave feature points         :        3
+    mixed feature points           :       71
+    other (non-feature) points     :     1062
+edge classification :
+    external (convex angle) edges  :      716
+    internal (concave angle) edges :      289
+    flat region edges              :        0
+    open edges                     :        0
+    multiply connected edges       :      113
+
+Writing extendedFeatureEdgeMesh to "constant/extendedFeatureEdgeMesh/rq4_mock.extendedFeatureEdgeMesh"
+
+Writing featureEdgeMesh to "constant/geometry/rq4_mock.eMesh"
+
+ExecutionTime = 0.140843 s  ClockTime = 0 s
+
+End
+

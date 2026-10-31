@@ -1,0 +1,33 @@
+% =====================================================================
+%  4.0 MANUFACTURING PLAN  (10 pts)           budget: ~0.5 page, ~150 words
+%  Rubric (5.1.4):  [ ] Preliminary manufacturing flow
+%                   [ ] Critical processes or technologies required
+%  Layout: last-page sections use column-width floats placed [h] ("here"):
+%  a [t] float would rise above its own heading, a full-width one would
+%  drift to the next page. The sequence guard in build.sh verifies order.
+% =====================================================================
+\section{Manufacturing Plan}
+
+\subsection{Preliminary Manufacturing Flow}
+\dbfnote{About 75 words. Three lanes (airframe, sensor system, container), each running from prototype to competition article; where each part is tested before integration. Refer to Fig.~\ref{fig:mfgflow}.}
+\dbffill{75}
+
+\begin{figure}[h]
+\dbfplaceholder{\columnwidth}{1.6in}{Manufacturing flow / 3 lanes x 4 stages}
+\caption{\dbftbd{takeaway}: parallel airframe, sensor and container lanes converge at integration.}\label{fig:mfgflow}
+\end{figure}
+
+\begin{table}[h]
+\caption{Critical processes, why they matter, and risk mitigation.}\label{tab:critical}
+\begin{dbftable}{colspec={X[1,l] X[1.1,l] X[1.2,l]}}
+Process & Why critical & Mitigation \\
+Reel slip ring & Signal and tow on one line & Bench cycling on a spare receiver \\
+Sensor body & Stability, drop survival & Blower-rig screen (TC-01) \\
+Container liner & Absorbs $W_s h$ & Drop series to 1.524~m (TC-02) \\
+Wing spar & Tip-load test at MGTOW & Prototype tip-lift proof test \\
+\end{dbftable}
+\end{table}
+
+\subsection{Critical Processes and Technologies}
+\dbfnote{About 70 words. Why each item in Table~\ref{tab:critical} is critical, and how its risk is retired early.}
+\dbffill{70}

@@ -1,0 +1,39 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#include "$FOAM_CASE/system/caseParameters"
+#include "$FOAM_CASE/system/alphaState"
+
+dimensions      [velocity];
+
+internalField   uniform $UInf;
+
+boundaryField
+{
+    #includeEtc "caseDicts/setConstraintTypes"
+
+    farfield
+    {
+        type            freestreamVelocity;
+        freestreamValue uniform $UInf;
+    }
+
+    aircraft
+    {
+        type            noSlip;
+    }
+}
+
+// ************************************************************************* //

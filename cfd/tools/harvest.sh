@@ -1,7 +1,9 @@
 #!/bin/bash
 # Copy a finished case's small, valuable files from the WSL run directory into the repo.
 #   wsl -d Ubuntu -- bash /mnt/c/Users/Nitro/Documents/GitHub/AIAA_DBF/cfd/tools/harvest.sh <case>
-# Kept: system/, constant/ (no polyMesh), 0/ or 0.orig/, postProcessing/, log.*, *.png, Allrun.
+# Kept: postProcessing/, results/, log.*, *.png; and system/, constant/ (no polyMesh), 0/, 0.orig/, Allrun
+# only when the repo case has none yet (a case set up in the repo keeps its own setup: the run
+# edits controlDict, alphaState and decomposeParDict as it goes).
 # Not kept: the mesh, time directories, processor*/ (big, regenerable from the setup).
 set -euo pipefail
 CASE=$1
@@ -10,10 +12,16 @@ DST=/mnt/c/Users/Nitro/Documents/GitHub/AIAA_DBF/cfd/cases/$CASE
 [ -d "$RUN" ] || { echo "no run directory $RUN"; exit 1; }
 mkdir -p "$DST"
 cd "$RUN"
-for d in system constant 0 0.orig postProcessing; do
-  [ -d "$d" ] && rsync -a --exclude polyMesh --exclude 'triSurface/*.eMesh' "$d" "$DST/"
+for d in system constant 0 0.orig; do
+  [ -d "$d" ] && [ ! -d "$DST/$d" ] && rsync -a --exclude polyMesh --exclude 'triSurface/*.eMesh' "$d" "$DST/"
 done
-for f in Allrun Allclean log.* *.png; do
+for d in postProcessing results; do
+  [ -d "$d" ] && rsync -a "$d" "$DST/"
+done
+for f in Allrun Allclean; do
+  [ -e "$f" ] && [ ! -e "$DST/$f" ] && cp -p "$f" "$DST/"
+done
+for f in log.* *.png; do
   [ -e "$f" ] && cp -p "$f" "$DST/"
 done
 du -sh "$DST"

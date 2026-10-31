@@ -1,0 +1,29 @@
+% Test gates and schedule
+\section{Test gates and schedule}
+
+\subsection{Tests that retire the decisions}
+Every recommendation in this dossier names the result that would overturn it. Table~\ref{tab:tests} collects those results into test gates, each with a pass criterion and the decision it unlocks. TC-01 to TC-06 already exist as test cards; TC-07 to TC-09 are new.
+
+\begin{widetable}[h]{Test gates. Each pass criterion comes from a decision card; failing a gate triggers that card's alternative.}{tab:tests}
+\begin{brieftable}{width=\fullw, colspec={Q[l,wd=0.5in] X[1.2,l] X[1.3,l] X[1.0,l]}}
+Card & Test & Pass criterion & Unlocks \\
+TC-01 & Tow stability, eye above CG, 3, 6 and 8~kg dart & No sustained swing or spin at 20 to 30~m/s & Sensor design (S-02) \\
+TC-02 & Six drops at 1.524~m, 150~g sensor, pads cut for 3, 6 and 8~kg & No damage, lights work after every drop & Declared range, drop height (S-02, S-05) \\
+TC-03 & Light visibility in sun & Modes identified at 200~m, 90\,\% or better & Light design (S-07) \\
+TC-04 & Five-minute drills & Mission~2 loading and Mission~3 attach in under 240~s & Bay and latch design \\
+TC-05 & Drum cycles at 3, 6 and 8~kg & 98\,\% recovery; stow time logged & D\&R drive (S-04) \\
+TC-06 & Propulsion bench and fuse duty & Static thrust 95~N or more; 80~A fuse survives a Mission~2 current profile & Propulsion and fuse (A-03) \\
+TC-07 & Fowler section bench test (new) & Trimmed-equivalent $C_{L,\max}$ 1.75 or more; under 1 jam in 100 cycles & A or B (H-01) \\
+TC-08 & First weigh-in and CG check (new) & Empty mass within 15\,\% of the fit; CG within 3\,\% of mean chord & Declared-mass plan \\
+TC-09 & Lap timing with GPS logger (new) & Laps within 15\,\% of the model & Lap factor, Mission~3 ballast plan \\
+\end{brieftable}
+\end{widetable}
+
+\subsection{Schedule}
+\begin{itemize}
+\item \textbf{November to mid-December 2026.} Order long-lead parts; build the Fowler test section and run TC-07; run TC-01, TC-02, TC-05 and TC-06 on the bench.
+\item \textbf{15 January 2027.} A-or-B gate (card H-01).
+\item \textbf{January to mid-February.} Build and fly the competition airframe (one airframe only may be presented at the contest, so a simpler practice airframe flies first); TC-08 and TC-09; proof-of-flight video.
+\item \textbf{19 February.} Design report and configuration drawing; configuration frozen.
+\item \textbf{March to April.} Pilot hours on type, five-minute drills, hot-day performance checks; technical inspection and the declared-mass decision at the fly-off.
+\end{itemize}

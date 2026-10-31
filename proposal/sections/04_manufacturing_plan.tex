@@ -1,33 +1,58 @@
 % =====================================================================
-%  4.0 MANUFACTURING PLAN  (10 pts)           budget: ~0.5 page, ~150 words
-%  Rubric (5.1.4):  [ ] Preliminary manufacturing flow
-%                   [ ] Critical processes or technologies required
-%  Layout: last-page sections use column-width floats placed [h] ("here"):
-%  a [t] float would rise above its own heading, a full-width one would
-%  drift to the next page. The sequence guard in build.sh verifies order.
+%  4.0 MANUFACTURING PLAN  (10 pts)   P1.2, 31 Oct 2026
+%  Rubric (5.1.4):  [x] Preliminary manufacturing flow (Fig. 09)
+%                   [x] Critical processes or technologies required (Table 08)
+%  P1.2: material and method per component, the alternative rejected, build durations, the fuse part named.
+%  Fuse: Littelfuse MAXI 58V 0999080.ZXN (DigiKey listing, 29 Oct 2026; DB-02 F-FUSE-58-MAXA).
+%  Layout: last-page floats placed [h] so they stay inside their section.
 % =====================================================================
 \section{Manufacturing Plan}
 
 \subsection{Preliminary Manufacturing Flow}
-\dbfnote{About 75 words. Three lanes (airframe, sensor system, container), each running from prototype to competition article; where each part is tested before integration. Refer to Fig.~\ref{fig:mfgflow}.}
-\dbffill{75}
+Airframe, sensor and Ground Mission lanes run in parallel and meet at integration (Fig.~\ref{fig:mfgflow}). The prototype is built in five weeks in December and the competition airframe in four from 16 January, from the same files and jigs. Ribs are laser-cut from 3~mm ply (balsa where unloaded) and bonded onto pultruded carbon-tube spars in a jig; the leading edge is balsa-sheeted and the wing film-covered. The wing splits at the root for the crate and rejoins on a carbon-tube joiner with two bolts, proven by the tip lift (TC-06). Built-up structure beat moulded composites, whose moulds and cure time the schedule cannot carry, and repairs at the field; every part is weighed against its budget.
 
 \begin{figure}[h]
-\dbfplaceholder{\columnwidth}{1.6in}{Manufacturing flow / 3 lanes x 4 stages}
-\caption{\dbftbd{takeaway}: parallel airframe, sensor and container lanes converge at integration.}\label{fig:mfgflow}
+\begin{tikzpicture}[x=1in, y=1in,
+  st/.style={inner sep=1pt, text=dbfSteel, font=\dbflabelfont\fontsize{7}{8}\selectfont},
+  ln/.style={inner sep=1pt, anchor=west, text=dbfInk, font=\dbflabelfont\fontsize{7}{8}\selectfont},
+  bx/.style={draw=dbfGraphite, line width=0.4pt, fill=white, inner sep=1.6pt, minimum height=0.28in,
+    text width=0.64in, align=center, text=dbfInk, font=\sffamily\fontsize{7}{8.2}\selectfont},
+  ar/.style={-stealth, line width=0.45pt, draw=dbfSteel}]
+\useasboundingbox (0,0) rectangle (3.48,1.52);
+\foreach \x/\t in {1.00/FABRICATE, 1.77/BENCH TEST, 2.47/INTEGRATE, 3.02/FLY} \node[st] at (\x,1.46) {\t};
+\foreach \y in {1.15, 0.74, 0.33} \fill[dbfBone] (0.0,\y-0.19) rectangle (3.48,\y+0.19);
+\node[ln] at (0.0,1.15) {AIRFRAME}; \node[ln] at (0.0,0.74) {SENSOR}; \node[ln] at (0.0,0.33) {GM SET};
+\node[bx] (a1) at (1.00,1.15) {Ribs, spar, tracks, box};
+\node[bx] (a2) at (1.77,1.15) {Fowler test, tip proof};
+\node[bx] (s1) at (1.00,0.74) {Dart, lights, drum};
+\node[bx] (s2) at (1.77,0.74) {Tow, light, drum tests};
+\node[bx] (g1) at (1.00,0.33) {Container, simulators};
+\node[bx] (g2) at (1.77,0.33) {Drops, 5-min drill};
+\node[draw=dbfInk, fill=dbfInk, text=white, inner sep=1.5pt, minimum height=1.08in, text width=0.40in, align=center,
+  font=\dbflabelfont\fontsize{7}{8.4}\selectfont] (in) at (2.47,0.74) {WEIGH\\CG\\FAIL-\\SAFE\\FUSE};
+\node[bx, text width=0.50in] (f1) at (3.04,0.98) {Prototype flights};
+\node[bx, text width=0.50in] (f2) at (3.04,0.50) {Comp. airframe};
+\draw[ar] (a1) -- (a2); \draw[ar] (s1) -- (s2); \draw[ar] (g1) -- (g2);
+\draw[ar] (a2.east) -- (a2.east -| in.west); \draw[ar] (s2.east) -- (s2.east -| in.west); \draw[ar] (g2.east) -- (g2.east -| in.west);
+\draw[ar] (in.east |- f1.west) -- (f1.west); \draw[ar] (f1.south) -- (f2.north);
+\end{tikzpicture}
+\caption{Airframe, sensor and Ground Mission lanes are each proven on the bench before they meet at integration.}\label{fig:mfgflow}
 \end{figure}
 
 \begin{table}[h]
-\caption{Critical processes, why they matter, and risk mitigation.}\label{tab:critical}
-\begin{dbftable}{colspec={X[1,l] X[1.1,l] X[1.2,l]}}
-Process & Why critical & Mitigation \\
-Reel slip ring & Signal and tow on one line & Bench cycling on a spare receiver \\
-Sensor body & Stability, drop survival & Blower-rig screen (TC-01) \\
-Container liner & Absorbs $W_s h$ & Drop series to 1.524~m (TC-02) \\
-Wing spar & Tip-load test at MGTOW & Prototype tip-lift proof test \\
+\caption{Components and critical processes: material, method and proof.}\label{tab:critical}
+\begin{dbftable}{colspec={Q[l,wd=0.86in] X[l] Q[l,wd=0.72in]}, colsep=3pt}
+Component & Material, method & Proof \\
+Wing & Laser-cut ply ribs, carbon tube & Tip lift \\
+Fowler flaps & CNC Al rail, printed carriage & 100 cycles \\
+Fuselage, tail & Ply, carbon boom, balsa & Weigh-in \\
+Gear & Aluminium, faired nose leg & Landings \\
+Drum & Printed drum, servo drive & 100 cycles \\
+Dart & Potted tungsten core & Tow, drops \\
+Container & CNC-cut PE foam, ply box & Six drops \\
+Harness & 10~AWG, 58~V blade fuse & Fuse duty \\
 \end{dbftable}
 \end{table}
 
 \subsection{Critical Processes and Technologies}
-\dbfnote{About 70 words. Why each item in Table~\ref{tab:critical} is critical, and how its risk is retired early.}
-\dbffill{70}
+The Fowler track is the one technology the team has never built, so a jigged test section is made first and chooses the variant (Table~\ref{tab:critical}). Its 6061 aluminium rails and the container foam ($\pm$1~mm) are CNC-cut by an outside shop, ordered in November with the long-lead parts; carriages and drum are printed and the tungsten core potted in epoxy in-house. The fuse is an 80~A blade rated for 58~V, as the common type is rated for 32~V, below a charged 8S pack's 33.6~V.\footnote{Littelfuse MAXI 32V and MAXI 58V (999 series) datasheets; DigiKey listing 0999080-ZXN, read 29 Oct.~2026.}

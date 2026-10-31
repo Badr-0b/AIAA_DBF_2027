@@ -1,0 +1,371 @@
+{
+ "control": {
+  "mean": 6.3326001152054685,
+  "p10": 5.998725170632163,
+  "p_mission_top": 0.1282,
+  "p_m3_done": 0.4516
+ },
+ "gate_complete_need": 0.5049,
+ "gate_p10_need": 5.998725170632163,
+ "n_designs": 162,
+ "n_gated": 24,
+ "gated_top10": [
+  {
+   "id": "S1.2|fowler|m6|8s",
+   "p_mission_top": 0.3604,
+   "p_mission_top_ci95": [
+    0.32813241928180037,
+    0.3928039295718287
+   ],
+   "mean": 6.648666376148288,
+   "p10": 6.183441788623249,
+   "p_m3_done": 0.546
+  },
+  {
+   "id": "S1.0|fowler|m8|8s",
+   "p_mission_top": 0.3572,
+   "p_mission_top_ci95": [
+    0.32687110246581613,
+    0.3883675150265196
+   ],
+   "mean": 6.77152057039133,
+   "p10": 6.245774889440081,
+   "p_m3_done": 0.5098
+  },
+  {
+   "id": "S1.1|fowler|m6|8s",
+   "p_mission_top": 0.3564,
+   "p_mission_top_ci95": [
+    0.3261315136532957,
+    0.3874030623875225
+   ],
+   "mean": 6.7319656940056705,
+   "p10": 6.258927081732155,
+   "p_m3_done": 0.5396
+  },
+  {
+   "id": "S1.2|slotted|m6|8s",
+   "p_mission_top": 0.3512,
+   "p_mission_top_ci95": [
+    0.32041031074523485,
+    0.3823567677671548
+   ],
+   "mean": 6.715769075120642,
+   "p10": 6.238037172913419,
+   "p_m3_done": 0.5366
+  },
+  {
+   "id": "S1.0|fowler|m6|8s",
+   "p_mission_top": 0.3498,
+   "p_mission_top_ci95": [
+    0.3204499559647718,
+    0.37820189137827565
+   ],
+   "mean": 6.777549286995353,
+   "p10": 6.261967793178814,
+   "p_m3_done": 0.5248
+  },
+  {
+   "id": "S1.1|slotted|m6|8s",
+   "p_mission_top": 0.3412,
+   "p_mission_top_ci95": [
+    0.3114454782675981,
+    0.3701270796891673
+   ],
+   "mean": 6.7359450638662155,
+   "p10": 6.26678386238516,
+   "p_m3_done": 0.5082
+  },
+  {
+   "id": "S1.3|plain|m6|8s",
+   "p_mission_top": 0.3412,
+   "p_mission_top_ci95": [
+    0.31039085119166837,
+    0.37202971468083557
+   ],
+   "mean": 6.638823520918081,
+   "p10": 6.187516905212981,
+   "p_m3_done": 0.5224
+  },
+  {
+   "id": "S1.2|plain|m6|8s",
+   "p_mission_top": 0.3374,
+   "p_mission_top_ci95": [
+    0.3075976876876877,
+    0.3669714642613802
+   ],
+   "mean": 6.718405264122009,
+   "p10": 6.268690591736652,
+   "p_m3_done": 0.5088
+  },
+  {
+   "id": "S1.1|fowler|m4.4|8s",
+   "p_mission_top": 0.2694,
+   "p_mission_top_ci95": [
+    0.24089990833589991,
+    0.2981429153641904
+   ],
+   "mean": 6.532053486518845,
+   "p10": 6.355938996730526,
+   "p_m3_done": 0.5492
+  },
+  {
+   "id": "S1.2|fowler|m4.4|8s",
+   "p_mission_top": 0.266,
+   "p_mission_top_ci95": [
+    0.23536434271587242,
+    0.29630573041897185
+   ],
+   "mean": 6.505969786343136,
+   "p10": 6.2467967911780775,
+   "p_m3_done": 0.561
+  }
+ ],
+ "failed_leaders": [
+  {
+   "id": "S1.2|fowler|m8|8s",
+   "p_mission_top": 0.3652,
+   "p10": 5.892915411810146,
+   "p_m3_done": 0.5382,
+   "g_381": true,
+   "g_complete": true,
+   "g_p10": false
+  },
+  {
+   "id": "S1.1|fowler|m8|8s",
+   "p_mission_top": 0.3616,
+   "p10": 5.951088565698992,
+   "p_m3_done": 0.5304,
+   "g_381": true,
+   "g_complete": true,
+   "g_p10": false
+  },
+  {
+   "id": "S1.3|fowler|m8|8s",
+   "p_mission_top": 0.3606,
+   "p10": 5.873584751416979,
+   "p_m3_done": 0.5326,
+   "g_381": true,
+   "g_complete": true,
+   "g_p10": false
+  },
+  {
+   "id": "S1.2|slotted|m8|8s",
+   "p_mission_top": 0.3554,
+   "p10": 5.930116994776657,
+   "p_m3_done": 0.5162,
+   "g_381": true,
+   "g_complete": true,
+   "g_p10": false
+  },
+  {
+   "id": "S1.3|slotted|m8|8s",
+   "p_mission_top": 0.3542,
+   "p10": 5.882823767529665,
+   "p_m3_done": 0.5262,
+   "g_381": true,
+   "g_complete": true,
+   "g_p10": false
+  },
+  {
+   "id": "S1.3|fowler|m6|8s",
+   "p_mission_top": 0.3506,
+   "p10": 5.888818752297879,
+   "p_m3_done": 0.5504,
+   "g_381": true,
+   "g_complete": true,
+   "g_p10": false
+  },
+  {
+   "id": "S1.3|slotted|m6|8s",
+   "p_mission_top": 0.3488,
+   "p10": 5.896804052557276,
+   "p_m3_done": 0.5432,
+   "g_381": true,
+   "g_complete": true,
+   "g_p10": false
+  }
+ ],
+ "shortlist": [
+  {
+   "s": 1.2,
+   "flap": "fowler",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "gated leader",
+    "best gated fowler"
+   ],
+   "id": "S1.2|fowler|m6|8s",
+   "gated": true,
+   "complexity": 2,
+   "screen_p_top": 0.3604,
+   "screen_mean": 6.648666376148288,
+   "screen_p10": 6.183441788623249,
+   "screen_p_m3_done": 0.546
+  },
+  {
+   "s": 1.0,
+   "flap": "fowler",
+   "m_hi": 8.0,
+   "prop": "8s",
+   "why": [
+    "gated leader"
+   ],
+   "id": "S1.0|fowler|m8|8s",
+   "gated": true,
+   "complexity": 2,
+   "screen_p_top": 0.3572,
+   "screen_mean": 6.77152057039133,
+   "screen_p10": 6.245774889440081,
+   "screen_p_m3_done": 0.5098
+  },
+  {
+   "s": 1.1,
+   "flap": "fowler",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "gated leader"
+   ],
+   "id": "S1.1|fowler|m6|8s",
+   "gated": true,
+   "complexity": 2,
+   "screen_p_top": 0.3564,
+   "screen_mean": 6.7319656940056705,
+   "screen_p10": 6.258927081732155,
+   "screen_p_m3_done": 0.5396
+  },
+  {
+   "s": 1.2,
+   "flap": "slotted",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "gated leader",
+    "best gated slotted",
+    "B-area sweep"
+   ],
+   "id": "S1.2|slotted|m6|8s",
+   "gated": true,
+   "complexity": 1,
+   "screen_p_top": 0.3512,
+   "screen_mean": 6.715769075120642,
+   "screen_p10": 6.238037172913419,
+   "screen_p_m3_done": 0.5366
+  },
+  {
+   "s": 1.0,
+   "flap": "fowler",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "gated leader",
+    "A-area check"
+   ],
+   "id": "S1.0|fowler|m6|8s",
+   "gated": true,
+   "complexity": 2,
+   "screen_p_top": 0.3498,
+   "screen_mean": 6.777549286995353,
+   "screen_p10": 6.261967793178814,
+   "screen_p_m3_done": 0.5248
+  },
+  {
+   "s": 1.3,
+   "flap": "plain",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "best gated plain"
+   ],
+   "id": "S1.3|plain|m6|8s",
+   "gated": true,
+   "complexity": 0,
+   "screen_p_top": 0.3412,
+   "screen_mean": 6.638823520918081,
+   "screen_p10": 6.187516905212981,
+   "screen_p_m3_done": 0.5224
+  },
+  {
+   "s": 1.1,
+   "flap": "slotted",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "B-area sweep"
+   ],
+   "id": "S1.1|slotted|m6|8s",
+   "gated": true,
+   "complexity": 1,
+   "screen_p_top": 0.3412,
+   "screen_mean": 6.7359450638662155,
+   "screen_p10": 6.26678386238516,
+   "screen_p_m3_done": 0.5082
+  },
+  {
+   "s": 0.9,
+   "flap": "fowler",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "rev A Variant A"
+   ],
+   "id": "S0.9|fowler|m6|8s",
+   "gated": false,
+   "complexity": 2,
+   "screen_p_top": 0.3356,
+   "screen_mean": 6.780045292011295,
+   "screen_p10": 6.320898840376438,
+   "screen_p_m3_done": 0.4976
+  },
+  {
+   "s": 0.9,
+   "flap": "fowler",
+   "m_hi": 8.0,
+   "prop": "8s",
+   "why": [
+    "rev A A8"
+   ],
+   "id": "S0.9|fowler|m8|8s",
+   "gated": false,
+   "complexity": 2,
+   "screen_p_top": 0.3316,
+   "screen_mean": 6.8097598957683,
+   "screen_p10": 6.258659038960564,
+   "screen_p_m3_done": 0.4758
+  },
+  {
+   "s": 1.0,
+   "flap": "slotted",
+   "m_hi": 6.0,
+   "prop": "8s",
+   "why": [
+    "B-area sweep"
+   ],
+   "id": "S1.0|slotted|m6|8s",
+   "gated": false,
+   "complexity": 1,
+   "screen_p_top": 0.3304,
+   "screen_mean": 6.765311637473303,
+   "screen_p10": 6.324028938539928,
+   "screen_p_m3_done": 0.4904
+  },
+  {
+   "s": 1.1,
+   "flap": "fowler",
+   "m_hi": 8.0,
+   "prop": "twin",
+   "why": [
+    "best twin (fails the gates; frozen-item test for B)"
+   ],
+   "id": "S1.1|fowler|m8|twin",
+   "gated": false,
+   "complexity": 4,
+   "screen_p_top": 0.3116,
+   "screen_mean": 6.520931328531422,
+   "screen_p10": 5.840326735465624,
+   "screen_p_m3_done": 0.4832
+  }
+ ]
+}

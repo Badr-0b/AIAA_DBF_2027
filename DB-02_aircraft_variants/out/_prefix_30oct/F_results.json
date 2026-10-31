@@ -1,0 +1,1975 @@
+{
+ "schema": 1,
+ "stream": "finalists",
+ "generated": "2026-10-30",
+ "items": {
+  "F-C-MEAN": {
+   "name": "C mean mission total if completed",
+   "value": 6.3326001152054685,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-P10": {
+   "name": "C P10 total",
+   "value": 5.998725170632163,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-PTOP": {
+   "name": "C P(top mission total)",
+   "value": 0.1282,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.11921793691306158,
+    0.13775294721724343
+   ]
+  },
+  "F-C-P1ST": {
+   "name": "C P(1st), report 90",
+   "value": 0.1934,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.18268921892548953,
+    0.20458155319487495
+   ]
+  },
+  "F-C-RANK": {
+   "name": "C expected rank",
+   "value": 24.75,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-PM2D": {
+   "name": "C P(M2 completed)",
+   "value": 0.7426,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-PM3D": {
+   "name": "C P(M3 completed)",
+   "value": 0.4516,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-PM2": {
+   "name": "C per-attempt M2 success",
+   "value": 0.4523084866599835,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-PM3": {
+   "name": "C per-attempt M3 success",
+   "value": 0.4770259880055873,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-M2": {
+   "name": "C mean M2 score",
+   "value": 1.430220294145728,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-M3": {
+   "name": "C mean M3 score",
+   "value": 2.8532633136657557,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-GM": {
+   "name": "C mean GM score",
+   "value": 1.0491165073939852,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-MDECL": {
+   "name": "C mean declared sensor",
+   "value": 3.399999999999999,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-VS2": {
+   "name": "C median M2 stall speed",
+   "value": 13.486367814854125,
+   "unit": "m/s",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-G2": {
+   "name": "C median M2 gross",
+   "value": 12.787524583935571,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-FEAS": {
+   "name": "C P(M2 feasible)",
+   "value": 0.975,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-C-PTOP-base": {
+   "name": "C P(top) in scenario base",
+   "value": 0.1282,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.11921793691306158,
+    0.13775294721724343
+   ]
+  },
+  "F-C-PTOP-fowler_low": {
+   "name": "C P(top) in scenario fowler_low",
+   "value": 0.1282,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.11921793691306158,
+    0.13775294721724343
+   ]
+  },
+  "F-C-PTOP-mass_up": {
+   "name": "C P(top) in scenario mass_up",
+   "value": 0.1282,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.11921793691306158,
+    0.13775294721724343
+   ]
+  },
+  "F-C-PTOP-reliab_low": {
+   "name": "C P(top) in scenario reliab_low",
+   "value": 0.096,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.08814175472603819,
+    0.10447857122512702
+   ]
+  },
+  "F-C-PTOP-combined": {
+   "name": "C P(top) in scenario combined",
+   "value": 0.1282,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.11921793691306158,
+    0.13775294721724343
+   ]
+  },
+  "F-A-MEAN": {
+   "name": "A mean mission total if completed",
+   "value": 6.760708321493261,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-P10": {
+   "name": "A P10 total",
+   "value": 6.297737312581747,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-PTOP": {
+   "name": "A P(top mission total)",
+   "value": 0.286,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2736422913100189,
+    0.2986862971888657
+   ]
+  },
+  "F-A-P1ST": {
+   "name": "A P(1st), report 90",
+   "value": 0.3476,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.3345217336800912,
+    0.3609122704658435
+   ]
+  },
+  "F-A-RANK": {
+   "name": "A expected rank",
+   "value": 18.8086,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-PM2D": {
+   "name": "A P(M2 completed)",
+   "value": 0.8076,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-PM3D": {
+   "name": "A P(M3 completed)",
+   "value": 0.5262,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-PM2": {
+   "name": "A per-attempt M2 success",
+   "value": 0.5326833280654094,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-PM3": {
+   "name": "A per-attempt M3 success",
+   "value": 0.5159856165552096,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-M2": {
+   "name": "A mean M2 score",
+   "value": 1.4413447225199092,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-M3": {
+   "name": "A mean M3 score",
+   "value": 2.8745501222657395,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-GM": {
+   "name": "A mean GM score",
+   "value": 1.4448134767076122,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-MDECL": {
+   "name": "A mean declared sensor",
+   "value": 5.716666666666667,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-VS2": {
+   "name": "A median M2 stall speed",
+   "value": 12.216561086131922,
+   "unit": "m/s",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-G2": {
+   "name": "A median M2 gross",
+   "value": 13.586832149644394,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-FEAS": {
+   "name": "A P(M2 feasible)",
+   "value": 0.9666666666666667,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-PTOP-base": {
+   "name": "A P(top) in scenario base",
+   "value": 0.286,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2736422913100189,
+    0.2986862971888657
+   ]
+  },
+  "F-A-PTOP-fowler_low": {
+   "name": "A P(top) in scenario fowler_low",
+   "value": 0.221,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.20971560840435233,
+    0.2327127850124177
+   ]
+  },
+  "F-A-PTOP-mass_up": {
+   "name": "A P(top) in scenario mass_up",
+   "value": 0.2446,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2328842107029554,
+    0.25670794585132084
+   ]
+  },
+  "F-A-PTOP-reliab_low": {
+   "name": "A P(top) in scenario reliab_low",
+   "value": 0.2284,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2169748057851832,
+    0.24024222522555067
+   ]
+  },
+  "F-A-PTOP-combined": {
+   "name": "A P(top) in scenario combined",
+   "value": 0.171,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.1608172367977303,
+    0.18168792963279784
+   ]
+  },
+  "F-B-MEAN": {
+   "name": "B mean mission total if completed",
+   "value": 6.617049116605047,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-P10": {
+   "name": "B P10 total",
+   "value": 6.130561637836026,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-PTOP": {
+   "name": "B P(top mission total)",
+   "value": 0.2376,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2260068769051897,
+    0.24959602787101268
+   ]
+  },
+  "F-B-P1ST": {
+   "name": "B P(1st), report 90",
+   "value": 0.2982,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2856784900188148,
+    0.31103136586471286
+   ]
+  },
+  "F-B-RANK": {
+   "name": "B expected rank",
+   "value": 21.1602,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-PM2D": {
+   "name": "B P(M2 completed)",
+   "value": 0.7712,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-PM3D": {
+   "name": "B P(M3 completed)",
+   "value": 0.4896,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-PM2": {
+   "name": "B per-attempt M2 success",
+   "value": 0.4912035937104125,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-PM3": {
+   "name": "B per-attempt M3 success",
+   "value": 0.5045692581470547,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-M2": {
+   "name": "B mean M2 score",
+   "value": 1.4002647823222638,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-M3": {
+   "name": "B mean M3 score",
+   "value": 2.8209334356378304,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-GM": {
+   "name": "B mean GM score",
+   "value": 1.3958508986449532,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-MDECL": {
+   "name": "B mean declared sensor",
+   "value": 5.416666666666667,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-VS2": {
+   "name": "B median M2 stall speed",
+   "value": 12.870636175023986,
+   "unit": "m/s",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-G2": {
+   "name": "B median M2 gross",
+   "value": 13.697859681003406,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-FEAS": {
+   "name": "B P(M2 feasible)",
+   "value": 0.95,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-PTOP-base": {
+   "name": "B P(top) in scenario base",
+   "value": 0.2376,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2260068769051897,
+    0.24959602787101268
+   ]
+  },
+  "F-B-PTOP-fowler_low": {
+   "name": "B P(top) in scenario fowler_low",
+   "value": 0.2376,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2260068769051897,
+    0.24959602787101268
+   ]
+  },
+  "F-B-PTOP-mass_up": {
+   "name": "B P(top) in scenario mass_up",
+   "value": 0.192,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.1813204865157591,
+    0.20315243524899063
+   ]
+  },
+  "F-B-PTOP-reliab_low": {
+   "name": "B P(top) in scenario reliab_low",
+   "value": 0.1728,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.1625725291143203,
+    0.18352987348771255
+   ]
+  },
+  "F-B-PTOP-combined": {
+   "name": "B P(top) in scenario combined",
+   "value": 0.192,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.1813204865157591,
+    0.20315243524899063
+   ]
+  },
+  "F-B11-MEAN": {
+   "name": "B11 mean mission total if completed",
+   "value": 6.553930066261371,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-P10": {
+   "name": "B11 P10 total",
+   "value": 6.026176733557618,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-PTOP": {
+   "name": "B11 P(top mission total)",
+   "value": 0.2478,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.23602956407125222,
+    0.2599576790101435
+   ]
+  },
+  "F-B11-P1ST": {
+   "name": "B11 P(1st), report 90",
+   "value": 0.3046,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2919968889101719,
+    0.31750314002759467
+   ]
+  },
+  "F-B11-RANK": {
+   "name": "B11 expected rank",
+   "value": 21.2004,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-PM2D": {
+   "name": "B11 P(M2 completed)",
+   "value": 0.7656,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-PM3D": {
+   "name": "B11 P(M3 completed)",
+   "value": 0.4942,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-PM2": {
+   "name": "B11 per-attempt M2 success",
+   "value": 0.50042115952164,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-PM3": {
+   "name": "B11 per-attempt M3 success",
+   "value": 0.51148253136982,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-M2": {
+   "name": "B11 mean M2 score",
+   "value": 1.359145696410837,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-M3": {
+   "name": "B11 mean M3 score",
+   "value": 2.776856201125797,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-GM": {
+   "name": "B11 mean GM score",
+   "value": 1.4179281687247363,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-MDECL": {
+   "name": "B11 mean declared sensor",
+   "value": 5.55,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-VS2": {
+   "name": "B11 median M2 stall speed",
+   "value": 12.568136806778385,
+   "unit": "m/s",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-G2": {
+   "name": "B11 median M2 gross",
+   "value": 14.319008879179345,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-FEAS": {
+   "name": "B11 P(M2 feasible)",
+   "value": 0.925,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-PTOP-base": {
+   "name": "B11 P(top) in scenario base",
+   "value": 0.2478,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.23602956407125222,
+    0.2599576790101435
+   ]
+  },
+  "F-B11-PTOP-fowler_low": {
+   "name": "B11 P(top) in scenario fowler_low",
+   "value": 0.2478,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.23602956407125222,
+    0.2599576790101435
+   ]
+  },
+  "F-B11-PTOP-mass_up": {
+   "name": "B11 P(top) in scenario mass_up",
+   "value": 0.1974,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.18660108930264274,
+    0.2086635409766211
+   ]
+  },
+  "F-B11-PTOP-reliab_low": {
+   "name": "B11 P(top) in scenario reliab_low",
+   "value": 0.1928,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.18210259227182282,
+    0.20396910112470676
+   ]
+  },
+  "F-B11-PTOP-combined": {
+   "name": "B11 P(top) in scenario combined",
+   "value": 0.1974,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.18660108930264274,
+    0.2086635409766211
+   ]
+  },
+  "F-TW-MEAN": {
+   "name": "TW mean mission total if completed",
+   "value": 6.635602079752467,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-P10": {
+   "name": "TW P10 total",
+   "value": 6.053663424028826,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-PTOP": {
+   "name": "TW P(top mission total)",
+   "value": 0.2442,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2324911040130554,
+    0.2563016667253309
+   ]
+  },
+  "F-TW-P1ST": {
+   "name": "TW P(1st), report 90",
+   "value": 0.3008,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.28824498553657074,
+    0.31366087815024146
+   ]
+  },
+  "F-TW-RANK": {
+   "name": "TW expected rank",
+   "value": 20.9774,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-PM2D": {
+   "name": "TW P(M2 completed)",
+   "value": 0.776,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-PM3D": {
+   "name": "TW P(M3 completed)",
+   "value": 0.4848,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-PM2": {
+   "name": "TW per-attempt M2 success",
+   "value": 0.4965419758357382,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-PM3": {
+   "name": "TW per-attempt M3 success",
+   "value": 0.4901137259216803,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-M2": {
+   "name": "TW mean M2 score",
+   "value": 1.3963149762024414,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-M3": {
+   "name": "TW mean M3 score",
+   "value": 2.81349557098236,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-GM": {
+   "name": "TW mean GM score",
+   "value": 1.4257915325676649,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-MDECL": {
+   "name": "TW mean declared sensor",
+   "value": 5.6,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-VS2": {
+   "name": "TW median M2 stall speed",
+   "value": 12.312924300820384,
+   "unit": "m/s",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-G2": {
+   "name": "TW median M2 gross",
+   "value": 13.876368783639613,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-FEAS": {
+   "name": "TW P(M2 feasible)",
+   "value": 0.95,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-PTOP-base": {
+   "name": "TW P(top) in scenario base",
+   "value": 0.2442,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2324911040130554,
+    0.2563016667253309
+   ]
+  },
+  "F-TW-PTOP-fowler_low": {
+   "name": "TW P(top) in scenario fowler_low",
+   "value": 0.179,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.1686216784761209,
+    0.1898712042722059
+   ]
+  },
+  "F-TW-PTOP-mass_up": {
+   "name": "TW P(top) in scenario mass_up",
+   "value": 0.2064,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.19540915542919618,
+    0.21784165570759123
+   ]
+  },
+  "F-TW-PTOP-reliab_low": {
+   "name": "TW P(top) in scenario reliab_low",
+   "value": 0.192,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.1813204865157591,
+    0.20315243524899063
+   ]
+  },
+  "F-TW-PTOP-combined": {
+   "name": "TW P(top) in scenario combined",
+   "value": 0.139,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.12968767783194327,
+    0.14886662332739
+   ]
+  },
+  "F-A8-MEAN": {
+   "name": "A8 mean mission total if completed",
+   "value": 6.757540392536996,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-P10": {
+   "name": "A8 P10 total",
+   "value": 6.258659038960564,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-PTOP": {
+   "name": "A8 P(top mission total)",
+   "value": 0.2884,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2760091992962339,
+    0.30111570409799027
+   ]
+  },
+  "F-A8-P1ST": {
+   "name": "A8 P(1st), report 90",
+   "value": 0.3446,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.3315509063397529,
+    0.3578877041870073
+   ]
+  },
+  "F-A8-RANK": {
+   "name": "A8 expected rank",
+   "value": 19.157,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-PM2D": {
+   "name": "A8 P(M2 completed)",
+   "value": 0.7984,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-PM3D": {
+   "name": "A8 P(M3 completed)",
+   "value": 0.5188,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-PM2": {
+   "name": "A8 per-attempt M2 success",
+   "value": 0.5217732269188949,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-PM3": {
+   "name": "A8 per-attempt M3 success",
+   "value": 0.5155996982441745,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-M2": {
+   "name": "A8 mean M2 score",
+   "value": 1.4480087892724036,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-M3": {
+   "name": "A8 mean M3 score",
+   "value": 2.8697845806363858,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-GM": {
+   "name": "A8 mean GM score",
+   "value": 1.4397470226282076,
+   "unit": "points",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-MDECL": {
+   "name": "A8 mean declared sensor",
+   "value": 5.891666666666667,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-VS2": {
+   "name": "A8 median M2 stall speed",
+   "value": 12.295144310598666,
+   "unit": "m/s",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-G2": {
+   "name": "A8 median M2 gross",
+   "value": 13.913325726986145,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-FEAS": {
+   "name": "A8 P(M2 feasible)",
+   "value": 0.9583333333333334,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-PTOP-base": {
+   "name": "A8 P(top) in scenario base",
+   "value": 0.2884,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.2760091992962339,
+    0.30111570409799027
+   ]
+  },
+  "F-A8-PTOP-fowler_low": {
+   "name": "A8 P(top) in scenario fowler_low",
+   "value": 0.213,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.20187380076172068,
+    0.22456687633725064
+   ]
+  },
+  "F-A8-PTOP-mass_up": {
+   "name": "A8 P(top) in scenario mass_up",
+   "value": 0.241,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.22934675506498545,
+    0.2530509291462814
+   ]
+  },
+  "F-A8-PTOP-reliab_low": {
+   "name": "A8 P(top) in scenario reliab_low",
+   "value": 0.229,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.21756361618657027,
+    0.24085249354799848
+   ]
+  },
+  "F-A8-PTOP-combined": {
+   "name": "A8 P(top) in scenario combined",
+   "value": 0.171,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": "",
+   "range": [
+    0.1608172367977303,
+    0.18168792963279784
+   ]
+  },
+  "F-A-REG-base": {
+   "name": "A regret in base",
+   "value": 0.0024000000000000132,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-REG-base": {
+   "name": "B regret in base",
+   "value": 0.050799999999999984,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-REG-base": {
+   "name": "B11 regret in base",
+   "value": 0.0406,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-REG-base": {
+   "name": "TW regret in base",
+   "value": 0.04419999999999999,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-REG-base": {
+   "name": "A8 regret in base",
+   "value": 0.0,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-REG-fowler_low": {
+   "name": "A regret in fowler_low",
+   "value": 0.02679999999999999,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-REG-fowler_low": {
+   "name": "B regret in fowler_low",
+   "value": 0.010199999999999987,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-REG-fowler_low": {
+   "name": "B11 regret in fowler_low",
+   "value": 0.0,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-REG-fowler_low": {
+   "name": "TW regret in fowler_low",
+   "value": 0.0688,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-REG-fowler_low": {
+   "name": "A8 regret in fowler_low",
+   "value": 0.0348,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-REG-mass_up": {
+   "name": "A regret in mass_up",
+   "value": 0.0,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-REG-mass_up": {
+   "name": "B regret in mass_up",
+   "value": 0.05260000000000001,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-REG-mass_up": {
+   "name": "B11 regret in mass_up",
+   "value": 0.04720000000000002,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-REG-mass_up": {
+   "name": "TW regret in mass_up",
+   "value": 0.03820000000000001,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-REG-mass_up": {
+   "name": "A8 regret in mass_up",
+   "value": 0.00360000000000002,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-REG-reliab_low": {
+   "name": "A regret in reliab_low",
+   "value": 0.0006000000000000172,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-REG-reliab_low": {
+   "name": "B regret in reliab_low",
+   "value": 0.0562,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-REG-reliab_low": {
+   "name": "B11 regret in reliab_low",
+   "value": 0.03620000000000001,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-REG-reliab_low": {
+   "name": "TW regret in reliab_low",
+   "value": 0.037000000000000005,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-REG-reliab_low": {
+   "name": "A8 regret in reliab_low",
+   "value": 0.0,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-REG-combined": {
+   "name": "A regret in combined",
+   "value": 0.02639999999999998,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-REG-combined": {
+   "name": "B regret in combined",
+   "value": 0.005399999999999988,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-REG-combined": {
+   "name": "B11 regret in combined",
+   "value": 0.0,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-REG-combined": {
+   "name": "TW regret in combined",
+   "value": 0.05839999999999998,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-REG-combined": {
+   "name": "A8 regret in combined",
+   "value": 0.02639999999999998,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-MAXREG": {
+   "name": "A max regret",
+   "value": 0.02679999999999999,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-MAXREG": {
+   "name": "B max regret",
+   "value": 0.0562,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B11-MAXREG": {
+   "name": "B11 max regret",
+   "value": 0.04720000000000002,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-TW-MAXREG": {
+   "name": "TW max regret",
+   "value": 0.0688,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A8-MAXREG": {
+   "name": "A8 max regret",
+   "value": 0.0348,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-P1ST-R80": {
+   "name": "A P(1st) at report 80",
+   "value": 0.1162,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-P1ST-R86": {
+   "name": "A P(1st) at report 86",
+   "value": 0.263,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-P1ST-R90": {
+   "name": "A P(1st) at report 90",
+   "value": 0.3476,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-P1ST-R94": {
+   "name": "A P(1st) at report 94",
+   "value": 0.4088,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-P1ST-R80": {
+   "name": "B P(1st) at report 80",
+   "value": 0.0942,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-P1ST-R86": {
+   "name": "B P(1st) at report 86",
+   "value": 0.22,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-P1ST-R90": {
+   "name": "B P(1st) at report 90",
+   "value": 0.2982,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-B-P1ST-R94": {
+   "name": "B P(1st) at report 94",
+   "value": 0.3614,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/integration/finalists.py (orchestrator, 30 Oct 2026): 120 paired draws, reliability-aware declaration, 5,000 S2 v1 fields",
+   "note": ""
+  },
+  "F-A-S": {
+   "name": "wing area",
+   "value": 0.9,
+   "unit": "m\u00b2",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-AR": {
+   "name": "aspect ratio",
+   "value": 3.6804444444444444,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-CR": {
+   "name": "root chord",
+   "value": 0.5817711700064642,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-CT": {
+   "name": "tip chord",
+   "value": 0.4072398190045249,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-MAC": {
+   "name": "mean aerodynamic chord",
+   "value": 0.49963876953496333,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-SH": {
+   "name": "horizontal tail area",
+   "value": 0.26225018211834933,
+   "unit": "m\u00b2",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-SV": {
+   "name": "fin area",
+   "value": 0.06947496843473337,
+   "unit": "m\u00b2",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-LT": {
+   "name": "tail arm",
+   "value": 0.9430734763348793,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-BH": {
+   "name": "horizontal tail span",
+   "value": 1.0242073659534954,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-BV": {
+   "name": "fin height",
+   "value": 0.3228195357349057,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-XNP": {
+   "name": "neutral point (wing+tail, AVL)",
+   "value": 0.48884,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-XCG": {
+   "name": "design CG",
+   "value": 0.40889779687440586,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-CLA": {
+   "name": "lift-curve slope (AVL)",
+   "value": 3.999264,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-CMA": {
+   "name": "Cm_alpha (AVL)",
+   "value": -1.136221,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-CNB": {
+   "name": "Cn_beta (AVL)",
+   "value": 0.081727,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-CLB": {
+   "name": "Cl_beta (AVL)",
+   "value": -0.015383,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-EMPTY": {
+   "name": "empty mass with 8S pack and D&R",
+   "value": 6.736996801736614,
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": "DB-01 fit 5.96 S^0.94 (x1.31 scatter)"
+  },
+  "F-A-LEN": {
+   "name": "overall length",
+   "value": 1.4707424763447345,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-SMMIN": {
+   "name": "static margin, worst loading (wing+tail)",
+   "value": 16.00000000000001,
+   "unit": "%",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-SMMAX": {
+   "name": "static margin, best loading (wing+tail)",
+   "value": 16.197433278870673,
+   "unit": "%",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-A-M2G": {
+   "name": "M2 gross at 6 kg declared",
+   "value": 13.740996801736614,
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-S": {
+   "name": "wing area",
+   "value": 1.0,
+   "unit": "m\u00b2",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-AR": {
+   "name": "aspect ratio",
+   "value": 3.3124000000000002,
+   "unit": "-",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-CR": {
+   "name": "root chord",
+   "value": 0.6464124111182935,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-CT": {
+   "name": "tip chord",
+   "value": 0.45248868778280543,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-MAC": {
+   "name": "mean aerodynamic chord",
+   "value": 0.5551541883721814,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-SH": {
+   "name": "horizontal tail area",
+   "value": 0.32684122102535207,
+   "unit": "m\u00b2",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-SV": {
+   "name": "fin area",
+   "value": 0.07792770627435733,
+   "unit": "m\u00b2",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-LT": {
+   "name": "tail arm",
+   "value": 0.934199188972605,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-BH": {
+   "name": "horizontal tail span",
+   "value": 1.1434005790191852,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-BV": {
+   "name": "fin height",
+   "value": 0.34189407630366453,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-XNP": {
+   "name": "neutral point (wing+tail, AVL)",
+   "value": 0.505332,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-XCG": {
+   "name": "design CG",
+   "value": 0.41650732986045097,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-CLA": {
+   "name": "lift-curve slope (AVL)",
+   "value": 3.859688,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-CMA": {
+   "name": "Cm_alpha (AVL)",
+   "value": -1.039527,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-CNB": {
+   "name": "Cn_beta (AVL)",
+   "value": 0.081486,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-CLB": {
+   "name": "Cl_beta (AVL)",
+   "value": -0.01296,
+   "unit": "1/rad",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-EMPTY": {
+   "name": "empty mass with 8S pack and D&R",
+   "value": 7.1246,
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": "DB-01 fit 5.96 S^0.94 (x1.31 scatter)"
+  },
+  "F-B-LEN": {
+   "name": "overall length",
+   "value": 1.4917765727680916,
+   "unit": "m",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-SMMIN": {
+   "name": "static margin, worst loading (wing+tail)",
+   "value": 16.0,
+   "unit": "%",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-SMMAX": {
+   "name": "static margin, best loading (wing+tail)",
+   "value": 16.34810134064686,
+   "unit": "%",
+   "grade": "computed",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-B-M2G": {
+   "name": "M2 gross at 6 kg declared",
+   "value": 14.128599999999999,
+   "unit": "kg",
+   "grade": "estimate",
+   "source": "src/variants/geometry_variants.py (orchestrator, 30 Oct 2026): AVL 3.52 wing+tail, DB-01 mass fit split by E02 shares",
+   "note": ""
+  },
+  "F-FLD-2027-P50": {
+   "name": "2027 best rival mission total, median",
+   "value": 6.62,
+   "unit": "points",
+   "grade": "computed",
+   "source": "out/field/backtest_orch.json + S2 v1",
+   "note": ""
+  },
+  "F-FLD-2027-P10": {
+   "name": "2027 best rival mission total, P10",
+   "value": 6.22,
+   "unit": "points",
+   "grade": "computed",
+   "source": "S2 v1 simulate(5000, 2027)",
+   "note": ""
+  },
+  "F-FLD-2027-P90": {
+   "name": "2027 best rival mission total, P90",
+   "value": 7.04,
+   "unit": "points",
+   "grade": "computed",
+   "source": "S2 v1 simulate(5000, 2027)",
+   "note": ""
+  },
+  "F-FLD-GMRIV": {
+   "name": "2027 rival GM maximum, median",
+   "value": 11.41,
+   "unit": "kg m",
+   "grade": "computed",
+   "source": "S2 v1 simulate(5000, 2027)",
+   "note": ""
+  },
+  "F-BT-2022-WIN": {
+   "name": "2022 actual winner total",
+   "value": 5.95,
+   "unit": "points",
+   "grade": "verified",
+   "source": "analysis/data/dbf_results.csv",
+   "note": ""
+  },
+  "F-BT-2022-SIM50": {
+   "name": "2022 simulated winner median",
+   "value": 6.136052685345087,
+   "unit": "points",
+   "grade": "computed",
+   "source": "S2 v1 back-test",
+   "note": ""
+  },
+  "F-BT-2023-WIN": {
+   "name": "2023 actual winner total",
+   "value": 6.8,
+   "unit": "points",
+   "grade": "verified",
+   "source": "analysis/data/dbf_results.csv",
+   "note": ""
+  },
+  "F-BT-2023-SIM50": {
+   "name": "2023 simulated winner median",
+   "value": 6.326566621157971,
+   "unit": "points",
+   "grade": "computed",
+   "source": "S2 v1 back-test",
+   "note": ""
+  },
+  "F-BT-2024-WIN": {
+   "name": "2024 actual winner total",
+   "value": 6.01,
+   "unit": "points",
+   "grade": "verified",
+   "source": "analysis/data/dbf_results.csv",
+   "note": ""
+  },
+  "F-BT-2024-SIM50": {
+   "name": "2024 simulated winner median",
+   "value": 6.156289349638149,
+   "unit": "points",
+   "grade": "computed",
+   "source": "S2 v1 back-test",
+   "note": ""
+  },
+  "F-BT-2025-WIN": {
+   "name": "2025 actual winner total",
+   "value": 6.34,
+   "unit": "points",
+   "grade": "verified",
+   "source": "analysis/data/dbf_results.csv",
+   "note": ""
+  },
+  "F-BT-2025-SIM50": {
+   "name": "2025 simulated winner median",
+   "value": 6.3918454293840234,
+   "unit": "points",
+   "grade": "computed",
+   "source": "S2 v1 back-test",
+   "note": ""
+  },
+  "F-BT-2026-WIN": {
+   "name": "2026 actual winner total",
+   "value": 5.61,
+   "unit": "points",
+   "grade": "verified",
+   "source": "analysis/data/dbf_results.csv",
+   "note": ""
+  },
+  "F-BT-2026-SIM50": {
+   "name": "2026 simulated winner median",
+   "value": 6.175383179255758,
+   "unit": "points",
+   "grade": "computed",
+   "source": "S2 v1 back-test",
+   "note": ""
+  },
+  "F-FUSE-100-32": {
+   "name": "Littelfuse 100 A MAXI DC rating",
+   "value": 32.0,
+   "unit": "V",
+   "grade": "verified",
+   "source": "Littelfuse MAXI 32 V datasheet and MAXI Smart Glow sheet (via Digikey/Mouser-hosted copies, read 29 Oct 2026)",
+   "note": ""
+  },
+  "F-FUSE-58-MAXA": {
+   "name": "Littelfuse MAXI 58 V series, highest rating",
+   "value": 80.0,
+   "unit": "A",
+   "grade": "reseller",
+   "source": "Digikey 0999080-ZXN listing, 29 Oct 2026",
+   "note": ""
+  },
+  "F-PROP-T0": {
+   "name": "8S AT7215 KV270 + 20x15E static thrust",
+   "value": 101.3,
+   "unit": "N",
+   "grade": "computed",
+   "source": "analysis/out/prop_trade_report.txt",
+   "note": ""
+  },
+  "F-PROP-MAXG": {
+   "name": "8S max M2 gross at 80 % usable, S 1.0",
+   "value": 17.48,
+   "unit": "kg",
+   "grade": "computed",
+   "source": "out/propulsion/gross_sweep.json (S6, salvaged)",
+   "note": ""
+  },
+  "F-PROP-AXH": {
+   "name": "prop axis height for 20 in prop clearance",
+   "value": 0.369,
+   "unit": "m",
+   "grade": "computed",
+   "source": "out/propulsion/install.json (S6, salvaged)",
+   "note": ""
+  }
+ }
+}

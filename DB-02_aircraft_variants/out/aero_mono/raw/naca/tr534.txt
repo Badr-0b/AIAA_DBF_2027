@@ -1,0 +1,1628 @@
+       .++ ,
+
+·  .J
+
+                                                                                            - ·'r'.+_
+
+              · I -_ ; "  · _' FOR AERONAUTICS ..... _ '
+
+                                 -      i  1·
+                                                                                        .;
+                                    .,
+
+                   AERODYNAMIC    CHARACTERISTICS      OF A WING
+              _, w ll'llFOWLER   FLAPS INCLUDING      FLAP LOADS
+
+                      -Do_AsIt,    AND-. CALC_II_TED    EFFECT
+
+       +.
+                     NOTICE
+
+THIS DOCUMENT        HAS BEEN                 REPRODUCED
+
+FROM     THE   BEST         COPY     FURNISHED            US BY
+
+THE   SPONSORING            AGENCY.           ALTHOUGH     IT
+
+IS RECOGNIZED        THAT            CERTAIN    PORTIONS
+
+ARE   ILLEGIBLE,            IT IS BEING         RELEASED
+                               OF MAKING        AVAILABLE
+IN THE   INTEREST
+
+AS MUCH        INFORMATION           AS POSSIBLE.
+REPORT No. 534
+
+  AERODYNAMIC       CHARACTERISTICS    OF A WING
+WITH FOWLER       FLAPS INCLUDING    FLAP LOADS
+
+       DOWNWASH,    AND CALCULATED      EFFECT
+                    ON TAKE-OFF
+
+Langley            By ROBERT C. PLATT
+                  Memorial Aeronautical Laboratory
+
+                                                                                                                                                                                                                                                          I
+145013--35--1
+                             NATIONAL                ADVISORY          COMMITTEE               FOR AERONAUTICS
+
+                                                  HEADQUARTERS. NAVY BUILDING. WASHINGTON,           D. C.
+                                                                  LABORATORIES. LANGLEY FIELD. VA.
+
+         Created      by act of Congress approved         March 3, 1915, for the supervision         and direction   of the        scientific study of
+                       of flight. Its membership                                                                    1929.
+the problems           the President, and serve as        was increased to 15 by act approved March 2,                             The members   are
+
+appointed         by                                      such without compensation.
+
+JOSEPH S. AMES, Ph.D., Chairman,                                                CHARLES A. LINDBERGH, LL. D.,
+        President, Johns Hopkins University,
+                                                     Baltimore,   Md.             New York City.
+                                                                  Army,
+DAVID W. TAYLOR, D. Eng., Vice Chairman.                                        WILLIAM P. MAcCRAcEEN,            Jr., Ph. B.,
+
+Washington,       D. C.                                                           Washington,        D. C.
+
+CHARLES G. ABBOT, Sc. D.,                                                       AUGUSTINE W. ROSINS, Brig. Gen., United States Army,
+
+Secretary, Smithsonian              Institution.                                  Chief, Materiel    Division,      Air Corps, Wright Field, Dayton,
+                                                                                      Ohio.
+LYMAN J. BRIGGS, Ph.D.,
+
+Director, National Bureau of Standards.                                         EUG'_NE L. VIDAL,    C. E.,
+
+BENJAMIN D. FOULOIS,         Major    Genera[,    United  States                  Director of Air Commerce,                   Department  of Commerce.
+        Chief of Air Corps,  War    Department.
+                             A.,                                                EDWARD P. WARNER, M. S.,
+WILLIS RAY GREGG, B.
+                                                                                  Editor of Aviation, New York City.
+
+Chief, United States Weather               Bureau.                              R. D. WEYERBACHER,                Commander,       United Statvs Navy,
+                                              N. Y.
+HARRY F. GUGGENHEIM, M. A.,                                                       Bureau of Aeronautics,            Navy Departmeat.
+
+Port Washington,             Long Island,                                       ORVILLE WRIGHT, Sc. D.,
+
+ERNEST J. KING, Rear Admiral, United States Navy,                                 Dayton, Ohio.
+
+Chief, Bureau of Aeronautics,              Navy Department.
+
+                                                  GEORGE W. LEWIS, Director of Aeronautical          Research
+                                                                         JOHN F. VICTORY, Secretary
+
+             HENRY J. E. REIn,             Engineer in Charge, Langley Memorial Aeronautical         Laboratory,    Langley Field, Va.
+
+                                                  JOHN J. IDE, Technical Assistant in Europe, Paris, France
+
+                                                          TECHNICAL             COMMITTEES
+
+             AEaODYNA_CS                                                                             XtECEAFT ACCID_TS
+             POWER PLANTS FOR AIRCRAFT                                                               INVENTIONS AND DESIGNS
+             AIRCRAFT STRUC_rI_RES AND MATERIALS
+
+                                           Coordination   of Research Needs of Military and Civil Aviation
+
+                                                          Preparation    of Research Programs
+
+                                                                  Allocation of Probleras
+
+                                                                  Prevention of Duplication
+
+                                                                 Consideration  of Inventions
+
+LANGLEY  MEMORIAL            AERONAUTICAL                 LABORATORY                  OFFICE         OF AERONAUTICAL               INTELLIGENCE
+
+                             LANGLEY FIELD, VA.                                                                   WASHINGTON, D. C.
+
+             Unified    conduct,      for all agencies, of                                           Collection,  classification,  compilation,
+         scientific   research      on the fundamental
+                                                                                               and dissemination    of scientific and tech-
+         problems     of flight,
+                                                                                               nical information    on aeronautics.
+                                            REPORT No. 534
+
+AERODYNAMIC                      CHARACTERISTICS                   OF  A WING WITH         FOWLER    FLAPS
+                         LOADS, DOWNWASH,                       AND    CALCULATED
+INCLUDING     FLAP                                                                         EFFECT ON TAKE-OFF
+
+                                            By ROBERT C. PLXTT
+
+                         SUMMARY                                because of their simplicity of application and their
+
+This report presents the results of an investigation in         superiority in giving steep gliding approaches and short
+
+the N. A. C. A. 7- by lO-]oot wind tunnel on a wing in          landing runs: the features of flaps with which designers
+
+combination with each of three sizes of Fowler flap. The        have been most concerned.        In order to retain satis-
+
+purpose of the investigation was to determine the aero-         factory operation from normal flying fields with fast
+                                                                airplanes, however, the use of high-lift devices that
+dynamic characteristics as affected by flap chord and
+
+position, the air loads on the flaps, and the effect of the     improve take-off as well as landing is desirable.      Since
+                                                                drag is unfavorable to take-off, the comparatively      large
+.flaps on the downwash.  The flap position for maximum          drag of split flaps places them among the least     promis-
+
+lift: polars for arrangements considered favorable fl_r
+
+take-off; and complete lift, drag, and pitching-mo_nent         ing of high-lift devices in this respect. The Fowler
+
+characteristics for selected optimum arrangements were          flap appears to offer a better compromise between these
+determined. A Clark Y wing model was tested with 20
+                                                                conflicting requirements.  For equal sizes it will give
+
+percent c, 30 percent c, and $0 percent c Fowler flaps of       higher maximum lift with no higher profile drag than
+Clark Y section. Certain additional data from earlier           most other flap arrangements and its comparatively
+
+tests on a similar model equipped with the _0 percent c         low drag at high lifts is favorable to take-off and steep
+                                                                climb. This effect would normally entail some sacri-
+Clark Y flap are included .for comparison.  Results of
+                                                                fice of steep gliding ability.
+calculations made to find the effect of the Fowler flap on         Although sufficient data to form some estimate of
+
+take-off, based on data from these tests, are included in
+
+an appendix.                                                    the performance      to be expected from     an airplane
+                                                                equipped with    Fowler flaps are available    (references
+The maximum lift coe_cient obtainable, based on                 1 and 2), they   are inadequate for normal    design pur-
+
+origiT_al wing area, had a nearly linear increase with
+
+flap chord up to 40 percent, but the maximum lift force         poses.   The purpose of the tests reported herein is to
+                                                                provide  data to form a rational basis for the design of
+per unit of total area increased very little beyond the
+
+value obtained with the 30 percent cflap. The maximum           airplanes equipped with Fowler flaps. It appears that
+
+load on the flap occurred very nearly at the maximum            for the present the purpose will be attained by making
+
+lift of the wing-flap combination and was nearly I'/..          available the following information: effect of flap size
+
+times the load that would result Jrom uniform distribution      on aerodynamic characteristics attainable, aerodynamic
+
+of the total load over the total area. In general, the flap     loads applied to the flap in various conditions, and
+
+appeared to carry a large proportion oJ the additional          effect of the flap on downwash.    In addition, a con-
+
+lift caused by its presence and to have its center of pressure  venient method of estimating the effect of high-lift
+                                                                devices on airplane take-off should prove of assistance
+much nearer the leading edge than it would normally be
+
+in free air. The addition _ the Fowler flap to a wing           in cases where this performance    feature merits special
+                                                                attention.
+appeared to have no appreciable effect on the relation
+                                                                   The tests were made in the 7- by 10-foot wind tunnel
+between lift coe y_cient and a_gle of downwash.       The       of the N. A. C. A. (reference 3) at Langley Field, Vs.,
+
+calculations in the appendix show that, by proper use oj
+
+the Fowler flap, the take-off _ an airplane having wing         during th,' ummer and fall of 1934.
+
+and power loadings in the range normally encountered in                                    MODEL
+
+transport airplanes should be considerably improved.               The basic wing was built of laminated mahogany to
+                                                                the Clark Y profile (table I) and had a span of 60
+                         INTRODUCTION                           inches and a chord of 10 inches. The trailing edge
+                                                                was cut away and the upper surface replaced by a thin
+   During the past few years the use of flaps on high-          curved metal plate. The lower surface was left open
+performance airplanes as a device for reducing space            at the rear to serve as a retracting well for the flaps.
+required in landing has become common. Thus far
+split flaps have been most generally used, probably                                                                                     1
+2                             NATIONAL                ADVISORY       COMMITTEE                FOR AERONAUTICS
+
+Blocks were inserted to maintain the correct size of                               positions shown in figure I were found by tests in
+                                                                                   which the flap angle was increased from 20 ° in 10 °
+well for each size of flap tested. Figure 1 shows the
+profile of the wing with the various flaps in place.                               steps until the peak of the variation of Or._=_ with flap
+
+   The two smaller flaps were made of duralumin to                                 angle was defined for each position. The range of
+the Clark Y profile and had spans of 60 inches and                                 positions in both cases was sufficient to surround the
+chords of 2 and 3 inches. The largest flap, which is                               point at which the highest lift coefficient was found,
+the one described in reference 2, was made of mahogany
+and had a 4-inch chord. The flaps were supported on                                thus isolating an optimum position           iu each case.
+the wing by fittings attached to ribs located in the                               Similar surveys had previously been         made with the
+retracting well. Several sets of attachment holes in                               0.40 c flap (reference 2) and were not     repeated at this
+the' ribs, combined with several sets of fittings, gave                            time.
+the range of flap positions shown in figure 1. The flaps
+were supported on the fittings by hinges located at the                            Optimum take-off arrangement.--Lift          and drag
+center of the leading-edge arc of the flaps, angular
+adjustment being obtained by set screws attached to                                data were taken at a range of flap angles between 0 °
+                                                                                   and that giving maximum lift for a series of flap posi-
+                                                                                   tions somewhat more restricted than the range used
+                                                                                   in the maxinlum-lift tests. Care was exercised in these
+
+                                                                                   tests also to surround what was judged to be the
+                                                                                   optimum setting, both as regards position and angle.
+
+                                                                                      Standard force tests of optimum         arrangements.--
+                                                                                   A series of final force tests, consisting  of lift, drag, and
+
+                                                                                   pitching-moment measurements, was          made at the flap
+                                                                                   positions considered to be of special      interest. These
+                                                                                   included tests of the maximmn-lift         arrangement of
+
+                                                                                   each flap,    of the optimum take-off arrangement of
+                                                                                   each flap,    and of an arbitrarily selected arrangement
+                                                                                   representing
+                                                                                                    partial retraction of each flap.
+                                                                                      All tests   in these first three groups were conducted
+
+                                                                                   in accordance with standard force-test procedure as
+                                                                                   described in reference 3.
+
+                                                                                   Eap loads.--Air loads acting on the flaps were
+
+                                                                                   found by supporting the flaps independently  of the
+
+                                                                                   wing, at the same position and angle as used in the
+
+                                                      °,_o /                       final force tests of the wing-flap combinations, and by
+                                                                                   measuring the forces ou the wing alone in the presence
+                                                                                   of the flap. The flap loads could then be readily com-
+                                                                                   puted. In order to find the center of pressure of the
+                                                                                   load on the flap, the flap hinge moment was measured
+
+   Dofs locale center oF                                                   -z.s _  by observing the an_o_ular deflection of a long slender
+           L. E. arc of flap                                                       torque rod required to balance the flap at the angle in
+                                                   --_-+--_f--_'_-5.0_.            question. Similar measurements of loads and center-
+
+                                                   _                 - 7.5
+
+                                                   85 90 35 I00             u
+
+                                                      Percemf chord         ¢_     of-pressure locations on split flaps are more completely
+                                                                                   described in reference 4.
+FIGUR= L--Wing  with various Fowler flaps.            Flaps shown in maximum-lift
+                                       eondRlons.
+                                                                                   Downwash.--Measurements     were made with "pitot-
+
+the flap moving in quadrantal slots in the fittings. In                            yaw" tubes attached to the wing by a rigid support.
+general, where the term "flap position" is used, the
+position of the flap hinge axis is indicated, irrespective                         The reference position thus moved in the air stream
+of angle, and flap angle is measured between the chord
+lines of the wing and the flap.                                                    .as the angle of attack was changed but remained the
+
+                                                    TESTS                          same with respect to the wing, as does the tail of an
+
+                                                                                   airplane.     The angles of downwash, however, were
+
+                                                                                   referred to the initial direction of the free air stream.
+
+                                                                                   The apparatus could be adjusted to various horizontal
+
+   Five groups of tests were made in obtaining the                                 distances behind the wing. The pitot-yaw tubes were
+                                                                                   ordinary round-nosed pitot tubes with two additional
+data presented in this report. These five groups dealt                             nose holes at 45 ° above and below the tube axis.
+
+with maximum lift, optimum flap arrangement for
+
+take-off, standard force tests of optimum arrange-                                 Alcohol manometers were used to read the pressures,
+                                                                                   and the tubes were calibrated in test position in the
+ments, flap loads, and downwash behind the wing with                               clear-tunnel air stream.
+
+various flap arrangements.
+
+   Maximum lift.--The         maximum                 lift coefficients               The wind tunnel is of the open jet, closed return
+                                                                                   type, with a rectangular jet 7 by 10 feet in size. A
+obtainable with the 0.20 c and 0.30 c flaps at various
+                                           AERODYNAMIC                      CHARACTERISTICS           OF A WING                WITH     FOWLER                  FLAPS                                        3
+
+complete description of tile tunnel, balance, and                                                     C_f. =l°ngitudinal                                   on flap (along flap chor(l_
+                                                                                                                                                  force
+
+standard force-test procedure appears in reference 3.
+
+Tests were run at a dynamic pressure of 16.37 pounds                                                                           hinge moment
+
+per squltre foot, corresponding                                   to an air speed of 80               C_'=flaP                       Sf cf q
+
+miles per hour at standard sea-level conditions.                                             The          t, angle of downwash, degrees.                                     results of the maxi-
+                                                                                                          Maximum-lift condition.--The                                      as contours showing
+Reynolds Number of the tests, based on the 10-inch
+                                                                                                      mum-lift tests are presented
+chord of tile wing without flaps, was approximately
+
+609,000.                                                                                              variations of CL,,, _ with flap hinge position, irrespec-
+
+                                           PRECISION                                                  tive of flap angle. Figures 2, 3, and 4 show contours
+
+The" accidental errors in the results presented in this
+
+report are believed to lie within the limits indicated
+
+in tile following table:
+
+                     Wing data                     Flap load data              Downwash        data                                                                                                    0
+                                                                                ..........   4-0. 5°
+
+tx ................             :_0 1[)_   C.v! ...........       :t:O. 10
+
+CL ., ............               ::h. 05   Cx t ...............   -4-. 06
+                                                                  --004
+C. : _..........                -¢-. 00_   Ch I.................                                                                                                                                           25c
+                                _. 0_)t     Flap an¢ie .....      =l=. 25°                                                                                                                                            !t
+C D (eL=Ill          ......                                                                                                       \
+                                                                                                                                                                                                         -5._) t"
+                                                                                                                           90                                            2          /              i'
+                                                                                                      FmURX 2.--Contoum                                                                                  - )(5
+C q :CL = 1. ...... __ V_4                 Flap position ..... 4-. _,                                                                                                                          ''
+                                                                                                                                                                         22f                           0.'_1 ¢ lisp.
+CD (CL= 2) ......               ±.Ons
+
+Flap angle .......              ±. 2._°                                                                                                                                  L
+
+Flap position                _..±. _115 c
+
+Consistent differences between results obtained in                                                                                                95                      /0_
+                                                                                                                                                   Pc_cer_f     ChOr d
+the 7- by 10-foot wind tunnel and in free air nmy be
+ascribed to effects of the following factors: Jet boun-                                                                              showing      variation of CL , with flap position.
+daries, static-pressure gradient, turbulence, and scale.
+In order that the present results be consistent with                                                  Chord      l,ne -,                                        _'_                                    0 <"
+published results of tests of other high-lift devices in
+the 7- by 10-foot tunnel, no corrections for these effects
+have been made. Corrections of several sets of airfoil
+results have indicated that the values of the jet-
+
+boundary correction factors, _=--0.165,                                        and _,=                                                            t          [       "k     28,'       /i l
+
+-0.165, used in the standard equations (cf. reference
+
+5) are satisfactory for a 10-inch by 60-inch wing.
+
+The static pressure in the jet decreases downstream,                                                                       20                     95                      '00                          d5
+                                                                                                      FIGUR_ 3.--Contours                          Per-cent     c_,,_fC                                   0.30 e flap.
+producing an increment in C,_ of 0.0015 on normal
+
+12 percent c thick rectangular airfoils. Evidence at                                                                                 showing      variation of C¢ o. with flap position.
+
+present available indicates that the effect of the tur-
+t,ulence in tiffs tunnel is small as compared with the
+
+other consistent errors.
+
+                                RESULTS    AND DISCUSSION
+
+                                                                                                                 :                   _                               2..80_ _
+
+   All test results are given in standard nondimensional                                                                             12. o7- t 119                                                          +
+coefficient form. In the case of a wing with a retrac-
+                                                                                                                                                                                                              5.C_.
+table surface, the convention of basing coefficients on                                                                _                             95                        lOG                     105
+the area that would be exposed in normal flight, that                                                            O0                                   Percent        ChO<d
+
+is, the minimum area, llas been adopted. The                                                          FIGUR,t 4.--Contours           showing      variation        of Cz_ u with flap position.        0,40 c flat*
+coefficients used are then defined as follows:                                                                                             (data  from N.       A. C. A., T. N. No. 4191.
+
+subscript w refers to the bqsic wing
+
+subscript.f refers to the flap                                                                        for the 20 percent chord, 30 po-_ent chord, and 40
+   q=_6 pl"
+          lift                                                                                        percent chord flaps, respectively.                                            Data on the 40
+
+ 6%= S_q                                                                                              percent chord flap are taken from reference 2, no
+
+                                                                                                      further tests having been considered necessary on that
+
+c_drag                                                                                                size of flap after an analysis was made of the data for
+  ')--S_q
+                                                                                                      the two smaller flaps. The optimum position is the
+C pitching
+                                           moment                                                     same for all three flaps: 2.5 percent of the main wing
+
+                     nornml               f,.','e ,,n flal / (i)e,'pendicular  to flap                chord directly below the trailing edge. The opti-
+                                                            ,h.rd)
+                                                                                                      mum angle was 30 ° for the 20 percent c flail 'rod 40 °
+
+('\f                                                              '%'ffl                              for the two larger flaps.
+4                             NATIONAL          ADVISORY              COMMITTEE  FOR AERONAUTICS
+
+   Variation of CL== with flap size is shown in figure 5.
+
+The maximum lift coefficient increases approximately
+
+in proportion to flap size if the area of only the original
+wing is considered. This is a reasonably satisfactory
+
+basis for comparison of the landing speeds of an air-
+
+plane with various sizes of flap if a constant maxi-
+
+mum speed is maintained.      If the maximum lift force
+
+that a wing will give at a certain air speed per unit of
+structural weight is taken as a criterion, it is reasonable
+to compare the various sizes of flap on the basis of total
+
+   " I11
+
+   3.2"     .__      8asedflopon reo{rreaacfedof win-_g',_pl F--I
+
+            I
+
+                                           /--
+
+   2.8
+
+                          /
+
+   z.4               /
+
+                                   f-
+
+                          /
+
+   c=_=          //           8osed on s_ im of areas
+                                     of wing and flop --
+
+   /.s      _f
+
+            /"
+
+         /
+
+   /.2
+
+   .8
+
+   .4
+
+   0             I0       ZO           30       40                50
+
+            flop chard, percenfaqe         af w/nq chord
+
+FTOU]gZ5.--Variation of C r.=u with flap size. Flap set at optimum position and
+                                                       angle.
+
+ (wing-and-flap) area· On this basis there is clearly
+little to be gained by using flaps larger than 30 percent c.
+
+    Lift, drag, and pitching-moment data for the wing
+with each of the three flap sizes, with the flap at the
+setting for maximum lift, are given in figure 6 and in
+tables III, IV, and V. Coefllcients are b_d on the
+area and/or chord of the wing alone. The data for the
+plain wing were obtained with the 20 percent chord flap
+fully retracted into its well. (See table II.) It is
+evident that an airplane having a flap of this type would
+have a much larger range of center-of-pressure travel
+between various flying conditions than would one with
+
+a plain wing. It appears, then, that in a normal type
+of 2-spar wing the effect of adding a Fowler flap would
+                       AERODYNAMIC          CHARACTERISTICS       OF A WING WITH FOWLER FLAPS                                    5
+
+design loads on the rear spar. If the speed at which the          optimum setting for take-off, are given in figure 16 and
+
+airplane may be flown with flap extended be limited               in tables III, VI, and VII. The choice of the position
+to a value reasonably in excess of its landing speed, it
+appears likely that the loads with flap extended                  0.025 c below the wing trailing edge, with a 25 ° angle_
+
+                                                                  as optimum for the 40 percent c flap is based on the
+
+would be reduced to the same magnitude as the largest             relation between optimum take-off setting and that for
+loads with flap retracted, with flap sizes not in excess
+                                                                  maximum lift of the 20 percent c and 30 percent c
+
+of 30 percent c. On this basis it appears that a wing             flaps. Although data for the 40 percent c flap are not
+with a Fowler flap as wide as 30 percent c could be
+constructed in which there would be no increase in the            sufficient for a rigorous selection, comparisons of data
+
+                                                                  that are available (reference 2) indicate the choice to
+
+weight of the wing structure proper, the only additional          be sufficiently near the optimum for practical purposes.
+weight being due to the flap and its support from the
+                                                                  Partial retraction of flap.--Lift, drag, and pitching-
+
+spars.                                                            moment data for the wing with the 20 percent c,
+   Take-off
+                 condition.--Investigation  of wing-flap  com-    30 percent c, and 40 percent c flaps in a partially
+binations                                                 most
+favorable        to determine the flap arrangement                retraced position are shown in figure 17 and in tables
+                                                              of
+                 for take-off must involve consideration          VIII to XI. The settings were chosen by assuming
+
+performance parameters of the airplane in question as             the flaps to move along an arc from the setting for
+well as of the aerodynamic effects of the lifting surfaces.
+                                                                  maximum lift or optimum take-off to the fully retracted
+
+Concurrently with the tests, a series       of take-off com-      position. The flap hinges crossed the wing chord line
+putations was made with the purpose          of developing a
+"take-off criterion" for wings based        on aerodynamic        at the 90 percent c station, and the angles at this posi-
+
+                                                                  tion were 15 ° for the 20 percent c flap, 20 ° for the 30
+
+characteristics  and depending on airplane            design      percent c flap, and 20 ° and 30 ° for the 40 percent c
+                                                    applica-
+factors to the minimum extent possible. The         serve to      flap. Comp_u'ison of the characteristics at this setting
+
+tion of such a criterion to the data would then                   with those at the maximum-lift setting shows that the
+
+isolate the optimum flap arrangement        for take-off.         change of characteristics is in the same direction and
+
+The development of the criterion, and associated data,            of the same order of magnitude as the change of flap
+are presented in an appendix to this report.
+                                                                  setting.
+
+As the tests and computations               progressed, it was    Flap loads._Curves   of normal- and lon_tudinal-
+
+found that some general considerations would serve to             force coefficients, hinge moments, and center-of-pres-
+
+isolate the optimum arrangement, without recourse to              sure locations of the 20 percent c, 30 percent c, and
+
+a rigorous criterion. The computations              indicated     40 percent c flaps in the maximum lift, optimum take-
+
+that nozlnal transport airplanes should take off at a lift        off, and partly retracted settings are shown in figures
+
+coefficient greater than 70 percent of the maximum                18 to 23. The corresponding  data appear in tables
+
+available to achieve the shortest run Co clear an obsta-          III to XI. From the magnitude of the load carried
+
+cle. They also indicated that the principal aerody-               by the flap at high lift coefficients of the combination,
+
+namic characteristics  affecting take-off, high lift              it is evident that the flap carries nearly 1_ times its
+
+available, and high LID at the high lift are of nearly            proportionate share of the total load. It appears that
+equal importance.
+                                                                  this type of flap may be regarded as a separate wing,
+   The wind-tunnel data, plotted as polar curves, are
+                                                                  operating in an air stream whose combined velocity
+
+presented in figures 7 to 10 for the 0.30 c flap and in           and curvature increase considerably the load it carries
+_igures 11 to 15 for the 0.20 c flap. Comparison of
+these curves on the basis of the considerations previ-            as compared with the load i_ would experience in the
+ously stated indicated the flap position 0.025 c directly
+                                                                  free air stream. Comparison of load data for a split
+
+                                                                  flap (reference 4) and a Fowler flap clearly shows the
+
+below the trailing edge of the wing, with an angle of             fundamental difference in the action of the two flaps.
+·20 °, to be the optimum talCe-off arrangement for both
+flaps. At this setting each flap has as high ratios of            At high lifts, the split flap carries almost no lift and
+
+                                                                  offers large drag; whereas the Fowler carries a large
+
+L/D throughout the high-lift region as any other setting          proportion of the total lift, but with less drag.
+tested, within the limits of accuracy of the tests, and
+                                                                  Although this condition is favorable to airplane per-
+
+has a higher maximum lift coefficient than any other              formance, it implies a large range of center-of-pressure
+setting having as high ratios of.L/D. The 40 ° setting of
+the 0.30 c flap, at this same position, gives a higher            positions for the complete flight range, with conse-
+maximum lift and lower ratio of Z/D than the 30 ° angle,
+                                                                  quent disadvantages  in longitudinal-stability     charac-
+
+                                                                  teristics and possibly also in structure.       In connection
+
+the percentage difference in Z/D being greater than               with stnmtural considerations it is interesting to note
+
+that in maximum lift. Computations          (see appendix)        that a progressive reduction in flap loads occurs with
+
+verify the conclusion based on the general considera-             increasing flap size if the maximum        angle is kept
+                                                                  below 30 °.
+tions, that the 30 ° angle is better        with this flap.
+   Lift, drag, and pitclfing-moment            data for the wing  At flap settings giving high maximum lift coefficients,
+
+with each of three sizes of fl_lp, with the flap at the           tim center of pressure of the flap itself has little travel
+                              NATIONAL              ADVISORY              COMMITTEE                                FOR AERONAUTICS
+
+                                                                                                      1                      V                                            'i-7--'
+                                                                                                                                                     : _AI _ :_ ;                !
+                                                    2.4                                                                     aOl i
+
+                                                                                                                              l,                         /*!( i ,
+                                                                                                                                                         //! , ' I i ; _
+                                                    2.0 I ,I/'                                                                 Ij
+                                                                                                                                                         i         _---4         ;;
+                                                    /.6                                                                      16
+
+                                                    /.2 /                                                                   c, I i Ik                              i+ Lo<'_ -
+
+                                                                                                                             '_.I- _'i¢tii                         !0 d'U °
+
+                                                                                                                                                                   ,_o--_ , _,
+
+                                                                                                            + 10 ° --
+                                                                                                            o 20"
+                                                                                                            x 30 ....
+
+                                                    *I                                                                                            i      '                 i,
+
+                                                                                                                                            I     _  -   i _3_     _      i      I
+
+                                                    .4 -L                 _--,.oor-_.... I                                                  ili!                   _Ill,
+
+                                                                                                                                         0           .2     ._        .8         .8
+
+                                                                                                         ,         HiT --                                   c,_
+
+                                                                                                                            Fiol_J l&--Polar_            for 0.20 c flap at vlli'iouliangle_.
+
+                                                    0           .2        .4                                   .6       .8
+
+                                                    Fzo'm_z lO.--Polar_ for 0.30e _p st various aolle_.
+
+                                                    2.4                                                                                                    A
+
+                                                            1--                                                                                          /, #: I !
+                                                                                                                                                                   "i ;
+                                                                                                                                    _.0
+
+                                                                                                                            /.6                     /              !             :
+                                                                                                                                                  //
+                                                    /.6                                                                                                            , An_le
+                                                                                     i ,Anl/eg _ '
+                                                                                                                                                                   o _0°_
+                                                                                                              Cl
+                                                                                 Io 20"                                                                             x 30"
+
+                                                    /.2                   I i i; 3_0oo'--                                   1.2                                       t_ 55"
+
+                                                                                                                            "8 I, I                                _ t .025_"
+
+                                                    .4 //                                                975e      _'_
+
+                                                                                                         JI7                0                        .2     .4        .6         .8
+
+                                                    0           .2        .4                                   6        .8                                  G
+
+                                                                          c:                                                FIOURI I4.--Po]a_            for 0.20 ¢ flap at vsr/ous angles.
+
+                                                    I_O'UR_" 11.--Polats  for 0.20 _ _p at various _ng_.
+
+z.6           I I , I F_v
+
+· _ ! i//II 1111                                    _'#I 7 i!i                                                     i
+
+           I      ;_      l"                           2.O
+
+                  B _.i      'l                        /.6                                                                  2..0                                              i        I
+                                                    C_
+ _s          !/           / i i--                                                                                                              ·                ,     i_         ---_
+                                                       /.2
+   ·       J fd'           ..,_g/.I I                                                                                       "" 'f/11 I,,4,.' 1
+
+Ct.        iN"               + /Oa "_'_ "---
+
+   1.2 _,  ill !  ii      io2O'! I                                                                                                             III i : i, ',o ea'l                     i
+                  II                                                                                                                           i/Ill
+           tI               x 30 "'k'---_
+
+                          t,_.,'ofl !
+
+·4l- /                , · ,__ _'_'_'_               .4t-   ---                                                              .4
+
+0             .2      .4  6   .8                    0           .2        ._                                   .8       .8                                  ._        .6
+
+                      CD                                                  Ca                                                0                        .2                          .8
+
+                                                                                                                                                            c_
+
+F_ou_x 9.--Polars for 0.30 ¢ flap at vartou_ angl_  FIO_lt_ l_.--Polars   for O._O¢ flap at variou_ angles.                 Frame= 15.--Polar= for 0._ _ _p at vm'lousanlrl,_.
+                      AERODYNAMIC  CHARACTERISTICS  OF A WING           WITH       FOWLER                       FLAPS                                                  7
+
+                                                                                                '               S?_.      Oe-d.         An _le
+
+                                                                                   O. O_ flop                0.90c        O.Oe              15"
+                                                                                                                .90"        .0"            20"
+                                                            f ,_                   .30"            "           ..9900" -    ..00" "        2300""
+                                                                x_-.......----
+                                                                                   ..4400""
+
+                                                    60"
+
+:i
+
+                                                                                                                                                       -.8
+
+                                                    - .q                                              .....
+
+                                                                                                   . !.&
+
+                                                                                                             / .,,k:5
+
+                                                    .2.0                           -- i--- I-                   _., _-<_
+
+                                                                                                4,;_/__<'A... .
+                                                                                                /I, ' ,.i ,,- _<D,.-7
+                                                    t l t5
+
+                                                                          _,_ /._">/                                  ..... \_-."--·-; .
+
+                                                                             I.."'_/ { //                                   .;
+
+                                                                                             ./'                         " 77.,-7".{
+
+                                                                        I ;¢/2 .
+
+                                                              ]                 ,               ._f-. <S'I. _
+                                                    0 ': "
+                                                                                :" _7 i                                       _75
+
+                                                                   -16  -8                   0               8            16            24         3J
+                                                    FZ6URE 17.--Lift,
+                                                                                                ol, deqz-ees
+
+                                                                        drag, and pitching-moment                         coefficients  for the partly      retracted
+                                                                                               flap condition.
+
+14,_fl1:4-- ::.-,  2
+8                                                         NATIONAL        ADVISORY           COMMITTEE    FOR AERONAUTICS
+
+  o....                               Sfo.         Ord.      Angle                              3to.      Oral.    Anq/e                                              Ord.  Angle
+  A------                                                      30"                                                   30"                                            O.O00c     15"
+                 (2E. Oe f/qo         /.00¢-0.025c             40"     o ....        0.20c   flop /.(2(PC -0.025c    30"                                             ,000-    _0"
+     ......        .30,                                       40"      _----     -- .30-                             25"                                             ·o00-    20"
+                    40,               /.00. - .025.                    ×- .....              ,: 1.00- - .0_.                                                         ·o00-    30"
+                                                                                       ,40.
+                                      1.00" - .OZS-                                             /.00- - ,025-
+
+    3.2              i                , Lr_l r
+
+e-                   r'
+                     p
+   -
+
+   2.8               [ / :]._
+
+                         I r_xi                           i
+
+                                                                       0
+
+_zol                     · "\1_I i
+
+0{                   ,.     c-,_ i i
+
+_.,.el i /
+             I/i ,,
+
+:_ Ii ,,'1
+
+0            I       i
+
+_,                                    l i _\
+
+     ol,Ii
+
+             b,                   %,           !/
+
+     -/6         -8            0            8      /6
+
+                         _, deq_ee$
+
+     FlOU111      18.--Air     loads     on flaps   for the
+                 maximum-lift         condition.
+
+                                   _to.             Or_.     Amgle                               SfO.     Ord,     Anq/e                                  3fo.       Ord.   Anq/e
+                                                               30"                                                                                                O.O00e      15 °
+0 ....           0.20C flop       I.OOc        -0.025C         40"     0 ....    020e flop       DOe      -0.025c 30"     o ....         O.ZOc flop      O..90e               ZO"
+  ....             30:            /.00-        - ,025,,        40"     4....       30-          /.00-                       ....           30,             .90,,    .000,
+                                  /.00 -       - . 025,,               >_......     40.         /.00 -    - .025,, 30"      ...........                   .90 -               ZO"
+x.......            40-                                      r                                                                              40 -                    · 000.    30"
+                                                                                                          - .025 - Z5"                                    .90"      · 000-
+                                                              LE._J
+                                                                   .j                                                     x-...... 40-
+
+                                                                                                                           I                                                L.E._J
+
+                                      U._.                                       ° 21;-T-F · i_.. ' I _ '
+                                                                                                   · . ! _ao_.
+
+     08                                                        g       _'__ I , i ! ,_o_
+                                                           ,zo_
+   ]
+                                                   ='
+_=16
+
+        L/
+
+   _24
+
+._,
+
+   -:32
+
+0 '_ _.
+kl i
+
+   =40                   "%.,,
+
+0                                                                                                                         i,_o I ?-!-4. i !,,
+
+                 \8            0            8       16                    -/6    -8          0        8   /6              _ " -/6        -8           o  8          16
+
+                         e(, deqree$                                                         el, degFee$                                     el, degree$
+
+     FIOURZ 19.--Air moments on flaps for tb_                             FIGURE 21.--Ah" momenta on flaps for the        FIGUEE _.--Air momenta o_ flalm for the
+                 maximum-lift condition.                                              optimum ta_e-off condition.
+                                                                                                                                         partly ret_     position.
+                                                   AERODYNAMIC                   CHARACTERISTICS                            OF k WING WITH FOWLER FLAPS
+
+throughout most of the angle-of-attack range and is                                                                         variable-lift wing with an airplane                                            fuselage would
+                                                                                                                            render the results of small technical                                          value. Since a
+generally nearer the leading edge than it would be on
+an airfoil in a free air stream. As the flap angle is                                                                       large difference in angle of attack occurs at the same
+                                                                                                                            value of C_. with different settings of the Fowler flap,
+reduced below 30 °, however, the center of pressure
+
+moves rapidly backward.                                                                                                     a large variation of fuselage attitude and lift at a
+                                                                                                                            given wing lift coefficient results from changing flap
+Downwash.--Some                                          representative                       data from the
+
+downwash measurements are shown in figures 24 and                                                                           settings. Thus, at a given over-all lift coefficient of
+                                                                                                                            the airplane, the lift coefficient and downwash of the
+25. Angle of downwash as a function of lift coefficient
+
+is shown for two positions behind the wing, with data                                                                       wing may be expected to change with                                                  flap setting.
+                                                                                                                            The use of t)artial-span flaps produces                                              an effective
+for the plain wing and for the same flap settings as                                                                        reduction of span as the flap is extended,
+                                                                                                                                                                                                                   causing an
+
+Z8 ......q- ......                                       ; .... r r _-i                          I_ , TI
+                                                         i I ' I _ i_ ' I                                                   additional change of downwash at conshmt lift coeffi-
+            I
+    --'--_ ' " " _                                       _Sto.                   Or'd, Anq/e i_'-'q-_-                      cient with changing flap setting. It appears that
+
+24 _                         v Ploln               Wlhg
+                             x O20c flop                       0.90e         O.O00e              15" I I ,
+     _--_                                                      /.00,,      - .025.                                          problems involving downwash of variable-lift wings
+     I                       -o .20.               ,,          /.00,,      - .025.               30"
+                                                                                                                            are more susceptible of solution by measurement                                                        on
+                             o .30- "                          /oo..       - ozs.                30"          It
+
+zo_-_                        , 3o ....                         0.30.          .o00,,             4o"_-!-'     '.
+                                                                                                 20"_
+     I_                      + .3o ....
+
+                                                                                                                                         - -. _                         L " StO.                    Or-d. Angle - -
+
+                                                                                                                            24                         _ PIo_n W_n9
+
+       _                     ,:,                                                              _                   ,                                    , O20c           flop 0.90¢                 O.O00c        /5"
+
+L                            I                                                                .  ,                I                                    o .20.                    / OO               025.         20"
+
+                                                                                                                                                       JO ,,                     I. O0 ..           025 .. _0 °
+
+                                                                                                                            20                         _ . 30,.                  '. OO, - .025,,                 40"
+
+                                                                                                                                                       ÷ . JO"                   0.30"              .000'        20 °
+
+                                                                                              I b ......
+
+                                                                                                                                      8 ........                                        /_../.E'--
+
+                                                !
+
+-.4           0              .4                    .8          /.2         Z6    2.0                Z.4        2.8
+
+                                                                       c_                                     the wing.                                        ./i.
+                                                                                                               line, 0.5 c
+FIOURE        24.--Downwash              angle       against   lift coefficient  at a point behind
+    Position      of point:  2 c behind            0.25 chord     point, 005
+   above                                                                         b laterally     from center
+              wing chord.
+
+were used in the flap load tests plotted on each curve.                                                                     -.4                     0  .4               8        L2         /.6            2(2   2.4          2.8
+Only small consistent deviations from the mean curve,
+within the limits of test accuracy, were found for the                                                                                                                                  c_
+
+                                                                                                                            Fm¢'RB 25.--bownwash                 angle  against  lift coefficient   at a point I_qlmd the wing.
+                                                                                                                                                       3 e behind
+variety of settings tested.                                       It appears, then, that the                                Position     of point:                      0.25 chord point, 0.05      b laterally  fn_m center  line, on
+addition of a Fowler flap                                      has no appreciable effect on
+the basic relation between                                     lift, span, and downwash at                                  chord line.
+
+reasonable distances behind                                      the wing.                                                  the actual design in question, rather than by a fun-
+   The foregoing conclusion                                      is subject to some ques-                                   damental wind-tunnel investigation.
+                                                               nature of the jet-boundary
+tion owing to the doubtful                                     7- by 10-foot tunnel. The                                                                               CONCLUSIONS
+effect on downwash in the
+                                                                                                                               1. The maximum lift coefficients, based on area of
+corrections in this particular case differ                                                          considerably            wing alone, fotmd for the three sizes of flap tested
+from the theoretical corrections, probably                                                            on account            were: For the 20 percent c Ilap, 2.45; for the 30 per-
+of the combined effect of static-pressure                                                            gradient in            cent c tlttp, 2.85; and for the 40 percent c flap, 3.17.
+                                                                                                                            The maximum lift coefficient for the wing with tbtp
+the jet and spillage of air over the unflared lip of the                                                                    retracted was 1.31.
+exit cone. Different corrections for different posi-
+                                                                                                                               2. The location of the flaI) leading edge for maximum
+tions of the reference point in the air str___l might                                                                       lift was found to be tim same in all eases, the center of
+                                                                                                                            the leading-edge arc being 2.5 percent c directly t)eh)w
+produce       greater consistent differences in downwash                                                                    the trailing edge of the main wing. The flap angles
+between       the plain wing and flap extended conditions                                                                   for maximum lift were 30 ° , 40 °, and 40 ° for the
+                                                                                                                            20 percent c, 30 pereen! c, :lnd 40 perconl c tlaps,
+than are indicated by these tests, though this effect                                                                       respectively.
+would be small unless the variation of the corrections
+                                                                                                                                3. Tile 20 pereelll c lllld :}() [)el'c('nl (' lhtps wel'e
+with position is greater than seems likely.                                                                                 found to give the ('haracteristics nt,,st I':lvorat)h, t.
+
+Although the extensive investigation                                                                required to
+
+establish the corrections might produce results of
+
+_tca(lemic interest, certain el[cots of eonlt)ining a
+10                            NATIONAL  ADVISORY  COMMITTEE          FOR AERONAUTICS
+
+take-off with the same leading-edge location as for             5. At positions normally occupied by the tail
+                                                            surfaces the relation between lift coefficient and
+maximum lift.  The optimum angle was 30 ° in both
+
+cases.                                                      downwash angle appears    from the    present tests to be
+                                                            the same for a wing with  or without   a full-span Fowler
+   4. The maximum normal-force and longitudinal-            flap.
+force coefficients of the 40 percent c flap, based on flap
+
+area, were 2.89 and   -1.25; those for the 30 percent c
+flap were 3.06 and -
+flap were 2.80 and    1.54; and those for the 20 percent c
+tions corresponding
+ca_e approximately    -1.20.  Center-of-pressure  loca-
+points.
+                      to these coefficients were in each    LANGLEY   MEMORIAL  AERONAUTICAL      LABORATORY,
+
+                      at the 20 percent c flap chord        NATIONAL  ADVISORY        COMMITTEE   FOR AERONAUTICS,
+
+                                                             LANGLEY  FIELD,    VA., Ap_         _G, I9_5.
+                                              APPENDIX
+
+                       TAKE-OFF                                 Subject to tile limitations       l)l'eviously stated, the
+                                                             horizontal distance covered      during each of the phases
+   The computations leading to the results presented         may be computed from the         following equ,itions.
+here were made concurrently with a more detailed set
+of computations of the effect of various types of flap          Ground run, feet:
+on take-off, reported in reference 6. Only a brief
+                                                                                           l|'N
+
+r6sumd of the assumptions made and of the     equations              PqJ[./Ia_(L"             "'--     ,- l_" :_''_
+used is given here, since they are identical  except h_                                                W, hp.)
+two minor respects with those of the          foregoing
+reference.
+                                                                                  - - R W/S -3
+Assumptions.--The      airplane is assumed to take                             pC,t _ Uv _ --t
+
+Off in a calm, from a surface    having a friction coeffi-                      , , - W/hp. I
+cient of 0.05, and to maintain    constant air speed after
+leaving the ground until it     clears an obstacle at an     ><h- ,g, I 1 "-
+
+altitude    of 50 feet. Further assumptions are that the     Transition, fi,et:
+airplane     has a constant parasite-drag coefficient (ex-
+eluding     wing drag completely) of 0.023 over the full                       ' 'c )si"°
+
+                                                                     - og \( t...... - Lr--
+
+angle-of-attack    range and is equipped with :,n a.uto-     Steady climb, feet:
+matic propeller   giving maximum efficiency at top speed.
+No allowance     for induced drag at max'inmn_ speed is              H ..2W/S(             .        I  __ [
+made.
+                                                                                                                     i'os      0
+
+   It is considered reasonable to neglect factors that                                        tnn 0
+would be assumed to be the same in comparable cases.
+On this basis the effects of _dnd, wind-velocity gradient       r/lie angle of climb 0 appearing       in t}le last two pbase._
+                                                             is found from the relation:
+with height, proximity of the ground, and slipstream
+over parts of the wing are excluded from the computa-        Sill O     .I             (B W/6'
+tions. In the estimation of the effect of flaps this                                          IV thp.-t-("_rIc'LT
+                                                                     iV/hi).
+                                                                                       _,
+
+as::umption is conservative since wind, ground effect,          The symbols appearing         in the foregoing                 equations
+·,N slipstream arc all more helpful to high-lift devices     are definca as follows:
+th.m to normal wings, and wind-velocity gradient is
+
+more helpful to the normal wing.                             p, air density, slugs per cu. ft.
+   The only differences between the assulnptions used        g, acceleration of gravity, ft./see. 2
+                                                             _, ground friction coefficient, assumed
+here and those of reference (i are in the parasite-drag
+                                                                     to 0.05.
+coefticient ,md in the attitude during ground run.                                                                                equal
+For the other computations the parasite coefficient was
+0.020 _lntl the attitude giving miniature total resistance   W tS, wing loading, lb. per sq. ft.
+during ground run was used. This assumption re-
+                                                             W/hi). , power loading, lb. per b. hp.
+
+quired a negative angle of attack of the Fowler wing,        Cr._, C,_, lift and drag coefficients at angle of attack
+,_n attitude that is not feasible during the ground run
+bee.,use of danger of nosing over or of damaging the                 maintained during ground run,
+
+                                                             (',..,, (.'or, lift. a.nd drag coefficients correslillnliing                 to
+
+propeller.  An angle of a/tack of 0 ° during the ground              I',,,, the st)eed at which the ah'l)laue
+
+run was used in the COmlmtati'.ms for the present                    leaves tile ground. It is to lie noted that
+
+report.                                                              the airplane nuist Ily at a higher lift
+                                                                     coefficient than (_.r during transition,
+Equations.--ln     or_ler that lhc equations may cor-
+
+rectly represent the processes occurring dur;.ng the                 since the flight l)ath is curved upward
+
+take-off of an airplane over an obstacle, it is necessary            and the speed remains equal to l'r.
+
+to consider the take-plY as divided into three phases:       A, B, constants expressing thrust of an automatic
+
+ground run -a period of horizontal acceleration with                 propeller at low forward speeds. Thrust
+
+the weight lmrtly      wheelborne and p'trtly airborne;              -b. hp. (.4- B o/2 l'-_.) The constants
+Iransition--a 1)eriod  of vertical aeceleration to a steady
+,'ate of climh; 'rod   the steady clind_ from the height             apply to any one airplane, and vary
+reached in transition
+                          to the height of the obstacle.             with to 1) speed among wirions airplam,s.
+
+                                                             H:, height of obstacle, assunwd 50 feet...
+
+                                                                                                                           11
+l_                                                       NATIONAL          ADVISORY                 COMMITTEE      FOR AERONAUTICS
+
+        a_                            i                  I i ! !1f -                                     34                                   [!                i                       ,         I
+
+               I .I--r,OpIL_,_ rerIrocreIo J 5tc_ Ord..AtlgleCo[no.--                                                                         t                 !                              tI
+
+        3.2_--o-.-- 020e flop                            l.OOe-_O25e 30" IT --
+              ix .... .30" .                             L00.- .025. 40" r_
+
+              F--_---- .30" "                            r+ : 1.00, T.O_5. 30" _ -
+
+        2, Ir
+
+               ] f i -7 _: , /_"ill
+
+               Ir i r P ! ._/.,-'r I!I
+
+        · 24|                  I                         ' i _"_ _-"                         _I
+
+                   i I r i 4_,-'_>"i] i                                                                            '                                    i', ', ; A,. c,,
+
+                                                                                                                   i                                    ii         t    i      /TOT/O,
+
+                                                                                                                   ",,[,,",",_, ',',',, "-.+.,.re-_-.'..c..:..,..,.,.,,,..,.,
+
+                                                F -'                                                                                             ,. ' ''.                      ;               I
+
+                                         ,'/[ I                                                                I         "'_                      _', :         " "_.........  i.... .84 1
+
+                                                                                                                                          ''            _'                     i        J
+
+        /.2                    'I /              _"
+
+              .8                                                           i             __                                               ', ! I'L,..j      '£          :                      !
+
+                /                                                                                              ,o                             ?I
+
+              q4
+
+                                                                                                                                                                                               1
+
+            il                 :i                                          i                                   6G     8                       /0            IZ ' 14                     I#_lS
+
+           0           ./                .2          .3           .#  .5                     .6                                                         W/h_., /b./hp.
+
+        _.--Pol_m                                    c_                                                  Fluua]¢ _.iC, JC,.               for mir_imum tak_-off run as a function of wing and power
+                                                                                                                                      .u                    ]osdln=.
+Fl_uki                   for ta_e-ofT computations. The value of CD does not include
+                       the airplane l_site-dr_ c_fl_cient.
+
+    18001 i                       '                      Sto.         Ord. Angle Cor_.              L
+
+              C÷       Flop retrOcleO                                                            ]  i
+
+                               O20e flop                 l.OOe-O025c
+    /GO0           :_             .30"                   1.00, - .025, 30"
+
+                                                                      W/S
+
+                                                                           /0
+
+        t400                                             i ....       20
+
+                                  '1                     i                                          I:
+
+    1200
+
+                       !i                                I i [r
+
+        looo
+
+                   :J                    il                    \
+
+    _ 800
+
+                                                     I
+
+        400        ii
+
+                                                                                      1
+
+        20O        i                            i
+
+                   i                     rI
+
+                        .4            .8             /2           1.6" _0                2.4        Z.8
+
+                      Fluuall     27.--Take-off          CLr
+
+                                                     tliii against J|ft coefficient.
+                        AERODYNAMIC CHARACTERISTICS OF A WING WITH FOWLER FLAPS                                                                                13
+
+The computations covered a range of wing loading             the minimum take-off run z was divided by the
+
+between 10 pounds per square foot and 30 pounds per          corresponding Co and plotted against CL on logarithmic
+
+square foot and a range of power loading between 8           paper, the data for any case lay very nearly in a
+
+pounds per horsepower and 16 pounds per tmrsepower.          straight   line.  The form    of the equation for this func-
+                                                             tion is    x       CL · and,  if K and n be expressed as
+Eight combinations of wing and power loading, desig-                   C--_=K
+
+nated "cases" and listed in table XII, together with
+
+the corresponding airplane and propeller characteris-        functions  of wing and power loading, a general take-off
+                                                             equation
+tics, were considered.  In combination with the eight        noted in   in vet T shnple form is obtained.                                                      It will be
+                                                             range of
+cases, four wing conditions were taken as follows:                      figure 29 that n is nearly constant over the
+
+I. Plain wing; flap retracted.                                          cases considered and that the average value
+
+II. 20 percent c flap; station, 100 percent c; ordi-
+
+             nate, -2.5 percent c; angle, 30 °.                                                                                                 X,  CL_2.4  '
+
+                                                             of n is -2.4; that is, _=K                                                                        which may be
+
+III. 30 percent c flap; station, 100 percent c; ordi-        reduced to the form K/x--CL-2_/CD.                                                                This ratio may
+                                                             be considered a "take-off criterion",                                                          the value of total
+             nate, --2.5 percent c; angle, 40 °.
+
+IV. 30 percent c flap; station and ordinate, same as         take-off distance of an airplane being inversely pro-
+
+             for III; angle, 30 °.                           portional to the value of CLT+"4/CDr for its wing at the
+
+Polar curves for the wing in the various conditions,
+
+from the wind-tunnel data, are shown in figure 26.           ratio of C:T/CL_ in question.
+
+For each combination of airplane case and wing con-          It will be noted that the curve for case VI, having a
+
+dition, the take-off runs at four values of Vr, corre-       wing loading of 20 and a power loading of 16, is not
+                                                             included in figure 29. The data are not directly
+sponding to lift coefficients of 60 percent, 70 percent,
+
+80 percent, and 90 percent of CLm_ for the wing              applicable in this case because the power available is
+                                                             seriously inadequate to satisfy the assumption that
+condition in question, were computed.  The results,          the airplane fly through the transition at its maximum
+                                                             lift coefficient without loss of speed. Thus, the com-
+showing total run required by the hypothetical air-
+
+plane to reach an altitude of 50 feet in a steady climb
+
+from a standing start with no wind, are presented in         puted runs are incorrect      even assuming the rm_s in
+                                                             other cases to be strictly    correct as computed.
+table XIII. Table XIV shows corresponding values
+
+of the ground run alone. This table is included for          When using the criterion, it is first necessary to
+
+use in cases where the ground run alone, rather than         select the ratio of CLr/CL_,_ for minimum run from
+
+the take-off over an obstacle, is the factor to be con-      figure 28, depending on the approximate                                                           wing and
+
+sidered. The results are satisfactory for comparison         power loading of the design in hand. Then in order
+
+_mong themselves but should not be relied upon as            to compare the take-off properties of different wing
+                                                             and flap combinations it is necessary to compare the
+being accurate in an actual case. They are probably
+
+conservative for an airplane with an automatic pro-          values of the criterion CLr2"4/Ct)r where CLr for any
+
+peller taking off from an average field with no wind.         iower loading is shown plotted on semilogarithmic_,
+                                                              roper in figures 30, 31, 32, and 33 for each of the four i
+Representative  curves of total take-off run against         _ing-flap combination is the optimum fraction of the :
+
+take-off lift coefficient (CLr) for several cases and
+
+conditions are shown in figure 27. All the data of           CL_o_ of that combination (obtained from fig. 28) and
+
+table XIII were plotted in similar fashion and the           Cot is the corresponding drag coefficient of the com-
+
+optimum value of CLr was found for each ease and             bination. The criterion sliould give satisfactory com-
+                                                             parison between nor_nal airfoils with or without high-
+condition.   The optimum raisio of CLr/CL_          was      lift devices. Some comparis, ms of cases seh,,'ted from
+                                                             reference 6 have shown that the criterion _ives a good
+nearly constant for the various wing and flap con-           indication of the relative merits of the various devices
+
+ditions at a given wing and power loading but varied
+
+with wing and power loading. Figure 28 shows the
+
+optimum value of 6Lr/CL,,o_ as a function of wing and        considered in take-off, although when osed l'_,r olher
+
+power loading   for the range covered  in the computa-       devices than the Fowler flap the values of the criterion
+tions.                                                       are not inversely proportional to the take-off runs
+                                                             within as close limits.
+Consideration of the analysis at this point indicated
+
+that it might be possible to develop a general relation
+
+between lift and drag which would give correct weight            Development of the criterion was based on measured
+                                                             Co of the wing only, to pernfit COmlmrison of various
+to these two factors in take-off, independently          of  wings as tested in the wind tunnel without a t)ody.
+                                                             Variations in parasite drag of the rest of the airplane.
+other factors. It appears that a ratio CL"/Ct_ would         will have snmll effect since the wing drag is a largcl
+                                                             portion of the total drag :tt any lift eoctlicient no:lr!
+place extra weight on lift in accordance with its extra      C_._,_, particularly with high-lift devices.
+
+importance     if a satisfactory    value for n could be        The variation of total take-off run with wing atoll
+
+determined.     For each of the eight cases, the mini-
+
+mum take-off run and the corresponding C;, and Co
+
+for each condition were plotted as in figure 29. When
+14              NATIONAL              ADVISORY                                        COMMI_EE     FOR AERONAUTICS
+
+    3
+
+    I
+
+       0  4  8  12                    IG                                                        0                  4            8                        /2  /G
+
+             Power load/n9, /b./hp.                                                                                   Power/ood/nq,               /b./hp.
+
+FIGURI 30.--Minimum take-off mn with various power and wing loadings.                 Con-   FIGURE 32.--Mlnimtun     take-off  run with various  power      and wing loadings.  Con-
+                                       dition I, flap retracted.
+                                                                                                dition III, 0.30 ¢ flap; flap station, 1.00_ ordinate, -0.025 c; angle, 40%
+
+40
+30
+
+    4
+
+    0     4  8  /2                    /G                                                        0                  4            ,9                       /2  /6
+
+             Power loading, lb./hi).                                                                                  Power /ood;ng, /b,/hp.
+
+FIGURE 31. -Minimum take-off run with various power and wing loadings.                (:on-  FIGURE 33. -,Minimum take-off run with various power and _ in_ Ioa,liau_. Con-
+         dit|on If, 0.20 c flap; flap station, LGOc; ordinate, -0.025 ¢; angle, 30°.
+                                                                                                dition IV, 0.30 c flap; flap station, 1.00c; ordinate, -0.025 e; angle, :_0°.
+                                                      AERODYNACMHICARACTERL_OTFICASWINGWITHFOWLER FLAPS                                                                                                                                                                                                                 15
+
+wing conditions·                                 In the last three figures a portion of                                                                                       TABLE             II
+
+the lines at the high power loadings is curved. This                                                                                                                       PLAIN           WING
+
+curvature appears to lie within the region indicated by                                                                                                                       (Flap retracted)
+
+a dotted line, which shows the combined power and                                                                                                                                                          c, ! C D
+
+wing loading at which the power available is insuffi-                                                                                                                                                                                                 C
+                                                                                                                                                                                                                                                             H4
+
+cient to satisfy the transition assumption at the instant                                                                                                                                                          --i .....
+
+of leaving the ground· No correction has been made                                                                             Degree#                                                          --0--..383480 I,              0.168                      0.0It
+                                                                                                                                   -15 .............................                                                            019                    --.071
+for this effect, but in table XIII an approximate correc-                                                                          -10 ............................                                        .005    I
+                                                                                                                                     --5 ..............................                                                           017                   --.089
+tion is noted opposite the points to which it applies.                                                                               --4 ......................                                            . OSO i
+                                                                                                                                        0 ............................                                     .365                   015                 ......
+                                                                                                                                         5 ..............................                                                       .023                    --.085
+                                                                                                                                        t0 ............................
+                                                                                                                                       12 ..............................                                   · 73,5             .0._)                   + --.084
+                                                                                                                                        13 .............................                                                      .(_2                          -.0S5
+In the range covered, the error appears sufficiently                                                                                    14 ...........................                                I. 080
+                                                                                                                                       I5 ........................                                                            .116                    [ -.o_1
+small to be neglected for practical purposes.                                                                                           t6 ..............................                                  1.200'
+                                                                                                                                        17 .............................                                   1.24_              .127                          --.O gO
+                                                                                                                                       20 ............................                                                        .138                          --.0_2
+                                                                                                                                       25 .............................                                    1. 288
+                                                                                                                                       30 .............................                                                       .152                          --.0_2
+    Although figures 30 to 33 are accurate only for                                                                                                                                                        1.310
+                                                                                                                                                                                                                              · 17o                   I.......
+                                                                                                                                                                                                      1.3LO
+determining the relative take-off runs of airplanes with                                                                                                                                              1. 300                  .·19215+ I-:::i3_
+                                                                                                                                                                                                                              .+_ ! -.1:0
+                                                                                                                                                                                                           1. 195
+                                                                                                                                                                                                                              .568 I --.tg7
+various wing and power loadings and arrangements of                                                                                                                                                        · ,_15                      I
+                                                                                                                                                                                                           · 875
+
+the Fowler flap, it is believed that they may be applied
+
+within reasonable limits to actual cases. Assuming                                                                                                                            TABLE             III
+
+good piloting technique, and using an automatic                                                                                DATA FOR THE MAXIMUM-LIFT                                                                      CONDITION
+
+propeller, the data represent the minimum run that                                                                             (0.20<: flap; flap station,                          1.0_¢; ordinate,               -0.ff25c;     angle, 39 °)
+
+an airplane might be expected to need to clear a 50-foot                                                                                                                   I
+
+obstacle with a reasonable margin of speed. It is to                                                                                                                           Co          Cm e/4                  CN/                    Clf         i              ( ·_[
+
+be noted that the foregoing statement applies to cases                                                                         Df¢?ee$
+                                                                                                                                  --15 ..........
+in which the ground is at least as smooth and hard as                                                                             --10 .........           --0. 222           0.159        --0. 0_2                0. L)O)                  0.005     I -0. lt}_l
+                                                                                                                                     -5 .........                .427           .053        --. 417                l+ 44l                 -- _
+the average airport·                                                                                                                    0 ..........             .926            .091        --. 472               1.875                  --1430      I - 350
+   Tile computations                                                                                                                    5 ..........                             · 157       --.508                2.200                  --.590
+                                                                                                                                       10 ..........          1. 370            .247        --. 527                                                   I 417
+                                                                                                                                       13 .........           l. 790            · 359       --. 555                2.715                      . ,_
+                                                                                                                                       14 ........            2.200             · 424       --. 558                                                   !              ;17
+                                                                                                                                       14+5 ......            2. 385            · 447       --. 556
+                                                      appear, in general, to justify the                                               15 .........           2. 431            · 459       --. 548                                                                  .]5_
+                                                                                                                                       o0 ..........          2. 445            · 460        -. 522.
+conclusion that, within the normal range of wing and                                                                                   25 ..........          2. 045            · 561       --. 500
+                                                                                                                                       30 ..........          1+ 645            · 820       --. 531
+                                                                                                                                                              1.400             .905        --. 520                2. 800                 - 1. 210 ] --. 453
+                                                                                                                                                              1. 287
+power loadings, a wing with a Fowler flap can produce                                                                                                                                                                                                                                                                I
+
+                                                                                                                                                                                                              i-_i5 -Ci:ii_ .... =?_si
+
+considerable improvement in take-off as compared with
+
+a plain wing.                                                                                                                                                                                                 _"· :7:47:t5:: ::--:7:.1:5::::: ' :::-:-.2:5:32
+
+                                                                                                                                                                                                                                                      i
+
+                                                 REFERENCES
+
+                                                                                                                                                                              TABLE             IV
+
+1. Fowler, Harlan                           D.: Variable          Lift.               Western     Flying, Nov.                 DATA FOR. THE MAXIMUM-LIFT                                                                     CONDITION
+
+             1931, pp. 31-33.                                                                                                  (0.30c flap; flap station,                           1.00¢; ordinate,               -0.025¢;               angle, 40 °)
+
+2 Weick, Fred E., and Platt, Robert C.: Wind-Tunnel                                                            Tests                                                       h            !                  I                                          I
+
+             of the l"owler Variable-Area                         Wing.               T.N. No. 419, N. A.                                                                               ;C                 i C_
+
+             C. A., 1932.                                                                                                                                  ( '++ I C° ' "%1_ '_ CII                                                                   ] C_t
+
+3. Harris, Thonms A.: The 7- by 10-Foot Wind Tunnel of the                                                                     Degree.*                                    1
+
+             Natimlai          Advisory               Committee          for Aeronautics·                      T.R.               --15 ........            --0.067         I 0. 172        --0.155             0.4'20                     --0. _l        --0.157
+                                                                                                                                  --tO ..........                 93       I . 128          --.6&3              2.253                       --.76          --.422
+             No. 412, N. A. C. A., 1931.                                                                                                                                                     --. _789           2. 594                      --.99           --.452
+                                                                                                                                   -5 ..........             1.4oa         1                 --. 754            2. 889                                      --491
+                                                                                                                                                                                             --. 775            2. 791                    --1.22            --.501
+4. %Vunzinger, Carl J.: Wind-Tunnel                                                   Measurements             of Air             o5 ...............                       L , 19_           --. 793            3. 085                    --1.21      = --.511
+                                                                                                                                                                                             --. u,06         .........................   -- 1.54
+             Loads on Split Flaps·                            T.N. No. 498, N. A. C. A., 1934.                                                                             i 413                                                                      I -.50L
+                                                                                                                                                                                             --._0l             2.665                     --1.25      q
+5. Theodorscn,                    Thcodorc,           and Silverstein,                Abe: Experimental                        12 .........                2. 780             .60t           --. 69_          ........................'.              : --, 510
+                                                                                                                                                                                             --. 676                                        --. 35
+             Verification                of the Theory of Wind-Tunnel                                          Boundary        14 ..........                                     618                                466                               i -..0
+                                                                                                                                                                                             ----..716364
+             Interference.                  T.R. No. 478, N. A. C. A., 1934.                                                                                                                                  ..1...·...3...=...........I.... -.m
+
+6. Wetmore,                 J. W.: Calculated                     Effect of Various                            Types of                                    J: 5m              .
+
+             Flap on Take-Off over Obstacles·                                         (To be published                   at                                .300               1.0_
+
+             later date.)                                                                                                                                                     TABLE             V
+
+                                                      "FABLE I                                                                 DATA FOR                    THE MAXIMUM-LIFT                                                   CONDITION
+
+                                         AIR, FOI L ORDINATES                                                                                (0.40¢ flap;  flap station,            1.00c; ordinate,               -0.025¢;     angle, 40")
+
+                                                      CI,ARK      Y
+
+                                                                                                                                       a                    c_                   c_
+
+                                         (All values  in percent  airfoil chord)                                               Degrees                     0.064
+                                                                                                                                   --15 ..........         1.209
+                                                                                                                                   --I0 ..........         1. fi73                                                 c.,                    err               c,_ i
+                                                                                                                                     --5 ..........        241195                                                                                        --11.2239
+             Station              Ordinate       ! Ordinat                                        Ordinate     Ordinat                   0 ..........      2. 510                                                  o.4_ I -o.o_
+                                                       lower                                                       lower                 5 ..........      2+875
+                                                                                                                                        10 .........       3. 005             O. 175       -0. 230
+                                                                                                                            0           12 ..........      3.040                · 165        --. 785               1.0,50                 --.5,_                --.445
+                                                                                                                            0           13 .......         3.095                · 251        --._56
+__                    _           jpper                                  Station                  Ul)Per                   0            14 ......          2.100                · 3.58                             1.9o8 I -.528 I -._5_ I
+                                                                                                                            0           15 .......         l. 825               · 480        --. 923
+    0 .........                          3. 50        3. 50        40 ..........               I 11.40                      0           18 ..........      1.885                .6,35        --. 958               2.1r,_ I -.73o I -.47s I
+    I. 2"5 .......                                                 50 ..............                  10. 52                0          20 ........         1. 613               · 6i_)       --. 95,5
+    2. 50 .....                                       I. 93        60 ............                                          0          25 ........         i, 335               · 727        --. 956               2. 0"20                --. 630               --. 489
+                                                                   70 ..........                        9. 15               0          30 ........                              · 742        --. 953
+                                         5. 45        1.47         80 .....                             7.35                                                                    · fi90        --. 749
+                                                        .93                                                                                                                     · 735        --.711
+                            /            6. 50                     95 ......                            5. 22                                                                   · 9&5         --. 803              2. 375 ] --. 928                             --. 499
+                                                        .63       100_.                                                                                                       l+ 07t          --. 754         "_'++._.... i-£_-" .......
+    5 .......                  I         7. 90                                                                                                                                I. 140         --. 732
+                                                         42                                                                                                                             I
+    7. 50                .  +            & _5           .15                                                                                                                                                        2. 890                 ..........            --. 499
+
+    i0 ....                              9. r;0         · 03
+
+    15.__                             1068            0                                        !    I+ ,19                                                                                                         l. 133                 --. :._8              --. 499
+
+    20_. _                            1 I. 716                I                                     .12
+    30 ....                           11.70
+
+                                                                                               i
+
+                                                                                                                                                                                                                              I                       l
+
+Leadillg-eilge              raditls=     1.51L
+16                                                 NATIONAL                            ADVISORY             COMMITTEE  FOR AERONAUTICS
+
+                                         TABLE VI                                                                                                 TABLE X
+                                                                                                              DATA FOR THE PARTLY RETRACTED
+DATA   FOR THE OPTIMUM TAKE-OFF CONDITION                                                                                                                                                                   CONDITION
+
+       (0.30¢ flap; flap _tat|on, 1.OOt'; ordinate, --0.0_.5_ angle. 3&)
+
+                          i                                                                                                     (0.40c flap; flap station, 0.90c; ordinate, 0.0c: angle. 20*)
+
+                             c_ cn c,, CN!                                             Cx/         Ct,/
+
+                                                                                                                                                                   c.,./, c._ c,,                                  %
+
+    --15 ..........          --0.118     0.152     --0. l_    1. 241                   --0.04      --0.118             _]_ ..........             0.0_0   0.1=     -o._4      o.8_o -oo_                           -o._
+    --10 ...........               693    .07_,     --.M3     1.484                     --. 17      --.=4              --10 ..........             .44_    .049
+                                          .131      --. 611   1. 512                                -.=3                                           · 872   . (}82   --._3                                           --,198
+    --5 ......... 1.198                   .215      --.658                              --.21       --.412                 0 ..........           1.231    .I_9     --. 4.27  .688                          .023    --. 2155
+       0 ........i I.645                                      I.716                     --.22       -.432                                         I.M}4    .214                                                     --. 210
+                                          .325      --.696                              --.31                             ]0 ..........           L946     .304     --. 429   .82._                         .090    --.220
+                                                                                                                                                  2.064    .370                                                     --. 226
+       .5 ...... I 2.100                  ._        --.729                                                                14 ..........           1.94_    ._       --.438    .328                          .200    --.2_4
+                                          .508      --. T:J3                                                              1_ ..........           1.872    .428     --. 462
+      I0 ......           I 2.5500                            1.682                    --,30       --452                  18..........                                        --.015                        .348    --.2_
+      12.........               2.645     .538      --.732                                                                20 ..........           1.678    .494     --.4.M
+                                                              ............................                                25..........            1._      .M4                . 175                         . 275
+                                          .5_       --.728                                                                                                          --.4_6
+      13.......... 2.708                  .555      --.648    ............................                                                        1.3_0    .7_      --.462    .123                          ./_
+                                          .787      --.678
+      14..........              2.750     .911      --.650    2.0_3                    --.60       --.432                                         L_7      .907               ............................
+      15 ..........             2.115    I. OGO     --.631                                         --.461
+                          _ 1.830                             1.138                    --.25                                                                                  .663                          .113
+      20 .........                                                                                 --, (&?.
+                          i 1.500                             L292                     --.38
+      255..........       [ 1.366
+      30 ..........                                           ...........................                                                                          --._       LI20                --.813           --.282
+                          I                                   ............................
+
+                                                                                                                                                                   --.524 ............................
+
+TABLE VII.--DATA                         FOR THE OPTIMUM TAKE-OFF
+                                         CONDITION
+
+       (0.40,: flap; flap station.       1.00c; ordinate,     --0.02_                  angle, _*)
+                                                  I               C.v/
+
+       o=                    CI.         CD        C, &
+
+    D_re_                                                                                                                                                 TABLE          XI
+
+     --10.......... 587 ._ -._21 I .8oo I --15.......... --0. 0_2 o1= -offi= I_sl -o.g I I
+
+      -5 ......... 1.086 · 113                     -._2       f .71o [
+       0.......              l. 548
+                                         ,]93      -._        4 ._._ I                                        DATA     FOR                   THE          PARTLY   RETRACTED                                CONDITION
+
+       ,5.........           I.9955      · 428     -.7552 , .9_8 I                     i=[                             (o.4o_ flap; flap _tatloa, o.9_t.; ordinate. 0.0c: angle, 30_)
+                                         .5518._
+      I0........             2. 42,5               --.-?. ?4775 I]................  I
+      13........             2. 6,50
+      14..........
+                             2. 718
+
+      1,.5........           2. 7_)      .509      --.774     I .848                                                                                                                                               C_f
+      16.........            2.045       ·"_68601  --'._
+      18..........           1. b2,.,5                        "'[.".'."i - _i6_.... =._
+
+      20 ..........          1.730       .746      --.699     . _0..!
+      25 ..........
+                             1. 598                                                                                    De/_re¢_
+                                                                                                                          --I_. .........
+      30 ..........          1. 315 1..0m00l "'-"_W""'""..                                                                --10. ..........     --0.189    0.159    I --0.088   0,230              --_/]_3
+                                                                                                                                                                   I --. 407     . 7_3                .010
+TABLE  VIII.--DATA FOR THE PARTLY RETRACTED                                                                                    O. .........       L_2      · 086   I --,/46      .740                 ,083           -0._
+                            CONDITION                                                                                          6- .........       L 7_3    .128    I -.47_                            .078
+                                                                                                                             10__ ........        2. I_     .192                 .8_8                 ._             Z:4_
+        (0.20¢ flap; flap station, 0.g0t_, ordinmta, 0.0e; angle, 15")                                                       HL .........         _L28_    .284    I -._0,_      ,66O                 ,29O         --:_
+                                                                                                                             I= ..........        2. 210   .399                  .6_                  ._           --=-_
+          =                  c= i                                                                                             14. .........       2. 025   .445    I --.M4       ._
+                                                                                                                             16. .........        L 930    .469    _ --._6    ..................      ._0
+    De_re_                                --_Cb I C=&                                                                        18. .........        L_0      .492               ..................
+       --10 ..........                                                                                                       20. .........        L6_0     ·_I_    I --.643    LI/_)               --.12_
+         --_ ...........                                                                                                                          1.440                       ..................
+            0...........     -0,088      _ 0_     I -0.187                                                                       ..........       1.220    ,578    I -,M4
+            8..........            347    .(_5    i --.218                                                                   80..........                  .724    i --,_I     1.0_8
+          10 ..........            7"70   .0_5                                                                                                             .8_     I --.82_   ..................
+          I _t..........                  .121        --.230                                                                                               .0_     I --.M4    ..................
+          14 ..........         I.182             I --.2_                                                                                                          I -._
+          I_ ..........         L_0       .1_
+          20 ..........         L 772     .246    ] --._71                                                                                                         I --.M7
+          26 ..........         I. 79_    .2_     ! -.274
+          30 ..........         I. 72_            I --.T/I
+                                1.4,50    :_1
+                                                    -_o._m
+                                I.135    _
+                                1.110                -,_
+
+TABLE  IX.--DATA                         FOR THE PARTLY RETRACTED                                                                               TABLE XII
+                                          CONDITION                                                           AIRPLANE CHARACTERISTICS FOR TAKE-OFF COM-
+
+           (O.ZOCflap; flap station, O._Oe; m'd/nat_ 00c; sngle 20 °)                                                                           PUTATIONS
+
+                                                                                       %            g/ i                                 Wing             Power               Max/-
+                                                                                                                       Cl
+                                                                                                   -(_071 |                                                        CD _4e mcLm A B
+                                                                                                    -. 177 |                                              WlAp.               speed
+    --I_..........           -0. 2M       i_       -0. 055 I O. I00                    _(_0         --.21(I
+    --I0...........                118                                                  · 187
+                                         .O8O      --._01 I .04_ i                      .183        --. 281_                                                                  t_ p. A.
+     --_...........                580   .108                                                                                                                                        I_0 3.90
+                                         .175      --.327     I .07q I                  ._7         --.314                   I               _b.l=q.1p0"  &/_8 p"                                                  0.067
+        O. .........            I./_     .2_8                                                       --.aM                  II
+        ,5..........            1. 430             -.M2       I ._                  I                                     HI                      I0         12                       130 4.18                     .093
+                                         ._                                                                               IV                      I0         1_
+       10..........             1.830              -,376      i .(M4 i                                                      V                    2O                . 0_                                     4.25   ,099
+       13 ..........            2./_8    · _70                                                                            VI                     2O            S
+                                         .480      -.=i       -.o_ i                                                    VII                      20          12                                             3.34   .0_2
+       14..........             I. 9_    ,730                                                                          VII1                      3O          16
+                                         ._.       -. -_7_                                .067                                                   30                .m                 177                   _.69   .062
+       l_ ..........            I. 842                                                 --.520                                                                  8
+       20 ..........            I._(_              -._                                                                                                       12    . 0_               I_I 3.89                     ,OM
+                                                   -,442
+       28 ..........            1.3(}0                                                                                                                             .m                 23O                   2.79   .012
+                                                   -.I_
+       30- .........            I. i_0                                                                                                                             . 0_               I_5 3.41                     .0_7
+                                        AERODYNAMIC                     CHARACTERISTICS                             OF A WING WITH FOWLER FLAPS                                                                               17
+
+                                                                                                TABLE XIII
+
+                                                                        COMPUTED                TAKE-OFF                RUNS         IN FEET
+
+                                        1.18       1.05       0.92      0.79       2. 21        L96        1.72         L47          2._P      2.30       t 2.02           L73   2.f_        2.30      f 2.02      1.73
+
+   Case         W/S         W/hp                   Condition        I                           Condition           II                         Condition      III                            Condition     IV
+
+                                                   e8849 1                   702   ,sol ,201                                                                                     _11 4o7l 3o4 41o
+                                                                        I, i00
+         I            10                                                1,885      HI 644[                                                                                           713     640 i         637           672
+                                                                        1, 472
+         III,         10                l, 234       I, 280   1,427     2, 472     1,164 i 1,088           11,097       I I, 174 I I, 078      i, 480     t I, 371               1,440 _II,  201 !II,      IIi     II, 127
+                                        1,331   j 1,246       1,30"/    4. 374                                                                                  738                  SSS i   72.51         7311          792
+         iv :,o                         1. 744                2. 047    2.385      s341 7e7I                            878          775       734
+                                        2.533        1. 807   3,322                                                                                       I 1.385
+                                                i 2.781                 4,215      1,206 [ 1,202 I 1,285                t I2, ,541381I"4°°14,I,3450_      13,408     I 1,601       1,238        1.179   i I ' 205  "1,329
+                                                              2.103                                                      1,445 i'_ 1,1s2                             I 3,983     14,381      _2,670       ]2,296   12,393
+         VI           2O                                      3. 356               12,459  112.203         [12,258                                           1,265
+                                                                                                                                                                        1,446
+   VIVIIII                              2. 019 i 1, 967                            1,251        1.209 i 1,284                                                                                1,134      1,175      I, 303
+                                                                                                                                                                     t 2.693
+                                        2. 683     2, 879                          1,812        1,838   / 2.005         2.341        I 2:322   2,,16      _ 2, 239               11,,2983_3  t 1,802    1,864
+                                                                                                        t
+                                                i                                                                                                                                                                  12,105
+
+   L J. _ Transition        assumption  not satisfied.        Number    signifies  approximate          percentage      correction,  additive  to tabLflated         run.
+
+                                                                        COMPUTED                  TABLE XIV
+                                                                                                GROUNDS RUNS IN FEET
+
+                eL T                                                      0.79     2.21         1.96       1.72         I. 47                                                    2.59        2.3O       2.02         1 73
+
+                                        L 13 ! 1.05           0.92          459                                                      2.59      2.30       j 2.62           1.73   _'96                                2O8
+                                                                            739                                                                                                   317                                 337
+                                                   Condition I          1,093                   Condition II                                   Condition III                      489        Condition     IV         523
+                                                                        '. 135                                                                                                    710                                 516
+   Case         W/S         W/ixp.                                      3, 062                                                                                                                                     I,36:_
+                                                                        ,, 983                                                                                                                                        9,%
+                                           287                          3, 424     1,52         174           202                                                                                                  1. 491
+                                           444                                                                319
+l        II'          ',00        1_       635     511                             235          271           476                    217
+                                           698                                                                496                    3_
+                                        I,_8                                       341          399                         598                                                              346           4,5
+                                        I, 577                                                             I,359            601      82"_
+         III                      ,_    1,244                i 939                                                         985       625          339877     443986      638870              364           425
+                                        l, $65                  l, 521                                                  I, 557       922       1.109      1,390
+            Vi        20          12               t, 267                                                               I, 103                                       2, -°75                 570           679
+                                                   t, 870    ! 2.311                                                    1,727                                        I, O79
+         VI           20.         16               1,420        I, 655             821             972                                                               1.90t                   843        L
+                                                                                   677             779
+   VII                30          8                2,192     i 2,666               96,5         ,, 131                                                                                       673        ' 787
+
+   VIII               30          ,2                                                                                                                                                         974        I,171
+
